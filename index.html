@@ -752,8 +752,9 @@ em.gold{font-style:italic;color:var(--gold)}
 (function(){
   "use strict";
   /* ============================================================
-     FORMULAIRE : brancher ici le webhook Make.com (module
-     "Custom webhook") qui pousse vers Airtable + notification.
+     FORMULAIRE : renseigner ici l'URL du service qui reçoit les
+     demandes de contact (POST JSON). Si le domaine est externe,
+     l'ajouter au connect-src du CSP dans vercel.json.
      Tant que la constante est vide, le formulaire bascule sur
      un email pré-rempli vers contact@aceconseil.co (mailto).
      ============================================================ */
