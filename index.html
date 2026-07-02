@@ -156,6 +156,24 @@ em.gold{font-style:italic;color:var(--gold)}
 .exp-list li{display:flex;gap:13px;font-size:.95rem;color:var(--navy);opacity:.85}
 .exp-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:8px}
 
+/* ---------- offre site 499 ---------- */
+.offer{background:var(--cream);padding-top:0}
+.offer-card{background:var(--navy-deep);color:var(--cream);border:1px solid rgba(201,162,77,.35);padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.15fr 1fr;gap:56px;position:relative;overflow:hidden}
+.offer-card::before{content:"";position:absolute;top:-160px;right:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.14),transparent 70%);pointer-events:none}
+.offer-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--border-gold);background:var(--gold-pale);color:var(--gold-light);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border-radius:100px}
+.offer-card h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin-top:26px;max-width:18ch}
+.offer-price{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,4.4rem);font-weight:700;color:var(--gold);line-height:1;margin:26px 0 6px}
+.offer-price small{font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:400;letter-spacing:.08em;color:var(--muted-light);margin-left:12px}
+.offer-card p{color:var(--muted-light);font-size:1rem;max-width:48ch}
+.offer-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.offer-side{display:grid;gap:30px;align-content:start;position:relative;z-index:1}
+.offer-side h3{font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.offer-side ul{list-style:none;display:grid;gap:11px;margin-top:14px}
+.offer-side li{display:flex;gap:12px;font-size:.93rem;color:var(--cream);opacity:.88}
+.offer-side li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:9px}
+.offer-note{font-family:'Playfair Display',serif;font-style:italic;font-size:1.02rem;color:var(--gold-light);border-left:2px solid var(--gold);padding-left:18px}
+@media(max-width:960px){.offer-card{grid-template-columns:1fr;gap:40px}}
+
 /* ---------- avantage IA ---------- */
 .edge{background:var(--navy-deep);color:var(--cream);position:relative;overflow:hidden}
 .edge::before{content:"";position:absolute;top:-200px;right:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.1),transparent 70%)}
@@ -416,7 +434,7 @@ em.gold{font-style:italic;color:var(--gold)}
         <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
           <div>
             <p class="exp-desc">L'IA compresse le temps de production&nbsp;; nous le réinvestissons dans ce qui compte&nbsp;: votre message, votre référencement local, la transformation des visiteurs en demandes. Résultat&nbsp;: un site au niveau des meilleures références du marché, livré en semaines — pas en mois.</p>
-            <a class="exp-cta" href="#contact" data-sujet="Site web">Parler de ce sujet <span>→</span></a>
+            <a class="exp-cta" href="#offre-site">Découvrir l'offre site professionnel <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Design moderne, animations soignées</li>
@@ -492,6 +510,50 @@ em.gold{font-style:italic;color:var(--gold)}
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="section offer" id="offre-site">
+  <div class="wrap">
+    <div class="offer-card reveal">
+      <div>
+        <span class="offer-tag">Offre d'entrée · Le seul prix affiché sur ce site</span>
+        <h2>Un site professionnel, conçu et rédigé comme celui-ci.</h2>
+        <div class="offer-price">499&nbsp;€<small>HT · prix unique</small></div>
+        <p>L'IA a changé le coût de production d'un site. Nous répercutons la différence&nbsp;: une page complète (design, textes, mise en ligne), livrée en 7&nbsp;jours ouvrés après réception de vos éléments. C'est la porte d'entrée&nbsp;: la plupart de nos clients commencent ici.</p>
+        <div class="offer-ctas">
+          <a class="btn btn-gold" href="tel:+33665704793">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+            Démarrer mon site
+          </a>
+          <a class="btn btn-ghost" href="#contact" data-sujet="Site web">Passer par le formulaire
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="offer-side">
+        <div>
+          <h3>Ce qui est inclus</h3>
+          <ul>
+            <li>Design sur mesure aux couleurs de votre activité</li>
+            <li>Textes rédigés pour vos clients, pas pour vous</li>
+            <li>Référencement local de base (Google)</li>
+            <li>Formulaire et numéro cliquable reliés à votre boîte mail</li>
+            <li>Affichage mobile impeccable, mise en ligne incluse</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Le cadre, assumé</h3>
+          <ul>
+            <li>Une page. Multi-pages, e-commerce&nbsp;: sur devis</li>
+            <li>Une série de retours incluse</li>
+            <li>Vos éléments (logo, photos, infos) fournis sous 5&nbsp;jours</li>
+            <li>Nom de domaine et hébergement à votre charge</li>
+          </ul>
+        </div>
+        <p class="offer-note">Un site seul ne remplit pas un agenda. Une fois en ligne, on branche la suite (visibilité, automatisation) si et quand vous en avez besoin.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -741,7 +803,7 @@ em.gold{font-style:italic;color:var(--gold)}
 
   /* CTA panneau -> préremplit le select du formulaire */
   var sujet = document.getElementById("f-sujet");
-  document.querySelectorAll(".exp-cta").forEach(function(a){
+  document.querySelectorAll("[data-sujet]").forEach(function(a){
     a.addEventListener("click", function(){
       var v = a.getAttribute("data-sujet");
       if(sujet && v){
