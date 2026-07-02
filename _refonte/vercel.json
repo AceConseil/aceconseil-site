@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/ia", "destination": "/#automatisation", "permanent": true },
+    { "source": "/visibilite", "destination": "/#acquisition", "permanent": true },
+    { "source": "/strategie", "destination": "/#strategie", "permanent": true },
+    { "source": "/formation", "destination": "/#formation", "permanent": true },
+    { "source": "/amo", "destination": "/#amo", "permanent": true },
+    { "source": "/a-propos", "destination": "/#equipe", "permanent": true },
+    { "source": "/equipe", "destination": "/#equipe", "permanent": true }
+  ]
+}
