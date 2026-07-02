@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACE Conseil — Agents IA, automatisation & acquisition pour TPE et PME</title>
+<meta name="description" content="Cabinet de conseil B2B pour TPE, artisans et PME : agents IA, automatisation des process, sites web nouvelle génération, acquisition de clients et stratégie commerciale. Île-de-France, intervention France entière.">
+<meta property="og:title" content="ACE Conseil — Plus de clients. Plus de temps. Enfin les deux.">
+<meta property="og:description" content="Agents IA, automatisation, sites web nouvelle génération et acquisition pour TPE & PME.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aceconseil.co">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231B2A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23C9A24D' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ACE Conseil",
+  "url": "https://aceconseil.co",
+  "telephone": "+33665704793",
+  "email": "contact@aceconseil.co",
+  "description": "Cabinet de conseil B2B : agents IA, automatisation, sites web, acquisition et stratégie commerciale pour TPE, artisans et PME.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Marne-la-Vallée", "addressCountry": "FR" },
+  "areaServed": "FR"
+}
+</script>
+<style>
+:root{
+  --navy:#1B2A4A; --navy-deep:#111D33; --navy-mid:#243558;
+  --gold:#C9A24D; --gold-light:#E2C47A; --gold-pale:rgba(201,162,77,.12);
+  --cream:#FEFDFB; --cream-dark:#F4F1EB; --cream-mid:#EDE9E0;
+  --muted:#7A8499; --muted-light:#A8B0C0;
+  --border:rgba(27,42,74,.1); --border-gold:rgba(201,162,77,.22);
+  --nav-h:84px;
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--navy-deep)}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+a{color:inherit}
+img{max-width:100%}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.section{padding:clamp(90px,11vw,150px) 0}
+.section-title{font-size:clamp(2rem,4.2vw,3.1rem);max-width:16ch;margin:22px 0 0}
+.section-lede{max-width:52ch;font-size:1.06rem;color:var(--muted);margin-top:20px}
+.on-dark{color:var(--cream)}
+.on-dark .section-lede{color:var(--muted-light)}
+em.gold{font-style:italic;color:var(--gold)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--nav-h);display:flex;align-items:center;transition:background .4s,box-shadow .4s,height .4s}
+.nav.scrolled{background:rgba(17,29,51,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--border-gold);height:68px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--cream)}
+.logo-ace{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em}
+.logo-sep{width:1px;height:20px;background:var(--gold);align-self:center}
+.logo-conseil{font-size:.72rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-size:.86rem;font-weight:400;letter-spacing:.04em;text-decoration:none;color:var(--muted-light);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-tel{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:500;font-size:.88rem;color:var(--navy-deep);background:var(--gold);padding:11px 20px;border-radius:100px;transition:background .3s,transform .3s}
+.nav-tel:hover{background:var(--gold-light);transform:translateY(-1px)}
+.nav-tel svg{width:14px;height:14px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;z-index:70}
+.burger span{display:block;width:24px;height:2px;background:var(--cream);margin:5px 0;transition:.35s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:var(--navy-deep);z-index:65;display:flex;flex-direction:column;justify-content:center;padding:0 8%;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:'Playfair Display',serif;font-size:2rem;color:var(--cream);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(201,162,77,.14);transform:translateY(14px);opacity:0;transition:.5s var(--ease)}
+.mobile-menu.open a{transform:none;opacity:1}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .m-tel{font-family:'DM Sans',sans-serif;font-size:1.05rem;color:var(--gold);border:0;margin-top:18px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;background:var(--navy-deep);color:var(--cream);overflow:hidden;padding:calc(var(--nav-h) + 40px) 0 90px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(820px 520px at 82% 12%,rgba(201,162,77,.13),transparent 62%),
+  radial-gradient(700px 600px at 8% 92%,rgba(36,53,88,.85),transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+.hero .wrap{position:relative;z-index:2}
+.hero-eyebrow{opacity:0;animation:rise .9s var(--ease) .15s forwards}
+.hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem);font-weight:600;margin:30px 0 0;max-width:14ch}
+.hero h1 .l{display:block;opacity:0;animation:rise .9s var(--ease) forwards}
+.hero h1 .l:nth-child(1){animation-delay:.3s}
+.hero h1 .l:nth-child(2){animation-delay:.45s}
+.hero h1 .l:nth-child(3){animation-delay:.6s}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;bottom:.04em;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:draw 1s var(--ease) 1.25s forwards}
+.hero-sub{max-width:54ch;font-size:1.12rem;color:var(--muted-light);margin-top:30px;opacity:0;animation:rise .9s var(--ease) .8s forwards}
+.rotator{display:inline-block;position:relative;color:var(--gold-light);font-weight:400;min-width:14.5em;vertical-align:bottom}
+.rotator span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(10px);transition:.5s var(--ease)}
+.rotator span.on{opacity:1;transform:none;position:relative}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:44px;opacity:0;animation:rise .9s var(--ease) 1s forwards}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:16px 30px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.96rem;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(254,253,251,.28);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);transform:translateY(-2px)}
+.hero-foot{margin-top:70px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);opacity:0;animation:rise .9s var(--ease) 1.15s forwards}
+.scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:1px;height:56px;background:rgba(254,253,251,.16);overflow:hidden}
+.scroll-hint::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--gold);animation:drip 2.2s var(--ease) infinite}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes draw{to{transform:scaleX(1)}}
+@keyframes drip{0%{top:-40%}70%,100%{top:110%}}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--navy);border-top:1px solid rgba(201,162,77,.16);border-bottom:1px solid rgba(201,162,77,.16);overflow:hidden;padding:20px 0}
+.marquee-track{display:flex;gap:0;width:max-content;animation:scrollx 36s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-item{display:flex;align-items:center;gap:26px;padding:0 26px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.06rem;color:var(--cream);white-space:nowrap}
+.marquee-item::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ---------- expertises ---------- */
+.expertises{background:var(--cream)}
+.exp-group{margin-top:64px}
+.exp-group + .exp-group{margin-top:54px}
+.exp-group-label{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.exp-group-label::after{content:"";flex:1;height:1px;background:var(--border)}
+.exp-item{border-bottom:1px solid var(--border)}
+.exp-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 0;background:none;border:0;cursor:pointer;text-align:left;transition:padding .35s var(--ease)}
+.exp-head:hover{padding-left:12px}
+.exp-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:var(--navy);transition:color .3s}
+.exp-head:hover .exp-title,.exp-item.open .exp-title{color:var(--gold)}
+.exp-hint{font-size:.9rem;color:var(--muted);max-width:34ch;display:none}
+.exp-plus{flex:none;width:44px;height:44px;border:1px solid var(--border-gold);border-radius:50%;display:grid;place-items:center;position:relative;transition:background .3s,transform .45s var(--ease)}
+.exp-plus::before,.exp-plus::after{content:"";position:absolute;background:var(--gold);transition:background .3s}
+.exp-plus::before{width:14px;height:1.5px}
+.exp-plus::after{width:1.5px;height:14px}
+.exp-item.open .exp-plus{transform:rotate(135deg);background:var(--gold)}
+.exp-item.open .exp-plus::before,.exp-item.open .exp-plus::after{background:var(--navy-deep)}
+.exp-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.exp-item.open .exp-panel{grid-template-rows:1fr}
+.exp-panel-inner{overflow:hidden}
+.exp-body{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding:6px 0 40px}
+.exp-desc{font-size:1.02rem;color:var(--navy);opacity:.82;max-width:48ch}
+.exp-cta{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-weight:500;font-size:.92rem;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold);padding-bottom:3px;transition:gap .3s,color .3s}
+.exp-cta:hover{gap:14px;color:var(--navy)}
+.exp-list{list-style:none;display:grid;gap:13px;align-content:start}
+.exp-list li{display:flex;gap:13px;font-size:.95rem;color:var(--navy);opacity:.85}
+.exp-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:8px}
+
+/* ---------- avantage IA ---------- */
+.edge{background:var(--navy-deep);color:var(--cream);position:relative;overflow:hidden}
+.edge::before{content:"";position:absolute;top:-200px;right:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.1),transparent 70%)}
+.edge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,162,77,.16);margin-top:70px;border:1px solid rgba(201,162,77,.16)}
+.edge-cell{background:var(--navy-deep);padding:42px 36px;transition:background .4s}
+.edge-cell:hover{background:var(--navy)}
+.edge-cell h3{font-size:1.35rem;color:var(--cream);margin-bottom:16px}
+.edge-cell h3 em{font-style:italic;color:var(--gold)}
+.edge-cell p{font-size:.96rem;color:var(--muted-light)}
+.edge-note{margin-top:44px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--gold-light);max-width:56ch}
+
+/* ---------- méthode ---------- */
+.method{background:var(--cream-dark)}
+.steps{position:relative;margin-top:74px;display:grid;gap:0}
+.steps::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:1px;background:var(--border)}
+.steps-progress{position:absolute;left:27px;top:10px;width:1px;background:var(--gold);height:0;transition:height .25s linear}
+.step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:34px;padding:34px 0}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--cream);border:1px solid var(--border-gold);display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold);z-index:1;transition:background .4s,color .4s,border-color .4s}
+.step.passed .step-num{background:var(--navy);color:var(--gold-light);border-color:var(--navy)}
+.step h3{font-size:1.45rem;margin-bottom:10px}
+.step p{max-width:56ch;color:var(--muted);font-size:1rem}
+.step p strong{color:var(--navy);font-weight:500}
+
+/* ---------- équipe ---------- */
+.team{background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
+.team-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:70px;margin-top:64px;align-items:start}
+.team-card{border:1px solid rgba(201,162,77,.2);padding:44px;position:relative;background:linear-gradient(160deg,rgba(36,53,88,.5),rgba(17,29,51,.3))}
+.team-avatar{width:74px;height:74px;border-radius:50%;background:var(--gold);color:var(--navy-deep);display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:26px}
+.team-card h3{font-size:1.7rem}
+.team-role{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:10px 0 20px;font-weight:500}
+.team-card p{color:var(--muted-light);font-size:.98rem;max-width:46ch}
+.team-side{display:grid;gap:26px}
+.team-mini{border-left:2px solid var(--gold);padding-left:24px}
+.team-mini h4{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--cream)}
+.team-mini span{display:block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:6px 0 10px}
+.team-mini p{font-size:.92rem;color:var(--muted-light)}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--cream)}
+.faq-list{margin-top:56px;max-width:820px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-family:'DM Sans',sans-serif;font-size:1.08rem;font-weight:500;color:var(--navy);transition:color .3s}
+.faq-q:hover{color:var(--gold)}
+.faq-q .chev{flex:none;width:11px;height:11px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform .4s var(--ease);margin-right:4px}
+.faq-item.open .faq-q .chev{transform:rotate(225deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a-inner{overflow:hidden}
+.faq-a p{padding:0 40px 26px 0;color:var(--muted);font-size:.99rem;max-width:64ch}
+
+/* ---------- contact ---------- */
+.contact{background:var(--navy-deep);color:var(--cream);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;bottom:-260px;left:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.09),transparent 70%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:76px;margin-top:60px;position:relative;z-index:1}
+.contact-tel{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:600;color:var(--cream);text-decoration:none;display:inline-flex;align-items:center;gap:18px;transition:color .3s}
+.contact-tel:hover{color:var(--gold-light)}
+.contact-tel .ring{flex:none;width:58px;height:58px;border-radius:50%;background:var(--gold);display:grid;place-items:center;position:relative}
+.contact-tel .ring svg{width:22px;height:22px;color:var(--navy-deep)}
+.contact-tel .ring::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--gold);opacity:.5;animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{0%{transform:scale(.85);opacity:.6}70%,100%{transform:scale(1.25);opacity:0}}
+.contact-meta{margin-top:34px;display:grid;gap:14px;font-size:.98rem;color:var(--muted-light)}
+.contact-meta a{color:var(--gold-light);text-decoration:none;border-bottom:1px solid var(--border-gold)}
+.contact-meta a:hover{color:var(--gold)}
+.form-card{background:rgba(36,53,88,.35);border:1px solid rgba(201,162,77,.2);padding:44px;backdrop-filter:blur(6px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-light);font-weight:500}
+.field input,.field select,.field textarea{background:transparent;border:0;border-bottom:1px solid rgba(254,253,251,.22);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:1rem;padding:10px 2px;transition:border-color .3s;border-radius:0;-webkit-appearance:none;appearance:none}
+.field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A24D' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+.field select option{color:var(--navy-deep);background:var(--cream)}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.form-note{grid-column:1/-1;font-size:.8rem;color:var(--muted)}
+.form-status{grid-column:1/-1;font-size:.92rem;display:none}
+.form-status.ok{display:block;color:var(--gold-light)}
+.form-status.err{display:block;color:#E29A7A}
+.hp{position:absolute;left:-6000px;opacity:0}
+
+/* ---------- footer ---------- */
+.footer{background:var(--navy-deep);color:var(--muted-light);border-top:1px solid rgba(201,162,77,.14);padding:44px 0}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.footer-legal{font-size:.82rem}
+.footer-links{display:flex;gap:26px;font-size:.85rem}
+.footer-links a{text-decoration:none;color:var(--muted-light);transition:color .3s}
+.footer-links a:hover{color:var(--gold-light)}
+
+/* ---------- responsive ---------- */
+@media(min-width:861px){.exp-hint{display:block}}
+@media(max-width:960px){
+  .exp-body,.team-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .edge-grid{grid-template-columns:1fr}
+}
+@media(max-width:860px){
+  .nav-links,.nav .nav-tel{display:none}
+  .burger{display:block}
+  .form-grid{grid-template-columns:1fr}
+  .form-card{padding:30px 24px}
+  .step{grid-template-columns:44px 1fr;gap:20px}
+  .step-num{width:44px;height:44px}
+  .steps::before,.steps-progress{left:21px}
+  .rotator{min-width:0;display:block;margin-top:4px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+  .hero-eyebrow,.hero h1 .l,.hero-sub,.hero-ctas,.hero-foot{opacity:1;animation:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ACE Conseil — retour en haut">
+      <span class="logo-ace">ACE</span><span class="logo-sep"></span><span class="logo-conseil">Conseil</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#equipe">Équipe</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-tel" href="tel:+33665704793">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      06 65 70 47 93
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#expertises">Expertises</a>
+  <a href="#methode">Méthode</a>
+  <a href="#equipe">Équipe</a>
+  <a href="#faq">Questions</a>
+  <a href="#contact">Contact</a>
+  <a class="m-tel" href="tel:+33665704793">Appeler — 06 65 70 47 93</a>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow hero-eyebrow">Conseil · Automatisation · Intelligence artificielle</p>
+    <h1>
+      <span class="l">Plus de clients.</span>
+      <span class="l">Plus de temps.</span>
+      <span class="l"><em>Enfin les deux.</em></span>
+    </h1>
+    <p class="hero-sub">ACE Conseil installe dans les TPE, artisans et PME des systèmes qui <span class="rotator" id="rotator"><span class="on">répondent à vos clients</span><span>relancent vos devis</span><span>remplissent votre agenda</span><span>font votre suivi commercial</span></span> pendant que vous travaillez.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="tel:+33665704793">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        06 65 70 47 93
+      </a>
+      <a class="btn btn-ghost" href="#contact">Décrire mon projet
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <p class="hero-foot">Cabinet B2B — Île-de-France · Intervention France entière</p>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Agents IA</span>
+    <span class="marquee-item">Automatisation des process</span>
+    <span class="marquee-item">Sites web nouvelle génération</span>
+    <span class="marquee-item">Visibilité &amp; prospection</span>
+    <span class="marquee-item">Stratégie commerciale</span>
+    <span class="marquee-item">Formation IA</span>
+    <span class="marquee-item">AMO Immobilier</span>
+  </div>
+</div>
+
+<main id="main-content">
+
+<section class="section expertises" id="expertises">
+  <div class="wrap">
+    <p class="eyebrow reveal">Ce que nous faisons</p>
+    <h2 class="section-title reveal" data-d="1">Sept expertises. Un seul objectif&nbsp;: <em class="gold">votre résultat.</em></h2>
+    <p class="section-lede reveal" data-d="2">Pas de packs, pas de formules toutes faites. Chaque mission est construite sur votre situation — voici le terrain que nous couvrons.</p>
+
+    <div class="exp-group reveal">
+      <p class="exp-group-label">Intelligence artificielle &amp; automatisation</p>
+
+      <div class="exp-item" id="agents-ia">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Agents IA sur mesure</span>
+          <span class="exp-hint">Un collaborateur numérique qui répond, qualifie et relance — 24h/24.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Vos demandes entrantes ne restent plus sans réponse. L'agent répond aux emails et aux messages, pose les bonnes questions, prépare les éléments de devis et passe la main à votre équipe au bon moment. Il travaille sur vos outils existants, avec vos règles — pas les siennes.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Agents IA">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Accueil et qualification des demandes entrantes</li>
+            <li>Réponses email et WhatsApp automatisées</li>
+            <li>Préparation de devis et de documents</li>
+            <li>Passage de relais à l'humain au bon moment</li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="exp-item" id="automatisation">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Automatisation des process</span>
+          <span class="exp-hint">Vos outils se parlent. La double saisie disparaît.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Facturation, planning, CRM, terrain&nbsp;: quand les outils ne communiquent pas, ce sont vos soirées qui compensent. Nous connectons l'existant — sans tout remplacer — pour que l'information circule seule et que les relances partent sans vous.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Automatisation">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Synchronisation facturation, planning et CRM</li>
+            <li>Relances et suivis automatisés</li>
+            <li>Tableaux de bord alimentés sans saisie</li>
+            <li>Alertes sur ce qui demande une vraie décision</li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="exp-item" id="formation">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Formation IA</span>
+          <span class="exp-hint">Vos équipes autonomes — sur vos cas, pas sur des démos.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Une demi-journée ou une journée dans vos locaux ou en visio, construite sur vos documents, vos clients, vos outils. L'équipe repart avec des procédures prêtes à l'emploi — pas avec des généralités sur l'IA.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Formation IA">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Ateliers pratiques sur vos propres outils</li>
+            <li>Cas d'usage propres à votre métier</li>
+            <li>Prompts et procédures prêts à l'emploi</li>
+            <li>Plan d'adoption pour toute l'équipe</li>
+          </ul>
+        </div></div></div>
+      </div>
+    </div>
+
+    <div class="exp-group reveal">
+      <p class="exp-group-label">Acquisition &amp; croissance</p>
+
+      <div class="exp-item" id="sites-web">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Sites web nouvelle génération</span>
+          <span class="exp-hint">La qualité d'une grande agence — sans ses délais ni sa facture.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">L'IA compresse le temps de production&nbsp;; nous le réinvestissons dans ce qui compte&nbsp;: votre message, votre référencement local, la transformation des visiteurs en demandes. Résultat&nbsp;: un site au niveau des meilleures références du marché, livré en semaines — pas en mois.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Site web">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Design moderne, animations soignées</li>
+            <li>Textes pensés pour vos clients, pas pour vous</li>
+            <li>Référencement local intégré dès la conception</li>
+            <li>Formulaire et téléphone reliés à votre suivi</li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="exp-item" id="acquisition">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Visibilité &amp; prospection</span>
+          <span class="exp-hint">Être trouvé par les bons clients, au bon moment.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Référencement local, fiche Google, contenu, prospection email et LinkedIn&nbsp;: nous assemblons les canaux qui correspondent à votre métier et à votre zone — pour obtenir un flux régulier de demandes, pas un pic ponctuel.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Visibilité / prospection">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Référencement local et fiche Google optimisés</li>
+            <li>Contenu qui amène des demandes qualifiées</li>
+            <li>Prospection structurée par email et LinkedIn</li>
+            <li>Suivi automatisé des contacts entrants</li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="exp-item" id="strategie">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Stratégie commerciale</span>
+          <span class="exp-hint">Une offre claire, un prix défendu, un suivi tenu.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Nous commençons par chiffrer ce que la situation actuelle vous coûte chaque mois. Ensuite seulement, nous structurons l'offre, les prix, les trames d'appel et le suivi du portefeuille — pour que chaque proposition parte avec un vrai argument.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Stratégie commerciale">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Chiffrage du manque à gagner actuel</li>
+            <li>Structuration de l'offre et des prix</li>
+            <li>Trames d'appel et réponses aux objections</li>
+            <li>Pilotage du portefeuille de prospects</li>
+          </ul>
+        </div></div></div>
+      </div>
+    </div>
+
+    <div class="exp-group reveal">
+      <p class="exp-group-label">Immobilier</p>
+
+      <div class="exp-item" id="amo">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">AMO — Assistance à maîtrise d'ouvrage</span>
+          <span class="exp-hint">Votre représentant côté projet, de l'esquisse à la livraison.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Plus de dix ans d'expérience en VEFA et marchés publics, mis au service de vos opérations&nbsp;: pilotage, coordination des intervenants, suivi des étapes clés et défense de vos intérêts face aux promoteurs et aux entreprises.</p>
+            <a class="exp-cta" href="#contact" data-sujet="AMO Immobilier">Parler de ce sujet <span>→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Pilotage et coordination de projet</li>
+            <li>Interface promoteurs, entreprises, notaires</li>
+            <li>Suivi VEFA et levée des réserves</li>
+            <li>Sécurisation des étapes clés de l'opération</li>
+          </ul>
+        </div></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section edge">
+  <div class="wrap">
+    <p class="eyebrow reveal">L'avantage IA</p>
+    <h2 class="section-title on-dark reveal" data-d="1">Pourquoi nos délais ne ressemblent pas à ceux d'une <em class="gold">agence classique.</em></h2>
+    <div class="edge-grid reveal" data-d="2">
+      <div class="edge-cell">
+        <h3>L'IA produit, <em>l'humain décide.</em></h3>
+        <p>Nous utilisons l'IA pour produire — code, contenus, connexions entre outils. Les choix qui engagent votre entreprise restent humains&nbsp;: stratégie, message, arbitrages.</p>
+      </div>
+      <div class="edge-cell">
+        <h3>Vous payez l'expertise, <em>pas la répétition.</em></h3>
+        <p>Le budget d'une agence traditionnelle finance surtout des heures de production. L'IA les compresse. Ce que vous payez chez nous, c'est le diagnostic, la méthode et le résultat.</p>
+      </div>
+      <div class="edge-cell">
+        <h3>Livré, expliqué, <em>transféré.</em></h3>
+        <p>Chaque système est documenté et remis à votre équipe. Nous ne construisons pas de dépendance&nbsp;: vous restez propriétaire et autonome sur ce qui est installé.</p>
+      </div>
+    </div>
+    <p class="edge-note reveal" data-d="3">« Ce que nous installons chez nos clients, nous le pratiquons chez nous — ce site a été conçu et construit avec les mêmes méthodes. »</p>
+  </div>
+</section>
+
+<section class="section method" id="methode">
+  <div class="wrap">
+    <p class="eyebrow reveal">Comment nous travaillons</p>
+    <h2 class="section-title reveal" data-d="1">Aucun prix sur ce site. <em class="gold">C'est un choix.</em></h2>
+    <p class="section-lede reveal" data-d="2">Un forfait standard est toujours trop cher pour l'un et insuffisant pour l'autre. Chaque proposition est chiffrée après diagnostic — vous savez exactement ce que vous payez, et ce que ça doit rapporter.</p>
+    <div class="steps" id="steps">
+      <div class="steps-progress" id="stepsProgress"></div>
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Premier échange</h3>
+          <p>Vous appelez ou vous écrivez. Vingt minutes pour comprendre votre activité, votre situation et ce qui bloque. <strong>Sans engagement, sans script commercial.</strong></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Diagnostic chiffré</h3>
+          <p>Nous chiffrons ce que la situation actuelle vous coûte chaque mois&nbsp;: demandes perdues, heures de saisie, relances oubliées. <strong>C'est le point de départ de toute proposition.</strong></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Proposition sur mesure</h3>
+          <p>Un périmètre précis, un budget précis, un délai précis — construits sur votre cas. <strong>Pas de pack&nbsp;: vous ne payez que ce qui sert votre objectif.</strong></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Exécution &amp; transfert</h3>
+          <p>Nous livrons, nous formons, nous documentons. <strong>Votre équipe reste autonome</strong> sur tout ce qui a été installé.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section team" id="equipe">
+  <div class="wrap">
+    <p class="eyebrow reveal">Qui vous accompagne</p>
+    <h2 class="section-title on-dark reveal" data-d="1">Un binôme, <em class="gold">deux métiers.</em></h2>
+    <div class="team-grid">
+      <div class="team-card reveal" data-d="2">
+        <div class="team-avatar">JC</div>
+        <h3>Jennifer Carrolo</h3>
+        <p class="team-role">Cofondatrice · Direction commerciale &amp; AMO</p>
+        <p>Votre interlocutrice de bout en bout&nbsp;: elle cadre le besoin, construit la proposition et suit chaque mission jusqu'au résultat. Plus de dix ans d'expérience en VEFA et marchés publics — elle porte également l'activité AMO Immobilier du cabinet.</p>
+      </div>
+      <div class="team-side">
+        <div class="team-mini reveal" data-d="3">
+          <h4>Mateusz</h4>
+          <span>Cofondateur · Direction technique &amp; IA</span>
+          <p>Conçoit et construit les systèmes&nbsp;: agents IA, automatisations, sites, référencement. Il intervient en coulisses, sur chaque mission.</p>
+        </div>
+        <div class="team-mini reveal" data-d="4">
+          <h4>Une règle commune</h4>
+          <span>Zéro promesse gratuite</span>
+          <p>Nous ne publions aucun chiffre de résultat que nous ne pouvons pas prouver, et nous n'en promettons aucun que nous ne pouvons pas tenir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <p class="eyebrow reveal">Questions fréquentes</p>
+    <h2 class="section-title reveal" data-d="1">Ce qu'on nous demande <em class="gold">avant d'appeler.</em></h2>
+    <div class="faq-list reveal" data-d="2">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Pourquoi n'y a-t-il aucun prix sur ce site&nbsp;?<span class="chev"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Parce qu'un tarif affiché sans contexte ne veut rien dire&nbsp;: le même système n'a pas la même valeur pour une entreprise de 2 personnes et pour une équipe de 30. Chaque proposition est chiffrée après diagnostic, avec le détail de ce qu'elle couvre — et de ce qu'elle doit vous rapporter.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Travaillez-vous avec les petites structures&nbsp;?<span class="chev"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Oui — c'est notre terrain&nbsp;: artisans, indépendants, TPE et PME. Nos systèmes sont dimensionnés pour des équipes de 1 à 50 personnes, pas pour des grands groupes.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Faut-il changer d'outils&nbsp;?<span class="chev"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Non. Nous partons de votre existant — facturation, planning, CRM, site — et nous le connectons. Un outil n'est remplacé que s'il bloque réellement le résultat visé.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Sous quel délai voit-on un effet&nbsp;?<span class="chev"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Ça dépend du levier, et nous vous le disons clairement avant de commencer. Une automatisation ou un agent IA produit son effet dès la mise en service. La visibilité — référencement, contenu — se construit sur plusieurs mois. Nous ne promettons jamais de délai que le levier ne permet pas.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Où intervenez-vous&nbsp;?<span class="chev"></span></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Partout en France, à distance. En présentiel en Île-de-France, notamment pour les formations et l'AMO Immobilier.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Parlons-en</p>
+    <h2 class="section-title on-dark reveal" data-d="1">Un projet, une question&nbsp;? <em class="gold">Appelez.</em></h2>
+    <div class="contact-grid">
+      <div class="reveal" data-d="2">
+        <a class="contact-tel" href="tel:+33665704793">
+          <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+          +33&nbsp;6&nbsp;65&nbsp;70&nbsp;47&nbsp;93
+        </a>
+        <div class="contact-meta">
+          <p>En direct, sans standard. Si nous sommes en mission, laissez un message&nbsp;: nous rappelons.</p>
+          <p>Par écrit&nbsp;: <a href="mailto:contact@aceconseil.co">contact@aceconseil.co</a> ou le formulaire ci-contre — réponse sous un jour ouvré.</p>
+        </div>
+      </div>
+      <form class="form-card reveal" data-d="3" id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-nom">Nom *</label><input id="f-nom" name="nom" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-societe">Société</label><input id="f-societe" name="societe" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="f-sujet">Votre besoin</label>
+            <select id="f-sujet" name="sujet">
+              <option>Agents IA</option>
+              <option>Automatisation</option>
+              <option>Site web</option>
+              <option>Visibilité / prospection</option>
+              <option>Stratégie commerciale</option>
+              <option>Formation IA</option>
+              <option>AMO Immobilier</option>
+              <option>Autre / je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="field full"><label for="f-msg">Votre situation, en quelques lignes *</label><textarea id="f-msg" name="message" required></textarea></div>
+          <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off">
+          <button class="btn btn-gold" type="submit" id="formBtn" style="justify-self:start;border:0;cursor:pointer;font-family:inherit">Envoyer ma demande
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-status" id="formStatus" role="status"></p>
+          <p class="form-note">En envoyant ce formulaire, vous acceptez d'être recontacté au sujet de votre demande. Rien d'autre.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="ACE Conseil">
+      <span class="logo-ace" style="font-size:1.15rem">ACE</span><span class="logo-sep" style="height:15px"></span><span class="logo-conseil" style="font-size:.62rem">Conseil</span>
+    </a>
+    <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
+    <nav class="footer-links">
+      <a href="tel:+33665704793">06 65 70 47 93</a>
+      <a href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>
+      <a href="/mentions-legales">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* ============================================================
+     FORMULAIRE — brancher ici le webhook Make.com (module
+     "Custom webhook") qui pousse vers Airtable + notification.
+     Tant que la constante est vide, le formulaire bascule sur
+     un email pré-rempli vers contact@aceconseil.co (mailto).
+     ============================================================ */
+  var WEBHOOK_URL = "";
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* nav */
+  var nav = document.getElementById("nav");
+  var onScrollNav = function(){ nav.classList.toggle("scrolled", window.scrollY > 40); };
+  window.addEventListener("scroll", onScrollNav, {passive:true}); onScrollNav();
+
+  /* burger */
+  var burger = document.getElementById("burger");
+  var menu = document.getElementById("mobileMenu");
+  var toggleMenu = function(force){
+    var open = typeof force === "boolean" ? force : !menu.classList.contains("open");
+    menu.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    if(open){ menu.querySelectorAll("a").forEach(function(a,i){ a.style.transitionDelay = (0.06*i+0.05)+"s"; }); }
+  };
+  burger.addEventListener("click", function(){ toggleMenu(); });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ toggleMenu(false); }); });
+
+  /* reveals */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* rotator */
+  var rot = document.getElementById("rotator");
+  if(rot && !reduced){
+    var words = rot.querySelectorAll("span"), wi = 0;
+    setInterval(function(){
+      words[wi].classList.remove("on");
+      wi = (wi+1) % words.length;
+      words[wi].classList.add("on");
+    }, 2600);
+  }
+
+  /* marquee : duplication pour boucle continue */
+  var track = document.getElementById("marqueeTrack");
+  if(track){ track.innerHTML += track.innerHTML; }
+
+  /* expertises : un panneau ouvert à la fois */
+  var items = Array.prototype.slice.call(document.querySelectorAll(".exp-item"));
+  items.forEach(function(item){
+    var head = item.querySelector(".exp-head");
+    head.addEventListener("click", function(){
+      var wasOpen = item.classList.contains("open");
+      items.forEach(function(o){ o.classList.remove("open"); o.querySelector(".exp-head").setAttribute("aria-expanded","false"); });
+      if(!wasOpen){ item.classList.add("open"); head.setAttribute("aria-expanded","true"); }
+    });
+  });
+
+  /* CTA panneau -> préremplit le select du formulaire */
+  var sujet = document.getElementById("f-sujet");
+  document.querySelectorAll(".exp-cta").forEach(function(a){
+    a.addEventListener("click", function(){
+      var v = a.getAttribute("data-sujet");
+      if(sujet && v){
+        Array.prototype.forEach.call(sujet.options, function(o){ if(o.text.indexOf(v) === 0){ sujet.value = o.value || o.text; } });
+      }
+    });
+  });
+
+  /* FAQ */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    item.querySelector(".faq-q").addEventListener("click", function(){
+      var open = item.classList.toggle("open");
+      item.querySelector(".faq-q").setAttribute("aria-expanded", open);
+    });
+  });
+
+  /* méthode : progression de la ligne au scroll */
+  var steps = document.getElementById("steps");
+  var prog = document.getElementById("stepsProgress");
+  if(steps && prog && !reduced){
+    var onScrollSteps = function(){
+      var r = steps.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var p = Math.min(1, Math.max(0, (vh*0.72 - r.top) / r.height));
+      prog.style.height = (p * (r.height - 20)) + "px";
+      steps.querySelectorAll(".step").forEach(function(s){
+        var sr = s.getBoundingClientRect();
+        s.classList.toggle("passed", sr.top < vh*0.72);
+      });
+    };
+    window.addEventListener("scroll", onScrollSteps, {passive:true}); onScrollSteps();
+  }
+
+  /* lien actif dans la nav */
+  var sections = ["expertises","methode","equipe","faq","contact"];
+  var navLinks = document.querySelectorAll(".nav-links a");
+  var ioNav = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        navLinks.forEach(function(l){ l.classList.toggle("active", l.getAttribute("href") === "#"+e.target.id); });
+      }
+    });
+  }, {rootMargin:"-45% 0px -50% 0px"});
+  sections.forEach(function(id){ var el = document.getElementById(id); if(el){ ioNav.observe(el); } });
+
+  /* formulaire */
+  var form = document.getElementById("contactForm");
+  var btn = document.getElementById("formBtn");
+  var status = document.getElementById("formStatus");
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    if(form.site_web.value){ return; } /* honeypot */
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    var data = {
+      nom: form.nom.value.trim(),
+      societe: form.societe.value.trim(),
+      email: form.email.value.trim(),
+      telephone: form.telephone.value.trim(),
+      sujet: form.sujet.value,
+      message: form.message.value.trim(),
+      source: "aceconseil.co",
+      date: new Date().toISOString()
+    };
+    if(!WEBHOOK_URL){
+      var body = "Nom : " + data.nom + "%0D%0ASociété : " + data.societe + "%0D%0ATéléphone : " + data.telephone + "%0D%0ABesoin : " + data.sujet + "%0D%0A%0D%0A" + encodeURIComponent(data.message);
+      window.location.href = "mailto:contact@aceconseil.co?subject=" + encodeURIComponent("[Site] " + data.sujet + " — " + data.nom) + "&body=" + body;
+      return;
+    }
+    btn.disabled = true; btn.style.opacity = ".6";
+    status.className = "form-status";
+    fetch(WEBHOOK_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
+      .then(function(r){
+        if(!r.ok){ throw new Error(r.status); }
+        status.textContent = "Demande envoyée. Nous revenons vers vous sous un jour ouvré.";
+        status.className = "form-status ok";
+        form.reset();
+      })
+      .catch(function(){
+        status.textContent = "L'envoi n'a pas abouti. Appelez-nous au 06 65 70 47 93 ou écrivez à contact@aceconseil.co.";
+        status.className = "form-status err";
+      })
+      .then(function(){ btn.disabled = false; btn.style.opacity = "1"; });
+  });
+})();
+</script>
+</body>
+</html>
