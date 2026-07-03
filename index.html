@@ -94,17 +94,29 @@ em.gold{font-style:italic;color:var(--gold)}
   radial-gradient(44vw 38vw at 8% 92%,rgba(36,53,88,.85),transparent 60%);pointer-events:none;animation:glowDrift 18s ease-in-out infinite alternate}
 .hero::after{content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
 .hero .wrap{position:relative;z-index:2;width:min(1760px,94%)}
+.hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(620px 420px at var(--mx,72%) var(--my,32%),rgba(201,162,77,.09),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(40px,5vw,90px);align-items:center}
 .hero-eyebrow{opacity:0;animation:rise .9s var(--ease) .15s forwards}
-.hero h1{font-size:clamp(2.6rem,10.2vw,12.5rem);font-weight:600;margin:18px 0 0;max-width:none;line-height:1.04;letter-spacing:-.02em}
-.hero h1 .l{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
-.hero h1 .l:nth-child(2){text-align:right}
-.hero h1 .li{display:block;transform:translateY(118%);animation:lineUp 1.05s var(--ease) forwards}
-.hero h1 .l:nth-child(1) .li{animation-delay:.2s}
-.hero h1 .l:nth-child(2) .li{animation-delay:.38s}
-.hero h1 .l:nth-child(3) .li{animation-delay:.56s}
+.hero h1{font-size:clamp(2.6rem,4.8vw,4.9rem);font-weight:600;margin:26px 0 0;max-width:none;line-height:1.1;letter-spacing:-.015em}
+.hero h1 .l{display:block}
+.hero h1 .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(22px);animation:wordIn .8s var(--ease) forwards;animation-delay:var(--d,.3s)}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--gold);position:relative;white-space:nowrap}
-.hero h1 em::after{content:"";position:absolute;left:0;bottom:.05em;height:.045em;min-height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:draw 1.1s var(--ease) 1.5s forwards}
-.hero-sub{max-width:60ch;font-size:clamp(1.05rem,1.3vw,1.32rem);color:var(--muted-light);margin-top:28px;opacity:0;animation:rise .9s var(--ease) .9s forwards}
+.hero h1 em::after{content:"";position:absolute;left:0;bottom:.04em;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:draw 1s var(--ease) 1.35s forwards}
+.hero-sub{max-width:54ch;font-size:clamp(1.05rem,1.25vw,1.25rem);color:var(--muted-light);margin-top:28px;opacity:0;animation:rise .9s var(--ease) 1s forwards}
+/* fil d'activité : un système ACE au travail */
+.hero-visual{opacity:0;animation:rise 1s var(--ease) 1.15s forwards}
+.live-card{background:rgba(36,53,88,.35);border:1px solid rgba(201,162,77,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:28px 30px 20px;width:min(470px,100%);justify-self:end;margin-left:auto}
+.live-title{display:flex;align-items:center;gap:11px;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.live-pulse{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative}
+.live-pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--gold);animation:pulse 2.2s var(--ease) infinite}
+.live-row{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid rgba(254,253,251,.07);opacity:.14;transform:translateX(-8px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.live-row.on{opacity:1;transform:none}
+.live-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:7px}
+.live-row.on .live-dot{animation:dotPing .9s var(--ease)}
+.live-row strong{display:block;font-weight:500;font-size:.95rem;color:var(--cream)}
+.live-row span:not(.live-dot){font-size:.82rem;color:var(--muted-light)}
+.live-note{font-size:.74rem;color:var(--muted);margin-top:14px}
+@keyframes dotPing{0%{box-shadow:0 0 0 0 rgba(201,162,77,.55)}100%{box-shadow:0 0 0 14px rgba(201,162,77,0)}}
 .rotator{display:inline-block;position:relative;color:var(--gold-light);font-weight:400;min-width:14.5em;vertical-align:bottom}
 .rotator span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(10px);transition:.5s var(--ease)}
 .rotator span.on{opacity:1;transform:none;position:relative}
@@ -119,7 +131,7 @@ em.gold{font-style:italic;color:var(--gold)}
 .hero-foot{margin-top:44px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);opacity:0;animation:rise .9s var(--ease) 1.15s forwards}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @keyframes draw{to{transform:scaleX(1)}}
-@keyframes lineUp{to{transform:none}}
+@keyframes wordIn{to{opacity:1;filter:blur(0);transform:none}}
 @keyframes glowDrift{to{transform:translate3d(3%,-2.5%,0) scale(1.05)}}
 
 /* ---------- marquee ---------- */
@@ -279,6 +291,8 @@ em.gold{font-style:italic;color:var(--gold)}
 @media(max-width:960px){
   .exp-body,.team-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
   .edge-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
 }
 @media(max-width:860px){
   .nav-links,.nav .nav-tel{display:none}
@@ -294,9 +308,10 @@ em.gold{font-style:italic;color:var(--gold)}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   html{scroll-behavior:auto}
-  .hero-eyebrow,.hero h1 .l,.hero-sub,.hero-ctas,.hero-foot{opacity:1;animation:none}
-  .hero h1 .li{transform:none;animation:none}
+  .hero-eyebrow,.hero-sub,.hero-ctas,.hero-foot,.hero-visual{opacity:1;animation:none}
+  .hero h1 .w{opacity:1;filter:none;transform:none;animation:none}
   .hero::before{animation:none}
+  .live-row{opacity:1;transform:none}
   .reveal{opacity:1;transform:none}
 }
 </style>
@@ -338,12 +353,15 @@ em.gold{font-style:italic;color:var(--gold)}
 </div>
 
 <header class="hero" id="top">
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
   <div class="wrap">
+    <div class="hero-grid">
+      <div>
     <p class="eyebrow hero-eyebrow">Conseil · Automatisation · Intelligence artificielle</p>
     <h1>
-      <span class="l"><span class="li">Plus de clients.</span></span>
-      <span class="l"><span class="li">Plus de temps.</span></span>
-      <span class="l"><span class="li"><em>Enfin les deux.</em></span></span>
+      <span class="l"><span class="w" style="--d:.2s">Plus</span> <span class="w" style="--d:.27s">de</span> <span class="w" style="--d:.34s">clients.</span></span>
+      <span class="l"><span class="w" style="--d:.48s">Plus</span> <span class="w" style="--d:.55s">de</span> <span class="w" style="--d:.62s">temps.</span></span>
+      <span class="l"><em><span class="w" style="--d:.78s">Enfin</span> <span class="w" style="--d:.85s">les</span> <span class="w" style="--d:.92s">deux.</span></em></span>
     </h1>
     <p class="hero-sub">ACE Conseil installe dans les TPE, artisans et PME des systèmes qui <span class="rotator" id="rotator"><span class="on">répondent à vos clients</span><span>relancent vos devis</span><span>remplissent votre agenda</span><span>font votre suivi commercial</span></span> pendant que vous travaillez.</p>
     <div class="hero-ctas">
@@ -354,6 +372,19 @@ em.gold{font-style:italic;color:var(--gold)}
       <a class="btn btn-ghost" href="#contact">Décrire mon projet
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
+    </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="live-card" id="liveFeed">
+          <p class="live-title"><span class="live-pulse"></span>Pendant que vous travaillez</p>
+          <div class="live-row"><span class="live-dot"></span><div><strong>Nouvelle demande reçue</strong><span>Formulaire du site · 22 h 41</span></div></div>
+          <div class="live-row"><span class="live-dot"></span><div><strong>Demande qualifiée</strong><span>Activité, besoin et urgence identifiés</span></div></div>
+          <div class="live-row"><span class="live-dot"></span><div><strong>Réponse envoyée</strong><span>Personnalisée, en votre nom</span></div></div>
+          <div class="live-row"><span class="live-dot"></span><div><strong>Rendez-vous proposé</strong><span>Trois créneaux libres de votre agenda</span></div></div>
+          <div class="live-row"><span class="live-dot"></span><div><strong>Relance programmée</strong><span>Sans réponse sous 3 jours, elle part seule</span></div></div>
+          <p class="live-note">Scénario illustratif&nbsp;: chaque système est construit sur vos outils, avec vos règles.</p>
+        </div>
+      </div>
     </div>
     <p class="hero-foot">Cabinet B2B · Intervention France entière &amp; international</p>
   </div>
@@ -809,6 +840,42 @@ em.gold{font-style:italic;color:var(--gold)}
       wi = (wi+1) % words.length;
       words[wi].classList.add("on");
     }, 2600);
+  }
+
+  /* hero : halo qui suit le curseur (souris uniquement) */
+  var heroEl = document.querySelector(".hero");
+  var glowEl = document.getElementById("heroGlow");
+  if(heroEl && glowEl && !reduced && window.matchMedia("(pointer:fine)").matches){
+    heroEl.addEventListener("pointermove", function(e){
+      var hr = heroEl.getBoundingClientRect();
+      glowEl.style.setProperty("--mx", ((e.clientX - hr.left) / hr.width * 100).toFixed(1) + "%");
+      glowEl.style.setProperty("--my", ((e.clientY - hr.top) / hr.height * 100).toFixed(1) + "%");
+    }, {passive:true});
+  }
+
+  /* hero : fil d'activité, les étapes s'allument en boucle */
+  var feed = document.getElementById("liveFeed");
+  if(feed){
+    var rows = feed.querySelectorAll(".live-row");
+    if(reduced){
+      rows.forEach(function(r2){ r2.classList.add("on"); });
+    } else {
+      var fi = 0;
+      var feedTick = function(){
+        if(fi < rows.length){
+          rows[fi].classList.add("on");
+          fi++;
+          setTimeout(feedTick, 1500);
+        } else {
+          setTimeout(function(){
+            rows.forEach(function(r2){ r2.classList.remove("on"); });
+            fi = 0;
+            setTimeout(feedTick, 800);
+          }, 3200);
+        }
+      };
+      setTimeout(feedTick, 1400);
+    }
   }
 
   /* marquee : duplication pour boucle continue */
