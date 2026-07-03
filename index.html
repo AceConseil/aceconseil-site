@@ -205,6 +205,36 @@ em.gold{font-style:italic;color:var(--gold)}
 .edge-cell p{font-size:.96rem;color:var(--muted-light)}
 .edge-note{margin-top:44px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--gold-light);max-width:56ch}
 
+/* ---------- preuves ---------- */
+.proof{background:var(--cream)}
+.proof-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,4.5vw,72px);margin-top:64px;align-items:start}
+.calc-card{background:var(--navy-deep);color:var(--cream);border:1px solid rgba(201,162,77,.35);padding:clamp(30px,3.4vw,46px);position:relative;overflow:hidden}
+.calc-card::before{content:"";position:absolute;top:-140px;right:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.13),transparent 70%);pointer-events:none}
+.calc-card h3{font-size:1.45rem;max-width:24ch;position:relative;z-index:1}
+.calc-field{margin-top:24px;position:relative;z-index:1}
+.calc-field label{display:flex;justify-content:space-between;align-items:baseline;gap:18px;font-size:.9rem;color:var(--muted-light)}
+.calc-field output{font-weight:600;color:var(--gold-light);white-space:nowrap;font-size:.95rem}
+.calc-field input[type=range]{width:100%;margin-top:10px;accent-color:var(--gold);cursor:pointer;height:22px}
+.calc-result{margin-top:30px;padding-top:24px;border-top:1px solid rgba(201,162,77,.25);position:relative;z-index:1}
+.calc-result-label{font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.calc-num{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,3.6vw,3.2rem);font-weight:700;color:var(--gold);line-height:1.1;margin-top:10px}
+.calc-note{font-size:.88rem;color:var(--muted-light);margin-top:12px;max-width:46ch}
+.calc-card .btn{margin-top:22px;position:relative;z-index:1}
+.ba-head{font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px}
+.ba-head::after{content:"";flex:1;height:1px;background:var(--border)}
+.ba{padding:24px 0;border-bottom:1px solid var(--border)}
+.ba-avant,.ba-apres{display:flex;gap:12px;font-size:.98rem;max-width:52ch}
+.ba-avant{color:var(--muted)}
+.ba-avant::before{content:"✕";flex:none;opacity:.65}
+.ba-apres{color:var(--navy);margin-top:9px}
+.ba-apres::before{content:"→";flex:none;color:var(--gold);font-weight:500}
+.pledges{margin-top:70px}
+.pledges-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:26px}
+.pledge h3{font-size:1.12rem;margin-bottom:10px}
+.pledge p{font-size:.92rem;color:var(--muted)}
+@media(max-width:960px){.proof-grid{grid-template-columns:1fr;gap:40px}.pledges-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.pledges-grid{grid-template-columns:1fr}}
+
 /* ---------- méthode ---------- */
 .method{background:var(--cream-dark)}
 .steps{position:relative;margin-top:74px;display:grid;gap:0}
@@ -325,6 +355,7 @@ em.gold{font-style:italic;color:var(--gold)}
     </a>
     <ul class="nav-links">
       <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#preuves">Preuves</a></li>
       <li><a href="#methode">Méthode</a></li>
       <li><a href="#equipe">Équipe</a></li>
       <li><a href="#faq">Questions</a></li>
@@ -342,6 +373,7 @@ em.gold{font-style:italic;color:var(--gold)}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#expertises">Expertises</a>
+  <a href="#preuves">Preuves</a>
   <a href="#methode">Méthode</a>
   <a href="#equipe">Équipe</a>
   <a href="#faq">Questions</a>
@@ -631,6 +663,63 @@ em.gold{font-style:italic;color:var(--gold)}
   </div>
 </section>
 
+<section class="section proof" id="preuves">
+  <div class="wrap">
+    <p class="eyebrow reveal">Ce que vous y gagnez</p>
+    <h2 class="section-title reveal" data-d="1">Votre manque à gagner se calcule. <em class="gold">Faites le calcul.</em></h2>
+    <p class="section-lede reveal" data-d="2">Les agences avancent les chiffres de leurs autres clients. Nous préférons les vôtres&nbsp;: réglez les trois curseurs et regardez ce que l'attente coûte, dans votre réalité, pas dans celle d'un autre.</p>
+    <div class="proof-grid">
+      <div class="calc-card reveal" id="calc">
+        <h3>Ce que les demandes perdues vous coûtent</h3>
+        <div class="calc-field">
+          <label for="c-dem">Demandes sans réponse ou traitées trop tard, chaque semaine <output id="o-dem">3 demandes</output></label>
+          <input type="range" id="c-dem" min="0" max="15" step="1" value="3">
+        </div>
+        <div class="calc-field">
+          <label for="c-val">Valeur moyenne d'une vente ou d'une mission <output id="o-val">1 500 euros</output></label>
+          <input type="range" id="c-val" min="200" max="20000" step="100" value="1500">
+        </div>
+        <div class="calc-field">
+          <label for="c-conv">Sur dix demandes traitées à temps, combien signent&nbsp;? <output id="o-conv">3 sur 10</output></label>
+          <input type="range" id="c-conv" min="1" max="10" step="1" value="3">
+        </div>
+        <div class="calc-result">
+          <p class="calc-result-label">Chiffre d'affaires qui vous échappe, par an</p>
+          <p class="calc-num" id="calcNum" role="status">≈ 70 200 euros</p>
+          <p class="calc-note">Estimation faite avec vos réglages, pas avec les résultats d'un autre. Le premier appel sert à vérifier ce montant, poste par poste, avant toute proposition.</p>
+        </div>
+        <a class="btn btn-gold" href="#contact">Vérifier ce chiffre avec Jennifer
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="reveal" data-d="1">
+        <p class="ba-head">Ce qui change, concrètement</p>
+        <div class="ba">
+          <p class="ba-avant">Un devis part, puis silence. La relance attend un soir de libre, qui ne vient pas.</p>
+          <p class="ba-apres">Les relances partent seules, au bon moment, avec vos mots. Vous ne pensez plus à y penser.</p>
+        </div>
+        <div class="ba">
+          <p class="ba-avant">Les demandes du soir et du week-end attendent le lundi. Certaines ne rappellent jamais.</p>
+          <p class="ba-apres">Chaque demande reçoit une réponse qualifiée à toute heure, et vous retrouvez un dossier prêt.</p>
+        </div>
+        <div class="ba">
+          <p class="ba-avant">Facturation, planning, messagerie&nbsp;: trois outils, trois saisies, des soirées d'administratif.</p>
+          <p class="ba-apres">L'information circule seule entre vos outils. Vos soirées redeviennent à vous.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pledges reveal">
+      <p class="ba-head">Nos engagements, vérifiables dès le premier contact</p>
+      <div class="pledges-grid">
+        <div class="pledge"><h3>Le diagnostic d'abord</h3><p>Aucune proposition sans avoir mesuré, avec vous, ce que la situation actuelle vous coûte.</p></div>
+        <div class="pledge"><h3>Réponse sous un jour ouvré</h3><p>Y compris pour vous dire que nous ne sommes pas les bons. Vous ne restez jamais sans réponse.</p></div>
+        <div class="pledge"><h3>Vous restez propriétaire</h3><p>Systèmes, accès, documentation&nbsp;: tout ce qui est installé chez vous vous appartient.</p></div>
+        <div class="pledge"><h3>Ce site est la démonstration</h3><p>Conçu, rédigé et construit avec les méthodes que nous installons chez nos clients.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section method" id="methode">
   <div class="wrap">
     <p class="eyebrow reveal">Comment nous travaillons</p>
@@ -906,6 +995,24 @@ em.gold{font-style:italic;color:var(--gold)}
     });
   });
 
+  /* preuves : calculateur de manque à gagner, avec les chiffres du visiteur */
+  var calcBox = document.getElementById("calc");
+  if(calcBox){
+    var cDem = document.getElementById("c-dem"), cVal = document.getElementById("c-val"), cConv = document.getElementById("c-conv");
+    var oDem = document.getElementById("o-dem"), oVal = document.getElementById("o-val"), oConv = document.getElementById("o-conv");
+    var calcNum = document.getElementById("calcNum");
+    var fmt = function(n){ return n.toLocaleString("fr-FR"); };
+    var recalc = function(){
+      var d = +cDem.value, v = +cVal.value, c = +cConv.value;
+      oDem.textContent = d + (d > 1 ? " demandes" : " demande");
+      oVal.textContent = fmt(v) + " euros";
+      oConv.textContent = c + " sur 10";
+      calcNum.textContent = "≈ " + fmt(Math.round(d * 52 * (c / 10) * v)) + " euros";
+    };
+    [cDem, cVal, cConv].forEach(function(inp){ inp.addEventListener("input", recalc); });
+    recalc();
+  }
+
   /* CTA panneau -> préremplit le select du formulaire */
   var sujet = document.getElementById("f-sujet");
   document.querySelectorAll("[data-sujet]").forEach(function(a){
@@ -943,7 +1050,7 @@ em.gold{font-style:italic;color:var(--gold)}
   }
 
   /* lien actif dans la nav */
-  var sections = ["expertises","methode","equipe","faq","contact"];
+  var sections = ["expertises","preuves","methode","equipe","faq","contact"];
   var navLinks = document.querySelectorAll(".nav-links a");
   var ioNav = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
