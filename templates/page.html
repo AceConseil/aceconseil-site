@@ -7,7 +7,7 @@
 <meta name="description" content="{{DESCRIPTION}}">
 <meta name="keywords" content="{{KEYWORDS}}">
 <link rel="canonical" href="{{CANONICAL}}">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{DESCRIPTION}}">
 <meta property="og:url" content="{{CANONICAL}}">
@@ -47,28 +47,30 @@ img{max-width:100%}
 .hero{background:var(--navy-deep);color:var(--cream);padding:clamp(60px,8vw,100px) 0}
 .eyebrow{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
-.hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.15;margin:22px 0 0;max-width:24ch}
-.hero-meta{margin-top:22px;font-size:.86rem;color:var(--muted-light);letter-spacing:.06em}
-.article{padding:clamp(60px,8vw,100px) 0 clamp(80px,10vw,120px)}
-.article-body{max-width:68ch;font-size:1.04rem}
-.article-body h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.65rem;line-height:1.25;margin:48px 0 16px}
-.article-body h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.25rem;margin:36px 0 12px}
-.article-body p{margin:16px 0;color:var(--navy);opacity:.87}
-.article-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold)}
-.article-body a:hover{color:var(--navy)}
-.article-body ul,.article-body ol{margin:16px 0 16px 22px}
-.article-body li{margin:8px 0;opacity:.87}
-.article-body strong{font-weight:500}
-.article-body blockquote{border-left:2px solid var(--gold);padding-left:18px;margin:24px 0;font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--navy-mid)}
-.article-body code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--cream-dark);padding:2px 6px;border-radius:4px}
-.article-body pre{background:var(--navy-deep);color:var(--cream);padding:18px;overflow-x:auto;margin:20px 0;border-radius:6px}
-.article-body pre code{background:none;padding:0;color:inherit}
-.article-foot{max-width:68ch;margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
-.back-link{font-size:.92rem;font-weight:500;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold);padding-bottom:3px}
-.back-link:hover{color:var(--navy)}
-.btn{display:inline-flex;align-items:center;gap:11px;padding:14px 26px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.94rem;background:var(--gold);color:var(--navy-deep);transition:background .3s}
-.btn:hover{background:var(--gold-light)}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.12;margin:22px 0 0;max-width:22ch}
+.hero-lede{max-width:56ch;font-size:1.08rem;color:var(--muted-light);margin-top:20px}
+.page-main{padding:clamp(60px,8vw,100px) 0 clamp(70px,9vw,110px)}
+.page-body{max-width:68ch;font-size:1.04rem}
+.page-body h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.7rem;line-height:1.25;margin:52px 0 16px}
+.page-body h2:first-child{margin-top:0}
+.page-body h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.28rem;margin:38px 0 12px}
+.page-body p{margin:16px 0;color:var(--navy);opacity:.87}
+.page-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold)}
+.page-body a:hover{color:var(--navy)}
+.page-body ul,.page-body ol{margin:16px 0 16px 22px}
+.page-body li{margin:8px 0;opacity:.87}
+.page-body strong{font-weight:500}
+.page-body blockquote{border-left:2px solid var(--gold);padding-left:18px;margin:24px 0;font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--navy-mid)}
+.cta{background:var(--navy-deep);color:var(--cream);padding:clamp(56px,7vw,84px) 0}
+.cta h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);max-width:22ch}
+.cta p{color:var(--muted-light);margin-top:14px;max-width:54ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:15px 28px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.95rem;transition:background .3s,border-color .3s,color .3s}
 .btn svg{width:15px;height:15px}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{border:1px solid rgba(254,253,251,.28);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
 .footer{background:var(--navy-deep);color:var(--muted-light);border-top:1px solid rgba(201,162,77,.14);padding:44px 0}
 .footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
 .footer-legal{font-size:.82rem}
@@ -86,7 +88,7 @@ img{max-width:100%}
       <span class="logo-ace">ACE</span><span class="logo-sep"></span><span class="logo-conseil">Conseil</span>
     </a>
     <div class="nav-right">
-      <a class="nav-back" href="/blog">← Tous les articles</a>
+      <a class="nav-back" href="/">← Retour à l'accueil</a>
       <a class="nav-tel" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
         <span class="tel-label">Appeler</span>
@@ -97,25 +99,35 @@ img{max-width:100%}
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow">Blog · ACE Conseil</p>
+    <p class="eyebrow">{{EYEBROW}}</p>
     <h1>{{TITLE}}</h1>
-    <p class="hero-meta"><time datetime="{{DATE_ISO}}">{{DATE_FR}}</time> · ACE Conseil</p>
+    <p class="hero-lede">{{LEDE}}</p>
   </div>
 </header>
 
-<main class="article">
+<main class="page-main">
   <div class="wrap">
-    <div class="article-body">
+    <div class="page-body">
 {{CONTENT}}
     </div>
-    <div class="article-foot">
-      <a class="back-link" href="/blog">← Tous les articles</a>
-      <a class="btn" href="/#contact">Parler de votre situation
+  </div>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Parlons de votre situation.</h2>
+    <p>Vingt minutes avec Jennifer Carrolo, cofondatrice, pour comprendre votre activité et ce qui bloque. Sans engagement, sans script commercial.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span class="tel-label">Nous appeler</span>
+      </a>
+      <a class="btn btn-ghost" href="/#contact">Passer par le formulaire
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </div>
-</main>
+</section>
 
 <footer class="footer">
   <div class="wrap">
@@ -124,7 +136,6 @@ img{max-width:100%}
     </a>
     <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
     <nav class="footer-links">
-      <a href="/blog">Blog</a>
       <a href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler"><span class="tel-label">Appeler</span></a>
       <a href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>
       <a href="/mentions-legales">Mentions légales</a>
