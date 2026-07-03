@@ -1,5 +1,5 @@
 ---
-title: Stratégie commerciale : offre, prix et suivi pour PME
+title: Stratégie commerciale pour PME : offre, prix, suivi
 description: Chiffrer ce que la situation vous coûte, structurer l'offre et les prix, outiller les appels et le suivi. La vente comme système, pas comme talent.
 slug: strategie-commerciale
 eyebrow: Stratégie

@@ -1,5 +1,5 @@
 ---
-title: Automatisation des process pour TPE, artisans et PME
+title: Automatisation des process : TPE, artisans et PME
 description: Facturation, planning, CRM, messagerie : vos outils se parlent, les relances partent seules et vos soirées ne servent plus à ressaisir.
 slug: automatisation
 eyebrow: Automatisation des process
