@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation IA pour vos équipes, sur vos cas réels · ACE Conseil</title>
+<meta name="description" content="Une demi-journée ou une journée, dans vos locaux ou en visio, construite sur vos documents et vos outils. L'équipe repart autonome, procédures en main.">
+<meta name="keywords" content="formation IA entreprise, formation intelligence artificielle PME, atelier IA équipe, prompts métier, adoption IA">
+<link rel="canonical" href="https://aceconseil.co/formation-ia">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Formation IA pour vos équipes, sur vos cas réels">
+<meta property="og:description" content="Une demi-journée ou une journée, dans vos locaux ou en visio, construite sur vos documents et vos outils. L'équipe repart autonome, procédures en main.">
+<meta property="og:url" content="https://aceconseil.co/formation-ia">
+<meta property="og:image" content="https://aceconseil.co/og-image.png">
+<link rel="alternate" type="application/rss+xml" title="Blog ACE Conseil" href="https://aceconseil.co/blog/feed.xml">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231B2A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23C9A24D' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Service","name":"Formation IA pour vos équipes, sur vos cas réels","description":"Une demi-journée ou une journée, dans vos locaux ou en visio, construite sur vos documents et vos outils. L'équipe repart autonome, procédures en main.","url":"https://aceconseil.co/formation-ia","areaServed":"FR","provider":{"@type":"Organization","name":"ACE Conseil","url":"https://aceconseil.co","telephone":"+33665704793"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://aceconseil.co/"},{"@type":"ListItem","position":2,"name":"Formation IA pour vos équipes, sur vos cas réels","item":"https://aceconseil.co/formation-ia"}]}]</script>
+<style>
+:root{
+  --navy:#1B2A4A; --navy-deep:#111D33; --navy-mid:#243558;
+  --gold:#C9A24D; --gold-light:#E2C47A; --gold-pale:rgba(201,162,77,.12);
+  --cream:#FEFDFB; --cream-dark:#F4F1EB;
+  --muted:#7A8499; --muted-light:#A8B0C0;
+  --border:rgba(27,42,74,.1); --border-gold:rgba(201,162,77,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--navy-deep)}
+a{color:inherit}
+img{max-width:100%}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.nav{background:var(--navy-deep);height:76px;display:flex;align-items:center}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--cream)}
+.logo-ace{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em}
+.logo-sep{width:1px;height:20px;background:var(--gold);align-self:center}
+.logo-conseil{font-size:.72rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-back{font-size:.88rem;color:var(--muted-light);text-decoration:none;transition:color .3s}
+.nav-back:hover{color:var(--gold-light)}
+.nav-tel{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:500;font-size:.88rem;color:var(--navy-deep);background:var(--gold);padding:10px 18px;border-radius:100px;transition:background .3s}
+.nav-tel:hover{background:var(--gold-light)}
+.nav-tel svg{width:14px;height:14px}
+.hero{background:var(--navy-deep);color:var(--cream);padding:clamp(60px,8vw,100px) 0}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.12;margin:22px 0 0;max-width:22ch}
+.hero-lede{max-width:56ch;font-size:1.08rem;color:var(--muted-light);margin-top:20px}
+.hero-grid{display:block}
+.hero-grid.has-fx{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,4vw,72px);align-items:center}
+@media(max-width:960px){.hero-grid.has-fx{grid-template-columns:1fr}.fx-slot{display:none}}
+
+/* ---------- signatures animées (une par page, CSS/JS pur) ---------- */
+.fx{background:rgba(36,53,88,.35);border:1px solid rgba(201,162,77,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:26px 28px;width:min(440px,100%);margin-left:auto}
+.fx-title{display:flex;align-items:center;gap:11px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fx-live{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative}
+.fx-live::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--gold);animation:fxPulse 2.2s ease-in-out infinite}
+.fx-note{font-size:.74rem;color:var(--muted);margin-top:16px}
+@keyframes fxPulse{0%{transform:scale(.7);opacity:.8}70%,100%{transform:scale(1.4);opacity:0}}
+
+/* agents-ia : l'agent tape sa réponse */
+.fx-msg{border:1px solid rgba(254,253,251,.12);padding:12px 14px;font-size:.88rem;color:var(--cream);max-width:92%;margin-top:10px;border-radius:12px}
+.fx-msg strong{display:block;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-light);margin-bottom:6px}
+.fx-in{background:rgba(254,253,251,.05);border-top-left-radius:2px}
+.fx-out{background:var(--gold-pale);border:1px solid var(--border-gold);border-top-right-radius:2px;margin-left:8%}
+.fx-out strong{color:var(--gold-light)}
+.fx-caret{display:inline-block;width:2px;height:1em;background:var(--gold);vertical-align:-.15em;margin-left:2px;animation:fxCaret 1s steps(1) infinite}
+@keyframes fxCaret{50%{opacity:0}}
+
+/* automatisation : l'information circule entre les outils */
+.fx-node{display:inline-block;border:1px solid rgba(254,253,251,.16);padding:9px 16px;border-radius:100px;font-size:.86rem;color:var(--cream);animation:fxNode 4.8s ease-in-out infinite}
+.fx-node.n2{animation-delay:1.5s}
+.fx-node.n3{animation-delay:3s}
+@keyframes fxNode{0%,4%{border-color:rgba(254,253,251,.16);background:transparent}8%,30%{border-color:var(--gold);background:var(--gold-pale)}42%,100%{border-color:rgba(254,253,251,.16);background:transparent}}
+.fx-pipe{width:2px;height:30px;background:rgba(201,162,77,.25);margin:4px 0 4px 24px;position:relative;overflow:visible}
+.fx-pipe span{position:absolute;left:-3px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,162,77,.8);animation:fxDot 4.8s ease-in-out infinite}
+.fx-pipe.p2 span{animation-delay:1.5s}
+@keyframes fxDot{0%{top:-4px;opacity:0}4%{opacity:1}22%{top:26px;opacity:1}28%,100%{top:26px;opacity:0}}
+
+/* formation-ia : la check-list se coche */
+.fx-ck{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(254,253,251,.07);font-size:.9rem;color:var(--muted-light);transition:color .4s}
+.fx-ck::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:1px solid rgba(254,253,251,.25);margin-top:1px;transition:background .35s,border-color .35s;background:center/10px no-repeat}
+.fx-ck.done{color:var(--cream)}
+.fx-ck.done::before{background-color:var(--gold);border-color:var(--gold);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111D33' stroke-width='4'%3E%3Cpath d='M4 12l6 6L20 6'/%3E%3C/svg%3E")}
+
+/* sites-web : le site se construit sous vos yeux */
+.fx-browser{display:flex;gap:6px;padding:10px 12px;border:1px solid rgba(254,253,251,.12);border-bottom:0;border-radius:10px 10px 0 0;background:rgba(17,29,51,.6)}
+.fx-browser span{width:9px;height:9px;border-radius:50%;background:rgba(254,253,251,.18)}
+.fx-canvas{border:1px solid rgba(254,253,251,.12);border-radius:0 0 10px 10px;padding:18px;background:rgba(17,29,51,.4)}
+.fx-sk{border-radius:6px;background:rgba(254,253,251,.12);animation:fxSk 7s ease-in-out infinite;opacity:0}
+.fx-sk.sk1{height:10px;width:52%;animation-delay:.2s}
+.fx-sk.sk2{height:22px;width:84%;margin-top:14px;background:rgba(254,253,251,.2);animation-delay:1s}
+.fx-sk.sk3{height:9px;width:70%;margin-top:12px;animation-delay:1.8s}
+.fx-sk.sk4{height:9px;width:62%;margin-top:8px;animation-delay:2.2s}
+.fx-btn{display:inline-block;margin-top:16px;padding:9px 20px;border-radius:100px;background:var(--gold);color:var(--navy-deep);font-size:.82rem;font-weight:600;opacity:0;animation:fxBtn 7s ease-in-out infinite;animation-delay:3s}
+@keyframes fxSk{0%{opacity:0;transform:translateY(8px)}6%,80%{opacity:1;transform:none}92%,100%{opacity:0}}
+@keyframes fxBtn{0%{opacity:0;transform:scale(.85)}6%,14%{opacity:1;transform:scale(1.06)}18%,80%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}
+
+/* visibilite-prospection : radar local */
+.fx-radar-zone{position:relative;height:230px;overflow:hidden;border-radius:10px;border:1px solid rgba(254,253,251,.1);background:radial-gradient(circle at 50% 55%,rgba(36,53,88,.6),rgba(17,29,51,.4))}
+.fx-center{position:absolute;left:50%;top:55%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px rgba(201,162,77,.9)}
+.fx-ring{position:absolute;left:50%;top:55%;width:44px;height:44px;margin:-22px;border-radius:50%;border:1px solid var(--gold);opacity:0;animation:fxRing 4.2s ease-out infinite}
+.fx-ring.r2{animation-delay:1.4s}
+.fx-ring.r3{animation-delay:2.8s}
+@keyframes fxRing{0%{transform:scale(.4);opacity:.7}80%{opacity:.12}100%{transform:scale(5);opacity:0}}
+.fx-spot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--gold-light);opacity:.15;animation:fxSpot 4.2s ease-in-out infinite}
+.fx-spot.s1{left:22%;top:30%;animation-delay:.9s}
+.fx-spot.s2{left:74%;top:38%;animation-delay:1.5s}
+.fx-spot.s3{left:30%;top:76%;animation-delay:2.1s}
+.fx-spot.s4{left:66%;top:70%;animation-delay:2.7s}
+@keyframes fxSpot{0%,100%{opacity:.15;transform:scale(1)}12%,20%{opacity:1;transform:scale(1.5)}32%{opacity:.15;transform:scale(1)}}
+
+/* strategie-commerciale : le système qui monte */
+.fx-bargroup{display:flex;align-items:flex-end;gap:18px;height:170px;padding-top:8px}
+.fx-bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px}
+.fx-bar i{display:block;height:var(--h);border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--gold-light),rgba(201,162,77,.35));transform-origin:bottom;animation:fxBar 5.5s ease-in-out infinite}
+.fx-bar em{font-style:normal;font-size:.68rem;letter-spacing:.06em;color:var(--muted-light);text-align:center}
+.fx-bar:nth-child(2) i{animation-delay:.25s}
+.fx-bar:nth-child(3) i{animation-delay:.5s}
+.fx-bar:nth-child(4) i{animation-delay:.75s;background:linear-gradient(180deg,var(--gold),var(--gold-light))}
+@keyframes fxBar{0%{transform:scaleY(0)}14%,82%{transform:scaleY(1)}94%,100%{transform:scaleY(0)}}
+
+/* amo-immobilier : la frise des étapes clés */
+.fx-tl-wrap{position:relative;padding-left:26px}
+.fx-tl-bar{position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:rgba(201,162,77,.2)}
+.fx-tl-bar i{position:absolute;left:0;top:0;width:100%;height:0;background:var(--gold);animation:fxTl 6.5s ease-in-out infinite}
+@keyframes fxTl{0%{height:0}70%,88%{height:100%}100%{height:100%;opacity:0}}
+.fx-tl-step{position:relative;padding:9px 0;font-size:.88rem;color:var(--muted-light);animation:fxStep 6.5s ease-in-out infinite}
+.fx-tl-step::before{content:"";position:absolute;left:-23px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--navy-deep);border:1px solid rgba(201,162,77,.4);animation:fxStepDot 6.5s ease-in-out infinite;animation-delay:inherit}
+.fx-tl-step.t1{animation-delay:.2s}.fx-tl-step.t2{animation-delay:1.2s}.fx-tl-step.t3{animation-delay:2.2s}.fx-tl-step.t4{animation-delay:3.2s}.fx-tl-step.t5{animation-delay:4.2s}
+@keyframes fxStep{0%,3%{color:var(--muted-light)}8%,84%{color:var(--cream)}94%,100%{color:var(--muted-light)}}
+@keyframes fxStepDot{0%,3%{background:var(--navy-deep);border-color:rgba(201,162,77,.4)}8%,84%{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(201,162,77,.7)}94%,100%{background:var(--navy-deep)}}
+
+/* révélation au défilement (ajoutée par JS : sans JS, tout est visible) */
+.fx-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.8,.24,1),transform .7s cubic-bezier(.22,.8,.24,1)}
+.fx-reveal.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  .fx *,.fx::before,.fx::after,.fx-live::after{animation:none!important}
+  .fx-sk,.fx-btn{opacity:1;transform:none}
+  .fx-bar i{transform:none}
+  .fx-tl-bar i{height:100%}
+  .fx-tl-step{color:var(--cream)}
+  .fx-caret{display:none}
+  .fx-reveal{opacity:1;transform:none;transition:none}
+}
+.page-main{padding:clamp(60px,8vw,100px) 0 clamp(70px,9vw,110px)}
+.page-body{max-width:68ch;font-size:1.04rem}
+.page-body h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.7rem;line-height:1.25;margin:52px 0 16px}
+.page-body h2:first-child{margin-top:0}
+.page-body h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.28rem;margin:38px 0 12px}
+.page-body p{margin:16px 0;color:var(--navy);opacity:.87}
+.page-body a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold)}
+.page-body a:hover{color:var(--navy)}
+.page-body ul,.page-body ol{margin:16px 0 16px 22px}
+.page-body li{margin:8px 0;opacity:.87}
+.page-body strong{font-weight:500}
+.page-body blockquote{border-left:2px solid var(--gold);padding-left:18px;margin:24px 0;font-family:'Playfair Display',Georgia,serif;font-style:italic;color:var(--navy-mid)}
+.cta{background:var(--navy-deep);color:var(--cream);padding:clamp(56px,7vw,84px) 0}
+.cta h2{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);max-width:22ch}
+.cta p{color:var(--muted-light);margin-top:14px;max-width:54ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:11px;padding:15px 28px;border-radius:100px;text-decoration:none;font-weight:500;font-size:.95rem;transition:background .3s,border-color .3s,color .3s}
+.btn svg{width:15px;height:15px}
+.btn-gold{background:var(--gold);color:var(--navy-deep)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{border:1px solid rgba(254,253,251,.28);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light)}
+.footer{background:var(--navy-deep);color:var(--muted-light);border-top:1px solid rgba(201,162,77,.14);padding:44px 0}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.footer-legal{font-size:.82rem}
+.footer-links{display:flex;gap:26px;font-size:.85rem}
+.footer-links a{text-decoration:none;color:var(--muted-light);transition:color .3s}
+.footer-links a:hover{color:var(--gold-light)}
+@media(max-width:640px){.nav-back{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="ACE Conseil, retour à l'accueil">
+      <span class="logo-ace">ACE</span><span class="logo-sep"></span><span class="logo-conseil">Conseil</span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-back" href="index.html">← Retour à l'accueil</a>
+      <a class="nav-tel" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span class="tel-label">Appeler</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid has-fx">
+      <div>
+        <p class="eyebrow">Formation</p>
+        <h1>Formation IA pour vos équipes, sur vos cas réels</h1>
+        <p class="hero-lede">Pas de généralités sur l'intelligence artificielle : vos cas, vos outils, et des procédures prêtes à l'emploi dès le lendemain.</p>
+      </div>
+      <div class="fx-slot"><div class="fx" aria-hidden="true">
+  <p class="fx-title"><span class="fx-live"></span>Votre équipe repart avec</p>
+  <div class="fx-ck done">Prompts métier testés en séance</div>
+  <div class="fx-ck done">Procédures écrites, pas à pas</div>
+  <div class="fx-ck done">Limites claires : quoi confier, quoi vérifier</div>
+  <div class="fx-ck done">Plan d'adoption pour l'équipe</div>
+  <p class="fx-note">Mesuré au lundi suivant, pas à l'applaudimètre.</p>
+</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="page-main">
+  <div class="wrap">
+    <div class="page-body">
+<p>La plupart des formations à l'intelligence artificielle laissent les équipes exactement là où elles les ont prises : impressionnées, et démunies. Notre parti pris est inverse : une formation courte, construite sur votre entreprise, dont on mesure l'effet au lundi suivant.</p>
+<h2>Pourquoi les formations génériques ne changent rien</h2>
+<p>Une démonstration sur des exemples inventés ne survit pas au retour au bureau. Vos documents ne ressemblent pas à ceux de la démonstration, vos clients ne posent pas les questions du support de cours, et chacun retourne à ses habitudes en quelques jours. Le problème n'est pas la bonne volonté des équipes : c'est la distance entre l'exemple et le poste de travail. Nous supprimons cette distance en travaillant directement sur vos cas.</p>
+<h2>Une formation construite sur votre entreprise</h2>
+<p>Avant la session, nous préparons le terrain avec vous : vos documents types, vos demandes clients réelles (anonymisées si besoin), vos outils du quotidien. Le jour venu, chaque exercice part d'une situation que votre équipe connaît : répondre à cette demande, résumer ce dossier, préparer ce devis, rédiger ce compte rendu. La question n'est jamais « que sait faire l'IA ? » mais « que fait-on de mieux, chez vous, dès demain ? ».</p>
+<h2>Ce que votre équipe emporte</h2>
+<p>À la fin de la session, chacun repart avec du concret :</p>
+<ul>
+<li>des instructions prêtes à l'emploi, écrites pour vos cas et testées en séance,</li>
+<li>des procédures pas à pas pour les tâches récurrentes,</li>
+<li>les limites claires : ce qu'on confie à l'IA, ce qu'on ne lui confie pas, et comment vérifier,</li>
+<li>un plan d'adoption simple pour les semaines suivantes, avec un référent désigné.</li>
+</ul>
+<blockquote><p>Une formation réussie se mesure au lundi suivant : ce que l'équipe fait différemment, sans nous.</p></blockquote>
+<h2>À qui elle s'adresse</h2>
+<p>Au dirigeant qui veut comprendre ce que l'IA change réellement pour son métier, sans folklore. À l'assistanat et à l'administratif, qui gagnent le plus vite : courriers, comptes rendus, préparation de dossiers. Aux équipes terrain et commerciales, pour les réponses rapides et les devis. La session s'adapte au niveau réel des participants, y compris quand il est hétérogène : c'est le cas dans presque toutes les entreprises.</p>
+<h2>Les formats</h2>
+<p>Une demi-journée pour un périmètre resserré, une journée pour couvrir plusieurs postes. Dans vos locaux ou en visio, en présentiel en Île-de-France. Les groupes restent petits : l'objectif est que chacun manipule, pas que chacun écoute.</p>
+<h2>Et après</h2>
+<p>Notre règle vaut aussi pour la formation : vous restez autonomes. Les supports vous appartiennent, les procédures sont écrites, et vous n'avez pas besoin de nous pour continuer. Si la session révèle un chantier plus profond, par exemple une tâche entière à confier à <a href="agents-ia.html">un agent IA sur mesure</a>, nous vous le disons avec un chiffrage, et vous décidez.</p>
+<p>Pour cadrer une session, <a href="index.html#contact">écrivez-nous ou appelez-nous</a> : vingt minutes avec Jennifer Carrolo, cofondatrice, suffisent à définir le périmètre, le format et la date. Sans engagement.</p>
+    </div>
+  </div>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Parlons de votre situation.</h2>
+    <p>Vingt minutes avec Jennifer Carrolo, cofondatrice, pour comprendre votre activité et ce qui bloque. Sans engagement, sans script commercial.</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span class="tel-label">Nous appeler</span>
+      </a>
+      <a class="btn btn-ghost" href="index.html#contact">Passer par le formulaire
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="ACE Conseil">
+      <span class="logo-ace" style="font-size:1.15rem">ACE</span><span class="logo-sep" style="height:15px"></span><span class="logo-conseil" style="font-size:.62rem">Conseil</span>
+    </a>
+    <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
+    <nav class="footer-links">
+      <a href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler"><span class="tel-label">Appeler</span></a>
+      <a href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* Le numéro n'apparaît qu'au clic ; sans JavaScript le lien appelle directement. */
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.querySelectorAll("[data-tel-reveal]").forEach(function(a){
+    a.addEventListener("click", function(ev){
+      if(a.getAttribute("data-revealed")){ return; }
+      ev.preventDefault();
+      a.setAttribute("data-revealed","1");
+      var t = a.querySelector(".tel-label") || a;
+      var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
+      t.textContent = d.replace(/ /g, "\u00A0");
+    });
+  });
+
+  /* signature agents-ia : l'agent tape sa réponse (sans JS, texte complet visible) */
+  var typing = document.querySelector(".fx-typing");
+  if(typing && !reduced){
+    var texte = typing.textContent;
+    var tape = function(){
+      typing.textContent = "";
+      var i = 0;
+      var pas = function(){
+        if(i <= texte.length){
+          typing.textContent = texte.slice(0, i);
+          i++;
+          setTimeout(pas, 34);
+        } else {
+          setTimeout(tape, 3200);
+        }
+      };
+      setTimeout(pas, 900);
+    };
+    tape();
+  }
+
+  /* signature formation-ia : la check-list se coche (sans JS, tout est coché) */
+  var cks = document.querySelectorAll(".fx-ck");
+  if(cks.length && !reduced){
+    var boucle = function(){
+      cks.forEach(function(c){ c.classList.remove("done"); });
+      var i = 0;
+      var suivant = function(){
+        if(i < cks.length){
+          cks[i].classList.add("done");
+          i++;
+          setTimeout(suivant, 950);
+        } else {
+          setTimeout(boucle, 2800);
+        }
+      };
+      setTimeout(suivant, 700);
+    };
+    boucle();
+  }
+
+  /* révélation au défilement du corps de page (ajoutée par JS : sans JS, tout est visible) */
+  if(!reduced && "IntersectionObserver" in window){
+    var blocs = document.querySelectorAll(".page-body > h2, .page-body > h3, .page-body > p, .page-body > ul, .page-body > ol, .page-body > blockquote");
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.1, rootMargin:"0px 0px -30px 0px"});
+    blocs.forEach(function(el){
+      if(el.getBoundingClientRect().top > window.innerHeight){
+        el.classList.add("fx-reveal");
+        io.observe(el);
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

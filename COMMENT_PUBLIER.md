@@ -10,6 +10,6 @@ Au premier article : décommenter les liens `<!-- BLOG : décommenter au 1er art
 
 1. Copier `content/pages/_modele.md` → `content/pages/mon-slug.md` (front-matter : `title`, `description`, `slug`, `eyebrow`, `lede`, `keywords`, `date`).
 2. Le build refuse les slugs réservés (anciennes URLs redirigées : `ia`, `visibilite`, `strategie`, `formation`, `amo`...). Slugs prévus : `agents-ia`, `automatisation`, `formation-ia`, `sites-web`, `visibilite-prospection`, `strategie-commerciale`, `amo-immobilier`.
-3. `git push` → en ligne sur `/mon-slug`. Puis décommenter le lien `<!-- PAGE DÉDIÉE -->` du panneau correspondant dans `index.html`.
+3. `git push` → en ligne sur `/mon-slug`. Le build écrit chaque page dans `public/` (version déployée, liens propres) et une copie à la racine du repo (aperçu local en ouvrant simplement les fichiers, liens relatifs `.html`).
 
 Test local : `node scripts/build-blog.js` puis ouvrir `public/`. Voir `docs/PLAN_EDITORIAL.md` pour les 10 premiers articles.
