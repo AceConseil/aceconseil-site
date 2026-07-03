@@ -96,12 +96,27 @@ a.link:hover{color:var(--navy)}
     </a>
     <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
     <nav class="footer-links">
-      <a href="tel:+33665704793">06 65 70 47 93</a>
+      <a href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler"><span class="tel-label">Appeler</span></a>
       <a href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>
       <a href="/mentions-legales">Mentions légales</a>
     </nav>
   </div>
 </footer>
 
+<script>
+/* Le numéro n'apparaît qu'au clic ; sans JavaScript le lien appelle directement. */
+(function(){
+  document.querySelectorAll("[data-tel-reveal]").forEach(function(a){
+    a.addEventListener("click", function(ev){
+      if(a.getAttribute("data-revealed")){ return; }
+      ev.preventDefault();
+      a.setAttribute("data-revealed","1");
+      var t = a.querySelector(".tel-label") || a;
+      var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
+      t.textContent = d.replace(/ /g, "\u00A0");
+    });
+  });
+})();
+</script>
 </body>
 </html>
