@@ -249,17 +249,14 @@ em.gold{font-style:italic;color:var(--gold)}
 
 /* ---------- équipe ---------- */
 .team{background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
-.team-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:70px;margin-top:64px;align-items:start}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,3vw,48px);margin-top:64px;align-items:stretch}
 .team-card{border:1px solid rgba(201,162,77,.2);padding:44px;position:relative;background:linear-gradient(160deg,rgba(36,53,88,.5),rgba(17,29,51,.3))}
-.team-avatar{width:74px;height:74px;border-radius:50%;background:var(--gold);color:var(--navy-deep);display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:26px}
+.team-photo{width:116px;height:116px;border-radius:50%;object-fit:cover;display:block;margin-bottom:26px;border:1px solid var(--border-gold)}
+.team-photo-bas{object-position:center 15%}
 .team-card h3{font-size:1.7rem}
 .team-role{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:10px 0 20px;font-weight:500}
 .team-card p{color:var(--muted-light);font-size:.98rem;max-width:46ch}
-.team-side{display:grid;gap:26px}
-.team-mini{border-left:2px solid var(--gold);padding-left:24px}
-.team-mini h4{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--cream)}
-.team-mini span{display:block;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:6px 0 10px}
-.team-mini p{font-size:.92rem;color:var(--muted-light)}
+.team-pledge{margin-top:48px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--gold-light);border-left:2px solid var(--gold);padding-left:18px;max-width:64ch}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--cream)}
@@ -355,7 +352,7 @@ em.gold{font-style:italic;color:var(--gold)}
     </a>
     <ul class="nav-links">
       <li><a href="#expertises">Expertises</a></li>
-      <li><a href="#preuves">Preuves</a></li>
+      <li><a href="#preuves">Vos gains</a></li>
       <li><a href="#methode">Méthode</a></li>
       <li><a href="#equipe">Équipe</a></li>
       <li><a href="#faq">Questions</a></li>
@@ -373,7 +370,7 @@ em.gold{font-style:italic;color:var(--gold)}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#expertises">Expertises</a>
-  <a href="#preuves">Preuves</a>
+  <a href="#preuves">Vos gains</a>
   <a href="#methode">Méthode</a>
   <a href="#equipe">Équipe</a>
   <a href="#faq">Questions</a>
@@ -765,24 +762,19 @@ em.gold{font-style:italic;color:var(--gold)}
     <h2 class="section-title on-dark reveal" data-d="1">Un binôme, <em class="gold">deux métiers.</em></h2>
     <div class="team-grid">
       <div class="team-card reveal" data-d="2">
-        <div class="team-avatar">JC</div>
+        <img class="team-photo" src="/assets/jennifer-carrolo.jpg" alt="Jennifer Carrolo, cofondatrice d'ACE Conseil" width="116" height="116" loading="lazy">
         <h3>Jennifer Carrolo</h3>
         <p class="team-role">Cofondatrice · Direction commerciale &amp; AMO</p>
         <p>Votre interlocutrice de bout en bout&nbsp;: elle cadre le besoin, construit la proposition et suit chaque mission jusqu'au résultat. Plus de dix ans d'expérience en VEFA et marchés publics. Elle porte également l'activité AMO Immobilier du cabinet.</p>
       </div>
-      <div class="team-side">
-        <div class="team-mini reveal" data-d="3">
-          <h4>Mateusz</h4>
-          <span>Cofondateur · Direction technique &amp; IA</span>
-          <p>Conçoit et construit les systèmes&nbsp;: agents IA, automatisations, sites, référencement. Il intervient en coulisses, sur chaque mission.</p>
-        </div>
-        <div class="team-mini reveal" data-d="4">
-          <h4>Une règle commune</h4>
-          <span>Zéro promesse gratuite</span>
-          <p>Nous ne publions aucun chiffre de résultat que nous ne pouvons pas prouver, et nous n'en promettons aucun que nous ne pouvons pas tenir.</p>
-        </div>
+      <div class="team-card reveal" data-d="3">
+        <img class="team-photo team-photo-bas" src="/assets/mateusz.jpg" alt="Mateusz, cofondateur d'ACE Conseil" width="116" height="116" loading="lazy">
+        <h3>Mateusz</h3>
+        <p class="team-role">Cofondateur · Direction technique &amp; IA</p>
+        <p>Conçoit et construit les systèmes&nbsp;: agents IA, automatisations, sites, référencement. Il intervient sur chaque mission, du diagnostic au transfert, en lien direct avec Jennifer.</p>
       </div>
     </div>
+    <p class="team-pledge reveal" data-d="4">Une règle commune, zéro promesse gratuite&nbsp;: nous ne publions aucun chiffre de résultat que nous ne pouvons pas prouver, et nous n'en promettons aucun que nous ne pouvons pas tenir.</p>
   </div>
 </section>
 
