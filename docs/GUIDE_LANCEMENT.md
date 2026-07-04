@@ -36,13 +36,56 @@ Version du site : v2.0.2+ (branche `main`). Trois autres documents complètent c
    curl -sI https://www.aceconseil.co | head -3    # attendu : redirection 308 vers aceconseil.co
    ```
 
-### D. Déclarer le site aux moteurs (20 min, le jour même)
+### D. Déclarer le site aux moteurs (25 min, le jour même)
 
-1. search.google.com/search-console → « Ajouter une propriété » → type **Domaine** → `aceconseil.co` → validation par enregistrement DNS TXT chez votre registrar (copier-coller, propagation en général < 1 h).
-2. Une fois validé : menu « Sitemaps » → soumettre `https://aceconseil.co/sitemap.xml` (9 URLs).
-3. Menu « Inspection de l'URL » : inspecter `https://aceconseil.co/` → « Demander une indexation ». Répéter pour `/agents-ia`, `/automatisation`, `/sites-web`.
-4. Bing Webmaster Tools (bing.com/webmasters) : « Importer depuis Google Search Console », un clic. Bing alimente ChatGPT : ce n'est pas optionnel.
-5. Sous 48 h, revenir dans GSC : rapport « Pages » pour suivre l'indexation. Les anciennes URLs apparaîtront en « Redirection », c'est normal et sain.
+Sans cette étape, le site est indexable mais Google ne sait pas qu'il existe. C'est elle qui met le moteur en route. DNS gérés chez Gandi, email sur Google Workspace : les instructions ci-dessous en tiennent compte.
+
+#### D.1 Créer la propriété dans Search Console
+
+1. Aller sur search.google.com/search-console, **connecté avec le compte Google qui gère contact@aceconseil.co** (le compte Workspace). Utiliser ce compte évite de tout refaire plus tard.
+2. En haut à gauche, menu déroulant des propriétés → « Ajouter une propriété ».
+3. Choisir le type **Domaine** (colonne de gauche), pas « Préfixe d'URL ». La propriété Domaine couvre d'un coup l'apex, le www, le http et le https : une seule vérification pour tout.
+4. Saisir `aceconseil.co` (sans https, sans www) → Continuer.
+5. Google affiche un **enregistrement TXT** à copier, de la forme `google-site-verification=xxxxxxxxxxxx`. Laisser cette fenêtre ouverte.
+
+#### D.2 Poser l'enregistrement TXT chez Gandi
+
+1. Se connecter sur admin.gandi.net → section « Domaine » → cliquer `aceconseil.co`.
+2. Onglet **« Enregistrements DNS »** (DNS Records).
+3. Bouter **« Ajouter »** un enregistrement :
+   - **Type** : `TXT`
+   - **Nom** : `@` (représente la racine du domaine)
+   - **TTL** : laisser la valeur par défaut
+   - **Valeur** : coller la chaîne fournie par Google (`google-site-verification=...`), exactement, telle quelle.
+4. Enregistrer. Ce nouvel enregistrement **s'ajoute** aux TXT existants (le SPF `v=spf1...` de Google Workspace et le `brevo-code...`). Ne jamais supprimer ni écraser ces deux-là : ils font tourner votre messagerie et vos envois. On empile, on ne remplace pas.
+5. Retourner dans la fenêtre Search Console et cliquer **« Valider »**. Gandi propage en général en quelques minutes ; si la validation échoue au premier essai, patienter 15 à 30 min et recliquer « Valider » (ne pas recréer la propriété).
+
+> Alternative si le DNS vous intimide : dans Search Console, créer plutôt une propriété **Préfixe d'URL** `https://aceconseil.co/`, méthode **« Balise HTML »**. Google donne une balise `<meta name="google-site-verification" ...>` : la transmettre à l'équipe technique, qui l'ajoute dans le `<head>` du site (2 minutes, un push), puis cliquer « Valider ». Moins complet que la propriété Domaine, mais aucune manipulation DNS.
+
+#### D.3 Soumettre le sitemap
+
+1. Propriété validée, menu de gauche → **« Sitemaps ».**
+2. Champ « Ajouter un sitemap » → saisir `sitemap.xml` (Google préfixe déjà `https://aceconseil.co/`) → Envoyer.
+3. Statut attendu : « Réussite » (le nombre d'URL découvertes, 9, peut n'apparaître qu'au bout d'un jour).
+
+#### D.4 Forcer la découverte des pages clés
+
+1. Menu de gauche → **« Inspection de l'URL »** (ou barre de recherche en haut).
+2. Saisir `https://aceconseil.co/` → Entrée. Au début, statut « L'URL n'est pas sur Google » : normal.
+3. Cliquer **« Demander une indexation »** → Google met la page en file d'attente (« Indexation demandée »).
+4. Répéter pour les pages prioritaires, une par une : `/agents-ia`, `/automatisation`, `/sites-web`. Inutile de le faire pour les 9 : le sitemap s'occupe du reste, la demande manuelle sert juste à accélérer les plus importantes.
+
+#### D.5 Déclarer aussi à Bing
+
+1. bing.com/webmasters, connecté avec le même compte.
+2. **« Importer depuis Google Search Console »** : un clic reprend la propriété et le sitemap, sans refaire la vérification. Bing alimente Copilot et une partie de ChatGPT : ce n'est pas optionnel.
+
+#### D.6 Ce qui se passe ensuite (et ce qui est normal)
+
+- **Heures à quelques jours** : les pages passent de « non indexée » à « indexée ». C'est Google qui décide du rythme, on ne peut que demander.
+- **Rapport « Pages »** (menu Indexation) : à surveiller une fois par semaine. Les anciennes URLs (`/ia`, `/amo`...) y apparaîtront en « Page avec redirection » : c'est correct et voulu, ne rien corriger.
+- Le statut « Détectée, actuellement non indexée » est fréquent sur un domaine jeune : il se résorbe avec le temps, les liens entrants et la publication d'articles. Ne pas s'en alarmer les premières semaines.
+- **Indexation n'est pas classement.** Être dans l'index est l'étape 1 ; remonter dans les résultats vient ensuite, via la fiche Google Business, les avis, les liens et le contenu (voir `docs/PLAN_VISIBILITE.md`).
 
 ### E. Contrôles finaux (10 min)
 
