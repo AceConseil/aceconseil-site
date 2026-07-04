@@ -39,6 +39,9 @@
   --ease:cubic-bezier(.22,.8,.24,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip-link{position:fixed;top:10px;left:10px;z-index:100;background:var(--gold);color:var(--navy-deep);font-weight:600;font-size:.9rem;padding:10px 18px;border-radius:100px;text-decoration:none;transform:translateY(-200%);transition:transform .2s}
+.skip-link:focus{transform:none}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--gold);color:var(--navy-deep)}
@@ -80,8 +83,8 @@ em.gold{font-style:italic;color:var(--gold)}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;inset:0;background:var(--navy-deep);z-index:65;display:flex;flex-direction:column;justify-content:center;padding:0 8%;gap:8px;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
-.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu{position:fixed;inset:0;background:var(--navy-deep);z-index:65;display:flex;flex-direction:column;justify-content:center;padding:0 8%;gap:8px;opacity:0;pointer-events:none;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.mobile-menu.open{opacity:1;pointer-events:auto;visibility:visible}
 .mobile-menu a{font-family:'Playfair Display',serif;font-size:2rem;color:var(--cream);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(201,162,77,.14);transform:translateY(14px);opacity:0;transition:.5s var(--ease)}
 .mobile-menu.open a{transform:none;opacity:1}
 .mobile-menu a:hover{color:var(--gold)}
@@ -160,14 +163,24 @@ em.gold{font-style:italic;color:var(--gold)}
 .exp-plus::after{width:1.5px;height:14px}
 .exp-item.open .exp-plus{transform:rotate(135deg);background:var(--gold)}
 .exp-item.open .exp-plus::before,.exp-item.open .exp-plus::after{background:var(--navy-deep)}
-.exp-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
-.exp-item.open .exp-panel{grid-template-rows:1fr}
+.exp-panel{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .55s var(--ease),visibility .55s}
+.exp-item.open .exp-panel{grid-template-rows:1fr;visibility:visible}
 .exp-panel-inner{overflow:hidden}
 .exp-body{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;padding:6px 0 40px}
 .exp-desc{font-size:1.02rem;color:var(--navy);opacity:.82;max-width:48ch}
-.exp-cta{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-weight:500;font-size:.92rem;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold);padding-bottom:3px;transition:gap .3s,color .3s}
+.exp-cta{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-weight:500;font-size:.92rem;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--border-gold);padding-bottom:3px;transition:gap .3s,color .3s;vertical-align:middle}
 .exp-cta:hover{gap:14px;color:var(--navy)}
-.exp-body .exp-cta + .exp-cta{margin-left:28px}
+.exp-body .exp-cta + .exp-cta{margin-left:24px}
+/* bouton « ... en détail » : pastille animée qui invite au clic */
+.exp-more{position:relative;overflow:hidden;border:1px solid var(--border-gold);background:var(--gold-pale);padding:10px 20px;border-radius:100px;transition:gap .3s,color .3s,background .3s,border-color .3s,transform .3s}
+.exp-more::after{content:"";position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(226,196,122,.35),transparent);animation:moreShine 3.8s var(--ease) infinite;pointer-events:none}
+.exp-more span{display:inline-block;animation:moreNudge 3.8s var(--ease) infinite}
+.exp-more:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-deep);transform:translateY(-1px)}
+.exp-more:hover::after{animation:none}
+.exp-more:hover span{animation:none;transform:translateX(3px)}
+@keyframes moreShine{0%,58%{left:-80%}100%{left:130%}}
+@keyframes moreNudge{0%,58%,100%{transform:none}66%{transform:translateX(5px)}74%{transform:none}82%{transform:translateX(3px)}90%{transform:none}}
+@media(max-width:860px){.exp-body .exp-cta + .exp-cta{margin-left:0;display:flex;width:fit-content}}
 .exp-list{list-style:none;display:grid;gap:13px;align-content:start}
 .exp-list li{display:flex;gap:13px;font-size:.95rem;color:var(--navy);opacity:.85}
 .exp-list li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:8px}
@@ -293,7 +306,7 @@ em.gold{font-style:italic;color:var(--gold)}
 .field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A24D' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
 .field select option{color:var(--navy-deep);background:var(--cream)}
 .field textarea{resize:vertical;min-height:96px}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 1px 0 var(--gold)}
 .form-note{grid-column:1/-1;font-size:.8rem;color:var(--muted)}
 .form-status{grid-column:1/-1;font-size:.92rem;display:none}
 .form-status.ok{display:block;color:var(--gold-light)}
@@ -344,6 +357,8 @@ em.gold{font-style:italic;color:var(--gold)}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Aller au contenu</a>
 
 <nav class="nav" id="nav">
   <div class="wrap">
@@ -452,7 +467,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Vos demandes entrantes ne restent plus sans réponse. L'agent répond aux emails et aux messages, pose les bonnes questions, prépare les éléments de devis et passe la main à votre équipe au bon moment. Il travaille sur vos outils existants, avec vos règles, pas les siennes.</p>
             <a class="exp-cta" href="#contact" data-sujet="Agents IA">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="agents-ia.html">Les agents IA en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="agents-ia.html">Les agents IA en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Accueil et qualification des demandes entrantes</li>
@@ -473,7 +488,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Facturation, planning, CRM, terrain&nbsp;: quand les outils ne communiquent pas, ce sont vos soirées qui compensent. Nous connectons l'existant, sans tout remplacer, pour que l'information circule seule et que les relances partent sans vous.</p>
             <a class="exp-cta" href="#contact" data-sujet="Automatisation">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="automatisation.html">L'automatisation en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="automatisation.html">L'automatisation en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Synchronisation facturation, planning et CRM</li>
@@ -494,7 +509,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Une demi-journée ou une journée dans vos locaux ou en visio, construite sur vos documents, vos clients, vos outils. L'équipe repart avec des procédures prêtes à l'emploi, pas avec des généralités sur l'IA.</p>
             <a class="exp-cta" href="#contact" data-sujet="Formation IA">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="formation-ia.html">La formation en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="formation-ia.html">La formation en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Ateliers pratiques sur vos propres outils</li>
@@ -519,7 +534,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">L'IA compresse le temps de production&nbsp;; nous le réinvestissons dans ce qui compte&nbsp;: votre message, votre référencement local, la transformation des visiteurs en demandes. Résultat&nbsp;: un site au niveau des meilleures références du marché, livré en semaines, pas en mois.</p>
             <a class="exp-cta" href="#offre-site">Découvrir l'offre site professionnel <span>→</span></a>
-            <a class="exp-cta" href="sites-web.html">Les sites web en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="sites-web.html">Les sites web en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Design moderne, animations soignées</li>
@@ -540,7 +555,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Référencement local, fiche Google, contenu, prospection email et LinkedIn&nbsp;: nous assemblons les canaux qui correspondent à votre métier et à votre zone, pour obtenir un flux régulier de demandes plutôt qu'un pic ponctuel.</p>
             <a class="exp-cta" href="#contact" data-sujet="Visibilité / prospection">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="visibilite-prospection.html">La visibilité en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="visibilite-prospection.html">La visibilité en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Référencement local et fiche Google optimisés</li>
@@ -561,7 +576,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Nous commençons par chiffrer ce que la situation actuelle vous coûte chaque mois. Ensuite seulement, nous structurons l'offre, les prix, les trames d'appel et le suivi du portefeuille, pour que chaque proposition parte avec un vrai argument.</p>
             <a class="exp-cta" href="#contact" data-sujet="Stratégie commerciale">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="strategie-commerciale.html">La stratégie en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="strategie-commerciale.html">La stratégie en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Chiffrage du manque à gagner actuel</li>
@@ -586,7 +601,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div>
             <p class="exp-desc">Plus de dix ans d'expérience en VEFA et marchés publics, mis au service de vos opérations&nbsp;: pilotage, coordination des intervenants, suivi des étapes clés et défense de vos intérêts face aux promoteurs et aux entreprises.</p>
             <a class="exp-cta" href="#contact" data-sujet="AMO Immobilier">Parler de ce sujet <span>→</span></a>
-            <a class="exp-cta" href="amo-immobilier.html">L'AMO en détail <span>→</span></a>
+            <a class="exp-cta exp-more" href="amo-immobilier.html">L'AMO en détail <span>→</span></a>
           </div>
           <ul class="exp-list">
             <li>Pilotage et coordination de projet</li>
@@ -991,6 +1006,7 @@ em.gold{font-style:italic;color:var(--gold)}
       var t = a.querySelector(".tel-label") || a;
       var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
       t.textContent = d.replace(/ /g, "\u00A0");
+      a.setAttribute("aria-label", "Appeler le " + d);
     });
   });
 
@@ -1093,7 +1109,7 @@ em.gold{font-style:italic;color:var(--gold)}
         form.reset();
       })
       .catch(function(){
-        status.textContent = "L'envoi n'a pas abouti. Appelez-nous au 06 65 70 47 93 ou écrivez à contact@aceconseil.co.";
+        status.textContent = "L'envoi n'a pas abouti. Utilisez le bouton « Afficher le numéro » ou écrivez à contact@aceconseil.co.";
         status.className = "form-status err";
       })
       .then(function(){ btn.disabled = false; btn.style.opacity = "1"; });

@@ -35,7 +35,7 @@ Au dirigeant qui veut comprendre ce que l'IA change réellement pour son métier
 
 ## Les formats
 
-Une demi-journée pour un périmètre resserré, une journée pour couvrir plusieurs postes. Dans vos locaux ou en visio, en présentiel en Île-de-France. Les groupes restent petits : l'objectif est que chacun manipule, pas que chacun écoute.
+Une demi-journée pour un périmètre resserré, une journée pour couvrir plusieurs postes. Dans vos locaux en Île-de-France, ou en visio partout en France. Les groupes restent petits : l'objectif est que chacun manipule, pas que chacun écoute.
 
 ## Et après
 

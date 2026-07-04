@@ -27,6 +27,9 @@
   --border:rgba(27,42,74,.1); --border-gold:rgba(201,162,77,.22);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip-link{position:fixed;top:10px;left:10px;z-index:100;background:var(--gold);color:var(--navy-deep);font-weight:600;font-size:.9rem;padding:10px 18px;border-radius:100px;text-decoration:none;transform:translateY(-200%);transition:transform .2s}
+.skip-link:focus{transform:none}
 body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--gold);color:var(--navy-deep)}
 a{color:inherit}
@@ -180,6 +183,8 @@ img{max-width:100%}
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
 <nav class="nav">
   <div class="wrap">
     <a class="logo" href="/" aria-label="ACE Conseil, retour à l'accueil">
@@ -208,7 +213,7 @@ img{max-width:100%}
   </div>
 </header>
 
-<main class="page-main">
+<main class="page-main" id="main-content">
   <div class="wrap">
     <div class="page-body">
 {{CONTENT}}
@@ -260,6 +265,7 @@ img{max-width:100%}
       var t = a.querySelector(".tel-label") || a;
       var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
       t.textContent = d.replace(/ /g, "\u00A0");
+      a.setAttribute("aria-label", "Appeler le " + d);
     });
   });
 
