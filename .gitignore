@@ -2,3 +2,12 @@
 node_modules/
 public/
 .claude/
+
+# Copies de pages piliers générées à la racine par le build (aperçu local uniquement)
+/agents-ia.html
+/automatisation.html
+/formation-ia.html
+/sites-web.html
+/visibilite-prospection.html
+/strategie-commerciale.html
+/amo-immobilier.html
