@@ -16,6 +16,8 @@ Votre texte. Un paragraphe par idée. **Gras** pour l'essentiel, [lien](https://
 - Une liste à puces
 - Reste courte et concrète
 
+![Description utile de l'image](assets/mon-image.jpg)
+
 ## Deuxième point
 
 1. Les listes numérotées fonctionnent aussi

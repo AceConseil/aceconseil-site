@@ -79,3 +79,22 @@ Cadence cible : 1 article/semaine minimum, 2 si possible. Publier via `content/b
 ---
 
 Règles d'écriture (héritées du site) : vouvoiement, pas de tiret cadratin, pas de superlatifs, pas de « leads » ni « ROI », aucun chiffre de résultat client inventé. Les seuls chiffres cités sont sourcés (études publiques) ou génériques et présentés comme tels.
+
+## Consignes du guide Google « IA dans la recherche » (à suivre impérativement)
+
+Source : guide officiel Google sur l'optimisation pour les fonctionnalités IA (AI Overviews, mode IA), 2026.
+
+À faire, article après article :
+- Un point de vue propre, tiré du terrain ACE : jamais la reformulation de ce qui existe déjà ailleurs. C'est le premier critère de citation par les IA.
+- Écrire pour le lecteur (« people-first »), pas pour la machine : le guide confirme qu'aucun style « spécial IA » n'est nécessaire. La voix du site suffit.
+- Structure claire : titres, sections, paragraphes courts. Déjà la norme de la maison.
+- Au moins une image ou un visuel réellement utile par article (schéma, capture, avant/après) : déposer le fichier dans `assets/`, l'insérer avec `![description utile](assets/nom.jpg)`. La description sert de texte alternatif, la soigner.
+- Contenu lisible sans JavaScript et public : c'est l'architecture actuelle du site, ne pas y déroger.
+
+À ne pas faire (le guide est explicite) :
+- Pas de fichier `llms.txt` ni de balisage « spécial IA » : Google ne les utilise pas.
+- Pas de découpage artificiel en micro-questions/réponses : les systèmes comprennent les nuances au sein d'une même page.
+- Pas de variantes massives d'un même contenu, pas de mentions non authentiques : règles anti-spam.
+- Pas de schema.org exotique : les balisages existants du site (Service, Article, BreadcrumbList, ProfessionalService) suffisent.
+
+Côté infrastructure, déjà en place : indexabilité et extraits non bloqués, `max-image-preview:large`, HTML sémantique, données structurées, sitemap. Les relais hors code sont dans PLAN_VISIBILITE.md (Search Console, fiche Google Business).
