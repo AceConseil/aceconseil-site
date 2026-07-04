@@ -2,7 +2,21 @@
 
 Objectif : exister sur les requêtes que tapent vos clients (artisans, TPE, PME) et sur les questions qu'ils posent aux IA. Chaque article suit le même moule : réponse directe dès l'intro, listes et chiffres sourcés (les IA citent 30 à 40 % plus les contenus structurés), un exemple concret, un lien vers la page dédiée ou l'ancre de la home, et le CTA appel.
 
-Cadence cible : 1 article/semaine minimum, 2 si possible. Publier via `content/blog/` (voir COMMENT_PUBLIER.md). Ordre conseillé = ordre ci-dessous : on couvre d'abord les requêtes les plus proches de l'achat.
+Cadence cible : **3 articles/semaine** (lundi, mercredi, vendredi), alimentés par la boucle LinkedIn ci-dessous. Publier via `content/blog/` (voir COMMENT_PUBLIER.md). Les 10 articles ci-dessous restent le socle : ils passent en priorité quand aucun post ne se démarque, et dans l'ordre (requêtes les plus proches de l'achat d'abord).
+
+## La boucle LinkedIn → blog (le moteur des 3 articles/semaine)
+
+LinkedIn est le banc d'essai, le blog est l'actif : un post vit 48 heures, un article se positionne pendant des années et se fait citer par les IA. La boucle :
+
+1. **Vendredi, 15 min** : relever les performances des posts de la semaine (impressions, commentaires, messages reçus). Retenir les 3 sujets qui ont le plus réagi.
+2. **Lundi matin, 2 h de rédaction groupée** : transformer chaque post retenu en article. Recette de transformation :
+   - l'accroche du post devient l'introduction (elle a déjà prouvé qu'elle accroche) ;
+   - développer ce que le format post ne permettait pas : la méthode pas à pas, un exemple chiffré générique, les limites honnêtes ;
+   - ajouter une image utile, relier l'article à SA page pilier (chaque article se rattache à une des 7 compétences du site) et finir sur le CTA appel ;
+   - reprendre les meilleures objections des commentaires : elles font les meilleures sections.
+3. **Publier lundi/mercredi/vendredi**, puis reposter chaque article sur LinkedIn sous deux angles (le message principal, puis une objection traitée). La boucle se referme : ces posts nourrissent la mesure du vendredi suivant.
+
+Répartition des compétences : faire tourner les 7 pages piliers pour que chacune reçoive un article au moins toutes les deux semaines ; l'AMO est portée par les posts de Jennifer. Règle de qualité : mieux vaut 2 articles solides qu'un troisième bâclé ; le rythme sert le moteur, pas l'inverse.
 
 ---
 

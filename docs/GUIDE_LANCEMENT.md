@@ -187,8 +187,8 @@ Parcours de conversion de la home : hero avec fil d'activité → expertises (7 
 
 ### Rythme de croisière (à partir du mois 2)
 
-- 1 article/semaine minimum (2 idéalement), dans l'ordre du plan éditorial.
-- 2 posts LinkedIn/semaine/profil ; prospection directe réservée aux PME de 10 à 50 personnes.
+- 3 articles/semaine (lundi, mercredi, vendredi), alimentés par la boucle LinkedIn → blog du plan éditorial : les posts qui performent deviennent les articles de la semaine suivante, chacun relié à sa page pilier.
+- 3 à 4 posts LinkedIn/semaine/profil ; 24 h avant chaque rendez-vous, envoyer la page pilier concernée + le calculateur ; prospection directe prioritairement vers les PME de 10 à 50 personnes et les profils ayant réagi.
 - 1 action prescripteur/semaine ; 1 post fiche Google/mois.
 - Revue mensuelle (30 min) : GSC, fiche Google, appels et formulaires, avec la question rituelle à chaque premier contact : « comment nous avez-vous trouvés ? ».
 - Jalons : M+1 site indexé et 4 articles ; M+3 10 articles, 5 avis Google, verdict Ads ; M+6 premières demandes entrantes organiques régulières.
