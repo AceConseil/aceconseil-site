@@ -36,4 +36,4 @@ Le suivi des prospects meurt presque toujours de la même cause : il repose sur 
 
 Beaucoup de dirigeants excellents dans leur métier détestent vendre, et s'en veulent. Le système est précisément fait pour eux : quand l'offre est claire, le prix défendu et le suivi automatique, il ne reste de la vente que sa partie noble, la conversation entre professionnels. Le reste roule tout seul.
 
-Pour savoir ce qu'un travail sur votre offre et votre suivi changerait chez vous, appelez-nous : vingt minutes avec Jennifer Carrolo, cofondatrice, sans engagement. Vous raccrochez avec une réponse claire : nous pouvons vous aider, ou non.
+Pour savoir ce qu'un travail sur votre offre et votre suivi changerait chez vous, appelez-nous : vingt minutes avec Jennifer, cofondatrice, sans engagement. Vous raccrochez avec une réponse claire : nous pouvons vous aider, ou non.

@@ -1,6 +1,6 @@
 ---
 title: AMO immobilier : défendre vos intérêts en VEFA
-description: Visite cloisons, pré-livraison, livraison, réserves : Jennifer Carrolo, plus de dix ans en VEFA et marchés publics, représente vos intérêts face au promoteur.
+description: Visite cloisons, pré-livraison, livraison, réserves : Jennifer, plus de dix ans en VEFA et marchés publics, représente vos intérêts face au promoteur.
 slug: amo-immobilier
 eyebrow: Immobilier
 lede: Un achat en VEFA engage des années de remboursement. Aux étapes clés, mieux vaut ne pas être seul face au promoteur.
@@ -39,7 +39,7 @@ Votre assistance à maîtrise d'ouvrage ne remplace ni le notaire ni l'architect
 
 ## Qui vous accompagne
 
-L'activité AMO d'ACE Conseil est portée par Jennifer Carrolo, cofondatrice : plus de dix ans d'expérience en VEFA et en marchés publics, du pilotage d'opérations à la coordination des intervenants, face aux promoteurs comme aux entreprises. Les accompagnements se font en présentiel en Île-de-France, et le suivi documentaire à distance partout en France.
+L'activité AMO d'ACE Conseil est portée par Jennifer, cofondatrice : plus de dix ans d'expérience en VEFA et en marchés publics, du pilotage d'opérations à la coordination des intervenants, face aux promoteurs comme aux entreprises. Les accompagnements se font en présentiel en Île-de-France, et le suivi documentaire à distance partout en France.
 
 ## Particuliers et professionnels
 

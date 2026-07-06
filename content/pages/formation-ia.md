@@ -41,4 +41,4 @@ Une demi-journée pour un périmètre resserré, une journée pour couvrir plusi
 
 Notre règle vaut aussi pour la formation : vous restez autonomes. Les supports vous appartiennent, les procédures sont écrites, et vous n'avez pas besoin de nous pour continuer. Si la session révèle un chantier plus profond, par exemple une tâche entière à confier à [un agent IA sur mesure](/agents-ia), nous vous le disons avec un chiffrage, et vous décidez.
 
-Pour cadrer une session, [écrivez-nous ou appelez-nous](/#contact) : vingt minutes avec Jennifer Carrolo, cofondatrice, suffisent à définir le périmètre, le format et la date. Sans engagement.
+Pour cadrer une session, [écrivez-nous ou appelez-nous](/#contact) : vingt minutes avec Jennifer, cofondatrice, suffisent à définir le périmètre, le format et la date. Sans engagement.

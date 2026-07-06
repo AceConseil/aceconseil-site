@@ -46,4 +46,4 @@ Concrètement, nous branchons la séquence sur votre outil de devis actuel : qua
 
 Rien de spectaculaire, et c'est le but : les relances partent, les réponses reviennent, et votre seule tâche nouvelle consiste à lire des retours de clients qui se décident. Le soir, plus personne ne se dit « il faudrait que je relance ». C'est déjà fait.
 
-Pour savoir ce que la relance automatique donnerait sur vos devis à vous, appelez-nous : vingt minutes avec Jennifer Carrolo, cofondatrice, sans engagement. Vous repartez avec une réponse claire, dans un sens ou dans l'autre.
+Pour savoir ce que la relance automatique donnerait sur vos devis à vous, appelez-nous : vingt minutes avec Jennifer, cofondatrice, sans engagement. Vous repartez avec une réponse claire, dans un sens ou dans l'autre.

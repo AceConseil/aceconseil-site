@@ -56,4 +56,4 @@ Les modèles tout faits produisent presque toujours les mêmes défauts : un car
 
 Construit avec méthode, un site qui coche ces sept cases se livre en semaines, pas en mois : notre façon de faire est détaillée sur la page [sites web nouvelle génération](/sites-web), et ce site en est la démonstration. Pour les entreprises qui partent de zéro, nous proposons une offre d'entrée à prix fixe, [détaillée sur notre page d'accueil](/#offre-site) : une page complète, design, textes et mise en ligne compris.
 
-Le plus simple pour situer votre site actuel : vingt minutes au téléphone avec Jennifer Carrolo, cofondatrice, sans engagement. Vous saurez ce qui bloque, et si ça vaut la peine d'y toucher.
+Le plus simple pour situer votre site actuel : vingt minutes au téléphone avec Jennifer, cofondatrice, sans engagement. Vous saurez ce qui bloque, et si ça vaut la peine d'y toucher.

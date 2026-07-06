@@ -52,4 +52,4 @@ L'agent applique vos consignes, pas les siennes. Vos données restent les vôtre
 
 Un agent traite les demandes entrantes. Mais si vos outils ne se parlent pas entre eux, l'information qu'il produit finira encore ressaisie à la main. C'est pourquoi nous regardons toujours l'ensemble : l'agent d'un côté, [l'automatisation de vos process](/automatisation) de l'autre. Souvent, c'est la combinaison des deux qui rend les soirées au dirigeant.
 
-Vous vous demandez si votre activité s'y prête ? Un appel de vingt minutes avec Jennifer Carrolo, cofondatrice, suffit généralement à le savoir. Sans engagement, sans script commercial : vous repartez avec une réponse claire, dans un sens ou dans l'autre.
+Vous vous demandez si votre activité s'y prête ? Un appel de vingt minutes avec Jennifer, cofondatrice, suffit généralement à le savoir. Sans engagement, sans script commercial : vous repartez avec une réponse claire, dans un sens ou dans l'autre.

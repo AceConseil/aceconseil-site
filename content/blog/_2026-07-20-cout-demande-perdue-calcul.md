@@ -46,4 +46,4 @@ Ce petit relevé donne votre premier chiffre de la formule. Les deux autres, vot
 
 Deux leviers ferment la fuite, et ils se complètent : [un agent IA](/agents-ia) qui accueille et qualifie chaque demande à toute heure, et [l'automatisation des relances](/automatisation) pour que les devis envoyés ne meurent plus en silence.
 
-Le bon ordre est celui de votre chiffre : c'est exactement ce que nous vérifions, poste par poste, lors du premier échange. Vingt minutes avec Jennifer Carrolo, cofondatrice, sans engagement : vous repartez en sachant si le montant calculé ici est réel chez vous, et ce qui le récupère.
+Le bon ordre est celui de votre chiffre : c'est exactement ce que nous vérifions, poste par poste, lors du premier échange. Vingt minutes avec Jennifer, cofondatrice, sans engagement : vous repartez en sachant si le montant calculé ici est réel chez vous, et ce qui le récupère.

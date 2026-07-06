@@ -34,4 +34,4 @@ La visibilité se construit comme une réputation : dans la durée. Une fiche Go
 
 ## Par où commencer
 
-Dans l'ordre : un site qui transforme les visites en appels, sinon chaque visiteur gagné est gaspillé ([voir notre approche des sites](/sites-web)) ; puis le socle local ; puis le contenu et, si votre cible s'y prête, la prospection directe. Pour savoir quel assemblage correspond à votre métier et à votre zone, appelez-nous : vingt minutes avec Jennifer Carrolo, cofondatrice, sans engagement, et vous repartez avec un avis clair.
+Dans l'ordre : un site qui transforme les visites en appels, sinon chaque visiteur gagné est gaspillé ([voir notre approche des sites](/sites-web)) ; puis le socle local ; puis le contenu et, si votre cible s'y prête, la prospection directe. Pour savoir quel assemblage correspond à votre métier et à votre zone, appelez-nous : vingt minutes avec Jennifer, cofondatrice, sans engagement, et vous repartez avec un avis clair.
