@@ -79,12 +79,44 @@ img{max-width:100%}
 .footer-links{display:flex;gap:26px;font-size:.85rem}
 .footer-links a{text-decoration:none;color:var(--muted-light);transition:color .3s}
 .footer-links a:hover{color:var(--gold-light)}
+/* barre de progression de lecture */
+.readbar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:90;transition:width .1s linear}
+/* révélation au défilement (ajoutée par JS : sans JS, tout est visible) */
+.fx-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.8,.24,1),transform .7s cubic-bezier(.22,.8,.24,1)}
+.fx-reveal.in{opacity:1;transform:none}
+/* widget interactif (injecté par le build via ::widget nom::) */
+.wg{background:var(--navy-deep);color:var(--cream);border:1px solid rgba(201,162,77,.35);padding:24px 26px;margin:30px 0}
+.wg-title{display:flex;align-items:center;gap:11px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0}
+.wg-pulse{flex:none;width:8px;height:8px;border-radius:50%;background:var(--gold);position:relative}
+.wg-pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--gold);animation:wgPulse 2.2s ease-in-out infinite}
+@keyframes wgPulse{0%{transform:scale(.7);opacity:.8}70%,100%{transform:scale(1.4);opacity:0}}
+.wg-hint{font-size:.8rem;color:var(--muted-light);margin:6px 0 14px}
+.wg-step{border:1px solid rgba(254,253,251,.12);border-radius:10px;margin-top:10px;transition:border-color .35s,box-shadow .35s}
+.wg-step.glow{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,162,77,.25)}
+.wg-head{width:100%;display:flex;align-items:center;gap:14px;padding:13px 16px;background:none;border:0;cursor:pointer;text-align:left;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.95rem}
+.wg-day{flex:none;width:54px;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.05rem;color:var(--gold)}
+.wg-name{flex:1;font-weight:500}
+.wg-chev{flex:none;width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform .35s;margin-right:4px}
+.wg-step.open .wg-chev{transform:rotate(225deg)}
+.wg-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,.8,.24,1)}
+.wg-step.open .wg-body{grid-template-rows:1fr}
+.wg-body p{overflow:hidden;margin:0;padding:0 16px 0 84px;font-size:.9rem;color:var(--muted-light);transition:padding .45s}
+.wg-step.open .wg-body p{padding-bottom:14px}
+@media(max-width:560px){.wg-body p{padding-left:16px}}
+@media(prefers-reduced-motion:reduce){
+  .readbar{display:none}
+  .fx-reveal{opacity:1;transform:none;transition:none}
+  .wg-pulse::after{animation:none}
+  .wg-step.glow{border-color:rgba(254,253,251,.12);box-shadow:none}
+}
 @media(max-width:640px){.nav-back{display:none}}
 </style>
 </head>
 <body>
 
 <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<div class="readbar" aria-hidden="true"></div>
 
 <nav class="nav">
   <div class="wrap">
@@ -141,6 +173,9 @@ img{max-width:100%}
 <script>
 /* Le numéro n'apparaît qu'au clic ; sans JavaScript le lien appelle directement. */
 (function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   document.querySelectorAll("[data-tel-reveal]").forEach(function(a){
     a.addEventListener("click", function(ev){
       if(a.getAttribute("data-revealed")){ return; }
@@ -150,6 +185,59 @@ img{max-width:100%}
       var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
       t.textContent = d.replace(/ /g, "\u00A0");
       a.setAttribute("aria-label", "Appeler le " + d);
+    });
+  });
+
+  /* barre de progression de lecture */
+  var bar = document.querySelector(".readbar");
+  if(bar && !reduced){
+    var majBar = function(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", majBar, {passive:true});
+    majBar();
+  }
+
+  /* révélation au défilement du corps d'article */
+  if(!reduced && "IntersectionObserver" in window){
+    var blocs = document.querySelectorAll(".article-body > h2, .article-body > h3, .article-body > p, .article-body > ul, .article-body > ol, .article-body > blockquote, .article-body > .wg, .article-body > img");
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {threshold:.1, rootMargin:"0px 0px -30px 0px"});
+    blocs.forEach(function(el){
+      if(el.getBoundingClientRect().top > window.innerHeight){
+        el.classList.add("fx-reveal");
+        io.observe(el);
+      }
+    });
+  }
+
+  /* widget : accordéon + surbrillance d'invitation (sans JS, tout est déplié) */
+  document.querySelectorAll(".wg").forEach(function(wg){
+    var steps = wg.querySelectorAll(".wg-step");
+    if(!steps.length){ return; }
+    var cycle = null;
+    var arret = function(){ if(cycle){ clearInterval(cycle); cycle = null; steps.forEach(function(x){ x.classList.remove("glow"); }); } };
+    if(!reduced){
+      steps.forEach(function(x, i){
+        if(i > 0){ x.classList.remove("open"); x.querySelector(".wg-head").setAttribute("aria-expanded", "false"); }
+      });
+      var gi = 0;
+      var tourne = function(){
+        steps.forEach(function(x){ x.classList.remove("glow"); });
+        steps[gi % steps.length].classList.add("glow");
+        gi++;
+      };
+      tourne();
+      cycle = setInterval(tourne, 2400);
+    }
+    steps.forEach(function(x){
+      x.querySelector(".wg-head").addEventListener("click", function(){
+        var ouvert = x.classList.toggle("open");
+        x.querySelector(".wg-head").setAttribute("aria-expanded", ouvert);
+        arret();
+      });
     });
   });
 })();

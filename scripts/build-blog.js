@@ -75,6 +75,29 @@ function validatePageMeta(meta, filename) {
   }
 }
 
+// ── Widgets interactifs pour articles ──
+// Dans un article : une ligne `::widget nom-du-widget::` insère le bloc HTML
+// correspondant. Le CSS/JS de chaque widget vit dans templates/article.html.
+// Sans JavaScript, chaque widget affiche son état complet (contenu déplié).
+const ARTICLE_WIDGETS = {
+  'relance-timeline': `<div class="wg wg-relance" aria-label="La séquence de relance, avec des exemples de messages">
+  <p class="wg-title"><span class="wg-pulse"></span>La séquence, avec des exemples à adapter</p>
+  <p class="wg-hint">Touchez chaque étape pour afficher le message type.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">J+2</span><span class="wg-name">Le message de disponibilité</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>« Bonjour [Prénom], je voulais simplement m'assurer que le devis vous est bien parvenu. Si un point mérite d'être précisé, je suis joignable en fin de journée. Bonne journée à vous. »</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">J+7</span><span class="wg-name">Le message utile</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>« Bonjour [Prénom], en reprenant votre dossier, je me suis dit que [une précision sur un poste du devis, une option possible, une contrainte de planning à anticiper]. Si vous souhaitez en parler, je peux vous appeler demain en fin de matinée. »</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">J+15</span><span class="wg-name">Le message de clôture</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>« Bonjour [Prénom], sans retour de votre part d'ici vendredi, je libérerai le créneau réservé pour votre chantier et je classerai le dossier. Un simple mot suffit pour le garder ouvert. »</p></div>
+  </div>
+</div>`,
+};
+
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──
 
 function escapeHtml(s) {
@@ -86,6 +109,13 @@ function mdToHtml(md) {
   const fences = [];
   let src = md.replace(/```([^\n]*)\n([\s\S]*?)```/g, (_, _lang, code) => {
     fences.push(`<pre><code>${escapeHtml(code.replace(/\s+$/, ''))}</code></pre>`);
+    return `\u0000FENCE${fences.length - 1}\u0000`;
+  });
+
+  // Widgets : la ligne ::widget nom:: devient un bloc HTML protégé
+  src = src.replace(/^::widget ([a-z0-9-]+)::$/gm, (_, name) => {
+    if (!ARTICLE_WIDGETS[name]) throw new Error(`Widget inconnu : ${name} (disponibles : ${Object.keys(ARTICLE_WIDGETS).join(', ')})`);
+    fences.push(ARTICLE_WIDGETS[name]);
     return `\u0000FENCE${fences.length - 1}\u0000`;
   });
 

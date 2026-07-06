@@ -1,12 +1,14 @@
 ---
 title: Devis sans réponse : la méthode de relance qui signe
 description: Pourquoi vos devis restent sans réponse, la séquence de relance qui fonctionne (délais, ton, exemples), et comment la faire partir toute seule.
-date: 2026-07-13
+date: 2026-07-06
 slug: relance-devis-automatique
 keywords: relance devis, devis sans réponse, relance automatique, artisan, TPE
 ---
 
 Un devis envoyé sans relance est un devis à moitié perdu. Ce n'est pas une fatalité commerciale, c'est une mécanique : voici pourquoi le silence s'installe, la séquence qui le brise, et comment l'automatiser sur vos outils actuels.
+
+![La séquence de relance en trois messages : disponibilité à J+2, message utile à J+7, clôture à J+15](assets/relance-sequence.jpg)
 
 ## Ce que le silence vous coûte vraiment
 
@@ -29,6 +31,8 @@ La troisième raison est la plus coûteuse, parce qu'elle repose sur une erreur 
 3. **J+15 à J+20, le message de clôture.** Vous annoncez calmement que sans retour, vous classerez le dossier et libérerez le créneau. Ce message signe étonnamment souvent : la perspective de perdre la place fait trancher.
 
 Le ton compte autant que le calendrier : vos mots, courts, sans formule commerciale. Et après le troisième message, on s'arrête. Une séquence propre respecte le silence final.
+
+::widget relance-timeline::
 
 > Le client qui a demandé un devis vous attend. C'est celui qui rappelle qui signe.
 
