@@ -44,7 +44,7 @@ Réseau de recherche uniquement (pas de Display ni Performance Max avant d'avoir
   - *Refonte* : "refaire son site internet", [refonte site vitrine], "site internet obsolète" · CPC 1,5-3 €
 - **Annonces RSA** (titres ≤ 30 c, descriptions ≤ 90 c) :
   - Titres : « Site professionnel à 499 € HT » · « Prix unique, affiché, assumé » · « Livré en 7 jours ouvrés » · « Design, textes, mise en ligne » · « Site d'artisan qui convertit » · « Fait sonner votre téléphone » · « Sans abonnement caché » · « Une série de retours incluse »
-  - Descriptions : « Page complète : design sur mesure, textes pour vos clients. 499 € HT, livrée en 7 jours. » · « Référencement local de base inclus. Vous restez propriétaire de tout. Appelez, on cadre en 20 minutes. » · « L'IA a réduit le coût de production d'un site. Nous répercutons la différence, pas la qualité. » · « Formulaire et numéro reliés à votre boîte mail. Affichage mobile impeccable. »
+  - Descriptions : « Page complète : design sur mesure, textes pour vos clients. 499 € HT, livrée en 7 jours. » · « Référencement local inclus. Vous restez propriétaire de tout. Appel de cadrage en 20 min. » · « L'IA a réduit le coût de production d'un site. Nous répercutons la différence, pas la qualité. » · « Formulaire et numéro reliés à votre boîte mail. Affichage mobile impeccable. »
 - **Extensions** : liens annexes (Voir l'offre 499 → /#offre-site · Notre méthode → /#methode · Exemples de ce qui est inclus → /sites-web · Nous appeler → /#contact), accroches (Prix unique affiché · Livraison 7 jours · Sans engagement · Propriété totale), extrait de site (Services : Design, Textes, Mise en ligne, Référencement local), **extension d'appel** aux heures ouvrées.
 
 ### Campagne 2 · AUTO-IA (Search, France entière)
