@@ -1124,9 +1124,8 @@ em.gold{font-style:italic;color:var(--gold)}
     fetch(WEBHOOK_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
       .then(function(r){
         if(!r.ok){ throw new Error(r.status); }
-        status.textContent = "Demande envoyée. Nous revenons vers vous sous un jour ouvré.";
-        status.className = "form-status ok";
-        form.reset();
+        /* page de confirmation : point de mesure des conversions (Ads, analytics) */
+        window.location.href = "/merci";
       })
       .catch(function(){
         status.textContent = "L'envoi n'a pas abouti. Utilisez le bouton « Afficher le numéro » ou écrivez à contact@aceconseil.co.";

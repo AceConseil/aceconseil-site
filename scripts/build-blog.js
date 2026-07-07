@@ -23,13 +23,13 @@ const TEMPLATE_FILE = path.join(ROOT, 'templates', 'article.html');
 const OUT = path.join(ROOT, 'public');
 const SITE = 'https://aceconseil.co';
 
-const STATIC_FILES = ['index.html', 'mentions-legales.html', 'robots.txt', 'og-image.png'];
+const STATIC_FILES = ['index.html', 'mentions-legales.html', 'merci.html', 'robots.txt', 'og-image.png'];
 
 const PAGES_DIR = path.join(ROOT, 'content', 'pages');
 const PAGE_TEMPLATE_FILE = path.join(ROOT, 'templates', 'page.html');
 // Slugs interdits pour les pages dédiées : fichiers réservés et sources de
 // redirections 301 de vercel.json (la redirection gagnerait sur la page).
-const RESERVED_SLUGS = new Set(['index', 'mentions-legales', 'blog', 'assets',
+const RESERVED_SLUGS = new Set(['index', 'mentions-legales', 'merci', 'blog', 'assets',
   'ia', 'visibilite', 'strategie', 'formation', 'amo', 'a-propos', 'equipe',
   'about', 'audit', 'contact', 'contact-formation', 'confidentialite']);
 
