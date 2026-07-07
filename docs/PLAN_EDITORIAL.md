@@ -18,6 +18,16 @@ LinkedIn est le banc d'essai, le blog est l'actif : un post vit 48 heures, un ar
 
 Répartition des compétences : faire tourner les 7 pages piliers pour que chacune reçoive un article au moins toutes les deux semaines ; l'AMO est portée par les posts de Jennifer. Règle de qualité : mieux vaut 2 articles solides qu'un troisième bâclé ; le rythme sert le moteur, pas l'inverse.
 
+## Cadence : pourquoi pas un article par jour (verdict, juillet 2026)
+
+Google n'a aucun seuil « trop d'articles » : c'est la qualité moyenne du site entier qu'il évalue, et sa politique anti contenu à grande échelle vise les sites passés en mode volume. Le quotidien permanent est écarté pour trois raisons propres à ACE : la boucle LinkedIn filtre les sujets par la demande (un par jour publierait du non-validé), l'univers de requêtes artisans/TPE est fini (3/semaine le couvre en un an sans diluer), et les heures supplémentaires convertissent mieux ailleurs. Les rafales ponctuelles (une semaine à 5 sur un sujet chaud) restent saines.
+
+Les heures en plus vont à ces trois optimisations, dans l'ordre :
+
+1. **Rétro-maillage** : à chaque publication, éditer un ancien article pour qu'il pointe vers le nouveau (en plus des liens du nouveau vers les piliers). Deux minutes, du jus interne immédiat.
+2. **Minage Search Console** (mensuel, dès 6 semaines de données) : requêtes à impressions fortes et clics faibles = sujets que Google veut déjà nous attribuer ; ils passent devant le backlog.
+3. **Mise à jour trimestrielle** : enrichir un article existant qui a des impressions rapporte souvent plus qu'un article neuf ; en croisière, une mise à jour par semaine en alternance avec la production.
+
 ---
 
 ## 1. Devis sans réponse : pourquoi vos relances n'arrivent jamais (et comment les automatiser)
