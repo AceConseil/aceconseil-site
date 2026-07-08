@@ -96,6 +96,23 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>« Bonjour [Prénom], sans retour de votre part d'ici vendredi, je libérerai le créneau réservé pour votre chantier et je classerai le dossier. Un simple mot suffit pour le garder ouvert. »</p></div>
   </div>
 </div>`,
+  'calc-mini': `<div class="wg wg-calc" aria-label="Calculez votre manque à gagner avec vos chiffres">
+  <p class="wg-title"><span class="wg-pulse"></span>Faites le calcul avec vos chiffres</p>
+  <div class="wgc-field">
+    <label for="wgc-d">Demandes perdues ou traitées trop tard, par semaine <output id="wgc-od">3</output></label>
+    <input type="range" id="wgc-d" min="0" max="15" step="1" value="3">
+  </div>
+  <div class="wgc-field">
+    <label for="wgc-v">Valeur moyenne d'une vente ou d'une mission <output id="wgc-ov">1 500 euros</output></label>
+    <input type="range" id="wgc-v" min="200" max="20000" step="100" value="1500">
+  </div>
+  <div class="wgc-field">
+    <label for="wgc-c">Sur dix demandes traitées à temps, combien signent ? <output id="wgc-oc">3 sur 10</output></label>
+    <input type="range" id="wgc-c" min="1" max="10" step="1" value="3">
+  </div>
+  <p class="wgc-result">≈ <strong id="wgc-total">70 200</strong> euros par an</p>
+  <p class="wg-hint">Estimation faite avec vos réglages. Le premier appel sert à vérifier ce montant, poste par poste.</p>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

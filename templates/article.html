@@ -103,6 +103,13 @@ img{max-width:100%}
 .wg-body p{overflow:hidden;margin:0;padding:0 16px 0 84px;font-size:.9rem;color:var(--muted-light);transition:padding .45s}
 .wg-step.open .wg-body p{padding-bottom:14px}
 @media(max-width:560px){.wg-body p{padding-left:16px}}
+/* widget calc-mini */
+.wgc-field{margin-top:16px}
+.wgc-field label{display:flex;justify-content:space-between;align-items:baseline;gap:14px;font-size:.88rem;color:var(--muted-light)}
+.wgc-field output{font-weight:600;color:var(--gold-light);white-space:nowrap}
+.wgc-field input[type=range]{width:100%;margin-top:8px;accent-color:var(--gold);cursor:pointer;height:22px}
+.wgc-result{margin-top:22px;padding-top:18px;border-top:1px solid rgba(201,162,77,.25);font-size:1rem;color:var(--muted-light)}
+.wgc-result strong{font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:var(--gold);font-weight:700}
 @media(prefers-reduced-motion:reduce){
   .readbar{display:none}
   .fx-reveal{opacity:1;transform:none;transition:none}
@@ -211,6 +218,23 @@ img{max-width:100%}
         io.observe(el);
       }
     });
+  }
+
+  /* widget calc-mini : le calcul avec les chiffres du lecteur */
+  var wgc = document.querySelector(".wg-calc");
+  if(wgc){
+    var wd = document.getElementById("wgc-d"), wv = document.getElementById("wgc-v"), wc = document.getElementById("wgc-c");
+    var od = document.getElementById("wgc-od"), ov = document.getElementById("wgc-ov"), oc = document.getElementById("wgc-oc");
+    var wgcTotal = document.getElementById("wgc-total");
+    var wgcFmt = function(n){ return n.toLocaleString("fr-FR"); };
+    var wgcMaj = function(){
+      od.textContent = wd.value;
+      ov.textContent = wgcFmt(+wv.value) + " euros";
+      oc.textContent = wc.value + " sur 10";
+      wgcTotal.textContent = wgcFmt(Math.round(wd.value * 52 * (wc.value / 10) * wv.value));
+    };
+    [wd, wv, wc].forEach(function(inp){ inp.addEventListener("input", wgcMaj); });
+    wgcMaj();
   }
 
   /* widget : accordéon + surbrillance d'invitation (sans JS, tout est déplié) */

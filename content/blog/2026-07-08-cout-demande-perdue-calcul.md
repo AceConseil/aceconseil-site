@@ -1,12 +1,14 @@
 ---
 title: Combien coûte une demande client perdue ? La méthode
 description: La formule complète pour chiffrer votre manque à gagner, trois profils types calculés, les coûts invisibles, et comment mesurer chez vous en une semaine.
-date: 2026-07-20
+date: 2026-07-08
 slug: cout-demande-perdue-calcul
 keywords: coût client perdu, manque à gagner, demande sans réponse, calcul, TPE PME
 ---
 
 Une demande client perdue ne figure sur aucun tableau de bord : un client qu'on n'a jamais eu ne laisse pas de trace. C'est pourtant un montant qui se calcule, en trente secondes, avec quatre chiffres que vous connaissez déjà. Voici la méthode, des exemples, et ses limites honnêtes.
+
+![La formule du client perdu : demandes perdues par semaine multipliées par 52, par le taux de signature et par la valeur moyenne, soit 70 200 euros par an dans l'exemple](assets/formule-client-perdu.jpg)
 
 ## La formule
 
@@ -14,7 +16,9 @@ Une demande client perdue ne figure sur aucun tableau de bord : un client qu'on 
 
 Une demande « perdue » est une demande restée sans réponse, ou traitée trop tard pour compter encore : le premier professionnel qui répond prend une avance souvent décisive. Le taux de signature est le vôtre : sur dix demandes traitées à temps, combien deviennent des clients ?
 
-Exemple générique : 3 demandes perdues par semaine, 3 signatures sur 10, une vente moyenne à 1 500 euros. Soit 3 × 52 × 0,3 × 1 500 = **70 200 euros par an**. [Le calculateur de notre page d'accueil](/#preuves) fait ce calcul en direct, avec vos curseurs à vous.
+Exemple générique : 3 demandes perdues par semaine, 3 signatures sur 10, une vente moyenne à 1 500 euros. Soit 3 × 52 × 0,3 × 1 500 = **70 200 euros par an**. Et le mieux : vous pouvez le faire ici même.
+
+::widget calc-mini::
 
 ## Trois profils types, pour situer les ordres de grandeur
 

@@ -12,7 +12,7 @@ Un devis envoyé sans relance est un devis à moitié perdu. Ce n'est pas une fa
 
 ## Ce que le silence vous coûte vraiment
 
-Faites le compte sur votre dernier trimestre : combien de devis partis, combien de réponses ? L'écart entre les deux, multiplié par votre valeur moyenne de vente, donne un montant que personne ne voit jamais, parce qu'un client qui ne signe pas ne laisse aucune trace. Notre page d'accueil propose [un calculateur pour l'estimer avec vos chiffres](/#preuves) : c'est le point de départ honnête de toute décision sur le sujet.
+Faites le compte sur votre dernier trimestre : combien de devis partis, combien de réponses ? L'écart entre les deux, multiplié par votre valeur moyenne de vente, donne un montant que personne ne voit jamais, parce qu'un client qui ne signe pas ne laisse aucune trace. Notre page d'accueil propose [un calculateur pour l'estimer avec vos chiffres](/#preuves) : c'est le point de départ honnête de toute décision sur le sujet. La méthode complète du calcul, avec trois profils types, est détaillée dans [notre article sur le coût d'une demande perdue](/blog/cout-demande-perdue-calcul).
 
 ## Pourquoi on ne relance pas (alors qu'on sait qu'il faudrait)
 
