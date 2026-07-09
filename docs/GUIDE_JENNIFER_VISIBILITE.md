@@ -63,7 +63,7 @@ Rappel de posture : sur LinkedIn, un profil personnel performe toujours mieux qu
 ## 2.1 La photo et la bannière (20 min)
 
 1. **Photo de profil** : un portrait professionnel, cadré sur le visage (épaules et tête), fond neutre, sourire, bonne lumière. Celle du site convient parfaitement. Éviter les photos de vacances ou de groupe.
-2. **Bannière** (l'image de fond, souvent négligée, très visible) : créer sur Canva une bannière aux couleurs d'ACE (navy et or), avec le slogan « Plus de clients. Plus de temps. » et le logo. Format 1584 × 396 pixels. C'est l'occasion de rappeler ACE Conseil dès le premier regard.
+2. **Bannière** (l'image de fond, souvent négligée, très visible) : **déjà prête**, dans `assets/banniere-linkedin.jpg` (format LinkedIn 1584 × 396, charte navy et or, slogan et logo). Il n'y a qu'à la téléverser : LinkedIn → votre profil → icône appareil photo sur la bannière → Importer l'image. La même sert pour le profil de Mateusz.
 
 ## 2.2 Le titre (le plus important, 10 min)
 
