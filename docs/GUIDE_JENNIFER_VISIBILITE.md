@@ -2,7 +2,7 @@
 
 Ce guide se suit dans l'ordre, du haut vers le bas. Chaque section indique le temps à prévoir, pourquoi on le fait, et exactement quoi faire, clic par clic. Les textes entre guillemets sont prêts à copier-coller. Trois documents plus détaillés existent si besoin d'aller plus loin : `docs/GOOGLE_ADS.md` (le plan média complet), `docs/POSTS_LINKEDIN.md` (les 12 posts), `docs/PLAN_VISIBILITE.md` (la stratégie d'ensemble).
 
-Règle qui vaut partout, c'est l'ADN de la maison : on montre, on ne promet pas. Vouvoiement, aucun chiffre client inventé, aucun tiret cadratin (« — »), pas de superlatif creux. Les informations officielles à réutiliser partout, à l'identique (c'est ce qu'on appelle le NAP, et sa cohérence compte pour Google) :
+Règle qui vaut partout, c'est l'ADN de la maison : on montre, on ne promet pas. Vouvoiement, aucun chiffre client inventé, pas de tiret cadratin (ce long trait façon rédaction automatique ; préférez deux-points, virgules ou parenthèses), pas de superlatif creux. Les informations officielles à réutiliser partout, à l'identique (c'est ce qu'on appelle le NAP, et sa cohérence compte pour Google) :
 
 - **Nom** : ACE Conseil
 - **Adresse** : 15 allée des Plantes, 77410 Annet-sur-Marne
@@ -154,9 +154,9 @@ Pour chaque campagne, ne pas oublier :
 | Jour 1 | Lancer la validation de la fiche Google (le courrier prend des jours) | 30 min |
 | Jour 1-2 | Remplir toute la fiche pendant l'attente | 45 min |
 | Jour 3 | Refonte du profil LinkedIn de Jennifer, puis Mateusz et la page | 1 h 30 |
-| En continu | 3-4 posts LinkedIn/semaine/profil, demande d'avis à chaque mission | — |
+| En continu | 3-4 posts LinkedIn/semaine/profil, demande d'avis à chaque mission | régulier |
 | Semaine 2 | Ouverture du compte Google Ads et mesure | 40 min |
 | Semaine 2 | Création des 3 campagnes | 1 h |
-| En continu | 30 min/semaine de suivi Ads + le rituel du vendredi | — |
+| En continu | 30 min/semaine de suivi Ads + le rituel du vendredi | régulier |
 
 En cas de doute sur une étape, les documents détaillés sont là : `docs/GOOGLE_ADS.md`, `docs/POSTS_LINKEDIN.md`, `docs/PLAN_VISIBILITE.md`, `docs/RESEAUX_SOCIAUX.md` (pour aller plus tard sur TikTok, Instagram, Facebook). Et la question rituelle, partout, tout le temps : « Comment nous avez-vous trouvés ? » C'est elle qui dira, dans trois mois, quel canal mérite qu'on y investisse davantage.
