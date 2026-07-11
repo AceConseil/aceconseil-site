@@ -252,3 +252,71 @@ https://aceconseil.co/blog/agent-ia-artisan-concret
 - Agent IA : capture du fil d'activité du hero du site (22 h 41 → relance), `assets/fil-activite-agent.jpg`.
 
 Insérer dans l'article : `![description utile](assets/nom.jpg)` puis retirer cette ligne du présent mémo.
+
+---
+
+# Posts d'actualité (semaines du 14 et 21 juillet)
+
+Ces posts accompagnent les articles des deux fils d'actualité (voir `docs/PLAN_ACTUALITE.md`). Ils remplacent, ces semaines-là, deux des posts de la boucle. Publier le post le jour de la mise en ligne de l'article, et mettre le lien en premier commentaire si vous préférez préserver la portée.
+
+## Semaine 1
+
+### Lundi 14 juillet · Mateusz · fil AI Act
+
+Il existe une obligation sur l'intelligence artificielle, en vigueur depuis février 2025, que la quasi-totalité des dirigeants que je croise n'ont jamais entendue.
+
+L'article 4 de l'AI Act impose de garantir la maîtrise de l'IA à toute personne qui l'utilise dans l'entreprise. Sans seuil de taille. Deux salariés ou deux cents, même règle.
+
+Jusqu'ici, c'était sur le papier. Le 2 août, la CNIL et la DGCCRF obtiennent leurs pouvoirs de contrôle.
+
+Avant de fermer cette page en pensant « encore une usine à gaz » : non. La réponse tient en une demi-journée de formation, sur vos vrais cas. Et non, vous ne risquez pas quinze millions d'euros. J'explique ce que vous risquez vraiment, et quoi faire d'ici le 2 août, dans l'article.
+
+https://aceconseil.co/blog/ai-act-article-4-maitrise-ia
+
+#IA #TPE
+
+### Mercredi 16 juillet · Jennifer · fil facture électronique
+
+« La facture électronique, c'est 2027, j'ai le temps. »
+
+Je l'entends à presque chaque rendez-vous. Et c'est faux.
+
+2027, c'est la date où les PME devront ÉMETTRE leurs factures en électronique. Mais dès le 1er septembre 2026, dans quelques semaines, toutes les entreprises, sans exception de taille, doivent pouvoir en RECEVOIR, via une plateforme agréée.
+
+Recevoir sans être prêt, c'est une facture fournisseur qui n'arrive pas, un paiement en retard, un litige. Se préparer, en revanche, c'est un simple branchement, et l'occasion d'automatiser tout le traitement qui va avec.
+
+J'ai résumé ce qu'il faut vraiment comprendre, émission contre réception, dans l'article.
+
+https://aceconseil.co/blog/facture-electronique-2026-reception-obligatoire
+
+#FactureElectronique #TPE
+
+## Semaine 2
+
+### Lundi 21 juillet · Jennifer · fil AI Act
+
+Vous allez lire, cette semaine, que l'AI Act peut vous coûter quinze millions d'euros. Laissez-moi vous rassurer, et vous alerter en même temps.
+
+Vous rassurer : ces amendes record visent les fournisseurs de systèmes d'IA à haut risque et les usages interdits. Pas un artisan qui rédige ses devis avec ChatGPT. Vous faire peur avec ce chiffre, c'est de la vente par la peur, et ce n'est pas notre façon de faire.
+
+Vous alerter : le vrai risque, pour une TPE, est plus discret. À partir du 2 août, ne pas pouvoir montrer que vos équipes maîtrisent les outils qu'elles utilisent devient un point faible, un facteur aggravant en cas d'incident.
+
+La bonne nouvelle : ça se règle en une demi-journée. J'explique dans l'article ce qu'un contrôle regarde vraiment, et ce qui suffit à être tranquille.
+
+https://aceconseil.co/blog/ai-act-2-aout-ce-qui-change
+
+#IA #DirigeantsTPE
+
+### Mercredi 23 juillet · Mateusz · fil facture électronique
+
+PA, PDP, PPF. Trois sigles qui suffisent à faire refermer l'onglet à n'importe quel dirigeant.
+
+Voici la seule chose à comprendre : à partir de septembre 2026, vous ne pourrez plus recevoir vos factures par un simple email avec un PDF. Il faudra passer par une plateforme agréée par l'État.
+
+Et attention au piège : le portail public de l'administration ne fera PAS le travail à votre place. Il tient l'annuaire et collecte les données, mais il ne reçoit ni n'envoie vos factures. Il vous faut donc bien choisir une plateforme agréée, souvent celle à laquelle votre logiciel de compta est déjà relié.
+
+J'ai décodé les trois sigles et donné les trois réflexes pour choisir la vôtre, dans l'article.
+
+https://aceconseil.co/blog/plateforme-agreee-facture-electronique
+
+#FactureElectronique #PME

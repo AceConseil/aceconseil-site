@@ -28,6 +28,23 @@ Les heures en plus vont à ces trois optimisations, dans l'ordre :
 2. **Minage Search Console** (mensuel, dès 6 semaines de données) : requêtes à impressions fortes et clics faibles = sujets que Google veut déjà nous attribuer ; ils passent devant le backlog.
 3. **Mise à jour trimestrielle** : enrichir un article existant qui a des impressions rapporte souvent plus qu'un article neuf ; en croisière, une mise à jour par semaine en alternance avec la production.
 
+## Focus actualité : juillet à septembre 2026 (voir docs/PLAN_ACTUALITE.md)
+
+Pendant l'été, deux échéances réglementaires portent le contenu, en deux fils parallèles (un article et un post LinkedIn par semaine et par fil) :
+- **Fil AI Act** (climax le 2 août) : rattaché à `/formation-ia`.
+- **Fil facture électronique** (climax le 1er septembre) : rattaché à `/automatisation`.
+
+Répartition des 3 créneaux hebdomadaires (lun/mer/ven) : lundi = fil AI Act, mercredi = fil facture électronique, vendredi = boucle habituelle. Les 10 articles socles ci-dessous reprennent la main après le 1er septembre.
+
+Articles rédigés et en attente de publication (brouillons `_` dans `content/blog/`, image + widget + rétro-maillage à ajouter au moment de publier, comme d'habitude) :
+- lun 14/07 : `_2026-07-14-ai-act-article-4-maitrise-ia.md`
+- mer 16/07 : `_2026-07-16-facture-electronique-2026-reception-obligatoire.md`
+- lun 21/07 : `_2026-07-21-ai-act-2-aout-ce-qui-change.md`
+- mer 23/07 : `_2026-07-23-plateforme-agreee-facture-electronique.md`
+- vendredis : `_2026-07-27-site-artisan-elements-qui-convertissent.md` (boucle), puis reprise des sujets socles.
+
+Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POSTS_LINKEDIN.md`.
+
 ---
 
 ## 1. Devis sans réponse : pourquoi vos relances n'arrivent jamais (et comment les automatiser)
