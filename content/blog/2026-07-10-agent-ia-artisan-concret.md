@@ -1,12 +1,14 @@
 ---
 title: Un agent IA dans une TPE : ce que ça fait, heure par heure
 description: La journée réelle d'un agent IA dans une petite entreprise : ce qu'il prend en charge, ce qu'il ne fera jamais, et par où commencer sans se tromper.
-date: 2026-07-31
+date: 2026-07-10
 slug: agent-ia-artisan-concret
 keywords: agent IA artisan, assistant IA TPE, secrétariat automatique, réponse automatique demandes
 ---
 
 « Agent IA » est devenu un mot fourre-tout. Le plus simple pour comprendre ce que c'est vraiment : suivre une journée, heure par heure, dans une entreprise artisanale. Puis regarder honnêtement la frontière : ce que l'agent fait mieux qu'un humain, et ce qu'il ne fera jamais.
+
+![La journée d'un agent IA : demande reçue à 22 h 41, qualifiée à 22 h 42, dossier prêt à votre réveil à 7 h 30](assets/agent-journee.jpg)
 
 ## La même journée, sans et avec
 
@@ -15,6 +17,10 @@ keywords: agent IA artisan, assistant IA TPE, secrétariat automatique, réponse
 **Avec agent.** 22 h 41, la demande arrive. 22 h 42, elle est lue, comprise, classée. L'agent pose par écrit les questions qui manquent, avec vos mots. Le prospect répond dans la soirée, l'agent rassemble tout. Le lendemain 7 h 30, vous ouvrez un dossier qualifié : le besoin, la commune, le délai, les éléments du devis déjà réunis. Votre premier geste de la journée est un geste utile.
 
 Et le cycle continue après le devis : sans réponse sous quelques jours, la relance part seule, avec votre ton, et s'arrête dès que le client répond.
+
+Déroulez la journée, étape par étape :
+
+::widget agent-journee::
 
 ## Ce que l'agent prend en charge, concrètement
 

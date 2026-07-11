@@ -113,6 +113,26 @@ const ARTICLE_WIDGETS = {
   <p class="wgc-result">≈ <strong id="wgc-total">70 200</strong> euros par an</p>
   <p class="wg-hint">Estimation faite avec vos réglages. Le premier appel sert à vérifier ce montant, poste par poste.</p>
 </div>`,
+  'agent-journee': `<div class="wg wg-agent" aria-label="La journée d'un agent IA, heure par heure">
+  <p class="wg-title"><span class="wg-pulse"></span>La journée de votre agent, heure par heure</p>
+  <p class="wg-hint">Touchez chaque étape pour la dérouler.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">22 h 41</span><span class="wg-name">Demande reçue</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Un prospect remplit le formulaire de votre site. Vous dormez. L'agent, lui, est réveillé.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">22 h 42</span><span class="wg-name">Lue et qualifiée</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>L'agent lit, comprend, classe. Il pose par écrit les questions qui manquent, surface, commune, délai, avec vos mots.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">07 h 30</span><span class="wg-name">Dossier prêt</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>À votre réveil, vous n'ouvrez pas un message brut : vous ouvrez un client qualifié, les éléments du devis déjà réunis. Votre premier geste de la journée est un geste utile.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">J+3</span><span class="wg-name">Relance programmée</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Le devis part sans réponse ? La relance suit toute seule, avec votre ton, et s'arrête dès que le client répond.</p></div>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──
