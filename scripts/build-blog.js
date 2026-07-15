@@ -133,6 +133,42 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Le devis part sans réponse ? La relance suit toute seule, avec votre ton, et s'arrête dès que le client répond.</p></div>
   </div>
 </div>`,
+  'maitrise-ia-reperes': `<div class="wg wg-agent" aria-label="La maîtrise de l'IA, en quatre repères">
+  <p class="wg-title"><span class="wg-pulse"></span>La maîtrise de l'IA, en 4 repères</p>
+  <p class="wg-hint">Touchez chaque repère pour le déplier.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">1</span><span class="wg-name">Savoir ce que l'outil fait vraiment</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Et ce qu'il ne fait pas. Un outil d'IA n'est ni infaillible ni magique : connaître son périmètre réel évite les mauvaises surprises.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2</span><span class="wg-name">Connaître ses limites, donc vérifier</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Un outil se trompe, invente parfois. La règle tient en un mot : on relit et on vérifie ce qu'il produit avant de s'en servir.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">3</span><span class="wg-name">Protéger les informations sensibles</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Savoir quelles données on peut confier à un outil, et lesquelles jamais. C'est le point le plus souvent négligé, et le plus coûteux.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">4</span><span class="wg-name">Garder la décision humaine</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>L'IA prépare, propose, accélère. Elle ne décide pas à votre place sur ce qui engage l'entreprise ou le client.</p></div>
+  </div>
+</div>`,
+  'facture-emission-reception': `<div class="wg wg-agent" aria-label="Facture électronique : émettre ou recevoir, deux calendriers">
+  <p class="wg-title"><span class="wg-pulse"></span>Émettre ou recevoir : deux calendriers</p>
+  <p class="wg-hint">Touchez chaque ligne pour la déplier.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2026</span><span class="wg-name">Recevoir : toutes les entreprises</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Dès le 1er septembre 2026, sans aucune exception de taille, vous devez pouvoir recevoir une facture électronique. C'est ça qui vous concerne dans quelques semaines.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2026</span><span class="wg-name">Émettre : grandes entreprises et ETI</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Les grandes entreprises et les entreprises de taille intermédiaire doivent aussi émettre leurs factures en électronique dès le 1er septembre 2026.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2027</span><span class="wg-name">Émettre : PME et micro-entreprises</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>C'est le fameux « 2027 » que beaucoup retiennent. Il ne concerne que l'émission, et seulement les petites structures. La réception, elle, reste fixée à septembre 2026.</p></div>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

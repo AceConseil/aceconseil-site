@@ -10,6 +10,8 @@ date: 2026-07-03
 
 La plupart des formations à l'intelligence artificielle laissent les équipes exactement là où elles les ont prises : impressionnées, et démunies. Notre parti pris est inverse : une formation courte, construite sur votre entreprise, dont on mesure l'effet au lundi suivant.
 
+Depuis 2025, cette montée en compétence n'est d'ailleurs plus seulement une bonne pratique : l'article 4 de l'AI Act en fait une obligation pour toute entreprise qui utilise l'IA, sans seuil de taille. Nous l'expliquons dans [notre article sur l'article 4 de l'AI Act](/blog/ai-act-article-4-maitrise-ia).
+
 ## Pourquoi les formations génériques ne changent rien
 
 Une démonstration sur des exemples inventés ne survit pas au retour au bureau. Vos documents ne ressemblent pas à ceux de la démonstration, vos clients ne posent pas les questions du support de cours, et chacun retourne à ses habitudes en quelques jours. Le problème n'est pas la bonne volonté des équipes : c'est la distance entre l'exemple et le poste de travail. Nous supprimons cette distance en travaillant directement sur vos cas.

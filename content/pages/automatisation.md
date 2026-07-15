@@ -10,6 +10,8 @@ date: 2026-07-03
 
 Dans la plupart des petites entreprises, le problème n'est pas le manque d'outils. C'est qu'ils s'ignorent : le devis est dans un logiciel, le planning dans un autre, les échanges clients dans la messagerie, et c'est vous qui faites la navette entre les trois. Cette page explique ce que nous automatisons, comment, et ce que ça change.
 
+La facture électronique, obligatoire en réception dès septembre 2026, en est un exemple d'actualité : elle impose de recevoir autrement, et c'est l'occasion d'automatiser tout le traitement qui suit. Nous détaillons l'échéance dans [notre article sur la réception des factures électroniques](/blog/facture-electronique-2026-reception-obligatoire).
+
 ## La double saisie, le mal silencieux des petites entreprises
 
 Une information qui entre dans votre entreprise est souvent saisie deux ou trois fois : une fois dans le devis, une fois dans le planning, une fois dans la facture. Chaque saisie prend quelques minutes, chaque minute se paie le soir, et chaque recopie est une occasion d'erreur. Le plus coûteux n'est pourtant pas la saisie elle-même : c'est ce qui ne se fait pas pendant ce temps. Les relances attendent, les demandes entrantes refroidissent, et la journée de travail déborde sur la vie de famille.

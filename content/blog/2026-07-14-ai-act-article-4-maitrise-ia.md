@@ -8,6 +8,8 @@ keywords: AI Act, article 4, maîtrise de l'IA, formation IA, obligation entrepr
 
 Il existe une obligation européenne sur l'intelligence artificielle, en vigueur depuis février 2025, que la quasi-totalité des dirigeants de TPE et de PME n'ont jamais entendue. Elle ne concerne pas les géants de la tech. Elle concerne toute entreprise qui utilise l'IA, même une seule personne avec ChatGPT. Voici de quoi il s'agit, et pourquoi le 2 août 2026 change la donne.
 
+![AI Act, article 4 : la maîtrise de l'IA, en vigueur depuis février 2025, contrôlable à partir du 2 août 2026, sans seuil de taille](assets/ai-act-article-4.jpg)
+
 ## L'article 4, en une phrase
 
 Le règlement européen sur l'intelligence artificielle, l'AI Act, contient un article 4 intitulé « maîtrise de l'IA ». Il impose aux entreprises qui déploient un système d'IA de garantir un niveau de compétence suffisant aux personnes qui l'utilisent en leur nom. En clair : si vos salariés se servent d'un outil d'IA dans leur travail, vous devez vous assurer qu'ils savent ce qu'ils font, ce que l'outil vaut, et où sont ses limites.
@@ -38,6 +40,8 @@ Le texte ne demande pas un diplôme ni une certification. Il demande que vos éq
 - savoir quand la décision doit rester humaine.
 
 Rien d'insurmontable. Mais rien qui s'improvise non plus, surtout dans une équipe où chacun a appris seul, dans son coin.
+
+::widget maitrise-ia-reperes::
 
 ## La réponse tient en une demi-journée
 

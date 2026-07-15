@@ -36,11 +36,11 @@ Pendant l'été, deux échéances réglementaires portent le contenu, en deux fi
 
 Répartition des 3 créneaux hebdomadaires (lun/mer/ven) : lundi = fil AI Act, mercredi = fil facture électronique, vendredi = boucle habituelle. Les 10 articles socles ci-dessous reprennent la main après le 1er septembre.
 
-Articles rédigés et en attente de publication (brouillons `_` dans `content/blog/`, image + widget + rétro-maillage à ajouter au moment de publier, comme d'habitude) :
-- lun 14/07 : `_2026-07-14-ai-act-article-4-maitrise-ia.md`
-- mer 16/07 : `_2026-07-16-facture-electronique-2026-reception-obligatoire.md`
-- lun 21/07 : `_2026-07-21-ai-act-2-aout-ce-qui-change.md`
-- mer 23/07 : `_2026-07-23-plateforme-agreee-facture-electronique.md`
+Statut de publication (image + widget + rétro-maillage ajoutés au moment de publier, comme d'habitude) :
+- lun 14/07 : `2026-07-14-ai-act-article-4-maitrise-ia.md` — **publié** (image `ai-act-article-4.jpg`, module « 4 repères », lien depuis la page pilier formation-ia).
+- mer 16/07 : `2026-07-16-facture-electronique-2026-reception-obligatoire.md` — **publié** (image `facture-reception-2026.jpg`, module « deux calendriers », lien depuis la page pilier automatisation).
+- lun 21/07 : `_2026-07-21-ai-act-2-aout-ce-qui-change.md` — brouillon, prêt.
+- mer 23/07 : `_2026-07-23-plateforme-agreee-facture-electronique.md` — brouillon, prêt.
 - vendredis : `_2026-07-27-site-artisan-elements-qui-convertissent.md` (boucle), puis reprise des sujets socles.
 
 Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POSTS_LINKEDIN.md`.

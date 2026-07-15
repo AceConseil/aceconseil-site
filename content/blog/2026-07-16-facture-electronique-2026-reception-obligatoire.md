@@ -8,6 +8,8 @@ keywords: facture électronique, 2026, réception, obligation, TPE PME, platefor
 
 « La facture électronique, c'est 2027, j'ai le temps. » C'est la phrase qu'on entend à presque chaque rendez-vous. Et elle repose sur un malentendu qui peut coûter cher. Voici la vérité, en clair, et ce qu'il faut vraiment faire avant septembre.
 
+![Facture électronique : recevoir concerne toutes les entreprises dès le 1er septembre 2026, émettre reste 2027 pour les PME](assets/facture-reception-2026.jpg)
+
 ## Le malentendu qui piège les PME
 
 La réforme distingue deux choses très différentes : **émettre** une facture électronique, et **recevoir** une facture électronique. Les deux n'ont pas le même calendrier.
@@ -16,6 +18,8 @@ La réforme distingue deux choses très différentes : **émettre** une facture 
 - **Recevoir** : l'obligation est unique et immédiate. **Dès le 1er septembre 2026, toutes les entreprises, sans aucune exception de taille, doivent pouvoir recevoir une facture électronique.**
 
 Le « 2027 » que beaucoup ont retenu, c'est la date d'émission pour les petites structures. En n'entendant que ce chiffre, un dirigeant se croit tranquille jusque-là. Il ne l'est pas : la réception le concerne dans quelques semaines.
+
+::widget facture-emission-reception::
 
 ## Pourquoi la réception n'est pas un détail
 
