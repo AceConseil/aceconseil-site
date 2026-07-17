@@ -1,16 +1,18 @@
 ---
 title: Site d'artisan : les 7 éléments qui font sonner le téléphone
-description: Un site de TPE n'a pas besoin d'être joli, il doit convertir. Les 7 éléments qui transforment une visite en appel, et les erreurs classiques à éviter.
-date: 2026-07-27
+description: Un site d'artisan ou de TPE n'a pas besoin d'être joli, il doit convertir. Les 7 éléments qui transforment une visite en appel, et les erreurs à éviter.
+date: 2026-07-17
 slug: site-artisan-elements-qui-convertissent
-keywords: site internet artisan, site vitrine TPE, site qui convertit, création site professionnel
+keywords: site internet artisan, création site artisan, site vitrine TPE, site qui convertit, création site professionnel
 ---
 
-Beaucoup de sites d'artisans et de TPE existent sans servir : le visiteur arrive, regarde, repart. Le problème n'est presque jamais l'esthétique. C'est que le site n'a pas été construit pour la seule chose qui compte : transformer une visite en appel. Voici les sept éléments qui font la différence, dans l'ordre d'importance.
+Beaucoup de sites d'artisans et de TPE existent sans servir : le visiteur arrive, regarde, repart. Et [chaque visite qui repart sans appeler a un coût](/blog/cout-demande-perdue-calcul). Le problème n'est presque jamais l'esthétique. C'est que le site n'a pas été construit pour la seule chose qui compte : transformer une visite en appel. Voici les sept éléments qui font la différence, classés à peu près par ordre d'importance.
+
+![Les 7 éléments d'un site d'artisan qui convertit, dans l'ordre d'importance : clarté, contact, client, preuve, formulaire, mobile, vitesse](assets/site-artisan-7-elements.jpg)
 
 ## 1. Un message immédiatement clair
 
-En trois secondes, votre visiteur doit savoir qui vous êtes, ce que vous faites, et sur quelle zone. « Plomberie et chauffage, secteur de Meaux, dépannage et installation » vaut mieux que n'importe quel slogan. Le doute fait fuir plus sûrement qu'un défaut de design.
+En quelques secondes, votre visiteur doit savoir qui vous êtes, ce que vous faites, et sur quelle zone. « Plomberie et chauffage, secteur de Meaux, dépannage et installation » vaut mieux que n'importe quel slogan. Le doute fait fuir plus sûrement qu'un défaut de design.
 
 ## 2. Un moyen de contact visible en permanence
 
@@ -30,7 +32,7 @@ Nom, contact, message. Chaque champ supplémentaire fait tomber une partie des d
 
 ## 6. Un affichage impeccable sur téléphone
 
-La majorité de vos visites se fait sur mobile, souvent dans l'urgence. Texte lisible sans zoomer, boutons pressables au pouce, aucune coupure de mise en page : le mobile n'est pas une version dégradée, c'est la version principale.
+Chez un artisan, les visites viennent surtout d'un mobile, et souvent dans l'urgence. Texte lisible sans zoomer, boutons pressables au pouce, aucune coupure de mise en page : pour la plupart de vos visiteurs, le mobile est la version principale de votre site.
 
 ## 7. La vitesse
 
@@ -44,15 +46,11 @@ Les modèles tout faits produisent presque toujours les mêmes défauts : un car
 
 ## La check-list avant de valider votre site
 
-- Mon activité et ma zone sont comprises en trois secondes.
-- On peut m'appeler d'un toucher depuis n'importe quelle page.
-- Chaque texte parle du client avant de parler de moi.
-- Chaque preuve affichée est vérifiable.
-- Le formulaire tient en trois champs.
-- Tout est lisible et rapide sur un téléphone.
-- Mon site apparaît quand on cherche mon métier et ma ville.
+Faites le test sur votre site actuel, sans indulgence. Chaque case non cochée est une demande qui risque de vous échapper.
 
-## Combien de temps, et par où commencer
+::widget checklist-site::
+
+## Combien de temps pour créer un site d'artisan, et par où commencer
 
 Construit avec méthode, un site qui coche ces sept cases se livre en semaines, pas en mois : notre façon de faire est détaillée sur la page [sites web nouvelle génération](/sites-web), et ce site en est la démonstration. Pour les entreprises qui partent de zéro, nous proposons une offre d'entrée à prix fixe, [détaillée sur notre page d'accueil](/#offre-site) : une page complète, design, textes et mise en ligne compris.
 

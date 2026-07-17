@@ -169,6 +169,30 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>C'est le fameux « 2027 » que beaucoup retiennent. Il ne concerne que l'émission, et seulement les petites structures. La réception, elle, reste fixée à septembre 2026.</p></div>
   </div>
 </div>`,
+  'checklist-site': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre site coche-t-il les 7 cases ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre site coche-t-il les 7 cases ?</p>
+  <p class="wg-hint">Cochez ce que votre site fait déjà, sans indulgence.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon activité et ma zone sont claires d'emblée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">On peut m'appeler d'un toucher, depuis chaque page.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mes textes parlent d'abord du client.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mes preuves affichées sont toutes vérifiables.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon formulaire tient en trois champs.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon site reste net et lisible sur téléphone.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon site s'affiche en moins de trois secondes.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 7 éléments en place</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre site.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Votre site ressemble à une vitrine sans en avoir la fonction : il informe peut-être, mais il ne fait pas appeler. Le bon côté : ces manques se corrigent vite, souvent en repartant d'une base propre. Vingt minutes avec Jennifer, cofondatrice, suffisent pour situer le chantier.</span>
+    <span class="wgk-band" data-min="3" data-max="4">Les fondations sont là, mais plusieurs cases non cochées laissent partir des demandes. Reprenez-les une à une : ce sont elles qui vous coûtent des appels. Notre page sites web détaille la méthode pour les reboucher.</span>
+    <span class="wgk-band" data-min="5" data-max="6">Votre site convertit déjà, il lui manque peu pour être vraiment efficace. Traitez la ou les cases restantes plutôt que de tout refaire : le gain est concret pour un effort mesuré.</span>
+    <span class="wgk-band" data-min="7" data-max="7">Les sept éléments sont réunis : votre site est construit pour faire sonner le téléphone. Gardez-le rapide et à jour, et vérifiez qu'il apparaît bien quand on cherche votre métier et votre ville.</span>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

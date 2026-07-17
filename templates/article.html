@@ -110,6 +110,22 @@ img{max-width:100%}
 .wgc-field input[type=range]{width:100%;margin-top:8px;accent-color:var(--gold);cursor:pointer;height:22px}
 .wgc-result{margin-top:22px;padding-top:18px;border-top:1px solid rgba(201,162,77,.25);font-size:1rem;color:var(--muted-light)}
 .wgc-result strong{font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:var(--gold);font-weight:700}
+/* widget checklist auto-diagnostic */
+.wg-check .wgk-list{list-style:none;margin:16px 0 0;padding:0}
+.wgk-item{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;margin-top:8px;border:1px solid rgba(254,253,251,.12);border-radius:10px;cursor:pointer;transition:border-color .25s,background .25s}
+.wgk-item:hover{border-color:rgba(201,162,77,.5)}
+.wgk-item:has(.wgk-box:checked){border-color:rgba(201,162,77,.5);background:rgba(201,162,77,.07)}
+.wgk-box{appearance:none;-webkit-appearance:none;flex:0 0 auto;width:22px;height:22px;margin-top:1px;border:2px solid rgba(201,162,77,.55);border-radius:6px;cursor:pointer;position:relative;transition:background .2s,border-color .2s}
+.wgk-box:checked{background:var(--gold);border-color:var(--gold)}
+.wgk-box:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid var(--navy-deep);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.wgk-box:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wgk-txt{font-size:.95rem;color:var(--cream);line-height:1.4}
+.wgk-result{margin-top:20px;padding-top:18px;border-top:1px solid rgba(201,162,77,.25)}
+.wgk-score{font-size:1rem;color:var(--muted-light)}
+.wgk-score strong{font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:var(--gold);font-weight:700}
+.wgk-bar{height:8px;border-radius:4px;background:rgba(254,253,251,.1);overflow:hidden;margin:12px 0}
+.wgk-bar span{display:block;height:100%;background:var(--gold);width:0;transition:width .4s ease}
+.wgk-verdict{margin-top:10px;font-size:1rem;color:var(--muted-light);line-height:1.55}
 @media(prefers-reduced-motion:reduce){
   .readbar{display:none}
   .fx-reveal{opacity:1;transform:none;transition:none}
@@ -263,6 +279,31 @@ img{max-width:100%}
         arret();
       });
     });
+  });
+
+  /* widget checklist auto-diagnostic : score + verdict selon les cases cochées */
+  document.querySelectorAll(".wg-check").forEach(function(wg){
+    var boxes = wg.querySelectorAll(".wgk-box");
+    if(!boxes.length){ return; }
+    var nEl = wg.querySelector(".wgk-n");
+    var vEl = wg.querySelector(".wgk-v");
+    var bar = wg.querySelector(".wgk-bar span");
+    var total = boxes.length;
+    var bands = [];
+    wg.querySelectorAll(".wgk-band").forEach(function(el){
+      bands.push({ min: +el.getAttribute("data-min"), max: +el.getAttribute("data-max"), v: el.textContent });
+    });
+    var maj = function(){
+      var n = 0;
+      boxes.forEach(function(b){ if(b.checked){ n++; } });
+      if(nEl){ nEl.textContent = n; }
+      if(bar){ bar.style.width = (total ? Math.round(n / total * 100) : 0) + "%"; }
+      var band = null;
+      for(var i = 0; i < bands.length; i++){ if(n >= bands[i].min && n <= bands[i].max){ band = bands[i]; break; } }
+      if(band && vEl){ vEl.textContent = band.v; }
+    };
+    boxes.forEach(function(b){ b.addEventListener("change", maj); });
+    maj();
   });
 })();
 </script>
