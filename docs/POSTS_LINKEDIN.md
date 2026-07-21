@@ -293,30 +293,44 @@ https://aceconseil.co/blog/facture-electronique-2026-reception-obligatoire
 
 ## Semaine 2
 
-### Lundi 21 juillet · Jennifer · fil AI Act
+### Mardi 21 juillet · Jennifer · fil AI Act (publié avec l'article)
 
 Vous allez lire, cette semaine, que l'AI Act peut vous coûter quinze millions d'euros. Laissez-moi vous rassurer, et vous alerter en même temps.
 
-Vous rassurer : ces amendes record visent les fournisseurs de systèmes d'IA à haut risque et les usages interdits. Pas un artisan qui rédige ses devis avec ChatGPT. Vous faire peur avec ce chiffre, c'est de la vente par la peur, et ce n'est pas notre façon de faire.
+Vous rassurer : ces amendes record visent les fournisseurs de systèmes d'IA à haut risque et les usages interdits. Pas un artisan qui rédige ses devis avec ChatGPT. Brandir ce chiffre devant un artisan, c'est de la vente par la peur, et ce n'est pas notre façon de faire.
 
 Vous alerter : le vrai risque, pour une TPE, est plus discret. À partir du 2 août, ne pas pouvoir montrer que vos équipes maîtrisent les outils qu'elles utilisent devient un point faible, un facteur aggravant en cas d'incident.
 
-La bonne nouvelle : ça se règle en une demi-journée. J'explique dans l'article ce qu'un contrôle regarde vraiment, et ce qui suffit à être tranquille.
+La bonne nouvelle : ça se règle en une demi-journée. J'explique dans l'article ce qu'un contrôle regarde vraiment, et ce qui permet de l'aborder sereinement.
 
 https://aceconseil.co/blog/ai-act-2-aout-ce-qui-change
 
 #IA #DirigeantsTPE
 
-### Mercredi 23 juillet · Mateusz · fil facture électronique
+### Jeudi 23 juillet · Mateusz · fil facture électronique
 
 PA, PDP, PPF. Trois sigles qui suffisent à faire refermer l'onglet à n'importe quel dirigeant.
 
 Voici la seule chose à comprendre : à partir de septembre 2026, vous ne pourrez plus recevoir vos factures par un simple email avec un PDF. Il faudra passer par une plateforme agréée par l'État.
 
-Et attention au piège : le portail public de l'administration ne fera PAS le travail à votre place. Il tient l'annuaire et collecte les données, mais il ne reçoit ni n'envoie vos factures. Il vous faut donc bien choisir une plateforme agréée, souvent celle à laquelle votre logiciel de compta est déjà relié.
+Et attention au piège : le portail public de l'administration ne fera PAS le travail à votre place. Il tient l'annuaire et collecte les données, mais il ne reçoit ni n'envoie vos factures. Il vous faut donc choisir une plateforme agréée, souvent celle à laquelle votre logiciel de comptabilité est déjà relié.
 
 J'ai décodé les trois sigles et donné les trois réflexes pour choisir la vôtre, dans l'article.
 
 https://aceconseil.co/blog/plateforme-agreee-facture-electronique
 
 #FactureElectronique #PME
+
+### Vendredi 24 juillet · Jennifer · boucle sites web
+
+Beaucoup de sites d'artisans sont jolis. Peu font sonner le téléphone.
+
+La différence entre les deux tient à sept éléments, et aucun n'est spectaculaire.
+
+Nous avons publié un auto-diagnostic en 7 points pour les sites d'artisans et de TPE : clarté du message, appel en un toucher, textes orientés client, preuves vérifiables, formulaire court, mobile, vitesse.
+
+Deux minutes, sans jargon, et un verdict honnête selon votre score : vous saurez ce qui empêche une visite de devenir un appel.
+
+Faites le test dans l'article : https://aceconseil.co/blog/site-artisan-elements-qui-convertissent
+
+#SiteInternet #Artisans

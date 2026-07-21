@@ -193,6 +193,26 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="7" data-max="7">Les sept éléments sont réunis : votre site est construit pour faire sonner le téléphone. Gardez-le rapide et à jour, et vérifiez qu'il apparaît bien quand on cherche votre métier et votre ville.</span>
   </div>
 </div>`,
+  'checklist-controle-ia': `<div class="wg wg-check" aria-label="Auto-diagnostic : seriez-vous tranquille en cas de contrôle ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Un contrôle demain : seriez-vous tranquille ?</p>
+  <p class="wg-hint">Cochez ce qui est déjà en place chez vous.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">L'inventaire des outils d'IA utilisés chez nous est fait.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Des règles simples sont posées par écrit : confidentialité, vérification, décision humaine.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les personnes concernées ont été formées, sur nos cas réels.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 3 en place</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="0">Vous découvririez le sujet le jour où la question se pose. Rien d'insurmontable : l'inventaire se fait en vingt minutes, et l'essentiel tient en une demi-journée. Le bon moment pour commencer, c'est cette semaine.</span>
+    <span class="wgk-band" data-min="1" data-max="1">Le premier pas est fait. Posez maintenant les règles par écrit, ou formez l'équipe : c'est ce qui transforme une intention en réponse montrable.</span>
+    <span class="wgk-band" data-min="2" data-max="2">Il ne manque qu'une pièce. Complétez-la, et vous pourrez répondre « oui, voici » le jour où la question se pose.</span>
+    <span class="wgk-band" data-min="3" data-max="3">Vous êtes du bon côté : vous pouvez montrer la formation et les règles. Gardez-les à jour quand un nouvel outil entre dans l'entreprise.</span>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

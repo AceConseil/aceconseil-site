@@ -20,7 +20,7 @@ Cette obligation s'applique **depuis le 2 février 2025**. Et surtout, elle n'a 
 
 Jusqu'ici, l'article 4 existait sur le papier, sans autorité pour le faire respecter. Cela change le 2 août 2026 : à cette date, les autorités françaises, dont la CNIL et la DGCCRF, obtiennent leurs pouvoirs de contrôle et de sanction sur l'AI Act.
 
-Autrement dit, une obligation théorique devient une obligation vérifiable. Ce n'est pas une raison de paniquer, c'est une raison de s'y préparer calmement, tant que c'est simple.
+Autrement dit, une obligation théorique devient une obligation vérifiable. Ce n'est pas une raison de paniquer, c'est une raison de s'y préparer calmement, tant que c'est simple. Nous avons détaillé [ce qui change concrètement le 2 août, et ce qu'un contrôle regarde](/blog/ai-act-2-aout-ce-qui-change).
 
 ## Êtes-vous concerné ? Presque sûrement oui
 
