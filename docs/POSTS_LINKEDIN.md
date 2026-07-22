@@ -307,7 +307,7 @@ https://aceconseil.co/blog/ai-act-2-aout-ce-qui-change
 
 #IA #DirigeantsTPE
 
-### Jeudi 23 juillet · Mateusz · fil facture électronique
+### Mercredi 22 juillet · Mateusz · fil facture électronique (publié avec l'article)
 
 PA, PDP, PPF. Trois sigles qui suffisent à faire refermer l'onglet à n'importe quel dirigeant.
 

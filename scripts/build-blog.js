@@ -213,6 +213,26 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="3" data-max="3">Vous êtes du bon côté : vous pouvez montrer la formation et les règles. Gardez-les à jour quand un nouvel outil entre dans l'entreprise.</span>
   </div>
 </div>`,
+  'checklist-pret-a-recevoir': `<div class="wg wg-check" aria-label="Auto-diagnostic : prêt à recevoir vos factures électroniques en septembre ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Prêt à recevoir en septembre ?</p>
+  <p class="wg-hint">Cochez ce qui est déjà réglé chez vous.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je sais quelle plateforme agréée recevra mes factures.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon logiciel de comptabilité ou de facturation y est relié.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon expert-comptable est au courant de mon choix.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 3 en place</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="0">La rentrée approche, mais tout se règle encore vite. Commencez par la question à votre logiciel actuel : c'est souvent le chemin le plus court.</span>
+    <span class="wgk-band" data-min="1" data-max="1">Le sujet est lancé. Verrouillez le branchement : une plateforme choisie mais pas reliée à vos outils ne reçoit rien.</span>
+    <span class="wgk-band" data-min="2" data-max="2">Il ne reste qu'une case. Fermez-la avant la rentrée, et la réception ne sera qu'une formalité.</span>
+    <span class="wgk-band" data-min="3" data-max="3">Vous êtes prêt à recevoir. Reste l'étape qui rapporte : brancher le tri, le rapprochement et les relances sur votre organisation.</span>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

@@ -33,7 +33,7 @@ Concrètement, une facture fournisseur qui n'atterrit pas, c'est un paiement en 
 
 Vous ne pourrez plus recevoir vos factures par un simple email avec un PDF. La réforme impose de passer par une **plateforme agréée** par l'administration, directement ou via un logiciel qui y est raccordé. C'est elle qui reçoit la facture électronique, la met au bon format et l'achemine jusqu'à vous.
 
-Bonne nouvelle : si vous utilisez déjà un logiciel de comptabilité ou de facturation récent, il est probablement déjà relié à une plateforme agréée, ou le sera avant l'échéance. Nous détaillerons le choix d'une plateforme dans un prochain article. L'essentiel aujourd'hui est de savoir que la case doit être cochée avant septembre.
+Bonne nouvelle : si vous utilisez déjà un logiciel de comptabilité ou de facturation récent, il est probablement déjà relié à une plateforme agréée, ou le sera avant l'échéance. Nous avons détaillé [le choix d'une plateforme agréée, et les trois sigles à décoder, dans un article dédié](/blog/plateforme-agreee-facture-electronique). L'essentiel aujourd'hui est de savoir que la case doit être cochée avant septembre.
 
 ## Un contrainte, ou une occasion ?
 
