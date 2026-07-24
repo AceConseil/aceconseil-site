@@ -23,7 +23,8 @@ const TEMPLATE_FILE = path.join(ROOT, 'templates', 'article.html');
 const OUT = path.join(ROOT, 'public');
 const SITE = 'https://aceconseil.co';
 
-const STATIC_FILES = ['index.html', 'mentions-legales.html', 'merci.html', 'robots.txt', 'og-image.png'];
+const STATIC_FILES = ['index.html', 'mentions-legales.html', 'merci.html', 'robots.txt', 'og-image.png',
+  '750f5e47e9d41e60496334acbe3d3cf2.txt']; // clé IndexNow (voir scripts/indexnow.js)
 
 const PAGES_DIR = path.join(ROOT, 'content', 'pages');
 const PAGE_TEMPLATE_FILE = path.join(ROOT, 'templates', 'page.html');
