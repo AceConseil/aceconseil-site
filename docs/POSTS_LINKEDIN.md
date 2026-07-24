@@ -334,3 +334,67 @@ Deux minutes, sans jargon, et un verdict honnête selon votre score : vous saure
 Faites le test dans l'article : https://aceconseil.co/blog/site-artisan-elements-qui-convertissent
 
 #SiteInternet #Artisans
+
+## Semaine 3 (du 27 juillet, la semaine du 2 août)
+
+### Lundi 27 juillet · Mateusz · fil AI Act (publié avec l'article)
+
+J-6 avant le 2 août. Si votre équipe utilise l'IA et que rien n'est posé, il vous faut une demi-journée. Pas plus.
+
+Le pas à pas tient en trois temps :
+
+1. Une heure pour l'inventaire : quels outils, qui, pour quoi faire. Vous découvrirez au passage un usage que vous ne soupçonniez pas.
+2. Une heure pour la note interne : confidentialité, vérification, décision humaine, signalement. Une page, datée, connue de l'équipe.
+3. Un après-midi pour former, sur vos cas réels. Pas un cours sur l'IA : vos documents, vos demandes clients, vos règles.
+
+Gardez trois traces datées, et vous pourrez répondre « oui, voici » si la question se pose un jour.
+
+L'ordre exact des opérations est dans l'article.
+
+https://aceconseil.co/blog/ai-act-se-mettre-en-conformite-formation
+
+#IA #TPE
+
+### Mercredi 29 juillet · Jennifer · fil facture électronique (publié avec l'article)
+
+« Il va falloir tout changer. » C'est la phrase que j'entends dès qu'on parle de facture électronique. Et c'est faux.
+
+Votre logiciel de compta reste. Vos habitudes restent. Votre expert-comptable reste. La réforme impose une seule chose : que vos factures fournisseurs arrivent par une plateforme agréée à partir de septembre.
+
+Selon votre équipement, il y a trois configurations possibles, et dans les trois, le chemin tient en trois gestes : identifier la plateforme, vérifier le raccordement, tester la réception.
+
+Et une fois branchée, la facture électronique peut vous rendre du temps au lieu d'en coûter : tri, rapprochement et relances peuvent s'automatiser.
+
+Les trois configurations sont détaillées dans l'article, la vôtre y est forcément.
+
+https://aceconseil.co/blog/recevoir-facture-electronique-sans-tout-changer
+
+#FactureElectronique #TPE
+
+### Vendredi 31 juillet · Mateusz · boucle visibilité (publié avec l'article)
+
+Avant de cliquer sur votre site, vos clients ont déjà lu vos avis Google.
+
+87 % des consommateurs consultent les avis avant de choisir une entreprise locale (BrightLocal). Pour un artisan, la fiche Google Business est le levier de visibilité le plus rentable qui existe : gratuite, locale, consultée avant tout le reste.
+
+Et pourtant, la plupart des fiches sont à moitié vides : pas de photos réelles, des horaires jamais mis à jour, aucune réponse aux avis.
+
+Dans l'article : remplir chaque champ dans l'ordre, obtenir des avis sans harceler (le bon moment, le bon message), et répondre aux avis négatifs de façon à rassurer les futurs clients.
+
+https://aceconseil.co/blog/fiche-google-business-artisan
+
+#ArtisansTPE #VisibiliteLocale
+
+### Dimanche 2 ou lundi 3 août · Jennifer · jour J AI Act (court, sans article)
+
+Ça y est : depuis ce week-end, l'essentiel de l'AI Act est applicable, et la maîtrise de l'IA dans les entreprises peut être contrôlée.
+
+Si c'est déjà posé chez vous (inventaire, règles écrites, équipe formée) : rien à faire, vous êtes du bon côté.
+
+Si rien n'est fait : pas de panique, ça se rattrape en une demi-journée. Mieux vaut maintenant qu'après un incident.
+
+On en parle ? Vingt minutes suffisent pour savoir où vous en êtes.
+
+https://aceconseil.co/blog/ai-act-se-mettre-en-conformite-formation
+
+#IA #DirigeantsTPE

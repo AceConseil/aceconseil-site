@@ -43,7 +43,12 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
 - ven 17/07 : `2026-07-17-site-artisan-elements-qui-convertissent.md` — **publié** (boucle socle : image « frise des 7 points », nouveau module cochable « auto-diagnostic », lien de cluster vers l'article coût d'une demande perdue). Contenu passé en revue multi-angles (voix, SEO, faits) avant mise en ligne.
 - mer 22/07 : `2026-07-22-plateforme-agreee-facture-electronique.md` — **publié** (couverture « AGRÉÉE / PA », module cochable « prêt à recevoir en septembre ? », lien réciproque avec l'article du 16/07). Passé en revue multi-angles ; title recentré sur « choisir votre plateforme agréée », calendrier émission 2027 corrigé, pré-remplissage TVA présenté comme objectif à venir.
 - ven 24/07 : `2026-07-24-automatiser-saisie-outils-tpe.md` — **publié** (boucle socle, sujet n°4 : la double saisie. Couverture « SAISIE / ×3 », module cochable « votre entreprise fait-elle la navette ? » à 5 symptômes, rétro-lien depuis l'article du 16/07, liens vers relance-devis, /automatisation et le calculateur). Passé en revue multi-angles ; title recentré sur « double saisie » (la requête réellement tapée), calcul des 40 heures rendu défendable, promesses adoucies.
-- vendredis suivants : reprise des sujets socles restants (n°5 déjà traité le 17/07, prochain : n°6).
+- Semaine du 27/07 (rédigée et relue, brouillons `_` prêts ; image + widget à créer au moment de publier, comme d'habitude) :
+  - lun 27/07 : `_2026-07-27-ai-act-se-mettre-en-conformite-formation.md` (fil AI Act, J-6 : la mise en conformité en une demi-journée ; widget suggéré : accordéon « la demi-journée heure par heure »).
+  - mer 29/07 : `_2026-07-29-recevoir-facture-electronique-sans-tout-changer.md` (fil facture : les 3 configurations pour recevoir sans changer d'outils ; widget suggéré : accordéon des 3 configurations).
+  - ven 31/07 : `_2026-07-31-fiche-google-business-artisan.md` (boucle socle n°6 : la fiche Google Business ; widget suggéré : check-list « votre fiche est-elle complète ? » à 7 cases).
+  - Posts LinkedIn de la semaine (dont le post du jour J, 2-3 août) : section « Semaine 3 » de `docs/POSTS_LINKEDIN.md`.
+- vendredis suivants : reprise des sujets socles restants (prochain : n°7, IA en PME par où commencer).
 
 Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POSTS_LINKEDIN.md`.
 
