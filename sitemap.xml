@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aceconseil.co/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/mentions-legales</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/agents-ia</loc>
@@ -38,7 +38,11 @@
   </url>
   <url>
     <loc>https://aceconseil.co/blog</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://aceconseil.co/blog/automatiser-saisie-outils-tpe</loc>
+    <lastmod>2026-07-24</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/blog/plateforme-agreee-facture-electronique</loc>

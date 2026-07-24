@@ -37,7 +37,7 @@ Bonne nouvelle : si vous utilisez déjà un logiciel de comptabilité ou de fact
 
 ## Un contrainte, ou une occasion ?
 
-Vue comme une corvée, la facture électronique se subit. Vue autrement, c'est l'occasion d'automatiser tout le traitement qui va avec : réception, tri, rapprochement avec les bons de commande, relances des impayés, saisie évitée. Une fois vos factures dématérialisées et vos outils connectés, une grande partie de ce travail administratif peut se faire sans vous. C'est précisément notre métier, détaillé sur notre page [automatisation des process](/automatisation).
+Vue comme une corvée, la facture électronique se subit. Vue autrement, c'est l'occasion d'automatiser tout le traitement qui va avec : réception, tri, rapprochement avec les bons de commande, relances des impayés, saisie évitée. Une fois vos factures dématérialisées et [vos outils connectés entre eux](/blog/automatiser-saisie-outils-tpe), une grande partie de ce travail administratif peut se faire sans vous. C'est précisément notre métier, détaillé sur notre page [automatisation des process](/automatisation).
 
 ## Le bon réflexe cette semaine
 

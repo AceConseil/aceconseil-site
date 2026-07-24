@@ -233,6 +233,28 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="3" data-max="3">Vous êtes prêt à recevoir. Reste l'étape qui rapporte : brancher le tri, le rapprochement et les relances sur votre organisation.</span>
   </div>
 </div>`,
+  'checklist-triple-saisie': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre entreprise fait-elle la navette entre ses outils ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre entreprise fait-elle la navette ?</p>
+  <p class="wg-hint">Cochez ce qui vous arrive régulièrement.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je retape les lignes du devis dans la facture.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je recopie des rendez-vous de la messagerie vers le planning.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je ressaisis les coordonnées client d'un outil à l'autre.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Ma paperasse se fait le soir ou le week-end.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Une erreur de recopie m'a déjà coûté du temps ou de l'argent.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 5 symptômes</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="0">Peu de navette chez vous : votre organisation est déjà bien branchée. Gardez ce réflexe quand un nouvel outil arrive.</span>
+    <span class="wgk-band" data-min="1" data-max="2">Une ou deux flèches à couper. Ce sont des branchements simples, souvent réglés en quelques jours : commencez par le plus fréquent.</span>
+    <span class="wgk-band" data-min="3" data-max="4">La navette est installée dans votre quotidien. La carte de vos outils, en trente minutes, vous dira quels branchements récupèrent l'essentiel.</span>
+    <span class="wgk-band" data-min="5" data-max="5">Vous êtes le coursier de vos logiciels, et vos soirées le paient. Le bon côté : l'essentiel de ce qui se recopie peut se brancher. Il y a beaucoup à récupérer.</span>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

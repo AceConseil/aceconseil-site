@@ -42,7 +42,8 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
 - lun 21/07 (publié le mardi 21) : `2026-07-21-ai-act-2-aout-ce-qui-change.md` — **publié** (couverture éditoriale « 2 AOÛT / 2026 », module cochable « un contrôle demain : seriez-vous tranquille ? » à 3 cases, rétro-lien depuis l'article du 14/07). Passé en revue multi-angles (voix, faits réglementaires, SEO) avant mise en ligne.
 - ven 17/07 : `2026-07-17-site-artisan-elements-qui-convertissent.md` — **publié** (boucle socle : image « frise des 7 points », nouveau module cochable « auto-diagnostic », lien de cluster vers l'article coût d'une demande perdue). Contenu passé en revue multi-angles (voix, SEO, faits) avant mise en ligne.
 - mer 22/07 : `2026-07-22-plateforme-agreee-facture-electronique.md` — **publié** (couverture « AGRÉÉE / PA », module cochable « prêt à recevoir en septembre ? », lien réciproque avec l'article du 16/07). Passé en revue multi-angles ; title recentré sur « choisir votre plateforme agréée », calendrier émission 2027 corrigé, pré-remplissage TVA présenté comme objectif à venir.
-- vendredis suivants : reprise des sujets socles après le 1er septembre.
+- ven 24/07 : `2026-07-24-automatiser-saisie-outils-tpe.md` — **publié** (boucle socle, sujet n°4 : la double saisie. Couverture « SAISIE / ×3 », module cochable « votre entreprise fait-elle la navette ? » à 5 symptômes, rétro-lien depuis l'article du 16/07, liens vers relance-devis, /automatisation et le calculateur). Passé en revue multi-angles ; title recentré sur « double saisie » (la requête réellement tapée), calcul des 40 heures rendu défendable, promesses adoucies.
+- vendredis suivants : reprise des sujets socles restants (n°5 déjà traité le 17/07, prochain : n°6).
 
 Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POSTS_LINKEDIN.md`.
 
