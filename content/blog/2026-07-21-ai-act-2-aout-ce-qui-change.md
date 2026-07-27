@@ -40,6 +40,6 @@ N'imaginez pas une descente. Comme pour le RGPD, un contrôle commence le plus s
 
 ## Ce qu'il est raisonnable de faire avant le 2 août
 
-Rien d'énorme, mais quelque chose. Faites l'inventaire des outils d'IA utilisés chez vous. Posez trois ou quatre règles simples par écrit. Et formez, même brièvement, les personnes concernées, sur vos cas réels. Une demi-journée suffit à couvrir l'essentiel, c'est l'objet de notre [formation IA](/formation-ia).
+Rien d'énorme, mais quelque chose. Faites l'inventaire des outils d'IA utilisés chez vous. Posez trois ou quatre règles simples par écrit. Et formez, même brièvement, les personnes concernées, sur vos cas réels. Une demi-journée suffit à couvrir l'essentiel (nous avons détaillé [le pas à pas complet de cette demi-journée](/blog/ai-act-se-mettre-en-conformite-formation)), c'est l'objet de notre [formation IA](/formation-ia).
 
 Pour savoir où vous en êtes et si une action est justifiée chez vous, [appelez-nous](/#contact) : vingt minutes avec Jennifer, cofondatrice, sans engagement. Nous vous dirons franchement, sans dramatiser, ce qui mérite d'être fait.

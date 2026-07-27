@@ -256,6 +256,26 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="5" data-max="5">Vous êtes le coursier de vos logiciels, et vos soirées le paient. Le bon côté : l'essentiel de ce qui se recopie peut se brancher. Il y a beaucoup à récupérer.</span>
   </div>
 </div>`,
+  'demi-journee-ai-act': `<div class="wg wg-agent" aria-label="La demi-journée de mise en conformité AI Act, heure par heure">
+  <p class="wg-title"><span class="wg-pulse"></span>La demi-journée, heure par heure</p>
+  <p class="wg-hint">Touchez chaque étape pour la dérouler.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">1re h</span><span class="wg-name">L'inventaire des outils</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Quels outils d'IA, utilisés par qui, pour quoi faire. Trois colonnes sur une feuille, y compris les outils que l'équipe a adoptés seule.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2e h</span><span class="wg-name">La note interne</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Confidentialité, vérification, décision humaine, signalement. Une page, datée, signée, connue de toute l'équipe.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">3-4e h</span><span class="wg-name">La formation sur vos cas</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Vos documents, vos demandes clients, vos règles. Ce que l'outil fait bien, où il se trompe, et comment chacun applique la note interne dès le lendemain.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Traces</span><span class="wg-name">Ce que vous gardez</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>L'inventaire, la note datée, la date et les participants de la session. De quoi répondre « oui, voici » si la question se pose un jour.</p></div>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

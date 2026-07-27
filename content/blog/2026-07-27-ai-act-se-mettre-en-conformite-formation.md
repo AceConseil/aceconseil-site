@@ -8,6 +8,8 @@ keywords: AI Act conformité, mise en conformité AI Act, article 4 AI Act, maî
 
 Le 2 août, c'est dimanche prochain. À cette date, l'AI Act devient contrôlable, et avec lui [l'obligation de maîtrise de l'IA](/blog/ai-act-article-4-maitrise-ia), en vigueur depuis février 2025, qui s'applique à toute entreprise dont l'équipe utilise ces outils. Si vous n'avez encore rien fait, voici la bonne nouvelle : l'essentiel tient en une demi-journée, et ce pas à pas vous donne l'ordre exact des opérations.
 
+![Mise en conformité AI Act d'une TPE en une demi-journée : inventaire des outils, note interne, formation de l'équipe sur cas réels](assets/ai-act-conformite.jpg)
+
 ## Première heure : l'inventaire des outils d'IA
 
 Listez les outils d'IA réellement utilisés chez vous, et par qui. Pas seulement ceux que vous avez choisis : aussi ceux que l'équipe a adoptés seule, l'assistant de rédaction dans le navigateur, le résumé automatique de la messagerie, le générateur d'images. Trois colonnes suffisent : l'outil, qui s'en sert, pour quoi faire.
@@ -32,6 +34,8 @@ C'est le cœur de l'obligation : prendre des mesures pour assurer, autant que po
 Gardez une trace simple : la date, les personnes présentes, le support utilisé. C'est exactement ce que nous construisons dans notre [formation IA](/formation-ia), sur vos outils et vos cas, en une demi-journée ou une journée.
 
 > En quatre heures : un inventaire, une note d'une page, une session sur vos cas, trois traces datées. Voilà, en pratique, ce que « maîtrise de l'IA » veut dire pour une TPE.
+
+::widget demi-journee-ai-act::
 
 ## Et si le 2 août 2026 passe sans que rien ne soit fait ?
 
