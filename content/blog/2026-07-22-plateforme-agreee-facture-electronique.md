@@ -37,7 +37,7 @@ Au-delà de recevoir et d'envoyer, une bonne plateforme :
 
 La question n'est pas « quelle est la meilleure plateforme du marché ». C'est « laquelle s'intègre le mieux à ce que j'utilise déjà ». Trois réflexes :
 
-1. **Demandez à votre logiciel actuel.** Si vous avez un outil de comptabilité ou de facturation récent, il est souvent déjà relié à une plateforme agréée, ou propose la sienne. C'est souvent le chemin le plus simple : vous restez dans l'outil que vous connaissez.
+1. **Demandez à votre logiciel actuel.** Si vous avez un outil de comptabilité ou de facturation récent, il est souvent déjà relié à une plateforme agréée, ou propose la sienne. C'est souvent le chemin le plus simple : vous restez dans l'outil que vous connaissez (nous détaillons [les trois configurations possibles selon votre équipement](/blog/recevoir-facture-electronique-sans-tout-changer)).
 2. **Parlez-en à votre expert-comptable.** C'est votre référent sur la partie comptable et fiscale, et il a probablement déjà une recommandation pour ses clients.
 3. **Vérifiez l'interopérabilité et le support.** Une plateforme doit communiquer avec toutes les autres, et vous accompagner en français quand vous avez une question.
 

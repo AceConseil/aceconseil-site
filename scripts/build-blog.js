@@ -276,6 +276,22 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>L'inventaire, la note datée, la date et les participants de la session. De quoi répondre « oui, voici » si la question se pose un jour.</p></div>
   </div>
 </div>`,
+  'configs-reception-facture': `<div class="wg wg-agent" aria-label="Les trois configurations pour recevoir ses factures électroniques">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre configuration, votre geste</p>
+  <p class="wg-hint">Touchez le cas qui vous ressemble.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Cas 1</span><span class="wg-name">Un logiciel de gestion récent</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Une question à votre éditeur : « à quelle plateforme agréée serez-vous raccordé pour la réception, et que dois-je activer ? ». Souvent, une case à cocher suffit.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Cas 2</span><span class="wg-name">Excel, papier ou vieux logiciel</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Un compte directement chez une plateforme agréée, comme une boîte de réception dédiée. Vos outils actuels, eux, ne bougent pas.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Cas 3</span><span class="wg-name">L'expert-comptable gère tout</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Une conversation avant la rentrée : qui reçoit, sur quelle plateforme, et comment vous accédez à vos pièces. Le cabinet a probablement déjà sa solution.</p></div>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

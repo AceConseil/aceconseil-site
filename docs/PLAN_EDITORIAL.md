@@ -45,7 +45,7 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
 - ven 24/07 : `2026-07-24-automatiser-saisie-outils-tpe.md` — **publié** (boucle socle, sujet n°4 : la double saisie. Couverture « SAISIE / ×3 », module cochable « votre entreprise fait-elle la navette ? » à 5 symptômes, rétro-lien depuis l'article du 16/07, liens vers relance-devis, /automatisation et le calculateur). Passé en revue multi-angles ; title recentré sur « double saisie » (la requête réellement tapée), calcul des 40 heures rendu défendable, promesses adoucies.
 - Semaine du 27/07 (rédigée et relue, brouillons `_` prêts ; image + widget à créer au moment de publier, comme d'habitude) :
   - lun 27/07 : `2026-07-27-ai-act-se-mettre-en-conformite-formation.md` — **publié** (couverture « PLAN / 4 h », accordéon « la demi-journée heure par heure » à 4 étapes, rétro-lien depuis l'article du 21/07).
-  - mer 29/07 : `_2026-07-29-recevoir-facture-electronique-sans-tout-changer.md` (fil facture : les 3 configurations pour recevoir sans changer d'outils ; widget suggéré : accordéon des 3 configurations).
+  - mer 29/07 : `2026-07-29-recevoir-facture-electronique-sans-tout-changer.md` — **publié** (couverture « CONFIGS / 3 », accordéon « votre configuration, votre geste » à 3 cas, rétro-lien depuis l'article plateforme agréée du 22/07).
   - ven 31/07 : `_2026-07-31-fiche-google-business-artisan.md` (boucle socle n°6 : la fiche Google Business ; widget suggéré : check-list « votre fiche est-elle complète ? » à 7 cases).
   - Posts LinkedIn de la semaine (dont le post du jour J, 2-3 août) : section « Semaine 3 » de `docs/POSTS_LINKEDIN.md`.
 - vendredis suivants : reprise des sujets socles restants (prochain : n°7, IA en PME par où commencer).

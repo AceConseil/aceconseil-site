@@ -8,6 +8,8 @@ keywords: recevoir facture électronique, facture électronique septembre 2026, 
 
 La crainte revient à chaque rendez-vous : « il va falloir tout changer ». Non. L'obligation de [recevoir vos factures électroniques dès septembre 2026](/blog/facture-electronique-2026-reception-obligatoire) se branche, dans la plupart des cas, sur ce que vous utilisez déjà. Voici les trois configurations que nous rencontrons, et ce qu'il faut faire dans chacune.
 
+![Recevoir ses factures électroniques en 2026 sans changer d'outils : les trois configurations types d'une TPE ou PME](assets/facture-sans-changer.jpg)
+
 ## Ce qui ne change pas avec la facture électronique
 
 Commençons par rassurer : votre logiciel de comptabilité ou de facturation et vos habitudes de règlement restent en place, votre expert-comptable aussi. La réforme n'impose ni nouvel outil de gestion, ni changement de banque, ni migration de vos données. Pour l'échéance de septembre 2026, elle impose une seule chose : être en mesure de recevoir vos factures fournisseurs via une [plateforme agréée](/blog/plateforme-agreee-facture-electronique). Le simple email avec un PDF, lui, disparaîtra progressivement : dès septembre 2026 pour vos fournisseurs grandes entreprises et ETI, en septembre 2027 pour tous les autres.
@@ -25,6 +27,8 @@ Rien ne vous oblige à changer d'outils pour autant. Vous pouvez ouvrir un compt
 Beaucoup de petites entreprises délèguent la comptabilité de bout en bout. Dans ce cas, la question se règle avec le cabinet : beaucoup s'équipent pour recevoir au nom de leurs clients, via leur propre outil relié à une plateforme agréée. Une conversation avant la rentrée suffit pour valider qui reçoit, où, et comment vous accédez à vos pièces.
 
 > Dans les trois cas, le chemin est le même : identifier la plateforme, vérifier le raccordement, tester la réception. Rien qui ressemble à un grand chantier.
+
+::widget configs-reception-facture::
 
 ## Le vrai gain se joue après le branchement
 
