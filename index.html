@@ -73,6 +73,24 @@ em.gold{font-style:italic;color:var(--gold)}
 .logo-ace{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em}
 .logo-sep{width:1px;height:20px;background:var(--gold);align-self:center}
 .logo-conseil{font-size:.72rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+/* écho du logo : un mot du sens d'ACE, posé dans le vide à droite du logo.
+   En position absolue : la largeur du logo ne change jamais, les liens ne bougent pas. */
+.logo{position:relative}
+.logo-echo{position:absolute;left:100%;top:50%;margin-left:38px;width:190px;height:1em;pointer-events:none;overflow:hidden;transform:translateY(-50%)}
+.logo-echo b{position:absolute;left:0;top:0;white-space:nowrap;font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(90%);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.logo-echo b.on{opacity:.8;transform:none}
+.logo-echo b.out{opacity:0;transform:translateY(-90%)}
+@media(max-width:1180px){.logo-echo{display:none}}
+/* signature ACE : les initiales ancrées, l'encre des mots se dépose de gauche à droite */
+.acesig{--sig-ink:var(--cream);--sig-seal:var(--gold);display:inline-flex;flex-direction:column;gap:var(--sig-gap,12px)}
+.acesig-l{display:block;white-space:nowrap;font-family:'Playfair Display',serif;font-weight:700;font-size:var(--sig-size,1.8rem);line-height:1.06;color:var(--sig-ink)}
+.acesig-l i{font-style:normal;color:var(--sig-seal)}
+.acesig-r{display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path .8s var(--ease)}
+.acesig.on .acesig-r{clip-path:inset(0 0 0 0)}
+.acesig.on .acesig-l:nth-child(2) .acesig-r{transition-delay:.16s}
+.acesig.on .acesig-l:nth-child(3) .acesig-r{transition-delay:.32s}
+.acesig-rule{width:0;height:1px;background:linear-gradient(90deg,var(--sig-seal),transparent);margin-top:4px;transition:width .9s var(--ease) .3s}
+.acesig.on .acesig-rule{width:min(300px,100%)}
 .nav-links{display:flex;gap:34px;list-style:none}
 .nav-links a{font-size:.86rem;font-weight:400;letter-spacing:.04em;text-decoration:none;color:var(--muted-light);transition:color .3s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
@@ -365,6 +383,10 @@ em.gold{font-style:italic;color:var(--gold)}
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   html{scroll-behavior:auto}
   .hero-eyebrow,.hero-sub,.hero-ctas,.hero-foot,.hero-visual{opacity:1;animation:none}
+  /* la signature est lisible sans mouvement : l'animation ne fait que révéler */
+  .acesig-r{clip-path:none}
+  .acesig-rule{width:min(300px,100%)}
+  .logo-echo{display:none}
   .hero h1 .w{opacity:1;filter:none;transform:none;animation:none}
   .hero::before{animation:none}
   .live-row{opacity:1;transform:none}
@@ -380,6 +402,7 @@ em.gold{font-style:italic;color:var(--gold)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="ACE Conseil, retour en haut">
       <span class="logo-ace">ACE</span><span class="logo-sep"></span><span class="logo-conseil">Conseil</span>
+      <span class="logo-echo" id="logoEcho" aria-hidden="true"><b>Accompagnement</b><b>Croissance</b><b>Expertise</b></span>
     </a>
     <ul class="nav-links">
       <li><a href="#expertises">Expertises</a></li>
@@ -808,7 +831,13 @@ em.gold{font-style:italic;color:var(--gold)}
         <p>Conçoit et construit les systèmes&nbsp;: agents IA, automatisations, sites, référencement. Il intervient sur chaque mission, du diagnostic au transfert, en lien direct avec Jennifer.</p>
       </div>
     </div>
-    <p class="team-pledge reveal" data-d="4">Une règle commune, zéro promesse gratuite&nbsp;: nous ne publions aucun chiffre de résultat que nous ne pouvons pas prouver, et nous n'en promettons aucun que nous ne pouvons pas tenir.</p>
+    <div class="acesig reveal" data-d="4" style="--sig-size:2rem;--sig-gap:14px;margin-top:52px" aria-label="ACE : Accompagnement, Croissance, Expertise">
+      <span class="acesig-l"><i>A</i><span class="acesig-r" aria-hidden="true">ccompagnement</span></span>
+      <span class="acesig-l"><i>C</i><span class="acesig-r" aria-hidden="true">roissance</span></span>
+      <span class="acesig-l"><i>E</i><span class="acesig-r" aria-hidden="true">xpertise</span></span>
+      <span class="acesig-rule" aria-hidden="true"></span>
+    </div>
+    <p class="team-pledge reveal" data-d="5">Une règle commune, zéro promesse gratuite&nbsp;: nous ne publions aucun chiffre de résultat que nous ne pouvons pas prouver, et nous n'en promettons aucun que nous ne pouvons pas tenir.</p>
   </div>
 </section>
 
@@ -891,6 +920,11 @@ em.gold{font-style:italic;color:var(--gold)}
     <a class="logo" href="#top" aria-label="ACE Conseil">
       <span class="logo-ace" style="font-size:1.15rem">ACE</span><span class="logo-sep" style="height:15px"></span><span class="logo-conseil" style="font-size:.62rem">Conseil</span>
     </a>
+    <div class="acesig" id="sigFooter" style="--sig-size:1.02rem;--sig-gap:6px;--sig-ink:var(--muted-light);margin:22px 0 4px" aria-label="ACE : Accompagnement, Croissance, Expertise">
+      <span class="acesig-l"><i>A</i><span class="acesig-r" aria-hidden="true">ccompagnement</span></span>
+      <span class="acesig-l"><i>C</i><span class="acesig-r" aria-hidden="true">roissance</span></span>
+      <span class="acesig-l"><i>E</i><span class="acesig-r" aria-hidden="true">xpertise</span></span>
+    </div>
     <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
     <nav class="footer-links">
       <a href="/blog">Blog</a>
@@ -943,6 +977,31 @@ em.gold{font-style:italic;color:var(--gold)}
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
   }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* signature ACE : l'encre des trois mots se dépose à l'entrée dans la vue, et reste */
+  var sigIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); sigIo.unobserve(e.target); } });
+  }, {threshold:.35, rootMargin:"-84px 0px -10% 0px"});
+  document.querySelectorAll(".acesig").forEach(function(el){ sigIo.observe(el); });
+
+  /* écho du logo : un mot à la fois, dans le vide à droite du logo (grands écrans) */
+  var echo = document.getElementById("logoEcho");
+  if(echo && !reduced && echo.offsetParent !== null){
+    var mots = echo.querySelectorAll("b"), ei = 0, cycle = null;
+    var passe = function(){
+      mots[ei].classList.remove("on"); mots[ei].classList.add("out");
+      var sortant = ei;
+      ei = (ei + 1) % mots.length;
+      mots[ei].classList.remove("out"); mots[ei].classList.add("on");
+      setTimeout(function(){ mots[sortant].classList.remove("out"); }, 620);
+    };
+    var demarrer = function(){
+      if(cycle){ return; }
+      mots[ei].classList.add("on");
+      cycle = setInterval(passe, 3200);
+    };
+    setTimeout(demarrer, 1600);
+  }
 
   /* rotator */
   var rot = document.getElementById("rotator");

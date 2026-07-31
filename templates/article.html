@@ -26,6 +26,7 @@
   --cream:#FEFDFB; --cream-dark:#F4F1EB;
   --muted:#7A8499; --muted-light:#A8B0C0;
   --border:rgba(27,42,74,.1); --border-gold:rgba(201,162,77,.22);
+  --ease:cubic-bezier(.22,.8,.24,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
@@ -42,6 +43,21 @@ img{max-width:100%}
 .logo-ace{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em}
 .logo-sep{width:1px;height:20px;background:var(--gold);align-self:center}
 .logo-conseil{font-size:.72rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+/* écho du logo : un mot du sens d'ACE, en position absolue (le logo ne change jamais de largeur) */
+.logo{position:relative}
+.logo-echo{position:absolute;left:100%;top:50%;margin-left:38px;width:190px;height:1em;pointer-events:none;overflow:hidden;transform:translateY(-50%)}
+.logo-echo b{position:absolute;left:0;top:0;white-space:nowrap;font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(90%);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.logo-echo b.on{opacity:.8;transform:none}
+.logo-echo b.out{opacity:0;transform:translateY(-90%)}
+@media(max-width:1180px){.logo-echo{display:none}}
+/* signature ACE : les initiales ancrées, l'encre des mots se dépose de gauche à droite */
+.acesig{--sig-ink:var(--cream);--sig-seal:var(--gold);display:inline-flex;flex-direction:column;gap:var(--sig-gap,12px)}
+.acesig-l{display:block;white-space:nowrap;font-family:'Playfair Display',serif;font-weight:700;font-size:var(--sig-size,1.8rem);line-height:1.06;color:var(--sig-ink)}
+.acesig-l i{font-style:normal;color:var(--sig-seal)}
+.acesig-r{display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path .8s var(--ease)}
+.acesig.on .acesig-r{clip-path:inset(0 0 0 0)}
+.acesig.on .acesig-l:nth-child(2) .acesig-r{transition-delay:.16s}
+.acesig.on .acesig-l:nth-child(3) .acesig-r{transition-delay:.32s}
 .nav-right{display:flex;align-items:center;gap:26px}
 .nav-back{font-size:.88rem;color:var(--muted-light);text-decoration:none;transition:color .3s}
 .nav-back:hover{color:var(--gold-light)}
@@ -127,6 +143,8 @@ img{max-width:100%}
 .wgk-bar span{display:block;height:100%;background:var(--gold);width:0;transition:width .4s ease}
 .wgk-verdict{margin-top:10px;font-size:1rem;color:var(--muted-light);line-height:1.55}
 @media(prefers-reduced-motion:reduce){
+  .acesig-r{clip-path:none}
+  .logo-echo{display:none}
   .readbar{display:none}
   .fx-reveal{opacity:1;transform:none;transition:none}
   .wg-pulse::after{animation:none}
@@ -145,6 +163,7 @@ img{max-width:100%}
   <div class="wrap">
     <a class="logo" href="/" aria-label="ACE Conseil, retour à l'accueil">
       <span class="logo-ace">ACE</span><span class="logo-sep"></span><span class="logo-conseil">Conseil</span>
+      <span class="logo-echo" id="logoEcho" aria-hidden="true"><b>Accompagnement</b><b>Croissance</b><b>Expertise</b></span>
     </a>
     <div class="nav-right">
       <a class="nav-back" href="/blog">← Tous les articles</a>
@@ -183,6 +202,11 @@ img{max-width:100%}
     <a class="logo" href="/" aria-label="ACE Conseil">
       <span class="logo-ace" style="font-size:1.15rem">ACE</span><span class="logo-sep" style="height:15px"></span><span class="logo-conseil" style="font-size:.62rem">Conseil</span>
     </a>
+    <div class="acesig" style="--sig-size:1.02rem;--sig-gap:6px;--sig-ink:var(--muted-light);margin:20px 0 4px" aria-label="ACE : Accompagnement, Croissance, Expertise">
+      <span class="acesig-l"><i>A</i><span class="acesig-r" aria-hidden="true">ccompagnement</span></span>
+      <span class="acesig-l"><i>C</i><span class="acesig-r" aria-hidden="true">roissance</span></span>
+      <span class="acesig-l"><i>E</i><span class="acesig-r" aria-hidden="true">xpertise</span></span>
+    </div>
     <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
     <nav class="footer-links">
       <a href="/blog">Blog</a>
@@ -305,6 +329,33 @@ img{max-width:100%}
     boxes.forEach(function(b){ b.addEventListener("change", maj); });
     maj();
   });
+
+  /* signature ACE : l'encre des trois mots se dépose à l'entrée dans la vue, et reste */
+  if("IntersectionObserver" in window){
+    var sigIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("on"); sigIo.unobserve(e.target); } });
+    }, {threshold:.35, rootMargin:"-84px 0px -10% 0px"});
+    document.querySelectorAll(".acesig").forEach(function(el){ sigIo.observe(el); });
+  } else {
+    document.querySelectorAll(".acesig").forEach(function(el){ el.classList.add("on"); });
+  }
+
+  /* écho du logo : un mot à la fois, dans le vide à droite du logo (grands écrans) */
+  var echo = document.getElementById("logoEcho");
+  if(echo && !reduced && echo.offsetParent !== null){
+    var mots = echo.querySelectorAll("b"), ei = 0;
+    setTimeout(function(){
+      mots[ei].classList.add("on");
+      setInterval(function(){
+        mots[ei].classList.remove("on"); mots[ei].classList.add("out");
+        var sortant = ei;
+        ei = (ei + 1) % mots.length;
+        mots[ei].classList.remove("out"); mots[ei].classList.add("on");
+        setTimeout(function(){ mots[sortant].classList.remove("out"); }, 620);
+      }, 3200);
+    }, 1600);
+  }
+
 })();
 </script>
 </body>
