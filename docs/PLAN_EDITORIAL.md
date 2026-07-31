@@ -46,7 +46,7 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
 - Semaine du 27/07 (rédigée et relue, brouillons `_` prêts ; image + widget à créer au moment de publier, comme d'habitude) :
   - lun 27/07 : `2026-07-27-ai-act-se-mettre-en-conformite-formation.md` — **publié** (couverture « PLAN / 4 h », accordéon « la demi-journée heure par heure » à 4 étapes, rétro-lien depuis l'article du 21/07).
   - mer 29/07 : `2026-07-29-recevoir-facture-electronique-sans-tout-changer.md` — **publié** (couverture « CONFIGS / 3 », accordéon « votre configuration, votre geste » à 3 cas, rétro-lien depuis l'article plateforme agréée du 22/07).
-  - ven 31/07 : `_2026-07-31-fiche-google-business-artisan.md` (boucle socle n°6 : la fiche Google Business ; widget suggéré : check-list « votre fiche est-elle complète ? » à 7 cases).
+  - ven 31/07 : `2026-07-31-fiche-google-business-artisan.md` — **publié** (boucle socle n°6. Couverture « AVIS LUS / 87 % » à 7 points d'orbite, module cochable « votre fiche est-elle complète ? » à 7 champs, rétro-lien depuis l'article site artisan du 17/07 et lien depuis la page pilier visibilite-prospection). Copie du module passée en revue adverse : chaque case rendue vérifiable fiche ouverte, aucun mécanisme de classement promis.
   - Posts LinkedIn de la semaine (dont le post du jour J, 2-3 août) : section « Semaine 3 » de `docs/POSTS_LINKEDIN.md`.
 - vendredis suivants : reprise des sujets socles restants (prochain : n°7, IA en PME par où commencer).
 

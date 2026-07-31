@@ -12,7 +12,7 @@ La question n'est jamais « faut-il faire du référencement, du contenu ou de l
 
 ## Le socle : être trouvable localement
 
-Pour une entreprise qui sert une zone, tout commence par la recherche locale. Votre fiche Google est souvent consultée avant votre site : catégories exactes, zone d'intervention, photos réelles, et surtout des avis authentiques, obtenus au bon moment auprès de vrais clients. Autour d'elle, la cohérence compte : mêmes nom, adresse et téléphone partout où votre entreprise apparaît. C'est peu spectaculaire, et c'est ce que vos futurs clients consultent en premier.
+Pour une entreprise qui sert une zone, tout commence par la recherche locale. Votre fiche Google est souvent consultée avant votre site : catégories exactes, zone d'intervention, photos réelles, et surtout des avis authentiques, obtenus au bon moment auprès de vrais clients. Autour d'elle, la cohérence compte : mêmes nom, adresse et téléphone partout où votre entreprise apparaît. C'est peu spectaculaire, et c'est ce que vos futurs clients consultent en premier. Nous détaillons le remplissage champ par champ dans [notre article sur la fiche Google Business](/blog/fiche-google-business-artisan).
 
 ## Le contenu qui répond aux vraies questions
 

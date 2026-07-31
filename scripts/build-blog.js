@@ -292,6 +292,30 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Une conversation avant la rentrée : qui reçoit, sur quelle plateforme, et comment vous accédez à vos pièces. Le cabinet a probablement déjà sa solution.</p></div>
   </div>
 </div>`,
+  'checklist-fiche-google': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre fiche Google est-elle complète ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre fiche est-elle complète ?</p>
+  <p class="wg-hint">Ouvrez votre fiche et cochez ce qui est déjà en place.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon nom commercial est exact, sans mots-clés ajoutés.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Ma catégorie principale dit mon métier, pas mon secteur.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Ma zone desservie correspond à mes interventions réelles.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mes horaires sont à jour, congés compris.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon numéro et mon site sont ceux de mes devis.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai au moins cinq photos récentes : chantiers, visage, véhicule.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Ma description dit ce que je fais, où et pour qui.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 7 champs en place</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre fiche.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Votre fiche existe, mais elle ne travaille pas encore pour vous. Une fiche complète et exacte a plus de chances d'apparaître parmi les trois fiches affichées sur la carte. Comptez une heure pour tout reprendre, en commençant par le nom, la catégorie et les horaires.</span>
+    <span class="wgk-band" data-min="3" data-max="4">La base est posée. Les champs qui manquent sont souvent ceux qui rassurent le plus : les photos réelles et la description. Comptez une demi-heure pour la description, et votre prochain chantier pour les photos.</span>
+    <span class="wgk-band" data-min="5" data-max="6">Fiche solide. Terminez les derniers champs, puis passez aux avis : demandez-en un après chaque intervention réussie.</span>
+    <span class="wgk-band" data-min="7" data-max="7">Votre fiche est complète. Le travail porte maintenant sur les avis : en obtenir régulièrement, et répondre à chacun, y compris aux mauvais.</span>
+  </div>
+</div>`,
 };
 
 // ── Markdown minimal (suffisant pour des articles rédigés à la main) ──

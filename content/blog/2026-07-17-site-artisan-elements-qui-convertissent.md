@@ -42,7 +42,7 @@ Un site qui met plus de trois secondes à s'afficher perd des visiteurs avant m�
 
 ## Les erreurs classiques des sites à template
 
-Les modèles tout faits produisent presque toujours les mêmes défauts : un carrousel d'images qui ralentit tout et ne dit rien, des textes génériques interchangeables d'un métier à l'autre, des pages « équipe » et « valeurs » placées avant l'offre, et aucun référencement local réel. Le résultat ressemble à un site ; il n'en a pas la fonction.
+Les modèles tout faits produisent presque toujours les mêmes défauts : un carrousel d'images qui ralentit tout et ne dit rien, des textes génériques interchangeables d'un métier à l'autre, des pages « équipe » et « valeurs » placées avant l'offre, et aucun référencement local réel (qui commence, pour un artisan, par [une fiche Google Business bien remplie](/blog/fiche-google-business-artisan)). Le résultat ressemble à un site ; il n'en a pas la fonction.
 
 ## La check-list avant de valider votre site
 

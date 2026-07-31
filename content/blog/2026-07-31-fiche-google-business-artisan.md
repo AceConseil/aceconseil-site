@@ -8,6 +8,8 @@ keywords: fiche Google Business artisan, Google My Business artisan, fiche d'ét
 
 Cherchez « plombier » ou « électricien » suivi de votre ville : avant la liste des sites, Google affiche le plus souvent une carte et trois fiches d'entreprises, avec leurs notes et leurs avis. C'est là que la décision se joue. Pour un artisan, la fiche Google Business Profile (l'ancien Google My Business) est le premier levier de visibilité : gratuite, locale, et consultée avant tout le reste. Voici comment en tirer le maximum.
 
+![Fiche Google Business Profile d'un artisan : le premier levier de visibilité locale, consulté avant le site](assets/fiche-google-business.jpg)
+
 ## Pourquoi la fiche passe avant le site
 
 Près de neuf clients sur dix consultent les avis Google avant de choisir une entreprise locale (87 % selon BrightLocal). Le réflexe est toujours le même : on cherche le métier et la ville, on regarde la note, on lit deux ou trois avis, et on appelle. Votre site sert ensuite, pour confirmer le sérieux ; la fiche, elle, sert d'abord. Les deux se renforcent : la fiche déclenche l'appel, et [un site qui convertit](/blog/site-artisan-elements-qui-convertissent) transforme ce premier contact en chantier.
@@ -23,6 +25,8 @@ Une fiche à moitié vide inspire autant confiance qu'une vitrine à moitié ét
 5. **Le téléphone et le site** : identiques partout sur le web (Google recoupe la cohérence de ces informations).
 6. **Les photos** : des chantiers réels, votre visage, votre véhicule. Une fiche avec de vraies photos rassure bien plus qu'un logo seul.
 7. **La description** : qui vous êtes, ce que vous faites, où, en langage client.
+
+::widget checklist-fiche-google::
 
 ## Obtenir des avis Google sans harceler
 
