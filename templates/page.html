@@ -282,7 +282,30 @@ img{max-width:100%}
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll("[data-tel-reveal]").forEach(function(a){
+  var telLiens = document.querySelectorAll("[data-tel-reveal]");
+  /* on réserve d'avance la largeur du numéro : à la révélation, plus rien ne se décale
+     (mesure faite une fois les polices chargées, sinon la largeur serait fausse) */
+  var reserverLargeurTel = function(){
+    telLiens.forEach(function(a){
+      if(a.getAttribute("data-revealed") || a.style.minWidth){ return; }
+      var t = a.querySelector(".tel-label") || a;
+      var num = (a.getAttribute("data-tel-reveal") || "06 65 70 47 93").replace(/ /g, "\u00A0");
+      var initial = t.textContent;
+      var avant = a.getBoundingClientRect().width;
+      t.textContent = num;
+      var apres = a.getBoundingClientRect().width;
+      t.textContent = initial;
+      if(apres > avant){
+        a.style.minWidth = Math.ceil(apres) + "px";
+        /* la place réservée se répartit de part et d'autre du libellé : pas de vide d'un seul côté */
+        a.style.textAlign = "center";
+        a.style.justifyContent = "center";
+      }
+    });
+  };
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(reserverLargeurTel); }
+  else { reserverLargeurTel(); }
+  telLiens.forEach(function(a){
     a.addEventListener("click", function(ev){
       if(a.getAttribute("data-revealed")){ return; }
       ev.preventDefault();
