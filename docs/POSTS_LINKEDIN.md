@@ -398,3 +398,53 @@ On en parle ? Vingt minutes suffisent pour savoir où vous en êtes.
 https://aceconseil.co/blog/ai-act-se-mettre-en-conformite-formation
 
 #IA #DirigeantsTPE
+
+## Semaine 4 (du 3 août)
+
+### Lundi 3 août · Mateusz · boucle IA (publié avec l'article)
+
+Depuis hier, l'essentiel du règlement européen sur l'IA s'applique, contrôles compris. Et la question que me posent les dirigeants n'a pas changé : « par où on commence, concrètement ? »
+
+Ma réponse tient en une règle : un seul chantier à la fois, mesuré.
+
+Choisissez la tâche qui vous coûte le plus (souvent le traitement des demandes entrantes, ou une rédaction récurrente). Notez ce qu'elle vous prend aujourd'hui, en heures par semaine. Installez l'usage. Comparez au bout de trente jours.
+
+Le gain est là ? Vous étendez. Il n'y est pas ? Vous arrêtez, sans avoir perdu ni des mois ni un budget.
+
+Dans l'article : les trois usages à tester en premier, les pièges qui coûtent cher (abonnements empilés, outils gadgets, boîtes noires), et les quatre questions à poser à tout prestataire avant de signer.
+
+https://aceconseil.co/blog/ia-pme-par-ou-commencer
+
+#IA #TPE
+
+### Mercredi 5 août · Jennifer · fil facture électronique (publié avec l'article)
+
+Le 1er septembre, c'est dans quatre semaines. Si vous n'avez rien suivi du dossier facture électronique, voici tout ce qu'il vous reste à faire, avec les dates.
+
+Cette semaine : situez votre cas (logiciel récent, Excel, ou expert-comptable qui gère tout) et posez une seule question à votre éditeur : « à quelle plateforme agréée serez-vous raccordé pour la réception, et que dois-je activer ? »
+
+Avant le 15 août : activez le raccordement, faites confirmer votre inscription à l'annuaire.
+
+Avant le 25 août : demandez une facture test, et décidez qui traite ce qui arrive.
+
+Le 1er septembre : si ces cases sont cochées, il ne se passe rien. C'est exactement l'objectif.
+
+Comptez une heure de travail au total. La checklist complète est dans l'article.
+
+https://aceconseil.co/blog/facture-electronique-checklist-dirigeant
+
+#FactureElectronique #TPE
+
+### Vendredi 7 août · Jennifer · boucle AMO (publié avec l'article)
+
+En dix ans de VEFA, j'ai vu le même scénario des dizaines de fois : le jour de la livraison, l'acquéreur découvre enfin son logement. L'émotion est là, le promoteur est pressé, le créneau est court.
+
+Alors on regarde les volumes et la lumière. On ne vérifie ni les ouvrants, ni la planéité, ni la conformité avec le descriptif signé chez le notaire.
+
+Et une règle fait toute la différence : une réserve écrite au procès-verbal engage le promoteur. Passé la livraison, les délais pour signaler un défaut apparent sont courts, et c'est à vous de faire la démarche.
+
+C'est pour cela que mieux vaut ne pas aller seul à un rendez-vous promoteur. Dans l'article : les quatre rendez-vous où tout se joue (travaux modificatifs, visite cloisons, pré-livraison, livraison), ce qu'un œil technique vérifie à chacun, et quand se faire accompagner.
+
+https://aceconseil.co/blog/vefa-assistance-maitrise-ouvrage
+
+#VEFA #Immobilier #AMO

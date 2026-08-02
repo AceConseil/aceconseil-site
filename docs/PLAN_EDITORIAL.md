@@ -48,7 +48,12 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
   - mer 29/07 : `2026-07-29-recevoir-facture-electronique-sans-tout-changer.md` — **publié** (couverture « CONFIGS / 3 », accordéon « votre configuration, votre geste » à 3 cas, rétro-lien depuis l'article plateforme agréée du 22/07).
   - ven 31/07 : `2026-07-31-fiche-google-business-artisan.md` — **publié** (boucle socle n°6. Couverture « AVIS LUS / 87 % » à 7 points d'orbite, module cochable « votre fiche est-elle complète ? » à 7 champs, rétro-lien depuis l'article site artisan du 17/07 et lien depuis la page pilier visibilite-prospection). Copie du module passée en revue adverse : chaque case rendue vérifiable fiche ouverte, aucun mécanisme de classement promis.
   - Posts LinkedIn de la semaine (dont le post du jour J, 2-3 août) : section « Semaine 3 » de `docs/POSTS_LINKEDIN.md`.
-- vendredis suivants : reprise des sujets socles restants (prochain : n°7, IA en PME par où commencer).
+- Semaine du 3 août (rédigée et relue, brouillons `_` prêts ; le fil AI Act est terminé depuis le 2 août, le lundi revient au socle ; image + widget + rétro-maillage à créer au moment de publier) :
+  - lun 3/08 : `_2026-08-03-ia-pme-par-ou-commencer.md` (socle n°7 : par où commencer avec l'IA, sans se faire vendre du rêve ; widget suggéré : accordéon des 4 questions à poser à un prestataire).
+  - mer 5/08 : `_2026-08-05-facture-electronique-checklist-dirigeant.md` (fil facture : la checklist datée du dirigeant pressé ; widget suggéré : check-list cochable à 7 actions, reprenant les dates).
+  - ven 7/08 : `_2026-08-07-vefa-assistance-maitrise-ouvrage.md` (socle n°9, avancé avant le n°8 : la page pilier AMO n'avait encore aucun article et la rotation des piliers l'exige ; auteur de référence Jennifer ; widget suggéré : frise des 4 rendez-vous TMA / cloisons / pré-livraison / livraison).
+  - Posts LinkedIn : section « Semaine 4 » de `docs/POSTS_LINKEDIN.md` (lun Mateusz, mer et ven Jennifer).
+- vendredis suivants : sujets socles restants (n°8 Seine-et-Marne, n°10 répondre en 5 minutes), puis renforts facture (cas concrets par métier, semaines du 11 et 18 août) et dernière ligne droite du 25 août.
 
 Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POSTS_LINKEDIN.md`.
 
