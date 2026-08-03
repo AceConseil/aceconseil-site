@@ -49,7 +49,7 @@ Les avis Google sont la seule preuve sociale publique compatible avec notre règ
 
 ## 1.4 L'entretien (10 min par semaine)
 
-- Publier un « post » sur la fiche (comme un mini-réseau social) une à deux fois par mois : la même chose que sur LinkedIn, en plus court, avec une photo et le lien du site.
+- Publier un « post » sur la fiche une fois par semaine, le vendredi : la version courte (2 ou 3 phrases) du post LinkedIn de l'article qui a le mieux réagi, avec l'image de couverture et le lien du site en bouton « En savoir plus ». Tout est prêt dans `docs/KIT_FICHE_GOOGLE.md` : les posts de lancement rédigés, les images au bon format, et les liens avec leur marqueur de suivi (`utm_source=google&utm_medium=gbp`) pour reconnaître les visites venues de la fiche.
 - Vérifier qu'aucune modification suggérée par un tiers n'a dénaturé la fiche.
 
 ---
