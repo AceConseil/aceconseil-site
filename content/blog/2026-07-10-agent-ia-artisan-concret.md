@@ -47,6 +47,6 @@ Sur les vôtres. L'agent travaille avec votre boîte mail, votre WhatsApp, le fo
 
 ## Par où commencer sans se tromper
 
-Pas par la technique : par le chiffre. La bonne première question est « combien me coûtent les demandes qui attendent ? », et [le calculateur de notre page d'accueil](/#preuves) y répond en trente secondes avec vos données. Si le montant est sérieux, l'agent se construit ensuite dans l'ordre : diagnostic, règles, mise en service progressive, transfert complet à votre équipe. Le déroulé est détaillé sur notre page [agents IA sur mesure](/agents-ia).
+Pas par la technique : par le chiffre. La bonne première question est « combien me coûtent les demandes qui attendent ? », et [le calculateur de notre page d'accueil](/#preuves) y répond en trente secondes avec vos données. Si le montant est sérieux, l'agent se construit ensuite dans l'ordre : diagnostic, règles, mise en service progressive, transfert complet à votre équipe. Le déroulé est détaillé sur notre page [agents IA sur mesure](/agents-ia), et la méthode générale du premier chantier unique dans [notre guide « IA en PME : par où commencer »](/blog/ia-pme-par-ou-commencer).
 
 Et si votre goulot d'étranglement est ailleurs, dans la circulation de l'information entre vos outils par exemple, nous vous le dirons franchement au premier appel. Vingt minutes avec Jennifer, cofondatrice, sans engagement : vous raccrochez avec une réponse claire, dans un sens ou dans l'autre.

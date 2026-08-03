@@ -292,6 +292,26 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Une conversation avant la rentrée : qui reçoit, sur quelle plateforme, et comment vous accédez à vos pièces. Le cabinet a probablement déjà sa solution.</p></div>
   </div>
 </div>`,
+  'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
+  <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
+  <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q1</span><span class="wg-name">Que se passe-t-il si nous arrêtons ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Vous devez rester propriétaire de ce qui est installé, avec la documentation pour continuer sans le prestataire. Sinon, vous louez une boîte noire.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q2</span><span class="wg-name">Sur quels outils cela fonctionne-t-il ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La bonne réponse part de vos outils actuels, sans migration imposée. Méfiance si tout commence par un changement de logiciel.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q3</span><span class="wg-name">Qui forme l'équipe, et sur quoi ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Sur vos cas réels, pas sur un support générique. Un outil que l'équipe ne maîtrise pas finit abandonné.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q4</span><span class="wg-name">Comment mesure-t-on le gain ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Un chiffre avant, un chiffre après, comparés à trente jours. Sans mesure, pas de décision.</p></div>
+  </div>
+</div>`,
   'checklist-fiche-google': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre fiche Google est-elle complète ?">
   <p class="wg-title"><span class="wg-pulse"></span>Votre fiche est-elle complète ?</p>
   <p class="wg-hint">Ouvrez votre fiche et cochez ce qui est déjà en place.</p>

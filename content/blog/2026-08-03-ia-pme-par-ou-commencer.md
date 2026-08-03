@@ -8,6 +8,8 @@ keywords: IA PME par où commencer, adopter IA petite entreprise, IA TPE, format
 
 [L'IA est désormais réglementée](/blog/ai-act-2-aout-ce-qui-change). Vos concurrents en parlent, et les vendeurs d'outils vous promettent des miracles hebdomadaires. Reste la seule question qui compte pour un dirigeant de TPE ou de PME : par où commencer, concrètement, sans se tromper de chantier ni empiler des abonnements. Voici notre réponse, celle que nous donnons en rendez-vous.
 
+![IA en PME : par où commencer, un guide honnête avec la méthode du premier chantier unique mesuré sur trente jours](assets/ia-pme-commencer.jpg)
+
 ## Trois usages de l'IA qui paient le plus vite
 
 Dans les petites entreprises que nous accompagnons, trois usages produisent un gain mesurable dès les premières semaines :
@@ -38,11 +40,8 @@ Un outil que l'équipe ne maîtrise pas est un outil qui sera abandonné, ou mal
 
 ## Les questions à poser à tout prestataire
 
-Avant de signer quoi que ce soit, quatre questions, et l'exigence de réponses claires :
+Avant de signer quoi que ce soit, quatre questions, et l'exigence de réponses claires.
 
-1. **Que se passe-t-il si nous arrêtons ?** Vous devez rester propriétaire de ce qui est installé, avec la documentation pour continuer sans le prestataire.
-2. **Sur quels outils cela fonctionne-t-il ?** La bonne réponse part de vos outils actuels, sans migration imposée.
-3. **Qui forme l'équipe, et sur quoi ?** Sur vos cas réels, pas sur un support générique.
-4. **Comment mesure-t-on le gain ?** Un chiffre avant, un chiffre après. Sans mesure, pas de décision.
+::widget questions-prestataire-ia::
 
 Un prestataire sérieux répond à ces questions sans détour. C'est notre façon de faire, détaillée sur notre page [agents IA](/agents-ia), et vous pouvez la tester : [appelez-nous](/#contact), vingt minutes avec Jennifer, cofondatrice, sans engagement. Vous repartez avec le chantier par lequel commencer chez vous, et notre avis franc s'il ne faut pas commencer du tout.
