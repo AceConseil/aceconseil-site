@@ -6,7 +6,7 @@ Guide pratique pour installer le premier agent Hermes du cabinet, de vos mains. 
 
 - **Hébergement : VPS OVH dédié, pas o2switch.** o2switch est un mutualisé cPanel : parfait pour un site ou des emails, inadapté à un démon qui doit tourner 24 h/24 avec ses passerelles de messagerie (pas de service systemd, processus longue durée non garantis). Le VPS OVH coûte le même prix qu'o2switch (~7 euros HT par mois) et c'est exactement la machine qu'on installera chez les clients : s'entraîner dessus, c'est roder le produit.
 - **Canal : Telegram seul au lancement.** Le pont WhatsApp d'Hermes (Baileys) est non officiel avec un risque documenté de bannissement du numéro : inacceptable en démonstration. WhatsApp attendra un pilote dédié avec un numéro dédié. Le client d'une démo ne fait pas la différence entre deux messageries posées sur la table.
-- **Modèle : tout Sonnet en phase 1.** Hermes n'a pas de routage bi-modèle natif (un seul modèle par défaut). On démarre en Sonnet, on mesure la consommation réelle sur deux semaines, et on ne passe le défaut en Haiku que si les coûts le justifient. Budgéter au tarif catalogue (le tarif de lancement de Sonnet expire le 31 août).
+- **Modèle : un seul par défaut, et le choix se tranche par un test, pas par une préférence.** Hermes n'a pas de routage bi-modèle natif. Deux candidats (voir section 3) : Claude Sonnet, la référence de qualité, et DeepSeek servi en France par Scaleway, dix à vingt fois moins cher et hébergé à Paris. **L'API DeepSeek officielle (platform.deepseek.com) est interdite** : c'est un service chinois, les données y sont traitées hors UE sans décision d'adéquation. Le modèle DeepSeek et le service DeepSeek sont deux choses différentes : le premier est ouvert et réhébergeable en France, le second ne l'est pas.
 - **Cloisonnement par construction.** Deux groupes Telegram dès le premier jour : « ACE Exploitation » (le vrai travail) et « ACE Démo » (uniquement des données fictives ou anonymisées). Rien de confidentiel n'entre jamais dans le groupe de démo : il n'y a donc jamais rien à purger avant un rendez-vous.
 - **Installation « en nu », jamais en conteneur.** Certains hébergeurs proposent une image VPS avec Hermes préinstallé dans Docker : à éviter. Dans un conteneur, l'agent est enfermé et ne peut pas agir librement sur la machine (fichiers, terminal, scripts), ce qui ampute la moitié de son intérêt. On installe Ubuntu nu, puis Hermes dessus.
 - **Aucune démo client avant deux semaines de rodage complet.** La pièce maîtresse de la démo est le rapport hebdomadaire réel : il faut deux vendredis pour en avoir un solide et recalibré.
@@ -42,14 +42,30 @@ hermes doctor        # diagnostic ; « hermes doctor --fix » si besoin
 
 L'installeur amène Python 3.11, Node.js 22, ripgrep et ffmpeg. Le code vit dans `~/.hermes/hermes-agent/`, les données (mémoire SQLite comprise) dans `~/.hermes/`.
 
-## 3. Le modèle et le moindre privilège
+## 3. Le modèle : le choix qui décide de la marge et de la résidence
+
+Hermes accepte n'importe quel fournisseur compatible. Trois options, une seule interdite.
+
+| Option | Où sont traitées les données | Ordre de prix | Verdict |
+|---|---|---|---|
+| **Claude Sonnet** (API Anthropic) | Hors UE (l'API de première main est globale par défaut, aucune option européenne) | Élevé : 3 / 15 dollars par million de jetons à partir du 1er septembre 2026 | La référence de qualité, notamment pour l'appel d'outils. Reste le repère de comparaison |
+| **DeepSeek servi par Scaleway** (Generative APIs, Paris) | **France** | À partir d'environ 0,20 euro par million de jetons | **Le candidat sérieux** : il résout d'un coup le coût et la résidence. À valider par un test |
+| **API DeepSeek officielle** (platform.deepseek.com) | Chine | Le moins cher | **Interdit en clientèle.** Transfert vers un pays tiers sans décision d'adéquation, et suicide commercial pour une offre vendue sur la confiance |
+
+**La distinction à ne jamais perdre de vue** : DeepSeek publie ses modèles en poids ouverts. Le *modèle* peut donc être servi par un hébergeur français ; c'est le *service* de l'entreprise chinoise qui pose problème, pas le modèle lui-même. Scaleway (français, opérateur classé au plus haut niveau de souveraineté du cadre européen) le propose en API depuis Paris.
+
+**Ce qu'il faut vérifier avant de basculer, et qu'aucun tableau de prix ne dira** : la qualité en usage agentique. Un agent ne fait pas que rédiger, il enchaîne des appels d'outils, respecte des consignes de format et sait s'arrêter. C'est précisément là que les modèles moins chers décrochent parfois. **Protocole de test, pendant le rodage** : faire tourner la même semaine de travail réel sur les deux modèles et comparer trois choses, chiffrées : le taux d'appels d'outils réussis du premier coup, le respect de la voix ACE dans les brouillons, et le nombre de reprises manuelles nécessaires. Si DeepSeek tient sur ces trois points, il devient le défaut ; sinon, Sonnet reste, et l'écart de prix est le prix de la fiabilité.
+
+Configuration (l'assistant `hermes model` affiche les noms exacts) :
 
 ```bash
-hermes config set ANTHROPIC_API_KEY sk-ant-...
-hermes model                       # sélecteur interactif, noms exacts affichés
+hermes config set ANTHROPIC_API_KEY sk-ant-...     # option Claude
+# ou, pour un fournisseur compatible OpenAI comme Scaleway :
+#   clé et URL de base à renseigner dans ~/.hermes/.env, jamais dans la conversation
+hermes model                       # sélecteur interactif
 ```
 
-Choisir Sonnet. Puis passer en revue `hermes tools` et couper tout ce qui ne sert pas aux usages prévus : c'est le moindre privilège appliqué à l'agent, et la seule vraie barrière technique en l'absence de mécanisme natif d'approbation (voir section 6).
+Puis passer en revue `hermes tools` et couper tout ce qui ne sert pas aux usages prévus : c'est le moindre privilège appliqué à l'agent, et la seule vraie barrière technique en l'absence de mécanisme natif d'approbation (voir section 6).
 
 ## 4. Telegram et persistance (1 heure)
 
