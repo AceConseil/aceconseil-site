@@ -10,7 +10,7 @@ Document de référence, conçu en août 2026 à partir de deux sources (le mod�
 
 - **Le registre de valeur, c'est « on montre, on ne promet pas » incarné.** Chaque semaine, le client reçoit la liste des tâches accomplies par son agent, en heures et en euros, selon une grille d'équivalences qu'il a lui-même validée par écrit. Aucune promesse : une mesure, continue, chez lui.
 - **La gérance réversible, c'est « vous restez propriétaire » prolongé.** Le mot « gérance » dit exactement la relation : un mandat de gestion sur un bien qui reste la propriété du client, révocable à tout moment. Jennifer peut l'expliquer avec sa légitimité immobilière : un gérant d'immeuble ne devient jamais propriétaire de l'immeuble.
-- **Elle répond au vrai blocage constaté en rendez-vous.** « Trop cher » voulait souvent dire « trop d'un coup ». La gérance étale le coût en mensualités qu'un artisan compare à ce qu'il connaît : un mi-temps administratif à 1000 à 1300 euros par mois chargés. La gérance complète en coûte environ un quart.
+- **Elle répond au vrai blocage constaté en rendez-vous.** « Trop cher » voulait souvent dire « trop d'un coup ». La gérance étale le coût en mensualités qu'un artisan compare à ce qu'il connaît : un mi-temps administratif à 1000 à 1300 euros par mois chargés. La gérance complète en coûte environ 40 %, pour un agent qui travaille aussi le soir et le samedi.
 - **Elle emballe ce qu'ACE sait déjà faire.** La construction d'agents (méthode existante), la formation IA (obligation de maîtrise de l'article 4, incluse d'office dans toute gérance : c'est un bouclier juridique et un argument de vente), et la culture du diagnostic chiffré (le calculateur devient l'outil de qualification).
 
 **Règle d'articulation** : l'offre actuelle « construction + transfert » ne change pas et reste l'offre par défaut. Le transfert complet a lieu dans tous les cas, gérance souscrite ou non. La gérance se propose au moment du transfert, jamais avant, jamais comme condition (exception assumée : les 3 pilotes du lancement).
@@ -39,7 +39,7 @@ Un seul palier commercial au lancement (les déclinaisons Veille et Coaching att
 | Installation complète (construction + mise en gérance) | 490 euros | 1490 euros |
 | Mise en gérance seule d'un agent déjà construit par ACE | 490 euros | 490 euros |
 | Bilan d'un agent construit ailleurs | 390 euros, puis devis | 390 euros, puis devis |
-| Gérance mensuelle | 190 euros/mois | 290 euros/mois |
+| Gérance mensuelle | 290 euros/mois | 490 euros/mois |
 | Tarif de maintien (suspension, 2 mois max/an) | 90 euros/mois | 90 euros/mois |
 
 - Le prix pilote s'annonce une seule fois, avec le prix plein écrit à côté (règle maison des remises : une raison vraie, pas de rabais répété).
@@ -50,7 +50,7 @@ Un seul palier commercial au lancement (les déclinaisons Veille et Coaching att
 
 ### La règle de qualification (opposable, à dire à voix haute)
 
-On n'installe pas de gérance si le manque à gagner mensuel chiffré au calculateur n'atteint pas **3 fois l'abonnement** (soit ~870 euros par mois au prix plein), le taux horaire du client étant figé par écrit lors du diagnostic. En dessous, on oriente vers la formation ou le site 499, et on le dit.
+On n'installe pas de gérance si le manque à gagner mensuel chiffré au calculateur n'atteint pas **3 fois l'abonnement** (soit ~1470 euros par mois au prix plein : la règle filtre naturellement vers les clients à vrai volume), le taux horaire du client étant figé par écrit lors du diagnostic. En dessous, on oriente vers la formation ou le site 499, et on le dit.
 
 ---
 
@@ -69,7 +69,7 @@ On n'installe pas de gérance si le manque à gagner mensuel chiffré au calcula
 | Brique | Choix | Pourquoi |
 |---|---|---|
 | Agent | Hermes Agent (open source, MIT) auto-hébergé | Mémoire et compétences persistantes, tâches planifiées en langage naturel, passerelles WhatsApp/Telegram/Email |
-| Hébergement | **VPS européen dédié par client, OVH France par défaut** (~8 euros/mois) | Résidence des données en France, au nom du client. **Hermes Cloud est interdit** : politique de confidentialité de Nous Research autorisant la divulgation pour entraînement, préversion sans SLA |
+| Hébergement | **VPS européen dédié par client, OVH France par défaut** (~8 euros/mois) | Hermes Agent est open source (MIT) : le VPS fait exactement ce que ferait le cloud (24 h/24, passerelles, tâches planifiées), mais les données restent en France sur une machine du client. **Hermes Cloud est interdit** : politique de confidentialité de Nous Research autorisant la divulgation pour entraînement, préversion sans SLA. Interdiction contractuelle, pas technique : à réviser si une résidence européenne avec engagement écrit de non-entraînement apparaît. L'installation se fait par script et runbook (montés au dogfooding de la semaine 1) : 2 à 3 heures d'infrastructure par client ensuite |
 | Connexions | Composio (compte au nom du client) | OAuth sécurisé vers Gmail/Drive/Agenda, palier gratuit de 20 000 appels/mois suffisant au départ |
 | Modèles | Routage Claude : Haiku 4.5 (routinier), Sonnet (cheval de trait), Opus (ponctuel), sur la clé API du client | 15 à 30 euros/mois en usage modéré, 80 à 110 en intensif ; budgeter au tarif plein (le tarif de lancement de Sonnet expire le 31 août) |
 | Mémoire | SQLite natif d'abord ; Honcho (~2 dollars/million de tokens) seulement quand le volume le justifie | Pas de complexité avant le besoin |
@@ -104,7 +104,7 @@ ACE devient **sous-traitant au sens de l'article 28 du RGPD** (accès aux emails
 
 ### Le message pilote (WhatsApp, du portable de celui qui connaît le contact)
 
-> Bonjour [Prénom], c'est Mateusz, d'ACE Conseil. Nous préparons un nouveau service : un agent IA que nous installons chez vous, que nous surveillons et réparons nous-mêmes, avec un point ensemble chaque mois. Chaque semaine, vous recevez la liste de ce qu'il a fait, en heures et en euros. Avant d'ouvrir l'offre, nous cherchons deux ou trois entreprises pilotes. En échange de vos retours, l'installation est à 490 euros HT au lieu de 1490, et l'abonnement à 190 euros HT par mois, garanti un an. Vous restez propriétaire de tout et vous pouvez arrêter quand vous voulez. Dix minutes au téléphone cette semaine pour voir si ça colle à votre activité ?
+> Bonjour [Prénom], c'est Mateusz, d'ACE Conseil. Nous préparons un nouveau service : un agent IA que nous installons chez vous, que nous surveillons et réparons nous-mêmes, avec un point ensemble chaque mois. Chaque semaine, vous recevez la liste de ce qu'il a fait, en heures et en euros. Avant d'ouvrir l'offre, nous cherchons deux ou trois entreprises pilotes. En échange de vos retours, l'installation est à 490 euros HT au lieu de 1490, et l'abonnement à 290 euros HT par mois au lieu de 490, garanti un an. Vous restez propriétaire de tout et vous pouvez arrêter quand vous voulez. Dix minutes au téléphone cette semaine pour voir si ça colle à votre activité ?
 
 **Cibles, par ordre** : 1) les prospects passés bloqués sur le prix avec un flux déjà identifié ; 2) les clients existants à volume administratif visible ; 3) le réseau Seine-et-Marne (relances de devis, factures par email, journaux de chantier). 3 messages en semaine 1, un seul rappel, jamais deux.
 
@@ -132,10 +132,10 @@ ACE devient **sous-traitant au sens de l'article 28 du RGPD** (accès aux emails
 
 ## 7. Les décisions qui vous appartiennent (avec recommandation)
 
-1. **Statut stratégique** : lisseur de trésorerie ou futur pilier avec embauche ? Recommandation : lisseur pendant 12 mois ; à ~58 euros de l'heure implicites, la gérance ne justifie pas de sacrifier des missions de conseil. Embauche seulement à 10 clients rentables et charge maîtrisée.
+1. **Statut stratégique** : lisseur de trésorerie ou futur pilier avec embauche ? Recommandation : lisseur pendant 12 mois ; à ~98 euros de l'heure implicites au prix plein (5 heures budgétées), la gérance devient comparable au conseil, mais l'embauche ne se décide qu'à 10 clients rentables et charge maîtrisée.
 2. **Assurance RC pro** : à lancer en semaine 1, bloquant, seul le dirigeant peut le faire.
 3. **Relecture juridique** (contrat, DPA, le mot « gérance ») : oui, en forfait, avant le pilote 1.
-4. **Prix plein de 290 euros** : cible de travail, à trancher fin septembre avec les verbatims des appels ; rien n'est publié d'ici là.
+4. **Prix plein de 490 euros** (révision d'août, arbitrage du dirigeant : le 290 initial sous-valorisait le cabinet à 58 euros de l'heure implicites ; le blocage passé des 500 euros portait sur des missions payées d'un coup, pas sur un mensuel) : cible de travail, à confronter aux verbatims des appels fin septembre ; rien n'est publié d'ici là.
 5. **Cannibalisation** : la gérance ne se propose pas comme alternative d'étalement à une mission complète (hors pilotes). À revoir selon la trésorerie.
 6. **Hébergeur** : OVH France par défaut (« données en France » vaut les 2 euros d'écart avec Hetzner).
 7. **Répartition interne** : former Jennifer aux incidents de niveau 1 dès la semaine 2, sinon le plafond de capacité est fictif.
