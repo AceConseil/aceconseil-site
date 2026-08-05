@@ -34,15 +34,15 @@ Un seul palier commercial au lancement (les déclinaisons Veille et Coaching att
 
 ### La grille (HT, par agent)
 
-| Brique | Prix pilote (3 clients max, garanti 12 mois) | Prix plein (cible de travail) |
+| Brique | Offre de lancement (3 premiers clients) | Prix plein (cible de travail) |
 |---|---|---|
 | Installation complète (construction + mise en gérance) | 490 euros | 1490 euros |
 | Mise en gérance seule d'un agent déjà construit par ACE | 490 euros | 490 euros |
 | Bilan d'un agent construit ailleurs | 390 euros, puis devis | 390 euros, puis devis |
-| Gérance mensuelle | 290 euros/mois | 490 euros/mois |
+| Gérance mensuelle | 290 euros/mois pendant 6 mois, puis 490 | 490 euros/mois |
 | Tarif de maintien (suspension, 2 mois max/an) | 90 euros/mois | 90 euros/mois |
 
-- Le prix pilote s'annonce une seule fois, avec le prix plein écrit à côté (règle maison des remises : une raison vraie, pas de rabais répété).
+- L'offre de lancement s'annonce une seule fois, avec le prix plein et sa date de bascule écrits noir sur blanc dès la proposition (règle maison des remises : une raison vraie, une durée définie, pas de rabais répété). La bascule à 6 mois est automatique et connue d'avance : pas de renégociation, pas de surprise.
 - L'infrastructure est **au nom et à la charge du client** : 30 à 80 euros par mois annoncés dès la proposition (VPS OVH France ~8 euros, Composio palier gratuit, LLM sur la clé du client), avec clause d'alerte si l'usage dépasse la fourchette. C'est la preuve matérielle de la propriété.
 - Rien n'est jamais offert : offrir la mise en gérance reviendrait à offrir 12 à 15 heures de travail dans un cabinet de 2 personnes.
 - Conditions : **sans engagement, préavis de 30 jours par simple email**, documentation et accès remis sous 15 jours, appel de passation de 60 minutes inclus, zéro frais de sortie. La réversibilité est le différenciateur : elle s'affiche.
@@ -104,7 +104,7 @@ ACE devient **sous-traitant au sens de l'article 28 du RGPD** (accès aux emails
 
 ### Le message pilote (WhatsApp, du portable de celui qui connaît le contact)
 
-> Bonjour [Prénom], c'est Mateusz, d'ACE Conseil. Nous préparons un nouveau service : un agent IA que nous installons chez vous, que nous surveillons et réparons nous-mêmes, avec un point ensemble chaque mois. Chaque semaine, vous recevez la liste de ce qu'il a fait, en heures et en euros. Avant d'ouvrir l'offre, nous cherchons deux ou trois entreprises pilotes. En échange de vos retours, l'installation est à 490 euros HT au lieu de 1490, et l'abonnement à 290 euros HT par mois au lieu de 490, garanti un an. Vous restez propriétaire de tout et vous pouvez arrêter quand vous voulez. Dix minutes au téléphone cette semaine pour voir si ça colle à votre activité ?
+> Bonjour [Prénom], c'est Mateusz, d'ACE Conseil. Nous préparons un nouveau service : un agent IA que nous installons chez vous, que nous surveillons et réparons nous-mêmes, avec un point ensemble chaque mois. Chaque semaine, vous recevez la liste de ce qu'il a fait, en heures et en euros. Avant d'ouvrir l'offre, nous cherchons deux ou trois entreprises pilotes. En échange de vos retours, l'installation est à 490 euros HT au lieu de 1490, et l'abonnement à 290 euros HT par mois pendant les six premiers mois, puis 490. Vous restez propriétaire de tout et vous pouvez arrêter quand vous voulez. Dix minutes au téléphone cette semaine pour voir si ça colle à votre activité ?
 
 **Cibles, par ordre** : 1) les prospects passés bloqués sur le prix avec un flux déjà identifié ; 2) les clients existants à volume administratif visible ; 3) le réseau Seine-et-Marne (relances de devis, factures par email, journaux de chantier). 3 messages en semaine 1, un seul rappel, jamais deux.
 
