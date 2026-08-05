@@ -27,7 +27,7 @@ Un seul palier commercial au lancement (les déclinaisons Veille et Coaching att
 - Mises à jour techniques (modèles, connecteurs, sécurité).
 - Registre de valeur avec rapport hebdomadaire.
 - Groupe WhatsApp à trois (client + agent + ACE) : le client apprend en voyant ACE parler à l'agent, ACE voit où le client bute.
-- Un appel mensuel de 30 minutes (revue du registre, coaching, tâche suivante).
+- Un appel mensuel de 30 minutes (revue du registre, coaching, tâche suivante). Le coaching porte notamment sur ce que personne n'explique aux dirigeants : ouvrir une conversation neuve quand on change de sujet, et faire écrire en mémoire ce qui doit durer. La plupart des utilisateurs déçus d'un agent le sont parce qu'ils gardent une seule conversation infinie qui se dégrade.
 - Une amélioration par mois incluse (ajuster un flux, ajouter une tâche récurrente, transformer un bon résultat en compétence réutilisable).
 - La note d'usage interne et le lien avec la formation ACE (article 4 de l'AI Act) : inclus d'office.
 - Le dossier de reprise tenu à jour en continu (accès, procédures, comment surveiller soi-même).
@@ -69,7 +69,7 @@ On n'installe pas de gérance si le manque à gagner mensuel chiffré au calcula
 | Brique | Choix | Pourquoi |
 |---|---|---|
 | Agent | Hermes Agent (open source, MIT) auto-hébergé | Mémoire et compétences persistantes, tâches planifiées en langage naturel, passerelles WhatsApp/Telegram/Email |
-| Hébergement | **VPS européen dédié par client, OVH France par défaut** (~8 euros/mois) | Hermes Agent est open source (MIT) : le VPS fait exactement ce que ferait le cloud (24 h/24, passerelles, tâches planifiées), mais les données restent en France sur une machine du client. **Hermes Cloud est interdit** : politique de confidentialité de Nous Research autorisant la divulgation pour entraînement, préversion sans SLA. Interdiction contractuelle, pas technique : à réviser si une résidence européenne avec engagement écrit de non-entraînement apparaît. L'installation se fait par script et runbook (montés au dogfooding de la semaine 1) : 2 à 3 heures d'infrastructure par client ensuite |
+| Hébergement | **VPS européen dédié par client, OVH France par défaut** (~8 euros/mois) | Hermes Agent est open source (MIT) : le VPS fait exactement ce que ferait le cloud (24 h/24, passerelles, tâches planifiées), mais les données restent en France sur une machine du client. **Hermes Cloud est interdit** : politique de confidentialité de Nous Research autorisant la divulgation pour entraînement, préversion sans SLA. Interdiction contractuelle, pas technique : à réviser si une résidence européenne avec engagement écrit de non-entraînement apparaît. L'installation se fait par script et runbook (montés au dogfooding de la semaine 1) : 2 à 3 heures d'infrastructure par client ensuite. Installation « en nu » sur Ubuntu, jamais en conteneur Docker : enfermé dans un conteneur, l'agent perd l'accès libre à la machine qui fait la moitié de son intérêt |
 | Connexions | Composio (compte au nom du client) | OAuth sécurisé vers Gmail/Drive/Agenda, palier gratuit de 20 000 appels/mois suffisant au départ |
 | Modèles | Routage Claude : Haiku 4.5 (routinier), Sonnet (cheval de trait), Opus (ponctuel), sur la clé API du client | 15 à 30 euros/mois en usage modéré, 80 à 110 en intensif ; budgeter au tarif plein (le tarif de lancement de Sonnet expire le 31 août) |
 | Mémoire | SQLite natif d'abord ; Honcho (~2 dollars/million de tokens) seulement quand le volume le justifie | Pas de complexité avant le besoin |
@@ -88,7 +88,7 @@ ACE devient **sous-traitant au sens de l'article 28 du RGPD** (accès aux emails
 
 1. **DPA annexé au contrat** (y compris pour les pilotes) : liste des sous-traitants ultérieurs (Composio, fournisseur LLM, hébergeur), clause de non-entraînement sur les données du client, notification de violation sous 24 heures.
 2. **Clause de responsabilité** : obligation de moyens, plafond à 12 mois de redevances, exclusion des dommages indirects.
-3. **Annexe des actions irréversibles** soumises à approbation humaine, journalisation conservée 12 mois.
+3. **Annexe des actions irréversibles** soumises à approbation humaine, journalisation conservée 12 mois. Elle couvre aussi le risque d'injection de prompt : un agent qui lit les emails du client lit aussi ce qu'un inconnu lui envoie, et un message piégé peut contenir de fausses instructions. Le prompt système traite tout contenu entrant comme une donnée et jamais comme un ordre, l'agent n'a accès qu'à une boîte dédiée, et le mode sans approbation est proscrit.
 4. **Clause de réversibilité** : résiliation à tout moment, préavis 30 jours, remise sous 15 jours, zéro frais, propriété du client dès le premier jour.
 5. **Clause registre de valeur** : chiffres indicatifs validés par le client, aucune garantie de résultat, aucun usage en communication ACE sans accord écrit.
 
