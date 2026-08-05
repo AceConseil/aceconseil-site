@@ -50,7 +50,7 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
   - Posts LinkedIn de la semaine (dont le post du jour J, 2-3 août) : section « Semaine 3 » de `docs/POSTS_LINKEDIN.md`.
 - Semaine du 3 août (rédigée et relue, brouillons `_` prêts ; le fil AI Act est terminé depuis le 2 août, le lundi revient au socle ; image + widget + rétro-maillage à créer au moment de publier) :
   - lun 3/08 : `2026-08-03-ia-pme-par-ou-commencer.md` — **publié** (couverture « CHANTIER / ×1 », accordéon « les 4 questions à poser avant de signer », rétro-lien depuis l'article agent IA du 10/07).
-  - mer 5/08 : `_2026-08-05-facture-electronique-checklist-dirigeant.md` (fil facture : la checklist datée du dirigeant pressé ; widget suggéré : check-list cochable à 7 actions, reprenant les dates).
+  - mer 5/08 : `2026-08-05-facture-electronique-checklist-dirigeant.md` — **publié** (couverture « ACTIONS / 7 » à 7 points d'orbite, module cochable « où en êtes-vous ? » à 7 actions datées, rétro-lien depuis l'article réception du 16/07).
   - ven 7/08 : `_2026-08-07-vefa-assistance-maitrise-ouvrage.md` (socle n°9, avancé avant le n°8 : la page pilier AMO n'avait encore aucun article et la rotation des piliers l'exige ; auteur de référence Jennifer ; widget suggéré : frise des 4 rendez-vous TMA / cloisons / pré-livraison / livraison).
   - Posts LinkedIn : section « Semaine 4 » de `docs/POSTS_LINKEDIN.md` (lun Mateusz, mer et ven Jennifer).
 - vendredis suivants : sujets socles restants (n°8 Seine-et-Marne, n°10 répondre en 5 minutes), puis renforts facture (cas concrets par métier, semaines du 11 et 18 août) et dernière ligne droite du 25 août.

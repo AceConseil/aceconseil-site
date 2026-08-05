@@ -292,6 +292,30 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Une conversation avant la rentrée : qui reçoit, sur quelle plateforme, et comment vous accédez à vos pièces. Le cabinet a probablement déjà sa solution.</p></div>
   </div>
 </div>`,
+  'checklist-facture-datee': `<div class="wg wg-check" aria-label="Auto-diagnostic : où en êtes-vous de la checklist facture électronique ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Où en êtes-vous ?</p>
+  <p class="wg-hint">Cochez ce qui est déjà fait chez vous.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai situé ma configuration : logiciel, Excel ou cabinet.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La question de la plateforme est posée à mon éditeur ou mon cabinet.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le calendrier est clair pour moi : réception 2026, émission 2027.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le raccordement à la plateforme est activé.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon inscription à l'annuaire est confirmée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Une facture test a été reçue et ouverte.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">On sait qui traite les factures reçues, et où elles vont.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 7 actions faites</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre préparation.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Tout tient encore largement : commencez par situer votre configuration, c'est trente minutes cette semaine. Le reste suivra dans l'ordre.</span>
+    <span class="wgk-band" data-min="3" data-max="4">La moitié du chemin est faite. La suite se joue chez votre éditeur ou votre plateforme : posez la question sans attendre, les réponses ralentissent à la mi-août.</span>
+    <span class="wgk-band" data-min="5" data-max="6">Presque prêt. Fermez la ou les cases restantes avant le 25 août, et la rentrée sera un non-événement.</span>
+    <span class="wgk-band" data-min="7" data-max="7">Vous êtes prêt à recevoir. L'étape d'après, celle qui rapporte : brancher le tri, le rapprochement et les relances sur votre organisation.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

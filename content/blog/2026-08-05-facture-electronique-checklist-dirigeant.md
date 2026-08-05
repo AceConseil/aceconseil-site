@@ -8,6 +8,8 @@ keywords: facture électronique checklist, se préparer facture électronique 20
 
 Le 1er septembre, c'est dans quatre semaines. Si vous n'avez rien suivi du dossier facture électronique, cette page suffit : les actions à mener, dans l'ordre, avec des dates repères (seul le 1er septembre est une échéance réglementaire). Comptez une heure de travail au total, répartie sur trois semaines.
 
+![Checklist facture électronique 2026 : sept actions datées pour être prêt à recevoir au 1er septembre](assets/facture-checklist.jpg)
+
 ## Cette semaine : trois gestes, trente minutes
 
 1. **Situez votre configuration.** Logiciel de gestion récent, Excel et papier, ou expert-comptable qui gère tout : le chemin diffère selon le cas, et nous avons détaillé [les trois configurations et le geste à poser dans chacune](/blog/recevoir-facture-electronique-sans-tout-changer).
@@ -23,6 +25,8 @@ Le 1er septembre, c'est dans quatre semaines. Si vous n'avez rien suivi du dossi
 
 - **Demandez un test de réception** à votre plateforme, ou à un fournisseur déjà passé à l'électronique. Une facture test reçue et ouverte vaut toutes les confirmations écrites.
 - **Décidez qui traite les factures reçues.** Qui les voit arriver, où elles se rangent, qui valide le paiement : trois réponses à poser par écrit, même en une ligne chacune.
+
+::widget checklist-facture-datee::
 
 ## Le 1er septembre : un non-événement
 
