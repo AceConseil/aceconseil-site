@@ -316,6 +316,33 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="7" data-max="7">Vous êtes prêt à recevoir. L'étape d'après, celle qui rapporte : brancher le tri, le rapprochement et les relances sur votre organisation.</span>
   </div>
 </div>`,
+  'checklist-locaux-pro': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre projet de locaux est-il cadré ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre projet de locaux est-il cadré ?</p>
+  <p class="wg-hint">Cochez ce qui est déjà vérifié et écrit, pas ce qui a été dit à l'oral.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La puissance électrique réellement disponible est écrite au contrat, pas supposée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La charge au sol admissible est connue, et compatible avec vos machines ou votre stock.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La hauteur libre est mesurée là où vos équipements passent, pas au milieu de la pièce.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le tableau de répartition des travaux entre bailleur et preneur est annexé et chiffré.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">L'accès des véhicules de livraison a été testé au gabarit réel, pas sur un plan.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le classement en établissement recevant du public et l'accessibilité sont tranchés par écrit.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La ventilation et l'extraction correspondent à votre activité, pas à celle du précédent occupant.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le délai de raccordement fibre est confirmé par l'opérateur, pas estimé.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le calendrier prévoit une marge entre la réception des travaux et votre emménagement.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La fin de l'ancien bail laisse un recouvrement, pas un pari sur la date.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 10 points vérifiés</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre projet.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="3">Le projet est encore ouvert, et c'est une bonne nouvelle : le cadrage avant signature est le rendez-vous le moins cher et le plus rentable. Reprenez la liste dans l'ordre avant d'engager quoi que ce soit.</span>
+    <span class="wgk-band" data-min="4" data-max="6">Les bases sont posées, mais il reste des angles morts. Chacun de ces points se règle encore par un écrit aujourd'hui, et devient un devis supplémentaire une fois le bail signé.</span>
+    <span class="wgk-band" data-min="7" data-max="9">Dossier solide. Traitez les cases restantes avant la signature ou la réception, ce sont précisément celles qui se découvrent au pire moment.</span>
+    <span class="wgk-band" data-min="10" data-max="10">Votre opération est cadrée. Le point de vigilance se déplace vers la réception : des réserves précises au procès-verbal, et la retenue de garantie tenue jusqu'à leur levée.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

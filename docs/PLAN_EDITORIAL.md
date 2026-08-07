@@ -51,7 +51,7 @@ Statut de publication (image + widget + rétro-maillage ajoutés au moment de pu
 - Semaine du 3 août (rédigée et relue, brouillons `_` prêts ; le fil AI Act est terminé depuis le 2 août, le lundi revient au socle ; image + widget + rétro-maillage à créer au moment de publier) :
   - lun 3/08 : `2026-08-03-ia-pme-par-ou-commencer.md` — **publié** (couverture « CHANTIER / ×1 », accordéon « les 4 questions à poser avant de signer », rétro-lien depuis l'article agent IA du 10/07).
   - mer 5/08 : `2026-08-05-facture-electronique-checklist-dirigeant.md` — **publié** (couverture « ACTIONS / 7 » à 7 points d'orbite, module cochable « où en êtes-vous ? » à 7 actions datées, rétro-lien depuis l'article réception du 16/07).
-  - ven 7/08 : `_2026-08-07-vefa-assistance-maitrise-ouvrage.md` (socle n°9, avancé avant le n°8 : la page pilier AMO n'avait encore aucun article et la rotation des piliers l'exige ; auteur de référence Jennifer ; widget suggéré : frise des 4 rendez-vous TMA / cloisons / pré-livraison / livraison).
+  - ven 7/08 : `2026-08-07-locaux-professionnels-rendez-vous-decisifs.md` **publié** (socle n°9 réorienté : l'AMO de Jennifer se fait de plus en plus pour des sociétés, pas pour des particuliers ; cible entreprises qui changent de locaux, construisent ou agrandissent, investisseurs et bailleurs ; widget `checklist-locaux-pro`, 10 points à trancher avant de signer). Le brouillon `_2026-08-07-vefa-assistance-maitrise-ouvrage.md` est conservé pour une publication ultérieure côté acquéreur particulier, cible secondaire.
   - Posts LinkedIn : section « Semaine 4 » de `docs/POSTS_LINKEDIN.md` (lun Mateusz, mer et ven Jennifer).
 - vendredis suivants : sujets socles restants (n°8 Seine-et-Marne, n°10 répondre en 5 minutes), puis renforts facture (cas concrets par métier, semaines du 11 et 18 août) et dernière ligne droite du 25 août.
 
@@ -115,9 +115,10 @@ Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POS
 - Plan : panorama des aides et dispositifs (France Num, CMA 77, CCI 77) avec liens officiels · par quoi commencer selon sa situation · combien ça coûte vraiment · à qui parler localement
 - Maillage : /#contact, /automatisation
 
-## 9. VEFA : pourquoi ne jamais aller seul aux rendez-vous promoteur
-- Slug : `vefa-assistance-maitrise-ouvrage`
-- Requêtes : AMO VEFA, visite cloisons VEFA, livraison appartement réserves, se faire accompagner achat VEFA
+## 9. Locaux professionnels : les quatre rendez-vous qui engagent votre budget
+- Slug : `locaux-professionnels-rendez-vous-decisifs` (publié le 7 août 2026)
+- Requêtes : AMO entreprise, aménagement locaux professionnels, réception de travaux réserves, changer de locaux entreprise
+- Variante particulier gardée en réserve : `vefa-assistance-maitrise-ouvrage` (brouillon prêt, à publier quand la cible acquéreur sera de nouveau servie)
 - Intention : requêtes AMO très qualifiées, zéro concurrence des agences IA sur ce terrain
 - Plan : les moments où tout se joue (TMA, visite cloisons, pré-livraison, livraison) · ce qu'un acquéreur seul ne voit pas · les réserves qui coûtent cher après remise des clés · ce que fait une AMO, concrètement · quand la prendre
 - Maillage : /amo-immobilier

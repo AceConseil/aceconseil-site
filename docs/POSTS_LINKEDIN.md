@@ -437,14 +437,16 @@ https://aceconseil.co/blog/facture-electronique-checklist-dirigeant
 
 ### Vendredi 7 août · Jennifer · boucle AMO (publié avec l'article)
 
-En dix ans de VEFA, j'ai vu le même scénario des dizaines de fois : le jour de la livraison, l'acquéreur découvre enfin son logement. L'émotion est là, le promoteur est pressé, le créneau est court.
+En dix ans d'opérations immobilières, j'ai vu le même scénario des dizaines de fois : une entreprise signe pour des locaux, et découvre trois mois plus tard ce que le bail avait laissé dans le flou.
 
-Alors on regarde les volumes et la lumière. On ne vérifie ni les ouvrants, ni la planéité, ni la conformité avec le descriptif signé chez le notaire.
+La puissance électrique qui ne suffit pas. La charge au sol incompatible avec les machines. Le raccordement fibre annoncé en trois semaines, livré en quatre mois. Rien de tout cela ne se voit à la visite du mardi après-midi.
 
-Et une règle fait toute la différence : une réserve écrite au procès-verbal engage le promoteur. Passé la livraison, les délais pour signaler un défaut apparent sont courts, et c'est à vous de faire la démarche.
+Et pour une société, un retard ne se paie pas en inconfort. Il se paie en loyers qui se cumulent, en équipes qui travaillent en mode dégradé, en activité qui ne redémarre pas à la date annoncée aux clients.
 
-C'est pour cela que mieux vaut ne pas aller seul à un rendez-vous promoteur. Dans l'article : les quatre rendez-vous où tout se joue (travaux modificatifs, visite cloisons, pré-livraison, livraison), ce qu'un œil technique vérifie à chacun, et quand se faire accompagner.
+Une opération de locaux se joue sur quatre rendez-vous : le cadrage avant de signer, la répartition des travaux, la visite de chantier pendant que les réseaux sont encore accessibles, et la réception.
 
-https://aceconseil.co/blog/vefa-assistance-maitrise-ouvrage
+Dans l'article : ce qui se vérifie à chacun, les dix points à trancher par écrit avant de signer, et pourquoi la réception est un acte juridique et pas une visite de courtoisie.
 
-#VEFA #Immobilier #AMO
+https://aceconseil.co/blog/locaux-professionnels-rendez-vous-decisifs
+
+#ImmobilierDEntreprise #AMO #TPEPME
