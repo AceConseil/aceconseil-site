@@ -343,6 +343,33 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="10" data-max="10">Votre opération est cadrée. Le point de vigilance se déplace vers la réception : des réserves précises au procès-verbal, et la retenue de garantie tenue jusqu'à leur levée.</span>
   </div>
 </div>`,
+  'test-boucle-reponse': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre boucle de réponse tient-elle ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre boucle de réponse tient-elle ?</p>
+  <p class="wg-hint">Ne cochez que ce que vous avez vérifié vous-même, téléphone en main. Pas ce que vous croyez avoir configuré.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je me suis fait écrire et appeler cette semaine depuis un numéro absent de mes contacts, et j'ai noté ce qui revenait.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Un message envoyé sur WhatsApp hors de mes horaires déclenche bien une réponse automatique, vérifié en vrai.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Cette réponse annonce un délai de rappel que je tiens réellement, et pas un délai de politesse.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Elle donne une porte de sortie explicite pour les vraies urgences : un numéro et une consigne claire.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Elle demande deux ou trois informations utiles : commune, nature des travaux, date souhaitée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mes horaires et mon adresse sont renseignés dans mon profil WhatsApp Business.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon annonce de messagerie vocale dit mon métier, ma commune, ce qu'il faut laisser et sous quel délai je rappelle.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai testé le cas sans réseau ou téléphone éteint : une demande atteint quand même quelqu'un.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les demandes reçues sortent du fil WhatsApp et finissent dans un endroit unique : carnet, tableau ou logiciel de devis.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je peux dire, pour la semaine écoulée, combien de demandes sont entrées et combien ont eu une vraie réponse humaine.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 10 points vérifiés</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre boucle.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="3">Aujourd'hui, une demande qui tombe pendant un chantier a de bonnes chances de disparaître sans laisser de trace. Geste suivant : faites-vous écrire et appeler cet après-midi par un numéro inconnu, et notez ce qui revient et en combien de temps.</span>
+    <span class="wgk-band" data-min="4" data-max="6">La moitié de la boucle tient, et c'est presque toujours la même moitié qui manque. Geste suivant : réécrivez votre message d'absence pour qu'il n'annonce qu'un seul délai, celui que vous tenez vraiment, avec une porte d'urgence.</span>
+    <span class="wgk-band" data-min="7" data-max="9">Boucle solide. Geste suivant : traitez le cas hors réseau. Le message d'absence WhatsApp ne part que si votre téléphone a Internet, alors qu'une annonce de messagerie et un renvoi d'appel se jouent côté opérateur. Vérifiez-le une fois, en mode avion.</span>
+    <span class="wgk-band" data-min="10" data-max="10">Votre boucle tient, y compris quand vous êtes injoignable. Le point de vigilance se déplace après le devis envoyé : c'est là que le silence reprend, et c'est une autre mécanique, celle de la relance.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

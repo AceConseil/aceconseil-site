@@ -46,6 +46,8 @@ Pas besoin d'outil : un carnet suffit. Pendant une semaine, notez chaque demande
 
 Ce petit relevé donne votre premier chiffre de la formule. Les deux autres, votre taux de signature et votre panier moyen, sortent de votre facturation.
 
+Une fois ce relevé fait, la question devient concrète : que faire des demandes qui tombent pendant un chantier ? Nous détaillons la boucle à mettre en place, message par message, dans [répondre vite sans embaucher](/blog/repondre-vite-sans-embaucher).
+
 ## Et ensuite
 
 Deux leviers ferment la fuite, et ils se complètent : [un agent IA](/agents-ia) qui accueille et qualifie chaque demande à toute heure (voyez [sa journée heure par heure](/blog/agent-ia-artisan-concret)), et [l'automatisation des relances](/automatisation) pour que les devis envoyés ne meurent plus en silence.

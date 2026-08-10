@@ -450,3 +450,63 @@ Dans l'article : ce qui se vérifie à chacun, les dix points à trancher par é
 https://aceconseil.co/blog/locaux-professionnels-rendez-vous-decisifs
 
 #ImmobilierDEntreprise #AMO #TPEPME
+
+## Semaine 5 (du 10 août)
+
+### Lundi 10 août · Mateusz · fil réactivité (publié avec l'article)
+
+Sur un chantier, les mains prises, le téléphone vibre dans la poche. Vous ne décrochez pas, et ce n'est pas le problème.
+
+Le problème vient après. La personne qui vous a écrit ignore si vous avez reçu, si vous êtes disponible et quand vous rappellerez. Pendant ce temps, elle continue de chercher.
+
+Ce qui m'amène à une conviction contraire au discours habituel sur la vitesse : un accusé de réception instantané qui promet un rappel et ne le tient pas fait plus de dégâts que deux heures de silence suivies d'un vrai appel. Il consomme la seule promesse que vous aviez à faire.
+
+Au passage, la « règle des cinq minutes attribuée à Harvard » n'existe pas sous cette forme. L'article réel (Harvard Business Review, mars 2011, sur 1,25 million de demandes) parle d'une heure, et il mesure la capacité à joindre et à qualifier un interlocuteur, pas à signer. Les « 78 % » et les « 21 fois plus » qui circulent viennent d'ailleurs.
+
+La méthode que je défends tient en trois temps : accuser réception vite et honnêtement (« je suis sur chantier jusqu'à 17 h, je vous rappelle avant 18 h » est un signe d'activité, pas de négligence), poser deux ou trois questions utiles pour que le rappel serve à quelque chose, puis reprendre la main en humain dans le délai annoncé.
+
+Et une limite qu'il vaut mieux connaître avant de tout miser dessus : WhatsApp écrit noir sur blanc que le message d'absence ne part que si le téléphone a Internet. En sous-sol ou en zone blanche, l'automatisation gratuite lâche. D'où l'annonce de messagerie téléphonique, qui reste le vrai filet.
+
+Le texte exact des trois messages est dans l'article.
+
+https://aceconseil.co/blog/repondre-vite-sans-embaucher
+
+#Artisans #TPE #AgentsIA
+
+### Mercredi 12 août · Jennifer · fil facture électronique (publié avec l'article)
+
+Depuis quelques semaines, je demande à chaque dirigeant que je rencontre où arrivent ses factures de matériaux. La réponse est presque toujours la même : dans la boîte mail du patron, et parfois dans le camion avec le bon de livraison.
+
+Le 1er septembre, ce chemin se ferme pour les gros négoces. Les enseignes nationales de matériaux sont des grandes entreprises ou des entreprises de taille intermédiaire : leur taille les oblige à émettre en électronique dès 2026. Vous, TPE ou PME du bâtiment, vous n'avez rien à émettre avant 2027.
+
+Leur logiciel déposera la facture dans leur plateforme agréée, qui cherchera votre adresse de réception dans l'annuaire central. Si vous n'avez désigné aucune plateforme, la facture n'a pas de destination connue. Personne ne vous appelle des impôts ce jour-là. Vous constatez simplement qu'une facture attendue n'est pas arrivée.
+
+Le risque de septembre n'est donc pas l'amende, il est opérationnel : la facture que personne n'ouvre, l'escompte perdu, le bon de livraison jamais rapproché du chantier, la TVA déduite en retard. Et si vous déléguez la réception à votre cabinet comptable, gardez un accès en lecture, sinon vous perdez la vue sur vos propres achats.
+
+Un point qui rassure, et il vient de la direction générale des finances publiques : son guide de démarrage autorise à continuer de traiter, payer et déduire une facture reçue par mail ou en papier. Ce qui déclenche une mise en demeure puis des amendes, c'est l'absence de plateforme agréée, pas une facture arrivée par l'ancien chemin.
+
+En vingt jours, il n'y a qu'une seule chose réellement obligatoire : désigner une plateforme agréée et lui faire confirmer que vous êtes bien joignable dans l'annuaire. L'émission, l'e-reporting et les nouvelles mentions relèvent de 2027, et personne ne devrait vous les vendre comme une urgence.
+
+Dans l'article, je suis une facture de placo du négoce jusqu'au paiement.
+
+https://aceconseil.co/blog/facture-electronique-artisan-batiment
+
+#FactureElectronique #Batiment #TPE
+
+### Vendredi 14 août · Mateusz · ancrage Seine-et-Marne (publié avec l'article)
+
+Des propositions commerciales circulent encore dans le 77 avec, en argument, le chèque numérique régional de 1 500 euros. Il est clos depuis le 24 octobre 2025, et la page de la Région le répète deux fois : aide définitivement close.
+
+Autant l'écrire noir sur blanc : en août 2026, aucun chèque numérique généraliste n'est ouvert en Île-de-France. Le chèque France Num de 500 euros est clos depuis juillet 2021 et n'a jamais été reconduit. CYBIAH a atteint ses capacités, on ne peut plus que s'inscrire en liste d'attente.
+
+Ce qui reste existe, mais c'est étroit : TP'up et PM'up demandent un axe écologique, le Pack IA est calibré pour des PME plus structurées, le prêt croissance TPE suppose un financement bancaire en face. La région la plus riche de France accompagne moins ses artisans sur le numérique que la Bretagne ou l'Occitanie, parce qu'elle a concentré ses moyens ailleurs. L'artisan de Seine-et-Marne passe entre les mailles.
+
+C'est une bonne nouvelle pour qui raisonne juste. Courir après une aide de 1 500 euros coûte souvent plus de temps qu'elle n'en fait gagner, et la question qui décide de la rentabilité d'un projet numérique n'est pas « qui va payer ? » mais « combien me coûte aujourd'hui le problème que je veux résoudre ? ».
+
+L'ordre que je recommande : chiffrer d'abord le coût du dysfonctionnement, mobiliser ensuite les points d'entrée gratuits qui existent vraiment près de chez vous (le Bilan Numérique Express de 30 minutes de la CCI Seine-et-Marne à Serris, le rendez-vous objectif visibilité de la Chambre de métiers, le premier rendez-vous gratuit des Activateurs France Num), et regarder le financement en dernier, en sachant que ce sera un prêt et pas un chèque.
+
+Chaque dispositif est donné avec son lien officiel dans l'article, y compris ceux qui sont fermés.
+
+https://aceconseil.co/blog/digitaliser-tpe-seine-et-marne
+
+#SeineEtMarne #TPE #Numerique
