@@ -1,0 +1,51 @@
+NOM: checklist-dossier-numerique-77
+TYPE: check
+
+Structure identique aux widgets wg-check existants (wgk-list, wgk-bar, wgk-result, wgk-bands), 9 cases, score sur 9.
+
+Titre : « Votre dossier tient-il debout avant le premier appel ? »
+Sous-titre (wg-hint) : « Ces neuf points sont ceux qu'on vous demandera en rendez-vous, et ceux qui décident de votre éligibilité. Cochez ce qui est déjà écrit, pas ce que vous croyez savoir. »
+
+Ce que le widget apporte en plus du texte : l'article dit quels dispositifs existent ; le widget prépare le dossier du lecteur, c'est-à-dire les informations exactes que la CCI, la CMA, un Activateur ou Bpifrance demanderont dans les cinq premières minutes, et sur lesquelles se joue toute éligibilité.
+
+Les 9 cases :
+1. Je peux dire en une phrase le problème à régler, sans nommer ni un outil ni un site.
+2. J'ai chiffré en euros ce que ce problème me coûte sur une année.
+3. Je connais mon effectif exact et ma forme juridique : entreprise individuelle ou société.
+4. Je sais si mon entreprise a plus de trois ans d'existence.
+5. Je sais si je relève de la CCI ou de la CMA, et je peux nommer mon fonds de formation (AGEFICE, FAFCEA, OPCO).
+6. J'ai fixé un budget maximum avant d'appeler qui que ce soit.
+7. Pour chaque aide qu'on m'a citée, j'ai ouvert la page officielle et lu sa date de mise à jour.
+8. J'ai demandé par écrit le prix et le reste à charge de chaque accompagnement proposé.
+9. Mon rendez-vous gratuit (CCI ou CMA) est pris, avec une date.
+
+Les 4 bandes de verdict (data-min / data-max sur un score de 0 à 9) :
+- 0 à 2 : « Vous partiriez à l'aveugle, et c'est exactement ce que cherche un vendeur pressé. Commencez par la case 2 : une semaine de relevé de vos demandes entrantes suffit à sortir un montant annuel. Tout le reste se décide à partir de ce chiffre. »
+- 3 à 5 : « Le besoin est là, le dossier ne l'est pas encore. Complétez d'abord les cases 3, 4 et 5 : effectif, forme juridique, ancienneté et fonds de formation décident à eux seuls de presque toutes les éligibilités, et se vérifient en dix minutes. »
+- 6 à 8 : « Vous pouvez décrocher le téléphone. Posez le Bilan Numérique Express de la CCI 77 ou le rendez-vous visibilité de la CMA cette semaine, et servez-vous des cases restantes comme ordre du jour du rendez-vous. »
+- 9 à 9 : « Dossier complet. La question n'est plus de trouver une aide, c'est de choisir le premier chantier et de le mesurer à trente jours. C'est le bon moment pour un avis extérieur, chez nous ou ailleurs. »
+
+--- RETRO-LIEN ---
+Article à modifier : content/blog/2026-08-03-ia-pme-par-ou-commencer.md (slug ia-pme-par-ou-commencer).
+
+Emplacement : à la fin de la section « ## La méthode du premier chantier unique », juste après la phrase « C'est moins enthousiasmant qu'une transformation générale annoncée en réunion, mais c'est ce qui marche. », en nouveau paragraphe.
+
+Phrase exacte à insérer :
+
+Et si vous attendez une subvention pour vous lancer, réglez la question tout de suite : nous avons fait [le point sur les aides à la digitalisation d'une TPE en Seine-et-Marne](/blog/digitaliser-tpe-seine-et-marne), dispositif par dispositif, avec ce qui est fermé et ce qui reste ouvert.
+
+--- COUVERTURE ---
+Sur-titre (majuscules, crème sourdine) : SEINE-ET-MARNE · AIDES AU NUMÉRIQUE
+
+Titre, trois lignes en Georgia (les deux premières en romain crème, la troisième en italique doré #E2C47A) :
+Ligne 1 : Digitaliser sa TPE
+Ligne 2 : dans le 77 :
+Ligne 3 (italique) : ce qui reste vraiment ouvert
+
+Sceau central du motif orbital doré (deux lignes, mot court puis valeur courte) :
+CHÈQUE
+CLOS
+
+Note de bas de couverture (une ligne, sous le filet doré, ton sourdine) : Chèque numérique francilien : dépôt des demandes fermé depuis le 24 octobre 2025.
+
+Signature en bas à gauche : ACE CONSEIL. Fond dégradé radial navy #22355C vers #0C1526, halo doré à droite derrière les cercles concentriques, grain léger. Format 1200x630.

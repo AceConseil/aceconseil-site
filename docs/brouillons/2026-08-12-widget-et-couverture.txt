@@ -1,0 +1,55 @@
+NOM: quatre-appels-avant-septembre
+TYPE: agent
+
+Structure : bloc `wg wg-agent` (accordéon dépliable, même gabarit que `agent-journee` et `maitrise-ia-reperes` dans scripts/build-blog.js). Quatre étapes, badge `wg-day` numéroté, tout déplié sans JavaScript.
+
+Titre du widget : « Les quatre appels à passer avant le 1er septembre »
+Sous-titre (wg-hint) : « Touchez chaque appel pour voir quoi demander, mot pour mot. »
+
+Ce que le widget apporte en plus du texte : le corps de l'article dit QUOI faire ; le widget donne les phrases exactes à prononcer, ce que le lecteur ne peut pas reconstituer seul. Aucune redite de la liste « Vingt jours » : celle-ci hiérarchise, le widget fournit le script.
+
+ÉTAPE 1 — badge « 1 » — nom court : « À votre éditeur ou à votre plateforme »
+Contenu : « À quelle plateforme agréée suis-je raccordé pour recevoir mes factures fournisseurs, et pouvez-vous me confirmer par écrit que mes informations de réception sont bien déclarées dans l'annuaire ? » Si vous n'avez ni logiciel de gestion ni cabinet équipé, ouvrez directement un compte chez une plateforme de la liste officielle publiée sur impots.gouv.fr. Sans réponse sous quarante-huit heures, relancez : la mi-août tourne en effectif réduit.
+
+ÉTAPE 2 — badge « 2 » — nom court : « À votre négoce de matériaux »
+Contenu : « À partir de quelle date vos factures partiront-elles par plateforme agréée, et quelles coordonnées utilisez-vous pour m'adresser une facture ? » Ajoutez la question qui évite la mauvaise surprise : « continuez-vous à m'envoyer un double par mail pendant la transition ? ». C'est cette réponse qui vous dit si vous allez recevoir des doublons, et pendant combien de temps.
+
+ÉTAPE 3 — badge « 3 » — nom court : « À votre cabinet comptable »
+Contenu : Trois questions à poser ensemble. « Recevez-vous mes factures fournisseurs à ma place ? » « Ai-je un accès en lecture à mon nom, et sous quel délai les pièces y sont-elles visibles ? » « Que devient mon adresse de réception si nous arrêtons de travailler ensemble ? » Les réponses tiennent en trois lignes, mais elles doivent être écrites.
+
+ÉTAPE 4 — badge « 4 » — nom court : « À la personne qui traite les factures chez vous »
+Contenu : Ce n'est pas une question, c'est une consigne. Qui ouvre la boîte de réception, quel jour de la semaine, et que fait-on d'une facture reçue deux fois : on paie celle de référence, on marque l'autre en doublon. Trois lignes affichées au bureau. C'est la seule partie que personne ne fera à votre place.
+
+--- RETRO-LIEN ---
+Article à modifier : content/blog/2026-08-05-facture-electronique-checklist-dirigeant.md
+
+Emplacement : section « Le 1er septembre : un non-événement », en fin de paragraphe (juste après « C'est exactement l'objectif. »).
+
+Phrase exacte à insérer :
+
+Pour voir ce que cela donne dans une semaine de travail, nous avons suivi [une facture de matériaux chez un artisan du bâtiment](/blog/facture-electronique-artisan-batiment), du négoce jusqu'au paiement.
+
+(Second rétro-lien facultatif, si vous voulez renforcer le fil : dans content/blog/2026-07-29-recevoir-facture-electronique-sans-tout-changer.md, section « Le vrai gain se joue après le branchement », ajouter en fin de paragraphe : « Le cas d'un artisan du bâtiment, facture de matériaux à l'appui, est détaillé ici : [ce qui change concrètement au 1er septembre](/blog/facture-electronique-artisan-batiment). »)
+
+--- COUVERTURE ---
+Couverture éditoriale, gabarit maison (motif orbital + sceau), pas de capture d'écran ni de mise en page façon slide.
+
+SUR-TITRE (majuscules, petit corps, lettrage espacé) :
+FACTURE ÉLECTRONIQUE · BÂTIMENT
+
+TITRE, trois lignes :
+Ligne 1 : Une facture
+Ligne 2 : de matériaux,
+Ligne 3 (en italique) : du négoce au paiement
+
+SCEAU (pastille circulaire, coin bas droit du motif orbital) :
+Mot : ÉCHÉANCE
+Valeur : J-20
+
+NOTE DE BAS DE COUVERTURE (petit corps, sur une ou deux lignes) :
+Recevoir : toutes les entreprises au 1er septembre 2026. Émettre : 2027 pour les TPE et PME.
+
+Texte alternatif de l'image, à reprendre tel quel dans le markdown de l'image lors de la publication :
+Une facture de matériaux suivie du négoce au paiement chez un artisan du bâtiment, à vingt jours du 1er septembre 2026
+
+Nom de fichier suggéré : assets/facture-artisan-batiment.jpg

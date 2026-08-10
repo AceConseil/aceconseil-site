@@ -1,0 +1,142 @@
+--- [important · lentille faits]
+EXTRAIT VISE : Le [bilan publié par Bercy](https://www.economie.gouv.fr/plan-de-relance/cheque-france-num-bilan) est sans ambiguïté : il n'existe pas de chèque France Num en 2026.
+PROBLEME : Fausse attribution. Cette page de Bercy est un bilan du dispositif clos en 2021 ; elle ne dit rien de 2026 et ne peut donc pas être « sans ambiguïté » sur ce point. On fait dire à une source ce qu'elle ne dit pas. Le fait sous-jacent est exact (aucun chèque France Num n'existe depuis le 31 juillet 2021), mais il se démontre par la clôture, pas par le bilan.
+CORRECTION PROPOSEE : Le [bilan publié par Bercy](https://www.economie.gouv.fr/plan-de-relance/cheque-france-num-bilan) en dresse le compte définitif : plus de 112 000 entreprises aidées, près de 60 millions d'euros, et aucun dispositif successeur. Le chèque France Num n'existe plus, quoi qu'en disent les pages qui le proposent encore.
+
+--- [important · lentille faits]
+EXTRAIT VISE : Reste le Pack IA régional, monté avec Hub France IA : la moitié du coût prise en charge, pour un ordre de grandeur d'environ 18 000 euros correspondant à près de 40 jours de conseil.
+PROBLEME : Ambiguïté qui induit en erreur sur le montant, et absence de lien officiel malgré la promesse faite en introduction. Les 18 000 euros ne sont pas le coût total dont la moitié serait prise en charge : la fiche France Num plafonne le RESTE À CHARGE de l'entreprise à 18 500 euros HT, la subvention couvrant 50 % en plus. La mission officielle est de 37 jours, pas « près de 40 ».
+CORRECTION PROPOSEE : Reste le Pack IA régional, monté avec Hub France IA : une mission d'expertise de 37 jours, financée à 50 % par la Région, le reste à charge de l'entreprise étant plafonné à 18 500 euros hors taxes selon la [fiche France Num](https://www.francenum.gouv.fr/aides-financieres/pack-ia-intelligence-artificielle). Il vise les PME et les ETI, et sa fiche régionale renvoyait une erreur au 9 août 2026 : son ouverture est à vérifier auprès de la Région.
+
+--- [important · lentille faits]
+EXTRAIT VISE : CMA Île-de-France, formations : à partir de 210 euros TTC la journée de 7 heures, 840 euros les quatre jours de création de site.
+PROBLEME : Le « à partir de » est appliqué au premier montant mais supprimé sur le second, alors que le catalogue CMA affiche « à partir de 840 € » pour les 4 jours / 28 heures. La session nommée « Créer et administrer un site Internet pour TPE PME » est en réalité affichée à 960 € TTC pour 4 jours / 32 heures. Dans une section intitulée « Combien cela coûte vraiment », un prix plancher présenté comme le prix sous-estime la dépense réelle.
+CORRECTION PROPOSEE : CMA Île-de-France, formations : à partir de 210 euros TTC la journée de 7 heures, à partir de 840 euros les quatre jours de création de site — la session « Créer et administrer un site Internet pour TPE PME » est affichée à 960 euros TTC pour 32 heures.
+
+--- [important · lentille faits]
+EXTRAIT VISE : Ce n'est pas un oubli : depuis la loi NOTRe de 2015, les aides directes relèvent de la Région et des chambres consulaires.
+PROBLEME : Affirmation juridique inexacte. La loi NOTRe confère à la Région la compétence exclusive pour définir les régimes d'aides directes aux entreprises et interdit aux départements, depuis le 1er janvier 2016, de financer la création ou l'extension d'activités économiques. Les chambres consulaires ne sont pas titulaires d'une compétence d'aide : elles accompagnent. Et la loi réserve aux communes et à leurs groupements la compétence exclusive sur l'aide à l'immobilier d'entreprise, ce que la phrase efface.
+CORRECTION PROPOSEE : Ce n'est pas un oubli : depuis la loi NOTRe de 2015, la Région détient la compétence exclusive pour définir les régimes d'aides directes aux entreprises, et les départements ne peuvent plus financer la création ou l'extension d'une activité économique. Les communes et intercommunalités gardent l'immobilier d'entreprise ; les chambres consulaires, elles, accompagnent, elles ne subventionnent pas.
+
+--- [important · lentille faits]
+EXTRAIT VISE : C'était le seul dispositif généraliste à portée d'un artisan ou d'un commerçant francilien.
+PROBLEME : « Généraliste » est faux et surestime la portée du dispositif. Le chèque numérique était réservé aux commerçants de proximité et artisans relevant d'une liste fermée de codes NAF (10-33, 43-47, 55-56, 7410Z, 7420Z, 79, 81, 9003A, 9312, 9313, 95-96), excluait les entreprises vendant exclusivement sur internet et celles de la filière numérique, et exigeait six mois d'implantation. Une TPE de services, un prestataire ou une profession libérale n'y a jamais eu droit. Un lecteur pourrait croire à tort qu'il vient de rater une aide qui lui était ouverte.
+CORRECTION PROPOSEE : C'était le dernier dispositif régional finançant directement du numérique à portée d'une petite entreprise francilienne, et encore : il était réservé aux commerçants de proximité et artisans d'une liste fermée de codes NAF, et excluait les entreprises de la filière numérique comme celles qui vendent uniquement en ligne.
+
+--- [important · lentille faits]
+EXTRAIT VISE : **TP'up et PM'up** ne sont pas des aides à la digitalisation : les deux exigent un axe de transition écologique et énergétique, et excluent notamment le conseil, les professions libérales et réglementées, l'immobilier, la finance et la restauration.
+PROBLEME : Deux imprécisions. D'abord, les dépenses éligibles de TP'up comprennent les « investissements matériels et immatériels » et les « prestations de conseil » : un investissement numérique peut être financé s'il s'inscrit dans un projet à dominante écologique. « Ne sont pas des aides à la digitalisation » est donc trop absolu. Ensuite, « excluent notamment le conseil » placé juste après peut se lire comme une exclusion des DÉPENSES de conseil, alors qu'il s'agit des SECTEURS de candidats inéligibles — l'inverse, puisque le conseil est une dépense finançable.
+CORRECTION PROPOSEE : **TP'up et PM'up** ne financent pas un projet purement numérique : les deux exigent un axe de développement dédié à la transition écologique et énergétique, un investissement numérique ne pouvant y entrer que comme composante d'un projet à dominante écologique. Et les deux écartent des secteurs entiers de candidats : conseil aux entreprises, professions libérales et réglementées, immobilier, finance et assurance, café-hôtel-restaurant, services numériques, organismes de formation.
+
+--- [important · lentille faits]
+EXTRAIT VISE : La chambre est à Serris, avenue Johannes Gutenberg, à Val d'Europe, donc à quelques minutes de Marne-la-Vallée.
+PROBLEME : Erreur géographique locale, gênante pour un cabinet qui se présente comme implanté à Marne-la-Vallée. Serris et Val d'Europe constituent le secteur 4 de Marne-la-Vallée : l'adresse postale officielle de la CCI est « 1 avenue Johannes Gutenberg, Serris, CS 70045, 77776 Marne-la-Vallée Cedex 4 ». La chambre n'est pas « à quelques minutes de Marne-la-Vallée », elle y est.
+CORRECTION PROPOSEE : La chambre est au 1 avenue Johannes Gutenberg à Serris, dans le secteur de Val d'Europe : son adresse postale est Marne-la-Vallée Cedex 4.
+
+--- [important · lentille faits]
+EXTRAIT VISE : La chambre suit 38 106 entreprises artisanales dans le département, dont 36 % dans le bâtiment.
+PROBLEME : Chiffre exact mais mal attribué et non daté. Les 38 106 entreprises artisanales sont le recensement départemental de la CMA pour 2024, pas un portefeuille d'entreprises « suivies » par la chambre. Le verbe « suit » laisse croire à un accompagnement effectif de 38 106 entreprises, ce qui n'est pas ce que dit la source.
+CORRECTION PROPOSEE : Le département comptait 38 106 entreprises artisanales en 2024, dont 36 % dans le bâtiment, selon la CMA.
+
+--- [important · lentille faits]
+EXTRAIT VISE : Chaque dispositif est donné avec son lien officiel : ces pages bougent, et vous devez pouvoir vérifier.
+PROBLEME : Promesse non tenue, dans un article dont l'argument central est précisément la vérifiabilité des sources. Huit éléments chiffrés ou factuels sont avancés sans lien : Pack IA, Cyber PME / Diag Cybersécurité, tarifs du coaching digital de la CCI 77, tarifs des formations CMA, Perspective Croissance, diagnostic de maturité digitale, la page France Num sur les aides franciliennes citée au piège n° 1, et la page cyber périmée de la CCI 77.
+CORRECTION PROPOSEE : Conserver la phrase et ajouter les liens manquants : Pack IA (francenum.gouv.fr/aides-financieres/pack-ia-intelligence-artificielle), Diag Cybersécurité (bpifrance.fr/catalogue-offres/diag-cybersecurite), coaching digital CCI 77 (seineetmarne.cci.fr/coaching-digital), formations CMA (cma-idf.fr/formation-digital-webmarketing), Perspective Croissance (seineetmarne.cci.fr/perspective-croissance), diagnostic de maturité digitale (seineetmarne.cci.fr/diagnostic-de-maturite-digitale), page France Num Île-de-France (francenum.gouv.fr/aides-financieres/guides-et-conseils-financiers/quelles-sont-les-aides-financieres-pour-la-7) et actualité cyber de la CCI 77 datée d'octobre 2023.
+
+--- [mineur · lentille faits]
+EXTRAIT VISE : Le [Prêt Boost Facturation électronique](https://www.francenum.gouv.fr/aides-financieres/pret-boost-facturation-electronique) va de 5 000 à 75 000 euros, mais exclut explicitement les entreprises individuelles.
+PROBLEME : Traitement asymétrique des sources. L'article signale honnêtement l'écart France Num / CCI France sur le Prêt Boost Transformation numérique (75 000 contre 100 000), puis présente 75 000 comme un fait établi pour le Prêt Boost Facturation électronique alors que la même base de CCI France annonce 5 000 à 100 000 euros pour ce prêt aussi. Le même écart existe, il n'est plus signalé.
+CORRECTION PROPOSEE : Le [Prêt Boost Facturation électronique](https://www.francenum.gouv.fr/aides-financieres/pret-boost-facturation-electronique) est annoncé de 5 000 à 75 000 euros par France Num et de 5 000 à 100 000 euros par la base de CCI France, même écart que le précédent, et il exclut les entreprises individuelles.
+
+--- [mineur · lentille faits]
+EXTRAIT VISE : Et le parcours Perspective Croissance, pris en charge intégralement, est réservé aux dirigeants non-salariés ressortissants de l'AGEFICE : un artisan cotisant au FAFCEA n'y a pas droit.
+PROBLEME : « Pris en charge intégralement » est vrai à la CCI 77 mais omet la réserve que la chambre elle-même y attache, et la prise en charge n'est pas uniforme sur le réseau : plusieurs CCI affichent une valeur de 1 560 euros dont 1 260 euros AGEFICE, soit 300 euros HT de reste à charge. Une gratuité annoncée sans réserve est exactement le type d'affirmation que l'article reproche aux autres pages.
+CORRECTION PROPOSEE : Et le parcours Perspective Croissance, annoncé par la CCI 77 comme « entièrement pris en charge par l'AGEFICE, sans avance de frais, sous réserve d'éligibilité », est réservé aux dirigeants non-salariés ressortissants de l'AGEFICE : un artisan cotisant au FAFCEA n'y a pas droit.
+
+--- [important · lentille voix]
+EXTRAIT VISE : keywords: aide numérique TPE 77, digitalisation entreprise Seine-et-Marne, France Num aides, accompagnement numérique artisan 77, CCI Seine-et-Marne
+---
+
+Si vous cherchez une subvention pour numériser votre entreprise en Seine-et-Marne
+PROBLEME : Aucune image de couverture. Les 16 articles publiés en ont une (vérifié : seul le brouillon _2026-08-07-vefa n'en a pas), placée soit juste après le frontmatter, soit juste après le paragraphe d'introduction. Le fichier image doit exister dans /Users/mateuszmyja/Downloads/site_ace/assets/.
+CORRECTION PROPOSEE : Insérer après le premier paragraphe d'introduction, sur le modèle de 2026-08-05-facture-electronique-checklist-dirigeant.md :
+
+![Aides à la digitalisation des TPE en Seine-et-Marne : ce qui est fermé, ce qui reste ouvert, et à qui parler dans le 77](assets/aides-numerique-77.jpg)
+
+et créer /Users/mateuszmyja/Downloads/site_ace/assets/aides-numerique-77.jpg au format éditorial habituel (motif orbital + sceau).
+
+--- [important · lentille voix]
+EXTRAIT VISE : ::widget checklist-dossier-numerique-77::
+PROBLEME : La clé n'existe pas dans ARTICLE_WIDGETS. Le build ne dégrade pas silencieusement : scripts/build-blog.js ligne 408 lève `throw new Error(\`Widget inconnu : ${name}\`)`. En l'état, l'article empêche la génération du site entier.
+CORRECTION PROPOSEE : Avant publication, enregistrer la clé 'checklist-dossier-numerique-77' dans ARTICLE_WIDGETS de /Users/mateuszmyja/Downloads/site_ace/scripts/build-blog.js, sur le modèle exact de 'checklist-locaux-pro' (ligne 319) : div.wg.wg-check + p.wg-title + p.wg-hint + ul.wgk-list + div.wgk-bar + div.wgk-result avec « 0 / 9 points écrits » + div.wgk-bands hidden avec les quatre data-min/data-max (0-2, 3-5, 6-8, 9-9).
+
+--- [important · lentille voix]
+EXTRAIT VISE : Trois familles subsistent, et aucune n'est un chèque.
+PROBLEME : Le compte est faux et la logique se contredit. La liste contient deux familles de prêts, plus TP'up et PM'up dont le texte explique aussitôt qu'elles ne financent pas le numérique (donc elles ne « restent pas ouvertes » pour le lecteur), puis un quatrième dispositif, le Pack IA, arrive hors liste. Le lecteur en compte quatre et lit « trois ». Et « aucune n'est un chèque » est inexact puisque TP'up et PM'up sont bien des subventions.
+CORRECTION PROPOSEE : Deux familles de prêts restent ouvertes, plus un dispositif de conseil dont l'ouverture reste à confirmer. Les deux subventions régionales que l'on vous citera, elles, ne financent pas le numérique.
+
+--- [important · lentille voix]
+EXTRAIT VISE : Ce n'est pas la nouvelle que vous espériez. Ce n'est pas non plus le problème que vous croyez : un projet numérique de TPE se décide sur le coût du dysfonctionnement qu'il corrige, pas sur le montant de l'aide qui pourrait le financer. Chaque dispositif est donné avec son lien officiel : ces pages bougent, et vous devez pouvoir vérifier.
+PROBLEME : Trois défauts dans le même paragraphe. Deux négations parallèles enchaînées (« Ce n'est pas... Ce n'est pas non plus... »), tic d'écriture IA. Puis une phrase qui annonce ce que l'article va faire au lieu de le faire. Et cette promesse est tenue quatre fois sur huit : le décret n° 2021-69, les tarifs CCI, les tarifs CMA et Cyber PME n'ont aucun lien officiel.
+CORRECTION PROPOSEE : Mauvaise nouvelle, et fausse question. Un projet numérique de TPE se décide sur le coût du dysfonctionnement qu'il corrige, avant le montant de l'aide qui pourrait le financer.
+
+--- [important · lentille voix]
+EXTRAIT VISE : Le sujet n'est plus l'équipement, c'est la circulation de l'information
+PROBLEME : La tournure « ce n'est pas X, c'est Y » revient seize fois dans l'article et le widget (« aucune n'est un chèque », « ne sont pas des aides à la digitalisation », « Ne commencez pas par le site, commencez par », « n'est pas un guichet de subvention : c'est un annuaire », « n'est pas « qui va payer ? », c'est », « Ce n'est pas un oubli », « La question n'est plus de trouver une aide, c'est de », « Une date récente ne vaut pas vérification »). L'article de référence l'emploie deux fois. À cette densité, elle devient le rythme dominant du texte et s'entend comme de la rédaction automatique.
+CORRECTION PROPOSEE : Garder deux occurrences au maximum, dont la citation encadrée qui la justifie. Convertir les autres en affirmations directes. Trois exemples : « Le sujet n'est plus l'équipement, c'est la circulation de l'information » devient « Ce qui coûte, c'est la circulation de l'information entre ces trois outils. » ; « Ce n'est pas un oubli : depuis la loi NOTRe de 2015 » devient « Depuis la loi NOTRe de 2015 » ; dans la bande 9 du widget, « La question n'est plus de trouver une aide, c'est de choisir le premier chantier et de le mesurer à trente jours. » devient « Reste à choisir le premier chantier et à le mesurer sur trente jours. »
+
+--- [important · lentille voix]
+EXTRAIT VISE : Ces neuf points sont ceux qu'on vous demandera en rendez-vous, et ceux qui décident de votre éligibilité. Cochez ce qui est déjà écrit, pas ce que vous croyez savoir.
+PROBLEME : Le sous-titre du widget surpromet deux fois. Seules les cases 3, 4 et 5 conditionnent une éligibilité ; les cases 1, 2, 6, 7, 8 et 9 ne conditionnent rien. Et « ceux qu'on vous demandera » engage le comportement de la CCI, de la CMA et de Bpifrance, que le cabinet ne maîtrise pas.
+CORRECTION PROPOSEE : Neuf points à écrire avant le premier appel. Trois d'entre eux, effectif, forme juridique et ancienneté, conditionnent à eux seuls la plupart des éligibilités. Cochez ce qui est écrit, pas ce que vous croyez savoir.
+
+--- [important · lentille voix]
+EXTRAIT VISE : 6. J'ai fixé un budget maximum avant d'appeler qui que ce soit.
+PROBLEME : Case décorative et non vérifiable : c'est une intention, pas un élément qu'un tiers peut constater, et aucun des interlocuteurs cités ne la demande. Elle contredit en outre la thèse de l'article, qui dit que la décision se prend sur le coût du dysfonctionnement et non sur un plafond posé d'avance. C'est la seule des neuf cases qui n'a aucun ancrage dans le corps du texte.
+CORRECTION PROPOSEE : 6. Je connais mon code APE : c'est lui qui fait entrer ou sortir mon activité des listes d'exclusion (conseil, professions libérales et réglementées, immobilier, finance, restauration).
+
+--- [important · lentille voix]
+EXTRAIT VISE : **Vous n'avez rien.** Pas de site, pas de fiche Google, des devis sur papier. Ne commencez pas par le site, commencez par le point de contact : être trouvable, être joignable, répondre vite.
+PROBLEME : Passage creux : trois infinitifs qui nomment un objectif sans donner une seule action. C'est le seul des trois cas de la section qui ne renvoie vers rien, alors que l'article correspondant existe (fiche-google-business-artisan, 31/07) et décrit précisément l'action gratuite d'une heure qui manque ici.
+CORRECTION PROPOSEE : **Vous n'avez rien.** Pas de site, pas de fiche Google, des devis sur papier. Le site attendra. Commencez par la fiche Google : c'est gratuit, c'est une heure de travail, et c'est elle qui vous fait apparaître sur la carte quand on cherche votre métier dans votre ville. [La marche à suivre est ici](/blog/fiche-google-business-artisan).
+
+--- [important · lentille voix]
+EXTRAIT VISE : Ce n'est pas un oubli : depuis la loi NOTRe de 2015, les aides directes relèvent de la Région et des chambres consulaires.
+PROBLEME : Affirmation juridique inexacte, dans un article dont toute l'autorité repose sur la précision réglementaire. La loi NOTRe attribue à la Région la compétence exclusive des aides directes aux entreprises. Les chambres consulaires ne sont pas titulaires d'une compétence d'aide : elles délivrent de l'accompagnement, ce que l'article démontre par ailleurs très bien.
+CORRECTION PROPOSEE : Depuis la loi NOTRe de 2015, la compétence des aides directes aux entreprises appartient à la Région. Le Département n'a plus la main, et les chambres consulaires font de l'accompagnement, pas de la subvention.
+
+--- [important · lentille voix]
+EXTRAIT VISE : title: "Digitaliser sa TPE en Seine-et-Marne : les aides qui existent vraiment"
+PROBLEME : « Digitaliser sa TPE » n'est pas une requête tapée : on tape « aide numérique TPE 77 », « aide digitalisation entreprise Seine-et-Marne », « chèque numérique Île-de-France 2026 ». Le mot d'entrée (« aides ») arrive en sixième position, et le mot-clé principal du frontmatter n'est pas dans le titre. Le crochet réel de l'article, le chèque fermé, reste confiné à la description.
+CORRECTION PROPOSEE : title: "Aides à la digitalisation en Seine-et-Marne : ce qui existe encore"
+
+(66 caractères, dans la fourchette des titres du site, avec la tête de requête en première position.)
+
+--- [important · lentille voix]
+EXTRAIT VISE : C'était le seul dispositif généraliste à portée d'un artisan ou d'un commerçant francilien.
+PROBLEME : Affirmation absolue invérifiable : elle suppose d'avoir recensé l'exhaustivité des aides franciliennes, y compris sectorielles, intercommunales et communales. C'est exactement le type de formule que l'article reproche par ailleurs aux pages commerciales, et elle frôle l'interdiction des superlatifs.
+CORRECTION PROPOSEE : Il ne visait ni un secteur ni un chiffre d'affaires, ce qui le mettait à portée d'un artisan comme d'un commerçant.
+
+--- [mineur · lentille voix]
+EXTRAIT VISE : **Vous voulez aller plus loin.** IA, agents, traitement des demandes entrantes.
+PROBLEME : Triade vide : trois noms empilés qui n'apprennent rien. Le procédé revient six fois dans l'article (« être trouvable, être joignable, répondre vite » ; « Pas de site, pas de fiche Google, des devis sur papier » ; « Un logiciel de devis, un tableur, une messagerie » ; « Une semaine de relevé, quatre nombres, un montant annuel » ; « votre chantier, son coût et son ordre de priorité »). Les autres portent au moins une information ; celle-ci non.
+CORRECTION PROPOSEE : **Vous voulez aller plus loin.** Faire trier et accuser réception de vos demandes entrantes par un agent, sans changer d'outils.
+
+--- [mineur · lentille voix]
+EXTRAIT VISE : la moitié du coût prise en charge, pour un ordre de grandeur d'environ 18 000 euros correspondant à près de 40 jours de conseil
+PROBLEME : Triple précaution redondante dans la même phrase : « un ordre de grandeur », « d'environ », « près de ». L'accumulation affaiblit un chiffre qui reste utile.
+CORRECTION PROPOSEE : la moitié du coût prise en charge, sur une prestation de l'ordre de 18 000 euros, soit une quarantaine de jours de conseil
+
+--- [mineur · lentille voix]
+EXTRAIT VISE : S'y ajoutent plus de 3 ans d'existence, de 3 à 50 salariés
+PROBLEME : L'article écrit « plus de 3 ans » alors que la case 4 du widget écrit « plus de trois ans d'existence », pour le même critère et sur la même page. Le site écrit les petits nombres en lettres (« plus de dix ans », « trente jours », « vingt minutes », « Trente minutes »).
+CORRECTION PROPOSEE : S'y ajoutent plus de trois ans d'existence, de 3 à 50 salariés
+
+Même correction pour « Les prêts Boost de Bpifrance, jusqu'à 49 salariés et plus de 3 ans d'existence » : « jusqu'à 49 salariés et plus de trois ans d'existence ». Les seuils d'effectif restent en chiffres, ce sont des critères cités.
+
+--- [mineur · lentille voix]
+EXTRAIT VISE : La chambre suit 38 106 entreprises artisanales dans le département, dont 36 % dans le bâtiment.
+PROBLEME : Chiffre à l'unité près, sans date ni source, dans un article dont l'argument central est « demandez le lien officiel du dispositif, et sa date ». Il sera faux dans six mois et le lecteur ne peut pas le vérifier. Même défaut pour « le décret n° 2021-69 », cité sans lien Légifrance : un numéro erroné décrédibiliserait tout le reste.
+CORRECTION PROPOSEE : La chambre suit un peu plus de 38 000 entreprises artisanales dans le département, dont plus d'un tiers dans le bâtiment (chiffres CMA Île-de-France, 2026).
+
+Et pour le décret, soit ajouter le lien Légifrance, soit écrire : « il est clos depuis le 31 juillet 2021 et n'a jamais été reconduit ».
