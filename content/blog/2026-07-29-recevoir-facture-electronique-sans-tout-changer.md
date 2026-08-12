@@ -34,4 +34,6 @@ Beaucoup de petites entreprises délèguent la comptabilité de bout en bout. Da
 
 Recevoir proprement n'est que la première marche. Une fois vos factures dématérialisées, tout le traitement qui suivait la boîte mail peut s'automatiser : le tri par fournisseur, le rapprochement avec les bons de commande, les relances d'échéances, et [la fin des ressaisies entre vos outils](/blog/automatiser-saisie-outils-tpe). C'est là que la contrainte réglementaire peut devenir du temps rendu, et c'est notre métier, détaillé sur notre page [automatisation des process](/automatisation).
 
+Le cas d'un artisan du bâtiment, facture de matériaux à l'appui, est détaillé ici : [ce qui change concrètement au 1er septembre](/blog/facture-electronique-artisan-batiment).
+
 Vous voulez savoir dans quelle configuration vous êtes, et ce qu'il y a vraiment à faire chez vous avant septembre ? [Appelez-nous](/#contact) : vingt minutes avec Jennifer, cofondatrice, sans engagement. Vous repartez avec la réponse et la liste des actions à mener.

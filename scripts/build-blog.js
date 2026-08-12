@@ -370,6 +370,26 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="10" data-max="10">Votre boucle tient, y compris quand vous êtes injoignable. Le point de vigilance se déplace après le devis envoyé : c'est là que le silence reprend, et c'est une autre mécanique, celle de la relance.</span>
   </div>
 </div>`,
+  'quatre-appels-avant-septembre': `<div class="wg wg-agent" aria-label="Les quatre appels à passer avant le 1er septembre">
+  <p class="wg-title"><span class="wg-pulse"></span>Les quatre appels à passer avant le 1er septembre</p>
+  <p class="wg-hint">Touchez chaque appel pour voir quoi demander, mot pour mot.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">1</span><span class="wg-name">À votre éditeur ou à votre plateforme</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>« À quelle plateforme agréée suis-je raccordé pour recevoir mes factures fournisseurs, et pouvez-vous me confirmer par écrit les adresses de réception déclarées dans l'annuaire ? » Si vous n'avez ni logiciel de gestion ni cabinet équipé, ouvrez directement un compte chez une plateforme de la liste officielle publiée sur impots.gouv.fr. Sans réponse sous quarante-huit heures, relancez : la mi-août tourne en effectif réduit.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2</span><span class="wg-name">À votre négoce de matériaux</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>« À partir de quelle date vos factures partiront-elles par plateforme agréée, et quelles coordonnées utilisez-vous pour m'adresser une facture ? » Ajoutez la question qui évite la mauvaise surprise : « continuez-vous à m'envoyer un double par mail pendant la transition ? ». C'est cette réponse qui vous dit si vous allez recevoir des doublons, et pendant combien de temps.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">3</span><span class="wg-name">À votre cabinet comptable</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Trois questions à poser ensemble. « Recevez-vous mes factures fournisseurs à ma place ? » « Ai-je un accès en lecture à mon nom, et sous quel délai les pièces y sont-elles visibles ? » « Que devient mon adresse de réception si nous arrêtons de travailler ensemble ? » Les réponses tiennent en trois lignes, mais elles doivent être écrites.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">4</span><span class="wg-name">À afficher au bureau, pour qui traite les factures</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La seule étape qui ne soit pas un appel, et la seule que personne ne fera à votre place. Trois lignes, affichées : « Chaque mardi matin, ouvrir la boîte de réception des factures fournisseurs. Rapprocher chaque facture de son bon de livraison signé sur le chantier. Si une facture arrive deux fois, par la plateforme et par mail, payer celle de référence et marquer l'autre en doublon. »</p></div>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

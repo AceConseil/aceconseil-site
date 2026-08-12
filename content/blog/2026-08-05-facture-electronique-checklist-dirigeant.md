@@ -32,6 +32,8 @@ Le 1er septembre, c'est dans quatre semaines. Si vous n'avez rien suivi du dossi
 
 Si les cases ci-dessus sont cochées, la bascule ne change rien à votre journée : les factures de vos grands fournisseurs arrivent par la plateforme, les autres continuent d'arriver comme aujourd'hui (vos fournisseurs TPE et PME ne passeront à l'émission électronique qu'en septembre 2027), et tout le reste suit son cours. C'est exactement l'objectif.
 
+Pour voir ce que cela donne dans une semaine de travail, nous avons suivi [une facture de matériaux chez un artisan du bâtiment](/blog/facture-electronique-artisan-batiment), du négoce jusqu'au paiement.
+
 ## Et ensuite : transformez la contrainte en gain
 
 Une fois la réception en place, le vrai sujet commence : le tri automatique, le rapprochement avec les commandes, les relances d'échéances, [la fin des ressaisies entre vos outils](/blog/automatiser-saisie-outils-tpe). C'est notre métier, détaillé sur notre page [automatisation des process](/automatisation).
