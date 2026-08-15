@@ -390,6 +390,32 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>La seule étape qui ne soit pas un appel, et la seule que personne ne fera à votre place. Trois lignes, affichées : « Chaque mardi matin, ouvrir la boîte de réception des factures fournisseurs. Rapprocher chaque facture de son bon de livraison signé sur le chantier. Si une facture arrive deux fois, par la plateforme et par mail, payer celle de référence et marquer l'autre en doublon. »</p></div>
   </div>
 </div>`,
+  'checklist-dossier-numerique-77': `<div class="wg wg-check" aria-label="Auto-diagnostic : votre dossier tient-il debout avant le premier appel ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Votre dossier tient-il debout avant le premier appel ?</p>
+  <p class="wg-hint">Ces neuf points sont ceux qu'on vous demandera en rendez-vous, et ceux qui décident de votre éligibilité. Cochez ce qui est déjà écrit, pas ce que vous croyez savoir.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je peux dire en une phrase le problème à régler, sans nommer ni un outil ni un site.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai chiffré en euros ce que ce problème me coûte sur une année.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je connais mon effectif exact et ma forme juridique : entreprise individuelle ou société.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je sais si mon entreprise a plus de trois ans d'existence.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je sais si je relève de la CCI ou de la CMA, et je peux nommer mon fonds de formation (AGEFICE, FAFCEA, OPCO).</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai fixé un budget maximum avant d'appeler qui que ce soit.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Pour chaque aide qu'on m'a citée, j'ai ouvert la page officielle et lu sa date de mise à jour.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai demandé par écrit le prix et le reste à charge de chaque accompagnement proposé.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Mon rendez-vous gratuit à la CCI ou à la CMA est pris, avec une date.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 9 points prêts</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre dossier.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Vous partiriez à l'aveugle, et c'est exactement ce que cherche un vendeur pressé. Commencez par la case 2 : une semaine de relevé de vos demandes entrantes suffit à sortir un montant annuel. Tout le reste se décide à partir de ce chiffre.</span>
+    <span class="wgk-band" data-min="3" data-max="5">Le besoin est là, le dossier ne l'est pas encore. Complétez d'abord les cases 3, 4 et 5 : effectif, forme juridique, ancienneté et fonds de formation décident à eux seuls de presque toutes les éligibilités, et se vérifient en dix minutes.</span>
+    <span class="wgk-band" data-min="6" data-max="8">Vous pouvez décrocher le téléphone. Posez le Bilan Numérique Express de la CCI 77 ou le rendez-vous visibilité de la CMA cette semaine, et servez-vous des cases restantes comme ordre du jour du rendez-vous.</span>
+    <span class="wgk-band" data-min="9" data-max="9">Dossier complet. La question n'est plus de trouver une aide, c'est de choisir le premier chantier et de le mesurer à trente jours. C'est le bon moment pour un avis extérieur, chez nous ou ailleurs.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

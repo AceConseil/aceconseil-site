@@ -34,6 +34,8 @@ Notre recommandation tient en une règle : **un seul chantier à la fois, mesur�
 
 C'est moins enthousiasmant qu'une transformation générale annoncée en réunion, mais c'est ce qui marche.
 
+Et si vous attendez une subvention pour vous lancer, réglez la question tout de suite : nous avons fait [le point sur les aides à la digitalisation d'une TPE en Seine-et-Marne](/blog/digitaliser-tpe-seine-et-marne), dispositif par dispositif, avec ce qui est fermé et ce qui reste ouvert.
+
 ## Former l'équipe sur vos cas, pas sur des démonstrations
 
 Un outil que l'équipe ne maîtrise pas est un outil qui sera abandonné, ou mal utilisé. La formation utile part de vos documents et de vos situations : répondre à cette demande, préparer ce devis, résumer ce dossier. C'est l'approche de notre [formation IA](/formation-ia). Depuis février 2025, garantir cette maîtrise est aussi [une obligation réglementaire](/blog/ai-act-article-4-maitrise-ia) pour toute entreprise dont l'équipe utilise l'IA : autant faire d'une pierre deux coups.
