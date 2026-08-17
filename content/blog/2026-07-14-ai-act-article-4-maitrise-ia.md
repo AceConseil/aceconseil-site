@@ -10,6 +10,8 @@ Il existe une obligation européenne sur l'intelligence artificielle, en vigueur
 
 ![AI Act, article 4 : la maîtrise de l'IA, en vigueur depuis février 2025, contrôlable à partir du 2 août 2026, sans seuil de taille](assets/ai-act-article-4.jpg)
 
+> **Mise à jour du 17 août 2026.** Le règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026, a réécrit l'article 4 : l'obligation de « garantir un niveau suffisant » de maîtrise de l'IA est devenue celle de « favoriser le développement » de cette maîtrise, et le texte précise désormais qu'aucun niveau individuel n'a à être garanti. L'obligation reste applicable, sans seuil de taille. Nous détaillons ce changement dans [ce que le report du 24 juillet change pour une TPE](/blog/ai-act-report-calendrier-tpe).
+
 ## L'article 4, en une phrase
 
 Le règlement européen sur l'intelligence artificielle, l'AI Act, contient un article 4 intitulé « maîtrise de l'IA ». Il impose aux entreprises qui déploient un système d'IA de garantir un niveau de compétence suffisant aux personnes qui l'utilisent en leur nom. En clair : si vos salariés se servent d'un outil d'IA dans leur travail, vous devez vous assurer qu'ils savent ce qu'ils font, ce que l'outil vaut, et où sont ses limites.

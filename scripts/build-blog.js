@@ -416,6 +416,32 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="9" data-max="9">Dossier complet. La question n'est plus de trouver une aide, c'est de choisir le premier chantier et de le mesurer à trente jours. C'est le bon moment pour un avis extérieur, chez nous ou ailleurs.</span>
   </div>
 </div>`,
+  'perimetre-ia-apres-report': `<div class="wg wg-check" aria-label="Ce que vous pouvez affirmer aujourd'hui, texte en main">
+  <p class="wg-title"><span class="wg-pulse"></span>Ce que vous pouvez affirmer aujourd'hui, texte en main</p>
+  <p class="wg-hint">Neuf points vérifiables. Ne cochez que ce que vous pouvez montrer ou constater, pas ce que vous supposez.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je peux lister les outils d'IA réellement utilisés chez nous, et par qui.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Aucun de nos outils ne classe ni ne note automatiquement des candidatures.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Aucun de nos outils n'attribue les tâches ni n'évalue un salarié à partir de son comportement ou de traits personnels.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Aucun de nos outils de recrutement ou de gestion du personnel n'établit de profil des candidats ou des salariés, pour prévoir leur comportement, leurs performances ou leur fiabilité.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Quand un agent conversationnel répond à notre place, il indique qu'il n'est pas humain.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les images, sons ou vidéos que nous diffusons et qui ont été générés ou manipulés sont signalés comme tels.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Si nous publions des textes destinés à informer le public sur un sujet d'intérêt général, ils sont relus et une personne en assume la responsabilité éditoriale.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Nos règles d'usage de l'IA sont écrites, datées et connues de l'équipe.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Notre dernière session de formation ou de sensibilisation est datée, avec la liste des présents.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 9 points démontrables</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Vous ne savez pas encore où vous vous situez, et le report n'y change rien. Commencez par la case 1 : l'inventaire des outils réellement utilisés chez vous, y compris ceux que personne n'a validés. Vingt minutes suffisent, et il commande tout le reste.</span>
+    <span class="wgk-band" data-min="3" data-max="5">Vos usages sont probablement hors du périmètre reporté, mais vous ne pourriez pas le démontrer. Traitez les cases 2, 3 et 4 en priorité : ce sont les seules qui décident si l'un de vos outils relève du haut risque, et elles se vérifient auprès de votre éditeur.</span>
+    <span class="wgk-band" data-min="6" data-max="8">Il reste une ou deux pièces à écrire ou à dater, et peut-être un point de bascule non tranché. Vérifiez d'abord que les cases 2, 3 et 4 sont cochées : si l'une ne l'est pas, un de vos outils relève probablement de l'annexe III, et le reste passe au second plan.</span>
+    <span class="wgk-band" data-min="9" data-max="9">Vous pouvez répondre pièces à l'appui, et pas seulement de mémoire. Reprenez ces neuf points chaque fois qu'un nouvel outil entre dans l'entreprise : c'est là que les situations changent sans prévenir.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>
