@@ -19,6 +19,8 @@ La réforme distingue deux choses très différentes : **émettre** une facture 
 
 Le « 2027 » que beaucoup ont retenu, c'est la date d'émission pour les petites structures. En n'entendant que ce chiffre, un dirigeant se croit tranquille jusque-là. Il ne l'est pas : la réception le concerne dans quelques semaines.
 
+Le malentendu prend une forme particulière chez les commerçants, qui n'émettent presque jamais de factures. Nous avons détaillé [ce qui change pour un commerce de proximité](/blog/facture-electronique-commerce-proximite), achats et ventes traités séparément, et le e-reporting expliqué sans jargon.
+
 ::widget facture-emission-reception::
 
 ## Pourquoi la réception n'est pas un détail

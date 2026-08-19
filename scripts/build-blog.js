@@ -442,6 +442,30 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="9" data-max="9">Vous pouvez répondre pièces à l'appui, et pas seulement de mémoire. Reprenez ces neuf points chaque fois qu'un nouvel outil entre dans l'entreprise : c'est là que les situations changent sans prévenir.</span>
   </div>
 </div>`,
+  'cinq-situations-au-comptoir': `<div class="wg wg-agent" aria-label="Cinq clients au comptoir, cinq circuits différents">
+  <p class="wg-title"><span class="wg-pulse"></span>Cinq clients au comptoir, cinq circuits différents</p>
+  <p class="wg-hint">Touchez chaque situation pour voir ce qui change, et ce qui ne change pas.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">1</span><span class="wg-name">Un particulier paie et repart</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Côté comptoir, rien ne change : la facture n'est pas obligatoire, le ticket reste un ticket. Le travail à prévoir est dans votre caisse, pas dans votre geste de vente. À partir du 1er septembre 2027, ce qui remonte à l'administration est le total de la journée par taux de TVA, base hors taxes et montant de TVA. Aucun nom, aucune adresse, aucun article, aucun moyen de paiement. Vous n'avez rien de nouveau à demander au client.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2</span><span class="wg-name">Le costume, et sa retouche</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La retouche facturée avec le costume qu'elle adapte est accessoire : l'ensemble reste une vente de bien, et un seul flux de données est dû. Vendue seule, la même retouche devient une prestation de services, pour laquelle la TVA est exigible à l'encaissement : un second flux s'ajoute, celui des données de paiement, sauf option pour le paiement de la taxe d'après les débits. À vérifier avec votre éditeur : votre caisse distingue-t-elle biens et services, ou tout est-il codé en « vente » ?</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">3</span><span class="wg-name">Un professionnel achète pour son entreprise</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La facture est obligatoire entre professionnels, et un ticket de caisse ordinaire, qui n'identifie pas l'acheteur, ne lui ouvre pas droit à déduction de TVA. Sous 150 euros hors taxes, une facture simplifiée suffit si elle porte les mentions requises. Jusqu'au 1er septembre 2027, cette facture peut rester en papier ou en PDF. Prenez dès maintenant l'habitude de demander son SIREN et de l'enregistrer : c'est la donnée qui manquera le jour où la facture devra partir par plateforme. Et retenez qu'un PDF envoyé par mail n'est pas une facture électronique au sens de la réforme.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">4</span><span class="wg-name">Il revient trois jours plus tard</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Le client réglé au comptoir demande une facture au nom de sa société. Vous ne pouvez pas la refuser. La difficulté est que la vente a déjà été enregistrée comme une vente à un particulier. Aujourd'hui, aucune conséquence déclarative. À partir de 2027, la même vente ne pourra pas rester dans vos totaux et partir en facture : il faudra corriger l'un ou l'autre, et les textes ne disent pas encore par quel geste. La question à poser à votre éditeur : ma caisse sait-elle retrouver un ticket et le transformer en facture ?</p></div>
+  </div>
+  <div class="wg-step open" data-step="5">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">5</span><span class="wg-name">Une association achète du matériel</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La facture reste obligatoire. Mais si l'association n'est pas assujettie à la TVA, la vente ne relève pas de la facture électronique : elle reste dans le e-reporting, comme une vente à un particulier. La seule question à poser est donc « êtes-vous assujettie à la TVA ? », et la réponse détermine le circuit. Vous n'avez pas à trancher pour elle : c'est à l'association de le savoir et de vous le dire.</p></div>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>
