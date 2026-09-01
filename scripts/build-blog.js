@@ -466,6 +466,26 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>La facture reste obligatoire. Mais si l'association n'est pas assujettie à la TVA, la vente ne relève pas de la facture électronique : elle reste dans le e-reporting, comme une vente à un particulier. La seule question à poser est donc « êtes-vous assujettie à la TVA ? », et la réponse détermine le circuit. Vous n'avez pas à trancher pour elle : c'est à l'association de le savoir et de vous le dire.</p></div>
   </div>
 </div>`,
+  'quatre-crans-facture-bloquee': `<div class="wg wg-agent" aria-label="Si le paiement reste bloqué : les quatre crans, dans l'ordre">
+  <p class="wg-title"><span class="wg-pulse"></span>Si le paiement reste bloqué : les quatre crans, dans l'ordre</p>
+  <p class="wg-hint">Touchez chaque cran pour voir quoi écrire, et ce qu'il coûte.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">1</span><span class="wg-name">La relance qui cite la réponse 19</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Par courriel, en gardant la trace. Reprenez le message donné plus haut, joignez le guide pratique de démarrage de la DGFiP, et rappelez l'échéance convenue. C'est le seul cran qui ne coûte rien à la relation commerciale. Commencez toujours par lui, y compris quand le blocage vous paraît de mauvaise foi : beaucoup de notes de service ont été écrites sans avoir lu la réponse 19.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">2</span><span class="wg-name">La mise en demeure chiffrée</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>En recommandé avec accusé de réception. Rappelez le délai convenu, puis les deux montants qui courent. Les pénalités de retard d'abord : le II de l'article L441-10 du code de commerce précise qu'elles sont exigibles sans qu'un rappel soit nécessaire, au taux convenu ou, à défaut, au taux de refinancement de la Banque centrale européenne majoré de dix points. L'indemnité forfaitaire de quarante euros pour frais de recouvrement ensuite, due par facture en retard et sans justificatif, fixée par l'article D441-5. Ce cran a un coût commercial réel : prenez-le en connaissance de cause.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">3</span><span class="wg-name">Le Médiateur des entreprises, ou la répression des fraudes</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La saisine du Médiateur des entreprises est gratuite et se fait en ligne sur economie.gouv.fr. Elle est confidentielle, et c'est son intérêt principal quand vous comptez continuer à travailler avec ce client. En parallèle, un manquement aux délais de paiement peut être signalé à la répression des fraudes, qui prononce des amendes administratives publiées, au titre de l'article L441-16 du code de commerce. Nous ne pouvons vous promettre aucun délai : ces deux voies servent surtout quand la relance et la mise en demeure sont restées sans effet.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">4</span><span class="wg-name">Le juge, quand la créance n'est pas contestée</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Deux procédures existent lorsque l'obligation de payer n'est pas sérieusement contestable : l'injonction de payer, rapide et sans débat contradictoire au départ, aux articles 1405 et suivants du code de procédure civile, et le référé-provision devant le président du tribunal de commerce, à l'article 873 alinéa 2 du même code. À examiner avec votre conseil, en pesant le montant en jeu, les frais engagés et ce qu'il reste de la relation commerciale.</p></div>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>
