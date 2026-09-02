@@ -486,6 +486,32 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Deux procédures existent lorsque l'obligation de payer n'est pas sérieusement contestable : l'injonction de payer, rapide et sans débat contradictoire au départ, aux articles 1405 et suivants du code de procédure civile, et le référé-provision devant le président du tribunal de commerce, à l'article 873 alinéa 2 du même code. À examiner avec votre conseil, en pesant le montant en jeu, les frais engagés et ce qu'il reste de la relation commerciale.</p></div>
   </div>
 </div>`,
+  'preuves-trajectoire-conformite': `<div class="wg wg-check" aria-label="Ce que vous pourriez montrer si l'administration vous appelle">
+  <p class="wg-title"><span class="wg-pulse"></span>Ce que vous pourriez montrer si l'administration vous appelle</p>
+  <p class="wg-hint">Neuf pièces, dont sept reprises de la liste de la réponse 27 du guide de la DGFiP. Ne cochez que ce que vous pouvez produire, daté.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je peux nommer la solution par laquelle je vais recevoir mes factures fournisseurs : logiciel de gestion, logiciel de comptabilité, expert-comptable, banque ou prestataire.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai vérifié, et pas seulement supposé, que cette solution passe bien par une plateforme agréée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Un contrat, un devis, une souscription ou une confirmation d'ouverture de compte existe à mon nom chez une plateforme agréée.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">J'ai conservé les échanges écrits avec mon éditeur, mon cabinet comptable, ma banque ou mon prestataire, avec leur date.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Une date de raccordement ou de déploiement m'a été communiquée par écrit.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je sais lesquelles de mes factures fournisseurs arrivent déjà par voie électronique, et lesquelles arrivent encore par mail ou sur papier.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les tests ou paramétrages réalisés ou programmés sont notés quelque part, avec leur date.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les messages d'erreur, rejets et tickets d'assistance sont conservés plutôt que supprimés.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La consigne donnée à l'équipe est écrite et datée : qui ouvre la boîte de réception, quel jour, et que fait-on d'une facture reçue deux fois.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 9 pièces disponibles</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour savoir ce que vous pourriez produire aujourd'hui.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="2">Vous n'avez pas encore de trace. C'est le seul point à traiter cette semaine, et il ne demande aucune décision technique : un courriel à votre éditeur ou à votre cabinet comptable, demandant par quelle plateforme agréée vous allez recevoir vos factures. Envoyé aujourd'hui, il coche la case 4 immédiatement, puis les cases 1 et 2 dès que la réponse arrive.</span>
+    <span class="wgk-band" data-min="3" data-max="5">La démarche est engagée et vous pourriez le montrer, mais rien ne dit encore quand elle aboutit. Réclamez une date écrite à votre prestataire, c'est la case 5, et notez le jour de votre demande. Une réponse qui tarde se documente aussi : la relance vaut preuve.</span>
+    <span class="wgk-band" data-min="6" data-max="8">Votre dossier tient debout. Ce qui manque relève de l'organisation interne plutôt que du raccordement : la consigne à l'équipe, les tickets conservés, le tri entre les factures qui arrivent déjà par plateforme et les autres. C'est aussi ce qui vous évitera de payer deux fois la même facture cet automne.</span>
+    <span class="wgk-band" data-min="9" data-max="9">Vous pouvez répondre pièces à l'appui, et pas de mémoire. Rangez ces éléments au même endroit que vos pièces comptables, et redatez-les à chaque étape franchie : la trajectoire se juge sur sa continuité, pas sur un instantané.</span>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

@@ -17,7 +17,7 @@ Trois contraintes fixent le calendrier, dans cet ordre.
 | Date | Sujet | Pilier | Format |
 |---|---|---|---|
 | **Lun 31/08** | Facture électronique : ce qu'un client ne peut pas vous imposer | automatisation | **Publié** |
-| **Mer 2/09** | Ce que vous risquez vraiment : trois mois de mise en demeure, pas une amende | automatisation | Blog + LinkedIn |
+| **Mer 2/09** | Facture électronique : pas prêt au 1er septembre, que risquez-vous ? | automatisation | **Publié** |
 | **Ven 4/09** | Enquête nationale sur l'IA : vous avez jusqu'au 7 septembre pour répondre | visibilite-prospection | Blog court + LinkedIn |
 | **Lun 7/09** | 55 % des dirigeants disent utiliser l'IA, 17 % s'en servent | strategie-commerciale | Blog + LinkedIn + carrousel PDF |
 | **Mer 9/09** | Notre agent tournait sous root. Voilà ce que nous avons corrigé | agents-ia | Blog + LinkedIn |

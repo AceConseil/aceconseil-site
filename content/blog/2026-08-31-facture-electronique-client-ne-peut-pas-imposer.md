@@ -86,6 +86,8 @@ Reste l'arbitrage, que nous n'allons pas vous cacher. Réclamer des pénalités 
 
 Une phrase pour refermer le fil : ce que votre client peut légitimement attendre de vous au 1er septembre, c'est de pouvoir recevoir, pas d'émettre. Le reste attend 2027.
 
+Si l'échéance est passée et que vous n'êtes toujours pas raccordé, nous avons détaillé [ce que vous risquez réellement, et le seul appel à passer](/blog/facture-electronique-pas-pret-ce-que-vous-risquez) : une mise en demeure et trois mois, pas une amende par facture.
+
 Si le sujet est encore flou, nous l'avons pris par plusieurs entrées : [le calendrier et l'obligation de réception](/blog/facture-electronique-2026-reception-obligatoire), [le cas d'un artisan du bâtiment](/blog/facture-electronique-artisan-batiment), [celui d'un commerce de proximité](/blog/facture-electronique-commerce-proximite). Une assistance officielle existe par ailleurs, service gratuit hors prix de l'appel : le 0806 807 807, indiqué sur impots.gouv.fr. Et une fois la réception branchée, le gain se joue plus loin, dans [la fin des ressaisies entre vos outils](/blog/automatiser-saisie-outils-tpe), détaillée sur notre page [automatisation des process](/automatisation).
 
 ## Vingt minutes pour savoir où vous en êtes
