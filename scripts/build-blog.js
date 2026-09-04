@@ -512,6 +512,26 @@ const ARTICLE_WIDGETS = {
     <span class="wgk-band" data-min="9" data-max="9">Vous pouvez répondre pièces à l'appui, et pas de mémoire. Rangez ces éléments au même endroit que vos pièces comptables, et redatez-les à chaque étape franchie : la trajectoire se juge sur sa continuité, pas sur un instantané.</span>
   </div>
 </div>`,
+  'quatre-questions-chiffre-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser devant un chiffre sur l'IA">
+  <p class="wg-title"><span class="wg-pulse"></span>Devant un chiffre sur l'IA, quatre questions</p>
+  <p class="wg-hint">Touchez chaque question. Elles se posent en trente secondes, sur n'importe quelle étude.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q1</span><span class="wg-name">Qui a répondu, et qui a décidé de répondre ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Dans un sondage, l'institut choisit qui il interroge et insiste auprès de ceux qui n'ont pas envie de parler. Dans une consultation ouverte, les répondants se présentent d'eux-mêmes. Cherchez le mot « échantillon » : s'il est absent, la phrase « X pour cent des TPE françaises » n'est pas permise.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q2</span><span class="wg-name">Le pourcentage porte sur quoi, exactement ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Sur les répondants, ou sur la population ? Un pourcentage peut ne désigner que les votes exprimés sur une seule proposition, par les seuls participants qui l'ont vue passer. C'est très loin d'un pourcentage d'entrepreneurs français, et rien ne le signale au lecteur.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q3</span><span class="wg-name">De quelle étude parle-t-on, au juste ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Plusieurs travaux vont circuler cet automne sous la même signature. La consultation ouverte fermée le 7 septembre 2026, le 82e baromètre Bpifrance Le Lab publié le 13 janvier 2026 sur 4 722 réponses exploitées et redressées, et l'étude Bpifrance Le Lab de 1 209 dirigeants publiée le 17 juin 2025, qui porte sur les PME et les ETI et non sur les TPE. Demandez laquelle avant de discuter du chiffre.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q4</span><span class="wg-name">Qui a commandé l'étude, et que vend-on au bout ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>L'enquête qui ferme lundi comporte une question sur la connaissance des dispositifs d'accompagnement de ses propres commanditaires. C'est légitime pour piloter une offre publique, et cela se sait avant de lire les résultats. Posez la même question à tout prestataire qui vous présente un chiffre.</p></div>
+  </div>
+</div>`,
   'questions-prestataire-ia': `<div class="wg wg-agent" aria-label="Les quatre questions à poser à tout prestataire IA avant de signer">
   <p class="wg-title"><span class="wg-pulse"></span>Les 4 questions à poser avant de signer</p>
   <p class="wg-hint">Touchez chaque question. Un prestataire sérieux y répond sans détour.</p>

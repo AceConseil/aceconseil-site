@@ -80,6 +80,8 @@ Un exemple, sans nommer personne : plusieurs pages annoncent que le délai pour 
 
 Sur un sujet dont le calendrier a changé deux fois en un été, la question n'est pas de savoir qui ne s'est jamais trompé. C'est de savoir qui se relit, et qui date ses corrections.
 
+Le même réflexe s'applique aux chiffres. Nous l'avons appliqué à la grande enquête nationale sur l'IA dans [comment lire les résultats qui sortiront fin septembre](/blog/enquete-nationale-ia-repondre-lire-resultats).
+
 ## Ce qu'il est raisonnable de faire cette semaine
 
 Reprenez l'inventaire de vos outils d'IA, vérifiez les deux cas de bascule, tri de candidatures et notation de salariés, et regardez si l'un de vos usages relève de la transparence de l'article 50.

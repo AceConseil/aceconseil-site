@@ -580,3 +580,35 @@ Mateusz
 #FactureElectronique #TPE #Artisans
 
 **Premier commentaire :** Ce que dit vraiment l'article 1737 IV bis, ce que deviennent vos factures fournisseurs ce matin, et les neuf pièces à pouvoir montrer : https://aceconseil.co/blog/facture-electronique-pas-pret-ce-que-vous-risquez
+
+### Vendredi 4 septembre · Mateusz · service, enquête nationale IA (publié avec l'article)
+
+Une enquête nationale sur l'IA en entreprise ferme lundi 7 septembre. Elle est portée par Bpifrance, CCI France et la CPME.
+
+Faites-le ce week-end plutôt que lundi soir : aucune heure de clôture n'est publiée nulle part.
+
+Ce qu'elle demande : vos usages de l'IA, les domaines où elle pourrait servir, ce qui vous freine, les accompagnements utiles. Seize écrans, surtout des cases à cocher. Ni SIREN, ni nom d'entreprise, ni compte. Les quatre questions signalétiques sont facultatives.
+
+Un détail qui en dit long : la plus petite case proposée est « TPE, 1 à 10 salariés ». Aucune option pour l'entreprise sans salarié. Un artisan seul se range dedans, ou passe la question.
+
+Répondez quand même. Ces réponses serviront à calibrer des dispositifs publics, et les artisans absents de ce genre de recueil se retrouvent ensuite devant des aides pensées pour d'autres.
+
+Maintenant, la partie utile en octobre.
+
+Cette enquête est une consultation ouverte : qui veut répond. Elle dira ce que pensent les gens qui se sont manifestés. Un sondage sur échantillon cherche ce que pense l'ensemble, et lui seul autorise la phrase « X pour cent des TPE françaises ».
+
+L'image tient dans un atelier. Vous affichez une feuille où vos clients notent ce qu'ils pensent de vous. Vingt écrivent, dix-huit sont contents. Vous avez appris quelque chose de vrai, mais vous n'écrirez pas « 90 pour cent de clients satisfaits » sur votre camionnette. Ceux qui ont pris le stylo ne sont pas vos clients : ce sont vos clients qui ont eu envie de prendre le stylo.
+
+Ajoutez le biais du sujet : ceux qui répondent à une enquête sur l'IA sont d'abord ceux que l'IA intéresse déjà.
+
+Personne ne ment, mais l'ambiguïté est déjà installée. Sous les écrans signalétiques, l'enquête affiche : « Vos informations sont anonymes et contribuent à rendre nos résultats représentatifs. » Renseigner sa taille et sa région améliore la lecture des réponses reçues. Cela ne transforme pas une consultation ouverte en échantillon.
+
+La comparaison utile vient du même Bpifrance : son 82e baromètre a sollicité environ quarante mille entreprises, exploité 4 722 réponses, avec un terrain daté et un redressement par taille et par secteur. C'est cette mécanique qui autorise une phrase sur l'ensemble des TPE et PME.
+
+Le réflexe vaut contre nous aussi. Le lien et le détail sont en premier commentaire.
+
+Mateusz
+
+#IA #TPE #PME
+
+**Premier commentaire :** L'enquête ferme le 7 septembre, et les quatre questions à poser devant n'importe quel chiffre sur l'IA cet automne : https://aceconseil.co/blog/enquete-nationale-ia-repondre-lire-resultats
