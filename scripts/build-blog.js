@@ -972,6 +972,22 @@ ${cards}
 `;
 }
 
+// Bloc « Nos analyses » de la page d'accueil : les six derniers articles, injectes
+// a la construction pour que l'accueil ne soit jamais en retard sur le blog.
+function injectAnalyses(html, articles) {
+  const MARQUEUR = '<!--DERNIERES_ANALYSES-->';
+  if (!html.includes(MARQUEUR)) {
+    throw new Error("index.html : marqueur <!--DERNIERES_ANALYSES--> introuvable");
+  }
+  const cartes = articles.slice(0, 6).map((a) => `      <a class="analyse" href="/blog/${a.meta.slug}">
+        <p class="analyse-date"><time datetime="${a.meta.date}">${formatDateFr(a.meta.date)}</time></p>
+        <h3>${escAttr(a.meta.title)}</h3>
+        <p>${escAttr(a.meta.description)}</p>
+        <span class="analyse-more">Lire l'analyse →</span>
+      </a>`).join('\n');
+  return html.replace(MARQUEUR, cartes);
+}
+
 function buildSitemap(articles, pages) {
   const today = new Date().toISOString().slice(0, 10);
   const urls = [
@@ -1039,7 +1055,12 @@ function main() {
   for (const file of STATIC_FILES) {
     const src = path.join(ROOT, file);
     if (!fs.existsSync(src)) throw new Error(`Fichier statique manquant : ${file}`);
-    fs.copyFileSync(src, path.join(OUT, file));
+    if (file === 'index.html') {
+      const accueil = injectAnalyses(fs.readFileSync(src, 'utf8'), articles);
+      fs.writeFileSync(path.join(OUT, file), accueil, 'utf8');
+    } else {
+      fs.copyFileSync(src, path.join(OUT, file));
+    }
   }
   console.log(`   → ${STATIC_FILES.length} fichiers statiques copiés dans public/`);
 

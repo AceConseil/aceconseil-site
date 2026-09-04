@@ -6,27 +6,27 @@
   "redirects": [
     {
       "source": "/ia",
-      "destination": "/#automatisation",
+      "destination": "/agents-ia",
       "permanent": true
     },
     {
       "source": "/visibilite",
-      "destination": "/#acquisition",
+      "destination": "/visibilite-prospection",
       "permanent": true
     },
     {
       "source": "/strategie",
-      "destination": "/#strategie",
+      "destination": "/strategie-commerciale",
       "permanent": true
     },
     {
       "source": "/formation",
-      "destination": "/#formation",
+      "destination": "/formation-ia",
       "permanent": true
     },
     {
       "source": "/amo",
-      "destination": "/#amo",
+      "destination": "/amo-immobilier",
       "permanent": true
     },
     {

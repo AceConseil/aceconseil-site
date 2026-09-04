@@ -43,7 +43,7 @@ Chacun de ces points, découvert après la signature, se règle. Mais il se règ
 
 Pour un particulier, un mois de décalage est une contrariété. Pour une société, c'est une addition qui se calcule : le loyer de l'ancien local qui continue de courir, les équipes qui travaillent en mode dégradé, l'activité qui ne redémarre pas à la date annoncée aux clients, le matériel qui dort dans un garde-meuble.
 
-Faites l'exercice avant de signer, sur une seule ligne : ce qu'une semaine de retard vous coûte réellement. Le chiffre obtenu remet les honoraires d'un accompagnement à leur juste place, dans un sens comme dans l'autre.
+Faites l'exercice avant de signer, sur une seule ligne : ce qu'une semaine de retard vous coûte réellement. C'est le même réflexe que pour [les demandes clients restées sans réponse](/blog/cout-demande-perdue-calcul), chiffrer ce qui n'apparaît sur aucune facture. Le chiffre obtenu remet les honoraires d'un accompagnement à leur juste place, dans un sens comme dans l'autre.
 
 ## La réception, point de bascule
 
@@ -67,7 +67,7 @@ L'assistance à maîtrise d'ouvrage ne remplace ni l'architecte ni l'avocat. Ell
 
 > Sur une opération de locaux, ce qui n'est pas écrit n'existe pas. Le travail d'une AMO, c'est que tout soit écrit au moment où cela a encore de la valeur.
 
-Chez ACE Conseil, cette activité est portée par Jennifer, cofondatrice, avec plus de dix ans d'expérience en opérations immobilières et en marchés publics : entreprises qui changent de locaux, construisent ou agrandissent, investisseurs et bailleurs qui sécurisent une acquisition. Les accompagnements se font en présentiel en Île-de-France, le suivi documentaire à distance partout en France.
+Chez ACE Conseil, cette activité est portée par Jennifer, cofondatrice, avec plus de dix ans d'expérience en opérations immobilières et en marchés publics : entreprises qui changent de locaux, construisent ou agrandissent, investisseurs et bailleurs qui sécurisent une acquisition. Les accompagnements se font en présentiel en Île-de-France, le suivi documentaire à distance partout en France. Et si le changement de locaux est aussi le moment où vous revoyez vos outils, [nous avons fait le tri des aides réellement ouvertes en Seine-et-Marne](/blog/digitaliser-tpe-seine-et-marne) : il y en a moins qu'on ne le raconte.
 
 ## Et si vous achetez en VEFA
 

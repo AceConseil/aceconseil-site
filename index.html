@@ -318,6 +318,23 @@ em.gold{font-style:italic;color:var(--gold)}
 .faq-a-inner{overflow:hidden}
 .faq-a p{padding:0 40px 26px 0;color:var(--muted);font-size:.99rem;max-width:64ch}
 
+/* ---------- analyses ---------- */
+.analyses{background:var(--cream-dark)}
+.analyses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:56px}
+.analyse{display:flex;flex-direction:column;background:var(--cream);padding:32px 30px;text-decoration:none;transition:background .3s}
+.analyse:hover{background:#fff}
+.analyse-date{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.analyse h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.18rem;line-height:1.32;margin:12px 0 10px;transition:color .3s}
+.analyse:hover h3{color:var(--gold)}
+.analyse > p{font-size:.92rem;color:var(--muted);flex:1}
+.analyse-more{margin-top:18px;font-size:.86rem;font-weight:500;color:var(--gold)}
+.analyses-foot{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:14px 30px}
+.analyses-foot p{color:var(--muted);font-size:.95rem;max-width:74ch}
+.analyses-foot a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--border-gold);transition:color .3s}
+.analyses-foot a:hover{color:var(--gold)}
+@media(max-width:960px){.analyses-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.analyses-grid{grid-template-columns:1fr}}
+
 /* ---------- contact ---------- */
 .contact{background:var(--navy-deep);color:var(--cream);position:relative;overflow:hidden}
 .contact::before{content:"";position:absolute;bottom:-260px;left:-180px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,77,.09),transparent 70%)}
@@ -862,6 +879,21 @@ em.gold{font-style:italic;color:var(--gold)}
         <button class="faq-q" aria-expanded="false">Où intervenez-vous&nbsp;?<span class="chev"></span></button>
         <div class="faq-a"><div class="faq-a-inner"><p>Partout en France et à l'international, à distance. En présentiel en Île-de-France, notamment pour les formations et l'AMO Immobilier.</p></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section analyses" id="analyses">
+  <div class="wrap">
+    <p class="eyebrow reveal">Nos analyses</p>
+    <h2 class="section-title reveal" data-d="1">Ce que nous publions, <em class="gold">et pourquoi ça vous concerne.</em></h2>
+    <p class="section-lede reveal" data-d="2">Facture électronique, intelligence artificielle en entreprise, visibilité locale&nbsp;: nous documentons ce que nous vérifions sur le terrain, sources à l'appui, sans jargon.</p>
+    <div class="analyses-grid reveal" data-d="2">
+<!--DERNIERES_ANALYSES-->
+    </div>
+    <div class="analyses-foot reveal">
+      <p>Les plus consultées&nbsp;: <a href="/blog/plateforme-agreee-facture-electronique">choisir sa plateforme agréée</a>, <a href="/blog/facture-electronique-checklist-dirigeant">la checklist du dirigeant</a>, <a href="/blog/relance-devis-automatique">la relance de devis automatique</a>.</p>
+      <a href="/blog">Toutes les analyses →</a>
     </div>
   </div>
 </section>

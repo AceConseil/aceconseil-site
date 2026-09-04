@@ -75,7 +75,7 @@ Ces montants se comparent à un seul autre : ce que vous coûte aujourd'hui le p
 
 Deux précisions utiles. Le diagnostic de maturité digitale de la CCI 77, cofinancé par le FEDER, n'affiche aucun prix : demandez le reste à charge avant de vous engager. Et le parcours Perspective Croissance, pris en charge intégralement, est réservé aux dirigeants non-salariés ressortissants de l'AGEFICE : un artisan cotisant au FAFCEA n'y a pas droit.
 
-Côté Département enfin, nous n'avons identifié aucune aide au numérique des TPE ouverte en août 2026. Ce n'est pas un oubli de sa part : depuis la loi NOTRe du 7 août 2015, les aides directes aux entreprises, subventions, prêts et avances remboursables, relèvent de la compétence de la Région. Les communes et les intercommunalités gardent l'immobilier d'entreprise, et le Département ne peut intervenir que par délégation conventionnelle.
+Côté Département enfin, nous n'avons identifié aucune aide au numérique des TPE ouverte en août 2026. Ce n'est pas un oubli de sa part : depuis la loi NOTRe du 7 août 2015, les aides directes aux entreprises, subventions, prêts et avances remboursables, relèvent de la compétence de la Région. Les communes et les intercommunalités gardent l'immobilier d'entreprise, et le Département ne peut intervenir que par délégation conventionnelle. Si votre projet est justement un changement de locaux, l'argent ne se gagne d'ailleurs pas en subvention mais aux [quatre rendez-vous qui engagent votre budget](/blog/locaux-professionnels-rendez-vous-decisifs).
 
 ## Quand nous appeler
 
