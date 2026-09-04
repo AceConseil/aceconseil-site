@@ -4,6 +4,7 @@ description: Le 2 août 2026, l'AI Act devient contrôlable. Pour une TPE, le vr
 date: 2026-07-21
 slug: ai-act-2-aout-ce-qui-change
 keywords: AI Act, CNIL, sanction, 2 août 2026, TPE PME, contrôle IA
+updated: 2026-09-02
 ---
 
 À partir du 2 août 2026, l'essentiel de l'AI Act devient applicable, et son respect pourra être contrôlé et sanctionné. Vous allez voir passer beaucoup d'articles alarmistes agitant des amendes à plusieurs millions d'euros. Prenons le temps de séparer ce qu'un dirigeant de TPE ou de PME doit vraiment surveiller de ce qui ne le concerne pas.

@@ -690,9 +690,17 @@ function buildArticle(article, template) {
     datePublished: meta.date,
     url: canonical,
     mainEntityOfPage: canonical,
-    author: { '@type': 'Organization', name: 'ACE Conseil' },
+    author: {
+      '@type': 'Person',
+      name: meta.auteur || 'Mateusz Myja',
+      jobTitle: 'Cofondateur, ACE Conseil',
+      worksFor: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
+    },
     publisher: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
   };
+  // dateModified n'est posee que lorsqu'un article a reellement ete corrige,
+  // via le champ `updated:` du front-matter. Jamais automatiquement.
+  if (meta.updated) articleLd.dateModified = meta.updated;
   if (meta.keywords) articleLd.keywords = meta.keywords;
   if (meta.ville) articleLd.contentLocation = { '@type': 'Place', name: meta.ville };
   const jsonLd = [articleLd, breadcrumbLd([

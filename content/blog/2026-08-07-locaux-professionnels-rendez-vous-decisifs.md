@@ -4,6 +4,7 @@ description: Cadrage, répartition des travaux, visite de chantier, réception :
 date: 2026-08-07
 slug: locaux-professionnels-rendez-vous-decisifs
 keywords: AMO entreprise, aménagement locaux professionnels, réception de travaux réserves, changer de locaux entreprise, assistance maîtrise d'ouvrage société
+auteur: Jennifer Carrolo
 ---
 
 ![Les quatre rendez-vous d'une opération de locaux professionnels : cadrage, répartition des travaux, visite de chantier, réception](assets/locaux-professionnels.jpg)

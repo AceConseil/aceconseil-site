@@ -4,6 +4,7 @@ description: L'article 4 de l'AI Act impose depuis février 2025 de garantir la 
 date: 2026-07-14
 slug: ai-act-article-4-maitrise-ia
 keywords: AI Act, article 4, maîtrise de l'IA, formation IA, obligation entreprise
+updated: 2026-08-17
 ---
 
 Il existe une obligation européenne sur l'intelligence artificielle, en vigueur depuis février 2025, que la quasi-totalité des dirigeants de TPE et de PME n'ont jamais entendue. Elle ne concerne pas les géants de la tech. Elle concerne toute entreprise qui utilise l'IA, même une seule personne avec ChatGPT. Voici de quoi il s'agit, et pourquoi le 2 août 2026 change la donne.
