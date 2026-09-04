@@ -18,15 +18,15 @@ Combien de temps ? Aucune durée n'est annoncée nulle part et nous n'en invente
 
 L'enquête s'adresse aux dirigeants comme aux salariés de TPE, PME et ETI. Vos usages actuels de l'IA, les domaines où elle pourrait servir, ce qui vous freine, les conditions d'un premier projet, les accompagnements utiles, votre connaissance des dispositifs publics. Puis quatre questions signalétiques, toutes facultatives : dirigeant ou salarié, taille, secteur, région.
 
-Ni SIREN, ni nom d'entreprise, ni compte : rien ne vérifie ce que vous déclarez. Les contributions sont annoncées comme anonymes, et votre adresse électronique n'est demandée qu'au tout dernier écran, sans obligation.
+Ni SIREN, ni nom d'entreprise, ni compte : rien ne vérifie ce que vous déclarez, même si la plateforme limite les participations multiples depuis une même session. Les contributions sont annoncées comme anonymes, et votre adresse électronique n'est demandée qu'au tout dernier écran, sans obligation.
 
 La plus petite case proposée est « TPE (1 à 10 salariés) » : aucune option n'existe pour l'entreprise sans salarié. Un artisan seul se range dans cette case, ou passe la question.
 
-Répondez quand même. Ces réponses serviront à calibrer des dispositifs publics, et les artisans absents de ce genre de recueil se retrouvent ensuite devant [des aides pensées pour d'autres](/blog/digitaliser-tpe-seine-et-marne).
+Répondez quand même. Ces réponses doivent servir, selon les organisateurs, à mettre en lumière les besoins des entreprises et les dispositifs d'accompagnement les plus utiles, et les artisans absents de ce genre de recueil se retrouvent ensuite devant [des aides pensées pour d'autres](/blog/digitaliser-tpe-seine-et-marne).
 
 ## Comment il faudra lire les résultats en octobre
 
-Les résultats sont annoncés pour fin septembre. Vous les verrez circuler en octobre. Voici comment les lire.
+Les résultats sont annoncés pour la fin septembre : une cartographie de la maturité IA des TPE, PME et ETI françaises, selon les organisateurs. Ni la date exacte ni la forme ne sont précisées. Voici comment les lire quand ils sortiront.
 
 Cette enquête est une consultation ouverte : qui veut répond. Elle dira ce que pensent les gens qui se sont manifestés. Un sondage sur échantillon cherche ce que pense l'ensemble, et lui seul autorise la phrase « X pour cent des TPE françaises ».
 
@@ -50,6 +50,6 @@ Aujourd'hui, une fenêtre qui ferme lundi. En octobre, une question à poser dev
 
 Le réflexe vaut contre nous : le chiffre de 87 pour cent que nous citons sur les avis clients porte le nom de son auteur, BrightLocal, dans [notre article sur la fiche Google](/blog/fiche-google-business-artisan). C'est la règle sur notre page [visibilité et prospection](/visibilite-prospection).
 
-Nous ne vendons rien ici et n'avons aucune information privilégiée : tout ce qui précède s'obtient en ouvrant la même page que vous. Pour agir sans attendre les résultats, notre méthode du premier chantier est dans [IA en PME, par où commencer](/blog/ia-pme-par-ou-commencer).
+Nous ne vendons rien ici et n'avons aucune information privilégiée : tout ce qui précède s'obtient en ouvrant le formulaire et le communiqué des organisateurs. Pour agir sans attendre les résultats, notre méthode du premier chantier est dans [IA en PME, par où commencer](/blog/ia-pme-par-ou-commencer).
 
 [Écrivez-nous ou appelez-nous](/#contact) : vingt minutes, sans engagement. Et si votre dossier ne justifie pas de chantier IA aujourd'hui, nous vous le dirons aussi.

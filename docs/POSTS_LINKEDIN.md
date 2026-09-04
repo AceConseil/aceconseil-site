@@ -591,7 +591,7 @@ Ce qu'elle demande : vos usages de l'IA, les domaines où elle pourrait servir, 
 
 Un détail qui en dit long : la plus petite case proposée est « TPE, 1 à 10 salariés ». Aucune option pour l'entreprise sans salarié. Un artisan seul se range dedans, ou passe la question.
 
-Répondez quand même. Ces réponses serviront à calibrer des dispositifs publics, et les artisans absents de ce genre de recueil se retrouvent ensuite devant des aides pensées pour d'autres.
+Répondez quand même. Ces réponses doivent servir, selon les organisateurs, à mettre en lumière les besoins des entreprises et les dispositifs les plus utiles. Les artisans absents de ce genre de recueil se retrouvent ensuite devant des aides pensées pour d'autres.
 
 Maintenant, la partie utile en octobre.
 
