@@ -27,3 +27,15 @@ Chaque fichier porte un en-tête : date, auteur, statut, et l'adresse de l'artic
 ## Ce que tu ne fais jamais
 
 Tu ne publies pas toi-même. Tu prépares, tu vérifies, tu proposes, et un humain copie et publie. Cette règle n'est pas une précaution de style : la publication automatisée sur LinkedIn par un outil tiers expose le compte à une restriction, et un compte restreint anéantirait des mois de travail.
+
+## La répartition du travail
+
+Le site et la rédaction se font dans ce dépôt, avec Mateusz. LinkedIn se joue sur le profil de Jennifer : c'est elle qui publie.
+
+Une publication n'est donc pas finie quand elle est écrite ici. Elle l'est quand elle est déposée dans le dossier partagé du Drive du cabinet :
+
+`Mon Drive/Pro/ACE - Prospection LinkedIn/publications/a-publier/`
+
+Dépose le fichier avec sa date de parution en nom, son premier commentaire inclus. Jennifer relit, publie depuis son profil, et déplace le fichier dans `parues/`.
+
+Sans ce dépôt, la publication reste dans le dépôt et n'atteint jamais le profil qui doit la porter.
