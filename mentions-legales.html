@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mentions légales · ACE Conseil</title>
-<meta name="description" content="Mentions légales du site aceconseil.co : éditeur, hébergeur, propriété intellectuelle et données personnelles.">
+<meta name="description" content="Mentions légales du site aceconseil.co : éditeur, hébergeur, propriété intellectuelle, données personnelles et mesure d'audience sans cookie.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://aceconseil.co/mentions-legales">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231B2A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23C9A24D' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -89,7 +89,10 @@ a.link:hover{color:var(--navy)}
       <h2>Données personnelles</h2>
       <p>Les informations transmises via le formulaire de contact servent uniquement à répondre à votre demande (base légale&nbsp;: mesures précontractuelles). Elles sont destinées à ACE Conseil uniquement et ne font l'objet d'aucune cession.</p>
       <p>Elles sont conservées 3 ans après le dernier contact. Vous disposez de droits d'accès, de rectification et de suppression, à exercer auprès de <a class="link" href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>.</p>
-      <p>Le site ne dépose aucun cookie de mesure d'audience.</p>
+      <h2>Mesure d'audience</h2>
+      <p>Le site utilise Vercel Web Analytics, une mesure d'audience <strong>sans aucun cookie</strong> et sans stockage sur votre appareil. Aucun identifiant publicitaire n'est utilisé, aucun suivi entre sites n'est effectué, et vos données ne sont ni revendues ni recoupées avec un autre traitement.</p>
+      <p>Sont enregistrés de façon agrégée&nbsp;: la page consultée, la page d'origine, le pays et la ville, le type d'appareil et le navigateur, ainsi que deux actions volontaires de votre part, l'affichage du numéro de téléphone et l'envoi du formulaire. Le visiteur est identifié par une empreinte technique calculée à partir de la requête, détruite au bout de vingt-quatre heures, qui ne permet ni de vous identifier ni de reconstituer votre navigation.</p>
+      <p>Le dispositif étant strictement limité à la mesure d'audience et n'inscrivant rien dans votre terminal, il ne requiert pas votre consentement préalable au sens de l'article 82 de la loi Informatique et Libertés. La base légale du traitement est l'intérêt légitime d'ACE Conseil à connaître la fréquentation de son site. Vous pouvez vous y opposer en écrivant à <a class="link" href="mailto:contact@aceconseil.co">contact@aceconseil.co</a>.</p>
     </div>
   </div>
 </main>
@@ -124,5 +127,8 @@ a.link:hover{color:var(--navy)}
   });
 })();
 </script>
+<!-- Mesure d'audience Vercel : aucun cookie, script servi depuis notre propre domaine -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

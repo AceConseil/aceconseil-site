@@ -1146,6 +1146,8 @@ em.gold{font-style:italic;color:var(--gold)}
       var d = a.getAttribute("data-tel-reveal") || "06 65 70 47 93";
       t.textContent = d.replace(/ /g, "\u00A0");
       a.setAttribute("aria-label", "Appeler le " + d);
+      /* le clic sur « afficher le numéro » est notre meilleur signal d'intention */
+      if(window.va){ window.va("event", { name: "numero-affiche", data: { emplacement: a.className || "lien" } }); }
     });
   });
 
@@ -1234,10 +1236,12 @@ em.gold{font-style:italic;color:var(--gold)}
       date: new Date().toISOString()
     };
     if(!WEBHOOK_URL){
+      if(window.va){ window.va("event", { name: "formulaire-envoye", data: { sujet: data.sujet, voie: "mailto" } }); }
       var body = "Nom : " + data.nom + "%0D%0ASociété : " + data.societe + "%0D%0ATéléphone : " + data.telephone + "%0D%0ABesoin : " + data.sujet + "%0D%0A%0D%0A" + encodeURIComponent(data.message);
       window.location.href = "mailto:contact@aceconseil.co?subject=" + encodeURIComponent("[Site] " + data.sujet + " · " + data.nom) + "&body=" + body;
       return;
     }
+    if(window.va){ window.va("event", { name: "formulaire-envoye", data: { sujet: data.sujet, voie: "webhook" } }); }
     btn.disabled = true; btn.style.opacity = ".6";
     status.className = "form-status";
     fetch(WEBHOOK_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
@@ -1254,5 +1258,8 @@ em.gold{font-style:italic;color:var(--gold)}
   });
 })();
 </script>
+<!-- Mesure d'audience Vercel : aucun cookie, script servi depuis notre propre domaine -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
