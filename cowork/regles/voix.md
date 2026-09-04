@@ -30,3 +30,11 @@ Ils reviennent dans presque tous les brouillons et la relecture les signale à c
 
 - **La figure « ce n'est pas X, c'est Y ».** Deux emplois maximum par texte. Au delà, le texte sonne mécanique.
 - **Les triades systématiques.** « Trois choses », « trois leviers », « trois raisons » enchaînés dans un même texte. Garde celle qui porte une vraie information, réécris les autres.
+
+## Qui parle
+
+**Toutes les publications LinkedIn partent du profil de Jennifer et sont signées de son nom, à la première personne.** Mateusz n'a pas de compte LinkedIn : c'est le profil de Jennifer qui porte le cabinet, et la page entreprise ne fait que relayer.
+
+Écris donc « je » quand elle parle en son nom, et « nous » quand c'est le cabinet. N'attribue jamais une publication à Mateusz, et ne place pas de mention de paternité en bas de texte : sur un profil personnel, le nom et la photo disent déjà qui s'exprime.
+
+Cela vaut aussi pour les messages de prospection et les demandes de mise en relation.

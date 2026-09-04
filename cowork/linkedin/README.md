@@ -13,7 +13,10 @@ Chaque fichier porte un en-tête : date, auteur, statut, et l'adresse de l'artic
 
 **Signaler ce qui manque.** Le cabinet publie le lundi, le mercredi et le vendredi. Le calendrier des sujets est dans `docs/PLAN_PUBLICATION_SEPTEMBRE.md`, à la racine du dépôt. Si une date de parution approche et qu'aucun fichier ne l'attend, dis-le : c'est plus utile que de proposer une publication de remplacement.
 
-**Vérifier avant de proposer.** Trois contrôles, à chaque fois :
+**Vérifier avant de proposer.** Quatre contrôles, à chaque fois :
+
+0. La publication est écrite à la première personne par Jennifer et signée de son nom. C'est son profil qui publie, Mateusz n'a pas de compte.
+
 
 1. La longueur tient sous 3 000 caractères. La cible du cabinet est 2 500 à 2 900.
 2. Aucun lien ni aucun nom de domaine nu dans le corps. LinkedIn transforme automatiquement un domaine nu en lien cliquable, ce qui écrase la portée. Le lien va dans le premier commentaire, écrit à part.

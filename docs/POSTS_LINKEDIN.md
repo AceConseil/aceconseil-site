@@ -1,6 +1,6 @@
 # Les 12 premiers posts LinkedIn (4 semaines, lundi/mercredi/vendredi)
 
-Règles communes : une compétence du site par post, un seul lien par post (placé en fin), 2 hashtags maximum, jamais de tiret cadratin, jamais de chiffre client inventé (les seuls chiffres sont notre formule générique ou des faits publics), vouvoiement du lecteur. Le lien du jour se met en premier commentaire si vous préférez préserver la portée ; dans ce cas, remplacer la dernière ligne par « Lien en commentaire ».
+Règles communes : **toutes les publications partent du profil LinkedIn de Jennifer et sont signées de son nom**, à la première personne. Mateusz n'a pas de compte LinkedIn : c'est le profil de Jennifer qui porte le cabinet, la page entreprise ne fait que relayer. Puis : une compétence du site par post, un seul lien par post (placé en fin), 2 hashtags maximum, jamais de tiret cadratin, jamais de chiffre client inventé (les seuls chiffres sont notre formule générique ou des faits publics), vouvoiement du lecteur. Le lien du jour se met en premier commentaire si vous préférez préserver la portée ; dans ce cas, remplacer la dernière ligne par « Lien en commentaire ».
 
 Quatre posts sont couplés à un article de blog complet, livré en brouillon dans `content/blog/` (préfixe `_`). Pour publier un article le jour dit : retirer le `_` du nom de fichier, vérifier la date du front-matter, `git add . && git commit && git push`. **Au premier article publié** : décommenter les 3 blocs `<!-- BLOG : décommenter au 1er article -->` dans `index.html`.
 
@@ -23,7 +23,7 @@ Le vendredi, 15 minutes : relever les réactions. Dès la semaine 5, ce sont vos
 
 ---
 
-## Post 1 · lundi 6 juillet · Mateusz · Lancement
+## Post 1 · lundi 6 juillet · Jennifer · Lancement
 
 Notre nouveau site est en ligne. Il nous a servi de premier client.
 
@@ -132,7 +132,7 @@ https://aceconseil.co/amo-immobilier
 
 #VEFA #Immobilier
 
-## Post 7 · lundi 20 juillet · Mateusz · couplé à l'article n° 2
+## Post 7 · lundi 20 juillet · Jennifer · couplé à l'article n° 2
 
 Combien coûte une demande client perdue ? Voici la formule.
 
@@ -223,7 +223,7 @@ https://aceconseil.co/visibilite-prospection
 
 #VisibiliteLocale #TPE
 
-## Post 12 · vendredi 31 juillet · Mateusz · couplé à l'article n° 4
+## Post 12 · vendredi 31 juillet · Jennifer · couplé à l'article n° 4
 
 Ce qu'un agent IA ne fera jamais pour vous.
 
@@ -261,7 +261,7 @@ Ces posts accompagnent les articles des deux fils d'actualité (voir `docs/PLAN_
 
 ## Semaine 1
 
-### Lundi 14 juillet · Mateusz · fil AI Act
+### Lundi 14 juillet · Jennifer · fil AI Act
 
 Il existe une obligation sur l'intelligence artificielle, en vigueur depuis février 2025, que la quasi-totalité des dirigeants que je croise n'ont jamais entendue.
 
@@ -307,7 +307,7 @@ https://aceconseil.co/blog/ai-act-2-aout-ce-qui-change
 
 #IA #DirigeantsTPE
 
-### Mercredi 22 juillet · Mateusz · fil facture électronique (publié avec l'article)
+### Mercredi 22 juillet · Jennifer · fil facture électronique (publié avec l'article)
 
 PA, PDP, PPF. Trois sigles qui suffisent à faire refermer l'onglet à n'importe quel dirigeant.
 
@@ -337,7 +337,7 @@ Faites le test dans l'article : https://aceconseil.co/blog/site-artisan-elements
 
 ## Semaine 3 (du 27 juillet, la semaine du 2 août)
 
-### Lundi 27 juillet · Mateusz · fil AI Act (publié avec l'article)
+### Lundi 27 juillet · Jennifer · fil AI Act (publié avec l'article)
 
 J-6 avant le 2 août. Si votre équipe utilise l'IA et que rien n'est posé, il vous faut une demi-journée. Pas plus.
 
@@ -371,7 +371,7 @@ https://aceconseil.co/blog/recevoir-facture-electronique-sans-tout-changer
 
 #FactureElectronique #TPE
 
-### Vendredi 31 juillet · Mateusz · boucle visibilité (publié avec l'article)
+### Vendredi 31 juillet · Jennifer · boucle visibilité (publié avec l'article)
 
 Avant de cliquer sur votre site, vos clients ont déjà lu vos avis Google.
 
@@ -401,7 +401,7 @@ https://aceconseil.co/blog/ai-act-se-mettre-en-conformite-formation
 
 ## Semaine 4 (du 3 août)
 
-### Lundi 3 août · Mateusz · boucle IA (publié avec l'article)
+### Lundi 3 août · Jennifer · boucle IA (publié avec l'article)
 
 Depuis hier, l'essentiel du règlement européen sur l'IA s'applique, contrôles compris. Et la question que me posent les dirigeants n'a pas changé : « par où on commence, concrètement ? »
 
@@ -453,7 +453,7 @@ https://aceconseil.co/blog/locaux-professionnels-rendez-vous-decisifs
 
 ## Semaine 5 (du 10 août)
 
-### Lundi 10 août · Mateusz · fil réactivité (publié avec l'article)
+### Lundi 10 août · Jennifer · fil réactivité (publié avec l'article)
 
 Sur un chantier, les mains prises, le téléphone vibre dans la poche. Vous ne décrochez pas, et ce n'est pas le problème.
 
@@ -493,7 +493,7 @@ https://aceconseil.co/blog/facture-electronique-artisan-batiment
 
 #FactureElectronique #Batiment #TPE
 
-### Vendredi 14 août · Mateusz · ancrage Seine-et-Marne (publié avec l'article)
+### Vendredi 14 août · Jennifer · ancrage Seine-et-Marne (publié avec l'article)
 
 Des propositions commerciales circulent encore dans le 77 avec, en argument, le chèque numérique régional de 1 500 euros. Il est clos depuis le 24 octobre 2025, et la page de la Région le répète deux fois : aide définitivement close.
 
@@ -513,7 +513,7 @@ https://aceconseil.co/blog/digitaliser-tpe-seine-et-marne
 
 ## Semaine 6 (du 31 août)
 
-### Lundi 31 août · Mateusz · fil facture électronique (publié avec l'article)
+### Lundi 31 août · Jennifer · fil facture électronique (publié avec l'article)
 
 « À partir du 1er septembre, nous ne paierons plus les factures qui ne sont pas électroniques. » Cette note de service circule chez les sous-traitants. Un donneur d'ordre peut écrire cette phrase. Il ne peut pas la mettre à exécution.
 
@@ -541,13 +541,13 @@ Et le bouclier ne joue que dans un sens : vous devez pouvoir recevoir une factur
 
 L'article complet, avec le message entier et les recours dans l'ordre, est en premier commentaire.
 
-Mateusz
+Jennifer
 
 #FactureElectronique #TPE #SousTraitance
 
 **Premier commentaire :** Ce qu'un client peut exiger, ce qu'il ne peut pas, le message à envoyer et les quatre crans si le paiement reste bloqué : https://aceconseil.co/blog/facture-electronique-client-ne-peut-pas-imposer
 
-### Mercredi 2 septembre · Mateusz · fil facture électronique (publié avec l'article)
+### Mercredi 2 septembre · Jennifer · fil facture électronique (publié avec l'article)
 
 Vous n'êtes pas raccordé à une plateforme agréée depuis hier. Qu'est-ce que vous risquez, exactement ?
 
@@ -575,13 +575,13 @@ Une assistance officielle existe : le 0806 807 807, du lundi au vendredi de 8h30
 
 L'article complet est en premier commentaire.
 
-Mateusz
+Jennifer
 
 #FactureElectronique #TPE #Artisans
 
 **Premier commentaire :** Ce que dit vraiment l'article 1737 IV bis, ce que deviennent vos factures fournisseurs ce matin, et les neuf pièces à pouvoir montrer : https://aceconseil.co/blog/facture-electronique-pas-pret-ce-que-vous-risquez
 
-### Vendredi 4 septembre · Mateusz · service, enquête nationale IA (publié avec l'article)
+### Vendredi 4 septembre · Jennifer · service, enquête nationale IA (publié avec l'article)
 
 Une enquête nationale sur l'IA en entreprise ferme lundi 7 septembre. Elle est portée par Bpifrance, CCI France et la CPME.
 
@@ -607,7 +607,7 @@ La comparaison utile vient du même Bpifrance : son 82e baromètre a sollicité 
 
 Le réflexe vaut contre nous aussi. Le lien et le détail sont en premier commentaire.
 
-Mateusz
+Jennifer
 
 #IA #TPE #PME
 
