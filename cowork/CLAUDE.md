@@ -23,6 +23,8 @@ Attention à l'homonymie : plusieurs sociétés s'appellent ACE Conseil en Franc
 | `prospection/cible.md` | Qui contacter, et qui écarter. |
 | `prospection/sequence.md` | Les trois contacts et leurs délais. |
 | `prospection/modeles/` | Les mentions obligatoires, à reprendre telles quelles. |
+| `prospection/modeles/linkedin-mise-en-relation.md` | Les trois formats LinkedIn, et ce que le compte Premium change. |
+| `prospection/PROMPT_LINKEDIN.md` | Le prompt de session prêt à coller, pour préparer des mises en relation. |
 
 Le calendrier éditorial et le plan de publication sont à la racine du dépôt, dans `docs/PLAN_PUBLICATION_SEPTEMBRE.md`. La veille de rentrée, avec trente-six sujets sourcés et la liste de ce qu'il ne faut pas dire, est dans `docs/VEILLE_IA_ENTREPRISES_RENTREE_2026.md`.
 
