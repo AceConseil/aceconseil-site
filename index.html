@@ -12,7 +12,8 @@
 <meta property="og:image" content="https://aceconseil.co/og-image.png">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://aceconseil.co/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231B2A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23C9A24D' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -982,7 +983,8 @@ em.gold{font-style:italic;color:var(--gold)}
      Tant que la constante est vide, le formulaire bascule sur
      un email pré-rempli vers contact@aceconseil.co (mailto).
      ============================================================ */
-  var WEBHOOK_URL = "";
+  /* fonction serverless du projet, meme origine : passe sous la CSP connect-src 'self' */
+  var WEBHOOK_URL = "/api/contact";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1217,6 +1219,22 @@ em.gold{font-style:italic;color:var(--gold)}
   }, {rootMargin:"-45% 0px -50% 0px"});
   sections.forEach(function(id){ var el = document.getElementById(id); if(el){ ioNav.observe(el); } });
 
+  /* Le navigateur saute a l'ancre avant que les polices et les images aient
+     fixe la hauteur des sections : sur une page de 29 000 pixels, il retombe a
+     zero. On refait le saut une fois la mise en page stabilisee. */
+  var viserAncre = function(){
+    if(!window.location.hash) { return; }
+    var cible = document.getElementById(window.location.hash.slice(1));
+    if(!cible) { return; }
+    var y = cible.getBoundingClientRect().top + window.scrollY - 70;
+    if(Math.abs(window.scrollY - y) > 40){ window.scrollTo({ top: y, behavior: "auto" }); }
+  };
+  window.addEventListener("load", function(){
+    viserAncre();
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(viserAncre); }
+    setTimeout(viserAncre, 350);
+  });
+
   /* formulaire */
   var form = document.getElementById("contactForm");
   var btn = document.getElementById("formBtn");
@@ -1241,18 +1259,23 @@ em.gold{font-style:italic;color:var(--gold)}
       window.location.href = "mailto:contact@aceconseil.co?subject=" + encodeURIComponent("[Site] " + data.sujet + " · " + data.nom) + "&body=" + body;
       return;
     }
-    if(window.va){ window.va("event", { name: "formulaire-envoye", data: { sujet: data.sujet, voie: "webhook" } }); }
+    if(window.va){ window.va("event", { name: "formulaire-envoye", data: { sujet: data.sujet, voie: "fonction" } }); }
     btn.disabled = true; btn.style.opacity = ".6";
     status.className = "form-status";
     fetch(WEBHOOK_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
       .then(function(r){
-        if(!r.ok){ throw new Error(r.status); }
-        /* page de confirmation : point de mesure des conversions (Ads, analytics) */
-        window.location.href = "/merci";
+        return r.json().catch(function(){ return {}; }).then(function(j){
+          if(!r.ok){ throw new Error(j.erreur || "envoi impossible"); }
+          /* page de confirmation : point de mesure des conversions */
+          window.location.href = "/merci";
+        });
       })
-      .catch(function(){
-        status.textContent = "L'envoi n'a pas abouti. Utilisez le bouton « Afficher le numéro » ou écrivez à contact@aceconseil.co.";
+      .catch(function(err){
+        status.textContent = (err && err.message && err.message !== "Failed to fetch")
+          ? err.message
+          : "L'envoi n'a pas abouti. Utilisez le bouton « Afficher le numéro » ou écrivez à contact@aceconseil.co.";
         status.className = "form-status err";
+        if(window.va){ window.va("event", { name: "formulaire-echec", data: { sujet: data.sujet } }); }
       })
       .then(function(){ btn.disabled = false; btn.style.opacity = "1"; });
   });
