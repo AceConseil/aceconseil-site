@@ -680,6 +680,32 @@ function breadcrumbLd(items) {
   };
 }
 
+// Fiche auteur : titre exact et profils publics rattaches, pour que Google
+// relie l'article a une personne identifiable et non a une simple chaine.
+const AUTEURS = {
+  'Jennifer Carrolo': {
+    jobTitle: 'Cofondatrice, ACE Conseil',
+    sameAs: ['https://www.linkedin.com/in/jennifer-carrolo'],
+  },
+  'Mateusz Myja': {
+    jobTitle: 'Cofondateur, ACE Conseil',
+  },
+};
+
+function auteurLd(nom) {
+  const cle = nom || 'Mateusz Myja';
+  const fiche = AUTEURS[cle];
+  if (!fiche) throw new Error(`Auteur inconnu dans le front-matter : ${cle}`);
+  const ld = {
+    '@type': 'Person',
+    name: cle,
+    jobTitle: fiche.jobTitle,
+    worksFor: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
+  };
+  if (fiche.sameAs) ld.sameAs = fiche.sameAs;
+  return ld;
+}
+
 function buildArticle(article, template) {
   const { meta, html } = article;
   const canonical = `${SITE}/blog/${meta.slug}`;
@@ -691,12 +717,7 @@ function buildArticle(article, template) {
     datePublished: meta.date,
     url: canonical,
     mainEntityOfPage: canonical,
-    author: {
-      '@type': 'Person',
-      name: meta.auteur || 'Mateusz Myja',
-      jobTitle: 'Cofondateur, ACE Conseil',
-      worksFor: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
-    },
+    author: auteurLd(meta.auteur),
     publisher: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
   };
   // dateModified n'est posee que lorsqu'un article a reellement ete corrige,
