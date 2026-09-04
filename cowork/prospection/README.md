@@ -24,3 +24,13 @@ Envoi réservé à une action humaine.
 ## Le point le plus important
 
 Tu n'envoies rien. Jamais. Ni message, ni relance programmée, ni demande de connexion, ni appel. Les délais de `sequence.md` déclenchent des **rappels adressés à un humain**, pas des envois.
+
+## Le dossier de Jennifer, à part
+
+L'AMO immobilier a sa propre prospection, avec d'autres cibles, d'autres signaux et un autre moment décisif. Elle vit dans un dossier autonome du Drive du cabinet :
+
+`Mon Drive/Pro/ACE - Prospection LinkedIn/`
+
+Ce dossier est une copie autonome, pas un miroir. Seuls `regles/voix.md`, `regles/limites.md` et le modèle LinkedIn y sont partagés avec celui-ci, et la règle 7 des limites y est adaptée à l'AMO. Si l'un de ces trois fichiers change ici, il faut le recopier là-bas. Le reste, cible, registre et brouillons, appartient à Jennifer et ne se recopie de nulle part.
+
+Ne fusionnez pas les deux registres : une opposition exprimée à l'un vaut pour les deux, et c'est la seule chose qui doit circuler dans les deux sens.
