@@ -39,3 +39,7 @@ Une publication n'est donc pas finie quand elle est écrite ici. Elle l'est quan
 Dépose le fichier avec sa date de parution en nom, son premier commentaire inclus. Jennifer relit, publie depuis son profil, et déplace le fichier dans `parues/`.
 
 Sans ce dépôt, la publication reste dans le dépôt et n'atteint jamais le profil qui doit la porter.
+
+Des places réservées y attendent déjà les publications de la semaine du 7 septembre, avec le statut `en-attente-de-redaction`. Remplace le fichier, ne le double pas : Jennifer se fie à la présence du fichier pour savoir ce qui arrive.
+
+Elle travaille selon un rituel hebdomadaire décrit dans `RITUEL.md` de ce dossier partagé : préparation et programmation le lundi via le planificateur natif de LinkedIn, premier commentaire le jour de la parution, prospection le jeudi, relances chaque matin. Une publication déposée après le lundi matin rate la session de programmation.
