@@ -933,7 +933,9 @@ h1{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(
 .footer{background:var(--navy-deep);color:var(--muted-light);border-top:1px solid rgba(201,162,77,.14);padding:44px 0}
 .footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
 .footer-legal{font-size:.82rem}
-.footer-links{display:flex;gap:26px;font-size:.85rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:.85rem;min-width:0}
+/* sans flex-wrap, les quatre liens font 406 px et poussent le document a 422 px
+   sur un ecran de 390 : toute la page glissait lateralement au defilement. */
 .footer-links a{text-decoration:none;color:var(--muted-light);transition:color .3s}
 .footer-links a:hover{color:var(--gold-light)}
 </style>
