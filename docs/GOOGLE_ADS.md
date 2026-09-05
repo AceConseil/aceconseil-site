@@ -1,122 +1,124 @@
-# Plan média Google Ads : ACE Conseil
+# Google Ads : étude de faisabilité et décision
 
-Préparé comme le livrerait un cabinet spécialisé : stratégie, structure de compte, ciblages, mots-clés, annonces prêtes à coller, budgets et seuils de décision. Les CPC sont des estimations France à valider dans le Keyword Planner à l'ouverture du compte (outil gratuit, menu Outils → Planification).
+**Décision : non, pas maintenant. Et la raison n'est ni le budget ni les mots-clés.**
 
----
+Étude du 5 septembre 2026. Huit lentilles de diagnostic, trois scénarios conçus séparément, neuf jurés, et douze affirmations structurantes soumises à deux vérificateurs chacune. Quarante-quatre agents, aucun échec.
 
-## 0. Le prérequis avant le premier euro : la mesure
-
-Sans conversions mesurées, Google Ads dépense à l'aveugle et ses algorithmes n'apprennent rien. État actuel du site : aucun cookie (choix assumé), formulaire en mailto (invisible pour Ads). Plan de mesure en trois niveaux :
-
-1. **Jour 1, sans toucher au site : le suivi d'appels Google.** Les extensions d'appel et campagnes d'appel utilisent un numéro de transfert Google : l'appel est compté comme conversion (réglage : durée minimale 40 secondes) sans aucun tag sur le site, donc sans cookie. C'est la conversion principale du compte, cohérente avec le parcours du site (l'appel à Jennifer).
-2. **Jour 1, manuel : la question rituelle.** « Comment nous avez-vous trouvés ? » à chaque premier contact, consigné. C'est la vérité terrain qui recoupe les chiffres Ads.
-3. **Semaine 2-3, recommandé : conversion formulaire.** Brancher `WEBHOOK_URL` (le formulaire cesse d'être mailto), rediriger vers une page `/merci`, et poser le tag Google Ads en Consent Mode v2 avec un bandeau minimal. Impact : une ligne à mettre à jour dans les mentions légales. Sans cette étape, seuls les appels comptent ; c'est acceptable pour le test, limitant pour l'échelle. (Implémentation possible sur demande : page /merci + endpoint.)
-
-Toutes les URL finales portent des UTM (`?utm_source=google&utm_medium=cpc&utm_campaign=...`) : sans cookie, ils restent lisibles dans les demandes reçues et prêts pour un futur outil de mesure.
+Ce document remplace la version du 6 juillet 2026, dont plusieurs prémisses sont fausses : elle décrivait le formulaire comme un lien mailto, ignorait l'en-tête de sécurité du site, et désignait comme « la pépite » une campagne AMO visant les particuliers en VEFA, alors que l'AMO du cabinet vise les entreprises.
 
 ---
 
-## 1. Priorisation des offres (toutes ne méritent pas d'Ads)
+## 1. Le classement des trois scénarios
 
-| Offre | Intention de recherche | Ticket | Verdict |
+| Scénario | Note du jury | Budget | Mise en place |
 |---|---|---|---|
-| Site professionnel 499 | Forte (« création site artisan ») | Faible mais prix affiché = arme | **Campagne 1, lancement** |
-| Automatisation + Agents IA | Moyenne à forte, requêtes « douleur » | Élevé | **Campagne 2, lancement** |
-| AMO VEFA | Très forte et très ciblée (« visite cloisons »), faible concurrence | Moyen | **Campagne 3, lancement** (la pépite) |
-| Formation IA | Moyenne, cycles d'achat B2B | Moyen | Campagne 4, mois 2 si budget |
-| Visibilité / prospection | Marché saturé d'agences, CPC élevés | Élevé | Non : canal organique et prescripteurs |
-| Stratégie commerciale | Requêtes floues, faible intention | Élevé | Non : LinkedIn et contenu |
+| Reporter et rendre la mesure vraie d'abord | **6,00 / 10** | 1200 euros sur 22 semaines | 46 heures |
+| Acheter sans aucun traceur | 5,33 / 10 | 900 euros sur 6 semaines | 25 heures |
+| Mesure complète assumée, avec bandeau | 3,67 / 10 | 2387 euros sur 22 semaines | 75 heures |
+
+Aucun n'atteint 7. C'est en soi un résultat : il n'existe pas aujourd'hui de bonne façon de faire de la publicité payante sur ce dossier, seulement une moins mauvaise.
 
 ---
 
-## 2. Structure du compte
+## 2. Les quatre constats qui décident
 
-Réseau de recherche uniquement (pas de Display ni Performance Max avant d'avoir 30+ conversions : les algorithmes sans données gaspillent). Langue française. Enchères : « Maximiser les clics » avec CPC max plafonné les 3 premières semaines, bascule en tCPA dès 15-20 conversions.
+### La condition écrite dans le plan de l'année n'est pas remplie, et elle ne peut pas l'être sans code
 
-### Campagne 1 · SITE-499 (Search, France entière)
+Le plan conditionne Google Ads à ce que « les conversions soient comptées ». Vérifié dans le dépôt : la charge utile envoyée à `/api/contact` par `index.html` contient huit champs, dont un `source` codé en dur à `"aceconseil.co"`. Aucune lecture de `location.search`, aucune lecture du référent. La fonction serverless ignore silencieusement tout champ supplémentaire.
 
-- **Cible** : artisans, indépendants et TPE sans site ou avec un site honteux. Décideur = le dirigeant lui-même, souvent sur mobile le soir.
-- **Landing** : `https://aceconseil.co/#offre-site` (le prix de l'annonce doit se retrouver à l'atterrissage, c'est la seule section du site qui l'affiche). UTM : `utm_campaign=site-499`.
-- **Calendrier** : 7 h-22 h, 7 j/7 (les artisans cherchent le soir et le dimanche).
-- **Groupes d'annonces / mots-clés** (exact + expression) :
-  - *Création artisan* : [création site internet artisan], "site internet artisan", [site internet pour artisan], "créer site artisan" · CPC estimé 1,5-3 €
-  - *Création TPE/indépendant* : [création site internet petite entreprise], "site internet auto entrepreneur", [site vitrine tpe], "création site vitrine prix" · CPC 2-4 €
-  - *Refonte* : "refaire son site internet", [refonte site vitrine], "site internet obsolète" · CPC 1,5-3 €
-- **Annonces RSA** (titres ≤ 30 c, descriptions ≤ 90 c) :
-  - Titres : « Site professionnel à 499 € HT » · « Prix unique, affiché, assumé » · « Livré en 7 jours ouvrés » · « Design, textes, mise en ligne » · « Site d'artisan qui convertit » · « Fait sonner votre téléphone » · « Sans abonnement caché » · « Une série de retours incluse »
-  - Descriptions : « Page complète : design sur mesure, textes pour vos clients. 499 € HT, livrée en 7 jours. » · « Référencement local inclus. Vous restez propriétaire de tout. Appel de cadrage en 20 min. » · « L'IA a réduit le coût de production d'un site. Nous répercutons la différence, pas la qualité. » · « Formulaire et numéro reliés à votre boîte mail. Affichage mobile impeccable. »
-- **Extensions** : liens annexes (Voir l'offre 499 → /#offre-site · Notre méthode → /#methode · Exemples de ce qui est inclus → /sites-web · Nous appeler → /#contact), accroches (Prix unique affiché · Livraison 7 jours · Sans engagement · Propriété totale), extrait de site (Services : Design, Textes, Mise en ligne, Référencement local), **extension d'appel** aux heures ouvrées.
+**Aucun euro dépensé ne pourrait être rattaché à une demande.** Ni par campagne, ni par groupe d'annonces, ni par mot-clé. Pas même à la main, en relisant le courriel reçu : il ne porte aucune trace de la provenance.
 
-### Campagne 2 · AUTO-IA (Search, France entière)
+### L'en-tête de sécurité interdit physiquement le tag, et l'ouvrir coûte cher
 
-- **Cible** : dirigeants de TPE/PME de 2 à 50 personnes noyés dans l'administratif ou qui perdent des demandes. Requêtes de douleur plus que de solution.
-- **Landing par groupe** : `/automatisation` et `/agents-ia`. UTM : `utm_campaign=auto-ia`.
-- **Groupes / mots-clés** :
-  - *Relances & devis* (LP /automatisation) : "relance devis automatique", [logiciel relance client], "automatiser ses devis", "relance facture impayée automatique" · CPC 1-2,5 € (niche peu disputée, très forte intention)
-  - *Automatisation TPE/PME* (LP /automatisation) : [automatisation entreprise], "automatiser tâches administratives", [automatisation pme], "connecter ses logiciels" · CPC 2-5 €
-  - *Agents & secrétariat IA* (LP /agents-ia) : [agent ia entreprise], "ia pour pme", "secrétariat automatique", [répondre clients automatiquement], "chatbot devis artisan" · CPC 2-4,5 €
-- **Annonces RSA** :
-  - Titres : « Vos outils se parlent enfin » · « Relances envoyées sans vous » · « Fini la double saisie » · « Agent IA sur vos outils » · « Réponse à vos clients 24 h/24 » · « Diagnostic chiffré d'abord » · « Vous restez propriétaire » · « TPE, artisans et PME »
-  - Descriptions : « Devis, factures, planning : l'information circule seule et les relances partent sans vous. » · « Un agent IA répond, qualifie et prépare vos devis avec vos règles. L'humain décide. » · « On chiffre d'abord ce que la situation vous coûte. Vous décidez avec les chiffres sous les yeux. » · « Appel de cadrage de 20 minutes, sans engagement. On vous dit franchement si ça vaut le coup. »
-- **Extensions** : liens (Calculez votre manque à gagner → /#preuves · Les agents IA en détail → /agents-ia · L'automatisation en détail → /automatisation · Notre méthode → /#methode), accroches (Sur vos outils existants · Zéro abonnement imposé · Documentation incluse · Réponse sous 1 jour ouvré), extension d'appel.
+L'en-tête servi en production est `script-src 'self' 'unsafe-inline'` et `connect-src 'self'`. Le tag Google se charge depuis `googletagmanager.com` et poste vers `googleadservices.com` : les deux sont bloqués.
 
-### Campagne 3 · AMO-VEFA (Search, Île-de-France)
+Poser le tag suppose d'ouvrir cinq domaines Google en exécution de script sur les 34 pages. La documentation de Google recommande d'utiliser un nonce plutôt que `'unsafe-inline'` pour limiter le risque, mais ce site a besoin de `'unsafe-inline'` pour son propre formulaire : la protection recommandée est inapplicable sans refonte.
 
-- **Cible** : particuliers acquéreurs en VEFA (25-50 ans, souvent primo-accédants) à l'approche d'une visite ou d'une livraison ; investisseurs. Urgence réelle, décision rapide, quasi aucun concurrent en Ads local.
-- **Géo** : Île-de-France + zone de présence (rayon 60 km autour d'Annet-sur-Marne en priorité d'enchère).
-- **Landing** : `/amo-immobilier`. UTM : `utm_campaign=amo-vefa`.
-- **Calendrier** : 8 h-21 h + week-end (les visites se préparent le week-end). Extension d'appel selon les disponibilités réelles de Jennifer.
-- **Groupes / mots-clés** :
-  - *Visites clés* : "visite cloisons vefa", [visite cloisons], "accompagnement visite cloisons", "pré livraison vefa" · CPC 0,5-1,5 €
-  - *Livraison & réserves* : "livraison appartement neuf accompagnement", [réserves livraison vefa], "expert livraison vefa", "défauts appartement neuf livraison" · CPC 0,8-2 €
-  - *AMO acquéreur* : [amo immobilier], "assistance maîtrise ouvrage particulier", "se faire accompagner achat vefa" · CPC 1-2,5 €
-- **Annonces RSA** :
-  - Titres : « N'y allez pas seul » · « Visite cloisons accompagnée » · « 10 ans d'expérience VEFA » · « Chaque réserve consignée » · « Livraison VEFA sereine » · « Vos intérêts, pas les leurs » · « Intervention Île-de-France » · « Appelez avant votre visite »
-  - Descriptions : « À la livraison, ce qui n'est pas écrit n'existe pas. Nous vérifions et consignons tout. » · « Le promoteur livre chaque semaine, vous une fois. Soyez accompagné par un professionnel. » · « Travaux modificatifs, cloisons, pré-livraison, livraison, réserves : présence aux étapes qui engagent. » · « Premier échange de 20 minutes sans engagement pour situer votre opération et vos échéances. »
-- **Extensions** : liens (Les moments où tout se joue → /amo-immobilier · Qui vous accompagne → /#equipe · Nous appeler → /#contact), accroches (10 ans VEFA et marchés publics · Présence aux visites · Tout est consigné par écrit · Sans engagement).
+Autoriser `googletagmanager.com` donne à quiconque accède à l'interface de gestion des balises le pouvoir d'exécuter du JavaScript sur toutes les pages, **sans déploiement et sans passer par le dépôt**. Sur un cabinet qui vend de la rigueur numérique, l'en-tête strict est le second actif de conformité après les mentions légales.
 
-### Mots-clés négatifs (toutes campagnes, dès le jour 1)
+Le mode consentement version 2 ne règle rien : il n'existe qu'à l'intérieur du tag que l'en-tête bloque.
 
-gratuit, emploi, salaire, formation (sauf campagne 4), cours, stage, alternance, définition, wordpress, wix, template, logiciel gratuit, crack, avis (à surveiller), exemple pdf, mémoire, tuto, youtube. Pour AMO : promoteur (côté offre d'emploi), constructeur maison individuelle, CCMI (hors périmètre si non couvert). Revue des termes de recherche 2 fois/semaine les 3 premières semaines : c'est là que se gagne le budget.
+### L'économie ne se referme pas sur l'offre à 499 euros
+
+Seule offre avec un prix public. Chaîne d'hypothèses raisonnable, et elles sont marquées comme telles puisque aucune donnée de conversion n'existe : 2 % de transformation de la page, 50 % de la demande au rendez-vous, 15 % du rendez-vous à la signature. Soit **667 clics par mission signée, donc 0,75 euro de coût par clic maximal**.
+
+Dans le coin le plus optimiste défendable (4 %, 60 %, 25 %), le plafond monte à 3 euros, mais à marge nulle avant tout coût de temps.
+
+Face à cela, l'ancienne version de ce document estimait ces clics entre 1,50 et 4 euros. **La campagne est structurellement déficitaire aux propres hypothèses de coût du document.** Elle ne doit pas être lancée, quel que soit le budget.
+
+Le modèle ne se referme qu'à partir d'un ticket de 2400 euros. Or les offres à ce niveau n'ont aujourd'hui ni prix public, ni page d'atterrissage avec formulaire, ni une seule impression de demande mesurée.
+
+### La plus grosse famille de demande vise un produit que le cabinet ne vend pas
+
+La grappe facture électronique pèse 139 impressions sur 59 requêtes, et son intention commerciale est forte. Mais la formulation dit ce qui est acheté : « plateforme agréée facturation électronique », « comparatif pdp », « meilleure pdp pour tpe ». **L'objet de l'achat est un abonnement logiciel.**
+
+Les enchérisseurs de ce terrain amortissent un clic sur des années de revenu récurrent. ACE amortit sur une prestation ponctuelle sans prix public. Et la liste officielle que ces chercheurs veulent est publiée gratuitement par la DGFiP.
+
+C'est de l'audience à informer, pas de la demande à acheter.
 
 ---
 
-## 3. Budgets, coûts et projections
+## 3. Une correction que je dois à mes propres analyses
 
-### Scénario TEST recommandé : 20 €/jour, 8 semaines (~1 200 € au total)
+J'ai plusieurs fois utilisé le « zéro clic » de la grappe facture comme un signal. **C'était sans fondement.**
 
-| Campagne | Budget/jour | CPC moyen estimé | Clics/mois | Taux contact estimé* | Contacts/mois | Coût/contact |
-|---|---|---|---|---|---|---|
-| SITE-499 | 8 € | 2,20 € | ~110 | 4-6 % | 4-7 | 35-60 € |
-| AUTO-IA | 7 € | 2,80 € | ~75 | 3-5 % | 2-4 | 55-105 € |
-| AMO-VEFA | 5 € | 1,20 € | ~125 | 5-8 % | 6-10 | 15-25 € |
+À la position 42, soit la cinquième page de résultats, le nombre de clics attendu sur 139 impressions est inférieur à un, quelle que soit l'intention du chercheur. Le zéro observé est exactement le zéro prédit.
 
-*Contacts = appels 40 s+ et formulaires. Hypothèses prudentes de sites B2B locaux ; vos chiffres réels remplaceront ces estimations dès la semaine 3.
+L'export établit trois choses, et trois seulement : que la demande existe, comment elle se formule, et qui elle vise. Il ne mesure ni le volume du marché, ni le taux de transformation. Il est donc interdit d'en conclure « ces requêtes ne convertissent pas », et symétriquement interdit d'en conclure « 139 impressions, c'est trop petit pour acheter ».
 
-**Lecture rentabilité** : un site 499 signé couvre ~10 jours de sa campagne ; une mission automatisation moyenne couvre plusieurs mois de tout le compte ; l'AMO est probablement votre meilleur coût/contact du marché francilien. Le test complet coûte moins qu'une seule mission moyenne : c'est le prix de la donnée.
-
-### Scénario CROISSANCE (si les seuils sont atteints) : 40-50 €/jour (~1 350 €/mois)
-
-Réallocation selon coût/contact réel, ajout campagne 4 Formation IA (LP /formation-ia, mots-clés "formation ia entreprise", "former équipe intelligence artificielle", CPC 3-6 €), passage en tCPA, extension géo AMO (grandes métropoles avec déplacement facturé ou visio documentaire).
-
-### Seuils de décision (gates), à trancher sans état d'âme
-
-- **J+14** : un mot-clé a dépensé 3× le CPC moyen sans clic qualifié → pause. CTR d'un groupe < 2 % → réécrire les annonces.
-- **J+30** : coût/contact d'une campagne > 2× la cible ci-dessus → refonte du ciblage ou pause. Dans la cible → +50 % de budget sur la campagne gagnante.
-- **J+60** : bilan global. Coût par rendez-vous obtenu comparé au canal LinkedIn ; on ne garde que ce qui bat votre coût d'acquisition actuel.
+Les volumes français réels ne s'obtiennent que dans le Planificateur de mots-clés, qui est gratuit et ne demande aucune campagne en diffusion.
 
 ---
 
-## 4. Check-list de lancement
+## 4. Le piège que personne n'avait vu
 
-1. Compte Google Ads sur le compte Workspace (contact@aceconseil.co), facturation, fuseau Paris, **désactiver les suggestions automatiques d'application** (auto-apply) : un cabinet ne laisse jamais Google modifier le compte seul.
-2. Ne PAS accepter le « mode intelligent » : passer en mode expert dès la création.
-3. Conversions : créer « Appels depuis annonces » (40 s) avant toute mise en ligne.
-4. Créer les 3 campagnes ci-dessus, budgets 8/7/5, enchères Maximiser les clics avec CPC max 3,50 € (SITE), 4,50 € (AUTO-IA), 2,50 € (AMO).
-5. Coller mots-clés, négatifs, RSA, extensions. Vérifier chaque URL finale avec ses UTM.
-6. Semaine 1 : rapport des termes de recherche à J+3 et J+7, ajout de négatifs.
-7. Rituel hebdo (30 min, vendredi, avec le relevé LinkedIn) : dépense, clics, CTR, contacts, termes de recherche, décisions notées dans ce fichier.
+Même en ne posant **aucun tag**, lancer une campagne casserait une phrase publiée hier.
 
-## 5. Ce qu'un cabinet vous facturerait, et ce qui reste chez vous
+Google ajoute automatiquement un identifiant de clic unique à l'adresse d'atterrissage, sous la forme `?gclid=...`. Or le script de mesure d'audience installé sur les 34 pages transmet `location.href` intact, paramètres compris. Vérifié en lisant le script servi : la valeur n'est jamais nettoyée.
 
-Setup équivalent : 600-900 € ; gestion mensuelle : 300-500 €/mois. Ce document remplace le setup. La gestion reste votre travail hebdomadaire (30-45 min) ; si un jour elle est déléguée, exiger l'accès propriétaire au compte et ce document comme cahier des charges.
+**Un identifiant publicitaire unique partirait donc chez le prestataire de mesure dès le premier clic payant**, alors que les mentions légales affirment qu'« aucun identifiant publicitaire n'est utilisé ».
+
+Aucun cookie n'est posé, l'article 82 n'est pas déclenché, aucun bandeau ne devient obligatoire. Mais la phrase publiée devient fausse, et c'est exactement le genre d'incohérence qu'un cabinet vendant de la conformité ne peut pas se permettre.
+
+Correctif : trois lignes, un `beforeSend` qui retire la chaîne de requête avant l'envoi.
+
+---
+
+## 5. Ce qu'il faut faire d'abord, et qui coûte trois heures
+
+Deux corrections rendent la mesure vraie sans cookie, sans bandeau, sans toucher à l'en-tête de sécurité, et sans nouveau sous-traitant.
+
+**Capter la provenance dans le formulaire.** Lire `gclid` et les paramètres `utm_` depuis l'adresse en JavaScript de première partie, ce que l'en-tête autorise, les ajouter à la charge utile, et les afficher dans le courriel reçu. Chaque demande dira alors d'où elle vient. Deux heures.
+
+**Nettoyer la chaîne de requête avant la mesure d'audience.** Le `beforeSend` décrit plus haut. Une heure.
+
+Une limite à connaître : les sept pages piliers n'ont pas de formulaire et renvoient vers `index.html#contact` par une navigation dure, qui efface les paramètres. La capture ne fonctionnera donc que pour un visiteur qui atterrit sur l'accueil. Faire survivre l'identifiant d'une page à l'autre imposerait du stockage sur l'appareil, ce que les mentions légales excluent. C'est un argument de plus pour que toute campagne future pointe vers des pages d'atterrissage autonomes, formulaire inclus dans la page.
+
+---
+
+## 6. Ce que valent 1200 euros et quelques heures, ailleurs, maintenant
+
+Le jury a classé ces alternatives devant Google Ads, et pour une raison simple : elles produisent un signal plus tôt et laissent un actif derrière elles.
+
+**La mise en balance des intérêts légitimes**, trois heures, qui dégèle la prospection sortante aujourd'hui bloquée pour une raison de conformité et non de méthode. Gratuit.
+
+**La fiche Google Business**, qui est la seule chose répondant aux six sociétés portant exactement le même nom, et le seul actif local du cabinet. Gratuit.
+
+**Le Planificateur de mots-clés**, qui donne enfin les volumes français réels sur les familles candidates. Gratuit, sans campagne, sans diffusion, compte ouvert en mode expert. C'est la donnée qui manque à toute cette étude.
+
+**Les deux familles mesurées du plan de l'année**, qui sont l'investissement dont l'effet ne s'arrête pas quand on cesse de payer.
+
+---
+
+## 7. Les conditions datées qui rouvriront le dossier
+
+Google Ads redevient une option le jour où les quatre conditions suivantes sont vraies ensemble. Pas avant, et sans négociation.
+
+1. **La provenance est captée**, vérifiée par trois envois d'essai depuis trois appareils avec un `gclid` de test retrouvé intact dans le courriel reçu.
+2. **Le relevé du Planificateur existe**, écrit et daté dans ce document, avec les volumes France des familles candidates. Si la famille visée totalise moins de 300 recherches mensuelles, le dossier reste fermé.
+3. **Une offre à ticket suffisant a un prix public et une page d'atterrissage autonome**, formulaire inclus dans la page. Le seuil est 2400 euros, en dessous le modèle ne se referme pas.
+4. **Au moins trois demandes entrantes ont été tracées par le circuit organique**, ce qui donne enfin un taux de transformation de référence pour calibrer une enchère.
+
+La condition 4 est celle que le plan de l'année vise pour décembre. C'est aussi la seule qui ne s'achète pas.
+
+**Une exception, et une seule.** Quelques euros par mois sur la requête de marque exacte « ace conseil » pourraient se défendre, face à cinq homonymes actifs et à un cabinet qui détient le domaine en `.fr` depuis 1997. Mais c'est une dépense défensive et non un canal d'acquisition : elle se décide séparément, après la fiche Google, qui traite le même problème gratuitement.
