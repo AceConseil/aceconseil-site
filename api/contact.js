@@ -153,18 +153,35 @@ ${tracage.map(([k, v]) => `<tr><td style="color:#7A8499">${echapper(k)}</td><td>
     + '\n\nMessage :\n' + message
     + (tracage.length ? '\n\nProvenance :\n' + tracage.map(([k, v]) => `${k} : ${v}`).join('\n') : '\n\nProvenance : aucune captée.');
 
+  const destinataire = process.env.CONTACT_TO || user;
+
   try {
-    await obtenirTransporteur(user, pass).sendMail({
+    const info = await obtenirTransporteur(user, pass).sendMail({
       // Google impose que l'expediteur soit le compte authentifie ou un de ses
       // alias verifies : on garde donc l'adresse du compte et on place celle du
       // prospect en reponse, pour repondre d'un seul geste.
       from: `"Site ACE Conseil" <${user}>`,
-      to: process.env.CONTACT_TO || user,
+      to: destinataire,
       replyTo: `"${nom.replace(/"/g, '')}" <${email}>`,
       subject: `[Site] ${sujet} · ${nom}`,
       text: brut,
       html,
     });
+
+    // Le serveur de messagerie peut accepter la connexion et refuser le
+    // destinataire sans lever d'erreur. Sans ce controle, la fonction repondait
+    // « envoye » alors que rien n'etait parti, ce qui est arrive le 5 septembre.
+    const accepte = Array.isArray(info && info.accepted) ? info.accepted : [];
+    const refuse = Array.isArray(info && info.rejected) ? info.rejected : [];
+    if (!accepte.length || refuse.length) {
+      console.error('contact: destinataire refusé', JSON.stringify({ accepte, refuse, reponse: info && info.response }));
+      return res.status(502).json({
+        erreur: "L'envoi n'a pas abouti. Appelez-nous ou écrivez à contact@aceconseil.co.",
+      });
+    }
+
+    // L'identifiant permet de retrouver le message dans les journaux Google.
+    console.log('contact: remis', JSON.stringify({ id: info.messageId, accepte, reponse: info.response }));
     return res.status(200).json({ ok: true });
   } catch (e) {
     // On journalise le motif du refus, jamais le contenu du message du visiteur.
