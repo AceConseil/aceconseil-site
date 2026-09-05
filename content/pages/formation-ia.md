@@ -10,7 +10,7 @@ date: 2026-07-03
 
 La plupart des formations à l'intelligence artificielle laissent les équipes exactement là où elles les ont prises : impressionnées, et démunies. Notre parti pris est inverse : une formation courte, construite sur votre entreprise, dont on mesure l'effet au lundi suivant.
 
-Depuis 2025, cette montée en compétence n'est d'ailleurs plus seulement une bonne pratique : l'article 4 de l'AI Act en fait une obligation pour toute entreprise qui utilise l'IA, sans seuil de taille. Nous l'expliquons dans [notre article sur l'article 4 de l'AI Act](/blog/ai-act-article-4-maitrise-ia).
+Une précision qui joue contre nous, et que nous préférons écrire. Jusqu'au 27 juillet 2026, l'article 4 de l'AI Act demandait aux entreprises utilisant l'IA de garantir un niveau suffisant de maîtrise à leurs équipes. Le [règlement (UE) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) l'a réécrit : il s'agit désormais de favoriser cette montée en compétence, non plus de la garantir. Il n'existe donc aucune obligation de formation à l'IA opposable à une TPE ou à une PME, et nous avons retiré cet argument de cette page le 5 septembre 2026. Se former reste utile, pour les raisons qui suivent. Ce n'est pas une contrainte réglementaire, et vous la présenter comme telle serait malhonnête. Nous détaillons ce qui a changé dans [notre article sur l'article 4 de l'AI Act](/blog/ai-act-article-4-maitrise-ia).
 
 ## Pourquoi les formations génériques ne changent rien
 
