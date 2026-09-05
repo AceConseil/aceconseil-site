@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ACE Conseil · Agents IA, automatisation & acquisition pour TPE et PME</title>
-<meta name="description" content="Agents IA, automatisation, sites web, acquisition et stratégie commerciale pour TPE, artisans et PME. Intervention France entière et à l'international.">
+<title>ACE Conseil · cabinet IA et automatisation à Annet-sur-Marne (77)</title>
+<meta name="description" content="Cabinet de conseil de Jennifer Carrolo et Mateusz Myja, à Annet-sur-Marne en Seine-et-Marne. Agents IA, automatisation, sites web et acquisition pour artisans, TPE et PME.">
+<meta property="og:site_name" content="ACE Conseil">
 <meta property="og:title" content="ACE Conseil · Plus de clients. Plus de temps. Enfin les deux.">
 <meta property="og:description" content="Agents IA, automatisation, sites web nouvelle génération et acquisition pour TPE & PME.">
 <meta property="og:type" content="website">
@@ -20,18 +21,56 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "ACE Conseil",
-  "url": "https://aceconseil.co",
-  "telephone": "+33665704793",
-  "email": "contact@aceconseil.co",
-  "description": "Cabinet de conseil B2B : agents IA, automatisation, sites web, acquisition et stratégie commerciale pour TPE, artisans et PME.",
-  "address": { "@type": "PostalAddress", "streetAddress": "15 allée des Plantes", "postalCode": "77410", "addressLocality": "Annet-sur-Marne", "addressCountry": "FR" },
-  "areaServed": "FR",
-  "sameAs": ["https://www.linkedin.com/in/jennifer-carrolo"],
-  "founder": [
-    { "@type": "Person", "name": "Jennifer Carrolo", "jobTitle": "Cofondatrice", "sameAs": ["https://www.linkedin.com/in/jennifer-carrolo"] },
-    { "@type": "Person", "name": "Mateusz Myja", "jobTitle": "Cofondateur" }
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://aceconseil.co/#organization",
+      "name": "ACE Conseil",
+      "legalName": "ACE CONSEIL",
+      "alternateName": "ACE Conseil Annet-sur-Marne",
+      "url": "https://aceconseil.co",
+      "logo": { "@type": "ImageObject", "url": "https://aceconseil.co/logo.png", "width": 512, "height": 512 },
+      "image": "https://aceconseil.co/og-image.png",
+      "telephone": "+33665704793",
+      "email": "contact@aceconseil.co",
+      "description": "Cabinet de conseil B2B : agents IA, automatisation, sites web, acquisition et stratégie commerciale pour TPE, artisans et PME.",
+      "vatID": "FR15999417967",
+      "iso6523Code": "0009:99941796700018",
+      "foundingDate": "2026-01-06",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 2 },
+      "address": { "@type": "PostalAddress", "streetAddress": "15 allée des Plantes", "postalCode": "77410", "addressLocality": "Annet-sur-Marne", "addressRegion": "Seine-et-Marne", "addressCountry": "FR" },
+      "areaServed": { "@type": "Country", "name": "France" },
+      "sameAs": ["https://www.linkedin.com/in/jennifer-carrolo"],
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+33665704793", "email": "contact@aceconseil.co", "availableLanguage": "fr" },
+      "founder": [
+        { "@id": "https://aceconseil.co/#jennifer" },
+        { "@id": "https://aceconseil.co/#mateusz" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aceconseil.co/#jennifer",
+      "name": "Jennifer Carrolo",
+      "jobTitle": "Cofondatrice",
+      "worksFor": { "@id": "https://aceconseil.co/#organization" },
+      "sameAs": ["https://www.linkedin.com/in/jennifer-carrolo"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aceconseil.co/#mateusz",
+      "name": "Mateusz Myja",
+      "jobTitle": "Cofondateur",
+      "worksFor": { "@id": "https://aceconseil.co/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aceconseil.co/#website",
+      "url": "https://aceconseil.co",
+      "name": "ACE Conseil",
+      "alternateName": "ACE Conseil Annet-sur-Marne",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://aceconseil.co/#organization" }
+    }
   ]
 }
 </script>

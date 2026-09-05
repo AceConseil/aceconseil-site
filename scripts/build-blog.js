@@ -25,15 +25,25 @@ const SITE = 'https://aceconseil.co';
 
 const STATIC_FILES = ['index.html', 'mentions-legales.html', 'merci.html', 'robots.txt', 'og-image.png',
   '750f5e47e9d41e60496334acbe3d3cf2.txt', // clé IndexNow (voir scripts/indexnow.js)
-    'favicon.svg', 'favicon.ico'];
+    'favicon.svg', 'favicon.ico', 'logo.png'];
 
 const PAGES_DIR = path.join(ROOT, 'content', 'pages');
 const PAGE_TEMPLATE_FILE = path.join(ROOT, 'templates', 'page.html');
 // Slugs interdits pour les pages dédiées : fichiers réservés et sources de
 // redirections 301 de vercel.json (la redirection gagnerait sur la page).
-const RESERVED_SLUGS = new Set(['index', 'mentions-legales', 'merci', 'blog', 'assets',
-  'ia', 'visibilite', 'strategie', 'formation', 'amo', 'a-propos', 'equipe',
-  'about', 'audit', 'contact', 'contact-formation', 'confidentialite']);
+// Slugs interdits pour une page : ils sont deja pris par un fichier statique ou
+// par une redirection. La liste etait recopiee a la main depuis vercel.json, ce
+// qui l'a rendue fausse le jour ou une redirection a ete retiree. Elle se
+// deduit maintenant de la source, il n'y a plus qu'un endroit a tenir a jour.
+const RESERVED_SLUGS = (() => {
+  const reserves = new Set(['index', 'mentions-legales', 'merci', 'blog', 'assets']);
+  const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
+  for (const r of config.redirects || []) {
+    const slug = String(r.source || '').replace(/^\//, '');
+    if (slug && !slug.includes('/')) reserves.add(slug);
+  }
+  return reserves;
+})();
 
 // ── Front-matter ──
 
@@ -670,6 +680,15 @@ function formatDateFr(iso) {
   });
 }
 
+// Titre affiche dans les resultats de recherche. Google tronque au dela d'une
+// soixantaine de caracteres : le suffixe du cabinet n'est ajoute que s'il reste
+// de la place. Le champ optionnel `titleSeo` du front-matter permet d'ecrire un
+// titre court pour la recherche sans toucher au titre editorial ni au H1.
+function titreRecherche(meta) {
+  const base = meta.titleSeo || meta.title;
+  return base.length > 50 ? base : `${base} · ACE Conseil`;
+}
+
 function breadcrumbLd(items) {
   return {
     '@context': 'https://schema.org',
@@ -684,10 +703,12 @@ function breadcrumbLd(items) {
 // relie l'article a une personne identifiable et non a une simple chaine.
 const AUTEURS = {
   'Jennifer Carrolo': {
+    id: 'jennifer',
     jobTitle: 'Cofondatrice, ACE Conseil',
     sameAs: ['https://www.linkedin.com/in/jennifer-carrolo'],
   },
   'Mateusz Myja': {
+    id: 'mateusz',
     jobTitle: 'Cofondateur, ACE Conseil',
   },
 };
@@ -698,9 +719,10 @@ function auteurLd(nom) {
   if (!fiche) throw new Error(`Auteur inconnu dans le front-matter : ${cle}`);
   const ld = {
     '@type': 'Person',
+    '@id': `${SITE}/#${fiche.id}`,
     name: cle,
     jobTitle: fiche.jobTitle,
-    worksFor: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
+    worksFor: { '@id': `${SITE}/#organization` },
   };
   if (fiche.sameAs) ld.sameAs = fiche.sameAs;
   return ld;
@@ -718,7 +740,7 @@ function buildArticle(article, template) {
     url: canonical,
     mainEntityOfPage: canonical,
     author: auteurLd(meta.auteur),
-    publisher: { '@type': 'Organization', name: 'ACE Conseil', url: SITE },
+    publisher: { '@id': `${SITE}/#organization` },
   };
   // dateModified n'est posee que lorsqu'un article a reellement ete corrige,
   // via le champ `updated:` du front-matter. Jamais automatiquement.
@@ -733,6 +755,7 @@ function buildArticle(article, template) {
 
   return render(template, {
     TITLE: escAttr(meta.title),
+    TITLE_SEO: escAttr(titreRecherche(meta)),
     DESCRIPTION: escAttr(meta.description),
     KEYWORDS: escAttr(meta.keywords || ''),
     CANONICAL: canonical,
@@ -823,7 +846,7 @@ function buildPage(page, template) {
     description: meta.description,
     url: canonical,
     areaServed: 'FR',
-    provider: { '@type': 'Organization', name: 'ACE Conseil', url: SITE, telephone: '+33665704793' },
+    provider: { '@id': `${SITE}/#organization` },
   };
   const jsonLd = [serviceLd, breadcrumbLd([
     { name: 'Accueil', url: `${SITE}/` },
@@ -833,6 +856,7 @@ function buildPage(page, template) {
   const fx = PAGE_FX[meta.slug] || '';
   return render(template, {
     TITLE: escAttr(meta.title),
+    TITLE_SEO: escAttr(titreRecherche(meta)),
     DESCRIPTION: escAttr(meta.description),
     KEYWORDS: escAttr(meta.keywords || ''),
     CANONICAL: canonical,

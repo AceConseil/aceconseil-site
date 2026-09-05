@@ -30,18 +30,13 @@
       "permanent": true
     },
     {
-      "source": "/a-propos",
-      "destination": "/#equipe",
-      "permanent": true
-    },
-    {
       "source": "/equipe",
-      "destination": "/#equipe",
+      "destination": "/a-propos",
       "permanent": true
     },
     {
       "source": "/about",
-      "destination": "/#equipe",
+      "destination": "/a-propos",
       "permanent": true
     },
     {

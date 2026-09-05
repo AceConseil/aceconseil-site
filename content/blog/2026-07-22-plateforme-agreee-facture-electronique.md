@@ -1,5 +1,6 @@
 ---
 title: "Facture électronique : choisir votre plateforme agréée (PA, PDP, PPF)"
+titleSeo: "Plateforme agréée, PDP, PPF : comment choisir"
 description: Plateforme agréée, PDP, PPF : qui fait quoi, pourquoi le portail public ne suffira pas pour vos factures, et comment choisir la vôtre avant septembre 2026.
 date: 2026-07-22
 slug: plateforme-agreee-facture-electronique
