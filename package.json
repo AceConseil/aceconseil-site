@@ -4,5 +4,8 @@
   "version": "2.0.0",
   "scripts": {
     "build": "node scripts/build-blog.js"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.0"
   }
 }

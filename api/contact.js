@@ -6,23 +6,26 @@
  * brouillon pre-rempli. Sur un ordinateur sans client mail configure, il ne se
  * passait rien du tout, et la demande etait perdue sans que personne le sache.
  *
- * Elle n'a aucune dependance : le site n'en a jamais eu, et le runtime Node de
- * Vercel fournit fetch nativement.
+ * Le message part par SMTP depuis notre propre boite Google Workspace. Aucun
+ * prestataire supplementaire n'intervient : les donnees des prospects restent
+ * chez l'hebergeur qui traite deja l'integralite de notre courrier, ce qui
+ * evite d'ajouter un sous-traitant au registre et aux mentions legales.
  *
  * Configuration, a poser dans les variables d'environnement du projet Vercel,
  * jamais dans ce depot :
- *   RESEND_API_KEY   cle de l'API Resend (obligatoire)
- *   CONTACT_TO       destinataire, par defaut contact@aceconseil.co
- *   CONTACT_FROM     expediteur verifie chez Resend, par defaut le sous-domaine
- *                    d'envoi du cabinet
+ *   SMTP_USER       adresse complete du compte expediteur
+ *   SMTP_PASSWORD   mot de passe d'application Google, 16 caracteres
+ *   CONTACT_TO      destinataire, par defaut SMTP_USER
+ *   SMTP_HOST       par defaut smtp.gmail.com
+ *   SMTP_PORT       par defaut 465
  *
- * Si la cle est absente, la fonction repond 503 avec un message explicite :
- * la page invite alors le visiteur a appeler, plutot que de lui laisser croire
- * que son message est parti.
+ * Sans identifiants, la fonction repond 503 avec un message explicite : la
+ * page invite alors a appeler, plutot que de laisser croire que le message
+ * est parti.
  */
 
-const DESTINATAIRE = process.env.CONTACT_TO || 'contact@aceconseil.co';
-const EXPEDITEUR = process.env.CONTACT_FROM || 'Site ACE Conseil <site@aceconseil.co>';
+const nodemailer = require('nodemailer');
+
 const SUJETS_ATTENDUS = new Set([
   'Agents IA', 'Automatisation', 'Site web', 'Visibilité',
   'Stratégie commerciale', 'Formation IA', 'AMO Immobilier', 'Autre',
@@ -36,6 +39,21 @@ function echapper(s) {
   return String(s).replace(/[&<>"']/g, (c) => (
     { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
   ));
+}
+
+// Le transporteur est cree une seule fois et reutilise entre deux invocations
+// tant que le conteneur reste chaud : cela evite de renegocier TLS a chaque envoi.
+let transporteur = null;
+function obtenirTransporteur(user, pass) {
+  if (transporteur) return transporteur;
+  const port = Number(process.env.SMTP_PORT || 465);
+  transporteur = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port,
+    secure: port === 465,
+    auth: { user, pass },
+  });
+  return transporteur;
 }
 
 module.exports = async function handler(req, res) {
@@ -72,9 +90,10 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ erreur: 'Adresse électronique invalide.' });
   }
 
-  const cle = process.env.RESEND_API_KEY;
-  if (!cle) {
-    console.error('contact: RESEND_API_KEY absente, message non transmis');
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASSWORD;
+  if (!user || !pass) {
+    console.error('contact: identifiants SMTP absents, message non transmis');
     return res.status(503).json({
       erreur: "Le formulaire n'est pas encore relié. Appelez-nous ou écrivez à contact@aceconseil.co.",
     });
@@ -95,36 +114,27 @@ ${lignes.map(([k, v]) => `<tr><td style="color:#7A8499">${echapper(k)}</td><td><
 </table>
 <h3 style="color:#C9A24D">Message</h3>
 <p style="white-space:pre-wrap">${echapper(message)}</p>
+<p style="color:#7A8499;font-size:.9em">Répondre à ce message écrit directement à ${echapper(email)}.</p>
 </div>`;
 
   const brut = lignes.map(([k, v]) => `${k} : ${v}`).join('\n') + '\n\nMessage :\n' + message;
 
   try {
-    const reponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${cle}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        from: EXPEDITEUR,
-        to: [DESTINATAIRE],
-        reply_to: email,
-        subject: `[Site] ${sujet} · ${nom}`,
-        html,
-        text: brut,
-      }),
+    await obtenirTransporteur(user, pass).sendMail({
+      // Google impose que l'expediteur soit le compte authentifie ou un de ses
+      // alias verifies : on garde donc l'adresse du compte et on place celle du
+      // prospect en reponse, pour repondre d'un seul geste.
+      from: `"Site ACE Conseil" <${user}>`,
+      to: process.env.CONTACT_TO || user,
+      replyTo: `"${nom.replace(/"/g, '')}" <${email}>`,
+      subject: `[Site] ${sujet} · ${nom}`,
+      text: brut,
+      html,
     });
-
-    if (!reponse.ok) {
-      const detail = await reponse.text();
-      // On journalise le code et le detail du fournisseur, jamais le message du visiteur.
-      console.error('contact: envoi refusé', reponse.status, detail.slice(0, 300));
-      return res.status(502).json({
-        erreur: "L'envoi n'a pas abouti. Appelez-nous ou écrivez à contact@aceconseil.co.",
-      });
-    }
-
     return res.status(200).json({ ok: true });
   } catch (e) {
-    console.error('contact: erreur réseau', e && e.message);
+    // On journalise le motif du refus, jamais le contenu du message du visiteur.
+    console.error('contact: envoi refusé', (e && e.code) || '', (e && e.message) || '');
     return res.status(502).json({
       erreur: "L'envoi n'a pas abouti. Appelez-nous ou écrivez à contact@aceconseil.co.",
     });
