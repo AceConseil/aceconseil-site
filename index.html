@@ -1245,6 +1245,21 @@ em.gold{font-style:italic;color:var(--gold)}
     ev.preventDefault();
     if(form.site_web.value){ return; } /* honeypot */
     if(!form.checkValidity()){ form.reportValidity(); return; }
+    /* D'ou vient ce visiteur : lu dans l'adresse au moment de l'envoi, en
+       JavaScript de premiere partie, donc sans cookie et sans script tiers.
+       Ne fonctionne que si la personne a atterri sur cette page : les pages
+       piliers renvoient vers index.html#contact par une navigation dure, qui
+       efface la chaine de requete. */
+    var provenance = {};
+    try {
+      var params = new URLSearchParams(window.location.search);
+      ["gclid","gbraid","wbraid","msclkid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"]
+        .forEach(function(k){
+          var v = params.get(k);
+          if (v) { provenance[k] = String(v).slice(0, 200); }
+        });
+    } catch (e) { provenance = {}; }
+
     var data = {
       nom: form.nom.value.trim(),
       societe: form.societe.value.trim(),
@@ -1253,6 +1268,9 @@ em.gold{font-style:italic;color:var(--gold)}
       sujet: form.sujet.value,
       message: form.message.value.trim(),
       source: "aceconseil.co",
+      provenance: provenance,
+      referent: (document.referrer || "").slice(0, 300),
+      page: window.location.pathname,
       date: new Date().toISOString()
     };
     if(!WEBHOOK_URL){
@@ -1284,7 +1302,21 @@ em.gold{font-style:italic;color:var(--gold)}
 })();
 </script>
 <!-- Mesure d'audience Vercel : aucun cookie, script servi depuis notre propre domaine -->
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script>
+window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+/* Les regies ajoutent d'office un identifiant de clic unique a l'adresse
+   d'atterrissage. Sans ce filtre il partirait tel quel chez le prestataire de
+   mesure, alors que nos mentions legales affirment qu'aucun identifiant
+   publicitaire n'est utilise. On les retire avant tout envoi. */
+window.va("beforeSend", function(evenement){
+  try {
+    var u = new URL(evenement.url);
+    ["gclid","gbraid","wbraid","gad_source","msclkid","fbclid","ttclid","li_fat_id","twclid","epik"]
+      .forEach(function(k){ u.searchParams.delete(k); });
+    return Object.assign({}, evenement, { url: u.toString() });
+  } catch (e) { return evenement; }
+});
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -26,6 +26,13 @@
 
 const nodemailer = require('nodemailer');
 
+// Cles de provenance acceptees. Toute autre cle est ignoree : le formulaire est
+// public, on ne recopie pas dans un courriel ce qu'un inconnu y aurait glisse.
+const PROVENANCE_ATTENDUE = [
+  'gclid', 'gbraid', 'wbraid', 'msclkid',
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+];
+
 const SUJETS_ATTENDUS = new Set([
   'Agents IA', 'Automatisation', 'Site web', 'Visibilité',
   'Stratégie commerciale', 'Formation IA', 'AMO Immobilier', 'Autre',
@@ -33,6 +40,16 @@ const SUJETS_ATTENDUS = new Set([
 
 function texte(v, max) {
   return typeof v === 'string' ? v.trim().slice(0, max) : '';
+}
+
+function lireProvenance(brut) {
+  if (!brut || typeof brut !== 'object') return [];
+  const out = [];
+  for (const cle of PROVENANCE_ATTENDUE) {
+    const v = texte(brut[cle], 200);
+    if (v) out.push([cle, v]);
+  }
+  return out;
 }
 
 function echapper(s) {
@@ -99,6 +116,10 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  const provenance = lireProvenance(corps.provenance);
+  const referent = texte(corps.referent, 300);
+  const page = texte(corps.page, 200);
+
   const lignes = [
     ['Nom', nom],
     ['Société', societe || 'non renseignée'],
@@ -107,6 +128,13 @@ module.exports = async function handler(req, res) {
     ['Besoin', sujet],
   ];
 
+  // Bloc de provenance : sépare visuellement ce que la personne a écrit de ce
+  // que la page a observé. Vide et absent quand rien n'a été capté.
+  const tracage = [];
+  if (provenance.length) tracage.push(...provenance);
+  if (referent) tracage.push(['Venu de', referent]);
+  if (page && page !== '/') tracage.push(['Page du formulaire', page]);
+
   const html = `<div style="font-family:system-ui,sans-serif;line-height:1.6;color:#1B2A4A">
 <h2 style="font-family:Georgia,serif;color:#1B2A4A">Demande depuis aceconseil.co</h2>
 <table cellpadding="6" style="border-collapse:collapse">
@@ -114,10 +142,16 @@ ${lignes.map(([k, v]) => `<tr><td style="color:#7A8499">${echapper(k)}</td><td><
 </table>
 <h3 style="color:#C9A24D">Message</h3>
 <p style="white-space:pre-wrap">${echapper(message)}</p>
+${tracage.length ? `<h3 style="color:#C9A24D">Provenance</h3>
+<table cellpadding="6" style="border-collapse:collapse">
+${tracage.map(([k, v]) => `<tr><td style="color:#7A8499">${echapper(k)}</td><td>${echapper(v)}</td></tr>`).join('\n')}
+</table>` : '<p style="color:#7A8499;font-size:.9em">Aucune provenance captée : accès direct, ou arrivée par une autre page du site.</p>'}
 <p style="color:#7A8499;font-size:.9em">Répondre à ce message écrit directement à ${echapper(email)}.</p>
 </div>`;
 
-  const brut = lignes.map(([k, v]) => `${k} : ${v}`).join('\n') + '\n\nMessage :\n' + message;
+  const brut = lignes.map(([k, v]) => `${k} : ${v}`).join('\n')
+    + '\n\nMessage :\n' + message
+    + (tracage.length ? '\n\nProvenance :\n' + tracage.map(([k, v]) => `${k} : ${v}`).join('\n') : '\n\nProvenance : aucune captée.');
 
   try {
     await obtenirTransporteur(user, pass).sendMail({
