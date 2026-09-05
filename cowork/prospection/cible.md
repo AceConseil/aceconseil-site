@@ -2,7 +2,7 @@
 
 ## Le cabinet, en trois lignes
 
-ACE Conseil, Marne-la-Vallée, Seine-et-Marne. Deux associés : Mateusz (agents IA, automatisation, sites web, visibilité, stratégie commerciale, formation IA) et Jennifer (assistance à maîtrise d'ouvrage immobilière pour des sociétés). Clients : artisans, TPE et PME.
+ACE Conseil, Annet-sur-Marne, Seine-et-Marne. Deux associés : Mateusz (agents IA, automatisation, sites web, visibilité, stratégie commerciale, formation IA) et Jennifer (assistance à maîtrise d'ouvrage immobilière pour des sociétés). Clients : artisans, TPE et PME.
 
 Attention à l'homonymie : plusieurs sociétés s'appellent ACE Conseil en France, dont un `aceconseil.fr` qui n'est pas nous. Notre domaine est `aceconseil.co`. Quand tu cherches des informations nous concernant, vérifie toujours lequel.
 

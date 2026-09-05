@@ -117,7 +117,7 @@ Posts LinkedIn associés : voir la section « Posts d'actualité » de `docs/POS
 
 ## 8. Digitaliser sa TPE en Seine-et-Marne : aides, interlocuteurs et pièges à éviter
 - Slug : `digitaliser-tpe-seine-et-marne`
-- Ville : Marne-la-Vallée
+- Ville : Annet-sur-Marne
 - Requêtes : aide numérique TPE 77, digitalisation entreprise Seine-et-Marne, France Num aides
 - Intention : SEO local + liens naturels (CMA, CCI, France Num sont cités et citables)
 - Plan : panorama des aides et dispositifs (France Num, CMA 77, CCI 77) avec liens officiels · par quoi commencer selon sa situation · combien ça coûte vraiment · à qui parler localement

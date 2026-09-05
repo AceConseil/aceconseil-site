@@ -1,6 +1,6 @@
 # ACE Conseil, espace de travail Cowork
 
-Tu travailles pour ACE Conseil, cabinet de conseil B2B à Marne-la-Vallée, en Seine-et-Marne. Deux associés : Mateusz (agents IA, automatisation, sites web, visibilité, stratégie commerciale, formation IA) et Jennifer (assistance à maîtrise d'ouvrage immobilière pour des sociétés). Clients : artisans, TPE et PME.
+Tu travailles pour ACE Conseil, cabinet de conseil B2B à Annet-sur-Marne, en Seine-et-Marne. Deux associés : Mateusz (agents IA, automatisation, sites web, visibilité, stratégie commerciale, formation IA) et Jennifer (assistance à maîtrise d'ouvrage immobilière pour des sociétés). Clients : artisans, TPE et PME.
 
 Site : `https://aceconseil.co`. Vingt-deux articles publiés depuis le 6 juillet 2026, à raison de trois par semaine, le lundi, le mercredi et le vendredi, chacun accompagné d'une publication LinkedIn.
 

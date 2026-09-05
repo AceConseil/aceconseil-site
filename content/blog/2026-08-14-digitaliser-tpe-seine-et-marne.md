@@ -79,6 +79,6 @@ Côté Département enfin, nous n'avons identifié aucune aide au numérique des
 
 ## Quand nous appeler
 
-Nous sommes à Marne-la-Vallée, auprès d'artisans, de TPE et de PME de Seine-et-Marne. Nous ne montons pas de dossiers de subvention, et vous savez maintenant pourquoi.
+Nous sommes à Annet-sur-Marne, auprès d'artisans, de TPE et de PME de Seine-et-Marne. Nous ne montons pas de dossiers de subvention, et vous savez maintenant pourquoi.
 
 [Écrivez-nous ou appelez-nous](/#contact) : vingt minutes suffisent à situer votre chantier, son coût et son ordre de priorité. Sans engagement, et si un rendez-vous gratuit à la CCI ou à la CMA règle votre sujet, nous vous le dirons.

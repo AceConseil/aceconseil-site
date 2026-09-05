@@ -4,7 +4,7 @@ description: Résumé en une phrase, 160 caractères maximum, qui donne envie de
 date: 2026-07-02
 slug: mon-premier-article
 keywords: automatisation, TPE, exemple
-ville: Marne-la-Vallée
+ville: Annet-sur-Marne
 ---
 
 Introduction en deux ou trois phrases. Qui est concerné, quel problème, ce que l'article apporte.

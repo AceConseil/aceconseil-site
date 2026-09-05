@@ -13,7 +13,7 @@ Le compte du cabinet est un compte **Premium**. Cela lève la limite mensuelle d
 ```
 Bonjour [Prénom], [le fait précis observé, en une phrase].
 [Ce que cela vous a évoqué, en une phrase, sans rien vendre].
-Au plaisir d'échanger. [Prénom Nom], ACE Conseil, Marne-la-Vallée.
+Au plaisir d'échanger. [Prénom Nom], ACE Conseil, Annet-sur-Marne.
 ```
 
 Trois cents caractères ne laissent pas la place à une mention d'information au sens du RGPD. Le contenu commercial attend donc le message d'après acceptation, où la place existe.
@@ -23,7 +23,7 @@ Trois cents caractères ne laissent pas la place à une mention d'information au
 ```
 Bonjour [Prénom], merci pour votre retour.
 
-Je suis [Prénom Nom], du cabinet ACE Conseil, à Marne-la-Vallée. Nous
+Je suis [Prénom Nom], du cabinet ACE Conseil, à Annet-sur-Marne. Nous
 travaillons avec des artisans, des TPE et des PME sur [le sujet lié à sa
 fonction].
 

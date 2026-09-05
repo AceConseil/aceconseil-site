@@ -5,8 +5,9 @@
 Les crochets sont à remplir. **Ne jamais envoyer un message dont un crochet n'a pas été rempli.**
 
 ```
-ACE CONSEIL, cabinet de conseil aux dirigeants, [adresse postale complète],
-Marne-la-Vallée, SIREN [numéro], est responsable du traitement de vos données.
+ACE CONSEIL, cabinet de conseil aux dirigeants, 15 allée des Plantes,
+77410 Annet-sur-Marne, SIREN 999 417 967, est responsable du traitement de vos
+données.
 
 Vous recevez ce message à votre adresse professionnelle, en votre qualité de
 [fonction exercée], parce que le sujet traité concerne directement votre activité.
@@ -54,7 +55,7 @@ Interdits, sans exception : « Re: », « Suite à notre échange », « Votre d
 ## À l'oral, dès le premier appel
 
 ```
-Bonjour, [Prénom Nom], du cabinet ACE Conseil, à Marne-la-Vallée. Je vous appelle
+Bonjour, [Prénom Nom], du cabinet ACE Conseil, à Annet-sur-Marne. Je vous appelle
 sur votre ligne professionnelle au sujet de [sujet lié à sa fonction]. Avez-vous
 deux minutes, ou préférez-vous que je vous rappelle ?
 ```

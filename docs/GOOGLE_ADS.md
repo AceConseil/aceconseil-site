@@ -63,7 +63,7 @@ Réseau de recherche uniquement (pas de Display ni Performance Max avant d'avoir
 ### Campagne 3 · AMO-VEFA (Search, Île-de-France)
 
 - **Cible** : particuliers acquéreurs en VEFA (25-50 ans, souvent primo-accédants) à l'approche d'une visite ou d'une livraison ; investisseurs. Urgence réelle, décision rapide, quasi aucun concurrent en Ads local.
-- **Géo** : Île-de-France + zone de présence (rayon 60 km autour de Marne-la-Vallée en priorité d'enchère).
+- **Géo** : Île-de-France + zone de présence (rayon 60 km autour d'Annet-sur-Marne en priorité d'enchère).
 - **Landing** : `/amo-immobilier`. UTM : `utm_campaign=amo-vefa`.
 - **Calendrier** : 8 h-21 h + week-end (les visites se préparent le week-end). Extension d'appel selon les disponibilités réelles de Jennifer.
 - **Groupes / mots-clés** :

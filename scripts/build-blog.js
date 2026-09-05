@@ -966,7 +966,7 @@ ${cards}
     <a class="logo" href="/" aria-label="ACE Conseil">
       <span class="logo-ace" style="font-size:1.15rem">ACE</span><span class="logo-sep" style="height:15px"></span><span class="logo-conseil" style="font-size:.62rem">Conseil</span>
     </a>
-    <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Marne-la-Vallée · © 2026</p>
+    <p class="footer-legal">ACE Conseil SAS · SIRET 999&nbsp;417&nbsp;967&nbsp;00018 · Annet-sur-Marne, Seine-et-Marne · © 2026</p>
     <nav class="footer-links">
       <a href="/blog">Blog</a>
       <a href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler"><span class="tel-label">Appeler</span></a>
