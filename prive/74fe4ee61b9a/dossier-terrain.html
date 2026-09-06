@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Dossier de terrain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   DOSSIER DE TERRAIN, ACE Conseil.
+   Ecrit pour quelqu'un qui n'a jamais fait de porte a porte. Il se lit
+   avant de sonner, debout, sur un telephone : d'ou une seule colonne,
+   des paragraphes courts, et les phrases a dire ecrites en toutes
+   lettres plutot que resumees.
+   Tout ce qui concerne une societe nommee vient de faits verifies :
+   registre des entreprises, comptes deposes au greffe, fiches Google,
+   pages archivees. Rien n'y est suppose.
+------------------------------------------------------------------- */
+:root{
+  --papier:#F4F1E9; --carte:#FBF9F4; --bloc:#FFFFFF;
+  --encre:#171A1D; --gris:#55564E; --faible:#8A8A7E;
+  --filet:#DCD5C4; --filet2:#BCB29B;
+  --or:#A2761A; --or-p:#F2E7CE;
+  --rouge:#9B4A3E; --rouge-p:#F5E3DE;
+  --vert:#3C6B52; --vert-p:#E0EDE4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --papier:#121311; --carte:#181A17; --bloc:#1B1E1A;
+    --encre:#EDEAE0; --gris:#A9A79A; --faible:#77756A;
+    --filet:#2A2C26; --filet2:#3E4138;
+    --or:#D7A947; --or-p:#2E2612; --rouge:#CF7A6A; --rouge-p:#2E1A16;
+    --vert:#6FA986; --vert-p:#15241B;
+  }
+}
+:root[data-theme="sombre"]{
+  --papier:#121311; --carte:#181A17; --bloc:#1B1E1A;
+  --encre:#EDEAE0; --gris:#A9A79A; --faible:#77756A;
+  --filet:#2A2C26; --filet2:#3E4138;
+  --or:#D7A947; --or-p:#2E2612; --rouge:#CF7A6A; --rouge-p:#2E1A16;
+  --vert:#6FA986; --vert-p:#15241B;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--papier); color:var(--encre);
+  font-family:'Newsreader',Georgia,serif; font-size:18px; line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.015em; line-height:1.14; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--or); outline-offset:3px}
+.col{max-width:660px; margin:0 auto; padding:0 clamp(20px,5vw,28px)}
+.sc{font-family:'IBM Plex Sans Condensed',Helvetica,sans-serif}
+.mo{font-family:'IBM Plex Mono',monospace}
+.lab{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.72rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--faible)}
+
+.tete{background:var(--carte); border-bottom:1px solid var(--filet);
+  padding:clamp(34px,6vw,62px) 0 clamp(28px,4vw,44px)}
+.tete h1{font-size:clamp(2rem,6vw,3.1rem); margin:14px 0 16px}
+.tete p{margin:0; font-size:clamp(1.02rem,2vw,1.15rem); color:var(--gris); max-width:44ch}
+.tete .qui{margin-top:22px; padding-top:18px; border-top:1px solid var(--filet);
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.86rem; color:var(--faible)}
+
+nav.som{position:sticky; top:0; z-index:10; background:var(--papier);
+  border-bottom:1px solid var(--filet); padding:11px 0}
+nav.som .col{display:flex; gap:16px; overflow-x:auto; scrollbar-width:none}
+nav.som .col::-webkit-scrollbar{display:none}
+nav.som a{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.82rem; font-weight:600;
+  letter-spacing:.04em; text-decoration:none; color:var(--gris); white-space:nowrap;
+  padding-bottom:2px; border-bottom:2px solid transparent}
+nav.som a:hover{color:var(--encre); border-bottom-color:var(--or)}
+
+section{padding:clamp(38px,6vw,64px) 0; border-bottom:1px solid var(--filet)}
+section > .col > .lab{display:block; margin-bottom:12px}
+section h2{font-size:clamp(1.5rem,3.6vw,2.1rem); margin-bottom:18px}
+section h3{font-size:1.16rem; margin:30px 0 10px}
+p{margin:0 0 16px}
+p:last-child{margin-bottom:0}
+ul,ol{margin:0 0 16px; padding-left:22px}
+li{margin-bottom:9px}
+strong{font-weight:600}
+em.pt{font-style:normal; color:var(--or); font-weight:600}
+
+/* ce qu'on dit, mot pour mot */
+.dit{background:var(--bloc); border-left:4px solid var(--or); padding:clamp(16px,3vw,22px);
+  margin:0 0 18px; font-size:1.06rem}
+.dit p{margin:0 0 12px}
+.dit p:last-child{margin-bottom:0}
+.dit .q{font-style:italic}
+.dit .pq{display:block; margin-top:12px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-style:normal; font-size:.84rem; color:var(--faible); line-height:1.5}
+
+.att{background:var(--rouge-p); border-left:4px solid var(--rouge);
+  padding:clamp(15px,3vw,20px); margin:0 0 18px; font-size:.98rem}
+.att .t{font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:.72rem;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--rouge); display:block; margin-bottom:7px}
+.att p{margin:0 0 10px}
+.att p:last-child{margin-bottom:0}
+
+.ok{background:var(--vert-p); border-left:4px solid var(--vert);
+  padding:clamp(15px,3vw,20px); margin:0 0 18px; font-size:.98rem}
+.ok .t{font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:.72rem;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--vert); display:block; margin-bottom:7px}
+.ok p{margin:0}
+
+/* les situations */
+.cas{border:1px solid var(--filet); background:var(--bloc); margin-bottom:12px}
+.cas > summary{cursor:pointer; padding:15px 18px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-weight:600; font-size:1rem; list-style:none; display:flex; align-items:center; gap:12px}
+.cas > summary::-webkit-details-marker{display:none}
+.cas > summary::before{content:'+'; font-family:'IBM Plex Mono',monospace; color:var(--or);
+  font-size:1.1rem; flex:none; width:14px}
+.cas[open] > summary::before{content:'\2212'}
+.cas > summary:hover{background:var(--carte)}
+.cas .corps{padding:2px 18px 18px; font-size:.99rem}
+.cas .corps p:first-child{margin-top:0}
+
+/* le tableau des metiers */
+.tab{width:100%; border-collapse:collapse; font-size:.94rem; margin-bottom:16px}
+.tab th{text-align:left; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.72rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--faible); font-weight:600;
+  padding:0 12px 9px 0; border-bottom:1px solid var(--filet2)}
+.tab td{padding:12px 12px 12px 0; border-bottom:1px solid var(--filet); vertical-align:top}
+.tab td:first-child{font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:600; white-space:nowrap}
+.tab .env{display:block; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.8rem; color:var(--faible)}
+
+/* les quatre portes */
+.porte{border:1px solid var(--filet); background:var(--bloc); margin-bottom:14px}
+.porte .en{display:flex; align-items:baseline; gap:11px; padding:14px 18px;
+  border-bottom:1px solid var(--filet); background:var(--carte)}
+.porte .no{font-family:'IBM Plex Mono',monospace; font-size:.82rem; color:var(--or)}
+.porte .nm{font-weight:600; font-size:1.08rem}
+.porte .ad{margin-left:auto; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.8rem; color:var(--faible); white-space:nowrap}
+.porte .co{padding:16px 18px; font-size:.99rem}
+.porte .co dt{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.7rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--faible); margin-bottom:5px}
+.porte .co dd{margin:0 0 14px}
+.porte .co dd:last-child{margin-bottom:0}
+@media(max-width:520px){ .porte .en{flex-wrap:wrap} .porte .ad{margin-left:0; width:100%} }
+
+footer{padding:clamp(34px,5vw,54px) 0 46px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.84rem; color:var(--faible); line-height:1.7}
+footer a{color:var(--or)}
+
+@media print{
+  nav.som{display:none} body{background:#fff; font-size:11pt}
+  section{break-inside:avoid; border-bottom:1px solid #ccc}
+  .cas{break-inside:avoid} .cas .corps{display:block !important}
+}
+</style>
+</head>
+<body>
+<div class="tete"><div class="col">
+  <span class="lab">ACE Conseil &middot; document interne</span>
+  <h1>Le dossier de terrain.</h1>
+  <p>Comment faire du porte a porte quand on n'en a jamais fait. Ce qu'on dit, ce
+  qu'on ecoute, et comment on s'adapte a ce qu'on entend.</p>
+  <p class="qui">A lire une fois en entier, puis a rouvrir a la section utile,
+  debout, avant de sonner.</p>
+</div></div>
+
+<nav class="som"><div class="col">
+  <a href="#offre">Ce qu'on vend</a>
+  <a href="#quinze">Les 15 secondes</a>
+  <a href="#lire">Lire la situation</a>
+  <a href="#besoins">Les besoins</a>
+  <a href="#metiers">Selon le metier</a>
+  <a href="#objections">Objections</a>
+  <a href="#fin">Sortir</a>
+  <a href="#portes">La tournee 1</a>
+</div></nav>
+
+<section id="offre"><div class="col">
+  <span class="lab">01</span>
+  <h2>Ce qu'on vend, et ce qu'on ne vend pas.</h2>
+  <p>Avant de savoir parler, il faut pouvoir repondre en une phrase a la question
+  <em class="pt">c'est quoi, votre truc</em>. Sans hesiter, sans chercher ses mots.</p>
+  <div class="dit">
+    <p class="q">Un site vitrine, cinq cents euros une fois, et quatre-vingt-neuf euros
+    par mois pour qu'il reste a jour et qu'il ne tombe jamais.</p>
+    <span class="pq">C'est tout. On ne rajoute rien tant qu'on ne vous demande rien.</span>
+  </div>
+  <p>Le prix n'est pas un detail a esquiver, c'est un argument. Cinq cents euros, pour un
+  couvreur qui facture un chantier a plusieurs milliers, c'est moins d'une journee de
+  travail. Dites le chiffre tot et calmement : celui qui annonce son prix sans gene est
+  celui a qui on fait confiance.</p>
+  <h3>Ce qu'on ne vend pas</h3>
+  <p>On ne vend pas du referencement garanti, pas de la publicite, pas des reseaux
+  sociaux, pas une refonte a six mille euros. Si on nous en demande, on dit qu'on ne le
+  fait pas. Refuser une vente qu'on ne saurait pas tenir, ca se sait dans une commune de
+  huit mille habitants.</p>
+  <div class="ok"><span class="t">Le principe</span>
+  <p>On ne promet jamais un resultat commercial. On promet un outil qui existe, qui est a
+  jour, et qui ne tombe pas.</p></div>
+</div></section>
+
+<section id="quinze"><div class="col">
+  <span class="lab">02</span>
+  <h2>Les quinze premieres secondes.</h2>
+  <p>Tout se joue la. La personne en face ne sait pas qui vous etes et pense deja a autre
+  chose. Il faut trois choses dans cette phrase : d'ou vous venez, pourquoi <strong>elle</strong>
+  et pas une autre, et combien de temps ca va durer.</p>
+  <div class="dit">
+    <p class="q">Bonjour, Jennifer Carrolo, ACE Conseil. On est installes a
+    Annet-sur-Marne, juste a cote.</p>
+    <p class="q">Je passe parce que j'ai regarde votre presence en ligne avant de venir,
+    et il y a un point precis dont je voulais vous parler.</p>
+    <p class="q">Vous avez deux minutes, ou je repasse ?</p>
+    <span class="pq">Trois phrases courtes. Une respiration entre chaque. La derniere est
+    une vraie question : si on repond non, on repasse, et on le fait vraiment.</span>
+  </div>
+  <h3>Pourquoi cette formule et pas une autre</h3>
+  <ul>
+    <li><strong>Le prenom et le nom de la societe d'abord.</strong> On n'est pas un
+    demarcheur anonyme, on est le cabinet d'a cote.</li>
+    <li><strong>Annet-sur-Marne, tout de suite.</strong> C'est le seul argument qu'un
+    demarcheur telephonique ne peut pas copier.</li>
+    <li><strong>J'ai regarde avant de venir.</strong> C'est vrai, c'est verifiable, et ca
+    change tout : vous n'etes pas passee au hasard.</li>
+    <li><strong>Deux minutes, ou je repasse.</strong> Vous bornez la demande. Un patron
+    accorde deux minutes bien plus facilement qu'un temps indefini.</li>
+  </ul>
+  <div class="att"><span class="t">Ce qu'il ne faut pas dire</span>
+  <p><span class="q">Je ne vais pas vous deranger longtemps</span> : vous derangez, et
+  l'annoncer met tout de suite en position basse.</p>
+  <p><span class="q">Vous savez que vous n'avez pas de site ?</span> : on ne commence
+  jamais par un manque. On le dira, mais apres avoir ete accueillie.</p>
+  <p><span class="q">C'est pour vous proposer nos services</span> : c'est la phrase qui
+  fait fermer la porte, parce qu'elle ne dit rien de precis.</p></div>
+</div></section>
+
+<section id="lire"><div class="col">
+  <span class="lab">03</span>
+  <h2>Qui est en face de vous.</h2>
+  <p>Dans une TPE du batiment, vous tombez sur trois personnes possibles. Ce n'est pas la
+  meme conversation, et se tromper de conversation fait perdre la visite.</p>
+
+  <details class="cas"><summary>Le patron, ou la patronne</summary><div class="corps">
+    <p>C'est la bonne personne, et souvent la seule qui decide. Reconnaissable a ceci :
+    on vous repond sur le fond des la premiere phrase, on vous coupe, on vous demande
+    combien ca coute.</p>
+    <p><strong>Ce qu'on fait</strong> : on va droit au point precis. On montre la
+    maquette sur le telephone dans la premiere minute. On donne le prix sans qu'on ait a
+    le demander deux fois.</p>
+  </div></details>
+
+  <details class="cas"><summary>Le secretariat, ou la personne a l'accueil</summary><div class="corps">
+    <p>Elle ne decide pas, mais elle decide si vous reviendrez. Ne jamais la traiter comme
+    un obstacle : c'est elle qui dira au patron si ca valait le coup.</p>
+    <p><strong>Ce qu'on fait</strong> : on ne deroule pas l'argumentaire. On demande
+    quand le patron est joignable, et on laisse une trace.</p>
+    <div class="dit"><p class="q">Je ne vais pas vous prendre de temps, ce n'est pas a
+    vous que ca s'adresse. Je repasse quand il est la, c'est plutot le matin ou plutot en
+    fin de journee ?</p>
+    <span class="pq">La question fermee a deux choix obtient une reponse. Une question
+    ouverte obtient "je ne sais pas".</span></div>
+  </div></details>
+
+  <details class="cas"><summary>Un compagnon, un ouvrier, quelqu'un de l'atelier</summary><div class="corps">
+    <p>Il n'a aucun pouvoir de decision et le sait. Il peut en revanche vous dire
+    exactement quand le patron passe, et ce qui l'occupe en ce moment.</p>
+    <p><strong>Ce qu'on fait</strong> : on est bref, on est poli, on demande l'horaire.
+    On ne parle jamais du site devant lui comme d'un manque de l'entreprise.</p>
+  </div></details>
+
+  <div class="att"><span class="t">Personne n'est la</span>
+  <p>C'est frequent, et ce n'est pas une visite perdue. On note l'heure sur la carte, on
+  repasse a un autre moment de la journee. Trois passages a trois horaires differents
+  valent mieux que trois passages a la meme heure.</p></div>
+</div></section>
+
+<section id="besoins"><div class="col">
+  <span class="lab">04</span>
+  <h2>Les quatre choses qu'on entend, et ce qu'elles veulent dire.</h2>
+  <p>Un patron ne dit presque jamais son vrai frein. Il dit une phrase toute faite. Le
+  travail consiste a entendre ce qu'il y a dessous, et a repondre a ca.</p>
+
+  <h3>1. <span class="q">Je n'ai pas le temps</span></h3>
+  <p>Dessous, la plupart du temps : <em class="pt">j'ai peur que ca me prenne des
+  semaines</em>. Un artisan a deja vecu le devis qui traine, les allers-retours, les
+  textes a ecrire lui-meme.</p>
+  <div class="dit"><p class="q">C'est justement le point. Vous n'avez rien a ecrire et
+  rien a fournir. Je monte la page avec ce qui est deja public sur vous, vous corrigez ce
+  qui est faux, et c'est fini.</p></div>
+
+  <h3>2. <span class="q">J'ai deja assez de travail</span></h3>
+  <p>Souvent vrai, et il faut l'entendre. Dessous : <em class="pt">a quoi bon etre plus
+  visible si je refuse deja des chantiers</em>.</p>
+  <p>C'est le seul cas ou l'argument du volume ne marche pas. On change d'angle : ce
+  n'est pas plus de clients, c'est <strong>choisir</strong> ses clients.</p>
+  <div class="dit"><p class="q">Si vous refusez des chantiers, la question n'est plus
+  d'en avoir plus, c'est de garder les bons. Quand on vous trouve en ligne avec vos
+  references, ce sont les demandes serieuses qui arrivent, pas les demandes de prix.</p></div>
+
+  <h3>3. <span class="q">Ca coute cher</span></h3>
+  <p>Dessous, presque toujours : <em class="pt">j'ai un souvenir d'un devis a plusieurs
+  milliers</em>. On ne se defend pas, on compare.</p>
+  <div class="dit"><p class="q">Cinq cents euros. C'est moins qu'une journee de votre
+  equipe sur un chantier. Et les quatre-vingt-neuf euros par mois, c'est ce qui fait que
+  dans deux ans il sera encore a jour, au lieu d'etre une page morte comme on en voit
+  partout.</p></div>
+
+  <h3>4. <span class="q">J'ai deja un site</span></h3>
+  <p>La, on ne conteste jamais. On regarde ensemble, sur le telephone, et on laisse le
+  patron voir lui-meme.</p>
+  <div class="dit"><p class="q">Montrez le moi. On le regarde ensemble sur mon telephone,
+  je vous dis ce que je vois, et si tout va bien je vous laisse tranquille.</p>
+  <span class="pq">Cette phrase est desarmante parce qu'elle est sincere. Si le site est
+  bon, on le dit et on part. C'est ce qui donne du poids a tout le reste.</span></div>
+  <div class="ok"><span class="t">La regle qui tient tout</span>
+  <p>On ne dit jamais du mal du site de quelqu'un. On montre un fait : le cadenas absent
+  dans la barre d'adresse, la date de la plaquette, la page qui ne s'affiche pas sur le
+  telephone. Le patron tire la conclusion tout seul, et elle est a lui.</p></div>
+</div></section>
+
+<section id="metiers"><div class="col">
+  <span class="lab">05</span>
+  <h2>Ce qu'on met en avant, selon le metier.</h2>
+  <p>Le meme site ne se vend pas de la meme facon a un couvreur et a un bureau d'etudes.
+  Ce qui compte, c'est ce que le client final de votre interlocuteur cherche avant
+  d'appeler.</p>
+  <table class="tab">
+    <tr><th>Metier</th><th>Ce qui les fait gagner</th></tr>
+    <tr><td>Couverture<span class="env">charpente, zinguerie</span></td>
+      <td>Les photos de chantier. Un particulier qui refait son toit compare des toits
+      finis, pas des textes. On appuie sur la galerie et sur les avis.</td></tr>
+    <tr><td>Electricite<span class="env">plomberie, chauffage</span></td>
+      <td>La joignabilite et l'urgence. Le numero en gros, cliquable, et les horaires
+      reels. La moitie des appels partent d'une panne.</td></tr>
+    <tr><td>Paysage<span class="env">espaces verts</span></td>
+      <td>L'avant et l'apres. C'est le seul metier ou la transformation se voit d'un coup
+      d'oeil, il faut la montrer.</td></tr>
+    <tr><td>Menuiserie<span class="env">agencement</span></td>
+      <td>Le sur-mesure. On montre des ouvrages singuliers, pas un catalogue. Le client
+      veut voir qu'on sait faire ce qui n'existe pas ailleurs.</td></tr>
+    <tr><td>Transport<span class="env">affretement, logistique</span></td>
+      <td>Les titres officiels. Licence, inscription au registre, capacite. C'est du
+      B2B : l'acheteur verifie avant d'appeler.</td></tr>
+    <tr><td>Ingenierie<span class="env">bureaux d'etudes</span></td>
+      <td>L'anciennete et les references. Ici le site sert a rassurer un donneur d'ordre,
+      pas a attirer un particulier.</td></tr>
+    <tr><td>Garage<span class="env">mecanique, pneus</span></td>
+      <td>Les avis et les horaires. Une note a 4,8 sur cinquante avis vaut tous les
+      arguments, encore faut-il qu'elle soit visible ailleurs que sur Google.</td></tr>
+  </table>
+  <div class="ok"><span class="t">Le geste qui marche</span>
+  <p>Ouvrir la maquette de leur propre site sur le telephone, en silence, et la tendre.
+  Ne rien dire pendant qu'ils regardent. C'est le moment le plus efficace de la visite,
+  et parler pendant le gache.</p></div>
+</div></section>
+
+<section id="objections"><div class="col">
+  <span class="lab">06</span>
+  <h2>Les objections, une par une.</h2>
+
+  <details class="cas"><summary>C'est mon neveu qui me l'a fait</summary><div class="corps">
+    <p>Terrain miné : critiquer le site, c'est critiquer la famille. On ne touche pas au
+    travail, on parle de l'apres.</p>
+    <div class="dit"><p class="q">Il a fait le travail, c'est deja beaucoup. La question
+    c'est qui s'en occupe maintenant. Un site, ca vieillit tout seul : les
+    quatre-vingt-neuf euros par mois, c'est exactement ca.</p></div>
+  </div></details>
+
+  <details class="cas"><summary>Je marche au bouche a oreille</summary><div class="corps">
+    <p>C'est souvent vrai, et c'est une force. On ne la conteste pas, on l'utilise.</p>
+    <div class="dit"><p class="q">C'est ce qu'il y a de mieux. Sauf que celui a qui on
+    vous recommande, aujourd'hui, il tape votre nom avant d'appeler. S'il ne trouve rien,
+    la recommandation s'arrete la.</p>
+    <span class="pq">C'est l'objection la plus frequente et la plus facile a retourner :
+    le site ne remplace pas le bouche a oreille, il le termine.</span></div>
+  </div></details>
+
+  <details class="cas"><summary>Envoyez moi une documentation</summary><div class="corps">
+    <p>C'est un refus poli. On ne repond pas oui.</p>
+    <div class="dit"><p class="q">Je peux faire mieux : je vous laisse regarder ce que ca
+    donnerait chez vous, c'est deja fait. Deux minutes, et si ca ne vous parle pas je ne
+    reviens pas.</p></div>
+  </div></details>
+
+  <details class="cas"><summary>Je vais en parler a mon associe</summary><div class="corps">
+    <p>Peut etre vrai, souvent une sortie. On ne force pas, on fixe.</p>
+    <div class="dit"><p class="q">Tres bien. Je repasse jeudi matin, ca vous laisse le
+    temps d'en parler. Si entre temps c'est non, dites le moi, je ne vous embete pas.</p>
+    <span class="pq">Une date precise vaut mieux qu'un rappel vague. Et donner une sortie
+    facile met en confiance.</span></div>
+  </div></details>
+
+  <details class="cas"><summary>Vous etes la trentieme a passer</summary><div class="corps">
+    <p>Souvent vrai, et c'est justement l'ouverture.</p>
+    <div class="dit"><p class="q">Je m'en doute. La difference, c'est que les autres
+    appellent depuis un centre d'appel. Nous on est a Annet, et j'ai regarde votre
+    situation avant de sonner. Deux minutes pour vous montrer, et je vous laisse.</p></div>
+  </div></details>
+</div></section>
+
+<section id="fin"><div class="col">
+  <span class="lab">07</span>
+  <h2>Sortir, et ce qu'on note.</h2>
+  <h3>Reconnaitre un non</h3>
+  <p>Un vrai non se voit : le corps se detourne, le regard part ailleurs, les reponses
+  raccourcissent. Il faut le prendre <strong>avant</strong> qu'il soit dit, et partir
+  soi-meme.</p>
+  <div class="dit"><p class="q">Je vois que ce n'est pas le moment. Je vous laisse ma
+  carte, et je ne vous relance pas. Bonne journee.</p>
+  <span class="pq">Partir soi-meme, calmement, laisse une porte ouverte pour dans six
+  mois. Insister la ferme pour toujours.</span></div>
+  <h3>Ce qu'on note en repartant, tout de suite</h3>
+  <p>Sur la carte, avant de marcher jusqu'a la porte suivante. Cinq secondes, sinon c'est
+  perdu.</p>
+  <ul>
+    <li>L'etat : perdue, a retenter, interessee, tres chaude.</li>
+    <li>Si c'est <strong>a retenter</strong> : la date a laquelle repasser.</li>
+    <li>Dans la note : le prenom de la personne vue, et la phrase exacte qui a marque.
+    Pas un resume, la phrase.</li>
+  </ul>
+  <div class="ok"><span class="t">Pourquoi la phrase exacte</span>
+  <p>Dans trois semaines, <span class="q">il a dit qu'il refaisait sa flotte au
+  printemps</span> vaut cent fois <span class="q">interesse mais pas maintenant</span>.
+  La premiere donne une raison de revenir, la seconde ne donne rien.</p></div>
+</div></section>
+
+<section id="portes"><div class="col">
+  <span class="lab">08</span>
+  <h2>La tournee 1, porte par porte.</h2>
+  <p>Quatre adresses, sept cent cinquante metres a pied, toutes rue Ampere ou juste a
+  cote. Comptez deux heures avec les temps d'attente. Chaque fiche donne la phrase
+  d'entree propre a la societe : elle est batie sur un fait verifie, pas sur une
+  supposition.</p>
+
+  <div class="porte">
+    <div class="en"><span class="no">1</span><span class="nm">Lagny Paysages</span>
+      <span class="ad">65 rue Ampere</span></div>
+    <dl class="co">
+      <dt>Qui demander</dt><dd>Veronique Lelievre, presidente. Six a neuf salaries.</dd>
+      <dt>Le fait sur lequel on entre</dt>
+      <dd>Aucun site, aucune identite visuelle nulle part, et une adresse de messagerie
+      encore en wanadoo. Les noms de domaine lagnypaysages.fr et lagnypaysages.com sont
+      libres, je l'ai verifie.</dd>
+      <dt>La phrase</dt>
+      <dd><em class="q">Vous etes la seule entreprise de paysage du secteur a ne rien
+      avoir en ligne, alors que vous etes la plus solide. J'ai prepare a quoi
+      ressemblerait votre page, deux minutes ?</em></dd>
+      <dt>Ce qu'on met en avant</dt>
+      <dd>L'avant et l'apres des chantiers. C'est le metier ou la transformation se voit
+      le mieux.</dd>
+      <dt>A ne pas dire</dt>
+      <dd>Ne pas parler du groupe familial. La maison mere a deja un site : l'accroche
+      vaut pour cette societe, pas pour le groupe.</dd>
+    </dl>
+  </div>
+
+  <div class="porte">
+    <div class="en"><span class="no">2</span><span class="nm">J4R Echafaudages</span>
+      <span class="ad">49 rue Ampere</span></div>
+    <dl class="co">
+      <dt>Qui demander</dt><dd>Julien Rodrigues, directeur general. Dix a dix-neuf salaries.</dd>
+      <dt>Le fait sur lequel on entre</dt>
+      <dd>Ils ont un site, et il est correct. Mais le titre de leur page d'accueil est
+      "Telechargez notre plaquette", et le fichier servi s'appelle
+      J4R-Plaquette-Digitale-2020. Leur plaquette commerciale a six ans.</dd>
+      <dt>La phrase</dt>
+      <dd><em class="q">Votre site tourne, ce n'est pas le sujet. Le sujet c'est que la
+      plaquette qu'il propose date de 2020, et que c'est la premiere chose qu'un client
+      telecharge.</em></dd>
+      <dt>Ce qu'on met en avant</dt>
+      <dd>C'est du cent pour cent professionnel, et c'est la plus grosse des quatre.
+      L'entretien mensuel se vend ici mieux que la creation.</dd>
+      <dt>Attention</dt>
+      <dd>Ne pas critiquer le site frontalement : il marche. On parle de ce qui vieillit.</dd>
+    </dl>
+  </div>
+
+  <div class="porte">
+    <div class="en"><span class="no">3</span><span class="nm">Etablissements Reithler</span>
+      <span class="ad">5 rue Claude Chappe</span></div>
+    <dl class="co">
+      <dt>Qui demander</dt><dd>Olivier Bourjot, president. Vingt a quarante-neuf salaries.</dd>
+      <dt>Le fait sur lequel on entre</dt>
+      <dd>Le domaine reithler-sas.fr existe et affiche la page "Site en construction"
+      d'OVH. Ils paient deja un hebergement pour une page vide, et leur messagerie
+      professionnelle tourne dessus.</dd>
+      <dt>La phrase</dt>
+      <dd><em class="q">Vous payez deja le nom de domaine et l'hebergement. Il n'y a
+      qu'une page "site en construction" dessus. La depense est faite, il manque juste le
+      site.</em></dd>
+      <dt>Ce qu'on met en avant</dt>
+      <dd>Quarante-trois ans de metier, et la seule chose visible en ligne est une note
+      Google a 3,7 sur 5, la plus basse des quatre. Un site donne enfin quelque chose
+      d'autre a voir.</dd>
+      <dt>Attention</dt>
+      <dd>Sujet sensible, amener la note avec precaution et seulement si la conversation
+      est deja engagee.</dd>
+    </dl>
+  </div>
+
+  <div class="porte">
+    <div class="en"><span class="no">4</span><span class="nm">Cogebi</span>
+      <span class="ad">105 avenue du General Leclerc</span></div>
+    <dl class="co">
+      <dt>Qui demander</dt><dd>Virginie Hamery, presidente. Six a neuf salaries.</dd>
+      <dt>Le fait sur lequel on entre</dt>
+      <dd>Leur site est une page Word enregistree en HTML : une seule page, mille deux
+      cent soixante-dix-neuf caracteres, aucune balise titre, et pas de balise viewport,
+      donc illisible sur telephone.</dd>
+      <dt>La phrase</dt>
+      <dd><em class="q">Sortez votre telephone et tapez cogebi.fr. Ce que vous voyez,
+      c'est ce que voit un donneur d'ordre avant de vous appeler.</em></dd>
+      <dt>Ce qu'on met en avant</dt>
+      <dd>Fondee en 1987, trente-neuf ans d'exercice, 4,7 sur 5. C'est un bureau
+      d'etudes : le site sert a rassurer un donneur d'ordre, pas a attirer un particulier.</dd>
+      <dt>Attention</dt>
+      <dd>Faire le test du telephone soi-meme d'abord, dans la rue, avant de le proposer.</dd>
+    </dl>
+  </div>
+
+  <div class="att"><span class="t">Avant de partir</span>
+  <p>Verifiez les quatre faits ci-dessus le matin meme, sur votre telephone, en trente
+  secondes. Ils datent de septembre 2026. Si un patron a mis son site en ligne entre
+  temps et qu'on entre en disant le contraire, la visite est finie avant d'avoir commence.</p></div>
+</div></section>
+
+<footer><div class="col">
+  <p>Document interne ACE Conseil, etabli a partir du repertoire national des
+  entreprises, des comptes deposes au greffe, des fiches Google des etablissements et de
+  verifications faites nom de domaine par nom de domaine. Les faits cites sur les quatre
+  societes sont sources et datent de septembre 2026. Les formulations proposees sont des
+  points de depart, pas un texte a reciter : la seule regle qui compte est de ne jamais
+  avancer un fait qu'on n'a pas verifie soi-meme.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>System Alu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Archivo+Narrow:wght@400;500;600&display=swap">
+
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ------------------------------------------------------------------
+   SYSTEM ALU, maquette de prospection.
+   Reference assumee : sites d'agences d'architecture, registre brutaliste.
+   Beton, typographie geante en capitales condensees, grille apparente,
+   contraste noir et blanc, une seule couleur d'accent. Aucune ombre,
+   aucun degrade, aucun coin arrondi.
+   Aucune identite visuelle publiee : palette provisoire, beton et
+   jaune de chantier.
+------------------------------------------------------------------- */
+:root{
+  --beton:#D9D8D4; --beton-2:#C4C3BE; --blanc:#FFFFFF;
+  --noir:#141412; --gris:#67665F; --jaune:#E5B233;
+  --ink:var(--noir); --ground:var(--beton); --surface:var(--blanc); --rule:#A8A7A1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E7E2; --ground:#1A1A18; --surface:#232320; --rule:#3C3B37;
+    --gris:#9B9A93; --beton-2:#232320; --jaune:#F0C453;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E7E2; --ground:#1A1A18; --surface:#232320; --rule:#3C3B37;
+  --gris:#9B9A93; --beton-2:#232320; --jaune:#F0C453;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink); font-family:'Archivo',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:800; letter-spacing:-.04em; line-height:.94; text-transform:uppercase; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jaune); outline-offset:2px}
+.page{max-width:1280px; margin:0 auto; padding:0 clamp(16px,4vw,32px)}
+.nar{font-family:'Archivo Narrow',Helvetica,sans-serif}
+.lab{font-family:'Archivo Narrow',sans-serif; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gris)}
+
+.mq{background:var(--noir); color:var(--beton); padding:9px 0; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--jaune); font-weight:700}
+
+nav{border-bottom:3px solid var(--ink)}
+.nv{display:flex; align-items:center; gap:clamp(14px,3.4vw,30px); padding:16px 0; font-family:'Archivo Narrow',sans-serif; font-size:.88rem; letter-spacing:.1em; text-transform:uppercase}
+.nv .lg{font-family:'Archivo',sans-serif; font-weight:800; font-size:1.24rem; letter-spacing:-.04em}
+.nv a{text-decoration:none; color:var(--gris)}
+.nv a:hover{color:var(--ink)}
+.nv .t{margin-left:auto; color:var(--ink); font-weight:600; white-space:nowrap}
+@media(max-width:820px){ .nv .m{display:none} }
+
+/* --- ouverture : typographie geante, la page est la maquette --- */
+.hero{padding:clamp(30px,4.5vw,54px) 0 0; border-bottom:3px solid var(--ink)}
+.hero .haut{display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(24px,5vw,64px); align-items:end}
+/* Le titre reste brutaliste mais laisse respirer la page :
+   7,5vw au lieu de 15vw, plafonne a 5,4rem au lieu de 11rem. */
+.hero h1{font-size:clamp(2.2rem,7.5vw,5.4rem); font-stretch:110%}
+.hero .l2{color:var(--jaune)}
+.hero .intro{font-size:clamp(.96rem,1.5vw,1.08rem); color:var(--gris); text-transform:none;
+  font-weight:400; letter-spacing:0; line-height:1.6; max-width:44ch; margin:0 0 6px}
+.hero .intro b{color:var(--ink); font-weight:600}
+@media(max-width:820px){ .hero .haut{grid-template-columns:1fr; align-items:start; gap:22px} }
+.meta{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--rule); margin-top:clamp(22px,4vw,40px)}
+/* Meme correction : 20px de part et d'autre de chaque filet vertical. */
+.meta div{padding:16px 20px 22px; border-right:1px solid var(--rule)}
+.meta div:first-child{padding-left:0}
+.meta div:last-child{border-right:0; padding-right:0}
+.meta dt{font-family:'Archivo Narrow',sans-serif; font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gris); margin-bottom:6px}
+.meta dd{margin:0; font-size:1.02rem; font-weight:600}
+@media(max-width:760px){ .meta{grid-template-columns:1fr 1fr} }
+
+/* --- la coupe animee du hero --- */
+.coupe{margin-top:clamp(16px,2.6vw,26px); border-top:1px solid var(--rule); padding:clamp(14px,2.2vw,24px) 0 0}
+.coupe svg{width:100%; height:auto; display:block; color:var(--ink)}
+.coupe .leg{margin:14px 0 0; padding-bottom:clamp(16px,2.4vw,26px); font-family:'Archivo Narrow',sans-serif;
+  font-size:.76rem; letter-spacing:.06em; color:var(--gris); max-width:70ch}
+
+/* --- LES TROIS METIERS, VOLETS QUI S'OUVRENT ---
+   Trois panneaux etroits au repos. Un clic ouvre celui qu'on choisit et
+   resserre les deux autres. L'animation porte sur flex-grow, qui se
+   transitionne proprement, plutot que sur width ou grid-template-columns.
+   Boutons radio et combinateur ~ : aucun JavaScript. */
+.blocs{border-bottom:3px solid var(--ink); background:var(--surface)}
+.accord input{position:absolute; opacity:0; pointer-events:none}
+/* Hauteur ramenee de 440 a 330 au maximum : les deux volets fermes
+   etaient de hautes colonnes vides avec un titre perdu en bas. */
+.rangee{display:flex; align-items:stretch; min-height:clamp(250px,30vw,330px)}
+.pan{flex:1 1 0; min-width:0; border-right:1px solid var(--rule); display:flex; overflow:hidden;
+     transition:flex-grow .55s cubic-bezier(.22,.85,.24,1), background .3s linear}
+.pan:last-child{border-right:0}
+/* Le titre d'un volet ferme se cale au centre et non tout en bas :
+   il ne flotte plus au fond d'une colonne vide. */
+.pan label{display:flex; flex-direction:column; justify-content:center; gap:7px;
+  padding:clamp(22px,2.6vw,30px); cursor:pointer; flex:0 0 clamp(160px,17vw,220px);
+  border-right:1px solid transparent; transition:border-color .3s linear}
+.pan .n{font-family:'Archivo Narrow',sans-serif; font-size:.78rem; letter-spacing:.2em; color:var(--jaune); font-weight:600}
+.pan .t{font-size:clamp(1.3rem,2.4vw,1.9rem); font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.98}
+.pan .s{font-family:'Archivo Narrow',sans-serif; font-size:.84rem; color:var(--gris); text-transform:uppercase; letter-spacing:.08em}
+.pan .dedans{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; justify-content:center;
+  gap:14px; padding:clamp(16px,2vw,28px); opacity:0; transition:opacity .4s linear}
+.pan .dessin{flex:1 1 auto; min-height:0; display:flex; align-items:center}
+.pan svg{width:100%; height:auto; max-height:clamp(200px,26vw,320px); display:block; color:var(--ink)}
+.pan .txt{margin:0; font-size:.9rem; color:var(--gris); text-transform:none; font-weight:400; letter-spacing:0; line-height:1.55; max-width:46ch}
+
+/* traits techniques */
+.trait{fill:none; stroke:currentColor; stroke-width:2; opacity:.85}
+.trait .hach{stroke-width:.5; opacity:.32}
+.trait .acc{stroke:var(--jaune); stroke-width:2.2; fill:none}
+.trait .vide{stroke-width:2; stroke-dasharray:6 5; opacity:.6}
+.trait .etai{stroke:var(--jaune); stroke-width:1.4; opacity:.55; stroke-dasharray:5 4}
+.sol{stroke:currentColor; stroke-width:1.2; opacity:.4; fill:none}
+.cote{stroke:var(--gris); stroke-width:.8; fill:none}
+.cote text{stroke:none; fill:var(--gris); font-size:11px; font-family:'Archivo Narrow',sans-serif; letter-spacing:.1em}
+.cote .rep{fill:var(--jaune); font-size:10px; letter-spacing:.16em}
+.mention{margin:20px 0 0; padding-bottom:26px; font-family:'Archivo Narrow',sans-serif; font-size:.78rem; color:var(--gris); letter-spacing:.06em}
+
+/* le volet choisi prend la place, les autres se resserrent */
+#ac1:checked ~ .rangee .v1,
+#ac2:checked ~ .rangee .v2,
+#ac3:checked ~ .rangee .v3{flex-grow:4.2; background:var(--ground)}
+#ac1:checked ~ .rangee .v1 .dedans,
+#ac2:checked ~ .rangee .v2 .dedans,
+#ac3:checked ~ .rangee .v3 .dedans{opacity:1; transition-delay:.18s}
+#ac1:checked ~ .rangee .v1 label,
+#ac2:checked ~ .rangee .v2 label,
+#ac3:checked ~ .rangee .v3 label{border-right-color:var(--rule)}
+#ac1:checked ~ .rangee .v1 .n,
+#ac2:checked ~ .rangee .v2 .n,
+#ac3:checked ~ .rangee .v3 .n{color:var(--ink)}
+#ac1:focus-visible ~ .rangee .v1 label,
+#ac2:focus-visible ~ .rangee .v2 label,
+#ac3:focus-visible ~ .rangee .v3 label{outline:3px solid var(--jaune); outline-offset:-3px}
+
+@media(prefers-reduced-motion:no-preference){
+  /* le dessin du volet ouvert se trace, comme un plan qu'on tire */
+  .pan .trait path{stroke-dasharray:1800; stroke-dashoffset:1800}
+  #ac1:checked ~ .rangee .v1 .trait path,
+  #ac2:checked ~ .rangee .v2 .trait path,
+  #ac3:checked ~ .rangee .v3 .trait path{animation:tracer-plan 1.2s cubic-bezier(.32,.72,.28,1) .25s both}
+  @keyframes tracer-plan{to{stroke-dashoffset:0}}
+  .pan .trait circle{opacity:0}
+  #ac1:checked ~ .rangee .v1 .trait circle,
+  #ac2:checked ~ .rangee .v2 .trait circle,
+  #ac3:checked ~ .rangee .v3 .trait circle{animation:paraitre .4s ease-out 1.1s both}
+  .pan .cote{opacity:0}
+  #ac1:checked ~ .rangee .v1 .cote,
+  #ac2:checked ~ .rangee .v2 .cote,
+  #ac3:checked ~ .rangee .v3 .cote{animation:paraitre .5s ease-out 1.05s both}
+  @keyframes paraitre{from{opacity:0} to{opacity:1}}
+}
+
+@media(max-width:900px){
+  .rangee{flex-direction:column; min-height:0}
+  .pan{border-right:0; border-bottom:1px solid var(--rule); flex-direction:column}
+  .pan label{flex:0 0 auto; border-right:0}
+  .pan .dedans{height:0; padding-top:0; padding-bottom:0; overflow:hidden;
+    transition:height .5s cubic-bezier(.22,.85,.24,1), opacity .35s linear, padding .5s}
+  #ac1:checked ~ .rangee .v1 .dedans,
+  #ac2:checked ~ .rangee .v2 .dedans,
+  #ac3:checked ~ .rangee .v3 .dedans{height:clamp(280px,72vw,400px); padding-top:16px; padding-bottom:24px}
+}
+
+/* --- sections de contenu --- */
+section{padding:clamp(46px,7vw,88px) 0}
+.entete{margin-bottom:clamp(24px,3.5vw,42px)}
+.entete .lab{display:block; margin-bottom:10px}
+.entete h2{font-size:clamp(1.5rem,3.4vw,2.4rem)}
+.para{margin:0; color:var(--gris); text-transform:none; font-weight:400; letter-spacing:0;
+  line-height:1.62; max-width:46ch; font-size:.98rem}
+
+.ch{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px; background:var(--rule); border:1px solid var(--rule)}
+.ch li{background:var(--ground); padding:clamp(22px,2.4vw,30px); min-height:clamp(128px,13vw,158px); display:flex; flex-direction:column; justify-content:center; transition:background .2s linear}
+.ch li:hover{background:var(--surface)}
+.ch h3{font-size:1.06rem; margin-bottom:8px; letter-spacing:-.02em}
+.ch p{margin:0; color:var(--gris); font-size:.9rem; text-transform:none; font-weight:400; letter-spacing:0; line-height:1.55}
+@media(max-width:860px){ .ch{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .ch{grid-template-columns:1fr} }
+
+.ruban{background:var(--noir); color:var(--beton); padding:clamp(46px,7vw,88px) 0;
+  border-top:3px solid var(--ink); border-bottom:3px solid var(--ink)}
+.ruban .lab,.ruban .et p{color:#9B9A93}
+.et{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:0}
+/* 22px de part et d'autre du filet, en une seule declaration lisible. */
+.et li{padding:0 22px; border-left:1px solid #3C3B37}
+.et li:first-child{border-left:0; padding-left:0}
+.et li:last-child{padding-right:0}
+.et .no{display:block; font-family:'Archivo Narrow',sans-serif; font-size:.78rem;
+  letter-spacing:.2em; color:var(--jaune); margin-bottom:12px}
+.et h3{font-size:1.02rem; margin-bottom:7px; letter-spacing:-.02em}
+.et p{margin:0; font-size:.86rem; text-transform:none; font-weight:400; letter-spacing:0; line-height:1.5}
+@media(max-width:900px){ .et{grid-template-columns:1fr 1fr; gap:24px 0} .et li:nth-child(3){border-left:0; padding-left:0} }
+@media(max-width:560px){ .et{grid-template-columns:1fr} .et li{border-left:0; padding-left:0} }
+
+.deux-col{display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,5vw,64px); align-items:start}
+.moy{margin:0; border-top:1px solid var(--ink)}
+.moy div{display:grid; grid-template-columns:auto 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--rule)}
+.moy dt{font-family:'Archivo Narrow',sans-serif; font-size:.74rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--gris); min-width:120px; padding-top:3px}
+.moy dd{margin:0; font-size:.98rem}
+@media(max-width:820px){ .deux-col{grid-template-columns:1fr} }
+
+.appel{background:var(--jaune); color:var(--noir); padding:clamp(40px,6vw,76px) 0;
+  border-top:3px solid var(--ink); border-bottom:3px solid var(--ink)}
+.appel h2{font-size:clamp(1.6rem,4vw,2.8rem); margin-bottom:12px}
+.appel p{margin:0 0 24px; max-width:48ch; text-transform:none; font-weight:400; letter-spacing:0; font-size:1rem}
+.bouton{display:inline-block; background:var(--noir); color:var(--jaune); text-decoration:none;
+  font-family:'Archivo Narrow',sans-serif; font-size:.92rem; letter-spacing:.14em;
+  text-transform:uppercase; padding:14px 30px; transition:background .18s linear, color .18s linear}
+.bouton:hover{background:var(--surface); color:var(--noir)}
+
+/* --- chiffres pleine largeur --- */
+.gros{background:var(--noir); color:var(--beton); padding:clamp(44px,7vw,86px) 0; border-bottom:3px solid var(--ink)}
+.gg{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+.gg b{display:block; font-size:clamp(2.4rem,7vw,5rem); font-weight:800; letter-spacing:-.06em; line-height:.9; color:var(--jaune)}
+.gg span{display:block; margin-top:10px; font-family:'Archivo Narrow',sans-serif; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:#9B9A93}
+@media(max-width:760px){ .gg{grid-template-columns:1fr 1fr; gap:30px} }
+
+footer{padding:clamp(34px,5vw,58px) 0 44px}
+.fg{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; font-family:'Archivo Narrow',sans-serif}
+.fg dt{font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gris); margin-bottom:5px}
+.fg dd{margin:0 0 16px; font-size:1rem}
+.fg a{text-decoration:none; border-bottom:2px solid var(--jaune)}
+.cp{margin-top:24px; padding-top:16px; border-top:1px solid var(--rule); font-size:.74rem; color:var(--gris); font-family:'Archivo Narrow',sans-serif; letter-spacing:.08em}
+@media(max-width:760px){ .fg{grid-template-columns:1fr} }
+
+/* --- CONSTRUCTION DE LA COUPE ---
+   L'ouvrage se batit dans l'ordre du chantier : terrain, semelle,
+   hachures de beton, puis armatures en jaune. C'est la sequence reelle
+   d'execution, pas un effet decoratif. */
+@media(prefers-reduced-motion:no-preference){
+  .js .anim .lg2{stroke-dasharray:var(--l); stroke-dashoffset:var(--l)}
+  .js .anim.vu .lg2{animation:batir 1.2s cubic-bezier(.32,.72,.28,1) var(--d,0s) both}
+  @keyframes batir{to{stroke-dashoffset:0}}
+  .js .anim .hach{opacity:0}
+  .js .anim.vu .hach{animation:paraitre .6s ease-out 1.6s both}
+  .js .anim .cot2{opacity:0}
+  .js .anim.vu .cot2{animation:paraitre .5s ease-out 2.35s both}
+  .js .anim .fer{opacity:0}
+  .js .anim.vu .fer{animation:ferrailler .7s ease-out var(--d,1.4s) both}
+  @keyframes ferrailler{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+}
+/* Titre geant : volet vertical, une ligne apres l'autre. */
+.js .vol{display:block; overflow:hidden}
+.js .vol span{display:block; animation:lever 1.05s cubic-bezier(.2,.9,.22,1) var(--d,0s) both}
+@keyframes lever{from{transform:translateY(101%)} to{transform:none}}
+@media(prefers-reduced-motion:reduce){ .js .vol span{animation:none} }
+/* Les blocs metiers montent legerement, l'un apres l'autre. */
+.js .bl{animation:poindre .8s cubic-bezier(.22,.85,.24,1) var(--d,0s) both}
+@keyframes poindre{from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:none}}
+@media(prefers-reduced-motion:reduce){ .js .bl{animation:none} }
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs provisoires &middot; ceci n'est pas le site officiel de System Alu</div>
+
+<nav><div class="page nv">
+  <span class="lg">SYSTEM ALU</span>
+  <span class="m"><a href="#metiers">Metiers</a></span>
+  <span class="m"><a href="#contact">Contact</a></span>
+  <a class="t" href="#contact">Lagny-sur-Marne &middot; 77</a>
+</div></nav>
+
+<div class="hero"><div class="page">
+  <div class="haut">
+  <h1><span class="vol"><span style="--d:.1s">Gros oeuvre</span></span><span class="vol"><span class="l2" style="--d:.2s">et maconnerie</span></span><span class="vol"><span style="--d:.3s">generale.</span></span></h1>
+    <p class="intro">Entreprise de <b>maconnerie et de gros oeuvre</b> installee a Lagny-sur-Marne depuis 2008. Nous intervenons pour des promoteurs, des entreprises generales, des syndics et des particuliers, en neuf comme en renovation.</p>
+  </div>
+  <dl class="meta">
+    <div class="bl" style="--d:.5s"><dt>Depuis</dt><dd>2008</dd></div>
+    <div class="bl" style="--d:.58s"><dt>Effectif</dt><dd>20 a 49</dd></div>
+    <div class="bl" style="--d:.66s"><dt>Implantation</dt><dd>Lagny-sur-Marne</dd></div>
+    <div class="bl" style="--d:.74s"><dt>Secteur</dt><dd>Ile-de-France</dd></div>
+  </dl>
+
+  <div class="coupe anim">
+<svg viewBox="0 0 1200 240" aria-label="Coupe de principe d'un ouvrage en beton arme, semelles filantes, voiles porteurs, planchers et armatures"><g class="trait"><path class="lg2 sol" d="M40 178 H1160" style="--l:1120;--d:0s"/><path class="lg2" d="M170 178 h140 v28 h-140 Z" style="--l:336;--d:.38s"/><path class="lg2" d="M520 178 h84 v24 h-84 Z" style="--l:216;--d:.46s"/><path class="lg2" d="M780 178 h140 v28 h-140 Z" style="--l:336;--d:.54s"/><path class="lg2" d="M212 178 V60 h56 V178" style="--l:290;--d:.8s"/><path class="lg2" d="M822 178 V60 h56 V178" style="--l:290;--d:.88s"/><path class="lg2" d="M540 178 V116 h44 V178" style="--l:168;--d:.96s"/><path class="lg2" d="M268 116 H822 v22 H268 Z" style="--l:1152;--d:1.2s"/><path class="lg2" d="M170 60 H920 V34 H170 Z" style="--l:1552;--d:1.3s"/><g class="hach"><path d="M362 116 L384 138"/><path d="M375 116 L397 138"/><path d="M388 116 L410 138"/><path d="M401 116 L423 138"/><path d="M414 116 L436 138"/><path d="M427 116 L449 138"/><path d="M440 116 L462 138"/><path d="M453 116 L475 138"/><path d="M466 116 L488 138"/><path d="M479 116 L501 138"/><path d="M492 116 L514 138"/><path d="M505 116 L527 138"/><path d="M518 116 L540 138"/><path d="M531 116 L553 138"/><path d="M544 116 L566 138"/><path d="M557 116 L579 138"/><path d="M570 116 L592 138"/><path d="M583 116 L605 138"/><path d="M596 116 L618 138"/><path d="M609 116 L631 138"/><path d="M622 116 L644 138"/><path d="M635 116 L657 138"/><path d="M648 116 L670 138"/><path d="M661 116 L683 138"/><path d="M674 116 L696 138"/><path d="M687 116 L709 138"/><path d="M700 116 L722 138"/><path d="M713 116 L735 138"/><path d="M726 116 L748 138"/><path d="M739 116 L761 138"/><path d="M752 116 L774 138"/><path d="M765 116 L787 138"/><path d="M778 116 L800 138"/><path d="M791 116 L813 138"/><path d="M804 116 L822 134"/><path d="M817 116 L822 121"/><path d="M178 34 L204 60"/><path d="M191 34 L217 60"/><path d="M204 34 L230 60"/><path d="M217 34 L243 60"/><path d="M230 34 L256 60"/><path d="M243 34 L269 60"/><path d="M256 34 L282 60"/><path d="M269 34 L295 60"/><path d="M282 34 L308 60"/><path d="M295 34 L321 60"/><path d="M308 34 L334 60"/><path d="M321 34 L347 60"/><path d="M334 34 L360 60"/><path d="M347 34 L373 60"/><path d="M360 34 L386 60"/><path d="M373 34 L399 60"/><path d="M386 34 L412 60"/><path d="M399 34 L425 60"/><path d="M412 34 L438 60"/><path d="M425 34 L451 60"/><path d="M438 34 L464 60"/><path d="M451 34 L477 60"/><path d="M464 34 L490 60"/><path d="M477 34 L503 60"/><path d="M490 34 L516 60"/><path d="M503 34 L529 60"/><path d="M516 34 L542 60"/><path d="M529 34 L555 60"/><path d="M542 34 L568 60"/><path d="M555 34 L581 60"/><path d="M568 34 L594 60"/><path d="M581 34 L607 60"/><path d="M594 34 L620 60"/><path d="M607 34 L633 60"/><path d="M620 34 L646 60"/><path d="M633 34 L659 60"/><path d="M646 34 L672 60"/><path d="M659 34 L685 60"/><path d="M672 34 L698 60"/><path d="M685 34 L711 60"/><path d="M698 34 L724 60"/><path d="M711 34 L737 60"/><path d="M724 34 L750 60"/><path d="M737 34 L763 60"/><path d="M750 34 L776 60"/><path d="M763 34 L789 60"/><path d="M776 34 L802 60"/><path d="M789 34 L815 60"/><path d="M802 34 L828 60"/><path d="M815 34 L841 60"/><path d="M828 34 L854 60"/><path d="M841 34 L867 60"/><path d="M854 34 L880 60"/><path d="M867 34 L893 60"/><path d="M880 34 L906 60"/><path d="M893 34 L919 60"/><path d="M906 34 L920 48"/><path d="M919 34 L920 35"/></g><g class="fer acc" style="--d:1.95s"><path d="M180 198 h120"/><path d="M180 186 h120"/><path d="M530 196 h64"/><path d="M790 198 h120"/><path d="M790 186 h120"/><path d="M222 178 V70"/><path d="M258 178 V70"/><path d="M832 178 V70"/><path d="M868 178 V70"/><path d="M550 178 V124"/><path d="M278 128 H812"/><path d="M180 47 H910"/><circle cx="222" cy="70" r="3.2"/><circle cx="258" cy="70" r="3.2"/><circle cx="832" cy="70" r="3.2"/><circle cx="868" cy="70" r="3.2"/><circle cx="550" cy="124" r="3.2"/></g><g class="cote cot2"><path d="M170 224 h750 M170 219 v10 M920 219 v10"/><text x="545" y="216" text-anchor="middle">12 000</text><path d="M946 60 V178 M941 60 h10 M941 178 h10"/><text x="956" y="123">2 700</text><path d="M144 178 V206 M139 178 h10 M139 206 h10"/><text x="106" y="196">600</text><text x="545" y="27" text-anchor="middle" class="rep">DALLE DE COUVERTURE</text></g></g></svg>
+    <p class="leg">Coupe de principe. L'ouvrage se batit dans l'ordre du chantier : terrain, semelles, voiles, planchers, puis armatures.</p>
+  </div>
+</div></div>
+
+<div class="blocs" id="metiers">
+  <div class="page">
+    <div class="accord">
+      <input type="radio" name="act" id="ac1" checked>
+      <input type="radio" name="act" id="ac2">
+      <input type="radio" name="act" id="ac3">
+      <div class="rangee">
+        <div class="pan v1">
+          <label for="ac1">
+            <span class="n">01</span>
+            <span class="t">Gros oeuvre</span>
+            <span class="s">Fondations, voiles, planchers, dalle</span>
+          </label>
+          <div class="dedans">
+            <div class="dessin"><svg viewBox="0 0 520 400" aria-label="Coupe de principe, semelle filante et voile en beton arme">
+  <g class="trait">
+    <path d="M130 300 h216 v45 h-216 Z"/>
+    <path d="M200 300 h180 v-144 h-180 Z"/>
+    <g class="hach"><path d="M130 345 L175 300"/><path d="M146 345 L191 300"/><path d="M162 345 L207 300"/><path d="M178 345 L223 300"/><path d="M194 345 L239 300"/><path d="M210 345 L255 300"/><path d="M226 345 L271 300"/><path d="M242 345 L287 300"/><path d="M258 345 L303 300"/><path d="M274 345 L319 300"/><path d="M290 345 L335 300"/><path d="M306 345 L351 300"/><path d="M322 345 L367 300"/></g>
+    <g class="acc">
+      <path d="M140 333 h196 M140 314 h196"/>
+      <path d="M214 300 v-130 M366 300 v-130"/>
+      <circle cx="214" cy="174" r="3.4"/><circle cx="366" cy="174" r="3.4"/>
+    </g>
+  </g>
+  <path d="M40 345 H480" class="sol"/>
+  <g class="cote">
+    <path d="M130 371 h216 M130 366 v10 M346 366 v10"/>
+    <text x="238" y="363" text-anchor="middle">2 400</text>
+    <path d="M376 300 V345 M371 300 h10 M371 345 h10"/>
+    <text x="384" y="326">500</text>
+    <path d="M166 156 V300 M161 156 h10 M161 300 h10"/>
+    <text x="128" y="232">1 600</text>
+  </g>
+</svg></div>
+            <p class="txt">Beton arme coule en place ou prefabrique. Semelle filante, voile porteur, plancher hourdis.</p>
+          </div>
+        </div>
+        <div class="pan v2">
+          <label for="ac2">
+            <span class="n">02</span>
+            <span class="t">Maconnerie</span>
+            <span class="s">Agglomere, brique, pierre</span>
+          </label>
+          <div class="dedans">
+            <div class="dessin"><svg viewBox="0 0 520 400" aria-label="Mur en agglomere avec ouverture et linteau">
+  <g class="trait">
+    <path d="M120 310 h288 v-198 h-288 Z"/>
+    <g class="hach"><path d="M120 310 h288"/><path d="M120 310 v-18"/><path d="M165 310 v-18"/><path d="M210 310 v-18"/><path d="M255 310 v-18"/><path d="M390 310 v-18"/><path d="M120 292 h288"/><path d="M142 292 v-18"/><path d="M188 292 v-18"/><path d="M232 292 v-18"/><path d="M120 274 h288"/><path d="M120 274 v-18"/><path d="M165 274 v-18"/><path d="M210 274 v-18"/><path d="M255 274 v-18"/><path d="M390 274 v-18"/><path d="M120 256 h288"/><path d="M142 256 v-18"/><path d="M188 256 v-18"/><path d="M232 256 v-18"/><path d="M120 238 h288"/><path d="M120 238 v-18"/><path d="M165 238 v-18"/><path d="M210 238 v-18"/><path d="M255 238 v-18"/><path d="M390 238 v-18"/><path d="M120 220 h288"/><path d="M142 220 v-18"/><path d="M188 220 v-18"/><path d="M232 220 v-18"/><path d="M120 202 h288"/><path d="M120 202 v-18"/><path d="M165 202 v-18"/><path d="M210 202 v-18"/><path d="M255 202 v-18"/><path d="M390 202 v-18"/><path d="M120 184 h288"/><path d="M142 184 v-18"/><path d="M188 184 v-18"/><path d="M232 184 v-18"/><path d="M120 166 h288"/><path d="M120 166 v-18"/><path d="M165 166 v-18"/><path d="M210 166 v-18"/><path d="M255 166 v-18"/><path d="M390 166 v-18"/><path d="M120 148 h288"/><path d="M142 148 v-18"/><path d="M188 148 v-18"/><path d="M232 148 v-18"/><path d="M278 148 v-18"/><path d="M322 148 v-18"/><path d="M368 148 v-18"/><path d="M120 130 h288"/><path d="M120 130 v-18"/><path d="M165 130 v-18"/><path d="M210 130 v-18"/><path d="M255 130 v-18"/><path d="M300 130 v-18"/><path d="M345 130 v-18"/><path d="M390 130 v-18"/></g>
+    <path d="M201 310 v-189 h108 v189" class="vide"/>
+    <g class="acc"><path d="M183 121 h144 v-18 h-144 Z"/></g>
+  </g>
+  <path d="M40 310 H480" class="sol"/>
+  <g class="cote">
+    <path d="M201 336 h108 M201 331 v10 M309 331 v10"/>
+    <text x="255" y="328" text-anchor="middle">1 200</text>
+    <path d="M438 112 V310 M433 112 h10 M433 310 h10"/>
+    <text x="446" y="215">2 200</text>
+    <text x="255" y="93" text-anchor="middle" class="rep">LINTEAU</text>
+  </g>
+</svg></div>
+            <p class="txt">Elevation, cloisons, ouvertures et linteaux. Enduit de facade traditionnel ou monocouche.</p>
+          </div>
+        </div>
+        <div class="pan v3">
+          <label for="ac3">
+            <span class="n">03</span>
+            <span class="t">Renovation</span>
+            <span class="s">Extension, surelevation, ouverture</span>
+          </label>
+          <div class="dedans">
+            <div class="dessin"><svg viewBox="0 0 520 400" aria-label="Ouverture creee dans un mur existant, pose d'un linteau metallique">
+  <g class="trait">
+    <path d="M120 310 h288 v-198 h-288 Z"/>
+    <g class="hach exist"><path d="M8 310 L206 112"/><path d="M22 310 L220 112"/><path d="M36 310 L234 112"/><path d="M50 310 L248 112"/><path d="M64 310 L262 112"/><path d="M78 310 L276 112"/><path d="M92 310 L290 112"/><path d="M106 310 L304 112"/><path d="M120 310 L318 112"/><path d="M134 310 L332 112"/><path d="M148 310 L346 112"/><path d="M162 310 L360 112"/><path d="M176 310 L374 112"/><path d="M190 310 L388 112"/><path d="M204 310 L402 112"/><path d="M218 310 L416 112"/><path d="M232 310 L430 112"/><path d="M246 310 L444 112"/><path d="M260 310 L458 112"/><path d="M274 310 L472 112"/><path d="M288 310 L486 112"/><path d="M302 310 L500 112"/><path d="M316 310 L514 112"/><path d="M330 310 L528 112"/><path d="M344 310 L542 112"/><path d="M358 310 L556 112"/><path d="M372 310 L570 112"/><path d="M386 310 L584 112"/></g>
+    <path d="M210 310 v-189 h126 v189" class="vide"/>
+    <g class="acc">
+      <path d="M188 121 h171"/>
+      <path d="M188 99 h171"/>
+      <path d="M273 121 v-22"/>
+      <path d="M188 121 v-22 M358 121 v-22"/>
+    </g>
+    <g class="etai"><path d="M165 310 V94 M381 310 V94"/></g>
+  </g>
+  <path d="M40 310 H480" class="sol"/>
+  <g class="cote">
+    <path d="M210 336 h126 M210 331 v10 M336 331 v10"/>
+    <text x="273" y="328" text-anchor="middle">1 400</text>
+    <text x="273" y="89" text-anchor="middle" class="rep">IPN 200</text>
+    <text x="165" y="86" text-anchor="middle" class="rep">ETAI</text>
+  </g>
+</svg></div>
+            <p class="txt">Reprise en sous oeuvre, creation d'ouverture dans un mur porteur, pose de linteau metallique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mention">Cotes en millimetres. Principes constructifs courants, chaque ouvrage fait l'objet d'une etude avant chiffrage.</p>
+  </div>
+</div>
+
+
+
+
+<section class="page" id="chantiers">
+  <div class="entete"><span class="lab">Chantiers types</span><h2>Ce sur quoi on nous appelle.</h2></div>
+  <ul class="ch">
+    <li><h3>Extension</h3><p>Ossature beton ou parpaing, liaison a l'existant, reprise de fondation.</p></li>
+    <li><h3>Surelevation</h3><p>Renforcement des porteurs, plancher, reprise de charpente.</p></li>
+    <li><h3>Ouverture en mur porteur</h3><p>Etaiement, decoupe, pose de linteau metallique, rebouchage.</p></li>
+    <li><h3>Dalle et plancher</h3><p>Dalle portee, plancher hourdis, chape et reservations.</p></li>
+    <li><h3>Reprise en sous oeuvre</h3><p>Micropieux ou puits, consolidation de fondation existante.</p></li>
+    <li><h3>Facade</h3><p>Ravalement, enduit monocouche ou traditionnel, reprise de fissures.</p></li>
+  </ul>
+</section>
+
+<div class="ruban">
+  <div class="page">
+    <div class="entete"><span class="lab">Deroule</span><h2>Cinq etapes, dans cet ordre.</h2></div>
+    <ol class="et">
+      <li><span class="no">01</span><h3>Visite</h3><p>Releve sur site, sondage des existants, contraintes d'acces et de voisinage.</p></li>
+      <li><span class="no">02</span><h3>Etude</h3><p>Principe constructif dessine, note de calcul si reprise de charge, chiffrage detaille.</p></li>
+      <li><span class="no">03</span><h3>Declarations</h3><p>Autorisation de voirie, declaration prealable, assurance de chantier.</p></li>
+      <li><span class="no">04</span><h3>Execution</h3><p>Installation, etaiement, gros oeuvre, controle a chaque phase.</p></li>
+      <li><span class="no">05</span><h3>Reception</h3><p>Nettoyage, leve des reserves, remise des attestations et garanties.</p></li>
+    </ol>
+  </div>
+</div>
+
+<section class="page" id="moyens">
+  <div class="deux-col">
+    <div>
+      <div class="entete"><span class="lab">Moyens</span><h2>Une equipe et du materiel a nous.</h2></div>
+      <p class="para">Nous ne sous-traitons pas le gros oeuvre. Les compagnons qui etaient au coffrage sont ceux qui reviennent au decoffrage, ce qui evite les reprises et les journees perdues a se renvoyer la responsabilite.</p>
+    </div>
+    <dl class="moy">
+      <div><dt>Compagnons</dt><dd>20 a 49 selon les chantiers en cours</dd></div>
+      <div><dt>Qualification</dt><dd>Inscrite au repertoire des metiers</dd></div>
+      <div><dt>Sites</dt><dd>Deux etablissements ouverts</dd></div>
+      <div><dt>Rayon</dt><dd>Seine-et-Marne, Marne-la-Vallee, est parisien</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="appel" id="devis">
+  <div class="page">
+    <h2>Un chantier a chiffrer ?</h2>
+    <p>Visite sur site sous une semaine, devis detaille sous quinze jours. Nous nous deplacons avant de chiffrer, toujours.</p>
+    <a class="bouton" href="#devis">Demander une visite</a>
+  </div>
+</div>
+
+<div class="gros"><div class="page gg">
+  <div><b>18</b><span>annees d'exercice</span></div>
+  <div><b>20+</b><span>compagnons</span></div>
+  <div><b>2</b><span>sites</span></div>
+  <div><b>IDF</b><span>zone d'intervention</span></div>
+</div></div>
+
+<footer class="page" id="contact">
+  <div class="fg">
+    <dl>
+      <dt>Adresse</dt><dd>7 avenue du Marechal<br>de Lattre de Tassigny<br>77400 Lagny-sur-Marne</dd>
+    </dl>
+    <dl><dt>Clients</dt><dd>Promoteurs, entreprises generales, syndics, particuliers</dd></dl>
+    <dl><dt>Interventions</dt><dd>Neuf, renovation, extension, surelevation</dd></dl>
+  </div>
+  <div class="cp">System Alu &middot; SARL &middot; SIREN 503 290 785 &middot; Maquette ACE Conseil</div>
+</footer>
+<script>
+// Declenchement a l'entree dans le champ. Sans JavaScript ou en mouvement
+// reduit, tout reste affiche a l'etat complet.
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.anim');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('vu')}); return; }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vu'); io.unobserve(x.target); } });
+  },{threshold:.15});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

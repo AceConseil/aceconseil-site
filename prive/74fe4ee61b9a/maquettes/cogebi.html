@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Cogebi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ------------------------------------------------------------------
+   COGEBI, maquette de prospection.
+   Reference assumee : Linear. Fond sombre, typographie serree, filets
+   fins, monospace pour les donnees, halo unique tres discret, densite
+   d'information elevee. Aucune ombre portee, aucun coin arrondi.
+   Couleur relevee sur leur logo : cyan #00A0E0. Le logo est fait
+   d'anneaux concentriques, motif repris comme signe graphique.
+------------------------------------------------------------------- */
+:root{
+  --cyan:#00A0E0; --cyan-clair:#4FC3F0;
+  --nuit:#08090B; --nuit-2:#101215; --nuit-3:#171A1F;
+  --gris:#8A9199; --gris-clair:#C6CBD1; --blanc:#F7F8F8;
+  --ink:var(--blanc); --ground:var(--nuit); --rule:#20242A;
+}
+/* Direction sombre assumee dans les deux themes. */
+:root[data-theme="light"]{ --ink:var(--blanc); --ground:var(--nuit); }
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink); font-family:'IBM Plex Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.028em; line-height:1.08; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--cyan); outline-offset:3px}
+.page{max-width:1120px; margin:0 auto; padding:0 clamp(20px,5vw,30px)}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric:tabular-nums}
+.lab{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan)}
+
+.mq{background:var(--nuit-2); border-bottom:1px solid var(--rule); padding:9px 0; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gris); text-align:center}
+.mq b{color:var(--blanc); font-weight:600}
+
+nav{position:sticky; top:0; z-index:40; border-bottom:1px solid var(--rule); background:rgba(8,9,11,.82); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px)}
+.nv{display:flex; align-items:center; height:54px; gap:clamp(14px,3.4vw,30px); font-size:.86rem; color:var(--gris)}
+.nv .lg{display:flex; align-items:center; gap:9px; color:var(--blanc); font-weight:600; letter-spacing:-.02em; font-size:1.04rem}
+.nv a{text-decoration:none}
+.nv a:hover{color:var(--blanc)}
+.nv .t{margin-left:auto; color:var(--cyan); font-weight:500; white-space:nowrap}
+@media(max-width:780px){ .nv .m{display:none} }
+
+/* --- ouverture : halo unique, pas de degrade partout --- */
+.hero{position:relative; overflow:hidden; padding:clamp(64px,11vw,132px) 0 clamp(48px,8vw,96px); border-bottom:1px solid var(--rule)}
+.halo{position:absolute; top:-42%; left:50%; width:min(880px,120vw); aspect-ratio:1; transform:translateX(-50%); pointer-events:none; opacity:.5}
+.hero .page{position:relative}
+.hero h1{font-size:clamp(2.2rem,6.4vw,4.3rem); max-width:17ch; margin:18px 0 0}
+.hero p{color:var(--gris-clair); max-width:48ch; margin:22px 0 0; font-size:clamp(1rem,2vw,1.14rem)}
+.act{display:flex; gap:12px; margin-top:30px; flex-wrap:wrap}
+.b1{background:var(--blanc); color:var(--nuit); padding:11px 22px; text-decoration:none; font-size:.92rem; font-weight:500}
+.b1:hover{background:var(--cyan-clair)}
+.b2{border:1px solid var(--rule); padding:11px 22px; text-decoration:none; font-size:.92rem; color:var(--gris-clair)}
+.b2:hover{border-color:var(--cyan); color:var(--blanc)}
+
+/* --- bandeau de donnees, tres Linear --- */
+.data{border-bottom:1px solid var(--rule)}
+.dg{display:grid; grid-template-columns:repeat(4,1fr)}
+.dg div{padding:26px 22px; border-left:1px solid var(--rule)}
+.dg div:first-child{border-left:0; padding-left:0}
+.dg b{display:block; font-family:'IBM Plex Mono',monospace; font-size:clamp(1.5rem,3.4vw,2.2rem); font-weight:500; color:var(--cyan); letter-spacing:-.03em}
+.dg span{display:block; margin-top:6px; font-size:.8rem; color:var(--gris)}
+@media(max-width:760px){ .dg{grid-template-columns:1fr 1fr} .dg div:nth-child(3){border-left:0; padding-left:0} }
+
+section{padding:clamp(56px,9vw,108px) 0; border-bottom:1px solid var(--rule)}
+h2{font-size:clamp(1.6rem,4vw,2.6rem); max-width:19ch; margin-top:14px}
+.sub{color:var(--gris); max-width:46ch; margin:16px 0 0}
+
+/* --- missions : lignes fines, pas de cartes --- */
+.miss{list-style:none; margin:clamp(30px,5vw,52px) 0 0; padding:0; border-top:1px solid var(--rule)}
+.miss li{display:grid; grid-template-columns:88px 1fr 1.4fr; gap:22px; padding:22px 0;
+  border-bottom:1px solid var(--rule); align-items:baseline; transition:background .16s linear}
+/* Le fond de survol deborde de 16px sans deplacer la ligne : une marge
+   negative aurait fait depasser les filets par rapport au reste de la page. */
+.miss li:hover{background:var(--nuit-2); box-shadow:16px 0 0 var(--nuit-2), -16px 0 0 var(--nuit-2)}
+.miss h3{font-size:1.02rem}
+.miss p{margin:0; color:var(--gris); font-size:.93rem}
+@media(max-width:720px){ .miss li{grid-template-columns:70px 1fr} .miss p{grid-column:2/3} }
+
+/* --- phases, en frise monospace --- */
+.frise{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:clamp(28px,5vw,48px); border-top:1px solid var(--cyan)}
+/* 24px de chaque cote du filet : sans marge a gauche, le texte d'une phase
+   venait se coller contre la ligne de la phase precedente. */
+.ph{padding:22px 24px; border-right:1px solid var(--rule)}
+.ph:first-child{padding-left:0}
+.ph:last-child{border-right:0; padding-right:0}
+.ph .n{font-family:'IBM Plex Mono',monospace; font-size:.76rem; color:var(--cyan); letter-spacing:.1em}
+.ph h3{font-size:1rem; margin:10px 0 6px}
+.ph p{margin:0; color:var(--gris); font-size:.88rem}
+@media(max-width:820px){ .frise{grid-template-columns:1fr 1fr} }
+@media(max-width:520px){ .frise{grid-template-columns:1fr} .ph{border-right:0; border-bottom:1px solid var(--rule)} }
+
+footer{padding:clamp(40px,6vw,64px) 0 46px; font-size:.88rem; color:var(--gris)}
+.fg{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
+.fg dt{color:var(--blanc); font-weight:600; font-size:.78rem; margin-bottom:5px}
+.fg dd{margin:0 0 15px}
+.fg a{color:var(--cyan); text-decoration:none}
+.cp{margin-top:26px; padding-top:18px; border-top:1px solid var(--rule); font-size:.76rem}
+@media(max-width:760px){ .fg{grid-template-columns:1fr} }
+
+/* --- BALAYAGE RADAR ---
+   Le logo Cogebi est fait d'anneaux concentriques. On les fait vivre :
+   les cercles du halo se dilatent lentement, un rayon balaie comme un
+   radar, et le disque de la navigation tourne au survol. */
+@media(prefers-reduced-motion:no-preference){
+  .js .onde{transform-origin:100px 100px; opacity:.16}
+  .onde:nth-of-type(1){animation:dilater 7s cubic-bezier(.4,0,.2,1) 0s infinite}
+  .onde:nth-of-type(2){animation:dilater 7s cubic-bezier(.4,0,.2,1) 1.75s infinite}
+  .onde:nth-of-type(3){animation:dilater 7s cubic-bezier(.4,0,.2,1) 3.5s infinite}
+  .onde:nth-of-type(4){animation:dilater 7s cubic-bezier(.4,0,.2,1) 5.25s infinite}
+  @keyframes dilater{from{transform:scale(.34); opacity:.34} to{transform:scale(1.08); opacity:0}}
+  .rayon{transform-origin:100px 100px; animation:tourner 9s linear infinite}
+  @keyframes tourner{to{transform:rotate(360deg)}}
+  .lg svg{transition:transform .7s cubic-bezier(.22,.8,.24,1)}
+  .lg:hover svg{transform:rotate(180deg)}
+
+  /* Les lignes de mission se revelent de la gauche, comme un listing. */
+  .js .anim .miss li{clip-path:inset(0 100% 0 0)}
+  .js .anim.vu .miss li{animation:devoiler .7s cubic-bezier(.3,.7,.25,1) var(--d,0s) both}
+  @keyframes devoiler{to{clip-path:inset(0 0 0 0)}}
+}
+/* Titre : montee simple, deja lisible sans animation. */
+.js .mte{animation:mter .95s cubic-bezier(.22,.85,.24,1) var(--d,0s) both}
+@keyframes mter{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+@media(prefers-reduced-motion:reduce){ .mte{animation:none} }
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; ceci n'est pas le site officiel de Cogebi</div>
+
+<nav><div class="page nv">
+  <span class="lg">
+    <svg width="20" height="20" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" stroke="#00A0E0" stroke-width="4"/>
+      <circle cx="20" cy="20" r="10" stroke="#00A0E0" stroke-width="4"/>
+      <path d="M20 20h18" stroke="#08090B" stroke-width="7"/>
+    </svg>
+    Cogebi
+  </span>
+  <span class="m"><a href="#missions">Missions</a></span>
+  <span class="m"><a href="#methode">Methode</a></span>
+  <span class="m"><a href="#contact">Contact</a></span>
+  <a class="t" href="tel:+33164021616">01 64 02 16 16</a>
+</div></nav>
+
+<div class="hero">
+  <svg class="halo" viewBox="0 0 200 200" aria-hidden="true">
+    <defs><radialGradient id="h"><stop offset="0" stop-color="#00A0E0" stop-opacity=".26"/><stop offset="1" stop-color="#00A0E0" stop-opacity="0"/></radialGradient></defs>
+    <circle cx="100" cy="100" r="100" fill="url(#h)"/>
+    <g stroke="#00A0E0" fill="none">
+      <circle class="onde" cx="100" cy="100" r="90"/><circle class="onde" cx="100" cy="100" r="90"/>
+      <circle class="onde" cx="100" cy="100" r="90"/><circle class="onde" cx="100" cy="100" r="90"/>
+    </g>
+    <g class="rayon" stroke="#00A0E0" stroke-opacity=".22" stroke-width="1.4">
+      <path d="M100 100 L100 4"/>
+    </g>
+  </svg>
+  <div class="page">
+    <div class="lab">Ingenierie du batiment et de l'industrie</div>
+    <h1 class="mte" style="--d:.14s">Le chiffrage juste, avant le premier coup de pelle.</h1>
+    <p class="mte" style="--d:.26s">Etudes techniques, economie de la construction, organisation et gestion de chantier. A Lagny-sur-Marne depuis 1987.</p>
+    <div class="act mte" style="--d:.38s">
+      <a class="b1" href="#contact">Nous confier une etude</a>
+      <a class="b2" href="#missions">Voir nos missions</a>
+    </div>
+  </div>
+</div>
+
+<div class="data"><div class="page dg">
+  <div><b>1987</b><span>annee de creation</span></div>
+  <div><b>39</b><span>annees d'exercice</span></div>
+  <div><b>4,7</b><span>sur 5, avis Google</span></div>
+  <div><b>77</b><span>Lagny-sur-Marne</span></div>
+</div></div>
+
+<section class="page anim" id="missions">
+  <div class="lab">Missions</div>
+  <h2>Quatre interventions, du programme a la reception.</h2>
+  <ol class="miss">
+    <li style="--d:0.05s"><span class="mono lab">MIS-01</span><h3>Etudes techniques</h3><p>Faisabilite, dimensionnement, notes de calcul, coordination des lots techniques.</p></li>
+    <li style="--d:0.16s"><span class="mono lab">MIS-02</span><h3>Economie de la construction</h3><p>Estimation, quantitatifs, descriptifs, analyse des offres et mise au point des marches.</p></li>
+    <li style="--d:0.27s"><span class="mono lab">MIS-03</span><h3>Organisation de chantier</h3><p>Planning, ordonnancement, pilotage et coordination des entreprises.</p></li>
+    <li style="--d:0.38s"><span class="mono lab">MIS-04</span><h3>Gestion et suivi</h3><p>Comptes rendus, situations de travaux, reception et levee des reserves.</p></li>
+  </ol>
+</section>
+
+<section class="page" id="methode">
+  <div class="lab">Methode</div>
+  <h2>Une etude se conduit dans un ordre.</h2>
+  <div class="frise">
+    <div class="ph"><div class="n">01</div><h3>Programme</h3><p>Besoin, contraintes, budget cible, calendrier.</p></div>
+    <div class="ph"><div class="n">02</div><h3>Etude</h3><p>Solutions techniques comparees et chiffrees.</p></div>
+    <div class="ph"><div class="n">03</div><h3>Consultation</h3><p>Dossier, appel d'offres, analyse des candidatures.</p></div>
+    <div class="ph"><div class="n">04</div><h3>Chantier</h3><p>Pilotage, suivi financier, reception.</p></div>
+  </div>
+</section>
+
+<footer><div class="page">
+  <div class="fg">
+    <dl>
+      <dt>Telephone</dt><dd><a href="tel:+33164021616">01 64 02 16 16</a></dd>
+      <dt>Bureau</dt><dd>105 avenue du General Leclerc<br>77400 Lagny-sur-Marne</dd>
+    </dl>
+    <dl><dt>Interventions</dt><dd>Batiment et industrie, Ile-de-France</dd></dl>
+    <dl><dt>Depuis</dt><dd>1987, trente-neuf ans d'exercice</dd></dl>
+  </div>
+  <div class="cp">Cogebi &middot; SAS &middot; SIREN 340 306 778 &middot; Maquette ACE Conseil</div>
+</div></footer>
+<script>
+// Declenchement a l'entree dans le champ. Sans JavaScript ou en mouvement
+// reduit, tout est affiche a l'etat complet.
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.anim');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('vu')}); return; }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vu'); io.unobserve(x.target); } });
+  },{threshold:.15});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

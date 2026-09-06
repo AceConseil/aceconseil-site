@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>J4R Échafaudages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap">
+
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ------------------------------------------------------------------
+   J4R ECHAFAUDAGES, maquette de prospection.
+   Reference assumee : page produit Apple. Fond noir, typographie geante,
+   le produit occupe l'ecran et se monte au defilement, tres peu de mots,
+   chiffres cles en tres grand. Aucune ombre, aucun coin arrondi.
+   Couleurs relevees sur le logo J4R : cyan #149ED2 et #24C0F0, gris metal.
+------------------------------------------------------------------- */
+:root{
+  --cyan:#149ED2; --cyan-vif:#24C0F0;
+  --noir:#000000; --noir-2:#0A0C0E; --gris-900:#16191C;
+  --gris:#86868B; --gris-clair:#C7CBD0; --blanc:#F5F5F7;
+  --ink:var(--blanc); --ground:var(--noir);
+}
+/* Direction assumee en noir, dans les deux themes : c'est le parti pris. */
+:root[data-theme="light"]{ --ink:var(--blanc); --ground:var(--noir); }
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:'Barlow',-apple-system,Helvetica,Arial,sans-serif;
+  font-size:17px; line-height:1.5; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.028em; text-wrap:balance; line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan); outline-offset:3px}
+.page{max-width:1080px; margin:0 auto; padding:0 clamp(20px,5vw,30px)}
+.centre{text-align:center}
+.gris{color:var(--gris)}
+
+.mq{background:var(--gris-900); padding:9px 0; font-size:.66rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gris); text-align:center}
+.mq b{color:var(--blanc); font-weight:600}
+
+/* --- barre de navigation facon Apple : fine, floue, discrete --- */
+nav{
+  position:sticky; top:0; z-index:50; height:46px;
+  background:rgba(0,0,0,.72); backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(245,245,247,.1);
+}
+.nv{display:flex; align-items:center; height:46px; gap:clamp(16px,4vw,38px); font-size:.78rem; color:var(--gris-clair)}
+.nv .lg{font-weight:700; font-size:1rem; letter-spacing:-.02em; color:var(--blanc)}
+.nv .lg i{font-style:normal; color:var(--cyan)}
+.nv a{text-decoration:none}
+.nv a:hover{color:var(--blanc)}
+.nv .fin{margin-left:auto; color:var(--cyan); font-weight:500; white-space:nowrap}
+@media(max-width:760px){ .nv .mid{display:none} }
+
+/* --- ouverture plein ecran --- */
+.hero{padding:clamp(58px,10vw,104px) 0 0; text-align:center; overflow:hidden}
+.hero .sur{font-size:clamp(.9rem,2vw,1.32rem); color:var(--cyan); font-weight:600; margin-bottom:14px; letter-spacing:-.01em}
+.hero h1{font-size:clamp(3rem,11vw,7.6rem); font-weight:700; letter-spacing:-.045em}
+.hero .bl{font-size:clamp(1.05rem,2.4vw,1.62rem); color:var(--gris-clair); font-weight:400; max-width:24ch; margin:22px auto 0; line-height:1.35}
+.liens{display:flex; gap:26px; justify-content:center; margin-top:26px; font-size:1.02rem}
+.liens a{color:var(--cyan); text-decoration:none}
+.liens a:hover{text-decoration:underline}
+
+/* structure dessinee, plein cadre */
+.scene{margin-top:clamp(24px,4vw,44px); position:relative}
+.scene svg{display:block; width:100%; height:auto; max-height:76vh}
+
+/* --- chiffres geants, un par ecran de lecture --- */
+.chiffres{padding:clamp(64px,11vw,140px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.cg{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,4vw,44px); text-align:center}
+.cg b{display:block; font-size:clamp(2.6rem,7vw,4.6rem); font-weight:700; letter-spacing:-.05em; line-height:1;
+      color:var(--cyan)}
+.cg span{display:block; margin-top:10px; font-size:.86rem; color:var(--gris)}
+@media(max-width:760px){ .cg{grid-template-columns:repeat(2,1fr); gap:36px} }
+
+/* --- section titre geant, facon Apple --- */
+.big{padding:clamp(70px,12vw,150px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.big h2{font-size:clamp(2rem,6.4vw,4.4rem); max-width:15ch; margin:0 auto; text-align:center}
+.big h2 em{font-style:normal; color:var(--cyan)}
+.big p{max-width:46ch; margin:26px auto 0; text-align:center; color:var(--gris-clair); font-size:clamp(1rem,2vw,1.24rem)}
+
+/* --- grille de solutions, tuiles sombres sans ombre ni arrondi --- */
+.tuiles{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:clamp(38px,6vw,64px)}
+/* La tuile se dimensionne sur son contenu au lieu d'imposer 210px :
+   avec deux lignes de texte, l'ecart entre le code et le titre etait un trou. */
+.t{background:var(--gris-900); padding:clamp(26px,3.4vw,38px); min-height:clamp(150px,15vw,182px);
+   display:flex; flex-direction:column; gap:14px}
+.t .c{font-size:.74rem; letter-spacing:.14em; color:var(--cyan); font-weight:600}
+.t h3{font-size:clamp(1.15rem,2vw,1.42rem); margin-top:auto}
+.t p{margin:8px 0 0; color:var(--gris); font-size:.92rem}
+@media(max-width:880px){ .tuiles{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .tuiles{grid-template-columns:1fr} }
+
+/* --- bande technique claire, contraste facon fiche produit --- */
+.spec{background:var(--blanc); color:#1D1D1F; padding:clamp(64px,10vw,128px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.spec h2{font-size:clamp(1.8rem,5vw,3.2rem); text-align:center; max-width:16ch; margin:0 auto clamp(34px,5vw,58px)}
+.spec table{width:100%; border-collapse:collapse; font-size:clamp(.9rem,1.6vw,1.02rem)}
+.spec th,.spec td{text-align:left; padding:15px 18px; border-bottom:1px solid #D2D2D7; vertical-align:baseline}
+.spec th:first-child,.spec td:first-child{padding-left:0}
+.spec th:last-child,.spec td:last-child{padding-right:0}
+.spec thead th{font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:#6E6E73; font-weight:600}
+.spec tbody th{font-size:1.5rem; font-weight:700; color:var(--cyan); width:64px; letter-spacing:-.03em}
+.spec .tw{overflow-x:auto}
+.spec table{min-width:560px}
+.spec .nb{margin:22px 0 0; color:#6E6E73; font-size:.86rem; text-align:center}
+
+/* --- references --- */
+.refs{padding:clamp(60px,9vw,120px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.refs .l{display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(22px,4vw,56px); margin-top:34px;
+         font-size:clamp(1rem,2.4vw,1.5rem); font-weight:600; letter-spacing:-.02em; color:var(--gris-clair)}
+
+/* --- pied --- */
+footer{background:var(--noir-2); border-top:1px solid rgba(245,245,247,.1); padding:clamp(40px,6vw,64px) 0 46px; font-size:.84rem; color:var(--gris)}
+.fgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px}
+.fgrid dt{color:var(--blanc); font-weight:600; margin-bottom:6px; font-size:.8rem}
+.fgrid dd{margin:0 0 16px}
+.fgrid a{color:var(--cyan); text-decoration:none}
+@media(max-width:760px){ .fgrid{grid-template-columns:1fr} }
+.copy{margin-top:26px; padding-top:20px; border-top:1px solid rgba(245,245,247,.1); font-size:.76rem}
+
+/* --- MONTAGE DE LA STRUCTURE ---
+   Les barres se tracent de bas en haut comme un echafaudage reel se monte,
+   puis les noeuds d'assemblage apparaissent. Sans JavaScript et en mouvement
+   reduit, la structure s'affiche entiere : c'est l'etat de repos. */
+@media(prefers-reduced-motion:no-preference){
+  .js .anim .bar{stroke-dasharray:var(--l); stroke-dashoffset:var(--l)}
+  .js .anim .nd{opacity:0}
+  .js .anim.vu .bar{animation:monter 1.05s cubic-bezier(.3,.7,.25,1) var(--d,0s) both}
+  .js .anim.vu .nd{animation:serrer .45s ease-out var(--d,0s) both}
+  @keyframes monter{to{stroke-dashoffset:0}}
+  @keyframes serrer{from{opacity:0; transform:scale(.2)} to{opacity:1; transform:scale(1)}}
+  .nd{transform-box:fill-box; transform-origin:center}
+
+  /* Balayage : une bande de lumiere cyan passe une fois sur la structure montee. */
+  .js .anim.vu .scan{animation:balayer 2.6s cubic-bezier(.4,0,.2,1) 2.1s both}
+  @keyframes balayer{from{transform:translateX(-42%)} to{transform:translateX(142%)}}
+
+  /* --- LES COMPAGNONS ---
+     Ils arrivent une fois la structure montee, puis travaillent en boucle.
+     Chaque geste correspond a une tache reelle du montage : serrer un collier,
+     receptionner une piece, grimper l'echelle, poser un plancher. */
+  .js .anim .gars{opacity:0}
+  .js .anim.vu .gars{animation:arriver .6s ease-out var(--d,0s) both}
+  @keyframes arriver{from{opacity:0} to{opacity:1}}
+
+  /* Le serreur donne des tours de cle : son bras avant va et vient. */
+  .cle,.tendA,.tendB,.jambe{transform-box:fill-box}
+  .js .anim.vu .cle{transform-origin:top left; animation:serrer-cle 1.4s ease-in-out 2.9s infinite}
+  @keyframes serrer-cle{0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-34deg)}}
+
+  /* Le receptionneur leve les bras vers la charge quand elle arrive a sa hauteur. */
+  .js .anim.vu .tendA{transform-origin:top right; animation:tendre 9s ease-in-out 3s infinite}
+  .js .anim.vu .tendB{transform-origin:top left; animation:tendre 9s ease-in-out 3s infinite}
+  @keyframes tendre{0%,30%,70%,100%{transform:rotate(0deg)} 42%,62%{transform:rotate(-46deg)}}
+
+  /* Le grimpeur monte l'echelle du premier au troisieme niveau, par paliers. */
+  .js .anim.vu .grimpeur{animation:grimper 9s cubic-bezier(.45,.05,.55,.95) 3.2s infinite}
+  @keyframes grimper{
+    0%{transform:translateY(0)}
+    38%{transform:translateY(-170px)}
+    62%{transform:translateY(-170px)}
+    100%{transform:translateY(0)}
+  }
+  .js .anim.vu .h-grimpeur .jambe{transform-origin:top center;
+    animation:enjamber .9s ease-in-out 3.2s infinite}
+  @keyframes enjamber{0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)}}
+
+  /* Le poseur se penche pour caler un plancher. */
+  .js .anim.vu .poseur{transform-box:fill-box; transform-origin:bottom center;
+    animation:pencher 4.2s ease-in-out 3.6s infinite}
+  @keyframes pencher{0%,100%{transform:rotate(0deg)} 45%{transform:rotate(-7deg)}}
+
+  /* La charge monte le long de la facade, s'arrete en haut, redescend a vide. */
+  .js .anim .levage{opacity:0}
+  .js .anim.vu .levage{animation:arriver .6s ease-out 2.15s both}
+  .js .anim.vu .charge{animation:hisser 9s cubic-bezier(.45,.05,.55,.95) 3s infinite}
+  @keyframes hisser{
+    0%,8%{transform:translateY(0)}
+    42%{transform:translateY(-85px)}
+    64%{transform:translateY(-85px)}
+    100%{transform:translateY(0)}
+  }
+  .js .anim .cote{opacity:0}
+  .js .anim.vu .cote{animation:arriver .5s ease-out 2.5s both}
+}
+
+/* Titre : revele par un volet qui s'ouvre vers le haut, sans flou ni glissement. */
+.volet{display:block; overflow:hidden}
+.js .volet span{display:block; animation:ouvrir .95s cubic-bezier(.22,.9,.24,1) var(--d,0s) both}
+@keyframes ouvrir{from{transform:translateY(102%)} to{transform:none}}
+@media(prefers-reduced-motion:reduce){ .volet span{animation:none} }
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; ceci n'est pas le site officiel de J4R Echafaudages</div>
+
+<nav>
+  <div class="page nv">
+    <span class="lg">J<i>4</i>R</span>
+    <span class="mid"><a href="#solutions">Solutions</a></span>
+    <span class="mid"><a href="#charges">Charges</a></span>
+    <span class="mid"><a href="#references">References</a></span>
+    <span class="mid"><a href="#contact">Contact</a></span>
+    <a class="fin" href="tel:+33160072201">01 60 07 22 01</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="page">
+    <div class="sur">J4R Echafaudages</div>
+    <h1><span class="volet"><span style="--d:.12s">La hauteur,</span></span><span class="volet"><span style="--d:.24s">en toute securite.</span></span></h1>
+    <p class="bl">Location, montage et transport d'echafaudages en Ile-de-France. Materiel Layher.</p>
+    <div class="liens">
+      <a href="#contact">Demander une etude &rsaquo;</a>
+      <a href="#charges">Voir les charges &rsaquo;</a>
+    </div>
+  </div>
+  <div class="scene">
+    <svg class="anim" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax meet" aria-label="Echafaudage de pied a cinq niveaux avec compagnons au travail">
+      <defs>
+        <linearGradient id="sc" x1="0" x2="1"><stop offset="0" stop-color="#24C0F0" stop-opacity="0"/><stop offset=".5" stop-color="#24C0F0" stop-opacity=".45"/><stop offset="1" stop-color="#24C0F0" stop-opacity="0"/></linearGradient>
+        <clipPath id="cadre"><rect x="270" y="60" width="720" height="510"/></clipPath>
+
+        <!-- Compagnon vu de profil, pieds a l'origine, 74 unites de haut.
+             A l'echelle du dessin : 85 unites valent 2,00 m de hauteur de
+             plancher, donc 74 unites font 1,74 m. C'est l'echelle reelle. -->
+        <g id="homme">
+          <g stroke="#C7CBD0" stroke-width="3.4" stroke-linecap="round" fill="none">
+            <path d="M0 0 L-7 -26"/><path d="M0 0 L7 -26"/>
+            <path class="jambe" d="M0 -26 L0 -54"/>
+            <path class="brasA" d="M0 -48 L-14 -34"/>
+            <path class="brasB" d="M0 -48 L13 -36"/>
+          </g>
+          <circle cx="0" cy="-62" r="7.5" fill="#C7CBD0"/>
+          <path d="M-9 -64 a9 9 0 0 1 18 0z" fill="#24C0F0"/>
+          <path d="M-11 -64 h22" stroke="#24C0F0" stroke-width="2.6" stroke-linecap="round"/>
+        </g>
+      </defs>
+
+      <g id="mount">
+        <!-- montants -->
+        <g stroke="#4A5158" stroke-width="2.4" stroke-linecap="round">
+          <path class="bar" style="--l:425;--d:.05s" d="M300 545 V120"/><path class="bar" style="--l:425;--d:.11s" d="M420 545 V120"/><path class="bar" style="--l:455;--d:.17s" d="M540 545 V90"/>
+          <path class="bar" style="--l:455;--d:.23s" d="M660 545 V90"/><path class="bar" style="--l:425;--d:.29s" d="M780 545 V120"/><path class="bar" style="--l:385;--d:.35s" d="M900 545 V160"/>
+        </g>
+        <!-- planchers -->
+        <g stroke="#6E767E" stroke-width="2.4" stroke-linecap="round">
+          <path class="bar" style="--l:600;--d:.5s" d="M300 460 H900"/><path class="bar" style="--l:600;--d:.66s" d="M300 375 H900"/><path class="bar" style="--l:480;--d:.82s" d="M300 290 H780"/>
+          <path class="bar" style="--l:480;--d:.98s" d="M300 205 H780"/><path class="bar" style="--l:360;--d:1.14s" d="M300 130 H660"/>
+        </g>
+        <!-- diagonales de contreventement -->
+        <g stroke="#149ED2" stroke-width="2" opacity=".92" stroke-linecap="round">
+          <path class="bar" style="--l:440;--d:.6s" d="M300 460 L420 375 M540 460 L660 375 M780 460 L900 375"/>
+          <path class="bar" style="--l:294;--d:.76s" d="M420 375 L540 290 M660 375 L780 290"/>
+          <path class="bar" style="--l:294;--d:.92s" d="M300 290 L420 205 M540 290 L660 205"/>
+          <path class="bar" style="--l:147;--d:1.08s" d="M420 205 L540 130"/>
+        </g>
+        <!-- garde-corps -->
+        <g stroke="#4A5158" stroke-width="1.4">
+          <path class="bar" style="--l:2160;--d:1.3s" d="M300 425 H900 M300 340 H900 M300 255 H780 M300 170 H780"/>
+        </g>
+
+        <!-- echelle d'acces, sur laquelle grimpe un compagnon -->
+        <g stroke="#4A5158" stroke-width="1.6" opacity=".8">
+          <path class="bar" style="--l:340;--d:1.4s" d="M474 460 V205 M506 460 V205"/>
+          <path class="bar" style="--l:420;--d:1.5s" d="M474 440 H506 M474 415 H506 M474 390 H506 M474 365 H506 M474 340 H506 M474 315 H506 M474 290 H506 M474 265 H506 M474 240 H506 M474 215 H506"/>
+        </g>
+
+        <!-- noeuds d'assemblage -->
+        <g fill="#24C0F0" class="noeuds">
+          <circle class="nd" style="--d:1.52s" cx="300" cy="460" r="5"/><circle class="nd" style="--d:1.54s" cx="420" cy="460" r="5"/><circle class="nd" style="--d:1.56s" cx="540" cy="460" r="5"/><circle class="nd" style="--d:1.59s" cx="660" cy="460" r="5"/><circle class="nd" style="--d:1.61s" cx="780" cy="460" r="5"/><circle class="nd" style="--d:1.63s" cx="900" cy="460" r="5"/>
+          <circle class="nd" style="--d:1.65s" cx="300" cy="375" r="5"/><circle class="nd" style="--d:1.67s" cx="420" cy="375" r="5"/><circle class="nd" style="--d:1.70s" cx="540" cy="375" r="5"/><circle class="nd" style="--d:1.72s" cx="660" cy="375" r="5"/><circle class="nd" style="--d:1.74s" cx="780" cy="375" r="5"/><circle class="nd" style="--d:1.76s" cx="900" cy="375" r="5"/>
+          <circle class="nd" style="--d:1.78s" cx="300" cy="290" r="5"/><circle class="nd" style="--d:1.81s" cx="420" cy="290" r="5"/><circle class="nd" style="--d:1.83s" cx="540" cy="290" r="5"/><circle class="nd" style="--d:1.85s" cx="660" cy="290" r="5"/><circle class="nd" style="--d:1.87s" cx="780" cy="290" r="5"/>
+          <circle class="nd" style="--d:1.89s" cx="300" cy="205" r="5"/><circle class="nd" style="--d:1.92s" cx="420" cy="205" r="5"/><circle class="nd" style="--d:1.94s" cx="540" cy="205" r="5"/><circle class="nd" style="--d:1.96s" cx="660" cy="205" r="5"/><circle class="nd" style="--d:1.98s" cx="780" cy="205" r="5"/>
+          <circle class="nd" style="--d:2.00s" cx="300" cy="130" r="5"/><circle class="nd" style="--d:2.03s" cx="420" cy="130" r="5"/><circle class="nd" style="--d:2.05s" cx="540" cy="130" r="5"/><circle class="nd" style="--d:2.07s" cx="660" cy="130" r="5"/>
+        </g>
+
+        <!-- LES COMPAGNONS. Chaque figure est detaillee en clair et non
+             appelee par <use>, sinon le shadow DOM empecherait d'animer
+             les membres depuis la feuille de style. -->
+        <g class="equipe">
+          <!-- niveau 1 : il serre un collier a la cle -->
+          <g class="gars" style="--d:2.25s" transform="translate(352 460)">
+            <g class="h-serreur">
+              <g stroke="#C7CBD0" stroke-width="3.4" stroke-linecap="round" fill="none">
+                <path d="M0 0 L-7 -26"/><path d="M0 0 L7 -26"/>
+                <path class="jambe" d="M0 -26 L0 -54"/>
+                <path class="brasA" d="M0 -48 L-14 -34"/>
+                <path class="brasB cle" d="M0 -48 L13 -36"/>
+              </g>
+              <circle cx="0" cy="-62" r="7.5" fill="#C7CBD0"/>
+              <path d="M-9 -64 a9 9 0 0 1 18 0z" fill="#24C0F0"/>
+              <path d="M-11 -64 h22" stroke="#24C0F0" stroke-width="2.6" stroke-linecap="round"/>
+            </g>
+          </g>
+          <!-- niveau 2 : il receptionne la charge, bras leves -->
+          <g class="gars" style="--d:2.45s" transform="translate(884 375)">
+            <g class="h-recept">
+              <g stroke="#C7CBD0" stroke-width="3.4" stroke-linecap="round" fill="none">
+                <path d="M0 0 L-7 -26"/><path d="M0 0 L7 -26"/>
+                <path class="jambe" d="M0 -26 L0 -54"/>
+                <path class="brasA tendA" d="M0 -48 L-14 -34"/>
+                <path class="brasB tendB" d="M0 -48 L13 -36"/>
+              </g>
+              <circle cx="0" cy="-62" r="7.5" fill="#C7CBD0"/>
+              <path d="M-9 -64 a9 9 0 0 1 18 0z" fill="#24C0F0"/>
+              <path d="M-11 -64 h22" stroke="#24C0F0" stroke-width="2.6" stroke-linecap="round"/>
+            </g>
+          </g>
+          <!-- il grimpe l'echelle du niveau 1 au niveau 3 -->
+          <g class="gars grimpeur" style="--d:2.6s">
+            <g transform="translate(490 460)">
+              <g class="h-grimpeur">
+              <g stroke="#C7CBD0" stroke-width="3.4" stroke-linecap="round" fill="none">
+                <path d="M0 0 L-7 -26"/><path d="M0 0 L7 -26"/>
+                <path class="jambe" d="M0 -26 L0 -54"/>
+                <path class="brasA" d="M0 -48 L-14 -34"/>
+                <path class="brasB" d="M0 -48 L13 -36"/>
+              </g>
+              <circle cx="0" cy="-62" r="7.5" fill="#C7CBD0"/>
+              <path d="M-9 -64 a9 9 0 0 1 18 0z" fill="#24C0F0"/>
+              <path d="M-11 -64 h22" stroke="#24C0F0" stroke-width="2.6" stroke-linecap="round"/>
+            </g>
+            </g>
+          </g>
+          <!-- niveau 4 : il cale un plancher, penche en avant -->
+          <g class="gars" style="--d:2.9s" transform="translate(596 205)">
+            <g class="poseur">
+              <g class="h-poseur">
+              <g stroke="#C7CBD0" stroke-width="3.4" stroke-linecap="round" fill="none">
+                <path d="M0 0 L-7 -26"/><path d="M0 0 L7 -26"/>
+                <path class="jambe" d="M0 -26 L0 -54"/>
+                <path class="brasA" d="M0 -48 L-14 -34"/>
+                <path class="brasB" d="M0 -48 L13 -36"/>
+              </g>
+              <circle cx="0" cy="-62" r="7.5" fill="#C7CBD0"/>
+              <path d="M-9 -64 a9 9 0 0 1 18 0z" fill="#24C0F0"/>
+              <path d="M-11 -64 h22" stroke="#24C0F0" stroke-width="2.6" stroke-linecap="round"/>
+            </g>
+            </g>
+          </g>
+        </g>
+
+        <!-- treuil et charge qui monte le long de la facade -->
+        <g class="levage">
+          <g stroke="#4A5158" stroke-width="2" fill="none">
+            <path class="bar" style="--l:60;--d:1.45s" d="M900 160 h58"/>
+            <circle class="nd" style="--d:2.1s" cx="952" cy="166" r="6" fill="none" stroke="#24C0F0"/>
+          </g>
+          <g class="charge">
+            <!-- La charge part du plancher bas et monte d'un niveau, soit 85 unites,
+                 pour arriver exactement a hauteur des mains du receptionneur. -->
+            <path d="M952 172 V412" stroke="#4A5158" stroke-width="1.4"/>
+            <rect x="930" y="412" width="44" height="28" fill="none" stroke="#24C0F0" stroke-width="2.2"/>
+            <path d="M930 426 H974" stroke="#24C0F0" stroke-width="1.2" opacity=".6"/>
+            <path d="M941 412 V440 M963 412 V440" stroke="#24C0F0" stroke-width="1" opacity=".45"/>
+          </g>
+        </g>
+
+        <!-- cotation d'un niveau -->
+        <g stroke="#4A5158" stroke-width="1">
+          <path class="bar" style="--l:97;--d:2.2s" d="M1000 460 V375 M994 460 h12 M994 375 h12"/>
+        </g>
+        <text class="cote" x="1012" y="422" font-family="Barlow, sans-serif" font-size="15" fill="#86868B">2,00 m</text>
+      </g>
+
+      <g clip-path="url(#cadre)">
+        <rect class="scan" x="270" y="60" width="150" height="510" fill="url(#sc)"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="page chiffres">
+  <div class="cg">
+    <div><b>19</b><span>annees d'exercice</span></div>
+    <div><b>60</b><span>chantiers par mois</span></div>
+    <div><b>6</b><span>types de structures</span></div>
+    <div><b>5/5</b><span>note Google</span></div>
+  </div>
+</div>
+
+<div class="page big" id="solutions">
+  <h2>Une structure <em>par contrainte</em>, pas par catalogue.</h2>
+  <p>Acces, charge, duree, occupation du site. On part de la contrainte du chantier.</p>
+  <div class="tuiles">
+    <div class="t"><span class="c">EC-01</span><div><h3>Recette a materiaux</h3><p>Reception en facade, sans grue.</p></div></div>
+    <div class="t"><span class="c">EC-02</span><div><h3>Protection couvreur</h3><p>Console de rive, filet, garde-corps.</p></div></div>
+    <div class="t"><span class="c">EC-03</span><div><h3>Plateforme de travail</h3><p>Echafaudage de pied, acces escalier.</p></div></div>
+    <div class="t"><span class="c">EC-04</span><div><h3>Evenementiel</h3><p>Gradins, podiums, tours de son.</p></div></div>
+    <div class="t"><span class="c">EC-05</span><div><h3>Escalier public</h3><p>Circulation en site occupe.</p></div></div>
+    <div class="t"><span class="c">EC-06</span><div><h3>Echafaudage roulant</h3><p>Livre monte, interieur ou sol plan.</p></div></div>
+  </div>
+</div>
+
+<div class="spec" id="charges">
+  <div class="page">
+    <h2>La classe de charge se choisit avant le devis.</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th scope="col">Classe</th><th scope="col">Charge repartie</th><th scope="col">Usage</th><th scope="col">Plancher</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1</th><td>0,75 kN/m&sup2;</td><td>Inspection, controle</td><td>Passage seul</td></tr>
+          <tr><th scope="row">2</th><td>1,50 kN/m&sup2;</td><td>Peinture, nettoyage</td><td>Sans stockage</td></tr>
+          <tr><th scope="row">3</th><td>2,00 kN/m&sup2;</td><td>Ravalement, isolation</td><td>Stockage leger</td></tr>
+          <tr><th scope="row">4</th><td>3,00 kN/m&sup2;</td><td>Maconnerie, menuiseries</td><td>Stockage materiaux</td></tr>
+          <tr><th scope="row">5</th><td>4,50 kN/m&sup2;</td><td>Gros oeuvre</td><td>Renforce</td></tr>
+          <tr><th scope="row">6</th><td>6,00 kN/m&sup2;</td><td>Charges exceptionnelles</td><td>Note de calcul</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nb">Norme NF EN 12811-1. Toute configuration hors standard fait l'objet d'une note de calcul.</p>
+  </div>
+</div>
+
+<div class="page refs centre" id="references">
+  <h2 style="font-size:clamp(1.6rem,4vw,2.6rem)">Ils nous confient leurs chantiers.</h2>
+  <div class="l">
+    <span>Bouygues</span><span>Icade</span><span>Cogedim</span>
+    <span>Demathieu Bard</span><span>Promogim</span><span>Marignan</span><span>Disneyland Paris</span>
+  </div>
+</div>
+
+<footer id="contact">
+  <div class="page">
+    <div class="fgrid">
+      <dl>
+        <dt>Telephone</dt><dd><a href="tel:+33160072201">01 60 07 22 01</a></dd>
+        <dt>Depot</dt><dd>49 rue Ampere<br>77400 Lagny-sur-Marne</dd>
+      </dl>
+      <dl>
+        <dt>Secteur</dt><dd>Ile-de-France, Seine-et-Marne, Marne-la-Vallee, est parisien</dd>
+      </dl>
+      <dl>
+        <dt>Materiel</dt><dd>Layher, multidirectionnel et facadier</dd>
+        <dt>Reception</dt><dd>Proces verbal remis a la livraison</dd>
+      </dl>
+    </div>
+    <div class="copy">J4R Echafaudages &middot; SAS &middot; SIREN 500 759 345 &middot; Maquette ACE Conseil</div>
+  </div>
+</footer>
+
+<script>
+// Le montage se declenche a l'entree dans le champ. Sans JavaScript, ou en
+// mouvement reduit, la structure est deja dessinee et complete.
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=document.querySelectorAll('.anim');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('vu')}); return; }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('vu'); io.unobserve(x.target); } });
+  },{threshold:.15});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
