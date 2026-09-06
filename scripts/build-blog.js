@@ -497,6 +497,54 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Deux procédures existent lorsque l'obligation de payer n'est pas sérieusement contestable : l'injonction de payer, rapide et sans débat contradictoire au départ, aux articles 1405 et suivants du code de procédure civile, et le référé-provision devant le président du tribunal de commerce, à l'article 873 alinéa 2 du même code. À examiner avec votre conseil, en pesant le montant en jeu, les frais engagés et ce qu'il reste de la relation commerciale.</p></div>
   </div>
 </div>`,
+  'inventaire-taches-sans-proprietaire': `<div class="wg wg-check" aria-label="Auto-diagnostic : combien de taches sans proprietaire chez vous ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Le test du prénom, sur huit tâches</p>
+  <p class="wg-hint">Cochez celles pour lesquelles aucun prénom ne vous vient en deux secondes.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La boîte de réception des factures électroniques, le matin.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les devis partis sans réponse depuis plus de dix jours.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les demandes arrivées le week-end, rouvertes le lundi.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les factures fournisseurs rapprochées d'un chantier ou d'une commande.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les règlements reçus, pointés face à la facture correspondante.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les documents qui expirent : attestations, agréments, certificats.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les messages du formulaire du site, et qui les reçoit encore.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Les avis en ligne, et la réponse qu'on y apporte.</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 8 sans prénom</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="0">Chaque ligne a un prénom en face. C'est rare, et cela veut dire que votre organisation absorbe les nouveautés au lieu de les laisser tomber. Refaites le test après la prochaine échéance qui vous tombe dessus.</span>
+    <span class="wgk-band" data-min="1" data-max="2">Une ou deux tâches à personne. Le plus souvent, un prénom et un créneau dans la semaine suffisent : la décision de trente secondes n'a simplement jamais été prise. Aucun outil nécessaire.</span>
+    <span class="wgk-band" data-min="3" data-max="5">La zone la plus fréquente dans une entreprise de trois à vingt personnes. Triez d'abord : ce que vous pouvez supprimer, ce qu'un prénom règle. Ce qui reste après ces deux passes est la seule liste qui mérite d'être outillée.</span>
+    <span class="wgk-band" data-min="6" data-max="8">Presque tout est à personne, et ce n'est pas un problème de sérieux : ces tâches sont nées de changements extérieurs que personne n'a distribués. Faites l'inventaire d'une heure avant toute décision d'outil.</span>
+  </div>
+</div>`,
+  'test-tache-agent': `<div class="wg wg-check" aria-label="Auto-diagnostic : cette tache peut-elle etre confiee a un agent ?">
+  <p class="wg-title"><span class="wg-pulse"></span>Cette tâche est-elle disqualifiée ?</p>
+  <p class="wg-hint">Prenez une tâche précise. Une seule case cochée suffit à la sortir du périmètre.</p>
+  <ul class="wgk-list">
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Le geste est irréversible : rien ne permet de revenir en arrière.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Une responsabilité nommée y est attachée et ne se délègue pas.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Un tiers subit les conséquences si cela tourne mal.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">La décision engage l'entreprise : un prix, un délai, un engagement.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je ne peux pas vérifier le résultat en dix secondes.</span></label></li>
+    <li><label class="wgk-item"><input type="checkbox" class="wgk-box"><span class="wgk-txt">Je ne sais pas l'écrire en dix lignes sans « ça dépend ».</span></label></li>
+  </ul>
+  <div class="wgk-bar"><span></span></div>
+  <div class="wgk-result">
+    <p class="wgk-score"><strong class="wgk-n">0</strong> / 6 verrous</p>
+    <p class="wgk-verdict wgk-v">Cochez les cases ci-dessus pour situer votre entreprise.</p>
+  </div>
+  <div class="wgk-bands" hidden>
+    <span class="wgk-band" data-min="0" data-max="0">Aucun critère disqualifiant. Si la tâche revient à un rythme prévisible, c'est un bon candidat : écrivez ses règles en dix lignes, et vous aurez fait l'essentiel du travail.</span>
+    <span class="wgk-band" data-min="1" data-max="1">Un seul critère suffit à sortir la tâche du périmètre tel quel. Coupez-la en deux : ce qui prépare la décision, et la décision. Ne confiez que la première moitié.</span>
+    <span class="wgk-band" data-min="2" data-max="3">Plusieurs verrous. La tâche reste utile à outiller, mais uniquement en préparation : l'agent rassemble, propose et signale, un humain nommé valide et exécute.</span>
+    <span class="wgk-band" data-min="4" data-max="6">À ne pas confier, même partiellement, tant que les règles ne sont pas écrites et validées par un professionnel de la matière. Le problème n'est pas technique, il est de responsabilité.</span>
+  </div>
+</div>`,
   'ou-tourne-agent-quatre-questions': `<div class="wg wg-agent" aria-label="Les quatre questions a poser sur l'hebergement d'un agent IA">
   <p class="wg-title"><span class="wg-pulse"></span>Les quatre réponses à obtenir par écrit</p>
   <p class="wg-hint">Touchez chaque question pour voir ce qu'une bonne réponse contient.</p>
@@ -1166,6 +1214,30 @@ function main() {
       nb++;
     }
     console.log(`   → ${nb} asset${nb > 1 ? 's' : ''} copié${nb > 1 ? 's' : ''} dans public/assets/`);
+  }
+
+  // 3 ter. Espace privé : outils internes servis par le site mais hors du site.
+  // Copié tel quel, récursivement, depuis prive/ vers public/prive/.
+  // Ces pages ne sont volontairement PAS dans sitemap.xml, donc IndexNow ne les
+  // soumet jamais (indexnow.js ne lit que le sitemap), et vercel.json leur pose
+  // un en-tête X-Robots-Tag noindex. Elles ne sont liées depuis aucune page
+  // publique. Le chemin est un jeton tiré au hasard : ce n'est pas une
+  // authentification, c'est une adresse que personne ne devine.
+  const priveDir = path.join(ROOT, 'prive');
+  if (fs.existsSync(priveDir)) {
+    let nb = 0;
+    const copier = (de, vers) => {
+      fs.mkdirSync(vers, { recursive: true });
+      for (const f of fs.readdirSync(de)) {
+        if (f.startsWith('.')) continue;
+        const src = path.join(de, f);
+        const dst = path.join(vers, f);
+        if (fs.statSync(src).isDirectory()) copier(src, dst);
+        else { fs.copyFileSync(src, dst); nb++; }
+      }
+    };
+    copier(priveDir, path.join(OUT, 'prive'));
+    console.log(`   → ${nb} fichier${nb > 1 ? 's' : ''} privé${nb > 1 ? 's' : ''} copié${nb > 1 ? 's' : ''} dans public/prive/ (hors sitemap, noindex)`);
   }
 
   // 4. Pages dédiées (piliers SEO)
