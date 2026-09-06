@@ -2,7 +2,7 @@
 title: "Quelles tâches confier à un agent IA, et lesquelles jamais"
 titleSeo: "Quelles tâches confier à un agent IA"
 description: Un agent sait faire beaucoup plus de choses qu'il ne devrait en faire. Quatre critères qui qualifient une tâche, quatre qui la disqualifient, et ce qu'on fait quand le besoin reste malgré le refus.
-date: 2026-09-11
+date: 2026-09-06
 slug: quelles-taches-confier-agent
 keywords: quelles tâches automatiser, agent IA TPE, automatisation limites, responsabilité agent IA, tâches à ne pas automatiser
 ---
