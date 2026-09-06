@@ -18,7 +18,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const DRIVE = path.join(
+// La source vit dans le depot, le rendu part dans Drive. Jennifer ne lit que
+// le rendu ; personne n'edite le HTML a la main.
+const SOURCE = path.join(__dirname, '..', 'publications');
+const SORTIE = path.join(
   process.env.HOME,
   'Library/CloudStorage/GoogleDrive-contact@aceconseil.co/Mon Drive',
   'Pro/ACE - Prospection LinkedIn/publications'
@@ -129,8 +132,8 @@ code{background:#F2EFE7;padding:2px 6px;border-radius:4px;font-size:14px}
 .jours a:hover{border-color:var(--or)}
 .jours .j{font:700 16px/1.3 "Playfair Display",Georgia,serif}
 .jours .a{color:var(--gris);font-size:13px;text-align:right;flex-shrink:0}
-.jours .h{color:var(--gris);font-size:14px;margin-top:3px;display:block;font-weight:400}
-blockquote{margin:0 0 14px;padding:12px 16px;border-left:3px solid var(--or);
+.jours .h{color:var(--gris);font-size:14px;margin-top:3px;display:block;font-weight:400}\n.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}\n.nav a{font-size:13px;padding:5px 11px;border:1px solid var(--trait);border-radius:999px;\n  background:#fff;color:var(--navy);text-decoration:none}\n.nav a:hover{border-color:var(--or)}\nsection{margin-bottom:14px;padding-top:8px}\nsection h2{border-top:1px solid var(--trait);padding-top:26px}\nsection:first-of-type h2{border-top:0}
+.avertissement{background:#FCF0EE;border:1px solid #E8C4BE;border-left:4px solid #C0392B;\n  border-radius:0 8px 8px 0;padding:14px 18px;margin:0 0 8px;font-size:15px;color:#8E2F23}\nblockquote{margin:0 0 14px;padding:12px 16px;border-left:3px solid var(--or);
   background:#FBF6EA;border-radius:0 8px 8px 0}
 a{color:#8A6D24}
 footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--trait);
@@ -206,6 +209,7 @@ function pagePublication(meta, d, nom) {
   </div>`;
 
   const corps = `
+${meta.note ? `<div class="avertissement">${ech(meta.note)}</div>` : ''}
 <h2>Le post</h2>
 <div class="bloc"><div class="texte" id="post">${ech(d.texte)}${d.diese ? `\n\n${ech(d.diese)}` : ''}</div></div>
 <p class="barre">
@@ -261,37 +265,68 @@ function sommaire(dossier, fiches) {
   fs.writeFileSync(path.join(dossier, 'index.html'), page('Les publications à sortir · ACE Conseil', { entete, corps }));
 }
 
-function convertir(dossier, supprimer) {
-  if (!fs.existsSync(dossier)) return [];
+/** Une page unique et autonome portant toute la semaine, a envoyer ou a imprimer. */
+function semaineComplete(dossier, fiches) {
+  const jours = fiches.filter((f) => f.date && f.bloc).sort((a, b) => a.date.localeCompare(b.date));
+  const nav = jours.map((f, i) => `<a href="#j${i}">${ech(dateLongue(f.date).replace(/ \d{4}$/, ''))}</a>`).join('');
+  const sections = jours.map((f, i) => {
+    const d = f.bloc;
+    const n = d.texte.length + (d.diese ? d.diese.length + 2 : 0);
+    const reserve = f.statut === 'en-reserve';
+    return `<section id="j${i}">
+  <h2>${ech(dateLongue(f.date))}${reserve ? ' <span class="et">en réserve</span>' : ''}</h2>
+  <div class="bloc"><div class="texte" id="p${i}">${ech(d.texte)}${d.diese ? `\n\n${ech(d.diese)}` : ''}</div></div>
+  <p class="barre">
+    <button onclick="copier('p${i}',this)">Copier le post</button>
+    <span class="compte${n >= PLAFOND ? ' trop' : ''}"><b>${n}</b> signes${n >= PLAFOND ? ' — au-dessus du plafond' : `, ${PLAFOND - n} de marge`}</span>
+  </p>
+  ${d.commentaire ? `<div class="bloc"><div class="texte" id="c${i}">${ech(d.commentaire)}</div></div>
+  <p class="barre">
+    <button onclick="copier('c${i}',this)">Copier le premier commentaire</button>
+    <span class="compte">À poster juste après la publication.</span>
+  </p>` : ''}</section>`;
+  }).join('\n');
+
+  const entete = `
+  <h1>La semaine en une page</h1>
+  <p class="sous">Les publications à sortir, dans l'ordre. Copiez le post, publiez, puis postez le premier commentaire.</p>
+  <nav class="nav">${nav}</nav>`;
+  fs.writeFileSync(path.join(dossier, 'la-semaine.html'),
+    page('La semaine en une page · ACE Conseil', { entete, corps: sections }));
+}
+
+function convertir(sous) {
+  const source = path.join(SOURCE, sous);
+  const sortie = path.join(SORTIE, sous);
+  if (!fs.existsSync(source)) return [];
+  fs.mkdirSync(sortie, { recursive: true });
   const faits = [];
-  for (const nom of fs.readdirSync(dossier).filter((f) => f.endsWith('.md')).sort()) {
-    const src = path.join(dossier, nom);
+  for (const nom of fs.readdirSync(source).filter((f) => f.endsWith('.md')).sort()) {
+    const src = path.join(source, nom);
     const { meta, corps } = lire(src);
     const d = decouper(corps);
     const estPublication = meta.statut && ['pret-a-publier', 'en-reserve', 'publie'].includes(meta.statut)
       && !/^#\s/m.test(corps.split('\n')[0]);
     const html = estPublication ? pagePublication(meta, d, nom) : pageNote(meta, corps);
-    if (/^SEMAINE-/.test(nom)) { if (supprimer) fs.unlinkSync(src); continue; }
-    const dest = src.replace(/\.md$/, '.html');
+    const dest = path.join(sortie, nom.replace(/\.md$/, '.html'));
     fs.writeFileSync(dest, html);
-    if (supprimer) fs.unlinkSync(src);
     faits.push({
       nom: path.basename(dest), fichier: path.basename(dest), date: meta.date, statut: meta.statut,
       signes: estPublication ? d.texte.length + (d.diese ? d.diese.length + 2 : 0) : null,
       accroche: estPublication ? d.texte.split('\n')[0].slice(0, 78) : (corps.split('\n')[0].replace(/^#\s*/, '')),
+      bloc: estPublication ? d : null,
     });
   }
   return faits;
 }
 
-const supprimer = process.argv.includes('--supprimer-md');
-for (const sous of ['a-publier', 'parues']) {
-  const dossier = path.join(DRIVE, sous);
-  const faits = convertir(dossier, supprimer);
-  if (sous === 'a-publier') sommaire(dossier, faits);
-  console.log(`${sous} : ${faits.length} page(s)${sous === 'a-publier' ? ' + index.html' : ''}`);
+for (const sous of ['a-publier', 'parues', '.']) {
+  const faits = convertir(sous);
+  if (sous === 'a-publier') {
+    sommaire(path.join(SORTIE, sous), faits);
+    semaineComplete(path.join(SORTIE, sous), faits);
+  }
+  const nom = sous === '.' ? 'racine' : sous;
+  console.log(`${nom} : ${faits.length} page(s)${sous === 'a-publier' ? ' + index.html + la-semaine.html' : ''}`);
   for (const f of faits) console.log(`   ${f.nom}${f.signes ? `  (${f.signes} signes)` : ''}`);
 }
-const racine = convertir(DRIVE, supprimer);
-console.log(`racine : ${racine.length} page(s)`);
-for (const f of racine) console.log(`   ${f.nom}`);
