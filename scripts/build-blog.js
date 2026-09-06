@@ -497,6 +497,26 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Deux procédures existent lorsque l'obligation de payer n'est pas sérieusement contestable : l'injonction de payer, rapide et sans débat contradictoire au départ, aux articles 1405 et suivants du code de procédure civile, et le référé-provision devant le président du tribunal de commerce, à l'article 873 alinéa 2 du même code. À examiner avec votre conseil, en pesant le montant en jeu, les frais engagés et ce qu'il reste de la relation commerciale.</p></div>
   </div>
 </div>`,
+  'statuts-facture-quatre-gestes': `<div class="wg wg-agent" aria-label="Les quatre statuts obligatoires d'une facture electronique">
+  <p class="wg-title"><span class="wg-pulse"></span>Les quatre statuts obligatoires, et qui les pose</p>
+  <p class="wg-hint">Touchez chaque statut pour voir ce qu'il déclenche.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">200</span><span class="wg-name">Déposée, posée par la plateforme de votre fournisseur</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>La facture est entrée dans le circuit et la plateforme d'émission atteste qu'elle est contrôlée et conforme. Vous n'avez rien à faire : c'est le point de départ du compteur. Les spécifications donnent aux plateformes vingt-quatre heures à partir de ce statut pour transmettre les données réglementaires au portail public de facturation.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">210</span><span class="wg-name">Refusée, posée par vous, et définitive</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Vous refusez la facture dans son intégralité, avec un motif, depuis l'interface de votre plateforme. Votre fournisseur en est informé et doit procéder à une annulation comptable sous forme d'avoir interne. Aucun retour en arrière n'est prévu. Réservé à une non-conformité, une facture qui ne vous est pas destinée ou une impossibilité contractuelle de traiter : pas au désaccord commercial, pour lequel les statuts « En litige » et « Suspendue » existent, mais restent facultatifs.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">212</span><span class="wg-name">Encaissée, posée par vous quand vous vendez</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Le seul statut qui porte une obligation fiscale directe. Le fournisseur informe avoir perçu un paiement partiel ou total, en renseignant la date d'encaissement et le montant réparti par taux de TVA. Il ne concerne que les opérations dont la TVA est exigible à l'encaissement, donc les prestations de services et les acomptes, et pas celles pour lesquelles vous avez opté pour les débits ni les opérations autoliquidées. La fréquence suit votre régime d'imposition à la TVA.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">213</span><span class="wg-name">Rejetée, posée par une machine, pas par une personne</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Un contrôle réalisé par une plateforme, à l'émission ou à la réception, a détecté une anomalie sur la facture. Personne n'a rien décidé. La conséquence comptable est la même que pour un refus, l'avoir interne du fournisseur, mais la correction est technique : une donnée manquante, un format non conforme, un SIREN absent de l'annuaire. Ne traitez jamais un rejet comme un refus.</p></div>
+  </div>
+</div>`,
   'preuves-trajectoire-conformite': `<div class="wg wg-check" aria-label="Ce que vous pourriez montrer si l'administration vous appelle">
   <p class="wg-title"><span class="wg-pulse"></span>Ce que vous pourriez montrer si l'administration vous appelle</p>
   <p class="wg-hint">Neuf pièces, dont sept reprises de la liste de la réponse 27 du guide de la DGFiP. Ne cochez que ce que vous pouvez produire, daté.</p>
