@@ -497,6 +497,26 @@ const ARTICLE_WIDGETS = {
     <div class="wg-body"><p>Deux procédures existent lorsque l'obligation de payer n'est pas sérieusement contestable : l'injonction de payer, rapide et sans débat contradictoire au départ, aux articles 1405 et suivants du code de procédure civile, et le référé-provision devant le président du tribunal de commerce, à l'article 873 alinéa 2 du même code. À examiner avec votre conseil, en pesant le montant en jeu, les frais engagés et ce qu'il reste de la relation commerciale.</p></div>
   </div>
 </div>`,
+  'ou-tourne-agent-quatre-questions': `<div class="wg wg-agent" aria-label="Les quatre questions a poser sur l'hebergement d'un agent IA">
+  <p class="wg-title"><span class="wg-pulse"></span>Les quatre réponses à obtenir par écrit</p>
+  <p class="wg-hint">Touchez chaque question pour voir ce qu'une bonne réponse contient.</p>
+  <div class="wg-step open" data-step="1">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q1</span><span class="wg-name">Où tourne le programme, et qui a la main sur cette machine ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Une bonne réponse nomme la machine et son administrateur : votre serveur, celui du prestataire, celui d'un éditeur. Elle dit aussi qui d'autre y a un accès. C'est cette machine qui détient les clés de votre messagerie et de vos fichiers : sa sécurité est la vôtre. Une réponse qui reste au niveau du pays sans nommer l'exploitant n'est pas une réponse.</p></div>
+  </div>
+  <div class="wg-step open" data-step="2">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q2</span><span class="wg-name">Quel modèle est appelé pour réfléchir, et où tourne-t-il ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>C'est la question que « nos serveurs sont en France » n'aborde jamais. Une bonne réponse nomme le fournisseur du modèle et le pays d'où il répond. Si le prestataire ne le sait pas, il ne maîtrise pas ce qu'il vous vend. Si le fournisseur est établi hors de l'Union européenne, l'envoi est un transfert de données, et il se documente dans votre registre des traitements.</p></div>
+  </div>
+  <div class="wg-step open" data-step="3">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q3</span><span class="wg-name">Que devient le texte envoyé au modèle ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Trois points, et ils se lisent dans le contrat, pas sur la page d'accueil : combien de temps le contenu est conservé, s'il sert à entraîner quoi que ce soit, et qui peut y accéder chez le fournisseur. Demandez la clause, pas le résumé commercial. Le régime n'est souvent pas le même selon l'offre souscrite chez un même fournisseur.</p></div>
+  </div>
+  <div class="wg-step open" data-step="4">
+    <button class="wg-head" type="button" aria-expanded="true"><span class="wg-day">Q4</span><span class="wg-name">Quelles clés l'agent détient-il, et comment on les retire ?</span><span class="wg-chev"></span></button>
+    <div class="wg-body"><p>Exigez la liste écrite des accès détenus, et une procédure de retrait tenable en une journée. Vérifiez au passage deux choses : que l'agent utilise une adresse dédiée et non votre boîte principale, et qu'il n'a aucun droit d'envoi. Un accès en lecture qui fuit est un incident, un accès en écriture qui fuit parle en votre nom.</p></div>
+  </div>
+</div>`,
   'statuts-facture-quatre-gestes': `<div class="wg wg-agent" aria-label="Les quatre statuts obligatoires d'une facture electronique">
   <p class="wg-title"><span class="wg-pulse"></span>Les quatre statuts obligatoires, et qui les pose</p>
   <p class="wg-hint">Touchez chaque statut pour voir ce qu'il déclenche.</p>
