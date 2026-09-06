@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Deschamps Freres Couverture</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   DESCHAMPS FRERES, maquette de prospection ACE Conseil.
+   Registre assume : la maison de materiaux, pas le site d'artisan.
+   Reference de traitement : les catalogues de couvreurs et les sites
+   de fabricants de tuiles, ou la matiere occupe la page et le texte
+   se tient a distance.
+   La palette vient des materiaux du metier, ardoise, zinc et terre
+   cuite, faute d'un logo publie. Elle est donc provisoire.
+   Aucun chantier, aucun client, aucune certification n'est affiche :
+   rien de tout cela n'a ete verifie. Les seuls chiffres montres sont
+   ceux des comptes deposes au greffe et de la fiche Google.
+------------------------------------------------------------------- */
+:root{
+  /* Noir et or : les deux couleurs de leur logo, mesurees au pixel sur le
+     fichier recupere. Ce n'est plus une proposition, c'est leur charte. */
+  --chaux:#F4F2ED; --chaux2:#E8E4D9; --papier:#FFFFFF;
+  --ardoise:#0D0D0D; --ardoise2:#2A2A28; --zinc:#8C857A; --zinc2:#B6AFA2;
+  --terre:#A8853F; --terre2:#C7A566; --terre-p:#F0E7D3;
+  --encre:#0D0D0D; --gris:#5A564E; --faible:#8C857A;
+  --filet:#D8D2C4;
+  --ink:var(--encre); --fond:var(--chaux); --surface:var(--papier);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --chaux:#121211; --chaux2:#1A1A18; --papier:#171716;
+    --ardoise:#EFEAD9; --ardoise2:#A8A296; --zinc:#6E685D; --zinc2:#4A453C;
+    --terre:#C7A566; --terre2:#DCBE85; --terre-p:#3A3020;
+    --encre:#EFEBE1; --gris:#A29B8D; --faible:#6E685D;
+    --filet:#2A2A26;
+    --ink:var(--encre); --fond:var(--chaux); --surface:var(--papier);
+  }
+}
+:root[data-theme="sombre"]{
+  --chaux:#121211; --chaux2:#1A1A18; --papier:#171716;
+  --ardoise:#EFEAD9; --ardoise2:#A8A296; --zinc:#6E685D; --zinc2:#4A453C;
+  --terre:#C7A566; --terre2:#DCBE85; --terre-p:#3A3020;
+  --encre:#EFEBE1; --gris:#A29B8D; --faible:#6E685D;
+  --filet:#2A2A26;
+  --ink:var(--encre); --fond:var(--chaux); --surface:var(--papier);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--fond); color:var(--encre);
+  font-family:'Libre Franklin',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-family:'Fraunces',Georgia,serif; font-weight:600;
+  letter-spacing:-.015em; line-height:1.06; text-wrap:balance;
+  font-variation-settings:'SOFT' 0,'WONK' 1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terre); outline-offset:3px}
+.page{max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+.lab{font-size:.7rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--faible)}
+
+.mq{background:var(--ardoise); color:var(--chaux); padding:9px 0; font-size:.68rem;
+  letter-spacing:.13em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--terre2); font-weight:700}
+
+nav{border-bottom:1px solid var(--filet); background:var(--surface)}
+.nv{display:flex; align-items:center; gap:clamp(14px,3vw,32px); padding:18px 0;
+  font-size:.86rem; letter-spacing:.04em}
+.nv .lg{font-family:'Fraunces',serif; font-weight:700; font-size:1.3rem; letter-spacing:-.03em}
+.nv .lg em{font-style:normal; color:var(--terre)}
+.nv a{text-decoration:none; color:var(--gris)}
+.nv a:hover{color:var(--encre)}
+.nv .t{margin-left:auto; font-weight:600; color:var(--encre); white-space:nowrap}
+@media(max-width:800px){ .nv .m{display:none} }
+
+/* ------------------------------------------------ l'ouverture */
+.hero{background:var(--surface); border-bottom:1px solid var(--filet); overflow:hidden}
+.hero .page{display:grid; grid-template-columns:1fr 1.02fr; gap:clamp(26px,4vw,58px);
+  align-items:center; padding-top:clamp(34px,5vw,64px); padding-bottom:0}
+@media(max-width:900px){ .hero .page{grid-template-columns:1fr; padding-bottom:0} }
+.hero h1{font-size:clamp(2.3rem,6vw,4.15rem); margin-bottom:22px}
+.hero h1 em{font-style:italic; color:var(--terre)}
+.hero .intro{font-size:clamp(1rem,1.5vw,1.12rem); color:var(--gris); max-width:42ch; margin:0 0 26px}
+.hero .btns{display:flex; gap:11px; flex-wrap:wrap; margin-bottom:clamp(26px,4vw,44px)}
+.bouton{display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  padding:14px 24px; font-weight:600; font-size:.92rem; letter-spacing:.02em;
+  border:1px solid var(--ardoise); transition:background .2s, color .2s, transform .2s}
+.bouton.plein{background:var(--ardoise); color:var(--chaux)}
+.bouton.plein:hover{background:var(--terre); border-color:var(--terre); transform:translateY(-2px)}
+.bouton.vide:hover{background:var(--chaux2); transform:translateY(-2px)}
+.bouton svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2;
+  stroke-linecap:round; stroke-linejoin:round}
+.dessin{align-self:end; margin-bottom:-1px}
+.dessin svg{width:100%; height:auto; display:block; max-height:min(56vh,470px)}
+
+/* ------------------------------------------------ le pan de toiture */
+.toit{overflow:visible}
+.mur .m-l{fill:var(--chaux2); stroke:var(--filet); stroke-width:1.4}
+.mur .m-j{stroke:var(--filet); stroke-width:1; fill:none}
+.mur .m-o{fill:var(--ardoise); opacity:.14; stroke:var(--filet); stroke-width:1.4}
+.charpente .chev{stroke:var(--zinc); stroke-width:3; fill:none; stroke-linecap:round}
+.liteaux .lit{stroke:var(--zinc2); stroke-width:2; fill:none}
+.tuiles .tu{stroke:var(--surface); stroke-width:1.1; transform-box:fill-box;
+  transform-origin:50% 100%}
+.tu.a{fill:var(--terre)} .tu.b{fill:var(--terre2)} .tu.c{fill:#8E6E2E}
+:root[data-theme="sombre"] .tu.c{fill:#B08F4C}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="clair"]) .tu.c{fill:#B08F4C} }
+.faitage path{fill:var(--zinc); stroke:var(--ardoise2); stroke-width:1.2}
+.faitage .fa-j{fill:none; stroke:var(--surface); stroke-width:1.4; opacity:.6}
+.gouttiere .go{stroke:var(--zinc); stroke-width:7; stroke-linecap:round; fill:none}
+.gouttiere .go2{stroke:var(--ardoise2); stroke-width:1.6; fill:none; opacity:.5}
+.couvreur .ct,.couvreur .cb,.couvreur .cj{stroke:var(--ardoise); stroke-width:3.4;
+  fill:none; stroke-linecap:round}
+.couvreur .cte{fill:var(--ardoise)}
+.couvreur .cca{fill:var(--terre)}
+.couvreur .ctu{fill:var(--terre2); stroke:var(--surface); stroke-width:1}
+
+@media(prefers-reduced-motion:no-preference){
+  .js .charpente .chev{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer .8s cubic-bezier(.3,.7,.3,1) var(--d) both}
+  .js .liteaux .lit{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer .55s cubic-bezier(.3,.7,.3,1) var(--d) both}
+  @keyframes tracer{to{stroke-dashoffset:0}}
+  .js .tuiles .tu{animation:poser .34s cubic-bezier(.2,1.1,.32,1) var(--dt) both}
+  @keyframes poser{from{opacity:0; transform:translateY(-14px) scaleY(.5)}
+                   to{opacity:1; transform:none}}
+  .js .faitage{animation:coiffer .55s cubic-bezier(.2,1,.3,1) 4.9s both}
+  @keyframes coiffer{from{opacity:0; transform:translateY(-26px)} to{opacity:1; transform:none}}
+  .js .gouttiere{animation:paraitre .5s ease-out 5.2s both}
+  @keyframes paraitre{from{opacity:0} to{opacity:1}}
+  /* Le couvreur suit le rang qu'il pose. Deux animations sur le meme element :
+     le deplacement, et l'apparition juste avant qu'il commence. */
+  .js .couvreur{opacity:0;
+    animation:couvrir 3.06s linear 1.72s both, montrer .3s linear 1.58s both}
+  .js .couvreur .pivot{animation:retourner 3.06s step-end 1.72s both}
+  @keyframes montrer{to{opacity:1}}
+}
+@keyframes couvrir{
+  0.00%{transform:translate(73.0px,355.9px)}
+  11.11%{transform:translate(567.0px,355.9px)}
+  22.22%{transform:translate(85.6px,326.5px)}
+  33.33%{transform:translate(541.9px,297.2px)}
+  44.44%{transform:translate(110.7px,267.9px)}
+  55.56%{transform:translate(516.8px,238.5px)}
+  66.67%{transform:translate(135.8px,209.2px)}
+  77.78%{transform:translate(491.7px,179.9px)}
+  88.89%{transform:translate(160.9px,150.5px)}
+  100.00%{transform:translate(466.6px,121.2px)}
+}
+@keyframes retourner{
+  0.00%{transform:scaleX(1)}
+  11.11%{transform:scaleX(1)}
+  22.22%{transform:scaleX(-1)}
+  33.33%{transform:scaleX(1)}
+  44.44%{transform:scaleX(-1)}
+  55.56%{transform:scaleX(1)}
+  66.67%{transform:scaleX(-1)}
+  77.78%{transform:scaleX(1)}
+  88.89%{transform:scaleX(-1)}
+  100.00%{transform:scaleX(1)}
+}
+
+/* ------------------------------------------------ sections */
+section{padding:clamp(52px,7vw,96px) 0}
+.entete{max-width:56ch; margin-bottom:clamp(28px,4vw,48px)}
+.entete .lab{display:block; margin-bottom:14px}
+.entete h2{font-size:clamp(1.7rem,3.6vw,2.7rem); margin-bottom:16px}
+.entete p{margin:0; color:var(--gris); font-size:1.02rem; max-width:50ch}
+
+/* les ouvrages, en dessins techniques */
+.ouv{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--filet);
+  border:1px solid var(--filet)}
+.ouv article{background:var(--surface); padding:clamp(22px,2.6vw,32px);
+  display:flex; flex-direction:column; gap:16px}
+.ouv .cadre{background:var(--chaux2); padding:18px 16px 14px; border:1px solid var(--filet)}
+.ouv svg{width:100%; height:auto; display:block; color:var(--ardoise)}
+.ouv h3{font-size:1.22rem}
+.ouv p{margin:0; color:var(--gris); font-size:.92rem; line-height:1.6}
+.ouv .n{font-family:'Fraunces',serif; font-size:.8rem; color:var(--terre); font-weight:600;
+  letter-spacing:.1em}
+@media(max-width:880px){ .ouv{grid-template-columns:1fr 1fr} }
+@media(max-width:600px){ .ouv{grid-template-columns:1fr} }
+
+/* les chiffres du greffe */
+.faits{background:var(--ardoise); color:var(--chaux); padding:clamp(52px,7vw,94px) 0}
+:root[data-theme="sombre"] .faits{background:var(--chaux2)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="clair"]) .faits{background:var(--chaux2)} }
+.faits .entete h2{color:var(--chaux)}
+:root[data-theme="sombre"] .faits .entete h2{color:var(--encre)}
+.faits .entete p,.faits .lab{color:var(--zinc2)}
+.fg{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--zinc)}
+.fg div{padding:26px 26px 26px; border-right:1px solid var(--zinc)}
+.fg div:last-child{border-right:0}
+.fg b{display:block; font-family:'Fraunces',serif; font-size:clamp(1.7rem,3.4vw,2.5rem);
+  font-weight:600; line-height:1; color:var(--terre2)}
+.fg span{display:block; margin-top:10px; font-size:.8rem; letter-spacing:.08em; color:var(--zinc2)}
+.faits .src{margin:22px 0 0; font-size:.76rem; color:var(--zinc); max-width:62ch}
+@media(max-width:820px){ .fg{grid-template-columns:1fr 1fr}
+  .fg div{border-bottom:1px solid var(--zinc)}
+  .fg div:nth-child(2n){border-right:0}
+  .fg div:nth-last-child(-n+2){border-bottom:0} }
+
+/* le deroule */
+.et{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; background:var(--filet); border:1px solid var(--filet)}
+.et li{background:var(--surface); padding:clamp(22px,2.4vw,30px)}
+.et .no{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--terre);
+  margin-bottom:12px; font-weight:600}
+.et h3{font-size:1.06rem; margin-bottom:9px}
+.et p{margin:0; color:var(--gris); font-size:.9rem; line-height:1.6}
+@media(max-width:880px){ .et{grid-template-columns:1fr 1fr} }
+@media(max-width:520px){ .et{grid-template-columns:1fr} }
+
+/* l'appel */
+.appel{background:var(--ardoise); color:var(--chaux); padding:clamp(52px,7vw,94px) 0;
+  border-top:1px solid var(--zinc2)}
+.appel h2{font-size:clamp(1.8rem,4vw,3rem); margin-bottom:16px; color:var(--chaux)}
+.appel h2 em{font-style:italic; color:var(--terre2)}
+.appel p{margin:0 0 28px; max-width:46ch; font-size:1.04rem; color:#B6AFA2}
+.appel .bouton{border-color:var(--terre2); color:var(--terre2)}
+.appel .bouton.plein{background:var(--terre2); color:#0D0D0D}
+.appel .bouton.plein:hover{background:var(--chaux); color:#0D0D0D; border-color:var(--chaux)}
+.appel .bouton.vide:hover{background:rgba(199,165,102,.16)}
+
+footer{background:var(--surface); border-top:1px solid var(--filet);
+  padding:clamp(38px,5vw,60px) 0 44px}
+.fp{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:clamp(22px,4vw,52px)}
+.fp h3{font-family:'Fraunces',serif; font-size:1.35rem; margin-bottom:12px}
+.fp dt{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faible); margin-bottom:6px}
+.fp dd{margin:0 0 18px; font-size:.98rem; line-height:1.6}
+.fp a{text-decoration:none; border-bottom:1.5px solid var(--terre)}
+.cp{margin-top:30px; padding-top:18px; border-top:1px solid var(--filet); font-size:.76rem;
+  color:var(--faible); line-height:1.7}
+@media(max-width:760px){ .fp{grid-template-columns:1fr} }
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
+    transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs provisoires &middot; ceci n'est pas le site officiel de Deschamps Freres</div>
+
+<nav><div class="page nv">
+  <span class="lg">Deschamps <em>Freres</em></span>
+  <span class="m"><a href="#ouvrages">Nos metiers</a></span>
+  <span class="m"><a href="#chantier">Chantier</a></span>
+  <span class="m"><a href="#maison">La maison</a></span>
+  <a class="t" href="tel:0632361801">06 32 36 18 01</a>
+</div></nav>
+
+<div class="hero"><div class="page">
+  <div>
+    <h1>Charpentiers<br>de pere en fils,<br>depuis <em>trois generations</em>.</h1>
+    <p class="intro">Formes chez les Compagnons du Tour de France. Charpente, couverture
+    et zinguerie, depuis Annet-sur-Marne.</p>
+    <div class="btns">
+      <a class="bouton plein" href="tel:0632361801">Demander un devis
+        <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+      <a class="bouton vide" href="#maison">Qui nous sommes</a>
+    </div>
+  </div>
+  <div class="dessin"><svg viewBox="0 0 640 470" class="toit" role="img" aria-label="Un pan de toiture qui se couvre rang par rang, de l egout au faitage, avec un couvreur qui pose les tuiles"><g class="mur"><path class="m-l" d="M40 372 h560 v92 h-560 Z"/><path class="m-j" d="M40 398 h560 M40 424 h560 M40 450 h560"/><path class="m-o" d="M262 464 v-54 h116 v54"/></g><g class="charpente"><path class="chev" style="--l:290;--d:0.00s" d="M55.0 372.0 L168.0 108.0"/><path class="chev" style="--l:280;--d:0.10s" d="M121.2 372.0 L206.0 108.0"/><path class="chev" style="--l:272;--d:0.20s" d="M187.5 372.0 L244.0 108.0"/><path class="chev" style="--l:268;--d:0.30s" d="M253.8 372.0 L282.0 108.0"/><path class="chev" style="--l:266;--d:0.40s" d="M320.0 372.0 L320.0 108.0"/><path class="chev" style="--l:268;--d:0.50s" d="M386.2 372.0 L358.0 108.0"/><path class="chev" style="--l:272;--d:0.60s" d="M452.5 372.0 L396.0 108.0"/><path class="chev" style="--l:280;--d:0.70s" d="M518.8 372.0 L434.0 108.0"/><path class="chev" style="--l:290;--d:0.80s" d="M585.0 372.0 L472.0 108.0"/></g><g class="liteaux"><path class="lit" style="--l:532;--d:0.95s" d="M55.0 372.0 H585.0"/><path class="lit" style="--l:507;--d:1.01s" d="M67.6 342.7 H572.4"/><path class="lit" style="--l:482;--d:1.07s" d="M80.1 313.3 H559.9"/><path class="lit" style="--l:457;--d:1.13s" d="M92.7 284.0 H547.3"/><path class="lit" style="--l:432;--d:1.19s" d="M105.2 254.7 H534.8"/><path class="lit" style="--l:407;--d:1.25s" d="M117.8 225.3 H522.2"/><path class="lit" style="--l:382;--d:1.31s" d="M130.3 196.0 H509.7"/><path class="lit" style="--l:357;--d:1.37s" d="M142.9 166.7 H497.1"/><path class="lit" style="--l:332;--d:1.43s" d="M155.4 137.3 H484.6"/><path class="lit" style="--l:306;--d:1.49s" d="M168.0 108.0 H472.0"/></g><g class="tuiles"><g class="rang"><path class="tu c" style="--dt:1.720s" d="M55.0 372.0 L90.3 372.0 L101.2 342.7 L67.6 342.7 Z"/><path class="tu a" style="--dt:1.743s" d="M90.3 372.0 L125.7 372.0 L134.9 342.7 L101.2 342.7 Z"/><path class="tu a" style="--dt:1.765s" d="M125.7 372.0 L161.0 372.0 L168.5 342.7 L134.9 342.7 Z"/><path class="tu b" style="--dt:1.788s" d="M161.0 372.0 L196.3 372.0 L202.2 342.7 L168.5 342.7 Z"/><path class="tu a" style="--dt:1.811s" d="M196.3 372.0 L231.7 372.0 L235.9 342.7 L202.2 342.7 Z"/><path class="tu a" style="--dt:1.833s" d="M231.7 372.0 L267.0 372.0 L269.5 342.7 L235.9 342.7 Z"/><path class="tu c" style="--dt:1.856s" d="M267.0 372.0 L302.3 372.0 L303.2 342.7 L269.5 342.7 Z"/><path class="tu a" style="--dt:1.879s" d="M302.3 372.0 L337.7 372.0 L336.8 342.7 L303.2 342.7 Z"/><path class="tu a" style="--dt:1.901s" d="M337.7 372.0 L373.0 372.0 L370.5 342.7 L336.8 342.7 Z"/><path class="tu b" style="--dt:1.924s" d="M373.0 372.0 L408.3 372.0 L404.1 342.7 L370.5 342.7 Z"/><path class="tu a" style="--dt:1.947s" d="M408.3 372.0 L443.7 372.0 L437.8 342.7 L404.1 342.7 Z"/><path class="tu a" style="--dt:1.969s" d="M443.7 372.0 L479.0 372.0 L471.5 342.7 L437.8 342.7 Z"/><path class="tu c" style="--dt:1.992s" d="M479.0 372.0 L514.3 372.0 L505.1 342.7 L471.5 342.7 Z"/><path class="tu a" style="--dt:2.015s" d="M514.3 372.0 L549.7 372.0 L538.8 342.7 L505.1 342.7 Z"/><path class="tu a" style="--dt:2.037s" d="M549.7 372.0 L585.0 372.0 L572.4 342.7 L538.8 342.7 Z"/></g><g class="rang"><path class="tu b" style="--dt:2.060s" d="M538.8 342.7 L572.4 342.7 L559.9 313.3 L527.9 313.3 Z"/><path class="tu a" style="--dt:2.083s" d="M505.1 342.7 L538.8 342.7 L527.9 313.3 L495.9 313.3 Z"/><path class="tu a" style="--dt:2.105s" d="M471.5 342.7 L505.1 342.7 L495.9 313.3 L463.9 313.3 Z"/><path class="tu c" style="--dt:2.128s" d="M437.8 342.7 L471.5 342.7 L463.9 313.3 L431.9 313.3 Z"/><path class="tu a" style="--dt:2.151s" d="M404.1 342.7 L437.8 342.7 L431.9 313.3 L400.0 313.3 Z"/><path class="tu a" style="--dt:2.173s" d="M370.5 342.7 L404.1 342.7 L400.0 313.3 L368.0 313.3 Z"/><path class="tu b" style="--dt:2.196s" d="M336.8 342.7 L370.5 342.7 L368.0 313.3 L336.0 313.3 Z"/><path class="tu a" style="--dt:2.219s" d="M303.2 342.7 L336.8 342.7 L336.0 313.3 L304.0 313.3 Z"/><path class="tu a" style="--dt:2.241s" d="M269.5 342.7 L303.2 342.7 L304.0 313.3 L272.0 313.3 Z"/><path class="tu c" style="--dt:2.264s" d="M235.9 342.7 L269.5 342.7 L272.0 313.3 L240.0 313.3 Z"/><path class="tu a" style="--dt:2.287s" d="M202.2 342.7 L235.9 342.7 L240.0 313.3 L208.1 313.3 Z"/><path class="tu a" style="--dt:2.309s" d="M168.5 342.7 L202.2 342.7 L208.1 313.3 L176.1 313.3 Z"/><path class="tu b" style="--dt:2.332s" d="M134.9 342.7 L168.5 342.7 L176.1 313.3 L144.1 313.3 Z"/><path class="tu a" style="--dt:2.355s" d="M101.2 342.7 L134.9 342.7 L144.1 313.3 L112.1 313.3 Z"/><path class="tu a" style="--dt:2.377s" d="M67.6 342.7 L101.2 342.7 L112.1 313.3 L80.1 313.3 Z"/></g><g class="rang"><path class="tu a" style="--dt:2.400s" d="M80.1 313.3 L114.4 313.3 L125.1 284.0 L92.7 284.0 Z"/><path class="tu b" style="--dt:2.424s" d="M114.4 313.3 L148.7 313.3 L157.6 284.0 L125.1 284.0 Z"/><path class="tu a" style="--dt:2.449s" d="M148.7 313.3 L182.9 313.3 L190.1 284.0 L157.6 284.0 Z"/><path class="tu a" style="--dt:2.473s" d="M182.9 313.3 L217.2 313.3 L222.6 284.0 L190.1 284.0 Z"/><path class="tu c" style="--dt:2.497s" d="M217.2 313.3 L251.5 313.3 L255.0 284.0 L222.6 284.0 Z"/><path class="tu a" style="--dt:2.521s" d="M251.5 313.3 L285.7 313.3 L287.5 284.0 L255.0 284.0 Z"/><path class="tu a" style="--dt:2.546s" d="M285.7 313.3 L320.0 313.3 L320.0 284.0 L287.5 284.0 Z"/><path class="tu b" style="--dt:2.570s" d="M320.0 313.3 L354.3 313.3 L352.5 284.0 L320.0 284.0 Z"/><path class="tu a" style="--dt:2.594s" d="M354.3 313.3 L388.5 313.3 L385.0 284.0 L352.5 284.0 Z"/><path class="tu a" style="--dt:2.619s" d="M388.5 313.3 L422.8 313.3 L417.4 284.0 L385.0 284.0 Z"/><path class="tu c" style="--dt:2.643s" d="M422.8 313.3 L457.1 313.3 L449.9 284.0 L417.4 284.0 Z"/><path class="tu a" style="--dt:2.667s" d="M457.1 313.3 L491.3 313.3 L482.4 284.0 L449.9 284.0 Z"/><path class="tu a" style="--dt:2.691s" d="M491.3 313.3 L525.6 313.3 L514.9 284.0 L482.4 284.0 Z"/><path class="tu b" style="--dt:2.716s" d="M525.6 313.3 L559.9 313.3 L547.3 284.0 L514.9 284.0 Z"/></g><g class="rang"><path class="tu a" style="--dt:2.740s" d="M514.9 284.0 L547.3 284.0 L534.8 254.7 L504.1 254.7 Z"/><path class="tu b" style="--dt:2.764s" d="M482.4 284.0 L514.9 284.0 L504.1 254.7 L473.4 254.7 Z"/><path class="tu a" style="--dt:2.789s" d="M449.9 284.0 L482.4 284.0 L473.4 254.7 L442.7 254.7 Z"/><path class="tu a" style="--dt:2.813s" d="M417.4 284.0 L449.9 284.0 L442.7 254.7 L412.0 254.7 Z"/><path class="tu c" style="--dt:2.837s" d="M385.0 284.0 L417.4 284.0 L412.0 254.7 L381.4 254.7 Z"/><path class="tu a" style="--dt:2.861s" d="M352.5 284.0 L385.0 284.0 L381.4 254.7 L350.7 254.7 Z"/><path class="tu a" style="--dt:2.886s" d="M320.0 284.0 L352.5 284.0 L350.7 254.7 L320.0 254.7 Z"/><path class="tu b" style="--dt:2.910s" d="M287.5 284.0 L320.0 284.0 L320.0 254.7 L289.3 254.7 Z"/><path class="tu a" style="--dt:2.934s" d="M255.0 284.0 L287.5 284.0 L289.3 254.7 L258.6 254.7 Z"/><path class="tu a" style="--dt:2.959s" d="M222.6 284.0 L255.0 284.0 L258.6 254.7 L228.0 254.7 Z"/><path class="tu c" style="--dt:2.983s" d="M190.1 284.0 L222.6 284.0 L228.0 254.7 L197.3 254.7 Z"/><path class="tu a" style="--dt:3.007s" d="M157.6 284.0 L190.1 284.0 L197.3 254.7 L166.6 254.7 Z"/><path class="tu a" style="--dt:3.031s" d="M125.1 284.0 L157.6 284.0 L166.6 254.7 L135.9 254.7 Z"/><path class="tu b" style="--dt:3.056s" d="M92.7 284.0 L125.1 284.0 L135.9 254.7 L105.2 254.7 Z"/></g><g class="rang"><path class="tu a" style="--dt:3.080s" d="M105.2 254.7 L138.3 254.7 L148.9 225.3 L117.8 225.3 Z"/><path class="tu a" style="--dt:3.106s" d="M138.3 254.7 L171.3 254.7 L180.0 225.3 L148.9 225.3 Z"/><path class="tu c" style="--dt:3.132s" d="M171.3 254.7 L204.4 254.7 L211.1 225.3 L180.0 225.3 Z"/><path class="tu a" style="--dt:3.158s" d="M204.4 254.7 L237.4 254.7 L242.2 225.3 L211.1 225.3 Z"/><path class="tu a" style="--dt:3.185s" d="M237.4 254.7 L270.4 254.7 L273.3 225.3 L242.2 225.3 Z"/><path class="tu b" style="--dt:3.211s" d="M270.4 254.7 L303.5 254.7 L304.4 225.3 L273.3 225.3 Z"/><path class="tu a" style="--dt:3.237s" d="M303.5 254.7 L336.5 254.7 L335.6 225.3 L304.4 225.3 Z"/><path class="tu a" style="--dt:3.263s" d="M336.5 254.7 L369.6 254.7 L366.7 225.3 L335.6 225.3 Z"/><path class="tu c" style="--dt:3.289s" d="M369.6 254.7 L402.6 254.7 L397.8 225.3 L366.7 225.3 Z"/><path class="tu a" style="--dt:3.315s" d="M402.6 254.7 L435.6 254.7 L428.9 225.3 L397.8 225.3 Z"/><path class="tu a" style="--dt:3.342s" d="M435.6 254.7 L468.7 254.7 L460.0 225.3 L428.9 225.3 Z"/><path class="tu b" style="--dt:3.368s" d="M468.7 254.7 L501.7 254.7 L491.1 225.3 L460.0 225.3 Z"/><path class="tu a" style="--dt:3.394s" d="M501.7 254.7 L534.8 254.7 L522.2 225.3 L491.1 225.3 Z"/></g><g class="rang"><path class="tu a" style="--dt:3.420s" d="M491.1 225.3 L522.2 225.3 L509.7 196.0 L480.5 196.0 Z"/><path class="tu a" style="--dt:3.446s" d="M460.0 225.3 L491.1 225.3 L480.5 196.0 L451.3 196.0 Z"/><path class="tu b" style="--dt:3.472s" d="M428.9 225.3 L460.0 225.3 L451.3 196.0 L422.1 196.0 Z"/><path class="tu a" style="--dt:3.498s" d="M397.8 225.3 L428.9 225.3 L422.1 196.0 L392.9 196.0 Z"/><path class="tu a" style="--dt:3.525s" d="M366.7 225.3 L397.8 225.3 L392.9 196.0 L363.8 196.0 Z"/><path class="tu c" style="--dt:3.551s" d="M335.6 225.3 L366.7 225.3 L363.8 196.0 L334.6 196.0 Z"/><path class="tu a" style="--dt:3.577s" d="M304.4 225.3 L335.6 225.3 L334.6 196.0 L305.4 196.0 Z"/><path class="tu a" style="--dt:3.603s" d="M273.3 225.3 L304.4 225.3 L305.4 196.0 L276.2 196.0 Z"/><path class="tu b" style="--dt:3.629s" d="M242.2 225.3 L273.3 225.3 L276.2 196.0 L247.1 196.0 Z"/><path class="tu a" style="--dt:3.655s" d="M211.1 225.3 L242.2 225.3 L247.1 196.0 L217.9 196.0 Z"/><path class="tu a" style="--dt:3.682s" d="M180.0 225.3 L211.1 225.3 L217.9 196.0 L188.7 196.0 Z"/><path class="tu c" style="--dt:3.708s" d="M148.9 225.3 L180.0 225.3 L188.7 196.0 L159.5 196.0 Z"/><path class="tu a" style="--dt:3.734s" d="M117.8 225.3 L148.9 225.3 L159.5 196.0 L130.3 196.0 Z"/></g><g class="rang"><path class="tu c" style="--dt:3.760s" d="M130.3 196.0 L161.9 196.0 L172.4 166.7 L142.9 166.7 Z"/><path class="tu a" style="--dt:3.788s" d="M161.9 196.0 L193.6 196.0 L201.9 166.7 L172.4 166.7 Z"/><path class="tu a" style="--dt:3.817s" d="M193.6 196.0 L225.2 196.0 L231.4 166.7 L201.9 166.7 Z"/><path class="tu b" style="--dt:3.845s" d="M225.2 196.0 L256.8 196.0 L261.0 166.7 L231.4 166.7 Z"/><path class="tu a" style="--dt:3.873s" d="M256.8 196.0 L288.4 196.0 L290.5 166.7 L261.0 166.7 Z"/><path class="tu a" style="--dt:3.902s" d="M288.4 196.0 L320.0 196.0 L320.0 166.7 L290.5 166.7 Z"/><path class="tu c" style="--dt:3.930s" d="M320.0 196.0 L351.6 196.0 L349.5 166.7 L320.0 166.7 Z"/><path class="tu a" style="--dt:3.958s" d="M351.6 196.0 L383.2 196.0 L379.0 166.7 L349.5 166.7 Z"/><path class="tu a" style="--dt:3.987s" d="M383.2 196.0 L414.8 196.0 L408.6 166.7 L379.0 166.7 Z"/><path class="tu b" style="--dt:4.015s" d="M414.8 196.0 L446.4 196.0 L438.1 166.7 L408.6 166.7 Z"/><path class="tu a" style="--dt:4.043s" d="M446.4 196.0 L478.1 196.0 L467.6 166.7 L438.1 166.7 Z"/><path class="tu a" style="--dt:4.072s" d="M478.1 196.0 L509.7 196.0 L497.1 166.7 L467.6 166.7 Z"/></g><g class="rang"><path class="tu c" style="--dt:4.100s" d="M467.6 166.7 L497.1 166.7 L484.6 137.3 L457.1 137.3 Z"/><path class="tu a" style="--dt:4.128s" d="M438.1 166.7 L467.6 166.7 L457.1 137.3 L429.7 137.3 Z"/><path class="tu a" style="--dt:4.157s" d="M408.6 166.7 L438.1 166.7 L429.7 137.3 L402.3 137.3 Z"/><path class="tu b" style="--dt:4.185s" d="M379.0 166.7 L408.6 166.7 L402.3 137.3 L374.9 137.3 Z"/><path class="tu a" style="--dt:4.213s" d="M349.5 166.7 L379.0 166.7 L374.9 137.3 L347.4 137.3 Z"/><path class="tu a" style="--dt:4.242s" d="M320.0 166.7 L349.5 166.7 L347.4 137.3 L320.0 137.3 Z"/><path class="tu c" style="--dt:4.270s" d="M290.5 166.7 L320.0 166.7 L320.0 137.3 L292.6 137.3 Z"/><path class="tu a" style="--dt:4.298s" d="M261.0 166.7 L290.5 166.7 L292.6 137.3 L265.1 137.3 Z"/><path class="tu a" style="--dt:4.327s" d="M231.4 166.7 L261.0 166.7 L265.1 137.3 L237.7 137.3 Z"/><path class="tu b" style="--dt:4.355s" d="M201.9 166.7 L231.4 166.7 L237.7 137.3 L210.3 137.3 Z"/><path class="tu a" style="--dt:4.383s" d="M172.4 166.7 L201.9 166.7 L210.3 137.3 L182.9 137.3 Z"/><path class="tu a" style="--dt:4.412s" d="M142.9 166.7 L172.4 166.7 L182.9 137.3 L155.4 137.3 Z"/></g><g class="rang"><path class="tu a" style="--dt:4.440s" d="M155.4 137.3 L185.4 137.3 L195.6 108.0 L168.0 108.0 Z"/><path class="tu b" style="--dt:4.471s" d="M185.4 137.3 L215.3 137.3 L223.3 108.0 L195.6 108.0 Z"/><path class="tu a" style="--dt:4.502s" d="M215.3 137.3 L245.2 137.3 L250.9 108.0 L223.3 108.0 Z"/><path class="tu a" style="--dt:4.533s" d="M245.2 137.3 L275.1 137.3 L278.5 108.0 L250.9 108.0 Z"/><path class="tu c" style="--dt:4.564s" d="M275.1 137.3 L305.0 137.3 L306.2 108.0 L278.5 108.0 Z"/><path class="tu a" style="--dt:4.595s" d="M305.0 137.3 L335.0 137.3 L333.8 108.0 L306.2 108.0 Z"/><path class="tu a" style="--dt:4.625s" d="M335.0 137.3 L364.9 137.3 L361.5 108.0 L333.8 108.0 Z"/><path class="tu b" style="--dt:4.656s" d="M364.9 137.3 L394.8 137.3 L389.1 108.0 L361.5 108.0 Z"/><path class="tu a" style="--dt:4.687s" d="M394.8 137.3 L424.7 137.3 L416.7 108.0 L389.1 108.0 Z"/><path class="tu a" style="--dt:4.718s" d="M424.7 137.3 L454.6 137.3 L444.4 108.0 L416.7 108.0 Z"/><path class="tu c" style="--dt:4.749s" d="M454.6 137.3 L484.6 137.3 L472.0 108.0 L444.4 108.0 Z"/></g></g><g class="faitage"><path d="M155.0 108.0 H485.0 v-14 H155.0 Z"/><path class="fa-j" d="M161.0 101.0 H479.0"/></g><g class="gouttiere"><path class="go" d="M40.0 382.0 H600.0"/><path class="go2" d="M40.0 389.0 H600.0"/></g><g class="couvreur"><g class="pivot"><path class="ct" d="M0 0 v-18"/><circle class="cte" cx="0" cy="-24.5" r="6.2"/><path class="cca" d="M-8 -28 h16 a8 8 0 0 0 -16 0 Z"/><path class="cb g" d="M0 -14 L-12 -6"/><path class="cb d" d="M0 -14 L11 -3"/><path class="cj g" d="M0 0 L-7 13"/><path class="cj d" d="M0 0 L7 13"/><rect class="ctu" x="-19" y="-12" width="13" height="9"/></g></g></svg></div>
+</div></div>
+
+<section class="page" id="ouvrages">
+  <div class="entete">
+    <span class="lab">Nos metiers</span>
+    <h2>Six ouvrages, un seul bois de charpente.</h2>
+    <p>Ce que nous savons faire, dans nos mots : de la ferme assemblee au sol jusqu'a
+    la derniere descente d'eau pluviale.</p>
+  </div>
+  <div class="ouv">
+    <article>
+      <span class="n">01</span>
+      <div class="cadre"><svg viewBox="0 0 300 190" aria-label="Coupe de principe d une couverture en tuile mecanique sur liteaux">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+          <path d="M20 160 L280 60" opacity=".35"/>
+          <g stroke-width="2.4">
+            <path d="M34 152 l44 -17 l6 12 l-44 17 Z"/>
+            <path d="M78 135 l44 -17 l6 12 l-44 17 Z"/>
+            <path d="M122 118 l44 -17 l6 12 l-44 17 Z"/>
+            <path d="M166 101 l44 -17 l6 12 l-44 17 Z"/>
+            <path d="M210 84 l44 -17 l6 12 l-44 17 Z"/>
+          </g>
+          <g stroke-width="3" opacity=".55">
+            <path d="M56 158 l6 -14"/><path d="M100 141 l6 -14"/><path d="M144 124 l6 -14"/>
+            <path d="M188 107 l6 -14"/><path d="M232 90 l6 -14"/>
+          </g>
+        </g>
+        <g stroke="currentColor" stroke-width="1" opacity=".5" fill="none">
+          <path d="M26 176 h258 M26 171 v10 M284 171 v10"/>
+        </g>
+        <text x="155" y="169" text-anchor="middle" fill="currentColor" font-size="11"
+              font-family="'Libre Franklin',sans-serif" opacity=".6">recouvrement sur trois rangs</text>
+      </svg></div>
+      <h3>Charpente et ossature bois</h3>
+      <p>Fermes traditionnelles et industrielles, ossature bois, reprise et renfort de
+      charpentes anciennes.</p>
+    </article>
+    <article>
+      <span class="n">02</span>
+      <div class="cadre"><svg viewBox="0 0 300 190" aria-label="Pose d ardoises en quinconce avec crochets">
+        <g fill="none" stroke="currentColor" stroke-width="2">
+          <g stroke-width="2.2">
+            <path d="M30 150 h40 v-30 h-40 Z"/><path d="M78 150 h40 v-30 h-40 Z"/>
+            <path d="M126 150 h40 v-30 h-40 Z"/><path d="M174 150 h40 v-30 h-40 Z"/>
+            <path d="M222 150 h40 v-30 h-40 Z"/>
+            <path d="M54 116 h40 v-30 h-40 Z"/><path d="M102 116 h40 v-30 h-40 Z"/>
+            <path d="M150 116 h40 v-30 h-40 Z"/><path d="M198 116 h40 v-30 h-40 Z"/>
+            <path d="M30 82 h40 v-30 h-40 Z"/><path d="M78 82 h40 v-30 h-40 Z"/>
+            <path d="M126 82 h40 v-30 h-40 Z"/><path d="M174 82 h40 v-30 h-40 Z"/>
+            <path d="M222 82 h40 v-30 h-40 Z"/>
+          </g>
+          <g stroke-width="2.6" opacity=".55">
+            <path d="M50 150 v6"/><path d="M98 150 v6"/><path d="M146 150 v6"/>
+            <path d="M194 150 v6"/><path d="M242 150 v6"/>
+          </g>
+        </g>
+        <text x="150" y="176" text-anchor="middle" fill="currentColor" font-size="11"
+              font-family="'Libre Franklin',sans-serif" opacity=".6">pose en quinconce, crochets apparents</text>
+      </svg></div>
+      <h3>Couverture et bardage</h3>
+      <p>Tuile et ardoise, bardage bois, amenagement de combles, isolation et
+      etancheite.</p>
+    </article>
+    <article>
+      <span class="n">03</span>
+      <div class="cadre"><svg viewBox="0 0 300 190" aria-label="Coupe d un joint debout en zinc et d une gouttiere pendante">
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+          <path d="M28 120 h224"/>
+          <path d="M70 120 v-22 h10 v22"/><path d="M130 120 v-22 h10 v22"/>
+          <path d="M190 120 v-22 h10 v22"/>
+          <path d="M66 98 h18 M126 98 h18 M186 98 h18" stroke-width="3"/>
+          <path d="M252 120 a20 20 0 0 0 20 20 h6 v-14 h-6 a6 6 0 0 1 -6 -6 v-6 Z"/>
+          <path d="M28 120 v14 h224"/>
+        </g>
+        <g stroke="currentColor" stroke-width="1" opacity=".5" fill="none">
+          <path d="M70 84 h70 M70 79 v10 M140 79 v10"/>
+        </g>
+        <text x="105" y="76" text-anchor="middle" fill="currentColor" font-size="11"
+              font-family="'Libre Franklin',sans-serif" opacity=".6">entraxe des tasseaux</text>
+        <text x="150" y="168" text-anchor="middle" fill="currentColor" font-size="11"
+              font-family="'Libre Franklin',sans-serif" opacity=".6">joint debout et gouttiere pendante</text>
+      </svg></div>
+      <h3>Zinguerie et terrasse bois</h3>
+      <p>Joint debout, noues, solins, gouttieres et descentes d'eaux pluviales. Terrasses
+      bois sur mesure.</p>
+    </article>
+  </div>
+</section>
+
+<section class="page" id="chantier">
+  <div class="entete">
+    <span class="lab">Chantier de reference</span>
+    <h2>Eglise Saint-Pierre Saint-Paul,<br>Chaumes-en-Brie.</h2>
+    <p>Lot Charpente d'une restauration en cinq tranches, sous maitrise d'oeuvre
+    d'Aedificio, Agence Stephane Berhault, Architectes du Patrimoine, pour la commune
+    de Chaumes-en-Brie.</p>
+  </div>
+  <div class="ouv">
+    <article><span class="n">Edifice</span><h3>Treizieme siecle</h3>
+      <p>Clocher carre a fleche elancee, choeur gothique remanie aux dix-septieme et
+      dix-neuvieme siecles.</p></article>
+    <article><span class="n">Protection</span><h3>Monument historique</h3>
+      <p>Classe par decret ministeriel du 4 decembre 1942. Un chantier de charpente sur
+      un edifice classe ne s'improvise pas.</p></article>
+    <article><span class="n">Notre lot</span><h3>La charpente</h3>
+      <p>Restauration menee en cinq tranches, trois exterieures puis deux interieures.
+      Les autres lots sont confies a d'autres entreprises.</p></article>
+  </div>
+</section>
+
+<div class="faits" id="maison"><div class="page">
+  <div class="entete">
+    <span class="lab">La maison</span>
+    <h2>Quatre ans, et des comptes deposes.</h2>
+    <p>Une entreprise de charpente se juge sur deux choses : ce qu'elle laisse dans les
+    combles, et ce qu'elle depose au greffe. Voici la seconde.</p>
+  </div>
+  <div class="fg">
+    <div><b>1 080 718</b><span>euros de chiffre d'affaires, exercice 2024</span></div>
+    <div><b>80 825</b><span>euros de resultat net, exercice 2024</span></div>
+    <div><b>3 a 5</b><span>salaries sur les chantiers</span></div>
+    <div><b>4,5 / 5</b><span>sur 16 avis Google</span></div>
+  </div>
+  <p class="src">Chiffres du dernier exercice publie au greffe du tribunal de commerce, et
+  note relevee sur la fiche Google de l'entreprise. Societe par actions simplifiee
+  immatriculee en janvier 2022, code activite 4391B, couvreur charpentier.
+  SIREN 909 035 230. Sur les seize avis, quatorze sont a cinq etoiles.</p>
+</div></div>
+
+<section class="page" id="deroule">
+  <div class="entete">
+    <span class="lab">Le deroule</span>
+    <h2>Quatre etapes, dans cet ordre.</h2>
+    <p>Une toiture ne se chiffre pas au telephone. On monte voir, on mesure, on chiffre,
+    on pose.</p>
+  </div>
+  <ol class="et">
+    <li><span class="no">01</span><h3>Le releve</h3>
+      <p>Visite sur place, montee en toiture, etat de la charpente, des liteaux et des
+      evacuations. Photos remises avec le devis.</p></li>
+    <li><span class="no">02</span><h3>Le devis</h3>
+      <p>Detail poste par poste : depose, charpente si besoin, ecran de sous-toiture,
+      liteaunage, couverture, zinguerie, evacuation des gravats.</p></li>
+    <li><span class="no">03</span><h3>Le chantier</h3>
+      <p>Echafaudage, bache de protection, depose et pose dans la foulee pour ne jamais
+      laisser un toit ouvert la nuit.</p></li>
+    <li><span class="no">04</span><h3>La reception</h3>
+      <p>Verification des raccords et des points singuliers, nettoyage, remise des
+      attestations et des garanties.</p></li>
+  </ol>
+</section>
+
+<div class="appel"><div class="page">
+  <h2>Une charpente a <em>reprendre</em> ?</h2>
+  <p>On se deplace avant de chiffrer, toujours. Un devis de charpente etabli sans etre
+  monte voir la ferme ne vaut rien.</p>
+  <div class="btns">
+    <a class="bouton plein" href="tel:0632361801">06 32 36 18 01
+      <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+    <a class="bouton vide" href="#maison">Voir nos chiffres</a>
+  </div>
+</div></div>
+
+<footer><div class="page">
+  <div class="fp">
+    <div>
+      <h3>Deschamps Freres</h3>
+      <p style="margin:0;color:var(--gris);max-width:34ch">Couverture, zinguerie et
+      entretien de toiture en Seine-et-Marne et dans l'est parisien.</p>
+    </div>
+    <dl>
+      <dt>Atelier</dt><dd>48 rue de Marne<br>77410 Annet-sur-Marne</dd>
+      <dt>Telephone</dt><dd><a href="tel:0632361801">06 32 36 18 01</a></dd>
+      <dt>Horaires</dt><dd>Lundi a jeudi, 7h30 a 17h30<br>Vendredi, 7h30 a 16h00</dd>
+    </dl>
+    <dl>
+      <dt>Metiers</dt><dd>Charpente, ossature bois, bardage, couverture, zinguerie,
+      terrasse bois</dd>
+      <dt>Forme</dt><dd>SAS immatriculee en janvier 2022<br>SIREN 909 035 230</dd>
+    </dl>
+  </div>
+  <p class="cp">Maquette realisee par ACE Conseil. Le noir et l'or sont mesures sur votre
+  logo, ce ne sont pas des couleurs choisies au hasard : le fichier trouve en ligne est
+  compresse, la teinte exacte de l'or reste a caler sur votre fichier d'origine.
+  Les six metiers sont ceux que vous affichez sur LinkedIn. Le chantier de Chaumes-en-Brie
+  reprend le panneau officiel du chantier, lot Charpente uniquement. Les chiffres viennent
+  des comptes deposes au greffe et de votre fiche Google. Aucune certification, aucun
+  client et aucun autre chantier ne sont affiches : ils n'ont pas ete verifies et seront
+  ajoutes avec vous.</p>
+</div></footer>
+</body>
+</html>

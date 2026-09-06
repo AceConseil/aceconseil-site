@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>International Logistic Affretement</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   INTERNATIONAL LOGISTIC, maquette de prospection ACE Conseil.
+   Vingt cinq ans d'affretement, cinq sur cinq sur Google, et rien en
+   ligne. Le registre choisi est celui du tableau de departs : des
+   lignes, des heures, des colonnes de chiffres. Un commissionnaire de
+   transport vend de la fiabilite, pas des images.
+   Palette provisoire, faute d'identite visuelle publiee.
+   Aucun client, aucune licence, aucune destination ne sont affiches :
+   rien de cela n'a ete verifie.
+------------------------------------------------------------------- */
+:root{
+  /* Les deux verts sont pipettes sur la porte de leur hangar, le bleu sur la
+     plaque du numero 16. Rien n'est invente, tout vient du batiment. */
+  --nuit:#2E4744; --nuit2:#3D5A56; --bleu:#33488C; --acier:#7E9089;
+  --neige:#F5F5F2; --neige2:#E6E7E1; --blanc:#FFFFFF;
+  --orange:#5A6851; --orange2:#33488C;
+  --encre:#1C2321; --gris:#525C58; --faible:#8A948F; --filet:#D5D8D2;
+  --fond:var(--neige); --surface:var(--blanc);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --neige:#101512; --neige2:#171E1A; --blanc:#141A17; --nuit:#0B100E; --nuit2:#1A241F;
+    --bleu:#8BA0E0; --acier:#6E8078; --filet:#232C27;
+    --encre:#E8EDE9; --gris:#98A49D; --faible:#6E7A74;
+    --orange:#8AA07E; --orange2:#8BA0E0;
+    --fond:var(--neige); --surface:var(--blanc);
+  }
+}
+:root[data-theme="sombre"]{
+  --neige:#101512; --neige2:#171E1A; --blanc:#141A17; --nuit:#0B100E; --nuit2:#1A241F;
+  --bleu:#8BA0E0; --acier:#6E8078; --filet:#232C27;
+  --encre:#E8EDE9; --gris:#98A49D; --faible:#6E7A74;
+  --orange:#8AA07E; --orange2:#8BA0E0;
+  --fond:var(--neige); --surface:var(--blanc);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--fond); color:var(--encre);
+  font-family:'Familjen Grotesk',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:700; letter-spacing:-.03em; line-height:1.04; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
+.page{max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+.mono{font-family:'IBM Plex Mono',monospace; font-variant-numeric:tabular-nums}
+.lab{font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.17em;
+  text-transform:uppercase; color:var(--faible)}
+
+.mq{background:var(--nuit); color:var(--neige2); padding:9px 0; font-size:.68rem;
+  letter-spacing:.13em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--orange2); font-weight:600}
+
+nav{background:var(--nuit); color:var(--neige)}
+.nv{display:flex; align-items:center; gap:clamp(14px,3vw,30px); padding:16px 0; font-size:.88rem}
+.nv .lg{font-weight:700; font-size:1.16rem; letter-spacing:-.03em; line-height:1.1}
+.nv .lg small{display:block; font-family:'IBM Plex Mono',monospace; font-size:.6rem;
+  letter-spacing:.24em; color:var(--acier); font-weight:400; margin-top:2px}
+.nv a{text-decoration:none; color:#A8B5AF}
+.nv a:hover{color:var(--neige)}
+.nv .t{margin-left:auto; font-family:'IBM Plex Mono',monospace; color:var(--orange2); white-space:nowrap}
+@media(max-width:820px){ .nv .m{display:none} }
+
+/* --------------------------------------------------- le tableau de departs */
+.hero{background:var(--nuit); color:var(--neige); padding:clamp(32px,5vw,58px) 0 0}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4rem); max-width:15ch}
+.hero h1 em{font-style:normal; color:var(--orange2)}
+.hero .intro{margin:22px 0 26px; font-size:clamp(1rem,1.4vw,1.08rem); color:#BCC9C3; max-width:44ch}
+.btns{display:flex; gap:11px; flex-wrap:wrap}
+.bouton{display:inline-flex; align-items:center; gap:9px; text-decoration:none; padding:14px 24px;
+  font-weight:600; font-size:.9rem; border:1px solid var(--orange);
+  transition:background .18s, color .18s, transform .18s}
+.bouton.plein{background:var(--orange); color:#fff}
+.bouton.plein:hover{background:var(--orange2); transform:translateY(-2px)}
+.bouton.vide{color:var(--orange2)}
+.bouton.vide:hover{background:rgba(228,98,42,.14); transform:translateY(-2px)}
+.bouton svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2.2;
+  stroke-linecap:round; stroke-linejoin:round}
+.route{margin-top:clamp(26px,4vw,44px)}
+.route svg{width:100%; height:auto; display:block; max-height:min(38vh,300px)}
+.hero .bas{border-top:1px solid var(--nuit2); margin-top:clamp(18px,2.4vw,28px)}
+.dep{display:grid; grid-template-columns:auto 1fr auto auto; gap:clamp(12px,2vw,28px);
+  align-items:baseline; padding:13px 0; border-bottom:1px solid var(--nuit2);
+  font-family:'IBM Plex Mono',monospace; font-size:.86rem}
+.dep:last-child{border-bottom:0}
+.dep .h{color:var(--orange2); font-weight:500}
+.dep .o{color:var(--neige); font-family:'Familjen Grotesk',sans-serif; font-weight:600; font-size:.98rem}
+.dep .d{color:#93A099}
+.dep .s{color:#A8B5AF; text-align:right; white-space:nowrap}
+@media(max-width:700px){ .dep{grid-template-columns:auto 1fr; gap:6px 16px} .dep .d,.dep .s{display:none} }
+
+/* ------------------------------------------------ la ligne et le camion */
+.ln{fill:none; stroke:var(--nuit2); stroke-width:2}
+.ln.tr{stroke:var(--acier); stroke-width:2.4; stroke-dasharray:7 6}
+.jal circle{fill:var(--nuit); stroke:var(--acier); stroke-width:2.4}
+.jal .plein{fill:var(--orange)}
+.jal text{fill:#8C9AA6; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em}
+.cam .cab{fill:var(--orange); stroke:none}
+.cam .rem{fill:var(--neige2); stroke:var(--acier); stroke-width:1.6}
+.cam .rou{fill:var(--nuit); stroke:var(--acier); stroke-width:2}
+.colis{fill:var(--acier); opacity:.5}
+
+@media(prefers-reduced-motion:no-preference){
+  .js .ln{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer 1.1s cubic-bezier(.3,.7,.3,1) .2s both}
+  .js .ln.tr{animation:tracer 1.1s cubic-bezier(.3,.7,.3,1) .2s both, filer 1.1s linear 1.3s infinite}
+  @keyframes tracer{to{stroke-dashoffset:0}}
+  @keyframes filer{to{stroke-dashoffset:-13}}
+  .js .jal g{animation:pointer .4s cubic-bezier(.2,1.3,.35,1) var(--d) both}
+  @keyframes pointer{from{opacity:0; transform:translateY(9px)} to{opacity:1; transform:none}}
+  /* Le camion arrive a la livraison et s'y arrete. Il traversait le cadre en
+     boucle, ce qui racontait le contraire du metier : un affreteur est paye
+     quand le chargement est pose, pas quand il roule. */
+  .js .cam{animation:rouler 2.8s cubic-bezier(.22,.55,.25,1) 1.1s both}
+  @keyframes rouler{0%{transform:translateX(-170px)} 100%{transform:translateX(516px)}}
+  .js .arrivee{animation:cogner .7s cubic-bezier(.2,1.4,.35,1) 3.75s both}
+  @keyframes cogner{0%{r:8} 45%{r:14} 100%{r:8}}
+  .js .colis{animation:charger .5s cubic-bezier(.2,1.2,.35,1) var(--d) both}
+  @keyframes charger{from{opacity:0; transform:translateY(-16px)} to{opacity:.5; transform:none}}
+  .js .dep{animation:tomber .5s cubic-bezier(.22,.85,.24,1) var(--d,0s) both}
+  @keyframes tomber{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+}
+
+/* ------------------------------------------------ sections */
+section{padding:clamp(54px,7vw,92px) 0}
+.entete{max-width:54ch; margin-bottom:clamp(26px,3.6vw,42px)}
+.entete .lab{display:block; margin-bottom:13px}
+.entete h2{font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:15px}
+.entete p{margin:0; color:var(--gris); font-size:1.02rem; max-width:50ch}
+
+.serv{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--filet);
+  border:1px solid var(--filet)}
+.serv article{background:var(--surface); padding:clamp(22px,2.6vw,32px); display:flex;
+  flex-direction:column; gap:13px; min-height:clamp(200px,20vw,238px)}
+.serv .n{font-family:'IBM Plex Mono',monospace; font-size:.74rem; color:var(--orange); letter-spacing:.12em}
+.serv h3{font-size:1.16rem}
+.serv p{margin:0; color:var(--gris); font-size:.92rem; line-height:1.62}
+@media(max-width:860px){ .serv{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .serv{grid-template-columns:1fr} }
+
+.chif{background:var(--neige2); padding:clamp(54px,7vw,92px) 0}
+.cg{display:grid; grid-template-columns:repeat(3,1fr); border-top:2px solid var(--encre)}
+.cg div{padding:26px 28px 28px; border-right:1px solid var(--filet)}
+.cg div:last-child{border-right:0}
+.cg b{display:block; font-size:clamp(2rem,4.4vw,3.1rem); font-weight:700; line-height:1;
+  letter-spacing:-.045em; color:var(--bleu)}
+.cg span{display:block; margin-top:11px; font-size:.86rem; color:var(--gris)}
+@media(max-width:760px){ .cg{grid-template-columns:1fr} .cg div{border-right:0;
+  border-bottom:1px solid var(--filet)}
+  .cg div:last-child{border-bottom:0} }
+
+.appel{background:var(--orange); color:#fff; padding:clamp(54px,7vw,92px) 0}
+.appel h2{font-size:clamp(1.8rem,4vw,2.8rem); margin-bottom:15px; color:#fff}
+.appel p{margin:0 0 26px; max-width:46ch; font-size:1.04rem; color:#D9DDF2}
+.appel .bouton{border-color:#fff; color:#fff}
+.appel .bouton.plein{background:#fff; color:var(--orange)}
+.appel .bouton.plein:hover{background:var(--nuit); color:#fff; border-color:var(--nuit)}
+.appel .bouton.vide:hover{background:rgba(255,255,255,.16)}
+
+footer{background:var(--nuit); color:#C0CBC5; padding:clamp(36px,5vw,58px) 0 42px}
+.fp{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(22px,4vw,50px)}
+.fp h3{font-size:1.3rem; color:#F5F5F2; margin-bottom:12px}
+.fp dt{font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.14em;
+  text-transform:uppercase; color:#8A948F; margin-bottom:6px}
+.fp dd{margin:0 0 18px; font-size:.98rem; line-height:1.6; color:#C0CBC5}
+.fp a{color:var(--orange2); text-decoration:none}
+.cp{margin-top:30px; padding-top:18px; border-top:1px solid var(--nuit2); font-size:.76rem;
+  color:#8A948F; line-height:1.7}
+@media(max-width:760px){ .fp{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
+    animation-iteration-count:1!important; transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs provisoires &middot; ceci n'est pas le site officiel d'International Logistic</div>
+
+<nav><div class="page nv">
+  <span class="lg">International Logistic<small>Annet-sur-Marne</small></span>
+  <span class="m"><a href="#metier">Le metier</a></span>
+  <span class="m"><a href="#maison">La maison</a></span>
+  <span class="m"><a href="#contact">Contact</a></span>
+  <a class="t" href="tel:0160949535">01 60 94 95 35</a>
+</div></nav>
+
+<div class="hero"><div class="page">
+  <h1>Commissionnaire de transport a Annet-sur-Marne <em>depuis 2001</em>.</h1>
+  <p class="intro">Transitaire et commissionnaire, transport public de marchandises,
+  location de vehicules industriels avec conducteur.</p>
+  <div class="btns">
+    <a class="bouton plein" href="tel:0160949535">Demander une cotation
+      <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+    <a class="bouton vide" href="#metier">Ce que nous faisons</a>
+  </div>
+
+  <div class="route"><svg viewBox="0 0 700 210" role="img"
+    aria-label="Une ligne de transport se trace d un point de chargement a un point de livraison, un camion la parcourt">
+    <g class="jal">
+      <g style="--d:1.15s"><circle class="plein" cx="60" cy="150" r="8"/>
+        <text x="60" y="180" text-anchor="middle">CHARGEMENT</text></g>
+      <g style="--d:1.35s"><circle cx="255" cy="150" r="7"/>
+        <text x="255" y="180" text-anchor="middle">GROUPAGE</text></g>
+      <g style="--d:1.55s"><circle cx="450" cy="150" r="7"/>
+        <text x="450" y="180" text-anchor="middle">TRACABILITE</text></g>
+      <g style="--d:1.75s"><circle class="plein arrivee" cx="645" cy="150" r="8"/>
+        <text x="645" y="180" text-anchor="middle">LIVRAISON</text></g>
+    </g>
+    <path class="ln" style="--l:600" d="M60 150 H645"/>
+    <path class="ln tr" style="--l:600" d="M60 138 H645"/>
+    <g class="colis" style="--d:1.5s"><rect x="196" y="112" width="20" height="20"/></g>
+    <g class="colis" style="--d:1.62s"><rect x="219" y="112" width="20" height="20"/></g>
+    <g class="colis" style="--d:1.74s"><rect x="207" y="89" width="20" height="20"/></g>
+    <g class="cam" transform="translate(0,0)">
+      <g transform="translate(0,96)">
+        <rect class="rem" x="14" y="0" width="72" height="34"/>
+        <path class="cab" d="M86 34 v-26 h20 l12 14 v12 Z"/>
+        <circle class="rou" cx="34" cy="38" r="7"/><circle class="rou" cx="60" cy="38" r="7"/>
+        <circle class="rou" cx="103" cy="38" r="7"/>
+      </g>
+    </g>
+  </svg></div>
+
+  <div class="bas">
+    <div class="dep" style="--d:2.0s"><span class="h mono">LOT COMPLET</span>
+      <span class="o">Enlevement sur rendez-vous</span>
+      <span class="d">bache, plateau, fourgon</span><span class="s">FRANCE ET EUROPE</span></div>
+    <div class="dep" style="--d:2.12s"><span class="h mono">GROUPAGE</span>
+      <span class="o">Palettes et colis lourds</span>
+      <span class="d">enlevement et livraison</span><span class="s">FRANCE ET EUROPE</span></div>
+    <div class="dep" style="--d:2.24s"><span class="h mono">URGENT</span>
+      <span class="o">Affretement dedie</span>
+      <span class="d">vehicule reserve au chargement</span><span class="s">SUR DEMANDE</span></div>
+  </div>
+</div></div>
+
+<section class="page" id="metier">
+  <div class="entete">
+    <span class="lab">Le metier</span>
+    <h2>Commissionnaire, pas transporteur.</h2>
+    <p>Notre travail commence quand le votre s'arrete : trouver le vehicule qui convient,
+    au bon moment, au bon prix, et repondre de ce qui est dessus.</p>
+  </div>
+  <div class="serv">
+    <article><span class="n">01</span><h3>Transitaire et commissionnaire</h3>
+      <p>Recherche du vehicule adapte au chargement, ordre de transport, suivi jusqu'a
+      l'emargement. Un seul interlocuteur du depart a l'arrivee.</p></article>
+    <article><span class="n">02</span><h3>Transport public de marchandises</h3>
+      <p>Inscrite au registre national des commissionnaires de transport. Licence
+      communautaire 2023 11 0002305, valable jusqu'au 12 septembre 2033, avec trois
+      copies conformes en cours de validite.</p></article>
+    <article><span class="n">03</span><h3>Location avec conducteur</h3>
+      <p>Vehicules industriels avec conducteur. Attestation de capacite professionnelle
+      detenue par la gerante.</p></article>
+  </div>
+</section>
+
+<div class="chif" id="maison"><div class="page">
+  <div class="entete">
+    <span class="lab">La maison</span>
+    <h2>Depuis 2001, au meme endroit.</h2>
+    <p>Une societe d'affretement se juge sur sa duree, sur ses titres, et sur ce qu'en
+    disent ceux qui l'ont utilisee.</p>
+  </div>
+  <div class="cg">
+    <div><b>2001</b><span>societe immatriculee en octobre, a Annet-sur-Marne depuis l'origine</span></div>
+    <div><b>2033</b><span>licence communautaire valable jusqu'au 12 septembre</span></div>
+    <div><b>5 / 5</b><span>note Google, sur deux avis</span></div>
+  </div>
+  <blockquote style="margin:clamp(28px,4vw,44px) 0 0; padding:clamp(20px,2.6vw,30px);
+    background:var(--surface); border-left:4px solid var(--bleu); max-width:62ch">
+    <p style="margin:0; font-size:clamp(1.02rem,1.6vw,1.2rem); line-height:1.55">Une
+    entreprise familiale, competente, a l'ecoute de vos besoins, reactive, le tout en
+    restant accueillante !</p>
+    <footer style="all:unset; display:block; margin-top:13px; font-family:'IBM Plex Mono',monospace;
+      font-size:.76rem; letter-spacing:.1em; color:var(--faible)">BENJAMIN B., AVIS GOOGLE, MAI 2023</footer>
+  </blockquote>
+  <div hidden>
+  </div>
+</div></div>
+
+<div class="appel"><div class="page">
+  <h2>Un lot a faire partir ?</h2>
+  <p>Dites nous le poids, les dimensions, le lieu de chargement et la date. Nous
+  revenons avec un prix et un vehicule.</p>
+  <div class="btns">
+    <a class="bouton plein" href="tel:0160949535">01 60 94 95 35
+      <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+    <a class="bouton vide" href="#metier">Voir le metier</a>
+  </div>
+</div></div>
+
+<footer id="contact"><div class="page">
+  <div class="fp">
+    <div><h3>International Logistic</h3>
+      <p style="margin:0;max-width:32ch;color:#B8C4CE">Commission de transport et
+      affretement, France et Europe.</p></div>
+    <dl>
+      <dt>Bureau</dt><dd>16 allee des Cinq Noyers<br>77410 Annet-sur-Marne</dd>
+      <dt>Telephone</dt><dd><a href="tel:0160949535">01 60 94 95 35</a></dd>
+      <dt>Horaires</dt><dd>Du lundi au vendredi<br>9h00 a 12h30 et 14h00 a 17h30</dd>
+    </dl>
+    <dl>
+      <dt>Societe</dt><dd>SARL au capital de 25 000 euros<br>RCS Meaux 439 810 235</dd>
+      <dt>Licence</dt><dd>Communautaire 2023 11 0002305<br>valable jusqu'au 12 septembre 2033</dd>
+    </dl>
+  </div>
+  <p class="cp">Maquette realisee par ACE Conseil. Vous n'avez ni logo ni charte : les
+  deux verts sont pipettes sur la porte de votre hangar et le bleu sur la plaque du
+  numero 16, releves sur la vue de rue. Si vous avez une preference, elle prime. Les
+  trois metiers sont ceux de votre objet social depose au greffe de Meaux, mot pour mot.
+  La licence communautaire et son echeance sont relevees sur les listes publiees par le
+  ministere. L'avis est cite integralement, sans coupe. Aucun client, aucune destination
+  et aucun tonnage ne sont affiches : ils n'ont pas ete verifies.</p>
+</div></footer>
+</body>
+</html>

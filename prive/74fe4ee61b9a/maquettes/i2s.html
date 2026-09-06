@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>I2S Electricite Annet</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   I2S, maquette de prospection ACE Conseil.
+   Une a deux personnes. Le site doit donc etre l'exact contraire d'un
+   site d'agence : une seule colonne, une seule idee par ecran, le
+   numero de telephone toujours a portee de pouce. Un artisan seul se
+   vend par la proximite, pas par le volume.
+   Aucune couleur de marque n'existe : ni logo, ni enseigne, ni
+   camionnette photographiee. La page est donc en neutre technique avec
+   un seul accent, presente comme une proposition.
+   Le domaine i2s-elec.fr existe et n'affiche qu'une page OVH "site en
+   construction" : c'est le sujet de la conversation.
+------------------------------------------------------------------- */
+:root{
+  --papier:#FAFAF8; --papier2:#F0F0EC; --blanc:#FFFFFF;
+  --encre:#141414; --encre2:#2E2E2C; --gris:#585856; --faible:#8E8E8A;
+  --filet:#DEDEDA;
+  --accent:#1F5F4B; --accent2:#2E8468; --accent-p:#E2EFE9;
+  --lumiere:#F3D999; --lumiere2:#F7C948;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --papier:#111211; --papier2:#181A19; --blanc:#151716;
+    --encre:#EFEFEC; --encre2:#C4C4C0; --gris:#9A9A96; --faible:#6E6E6A;
+    --filet:#262826; --accent:#4FA98A; --accent2:#6BC4A4; --accent-p:#16271F;
+    --lumiere:#7A6428; --lumiere2:#F7C948;
+  }
+}
+:root[data-theme="sombre"]{
+  --papier:#111211; --papier2:#181A19; --blanc:#151716;
+  --encre:#EFEFEC; --encre2:#C4C4C0; --gris:#9A9A96; --faible:#6E6E6A;
+  --filet:#262826; --accent:#4FA98A; --accent2:#6BC4A4; --accent-p:#16271F;
+  --lumiere:#7A6428; --lumiere2:#F7C948;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--papier); color:var(--encre);
+  font-family:'Instrument Sans',Helvetica,Arial,sans-serif; font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.1; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+.col{max-width:640px; margin:0 auto; padding:0 22px}
+.lab{font-size:.72rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--faible)}
+
+.mq{background:var(--encre); color:var(--papier); padding:9px 0; font-size:.66rem;
+  letter-spacing:.12em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--accent2); font-weight:600}
+
+/* la barre d'appel, toujours accessible au pouce */
+.appelbar{position:sticky; top:0; z-index:20; background:var(--blanc);
+  border-bottom:1px solid var(--filet)}
+.ab{display:flex; align-items:center; gap:14px; padding:12px 0}
+.ab .lg{font-family:'Instrument Serif',Georgia,serif; font-size:1.6rem; letter-spacing:-.02em}
+.ab .tel{margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+  background:var(--accent); color:#fff; text-decoration:none; padding:11px 18px;
+  font-weight:600; font-size:.95rem; transition:background .18s, transform .18s}
+.ab .tel:hover{background:var(--accent2); transform:translateY(-1px)}
+.ab .tel svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2.2;
+  stroke-linecap:round; stroke-linejoin:round}
+
+.hero{padding:clamp(38px,7vw,68px) 0 clamp(26px,4vw,40px)}
+.hero h1{font-family:'Instrument Serif',Georgia,serif; font-weight:400;
+  font-size:clamp(2.2rem,7.5vw,3.4rem); letter-spacing:-.015em; line-height:1.08}
+.hero h1 em{font-style:italic; color:var(--accent)}
+.hero .sst{margin:18px 0 0; font-size:1.06rem; color:var(--gris)}
+.fil{margin:clamp(26px,4vw,40px) 0 0}
+.fil svg{width:100%; height:auto; display:block}
+
+.bloc{padding:clamp(30px,5vw,48px) 0; border-top:1px solid var(--filet)}
+.bloc h2{font-size:clamp(1.3rem,3.4vw,1.7rem); margin-bottom:14px}
+.bloc p{margin:0 0 14px; color:var(--gris)}
+.bloc p:last-child{margin-bottom:0}
+.bloc p b{color:var(--encre); font-weight:600}
+
+.repere{display:grid; gap:1px; background:var(--filet); border:1px solid var(--filet);
+  margin-top:8px}
+.repere div{background:var(--blanc); padding:16px 18px}
+.repere dt{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--faible); margin-bottom:5px}
+.repere dd{margin:0; font-size:1rem; font-weight:500}
+@media(min-width:560px){ .repere{grid-template-columns:1fr 1fr} }
+
+.encart{background:var(--accent-p); border-left:4px solid var(--accent);
+  padding:clamp(18px,3vw,26px); margin-top:8px}
+.encart p{margin:0; color:var(--encre2)}
+.encart p+p{margin-top:12px}
+
+.pied{background:var(--encre); color:#B4B4B0; padding:clamp(34px,5vw,52px) 0 40px;
+  margin-top:clamp(30px,5vw,48px)}
+.pied h3{font-family:'Instrument Serif',serif; font-weight:400; font-size:1.7rem;
+  color:var(--papier); margin-bottom:16px}
+.pied dt{font-size:.7rem; letter-spacing:.15em; text-transform:uppercase;
+  color:#7A7A76; margin-bottom:5px}
+.pied dd{margin:0 0 18px; font-size:1.02rem; color:#DCDCD8}
+.pied a{color:var(--accent2); text-decoration:none}
+.cp{margin-top:26px; padding-top:16px; border-top:1px solid #2E2E2C; font-size:.76rem;
+  color:#7A7A76; line-height:1.7}
+
+/* le raccordement */
+.mur{fill:var(--papier2); stroke:var(--encre2); stroke-width:2.4; stroke-linejoin:round}
+.toit{fill:var(--encre2); stroke:var(--encre2); stroke-width:2.4; stroke-linejoin:round}
+.dalle{fill:none; stroke:var(--encre2); stroke-width:2}
+.poteau{fill:none; stroke:var(--encre2); stroke-width:3; stroke-linecap:round}
+.cable{fill:none; stroke:var(--filet); stroke-width:3; stroke-linecap:round}
+.jus{fill:none; stroke:var(--accent); stroke-width:3; stroke-linecap:round}
+.cof{fill:var(--blanc); stroke:var(--encre2); stroke-width:2.2}
+.cof2{fill:none; stroke:var(--accent); stroke-width:2}
+.fen{fill:var(--papier2); stroke:var(--encre2); stroke-width:1.8}
+.fen.on{fill:var(--lumiere)}
+.lueur{fill:var(--lumiere2); opacity:0}
+.sol2{stroke:var(--filet); stroke-width:2; fill:none}
+.leg{fill:var(--faible); font-family:'Instrument Sans',sans-serif; font-size:12px;
+  letter-spacing:.14em; font-weight:600}
+
+@media(prefers-reduced-motion:no-preference){
+  .js .cd{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer .9s cubic-bezier(.3,.7,.3,1) var(--d,0s) both}
+  @keyframes tracer{to{stroke-dashoffset:0}}
+  .js .jus{stroke-dasharray:26 var(--l); stroke-dashoffset:var(--l);
+    animation:courant 1.6s cubic-bezier(.35,0,.5,1) var(--dj,1.1s) infinite}
+  @keyframes courant{to{stroke-dashoffset:-26}}
+  .js .fen{animation:eclairer .5s ease-out var(--d,2s) both}
+  @keyframes eclairer{from{fill:var(--papier2)} to{fill:var(--lumiere)}}
+  .js .lueur{animation:rayonner 3.2s ease-in-out var(--d,2.4s) infinite}
+  @keyframes rayonner{0%,100%{opacity:.10} 50%{opacity:.24}}
+  .js .cof2{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer .5s ease-out var(--d,1.6s) both}
+  .js .leg{animation:paraitre .5s ease-out var(--d,2.6s) both}
+  @keyframes paraitre{from{opacity:0} to{opacity:1}}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
+    animation-iteration-count:1!important; transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs a caler avec vous &middot; ceci n'est pas le site officiel d'I2S</div>
+
+<div class="appelbar"><div class="col ab">
+  <span class="lg">I2S</span>
+  <a class="tel" href="tel:0631860970">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
+    06 31 86 09 70</a>
+</div></div>
+
+<div class="col hero">
+  <h1>Tous travaux d'electricite,<br><em>courant fort ou faible</em>.</h1>
+  <p class="sst">Artisan electricien a Annet-sur-Marne, en Seine-et-Marne.</p>
+
+  <div class="fil"><svg viewBox="0 0 620 300" role="img"
+    aria-label="Le reseau arrive au poteau, le cable rejoint le coffret de la maison, et les pieces s allument une a une">
+    <path class="sol2" d="M10 262 H610"/>
+    <g class="poteau"><path class="cd" style="--l:150;--d:.1s" d="M58 262 V118"/>
+      <path class="cd" style="--l:56;--d:.3s" d="M32 132 H84"/></g>
+    <path class="cable" d="M58 132 C140 182 190 196 244 200 H284"/>
+    <path class="jus" style="--dj:1.4s" d="M58 132 C140 182 190 196 244 200 H284"/>
+    <g>
+      <path class="toit cd" style="--l:420;--d:.55s" d="M270 152 L400 66 L530 152 Z"/>
+      <path class="mur cd" style="--l:560;--d:.75s" d="M296 152 h208 v110 h-208 Z"/>
+      <circle class="lueur" cx="400" cy="200" r="86" style="--d:2.9s"/>
+      <rect class="fen" x="320" y="172" width="42" height="36" style="--d:2.1s"/>
+      <rect class="fen" x="379" y="172" width="42" height="36" style="--d:2.35s"/>
+      <rect class="fen" x="438" y="172" width="42" height="36" style="--d:2.6s"/>
+      <rect class="fen" x="379" y="222" width="42" height="40" style="--d:2.85s"/>
+      <path class="mur" d="M320 222 h42 v40 h-42 Z"/>
+      <rect class="cof" x="284" y="186" width="26" height="34"/>
+      <path class="cof2" style="--l:46;--d:1.7s" d="M290 196 h14 M290 205 h14 M290 214 h14"/>
+      <path class="cable" d="M244 204 H284"/>
+    </g>
+    <text class="leg" x="58" y="290" text-anchor="middle" style="--d:2.7s">RESEAU</text>
+    <text class="leg" x="238" y="204" text-anchor="end" style="--d:2.85s">COFFRET</text>
+    <text class="leg" x="400" y="290" text-anchor="middle" style="--d:3s">CHEZ VOUS</text>
+  </svg></div>
+</div>
+
+<div class="col bloc">
+  <h2>Chez les particuliers</h2>
+  <p>Installation, renovation et mise en securite electrique, dans le neuf comme dans
+  l'existant. Courant fort et courant faible.</p>
+  <p>Une entreprise d'une a deux personnes : celui qui prend l'appel est celui qui vient,
+  et celui qui vient est celui qui a fait le devis.</p>
+</div>
+
+<div class="col bloc">
+  <h2>Chez les professionnels</h2>
+  <p>Meme metier, autres contraintes : une armoire, des departs a reperer, et un
+  batiment qui doit rester exploitable pendant les travaux.</p>
+  <div class="fil"><svg viewBox="0 0 620 300" role="img"
+    aria-label="Le cable arrive a l armoire du batiment, puis les plateaux s eclairent niveau par niveau">
+    <path class="sol2" d="M10 266 H610"/>
+    <path class="cable" d="M28 214 H150 V186 H206"/>
+    <path class="jus" style="--dj:1.5s" d="M28 214 H150 V186 H206"/>
+    <g>
+      <path class="mur cd" style="--l:700;--d:.7s" d="M232 74 h298 v192 h-298 Z"/>
+      <path class="dalle cd" style="--l:600;--d:1s" d="M232 138 h298 M232 202 h298"/>
+      <circle class="lueur" cx="382" cy="170" r="112" style="--d:3.05s"/>
+      <rect class="fen" x="252" y="92" width="60" height="30" style="--d:2.2s"/>
+      <rect class="fen" x="326" y="92" width="60" height="30" style="--d:2.35s"/>
+      <rect class="fen" x="400" y="92" width="60" height="30" style="--d:2.5s"/>
+      <rect class="fen" x="474" y="92" width="36" height="30" style="--d:2.65s"/>
+      <rect class="fen" x="252" y="156" width="60" height="30" style="--d:2.5s"/>
+      <rect class="fen" x="326" y="156" width="60" height="30" style="--d:2.65s"/>
+      <rect class="fen" x="400" y="156" width="60" height="30" style="--d:2.8s"/>
+      <rect class="fen" x="474" y="156" width="36" height="30" style="--d:2.95s"/>
+      <rect class="fen" x="252" y="220" width="60" height="30" style="--d:2.8s"/>
+      <rect class="fen" x="326" y="220" width="60" height="30" style="--d:2.95s"/>
+      <rect class="fen" x="400" y="220" width="60" height="30" style="--d:3.1s"/>
+      <rect class="cof" x="196" y="160" width="38" height="58"/>
+      <path class="cof2" style="--l:96;--d:1.8s"
+            d="M204 172 h22 M204 182 h22 M204 192 h22 M204 202 h22"/>
+    </g>
+    <text class="leg" x="70" y="242" text-anchor="middle" style="--d:2.8s">ARRIVEE</text>
+    <text class="leg" x="215" y="146" text-anchor="middle" style="--d:2.95s">ARMOIRE</text>
+    <text class="leg" x="382" y="292" text-anchor="middle" style="--d:3.1s">VOS LOCAUX</text>
+  </svg></div>
+</div>
+
+<div class="col bloc">
+  <h2>Les reperes</h2>
+  <dl class="repere">
+    <div><dt>A la tache depuis</dt><dd>Douze ans</dd></div>
+    <div><dt>Taille de l'equipe</dt><dd>Une a deux personnes</dd></div>
+    <div><dt>Qui repond</dt><dd>Un portable, pas un standard</dd></div>
+    <div><dt>Federation</dt><dd>Referencee a la FFIE</dd></div>
+  </dl>
+  <p style="margin-top:16px; font-size:.86rem; color:var(--faible)">Douze ans compte
+  depuis la creation en 2014. La taille de l'equipe est la tranche publiee par l'INSEE.
+  La FFIE est la federation francaise des entreprises de genie electrique, section
+  Ile-de-France Est.</p>
+</div>
+
+<div class="col bloc">
+  <h2>Ou nous intervenons</h2>
+  <p>Annet-sur-Marne et alentours.</p>
+  <div class="encart">
+    <p><b>Cet espace est volontairement vide.</b> Nous n'ecrivons pas une zone
+    d'intervention que vous n'avez pas donnee, ni un rayon en kilometres invente.</p>
+    <p>Dites nous jusqu'ou vous vous deplacez, et nous le remplissons avec vos mots.</p>
+  </div>
+</div>
+
+<div class="pied"><div class="col">
+  <h3>I2S</h3>
+  <dl>
+    <dt>Telephone</dt><dd><a href="tel:0631860970">06 31 86 09 70</a></dd>
+    <dt>Courriel</dt><dd><a href="mailto:i2s.elec@orange.fr">i2s.elec@orange.fr</a></dd>
+    <dt>Adresse</dt><dd>8 impasse de la Chanee<br>77410 Annet-sur-Marne</dd>
+    <dt>Societe</dt><dd>SARL immatriculee en 2014<br>SIREN 802 906 081</dd>
+  </dl>
+  <p class="cp">Maquette realisee par ACE Conseil. Aucune couleur de marque n'a pu etre
+  relevee : vous n'avez ni logo publie, ni enseigne, ni photo de camionnette en ligne.
+  Le vert est donc une proposition, a remplacer par la couleur de vos devis et de votre
+  vehicule. L'accroche reprend mot pour mot l'objet social publie au BODACC en 2016. Le
+  telephone et le courriel viennent de l'annuaire de la Federation francaise des
+  entreprises de genie electrique. Aucun chantier, aucun client, aucune certification et
+  aucune zone d'intervention ne sont affiches : rien de cela n'a ete verifie.</p>
+</div></div>
+</body>
+</html>

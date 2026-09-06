@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>AZ Agencement Menuiserie</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   AZ AGENCEMENT, maquette de prospection ACE Conseil.
+   Cas particulier : cette entreprise n'a RIEN en ligne. Pas de logo,
+   pas d'enseigne declaree, pas de photo, pas d'adresse email, pas un
+   seul avis. Toute la matiere disponible tient en deux phrases, leur
+   objet social et leur libelle NAF.
+   La maquette en tire parti au lieu de le cacher : peu de texte,
+   beaucoup de place, et un emplacement de galerie assume comme vide.
+   C'est aussi l'argument de vente : ce vide est exactement ce que
+   voit un client qui les cherche.
+   Les couleurs sont une proposition declaree, tirees du materiau.
+------------------------------------------------------------------- */
+:root{
+  --creme:#F7F4EE; --creme2:#EDE7DC; --blanc:#FFFFFF;
+  --chene:#A8763F; --chene2:#C08F55; --chene-p:#EFE1CE;
+  --encre:#1E1B17; --encre2:#3A342C; --gris:#5E574C; --faible:#8E8577;
+  --filet:#DED6C7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --creme:#14120F; --creme2:#1C1914; --blanc:#191611;
+    --chene:#C08F55; --chene2:#D8AC77; --chene-p:#2C2115;
+    --encre:#F0EBE1; --encre2:#CFC7B8; --gris:#A29A8B; --faible:#736C5F;
+    --filet:#2A251D;
+  }
+}
+:root[data-theme="sombre"]{
+  --creme:#14120F; --creme2:#1C1914; --blanc:#191611;
+  --chene:#C08F55; --chene2:#D8AC77; --chene-p:#2C2115;
+  --encre:#F0EBE1; --encre2:#CFC7B8; --gris:#A29A8B; --faible:#736C5F;
+  --filet:#2A251D;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--creme); color:var(--encre); font-family:'Karla',Helvetica,Arial,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-family:'Newsreader',Georgia,serif; font-weight:400;
+  letter-spacing:-.012em; line-height:1.08; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--chene); outline-offset:3px}
+.page{max-width:1080px; margin:0 auto; padding:0 clamp(20px,4vw,42px)}
+.lab{font-size:.72rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--faible)}
+
+.mq{background:var(--encre); color:var(--creme2); padding:9px 0; font-size:.66rem;
+  letter-spacing:.12em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--chene2); font-weight:600}
+
+nav{border-bottom:1px solid var(--filet)}
+.nv{display:flex; align-items:baseline; gap:clamp(14px,3vw,32px); padding:20px 0; font-size:.9rem}
+.nv .lg{font-family:'Newsreader',serif; font-size:1.44rem; letter-spacing:-.02em}
+.nv .lg em{font-style:italic; color:var(--chene)}
+.nv a{text-decoration:none; color:var(--gris)}
+.nv a:hover{color:var(--encre)}
+.nv .t{margin-left:auto; font-weight:600; color:var(--encre); white-space:nowrap}
+@media(max-width:760px){ .nv .m{display:none} }
+
+.hero{padding:clamp(40px,6vw,76px) 0 clamp(30px,4vw,52px)}
+.hero .haut{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,64px); align-items:center}
+@media(max-width:880px){ .hero .haut{grid-template-columns:1fr} }
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.2rem)}
+.hero h1 em{font-style:italic; color:var(--chene)}
+.hero .intro{margin:24px 0 28px; font-size:1.08rem; color:var(--gris); max-width:40ch}
+.btns{display:flex; gap:11px; flex-wrap:wrap}
+.bouton{display:inline-flex; align-items:center; gap:9px; text-decoration:none; padding:14px 24px;
+  font-weight:600; font-size:.94rem; border:1px solid var(--encre);
+  transition:background .18s, color .18s, transform .18s}
+.bouton.plein{background:var(--encre); color:var(--creme)}
+.bouton.plein:hover{background:var(--chene); border-color:var(--chene); transform:translateY(-2px)}
+.bouton.vide:hover{background:var(--creme2); transform:translateY(-2px)}
+.bouton svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2.2;
+  stroke-linecap:round; stroke-linejoin:round}
+.cadre svg{width:100%; height:auto; display:block; max-height:min(52vh,440px)}
+
+/* l'assemblage a tenon et mortaise */
+.bois{fill:var(--chene-p); stroke:var(--chene); stroke-width:2.4; stroke-linejoin:round}
+.bois.t{fill:var(--chene2); stroke:var(--chene)}
+.bois.c{fill:var(--chene); stroke:var(--encre2); stroke-width:1.8}
+.mort{fill:var(--creme2); stroke:var(--chene); stroke-width:2.4}
+.pointe{fill:var(--chene); stroke:var(--encre2); stroke-width:1.8; stroke-linejoin:round}
+.fib path{fill:none; stroke:var(--chene); stroke-width:1.2; opacity:.42}
+.mm{stroke:var(--encre2); stroke-width:5; stroke-linecap:round; fill:none}
+.cote path{fill:none; stroke:var(--faible); stroke-width:1}
+.cote text{fill:var(--faible); font-family:'Karla',sans-serif; font-size:12px;
+  letter-spacing:.14em; font-weight:600}
+
+@media(prefers-reduced-motion:no-preference){
+  /* Le montant se pose, la traverse coulisse, le tenon entre dans la mortaise,
+     puis la cheville est enfoncee au maillet. C'est l'assemblage de base du
+     metier : n'importe quel menuisier le reconnait au premier coup d'oeil. */
+  .js .mont{animation:poser .6s cubic-bezier(.2,1,.3,1) .15s both}
+  @keyframes poser{from{opacity:0; transform:translateY(-30px)} to{opacity:1; transform:none}}
+  .js .trav{animation:coulisser 1.1s cubic-bezier(.3,.05,.2,1) .55s both}
+  @keyframes coulisser{from{opacity:0; transform:translateX(-190px)}
+    22%{opacity:1} to{opacity:1; transform:none}}
+  .js .chev{animation:enfoncer .9s cubic-bezier(.4,0,.25,1) 1.75s both}
+  @keyframes enfoncer{0%{opacity:0; transform:translateY(-92px)}
+    18%{opacity:1} 62%{transform:translateY(-14px)} 78%{transform:translateY(2px)}
+    100%{opacity:1; transform:none}}
+  .js .mail{animation:frapper 1.05s cubic-bezier(.4,0,.25,1) 1.7s both}
+  @keyframes frapper{0%{opacity:0; transform:translateY(-70px)} 16%{opacity:1}
+    55%{transform:translateY(0)} 70%{transform:translateY(14px)}
+    84%{transform:translateY(0); opacity:1} 100%{transform:translateY(-40px); opacity:0}}
+  .js .fib path{stroke-dasharray:340; stroke-dashoffset:340;
+    animation:veiner 1.1s ease-out 2.5s both}
+  @keyframes veiner{to{stroke-dashoffset:0}}
+  .js .cote{animation:paraitre .6s ease-out 2.9s both}
+  @keyframes paraitre{from{opacity:0} to{opacity:1}}
+}
+
+section{padding:clamp(50px,7vw,90px) 0; border-top:1px solid var(--filet)}
+.entete{max-width:52ch; margin-bottom:clamp(24px,3.4vw,40px)}
+.entete .lab{display:block; margin-bottom:14px}
+.entete h2{font-size:clamp(1.8rem,4.2vw,2.9rem); margin-bottom:16px}
+.entete p{margin:0; color:var(--gris); max-width:48ch}
+
+.deux{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--filet);
+  border:1px solid var(--filet)}
+.deux article{background:var(--blanc); padding:clamp(24px,3vw,38px)}
+.deux h3{font-size:1.5rem; margin-bottom:12px}
+.deux p{margin:0; color:var(--gris)}
+.deux .src{margin-top:16px; font-size:.78rem; color:var(--faible); font-style:italic}
+@media(max-width:700px){ .deux{grid-template-columns:1fr} }
+
+.rep{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--encre)}
+.rep div{padding:22px 24px 24px; border-right:1px solid var(--filet)}
+.rep div:last-child{border-right:0}
+.rep dt{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faible); margin-bottom:7px}
+.rep dd{margin:0; font-family:'Newsreader',serif; font-size:1.34rem}
+@media(max-width:760px){ .rep{grid-template-columns:1fr 1fr}
+  .rep div:nth-child(2n){border-right:0} }
+
+/* la galerie assumee vide */
+.gal{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.6vw,20px)}
+.gal div{aspect-ratio:4/3; border:1px dashed var(--filet); display:grid; place-items:center;
+  background:var(--creme2); color:var(--faible); font-size:.84rem; text-align:center; padding:16px}
+@media(max-width:760px){ .gal{grid-template-columns:1fr 1fr} }
+@media(max-width:460px){ .gal{grid-template-columns:1fr} }
+
+.appel{background:var(--encre); color:var(--creme); padding:clamp(50px,7vw,90px) 0}
+.appel h2{font-size:clamp(1.9rem,4.4vw,3rem); margin-bottom:16px; color:var(--creme)}
+.appel h2 em{font-style:italic; color:var(--chene2)}
+.appel p{margin:0 0 28px; max-width:46ch; color:#B6AC9C}
+.appel .bouton{border-color:var(--chene2); color:var(--chene2)}
+.appel .bouton.plein{background:var(--chene2); color:var(--encre)}
+.appel .bouton.plein:hover{background:var(--creme); color:var(--encre); border-color:var(--creme)}
+.appel .bouton.vide:hover{background:rgba(192,143,85,.16)}
+
+footer{padding:clamp(36px,5vw,56px) 0 42px; border-top:1px solid var(--filet)}
+.fp{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(22px,4vw,48px)}
+.fp h3{font-size:1.5rem; margin-bottom:12px}
+.fp h3 em{font-style:italic; color:var(--chene)}
+.fp dt{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faible); margin-bottom:6px}
+.fp dd{margin:0 0 18px; font-size:1rem; line-height:1.6}
+.fp a{text-decoration:none; border-bottom:1.5px solid var(--chene)}
+.cp{margin-top:28px; padding-top:18px; border-top:1px solid var(--filet); font-size:.76rem;
+  color:var(--faible); line-height:1.7}
+@media(max-width:760px){ .fp{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
+    animation-iteration-count:1!important; transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs proposees, a caler avec vous &middot; ceci n'est pas le site officiel d'AZ Agencement</div>
+
+<nav><div class="page nv">
+  <span class="lg">AZ <em>Agencement</em></span>
+  <span class="m"><a href="#metier">Le metier</a></span>
+  <span class="m"><a href="#travaux">Travaux</a></span>
+  <span class="m"><a href="#contact">Contact</a></span>
+  <a class="t" href="tel:0660668714">06 60 66 87 14</a>
+</div></nav>
+
+<div class="hero"><div class="page haut">
+  <div>
+    <h1>Menuiserie<br><em>sur mesure</em>.</h1>
+    <p class="intro">Tous travaux de menuiserie et d'agencements. Artisan menuisier a
+    Annet-sur-Marne depuis 2011.</p>
+    <div class="btns">
+      <a class="bouton plein" href="tel:0660668714">Demander un devis
+        <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+      <a class="bouton vide" href="#metier">Le metier</a>
+    </div>
+  </div>
+  <div class="cadre"><svg viewBox="0 0 540 400" role="img"
+    aria-label="Un assemblage a tenon et mortaise : la traverse coulisse dans le montant, puis une cheville est enfoncee au maillet">
+    <g class="mont">
+      <path class="bois" d="M330 34 h84 v332 h-84 Z"/>
+      <path class="mort" d="M330 156 h44 v88 h-44 Z"/>
+      <g class="fib m"><path d="M348 42 v316 M366 42 v316 M384 42 v316 M402 42 v316"/></g>
+    </g>
+    <g class="trav">
+      <path class="bois" d="M40 156 h290 v88 h-290 Z"/>
+      <path class="bois t" d="M330 168 h44 v64 h-44 Z"/>
+      <g class="fib t2"><path d="M48 176 h276 M48 200 h276 M48 224 h276"/></g>
+    </g>
+    <g class="chev">
+      <path class="bois c" d="M344 178 h16 v46 h-16 Z"/>
+      <path class="pointe" d="M344 224 l8 12 l8 -12 Z"/>
+    </g>
+    <g class="mail">
+      <path class="mm" d="M352 96 v34"/>
+      <path class="bois c" d="M322 72 h60 v26 h-60 Z"/>
+    </g>
+    <g class="cote">
+      <path d="M40 274 h334 M40 268 v12 M374 268 v12"/>
+      <text x="207" y="296" text-anchor="middle">TRAVERSE ASSEMBLEE</text>
+      <path d="M352 148 v-26 M352 122 h-58"/>
+      <text x="288" y="118" text-anchor="end">CHEVILLE</text>
+      <path d="M330 200 h-38 M292 200 v40"/>
+      <text x="292" y="256" text-anchor="middle">TENON</text>
+      <path d="M414 200 h44 M458 200 v-52"/>
+      <text x="458" y="140" text-anchor="middle">MORTAISE</text>
+    </g>
+  </svg></div>
+</div></div>
+
+<section class="page" id="metier">
+  <div class="entete">
+    <span class="lab">Le metier</span>
+    <h2>Deux phrases, et rien de plus.</h2>
+    <p>Voici tout ce que l'entreprise a elle-meme ecrit d'elle. Le reste sera ajoute
+    avec le patron, pas avant.</p>
+  </div>
+  <div class="deux">
+    <article>
+      <h3>Tous travaux de menuiserie et d'agencements</h3>
+      <p>C'est l'objet social, tel qu'il a ete depose au greffe de Meaux.</p>
+      <p class="src">Source : publication BODACC de l'entreprise.</p>
+    </article>
+    <article>
+      <h3>Travaux de menuiserie bois et PVC</h3>
+      <p>C'est le libelle officiel de l'activite principale, code 43.32A.</p>
+      <p class="src">Source : repertoire national des entreprises.</p>
+    </article>
+  </div>
+</section>
+
+<section class="page">
+  <div class="entete">
+    <span class="lab">Les reperes</span>
+    <h2>Ce qui se verifie.</h2>
+  </div>
+  <dl class="rep">
+    <div><dt>Artisan depuis</dt><dd>2011</dd></div>
+    <div><dt>Equipe</dt><dd>3 a 5 salaries</dd></div>
+    <div><dt>Statut</dt><dd>Entreprise artisanale</dd></div>
+    <div><dt>Commune</dt><dd>Annet-sur-Marne</dd></div>
+  </dl>
+</section>
+
+<section class="page" id="travaux">
+  <div class="entete">
+    <span class="lab">Travaux</span>
+    <h2>Cette page attend vos photos.</h2>
+    <p>Nous n'avons trouve aucune image de vos chantiers en ligne. Pas une. C'est
+    exactement ce que voit un client qui vous cherche avant d'appeler.</p>
+  </div>
+  <div class="gal">
+    <div>Vos photos de chantier ici</div>
+    <div>Vos photos de chantier ici</div>
+    <div>Vos photos de chantier ici</div>
+    <div>Vos photos de chantier ici</div>
+    <div>Vos photos de chantier ici</div>
+    <div>Vos photos de chantier ici</div>
+  </div>
+</section>
+
+<div class="appel"><div class="page">
+  <h2>Un ouvrage a <em>chiffrer</em> ?</h2>
+  <p>Le telephone est la seule voie de contact aujourd'hui : aucune adresse electronique
+  de l'entreprise n'existe en ligne.</p>
+  <div class="btns">
+    <a class="bouton plein" href="tel:0660668714">06 60 66 87 14
+      <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+    <a class="bouton vide" href="#travaux">Voir la page travaux</a>
+  </div>
+</div></div>
+
+<footer id="contact"><div class="page">
+  <div class="fp">
+    <div><h3>AZ <em>Agencement</em></h3>
+      <p style="margin:0;color:var(--gris);max-width:32ch">Menuiserie sur mesure,
+      bois et PVC, a Annet-sur-Marne.</p></div>
+    <dl>
+      <dt>Adresse</dt><dd>1 rue du General de Lery<br>77410 Annet-sur-Marne</dd>
+      <dt>Telephone</dt><dd><a href="tel:0660668714">06 60 66 87 14</a></dd>
+    </dl>
+    <dl>
+      <dt>Societe</dt><dd>SARL a associe unique<br>capital 4 400 euros</dd>
+      <dt>Immatriculation</dt><dd>RCS Meaux 537 807 539</dd>
+    </dl>
+  </div>
+  <p class="cp">Maquette realisee par ACE Conseil. Vous n'avez aucune identite visuelle
+  en ligne : pas de logo, pas d'enseigne declaree, pas une photo. Le bois et le creme
+  sont donc une proposition de notre part, a remplacer des que vous nous montrez une
+  carte de visite ou un marquage de vehicule. Les deux seules phrases de la page
+  Le metier sont vos propres mots, deposes au greffe. Aucune specialite, aucun chantier,
+  aucune marque, aucune certification et aucun horaire ne sont affiches : rien de cela
+  n'existe en ligne, et nous ne l'inventerons pas.</p>
+</div></footer>
+</body>
+</html>

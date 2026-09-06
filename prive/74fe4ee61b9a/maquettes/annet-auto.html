@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Annet Auto Garage</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   ANNET AUTO, maquette de prospection ACE Conseil.
+   Le fait central de cette entreprise, c'est sa reputation : 4,8 sur 5
+   pour 54 avis, la meilleure des six cibles d'Annet. Toute la page est
+   construite autour de ca, parce que c'est le seul actif qu'ils ont
+   deja bati et qu'ils n'exploitent nulle part.
+   Registre : l'atelier. Graphite, jaune de securite, chrome. Palette
+   provisoire, aucune identite visuelle publiee n'a ete trouvee.
+   Le nombre d'avis et la note sont releves sur la fiche Google. Aucun
+   temoignage n'est reproduit : je n'ai pas lu les avis un par un.
+------------------------------------------------------------------- */
+:root{
+  /* Bleu, marine et or : mesures au pixel sur leur enseigne de facade.
+     Ce ne sont pas des couleurs choisies, ce sont les leurs. */
+  --graphite:#253866; --graphite2:#2E4478; --acier:#3D5488;
+  --clair:#F6F5F1; --clair2:#E7E5DE; --blanc:#FFFFFF;
+  --jaune:#006FBC; --jaune2:#2A8ED4; --jaune-s:#0A4A7A;
+  --or:#C1A055; --or2:#D8BA74;
+  --encre:#141A24; --gris:#56606E; --faible:#8892A0;
+  --filet:#D8D6CE;
+  --fond:var(--clair); --surface:var(--blanc);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="clair"]){
+    --clair:#0D1220; --clair2:#141B2C; --blanc:#161E30;
+    --graphite:#080C16; --graphite2:#101728; --acier:#2A3A5E;
+    --encre:#E8EDF4; --gris:#94A2B6; --faible:#68758A;
+    --filet:#232C42; --jaune:#3D9BE0; --jaune2:#63B4EC; --jaune-s:#1E5F92;
+    --or:#C1A055; --or2:#DCC183;
+    --fond:var(--clair); --surface:var(--blanc);
+  }
+}
+:root[data-theme="sombre"]{
+  --clair:#0D1220; --clair2:#141B2C; --blanc:#161E30;
+  --graphite:#080C16; --graphite2:#101728; --acier:#2A3A5E;
+  --encre:#E8EDF4; --gris:#94A2B6; --faible:#68758A;
+  --filet:#232C42; --jaune:#3D9BE0; --jaune2:#63B4EC; --jaune-s:#1E5F92;
+  --or:#C1A055; --or2:#DCC183;
+  --fond:var(--clair); --surface:var(--blanc);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--fond); color:var(--encre);
+  font-family:'Public Sans',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0; font-family:'Bricolage Grotesque',Helvetica,sans-serif; font-weight:800;
+  letter-spacing:-.03em; line-height:1; text-wrap:balance}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jaune); outline-offset:3px}
+.page{max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+.mono{font-family:'Space Mono',monospace}
+.lab{font-family:'Space Mono',monospace; font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--faible)}
+
+.mq{background:var(--graphite); color:var(--clair2); padding:9px 0; font-size:.68rem;
+  letter-spacing:.13em; text-transform:uppercase; text-align:center}
+.mq b{color:var(--jaune); font-weight:700}
+
+nav{background:var(--graphite); color:var(--clair)}
+.nv{display:flex; align-items:center; gap:clamp(14px,3vw,30px); padding:16px 0;
+  font-size:.88rem; letter-spacing:.02em}
+.nv .lg{font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.32rem;
+  letter-spacing:-.04em; display:flex; align-items:center; gap:9px}
+.nv .lg i{width:11px; height:11px; background:var(--jaune); display:block; flex:none}
+.nv a{text-decoration:none; color:#A8AEB4}
+.nv a:hover{color:var(--clair)}
+.nv .t{margin-left:auto; font-family:'Space Mono',monospace; color:var(--jaune);
+  font-weight:700; white-space:nowrap}
+@media(max-width:820px){ .nv .m{display:none} }
+
+/* ------------------------------------------------------- l'atelier */
+.hero{background:var(--graphite); color:var(--clair); overflow:hidden;
+  padding-top:clamp(30px,4.5vw,56px)}
+.hero .haut{display:grid; grid-template-columns:1fr 1.08fr; gap:clamp(24px,4vw,54px);
+  align-items:center}
+@media(max-width:940px){ .hero .haut{grid-template-columns:1fr} }
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.4rem); color:var(--clair)}
+.hero h1 em{font-style:normal; color:var(--jaune)}
+.hero .intro{margin:22px 0 26px; font-size:clamp(1rem,1.5vw,1.1rem); color:#AEB4BA; max-width:40ch}
+.btns{display:flex; gap:11px; flex-wrap:wrap}
+.bouton{display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+  padding:14px 24px; font-weight:600; font-size:.92rem; border:2px solid var(--jaune);
+  transition:background .18s, color .18s, transform .18s}
+.bouton.plein{background:var(--jaune); color:var(--graphite)}
+.bouton.plein:hover{background:var(--jaune2); transform:translateY(-2px)}
+.bouton.vide{color:var(--jaune)}
+.bouton.vide:hover{background:rgba(242,195,60,.14); transform:translateY(-2px)}
+.bouton svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2.4;
+  stroke-linecap:round; stroke-linejoin:round}
+.scene svg{width:100%; height:auto; display:block; max-height:min(52vh,420px)}
+
+/* la note, en bandeau */
+.note{border-top:1px solid var(--acier); margin-top:clamp(26px,4vw,46px);
+  display:grid; grid-template-columns:auto 1fr; gap:clamp(18px,3vw,40px); align-items:center;
+  padding:clamp(20px,2.6vw,30px) 0 clamp(24px,3vw,34px)}
+.note .gros{font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(3rem,8vw,5.4rem); line-height:.86; color:var(--or2); letter-spacing:-.05em}
+.note .gros small{display:block; font-family:'Space Mono',monospace; font-size:.72rem;
+  letter-spacing:.16em; color:#8C9298; margin-top:10px; font-weight:400}
+.note .txt{font-size:clamp(1rem,1.6vw,1.2rem); color:#C4CACF; max-width:46ch; margin:0}
+.note .txt b{color:var(--clair)}
+.et5{display:flex; gap:4px; margin-bottom:12px}
+.et5 span{width:15px; height:15px; display:block; background:var(--or2)}
+/* la demi etoile se fait par un carre partiellement rempli, sans degrade */
+.et5 span:last-child{background:var(--acier); position:relative; overflow:hidden}
+.et5 span:last-child::before{content:''; position:absolute; inset:0 20% 0 0; background:var(--or2)}
+@media(max-width:640px){ .note{grid-template-columns:1fr; gap:14px} }
+
+/* ------------------------------------------------ le pont elevateur */
+.sol{stroke:var(--acier); stroke-width:3; fill:none}
+.poteau{fill:var(--acier); stroke:#4A535C; stroke-width:1.6}
+.bras{fill:var(--jaune-s); stroke:var(--jaune); stroke-width:2}
+.carr{fill:#3A4149; stroke:#59636D; stroke-width:2.4; stroke-linejoin:round}
+.vitre{fill:#59636D; opacity:.75}
+.jante{fill:#8C959E} .pneu{fill:#15181B; stroke:#2E343A; stroke-width:2}
+.rayon{stroke:#59636D; stroke-width:3; stroke-linecap:round}
+.meca .co,.meca .br,.meca .ja{stroke:var(--clair); stroke-width:3.6; fill:none; stroke-linecap:round}
+.meca .te{fill:var(--clair)} .meca .cq{fill:var(--jaune)}
+.outil{stroke:var(--jaune); stroke-width:3; fill:none; stroke-linecap:round}
+.etin{fill:var(--jaune)}
+
+@media(prefers-reduced-motion:no-preference){
+  .js .g-sol path{stroke-dasharray:var(--l); stroke-dashoffset:var(--l);
+    animation:tracer .7s ease-out both}
+  .js .g-poteau{animation:monter .6s cubic-bezier(.2,1,.3,1) .3s both}
+  @keyframes tracer{to{stroke-dashoffset:0}}
+  @keyframes monter{from{opacity:0; transform:translateY(26px)} to{opacity:1; transform:none}}
+
+  /* la voiture entre, monte sur le pont, redescend */
+  .js .g-auto{animation:entrer 1s cubic-bezier(.25,.9,.3,1) .9s both,
+                        lever 5.4s cubic-bezier(.4,0,.3,1) 2s both}
+  @keyframes entrer{from{transform:translateX(300px)} to{transform:translateX(0)}}
+  @keyframes lever{0%{translate:0 0} 16%{translate:0 -128px}
+                   76%{translate:0 -128px} 100%{translate:0 0}}
+  .js .g-bras{animation:lever 5.4s cubic-bezier(.4,0,.3,1) 2s both}
+
+  /* la roue avant part, une neuve arrive et se pose */
+  .js .roue-av{animation:demonter 1.05s cubic-bezier(.4,.1,.3,1) 3s both}
+  /* La roue deposee sort du cadre et disparait. Elle s'arretait a l'ecran,
+     ce qui donnait deux roues avant sur la meme voiture. */
+  @keyframes demonter{0%{transform:translate(0,0) rotate(0); opacity:1}
+    22%{transform:translate(0,26px) rotate(20deg); opacity:1}
+    88%{opacity:1}
+    100%{transform:translate(-560px,26px) rotate(-820deg); opacity:0}}
+  .js .roue-neuve{animation:rouler 1.15s cubic-bezier(.35,.05,.3,1) 4.15s both}
+  @keyframes rouler{0%{transform:translate(430px,26px) rotate(660deg); opacity:0}
+    8%{opacity:1}
+    82%{transform:translate(0,26px) rotate(0); opacity:1}
+    100%{transform:translate(0,0) rotate(0); opacity:1}}
+
+  /* le mecanicien arrive, serre, repart */
+  .js .meca{animation:venir 5.2s cubic-bezier(.3,.7,.3,1) 2.6s both}
+  @keyframes venir{0%{transform:translateX(210px); opacity:0}
+    12%{transform:translateX(0); opacity:1}
+    72%{transform:translateX(0); opacity:1}
+    100%{transform:translateX(150px); opacity:0}}
+  .js .meca .br.d{transform-box:fill-box; transform-origin:0 0;
+    animation:serrer .28s ease-in-out 4.9s 5 alternate}
+  @keyframes serrer{to{transform:rotate(-26deg)}}
+  .js .etin{opacity:0; animation:jaillir .22s ease-out 5s 5}
+  @keyframes jaillir{0%{opacity:0; transform:scale(.4)} 40%{opacity:1} 100%{opacity:0; transform:scale(1.5)}}
+}
+
+/* ------------------------------------------------ sections */
+section{padding:clamp(52px,7vw,92px) 0}
+.entete{max-width:54ch; margin-bottom:clamp(26px,3.6vw,44px)}
+.entete .lab{display:block; margin-bottom:13px}
+.entete h2{font-size:clamp(1.8rem,4vw,2.9rem); margin-bottom:15px}
+.entete p{margin:0; color:var(--gris); font-size:1.02rem; max-width:48ch}
+
+.pres{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--filet);
+  border:1px solid var(--filet)}
+.pres article{background:var(--surface); padding:clamp(20px,2.4vw,28px); display:flex;
+  flex-direction:column; gap:13px; min-height:clamp(180px,18vw,214px)}
+.pres svg{width:42px; height:42px; fill:none; stroke:var(--encre); stroke-width:1.8;
+  stroke-linecap:round; stroke-linejoin:round}
+.pres h3{font-size:1.1rem}
+.pres p{margin:0; color:var(--gris); font-size:.9rem; line-height:1.6}
+@media(max-width:900px){ .pres{grid-template-columns:1fr 1fr} }
+@media(max-width:540px){ .pres{grid-template-columns:1fr} }
+
+.bande{background:var(--or); color:#231C08; padding:clamp(52px,7vw,92px) 0}
+.bande h2{font-size:clamp(1.7rem,3.6vw,2.6rem); max-width:20ch; margin-bottom:16px}
+.bande p{margin:0; max-width:52ch; font-size:1.04rem; color:#3A2F10}
+.bande .deux{display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(24px,4vw,56px); align-items:center}
+.bande .cad{background:var(--graphite); color:var(--clair); padding:clamp(22px,2.8vw,32px)}
+.bande .cad dt{font-family:'Space Mono',monospace; font-size:.7rem; letter-spacing:.14em;
+  text-transform:uppercase; color:#8C9298; margin-bottom:5px}
+.bande .cad dd{margin:0 0 16px; font-size:1rem}
+.bande .cad dd:last-child{margin-bottom:0}
+.bande .cad a{color:var(--or2); text-decoration:none; border-bottom:1.5px solid var(--or2)}
+@media(max-width:820px){ .bande .deux{grid-template-columns:1fr} }
+
+.gr{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:2px solid var(--encre)}
+.gr div{padding:24px 26px 26px; border-right:1px solid var(--filet)}
+.gr div:last-child{border-right:0}
+.gr b{display:block; font-family:'Bricolage Grotesque',sans-serif; font-weight:800;
+  font-size:clamp(1.9rem,4vw,2.9rem); line-height:1; letter-spacing:-.04em}
+.gr span{display:block; margin-top:10px; font-size:.84rem; color:var(--gris)}
+@media(max-width:760px){ .gr{grid-template-columns:1fr} .gr div{border-right:0;
+  border-bottom:1px solid var(--filet)}
+  .gr div:last-child{border-bottom:0} }
+
+footer{background:var(--graphite); color:#A8AEB4; padding:clamp(38px,5vw,58px) 0 42px}
+.fp{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(22px,4vw,50px)}
+.fp h3{font-family:'Bricolage Grotesque',sans-serif; font-size:1.4rem; color:var(--clair);
+  margin-bottom:12px; display:flex; align-items:center; gap:9px}
+.fp h3 i{width:11px; height:11px; background:var(--jaune); display:block; flex:none}
+.fp dt{font-family:'Space Mono',monospace; font-size:.7rem; letter-spacing:.14em;
+  text-transform:uppercase; color:#6E757B; margin-bottom:6px}
+.fp dd{margin:0 0 18px; font-size:.98rem; line-height:1.6; color:#C4CACF}
+.fp a{color:var(--jaune); text-decoration:none}
+.cp{margin-top:30px; padding-top:18px; border-top:1px solid var(--acier); font-size:.76rem;
+  color:#6E757B; line-height:1.7}
+@media(max-width:760px){ .fp{grid-template-columns:1fr} }
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
+    animation-iteration-count:1!important; transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<div class="mq">Maquette <b>ACE Conseil</b> &middot; couleurs provisoires &middot; ceci n'est pas le site officiel d'Annet Auto</div>
+
+<nav><div class="page nv">
+  <span class="lg"><i></i>Annet auto</span>
+  <span class="m"><a href="#atelier">L'atelier</a></span>
+  <span class="m"><a href="#avis">Les avis</a></span>
+  <span class="m"><a href="#venir">Venir</a></span>
+  <a class="t" href="tel:0987372122">09 87 37 21 22</a>
+</div></nav>
+
+<div class="hero"><div class="page">
+  <div class="haut">
+    <div>
+      <h1>Mecanique<br>automobile,<br><em>toutes marques</em>.</h1>
+      <p class="intro">Garage independant a Annet-sur-Marne depuis 2019. Carrosserie,
+      peinture, mecanique et pneumatiques, sur rendez-vous.</p>
+      <div class="btns">
+        <a class="bouton plein" href="tel:0987372122">Prendre rendez-vous
+          <svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg></a>
+        <a class="bouton vide" href="#avis">Lire les avis</a>
+      </div>
+    </div>
+    <div class="scene"><svg viewBox="0 0 680 470" role="img"
+      aria-label="Un vehicule entre dans l atelier, monte sur le pont elevateur, une roue est remplacee, puis il redescend">
+      <g class="g-sol"><path class="sol" style="--l:640" d="M20 424 H660"/></g>
+      <g class="g-poteau">
+        <rect class="poteau" x="72" y="150" width="26" height="274"/>
+        <rect class="poteau" x="582" y="150" width="26" height="274"/>
+        <rect class="poteau" x="60" y="414" width="50" height="12"/>
+        <rect class="poteau" x="570" y="414" width="50" height="12"/>
+        <rect class="poteau" x="72" y="150" width="536" height="14"/>
+      </g>
+      <g class="g-bras">
+        <rect class="bras" x="96" y="386" width="118" height="13"/>
+        <rect class="bras" x="466" y="386" width="118" height="13"/>
+      </g>
+      <g class="g-auto">
+        <g transform="translate(340,384)">
+          <path class="carr" d="M-192 6 L-192 -24 Q-192 -38 -178 -44 L-130 -60 L-98 -102
+            Q-92 -113 -76 -114 L56 -114 Q72 -114 82 -104 L122 -60 L172 -48 Q192 -42 192 -24
+            L192 6 L156 6 Q112 -50 68 6 L-74 6 Q-118 -50 -162 6 Z"/>
+          <path class="vitre" d="M-92 -100 L-66 -100 L-66 -62 L-120 -62 Z"/>
+          <path class="vitre" d="M-52 -100 L54 -100 Q64 -100 70 -92 L94 -62 L-52 -62 Z"/>
+          <path class="carr" d="M-70 -62 v-38" stroke-width="3"/>
+          <g class="roue-av" style="transform-box:fill-box; transform-origin:center">
+            <circle class="pneu" cx="112" cy="6" r="42"/>
+            <circle class="jante" cx="112" cy="6" r="23"/>
+            <g class="rayon"><path d="M112 -12 v36 M94 6 h36 M99 -7 l26 26 M125 -7 l-26 26"/></g>
+          </g>
+          <g class="roue-neuve" style="transform-box:fill-box; transform-origin:center">
+            <circle class="pneu" cx="112" cy="6" r="42"/>
+            <circle class="jante" cx="112" cy="6" r="23"/>
+            <g class="rayon"><path d="M112 -12 v36 M94 6 h36 M99 -7 l26 26 M125 -7 l-26 26"/></g>
+          </g>
+          <g>
+            <circle class="pneu" cx="-118" cy="6" r="42"/>
+            <circle class="jante" cx="-118" cy="6" r="23"/>
+            <g class="rayon"><path d="M-118 -12 v36 M-136 6 h36 M-131 -7 l26 26 M-105 -7 l-26 26"/></g>
+          </g>
+        </g>
+      </g>
+      <g class="meca" transform="translate(500,424)">
+        <path class="co" d="M0 0 v-30"/>
+        <circle class="te" cx="0" cy="-38" r="9"/>
+        <path class="cq" d="M-11 -42 h22 a11 11 0 0 0 -22 0 Z"/>
+        <path class="br g" d="M0 -24 L-15 -12"/>
+        <path class="br d" d="M0 -24 L17 -14"/>
+        <path class="ja g" d="M0 0 L-10 22"/>
+        <path class="ja d" d="M0 0 L10 22"/>
+        <path class="outil" d="M17 -14 l14 -6 M31 -20 l7 4"/>
+        <g class="etin"><circle cx="42" cy="-20" r="2.6"/><circle cx="47" cy="-25" r="1.8"/>
+          <circle cx="46" cy="-13" r="1.6"/></g>
+      </g>
+    </svg></div>
+  </div>
+
+  <div class="note">
+    <div class="gros">4,8<small>note Google</small></div>
+    <div>
+      <div class="et5"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="txt">Sur <b>54 avis</b>. Cette reputation existe deja. Elle n'est visible
+      que par ceux qui cherchent le garage par son nom.</p>
+    </div>
+  </div>
+</div></div>
+
+<section class="page" id="atelier">
+  <div class="entete">
+    <span class="lab">L'atelier</span>
+    <h2>Ce qu'on fait, sans rendez-vous de trois semaines.</h2>
+    <p>Un garage de proximite tient sur une chose : vous rappeler le jour meme et vous
+    rendre la voiture quand c'est promis.</p>
+  </div>
+  <div class="pres">
+    <article>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17"/>
+        <circle cx="24" cy="24" r="7"/><path d="M24 7v10M24 31v10M7 24h10M31 24h10"/></svg>
+      <h3>Pneumatiques</h3>
+      <p>Montage a partir de seize euros, jantes de dix a dix-huit pouces. Pneus
+      livres au centre acceptes.</p>
+    </article>
+    <article>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 32h28l-4-14H14Z"/>
+        <circle cx="16" cy="36" r="4"/><circle cx="32" cy="36" r="4"/><path d="M18 18V12h12v6"/></svg>
+      <h3>Entretien</h3>
+      <p>Revision, vidange, plaquettes de frein, purge de liquide de frein, courroie
+      de distribution, reglage de phare, preparation au controle technique.</p>
+    </article>
+    <article>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M31 12a9 9 0 1 0-8 15l10 10 5-5-10-10a9 9 0 0 0 3-10Z"/>
+        <path d="M31 12l-6 6 5 5 6-6"/></svg>
+      <h3>Reparation</h3>
+      <p>Reparation mecanique toutes marques, freinage, embrayage, distribution.
+      Sur rendez-vous.</p>
+    </article>
+    <article>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34h32V20l-6-8H14l-6 8Z"/>
+        <path d="M8 20h32M20 12v8M28 12v8"/><circle cx="24" cy="34" r="3"/></svg>
+      <h3>Carrosserie</h3>
+      <p>Reparation de carrosserie et peinture. Les vehicules de collection sont les
+      bienvenus.</p>
+    </article>
+  </div>
+</section>
+
+<div class="bande" id="avis"><div class="page">
+  <div class="deux">
+    <div>
+      <span class="lab" style="color:#5E4C12">Les avis</span>
+      <h2>Cinquante-quatre personnes ont pris le temps.</h2>
+      <p>Une note de 4,8 sur 5 construite sur 54 avis, ce n'est pas un coup de chance,
+      c'est une habitude de travail. La ou ca coince, c'est qu'un client qui cherche
+      un garage a Annet ne tombe pas dessus : il n'y a rien a trouver en dehors de la
+      fiche Google.</p>
+    </div>
+    <dl class="cad">
+      <dt>Note</dt><dd>4,8 sur 5, relevee sur la fiche Google de l'etablissement</dd>
+      <dt>Nombre d'avis</dt><dd>54</dd>
+      <dt>Horaires</dt><dd>Du lundi au jeudi, 8h30 a 17h30. Vendredi, 8h30 a 17h00.
+      Service continu, sans coupure le midi.</dd>
+      <dt>Noms de domaine</dt><dd>annet-auto.fr, annetauto.fr et garage-annet.fr sont
+      <a href="#venir">encore libres</a></dd>
+    </dl>
+  </div>
+</div></div>
+
+<section class="page">
+  <div class="entete">
+    <span class="lab">L'entreprise</span>
+    <h2>Sept ans rue aux Reliques.</h2>
+  </div>
+  <div class="gr">
+    <div><b>2019</b><span>garage independant a Annet-sur-Marne depuis cette annee</span></div>
+    <div><b>54</b><span>avis deposes sur la fiche Google</span></div>
+    <div><b>4,8 / 5</b><span>note moyenne de ces avis</span></div>
+  </div>
+</section>
+
+<footer id="venir"><div class="page">
+  <div class="fp">
+    <div>
+      <h3><i></i>Annet Auto</h3>
+      <p style="margin:0;max-width:32ch;color:#C4CACF">Pneumatiques, entretien,
+      reparation et vente de vehicules a Annet-sur-Marne.</p>
+    </div>
+    <dl>
+      <dt>Atelier</dt><dd>48 rue aux Reliques<br>77410 Annet-sur-Marne</dd>
+      <dt>Telephone</dt><dd><a href="tel:0987372122">09 87 37 21 22</a></dd>
+      <dt>Courriel</dt><dd><a href="mailto:annetauto77@gmail.com">annetauto77@gmail.com</a></dd>
+    </dl>
+    <dl>
+      <dt>Societe</dt><dd>GTVR AUTO, SARL immatriculee en 2019<br>SIREN 879 139 335</dd>
+      <dt>Enseigne</dt><dd>Annet Auto</dd>
+    </dl>
+  </div>
+  <p class="cp">Maquette realisee par ACE Conseil. Le bleu, le marine et l'or sont
+  mesures au pixel sur votre enseigne de facade : ce sont vos couleurs, pas les notres.
+  La photo etant prise par ciel couvert, les teintes exactes restent a caler. Les
+  prestations, les horaires, la note et le nombre d'avis sont repris de votre fiche
+  Google, de votre page Facebook et de votre fiche Pages Jaunes. Aucun avis client n'est
+  reproduit ici et aucune marque partenaire n'est affichee : nous les ajouterons avec
+  vous, apres verification.</p>
+</div></footer>
+</body>
+</html>
