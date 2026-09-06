@@ -261,6 +261,20 @@ a{color:inherit}
 .terr.home{stroke:var(--home); stroke-width:3.2}
 .terr.home.sur,.terr.home.actif{stroke:var(--or); stroke-width:3.4}
 
+/* Une porte planifiee. L'anneau dore et le numero d'ordre suffisent a la
+   reconnaitre au milieu des autres, sans changer sa couleur d'etat. */
+.pl-route{fill:none; stroke:var(--or); stroke-width:2.4; stroke-dasharray:9 7;
+  stroke-linecap:round; stroke-linejoin:round; opacity:.9; vector-effect:non-scaling-stroke}
+.pl-route.pale{opacity:.42; stroke-dasharray:5 7}
+.mk .pn{position:absolute; top:-14px; left:8px; background:var(--or); color:var(--bloc);
+  font-family:var(--mono); font-size:9.5px; font-weight:600; padding:0 4px; line-height:1.6;
+  display:none; pointer-events:none; box-shadow:0 0 0 1.5px var(--carte)}
+.mk.pl .pn{display:block}
+.mk.pl .d{box-shadow:0 0 0 2.5px var(--carte),0 0 0 4.5px var(--or)}
+.mk.pl.on .d{box-shadow:0 0 0 2.5px var(--carte),0 0 0 5.5px var(--or),0 0 0 8px var(--carte)}
+.mk.pl.fait .pn{background:var(--st3)}
+.mk.pl.fait .d{box-shadow:0 0 0 2.5px var(--carte),0 0 0 4.5px var(--st3)}
+
 /* marqueur de societe */
 .mk{pointer-events:auto; cursor:pointer; margin:-11px 0 0 -11px; width:22px; height:22px;
   display:grid; place-items:center}
@@ -534,6 +548,14 @@ label.act{cursor:pointer}
 .plus:hover{color:var(--or)}
 
 .tour{border:1px solid var(--filet); margin-bottom:8px}
+.tour.plan{border-color:var(--or)}
+.tour.plan .te{background:color-mix(in srgb,var(--or) 12%,var(--relief))}
+.plan-b{margin-left:10px; font-family:var(--hud); font-size:.62rem; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--or); border:1px solid var(--or);
+  padding:3px 9px; background:none; white-space:nowrap; transition:background .16s, color .16s}
+.plan-b:hover{background:var(--or); color:var(--bloc)}
+.tour.plan .plan-b{color:var(--faible); border-color:var(--filet2)}
+.tour.plan .plan-b:hover{background:var(--filet2); color:var(--bloc)}
 .tour .te{display:flex; align-items:baseline; gap:9px; padding:9px 11px;
   background:var(--relief); border-bottom:1px solid var(--filet)}
 .tour .te b{font-family:var(--hud); font-size:.74rem; letter-spacing:.07em}
@@ -607,6 +629,7 @@ label.act{cursor:pointer}
         <g class="cq" id="c-aut"></g>
         <g id="c-voies"></g>
         <g class="cq" id="c-tc"></g>
+        <g id="c-plan"></g>
       </g>
     </svg>
     <div id="calque"></div>
@@ -699,6 +722,15 @@ for (var i=0;i<NP;i++){
               (D.it.ai[PR[i][C.ai]]||'')) + ' ' + PR[i][C.s];
 }
 var etats = {}, filtres = [1,1,1,1,1,1];
+/* Les tournees planifiees. Chacune fixe un ordre de visite : ce n'est plus un
+   calcul refait a chaque ouverture, c'est un plan qui tient. */
+var plans = [], planDe = {};
+function indexerPlans(){
+  planDe = {};
+  plans.forEach(function(p, n){
+    p.l.forEach(function(i, r){ planDe[i] = {n:n+1, r:r+1, p:p}; });
+  });
+}
 
 /* ------------------------------------------------------- la camera */
 var scene=$('#scene'), svg=$('#map'), cam=$('#cam'), calque=$('#calque');
@@ -875,6 +907,22 @@ function initCalque(){
 
 var prisTq=[], prisBase=null;
 function placer(){ placerBase(); placerClients(); placerTq(); placerMk(); placerTexte(); }
+
+/* Le trajet a pied, dessine dans le repere de la carte : il se deplace et se
+   met a l'echelle avec elle, l'epaisseur du trait restant constante. */
+function dessinerPlans(){
+  var g=$('#c-plan');
+  g.textContent='';
+  plans.forEach(function(p, n){
+    if (p.l.length<2) return;
+    var d='M'+XY[p.l[0]*2].toFixed(1)+' '+XY[p.l[0]*2+1].toFixed(1);
+    for (var j=1;j<p.l.length;j++) d+='L'+XY[p.l[j]*2].toFixed(1)+' '+XY[p.l[j]*2+1].toFixed(1);
+    var e=document.createElementNS(NS,'path');
+    e.setAttribute('d', d);
+    e.setAttribute('class','pl-route'+(p.ci===communeActive?'':' pale'));
+    g.appendChild(e);
+  });
+}
 function placerClients(){
   nCli.forEach(function(c){
     var x=sx(c.x), y=sy(c.y);
@@ -959,16 +1007,25 @@ function placerMk(){
     if (!n) n=creerMk(g);
     if (!n._v){ n.style.display=''; n._v=1; }
     var actif = cibleActive>=0 && grDe[cibleActive]===g;
+    /* si plusieurs societes partagent l'adresse, c'est la premiere planifiee
+       qui donne son numero au point */
+    var pl=null;
+    for (var j=0;j<G.l.length;j++){ if (planDe[G.l[j]]){ pl=planDe[G.l[j]]; break; } }
     var cl='mk s'+ei+(xg?' xg':(gros?' g':''))+(avecNom&&G.l.length===1?' nom':'')
-         + (G.l.length>1?' tas':'') + (actif?' on':'');
+         + (G.l.length>1?' tas':'') + (pl?' pl':'') + (pl&&VISITE[ei]?' fait':'')
+         + (actif?' on':'');
     if (n._c!==cl){ n.className=cl; n._c=cl; }
+    if (pl){
+      var t=pl.n+'.'+pl.r;
+      if (n._p!==t){ n.querySelector('.pn').textContent=t; n._p=t; }
+    }
     n.style.transform='translate3d('+(x|0)+'px,'+(y|0)+'px,0)';
   }
 }
 function creerMk(g){
   var G=GR[g], un=G.l.length===1, i=G.l[0], p=PR[i];
   var d=el('div','mk s0');
-  d.innerHTML='<span class="au"></span><span class="d"></span>'
+  d.innerHTML='<span class="au"></span><span class="d"></span><span class="pn"></span>'
     + (un ? '<span class="et">'+esc(p[C.n])+'</span>'
           : '<span class="cpt">'+G.l.length+'</span>');
   d.dataset.g=g; d.tabIndex=0; d.setAttribute('role','button');
@@ -1153,6 +1210,7 @@ function versCommune(i, doux){
   var p=document.getElementById('t'+CM[i].c); if(p) p.classList.add('actif');
   $('#retour').classList.add('vu');
   var c=cadrer(CM[i].b);
+  dessinerPlans();
   if (doux===false){ cx=c.x; cy=c.y; k=c.k; rendu(); } else voler(c.x,c.y,c.k);
   ficheCommune(i);
 }
@@ -1445,13 +1503,19 @@ function ecrire(ci, siren, v){
   local();
 }
 function local(){
-  try{ localStorage.setItem('ace-conquete', JSON.stringify(etats)); }catch(e){}
+  try{
+    localStorage.setItem('ace-conquete', JSON.stringify(etats));
+    localStorage.setItem('ace-plans', JSON.stringify(plans));
+  }catch(e){}
 }
 function chargerLocal(){
   try{
     var t=localStorage.getItem('ace-conquete');
     if (t) etats=JSON.parse(t)||{};
+    var p=localStorage.getItem('ace-plans');
+    if (p) plans=JSON.parse(p)||[];
   }catch(e){}
+  indexerPlans();
 }
 function brancherDb(){
   if (!(window.claude && claude.use)) return;
@@ -1546,7 +1610,9 @@ function initLegende(){
    proche voisin, pas l'optimum, mais sur quatre points a moins d'un
    kilometre l'ecart avec l'optimum est negligeable. */
 function tournees(ci, taille, combien){
-  var reste = parCommune[ci].filter(function(i){ return !VISITE[etatDe(i)]; });
+  /* Seules les cibles dont le dossier est pret entrent dans une tournee.
+     Une porte sans argumentaire ne se rattrape pas. */
+  var reste = parCommune[ci].filter(function(i){ return etatDe(i)===1; });
   var out=[];
   while (reste.length && out.length<combien){
     var t=[reste.shift()], d=0;
@@ -1569,6 +1635,34 @@ function tournees(ci, taille, combien){
 var pan=$('#panneau');
 function ligne(dt,dd){ return '<div><dt>'+dt+'</dt><dd>'+(dd||'<i class="nul">non renseigne</i>')+'</dd></div>'; }
 function fleche(){ return '<svg viewBox="0 0 24 24"><path d="M5 12h13M12 5l7 7-7 7"/></svg>'; }
+
+function memeTournee(a, b){
+  if (a.length!==b.length) return false;
+  var x=a.slice().sort(function(p,q){return p-q;}), y=b.slice().sort(function(p,q){return p-q;});
+  for (var i=0;i<x.length;i++) if (x[i]!==y[i]) return false;
+  return true;
+}
+function planIndex(liste){
+  for (var i=0;i<plans.length;i++) if (memeTournee(plans[i].l, liste)) return i;
+  return -1;
+}
+function planifier(ci, liste, metres){
+  var i=planIndex(liste);
+  if (i>=0){ plans.splice(i,1); toast('Tournee retiree du plan.'); }
+  else {
+    if (plans.length>=8){ toast('Huit tournees planifiees, retirez en une avant.', 1); return; }
+    plans.push({ci:ci, l:liste.slice(), m:metres, d:aujourdhui()});
+    toast('Tournee planifiee. Les portes sont numerotees sur la carte.');
+  }
+  indexerPlans(); local(); ecrirePlans(); dessinerPlans(); rendu();
+  if (communeActive>=0 && cibleActive<0) ficheCommune(communeActive); else ficheAccueil();
+}
+function ecrirePlans(){
+  if (!db) return;
+  db.doc('plans/liste').set({p:plans, maj:aujourdhui()}).catch(function(){
+    toast("Le plan n'a pas pu etre enregistre en ligne, il reste sur cet appareil.", 1);
+  });
+}
 
 function ficheAccueil(){
   var top=[];
@@ -1598,6 +1692,23 @@ function ficheAccueil(){
 
    + '<button class="act base-l" id="voir-base"><span>La base &middot; '
    + esc(D.base ? D.base.commune : '')+'</span>'+fleche()+'</button>'
+
+   + (plans.length
+      ? '<h3 class="tt">Vos tournees planifiees</h3>'
+      + '<p class="note">Sur la carte, leurs portes portent un anneau dore et leur '
+      + 'numero d\'ordre, et le trajet a pied est trace entre elles.</p>'
+      + plans.map(function(pl, n){
+          var faits=pl.l.filter(function(i){ return VISITE[etatDe(i)]; }).length;
+          return '<div class="tour"><div class="te"><b>Tournee '+(n+1)+'</b>'
+           + '<span class="km">'+esc(CM[pl.ci].n)+' &middot; '
+           + (pl.m>=1000?(pl.m/1000).toFixed(1)+' km':pl.m+' m')
+           + (faits?' &middot; '+faits+' sur '+pl.l.length+' faites':'')+'</span></div>'
+           + '<ol>' + pl.l.map(function(i){
+               return '<li><button data-i="'+i+'" class="s'+etatDe(i)+'"><i></i>'
+                + '<span>'+esc(PR[i][C.n])+'</span>'
+                + '<span class="d">'+esc(PR[i][C.ad])+'</span></button></li>';
+             }).join('') + '</ol></div>'; }).join('')
+      : '')
 
    + (prets.length
       ? '<h3 class="tt">Pretes a prospecter</h3>'
@@ -1662,14 +1773,27 @@ function ficheClient(j){
    repondre a une seule question quand on l'ouvre : ou je vais maintenant. */
 function etapes(){
   var un=null, home=null;
+  /* Une tournee planifiee prime sur tout : c'est une decision deja prise. */
+  var pl=null;
+  for (var z=0; z<plans.length; z++){
+    if (plans[z].l.some(function(i){ return !VISITE[etatDe(i)]; })){ pl=plans[z]; break; }
+  }
   CM.forEach(function(c,i){ if (c.r===1) un=i; if (c.home) home=i; });
   var h='';
+  if (pl){
+    var reste=pl.l.filter(function(i){ return !VISITE[etatDe(i)]; }).length;
+    h += '<button class="etape phare" data-c="'+pl.ci+'">'
+       + '<span class="no">1</span><span class="tx">'
+       + '<b>Tournee planifiee &middot; '+esc(CM[pl.ci].n)+'</b>'
+       + '<small>'+reste+' porte'+(reste>1?'s':'')+' a faire sur '+pl.l.length+' &middot; '
+       + (pl.m>=1000?(pl.m/1000).toFixed(1)+' km':pl.m+' m')+' a pied</small></span>'+fleche()+'</button>';
+  }
   if (un!==null){
     var c=CM[un];
     var p=parCommune[un].filter(function(i){ return etatDe(i)===1; }).length;
     var af=parCommune[un].filter(function(i){ return !VISITE[etatDe(i)]; }).length;
-    h += '<button class="etape phare" data-c="'+un+'">'
-       + '<span class="no">1</span><span class="tx">'
+    h += '<button class="etape'+(pl?'':' phare')+'" data-c="'+un+'">'
+       + '<span class="no">'+(pl?2:1)+'</span><span class="tx">'
        + '<b>'+esc(c.n)+'</b>'
        + '<small>'+af+' portes a faire'+(p?', dont '+p+' avec le dossier pret':'')
        + ' &middot; '+c.km+' km de la base</small></span>'+fleche()+'</button>';
@@ -1684,7 +1808,7 @@ function etapes(){
       .sort(function(a,z){ return a.d-z.d; }).slice(0,3);
     if (pres.length){
       h += '<button class="etape" data-c="'+home+'">'
-        + '<span class="no">2</span><span class="tx">'
+        + '<span class="no">'+(pl?3:2)+'</span><span class="tx">'
         + '<b>Quand le temps manque</b>'
         + '<small>'+esc(CM[home].n)+', '+pres.length+' portes a moins de '
         + Math.round(pres[pres.length-1].d)+' m de la base, a pied</small></span>'+fleche()+'</button>';
@@ -1746,16 +1870,36 @@ function ficheCommune(ci){
    + (cpt[0] ? '<span><i style="background:var(--st0)"></i>'+cpt[0]+' a faire</span>' : '')
    + '</div></div>'
 
-   + (tr.length ? '<h3 class="tt">Tournees a pied, quatre portes chacune</h3>'
+   + '<h3 class="tt">Tournees a pied</h3>'
+   + '<p class="note">Une tournee ne prend que des cibles dont le dossier est pret : '
+   + 'angle trouve, argumentaire ecrit. Sonner sans cela, c\'est bruler la porte.</p>'
+   + (tr.length ? ''
       + tr.map(function(t,j){
-          return '<div class="tour"><div class="te"><b>Tournee '+(j+1)+'</b>'
-           + '<span class="km">'+(t.m>=1000?(t.m/1000).toFixed(1)+' km':t.m+' m')+' de marche</span></div>'
+          var ip=planIndex(t.t);
+          return '<div class="tour'+(ip>=0?' plan':'')+'"><div class="te"><b>Tournee '+(j+1)+'</b>'
+           + '<span class="km">'+(t.m>=1000?(t.m/1000).toFixed(1)+' km':t.m+' m')+' de marche</span>'
+           + '<button class="plan-b" data-plan="'+j+'">'+(ip>=0?'Retirer':'Planifier')+'</button></div>'
            + '<ol>' + t.t.map(function(i){
                return '<li><button data-i="'+i+'" class="s'+etatDe(i)+'"><i></i>'
                 + '<span>'+esc(PR[i][C.n])+'</span>'
                 + '<span class="d">'+esc(PR[i][C.ad])+'</span></button></li>';
              }).join('') + '</ol></div>';
-        }).join('') : '')
+          }).join('')
+      : '<p class="note" style="color:var(--st2)">Aucun dossier pret dans cette commune. '
+      + 'Preparez d\'abord les cibles ci-dessous, puis passez les en <b>Dossier pret</b> : '
+      + 'la tournee se composera toute seule.</p>')
+   + (function(){
+        /* Ce qu'il reste a preparer pour completer la prochaine tournee. */
+        var prets=L.filter(function(i){ return etatDe(i)===1; }).length;
+        var manque=Math.max(0, 4-(prets%4===0&&prets>0?4:prets%4));
+        if (!manque) return '';
+        var cand=L.filter(function(i){ return etatDe(i)===0; }).slice(0,manque+2);
+        if (!cand.length) return '';
+        return '<h3 class="tt">A preparer pour completer la prochaine tournee</h3>'
+         + '<p class="note">Il manque '+manque+' dossier'+(manque>1?'s':'')+'. '
+         + 'Voici les cibles les mieux notees qui n\'en ont pas encore.</p>'
+         + '<ul class="liste">' + cand.map(function(i){ return rangee(i); }).join('') + '</ul>';
+      })()
 
    + (function(){
         var p=L.filter(function(i){ return etatDe(i)===1; });
@@ -1769,6 +1913,16 @@ function ficheCommune(ci){
    + (L.length>40 ? '<button class="plus" id="plus" data-n="40">Voir les '+(L.length-40)+' suivantes</button>' : '')
    + '</div>';
 
+  var bp=pan.querySelectorAll('.plan-b');
+  for (var z=0; z<bp.length; z++){
+    (function(b){
+      b.onclick=function(ev){
+        ev.stopPropagation();
+        var t=tr[+b.dataset.plan];
+        planifier(ci, t.t, t.m);
+      };
+    })(bp[z]);
+  }
   var p=$('#plus');
   if (p) p.onclick=function(){
     var d=+p.dataset.n;
@@ -1934,8 +2088,12 @@ function etatsSaisis(){
   return out;
 }
 function paquet(){
-  return JSON.stringify({format:'ace-conquete', version:1, mois:M.mois,
-                         exporte:aujourdhui(), etats:etatsSaisis()}, null, 1);
+  return JSON.stringify({format:'ace-conquete', version:2, mois:M.mois,
+                         exporte:aujourdhui(), etats:etatsSaisis(),
+                         plans:plans.map(function(p){
+                           return {ci:p.ci, m:p.m, d:p.d,
+                                   s:p.l.map(function(i){ return PR[i][C.s]; })};
+                         })}, null, 1);
 }
 function tsvAirtable(){
   var l=['SIREN\tNom\tCommune\tStatut\tDate visite\tNotes terrain'];
@@ -1952,7 +2110,9 @@ function ficheSauvegarde(){
   pan.innerHTML =
    '<div class="pn">'
    + '<div class="pe"><div class="col"><h2>Sauvegarde</h2>'
-   + '<p class="sst">'+n+' societe'+(n>1?'s':'')+' avec un etat saisi a la main.</p></div>'
+   + '<p class="sst">'+n+' societe'+(n>1?'s':'')+' avec un etat saisi a la main'
+   + (plans.length?', et '+plans.length+' tournee'+(plans.length>1?'s':'')+' planifiee'+(plans.length>1?'s':''):'')
+   + '.</p></div>'
    + '<button class="fermer" id="fermer" aria-label="Fermer">'
    + '<svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>'
    + '<p class="note">Vos etats sont enregistres dans ce navigateur. Pour les '
@@ -1998,8 +2158,20 @@ function ficheSauvegarde(){
       if (!d || d.format!=='ace-conquete' || !d.etats) return toast('Ce fichier ne vient pas de la carte.', 1);
       var n=0;
       for (var s in d.etats){ etats[s]=d.etats[s]; n++; }
-      local(); majGlobal(); majTerritoires(); rendu(); ficheSauvegarde();
-      toast(n+' etat'+(n>1?'s':'')+' repris.');
+      /* Les tournees sont exportees par SIREN, pas par indice : un indice ne
+         veut rien dire d'un fichier de prospects a l'autre. */
+      var np=0;
+      if (Array.isArray(d.plans)){
+        plans=[];
+        d.plans.forEach(function(p){
+          var l=(p.s||[]).map(function(s){ return parSiren[s]; })
+                         .filter(function(x){ return x!==undefined; });
+          if (l.length>1){ plans.push({ci:p.ci, l:l, m:p.m||0, d:p.d||''}); np++; }
+        });
+        indexerPlans();
+      }
+      local(); majGlobal(); majTerritoires(); dessinerPlans(); rendu(); ficheSauvegarde();
+      toast(n+' etat'+(n>1?'s':'')+(np?' et '+np+' tournee'+(np>1?'s':''):'')+' repris.');
     };
     lec.readAsText(f);
   };
@@ -2104,6 +2276,7 @@ initCalque();
 initLegende();
 majGlobal();
 majTerritoires();
+dessinerPlans();
 ficheAccueil();
 cx=M.larg/2; cy=M.haut/2; k=KFIT*.55;
 peindre();
