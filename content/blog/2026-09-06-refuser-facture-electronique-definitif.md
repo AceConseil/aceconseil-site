@@ -2,7 +2,7 @@
 title: "Facture électronique : le refus est irréversible, et personne ne l'a en charge"
 titleSeo: "Refuser une facture électronique : c'est définitif"
 description: Quatorze statuts existent dans le cycle de vie d'une facture électronique, quatre seulement sont obligatoires, et « Refusée » en fait partie. Le geste est définitif et oblige votre fournisseur à un avoir. Ce qu'il faut savoir avant de cliquer.
-date: 2026-09-09
+date: 2026-09-06
 slug: refuser-facture-electronique-definitif
 keywords: refuser une facture électronique, statut facture électronique, cycle de vie de la facture, statut encaissée, facture rejetée, statuts obligatoires facture
 ---
