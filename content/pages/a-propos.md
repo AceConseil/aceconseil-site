@@ -11,7 +11,7 @@ date: 2026-09-05
 
 ACE Conseil est une société par actions simplifiée de conseil aux entreprises, immatriculée le 6 janvier 2026, dont le siège est au 15 allée des Plantes, 77410 Annet-sur-Marne, en Seine-et-Marne. SIREN 999 417 967, SIRET du siège 999 417 967 00018, code d'activité 70.22Z, numéro de TVA intracommunautaire FR15999417967. Deux cofondateurs, aucun salarié.
 
-Cette page existe pour une raison précise : **cinq autres sociétés françaises actives portent exactement le nom ACE CONSEIL**, dont une créée sept semaines après nous avec le même code d'activité, et le domaine en `.fr` appartient depuis 1997 à un cabinet d'expertise comptable du Var. Si vous nous cherchez, ce sont les identifiants ci-dessus qui nous distinguent, pas le nom.
+Cette page existe pour une raison précise : **cinq autres sociétés françaises actives portent exactement le nom ACE CONSEIL**, dont une créée sept semaines après nous avec le même code d'activité, et le domaine en `.fr` est détenu depuis juillet 2009 par un cabinet d'expertise comptable du Var. Si vous nous cherchez, ce sont les identifiants ci-dessus qui nous distinguent, pas le nom.
 
 ## Les deux personnes
 

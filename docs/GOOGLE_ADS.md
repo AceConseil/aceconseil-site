@@ -121,4 +121,4 @@ Google Ads redevient une option le jour où les quatre conditions suivantes sont
 
 La condition 4 est celle que le plan de l'année vise pour décembre. C'est aussi la seule qui ne s'achète pas.
 
-**Une exception, et une seule.** Quelques euros par mois sur la requête de marque exacte « ace conseil » pourraient se défendre, face à cinq homonymes actifs et à un cabinet qui détient le domaine en `.fr` depuis 1997. Mais c'est une dépense défensive et non un canal d'acquisition : elle se décide séparément, après la fiche Google, qui traite le même problème gratuitement.
+**Une exception, et une seule.** Quelques euros par mois sur la requête de marque exacte « ace conseil » pourraient se défendre, face à cinq homonymes actifs et à un cabinet qui détient le domaine en `.fr` depuis juillet 2009. Mais c'est une dépense défensive et non un canal d'acquisition : elle se décide séparément, après la fiche Google, qui traite le même problème gratuitement.
