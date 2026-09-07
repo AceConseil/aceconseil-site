@@ -23,7 +23,11 @@ L'ordre général : d'abord la fiche Google (le levier le plus rentable, effet e
 1. Aller sur **google.com/business**, se connecter avec le compte Google d'ACE (celui de `contact@aceconseil.co`).
 2. Chercher « ACE Conseil Annet-sur-Marne ». Si une fiche existe déjà, cliquer **« Il s'agit de mon établissement »** pour la revendiquer. Sinon, **« Ajouter votre établissement »**.
 3. **Nom** : ACE Conseil (exactement, sans ajouter de mots-clés du type « ACE Conseil IA Automatisation » : Google sanctionne).
-4. **Catégorie principale** : « Consultant en informatique ». Puis ajouter des catégories secondaires : « Agence de marketing », « Service de conseil aux entreprises ».
+4. **Catégorie principale** : « **Conseiller en gestion des affaires** », et pas autre chose. Arrêté le 7 septembre 2026 après avoir parcouru la liste réelle de Google. C'est la traduction du code 70.22Z publié sur la page à-propos. Deux catégories secondaires au maximum, choisies parmi ce que la liste propose réellement.
+
+   Ce guide indiquait auparavant « Consultant en informatique » en principale, et deux secondaires dont « Service de conseil aux entreprises », libellé qui n'existe pas dans la liste de Google. Corrigé. Ne jamais prendre « Conseiller financier », « Conseil en investissement » ni « Conseil en déclaration fiscale » : les deux premiers sont des activités réglementées, le troisième est la catégorie du cabinet comptable homonyme.
+
+   Le détail complet du chantier de la fiche est dans `docs/FICHE_GOOGLE_CHANTIER.html`, qui fait foi en cas de divergence avec ce guide.
 5. **Zone desservie** : comme le conseil se fait beaucoup à distance, choisir « Je livre des biens et services à mes clients » et définir la zone (Seine-et-Marne, Paris, Île-de-France). L'adresse exacte peut rester masquée si vous préférez ne pas afficher le siège ; la zone, elle, est publique.
 6. **Téléphone** et **site** : ceux du NAP ci-dessus.
 7. **Validation** : Google envoie un code (par courrier postal à l'adresse du siège, parfois par téléphone ou vidéo). Suivre la méthode proposée. Tant que la fiche n'est pas validée, elle n'apparaît pas : c'est l'étape à lancer en tout premier car le courrier prend quelques jours.
