@@ -661,6 +661,20 @@ label.act{cursor:pointer}
 <script>
 (function(){
 'use strict';
+
+/* ------------------------------------------------------------------
+   OU SOMMES-NOUS.
+   La carte est servie a /prive/<jeton>, sans barre oblique finale :
+   l'hebergeur la retire. Un lien relatif comme "maquettes/cogebi" est
+   donc resolu depuis /prive/ et tombe a cote. On recompose le chemin de
+   base une fois pour toutes, ce qui marche aussi bien sur le domaine
+   qu'en ouvrant le fichier en local.
+------------------------------------------------------------------- */
+var BASE = (function(){
+  var p = location.pathname;
+  if (/\.html?$/i.test(p)) return p.replace(/[^\/]*$/, '');
+  return p.replace(/\/+$/, '') + '/';
+})();
 var D = JSON.parse(document.getElementById('donnees').textContent);
 var C = {}; D.col.forEach(function(k,i){ C[k]=i; });
 var M = D.meta, DC = D.dc || {};
@@ -1690,9 +1704,9 @@ function ficheAccueil(){
    + '<div><b>'+prets.length+'</b><span>dossiers prets</span></div>'
    + '<div><b>'+gros+'</b><span>prio. forte</span></div></div>'
 
-   + '<a class="act phare base-l" href="dossier-terrain" target="_blank" rel="noopener">'
+   + '<a class="act phare base-l" href="'+BASE+'dossier-terrain" target="_blank" rel="noopener">'
    + '<span>Le dossier de terrain</span>'+fleche()+'</a>'
-   + '<a class="act base-l" href="entrainement" target="_blank" rel="noopener">'
+   + '<a class="act base-l" href="'+BASE+'entrainement" target="_blank" rel="noopener">'
    + '<span>L\'entrainement de marche</span>'+fleche()+'</a>'
    + '<button class="act base-l" id="voir-base"><span>La base &middot; '
    + esc(D.base ? D.base.commune : '')+'</span>'+fleche()+'</button>'
@@ -2050,7 +2064,7 @@ function ficheSociete(i){
    + (p[C.al] ? '<p class="corr">'+esc(p[C.al])+'</p>' : '')
 
    + '<div class="actions">'
-   + (en && en.art ? '<a class="act phare" href="maquettes/'+esc(en.art)+'" target="_blank" rel="noopener">'
+   + (en && en.art ? '<a class="act phare" href="'+BASE+'maquettes/'+esc(en.art)+'" target="_blank" rel="noopener">'
        + '<span>Ouvrir la maquette de site</span>'+fleche()+'</a>' : '')
    + (tel ? '<a class="act" href="tel:'+esc(tel.replace(/\s/g,''))+'"><span>Appeler</span>'+fleche()+'</a>' : '')
    + '<a class="act" href="https://www.google.com/maps/dir/?api=1&destination='+la+','+lo+'&travelmode=walking" target="_blank" rel="noopener">'
@@ -2290,5 +2304,6 @@ brancherApi();
 addEventListener('online', function(){ if (cle) brancherApi(); });
 })();
 </script>
+
 </body>
 </html>
