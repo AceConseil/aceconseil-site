@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>L'entrainement de marche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap">
+<style>
+/* ------------------------------------------------------------------
+   L'ENTRAINEMENT DE MARCHE, ACE Conseil.
+   Se pratique en marchant, ecouteurs aux oreilles, telephone en main.
+   La page parle, laisse un silence pour repondre a voix haute, puis
+   donne la reponse. Prospecter est une competence de bouche : elle
+   s'acquiert en disant les phrases, pas en les lisant.
+   Tout tourne dans le navigateur, sans reseau : la synthese vocale est
+   celle du telephone. L'ecran est maintenu allume pendant la seance,
+   sinon la voix s'arrete.
+------------------------------------------------------------------- */
+:root{
+  --fond:#121311; --carte:#1A1C19; --bloc:#20231F;
+  --texte:#F0EDE3; --doux:#ABA99C; --faible:#75736A;
+  --filet:#2C2F28; --filet2:#414539;
+  --or:#D7A947; --or-s:#8A6C22;
+  --vert:#6FA986; --rouge:#CF7A6A;
+}
+:root[data-theme="clair"]{
+  --fond:#F4F1E9; --carte:#FBF9F4; --bloc:#FFFFFF;
+  --texte:#171A1D; --doux:#55564E; --faible:#8A8A7E;
+  --filet:#DCD5C4; --filet2:#BCB29B;
+  --or:#A2761A; --or-s:#E3D4A8; --vert:#3C6B52; --rouge:#9B4A3E;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; background:var(--fond); color:var(--texte);
+  font-family:'Newsreader',Georgia,serif; font-size:19px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overscroll-behavior:none}
+h1,h2{margin:0; font-weight:600; letter-spacing:-.015em; line-height:1.12; text-wrap:balance}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--or); outline-offset:3px}
+.sc{font-family:'IBM Plex Sans Condensed',Helvetica,sans-serif}
+.lab{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.72rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--faible)}
+
+#app{min-height:100%; display:flex; flex-direction:column}
+.col{width:100%; max-width:620px; margin:0 auto; padding:0 clamp(20px,5vw,28px)}
+
+/* ------------------------------------------------ le choix des seances */
+.accueil{flex:1 1 auto; padding:clamp(30px,6vw,54px) 0 40px}
+.accueil h1{font-size:clamp(1.9rem,6vw,2.7rem); margin:12px 0 14px}
+.accueil .intro{margin:0 0 26px; color:var(--doux); font-size:1.04rem}
+.mode{display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap}
+.mode button{border:1px solid var(--filet2); padding:9px 15px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.86rem; font-weight:600; color:var(--doux)}
+.mode button.on{background:var(--or); border-color:var(--or); color:var(--fond)}
+.seances{display:grid; gap:9px}
+.sn{display:grid; grid-template-columns:34px 1fr auto; align-items:center; gap:14px;
+  width:100%; text-align:left; border:1px solid var(--filet); background:var(--carte);
+  padding:15px 17px; transition:border-color .18s, transform .18s}
+.sn:hover{border-color:var(--or); transform:translateX(3px)}
+.sn .no{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.2rem; font-weight:700;
+  color:var(--or); text-align:center}
+.sn b{display:block; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.02rem;
+  font-weight:600; letter-spacing:-.005em}
+.sn small{display:block; color:var(--faible); font-size:.85rem; margin-top:2px;
+  font-family:'IBM Plex Sans Condensed',sans-serif}
+.sn .duree{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.8rem; color:var(--faible);
+  white-space:nowrap}
+.avert{margin-top:26px; padding:15px 17px; border-left:3px solid var(--or); background:var(--carte);
+  font-size:.94rem; color:var(--doux)}
+.avert b{color:var(--texte)}
+
+/* ------------------------------------------------ la seance */
+.seance{flex:1 1 auto; display:none; flex-direction:column}
+.seance.on{display:flex}
+.barre{height:3px; background:var(--filet); position:relative}
+.barre i{position:absolute; inset:0 auto 0 0; background:var(--or); transition:width .4s ease}
+.haut{display:flex; align-items:center; gap:14px; padding:14px 0}
+.haut .quit{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.84rem; color:var(--faible)}
+.haut .pos{margin-left:auto; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.84rem; color:var(--faible)}
+
+.scene{flex:1 1 auto; display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(20px,5vw,46px) 0}
+.role{display:block; margin-bottom:14px}
+.txt{font-size:clamp(1.35rem,5.4vw,1.95rem); line-height:1.34; margin:0}
+.txt.dit{font-style:italic}
+.rep{margin-top:26px; padding-top:22px; border-top:1px solid var(--filet); display:none}
+.rep.vu{display:block}
+.rep .lab{display:block; margin-bottom:10px; color:var(--vert)}
+.rep p{margin:0; font-size:clamp(1.15rem,4.4vw,1.5rem); line-height:1.4}
+.note{margin-top:16px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.92rem;
+  color:var(--faible); line-height:1.55}
+
+/* le compte a rebours du silence */
+.silence{margin-top:24px; display:none; align-items:center; gap:14px}
+.silence.vu{display:flex}
+.silence .cercle{width:52px; height:52px; flex:none; position:relative}
+.silence .cercle svg{width:100%; height:100%; transform:rotate(-90deg)}
+.silence .cercle circle{fill:none; stroke-width:4}
+.silence .cercle .f{stroke:var(--filet)}
+.silence .cercle .p{stroke:var(--or); stroke-linecap:round; transition:stroke-dashoffset 1s linear}
+.silence .cercle b{position:absolute; inset:0; display:grid; place-items:center;
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1rem; font-weight:600}
+.silence .quoi{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.95rem; color:var(--doux)}
+
+.pied{padding:16px 0 max(20px, env(safe-area-inset-bottom)); border-top:1px solid var(--filet);
+  background:var(--carte)}
+.cmd{display:grid; grid-template-columns:1fr 1.4fr 1fr; gap:9px}
+.cmd button{border:1px solid var(--filet2); padding:16px 10px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.94rem; font-weight:600; letter-spacing:.03em}
+.cmd button:disabled{opacity:.35}
+.cmd .go{background:var(--or); border-color:var(--or); color:var(--fond); font-size:1rem}
+.reglages{display:flex; align-items:center; gap:16px; margin-top:12px;
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.82rem; color:var(--faible)}
+.reglages label{display:flex; align-items:center; gap:7px}
+.reglages input[type=range]{width:86px; accent-color:var(--or)}
+.fin{text-align:center; padding:clamp(30px,8vw,60px) 0}
+.fin h2{font-size:clamp(1.5rem,5vw,2.1rem); margin-bottom:14px}
+.fin p{color:var(--doux); margin:0 0 24px}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="accueil col" id="accueil">
+    <span class="lab">ACE Conseil &middot; entrainement</span>
+    <h1>L'entrainement de marche.</h1>
+    <p class="intro">Six seances a faire en marchant, ecouteurs aux oreilles. La page
+    pose une situation, laisse un silence pour repondre <b>a voix haute</b>, puis donne
+    la reponse. Prospecter est une competence de bouche : ca s'apprend en parlant, pas
+    en lisant.</p>
+
+    <div class="mode" id="mode">
+      <button data-p="8" class="on">Silence 8 s</button>
+      <button data-p="12">12 s</button>
+      <button data-p="18">18 s</button>
+    </div>
+
+    <div class="seances" id="seances"></div>
+
+    <div class="avert">
+      <p style="margin:0 0 10px"><b>Avant de partir.</b> Mettez le volume, branchez les
+      ecouteurs, et gardez le telephone en main : l'ecran doit rester allume, sinon la
+      voix s'arrete. La page le maintient allume toute seule quand le telephone le
+      permet.</p>
+      <p style="margin:0">Repondez vraiment a voix haute. Repondre dans sa tete ne sert a
+      rien : c'est la bouche qui doit apprendre.</p>
+    </div>
+  </div>
+
+  <div class="seance" id="seance">
+    <div class="barre"><i id="barre" style="width:0"></i></div>
+    <div class="col haut">
+      <button class="quit" id="quit">&larr; Sortir</button>
+      <span class="pos" id="pos"></span>
+    </div>
+    <div class="col scene">
+      <span class="lab role" id="role"></span>
+      <p class="txt" id="txt"></p>
+      <div class="silence" id="silence">
+        <div class="cercle">
+          <svg viewBox="0 0 52 52" aria-hidden="true">
+            <circle class="f" cx="26" cy="26" r="22"/>
+            <circle class="p" id="jauge" cx="26" cy="26" r="22"
+                    stroke-dasharray="138.2" stroke-dashoffset="0"/>
+          </svg><b id="compte"></b>
+        </div>
+        <span class="quoi">A vous. A voix haute.</span>
+      </div>
+      <div class="rep" id="rep">
+        <span class="lab">Ce qu'on dit</span>
+        <p id="repTxt"></p>
+        <p class="note" id="repNote"></p>
+      </div>
+    </div>
+    <div class="pied"><div class="col">
+      <div class="cmd">
+        <button id="prec">Precedent</button>
+        <button class="go" id="go">Demarrer</button>
+        <button id="suiv">Suivant</button>
+      </div>
+      <div class="reglages">
+        <label>Debit <input type="range" id="debit" min="0.7" max="1.3" step="0.05" value="0.95"></label>
+        <span id="etatVoix"></span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="seance" id="fini">
+    <div class="col fin">
+      <h2>Seance terminee.</h2>
+      <p>Refaites la demain. Une phrase n'est acquise que quand elle sort sans y penser.</p>
+      <div class="cmd" style="max-width:420px;margin:0 auto">
+        <button id="refaire">Refaire</button>
+        <button class="go" id="retour2">Les seances</button>
+        <button id="suivante">Suivante</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ------------------------------------------------------------------
+   Les seances. Chaque carte : un role, une consigne dite a voix haute,
+   un silence pour repondre, puis la reponse. La note ecrite n'est pas
+   dite : elle sert a la relecture, pas a la marche.
+------------------------------------------------------------------- */
+var SEANCES = [
+{ t:"Les quinze premieres secondes", s:"L'ouverture, jusqu'a ce qu'elle sorte toute seule", c:[
+  {r:"Consigne", t:"Premiere phrase. Qui vous etes et d'ou vous venez.",
+   a:"Bonjour, Jennifer Carrolo, ACE Conseil. On est installes a Annet-sur-Marne, juste a cote.",
+   n:"Le prenom et la societe d'abord. Annet tout de suite : c'est le seul argument qu'un centre d'appel ne peut pas copier."},
+  {r:"Consigne", t:"Deuxieme phrase. Pourquoi eux, et pas une autre entreprise.",
+   a:"Je passe parce que j'ai regarde votre entreprise avant de venir, et il y a un point precis dont je voulais vous parler.",
+   n:"On dit votre entreprise, pas votre site : on ne s'enferme pas d'entree dans une seule offre."},
+  {r:"Consigne", t:"Troisieme phrase. Celle qui borne la demande.",
+   a:"Vous avez deux minutes, ou je repasse ?",
+   n:"C'est une vraie question. Si on repond non, on repasse, et on le fait vraiment."},
+  {r:"Consigne", t:"Les trois d'affilee maintenant, sans vous arreter.",
+   a:"Bonjour, Jennifer Carrolo, ACE Conseil. On est installes a Annet-sur-Marne, juste a cote. Je passe parce que j'ai regarde votre entreprise avant de venir, et il y a un point precis dont je voulais vous parler. Vous avez deux minutes, ou je repasse ?"},
+  {r:"Piege", t:"Quelle phrase ne faut-il jamais dire en ouverture, parce qu'elle met en position basse ?",
+   a:"Je ne vais pas vous deranger longtemps. Vous derangez, et l'annoncer vous met plus bas que terre."},
+  {r:"Piege", t:"Et l'autre phrase interdite, celle qui fait fermer la porte parce qu'elle ne dit rien ?",
+   a:"C'est pour vous proposer nos services."},
+  {r:"Consigne", t:"Vous tombez sur le secretariat. Quelle est votre phrase ?",
+   a:"Je ne vais pas vous prendre de temps, ce n'est pas a vous que ca s'adresse. Il est joignable plutot le matin ou plutot en fin de journee ?",
+   n:"Question fermee a deux choix. Une question ouverte obtient je ne sais pas."},
+  {r:"Consigne", t:"Les trois phrases d'ouverture, une derniere fois. Plus lentement, en respirant entre chaque.",
+   a:"Bonjour, Jennifer Carrolo, ACE Conseil. On est installes a Annet-sur-Marne, juste a cote. Je passe parce que j'ai regarde votre entreprise avant de venir, et il y a un point precis dont je voulais vous parler. Vous avez deux minutes, ou je repasse ?"}
+]},
+{ t:"Reconnaitre le besoin", s:"Ce qu'un patron dit, et l'offre qui repond", c:[
+  {r:"Le patron dit", t:"Moi je reponds aux mails le soir, quand j'ai fini les chantiers.",
+   a:"Agent IA.", n:"Les demandes refroidissent avant d'etre traitees. Verifiez qu'il a un vrai flux entrant : sans demandes, un agent n'a rien a traiter."},
+  {r:"Le patron dit", t:"Entre le devis, le planning et la facture, je retape trois fois la meme chose.",
+   a:"Automatisation des process.", n:"Le signal le plus net dans une TPE du batiment. La question qui ouvre : quand vous envoyez un devis, vous le retapez quelque part apres ?"},
+  {r:"Le patron dit", t:"On entend parler d'intelligence artificielle partout, ma fille a essaye un truc, mais on ne sait pas quoi en faire.",
+   a:"Formation IA.", n:"Bon signe a partir de trois ou quatre personnes. En dessous, un agent se justifie mieux."},
+  {r:"Le patron dit", t:"Les clients me disent qu'ils ne me trouvent pas sur internet.",
+   a:"Visibilite locale.", n:"Donnez une correction gratuite sur sa fiche Google, tout de suite. C'est le meilleur moyen d'etre rappelee."},
+  {r:"Le patron dit", t:"Je fais des devis, et puis plus de nouvelles. Je n'aime pas relancer.",
+   a:"Strategie commerciale.", n:"C'est un aveu, recevez-le sans ironie. Bien vendre n'est pas un don, c'est un systeme."},
+  {r:"Le patron dit", t:"On est a l'etroit, on regarde un terrain du cote de Claye pour construire.",
+   a:"AMO immobilier. Et la, c'est votre terrain. Arretez le sujet du site tout de suite.",
+   n:"Dix ans d'operations immobilieres et de marches publics : vous etes la seule dans la piece a savoir de quoi il s'agit. Ecoutez longtemps, ne vendez rien ce jour-la."},
+  {r:"Le patron dit", t:"J'ai un site, c'est mon neveu qui me l'a fait il y a six ans.",
+   a:"Le site. Mais on ne touche pas au travail du neveu : on parle de qui s'en occupe maintenant."},
+  {r:"Le patron dit", t:"Le telephone sonne pendant que je suis sur le toit, je ne peux pas repondre.",
+   a:"Agent IA."},
+  {r:"Le patron dit", t:"Ma secretaire passe ses vendredis a refaire les memes tableaux.",
+   a:"Automatisation des process."},
+  {r:"Question", t:"Combien d'offres propose-t-on dans une seule visite ?",
+   a:"Une seule. Deux dans la meme conversation et le patron ne retient rien."},
+  {r:"Question", t:"Sur combien de nos offres peut-on annoncer un prix debout, sur le pas de la porte ?",
+   a:"Une seule. Le site vitrine : cinq cents euros, et quatre-vingt-neuf euros par mois.",
+   n:"Les six autres se qualifient sur place et se chiffrent apres. Annoncer un prix au juge sur une automatisation qu'on n'a pas vue, c'est se condamner a perdre de l'argent ou a se dedire."},
+  {r:"Question", t:"Que dit-on quand on ne veut pas donner de prix tout de suite ?",
+   a:"Je ne vais pas vous donner un prix en l'air. Il me faut voir comment vous travaillez, et je reviens avec un chiffre ferme."}
+]},
+{ t:"Les quatre freins", s:"Ce qu'ils cachent, et quoi repondre", c:[
+  {r:"Le patron dit", t:"Ecoutez, je n'ai pas le temps.",
+   a:"C'est justement le point. Et si c'est vrai que vous n'avez pas le temps, c'est peut-etre la le vrai sujet, avant le site.",
+   n:"Dessous : j'ai peur que ca me prenne des semaines. Et c'est un signal : celui qui n'a pas le temps est exactement celui a qui l'automatisation sert."},
+  {r:"Le patron dit", t:"J'ai deja assez de travail comme ca, je refuse des chantiers.",
+   a:"Alors la visibilite n'est pas votre sujet. Le votre, ce serait plutot de perdre moins de temps sur ce qui n'est pas du chantier.",
+   n:"Le seul cas ou l'argument du volume ne marche pas. On bascule sur choisir ses clients, ou sur le temps rendu."},
+  {r:"Le patron dit", t:"Ca doit couter cher, votre truc.",
+   a:"Cinq cents euros. C'est moins qu'une journee de votre equipe sur un chantier. Et les quatre-vingt-neuf euros par mois, c'est ce qui fait que dans deux ans il sera encore a jour au lieu d'etre une page morte.",
+   n:"On ne se defend pas, on compare. Et uniquement sur l'offre qui a un prix affiche."},
+  {r:"Le patron dit", t:"J'ai deja un site.",
+   a:"Montrez-le-moi. On le regarde ensemble, je vous dis ce que je vois, et si tout va bien je vous laisse tranquille.",
+   n:"Desarmant parce que sincere. Si le site est bon, on le dit, on passe a autre chose, et c'est ce qui donne du poids a tout le reste."},
+  {r:"Question", t:"Quelle est la regle absolue quand on regarde le site de quelqu'un avec lui ?",
+   a:"On ne dit jamais du mal de son travail. On montre un fait : le cadenas absent, la date de la plaquette, la page illisible sur telephone. Il tire la conclusion tout seul, et elle est a lui."}
+]},
+{ t:"Les objections", s:"Sept refus, sept reponses", c:[
+  {r:"Objection", t:"C'est mon neveu qui me l'a fait.",
+   a:"Il a fait le travail, c'est deja beaucoup. La question c'est qui s'en occupe maintenant. Un site vieillit tout seul : les quatre-vingt-neuf euros par mois, c'est exactement ca."},
+  {r:"Objection", t:"Moi je marche au bouche a oreille.",
+   a:"C'est ce qu'il y a de mieux. Sauf que celui a qui on vous recommande, aujourd'hui, il tape votre nom avant d'appeler. S'il ne trouve rien, la recommandation s'arrete la."},
+  {r:"Objection", t:"L'intelligence artificielle, franchement, ce n'est pas pour nous.",
+   a:"Oubliez le mot. Concretement, la question c'est : est-ce qu'une demande qui arrive a vingt-deux heures attend le lendemain matin chez vous ? Si oui, il y a quelque chose a faire, et le nom qu'on lui donne n'a aucune importance.",
+   n:"Presque toujours un refus du mot, pas du fond. On abandonne le mot."},
+  {r:"Objection", t:"On a deja quelqu'un qui s'en occupe.",
+   a:"Tres bien. C'est quelqu'un en interne, ou un prestataire ? Et vous en etes content ?",
+   n:"La deuxieme question fait souvent apparaitre l'insatisfaction. Si la reponse est franchement positive, on note et on part."},
+  {r:"Objection", t:"Envoyez-moi une documentation.",
+   a:"Je peux faire mieux : je vous laisse regarder ce que ca donnerait chez vous, c'est deja fait. Deux minutes, et si ca ne vous parle pas je ne reviens pas.",
+   n:"C'est un refus poli. On ne repond pas oui."},
+  {r:"Objection", t:"Je vais en parler a mon associe.",
+   a:"Tres bien. Je repasse jeudi matin, ca vous laisse le temps d'en parler. Si entre-temps c'est non, dites-le-moi, je ne vous embete pas.",
+   n:"Une date precise vaut mieux qu'un rappel vague, et donner une sortie facile met en confiance."},
+  {r:"Objection", t:"Vous etes la trentieme a passer cette semaine.",
+   a:"Je m'en doute. La difference c'est que les autres appellent depuis un centre d'appel. Nous on est a Annet, et j'ai regarde votre situation avant de sonner."},
+  {r:"Consigne", t:"Le patron se detourne, ses reponses raccourcissent. Que dites-vous ?",
+   a:"Je vois que ce n'est pas le moment. Je vous laisse ma carte, et je ne vous relance pas. Bonne journee.",
+   n:"Partir soi-meme, calmement, laisse une porte ouverte pour dans six mois. Insister la ferme pour toujours."}
+]},
+{ t:"Les quatre portes", s:"La tournee 1, par coeur", c:[
+  {r:"Porte 1", t:"Lagny Paysages, soixante-cinq rue Ampere. Qui demandez-vous ?",
+   a:"Veronique Lelievre, presidente."},
+  {r:"Porte 1", t:"Lagny Paysages. Sur quel fait entrez-vous ?",
+   a:"Aucun site, aucune identite visuelle nulle part, et une messagerie encore en wanadoo. Les domaines lagnypaysages point fr et point com sont libres.",
+   n:"Ne pas parler du groupe familial : la maison mere a deja un site."},
+  {r:"Porte 2", t:"J4R Echafaudages, quarante-neuf rue Ampere. Leur site marche. Alors sur quoi entrez-vous ?",
+   a:"Le titre de leur page d'accueil est Telechargez notre plaquette, et le fichier servi s'appelle J4R plaquette digitale 2020. Leur plaquette a six ans.",
+   n:"Ne pas critiquer le site frontalement, il marche. On parle de ce qui vieillit."},
+  {r:"Porte 2", t:"J4R. Si le site ne prend pas, quel est le second angle ?",
+   a:"L'automatisation. Une soixantaine de chantiers par mois, dix a dix-neuf salaries : le volume de planning et de facturation rend l'automatisation tres credible."},
+  {r:"Porte 3", t:"Etablissements Reithler, cinq rue Claude Chappe. Sur quel fait entrez-vous ?",
+   a:"Le domaine reithler tiret sas point fr existe et affiche la page Site en construction d'OVH. Ils paient deja l'hebergement pour une page vide, et leur messagerie professionnelle tourne dessus."},
+  {r:"Porte 3", t:"Reithler. Quelle est la phrase exacte ?",
+   a:"Vous payez deja le nom de domaine et l'hebergement. Il n'y a qu'une page site en construction dessus. La depense est faite, il manque juste le site.",
+   n:"Note Google a trois virgule sept sur cinq, la plus basse des quatre. Sujet sensible, a n'amener que si la conversation est engagee."},
+  {r:"Porte 4", t:"Cogebi, cent cinq avenue du General Leclerc. Sur quel fait entrez-vous ?",
+   a:"Leur site est une page Word enregistree en HTML. Une seule page, aucune balise titre, et pas de balise viewport, donc illisible sur telephone."},
+  {r:"Porte 4", t:"Cogebi. Quel est le geste a faire, et la phrase ?",
+   a:"Sortez votre telephone et tapez cogebi point fr. Ce que vous voyez, c'est ce que voit un donneur d'ordre avant de vous appeler.",
+   n:"Faites le test vous-meme dans la rue avant de le proposer."},
+  {r:"Consigne", t:"Et la regle a appliquer le matin meme, avant de partir ?",
+   a:"Reverifier les quatre faits sur son telephone, en trente secondes. Ils datent de septembre. Si un patron a mis son site en ligne entre-temps, la visite est finie avant d'avoir commence."}
+]}
+];
+
+/* La seance melee : on tire dans toutes les autres, sans repetition. */
+SEANCES.push({ t:"Seance melee", s:"Un tirage dans tout le reste, pour verifier", melee:true, c:[] });
+
+var $ = function(s){ return document.querySelector(s); };
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+var pause=8, seance=null, carte=0, etape=0, minuteur=null, voix=null, verrou=null;
+var enCours=false, rythme=0.95;
+
+/* ------------------------------------------------------------------ la voix */
+function choisirVoix(){
+  if (!('speechSynthesis' in window)) return;
+  var v=speechSynthesis.getVoices();
+  voix = v.filter(function(x){ return /^fr/i.test(x.lang); })
+          .sort(function(a,b){ return (b.localService?1:0)-(a.localService?1:0); })[0] || null;
+  $('#etatVoix').textContent = voix ? '' : (v.length ? 'aucune voix francaise, la voix par defaut sera utilisee' : '');
+}
+if ('speechSynthesis' in window){
+  choisirVoix();
+  speechSynthesis.onvoiceschanged = choisirVoix;
+} else {
+  $('#etatVoix').textContent = 'ce navigateur ne parle pas, la seance se lit a l ecran';
+}
+
+function dire(texte, apres){
+  if (!('speechSynthesis' in window) || !texte){ if(apres) minuteur=setTimeout(apres, 900); return; }
+  speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(texte);
+  u.lang='fr-FR'; u.rate=rythme; u.pitch=1;
+  if (voix) u.voice=voix;
+  var fait=false;
+  u.onend=function(){ if(!fait){ fait=true; if(apres) apres(); } };
+  u.onerror=function(){ if(!fait){ fait=true; if(apres) apres(); } };
+  /* filet : certains navigateurs n'emettent jamais onend */
+  var duree = Math.max(2500, texte.length*72/rythme);
+  setTimeout(function(){ if(!fait){ fait=true; if(apres) apres(); } }, duree+1800);
+  speechSynthesis.speak(u);
+}
+
+/* ---------------------------------------------------------- l ecran allume */
+function garderAllume(){
+  if (!('wakeLock' in navigator)) return;
+  navigator.wakeLock.request('screen').then(function(w){ verrou=w; }).catch(function(){});
+}
+function relacher(){ if (verrou){ try{ verrou.release(); }catch(e){} verrou=null; } }
+document.addEventListener('visibilitychange', function(){
+  if (document.visibilityState==='visible' && enCours) garderAllume();
+});
+
+/* ------------------------------------------------------------ le deroule */
+function lancer(i){
+  seance = JSON.parse(JSON.stringify(SEANCES[i]));
+  seance.i = i;
+  if (seance.melee){
+    var tout=[];
+    SEANCES.forEach(function(s){ if(!s.melee) s.c.forEach(function(c){ tout.push(c); }); });
+    /* melange deterministe par pas premier : pas de hasard, mais un ordre
+       different de celui de l'apprentissage, ce qui est le but */
+    var n=tout.length, pas=7, j=0, vus={};
+    for (var k=0;k<n;k++){ j=(j+pas)%n; while(vus[j]){ j=(j+1)%n; } vus[j]=1; seance.c.push(tout[j]); }
+    seance.c = seance.c.slice(0, 18);
+  }
+  carte=0; etape=0; enCours=false;
+  $('#accueil').style.display='none';
+  $('#fini').classList.remove('on');
+  $('#seance').classList.add('on');
+  $('#go').textContent='Demarrer';
+  montrer();
+}
+function montrer(){
+  var c=seance.c[carte];
+  $('#role').textContent=seance.melee ? c.r : (c.r+' · '+seance.t);
+  $('#txt').textContent=c.t;
+  $('#txt').className='txt'+(c.r==='Le patron dit'||c.r==='Objection'?' dit':'');
+  $('#rep').classList.remove('vu');
+  $('#silence').classList.remove('vu');
+  $('#repTxt').textContent=c.a;
+  $('#repNote').textContent=c.n||'';
+  $('#pos').textContent=(carte+1)+' sur '+seance.c.length;
+  $('#barre').style.width=((carte)/seance.c.length*100)+'%';
+  $('#prec').disabled = carte===0;
+}
+function jouer(){
+  var c=seance.c[carte];
+  etape=1;
+  dire(c.t, function(){
+    if (!enCours) return;
+    silence(pause, function(){
+      if (!enCours) return;
+      $('#silence').classList.remove('vu');
+      $('#rep').classList.add('vu');
+      etape=2;
+      dire(c.a, function(){
+        if (!enCours) return;
+        minuteur=setTimeout(suivant, 1600);
+      });
+    });
+  });
+}
+function silence(sec, apres){
+  $('#silence').classList.add('vu');
+  var reste=sec, tour=138.2;
+  $('#compte').textContent=reste;
+  $('#jauge').style.strokeDashoffset='0';
+  var t=setInterval(function(){
+    if (!enCours){ clearInterval(t); return; }
+    reste--;
+    $('#compte').textContent=Math.max(0,reste);
+    $('#jauge').style.strokeDashoffset=(tour*(1-reste/sec)).toFixed(1);
+    if (reste<=0){ clearInterval(t); apres(); }
+  }, 1000);
+  minuteur=t;
+}
+function stop(){
+  enCours=false;
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  clearTimeout(minuteur); clearInterval(minuteur);
+  $('#go').textContent='Reprendre';
+  $('#silence').classList.remove('vu');
+}
+function suivant(){
+  stop();
+  if (carte >= seance.c.length-1){
+    $('#seance').classList.remove('on');
+    $('#fini').classList.add('on');
+    $('#barre').style.width='100%';
+    relacher();
+    return;
+  }
+  carte++; montrer();
+  enCours=true; $('#go').textContent='Pause'; jouer();
+}
+
+/* ------------------------------------------------------------ les boutons */
+$('#go').onclick=function(){
+  if (enCours){ stop(); return; }
+  enCours=true; garderAllume();
+  $('#go').textContent='Pause';
+  if (etape===2){ $('#rep').classList.add('vu'); dire(seance.c[carte].a, function(){
+    if (enCours) minuteur=setTimeout(suivant, 1600); }); }
+  else jouer();
+};
+$('#suiv').onclick=function(){ stop(); if (carte<seance.c.length-1){ carte++; montrer(); } else suivant(); };
+$('#prec').onclick=function(){ stop(); if (carte>0){ carte--; montrer(); } };
+$('#quit').onclick=function(){ stop(); relacher();
+  $('#seance').classList.remove('on'); $('#accueil').style.display=''; };
+$('#retour2').onclick=function(){ $('#fini').classList.remove('on'); $('#accueil').style.display=''; };
+$('#refaire').onclick=function(){ lancer(seance.i); };
+$('#suivante').onclick=function(){ lancer((seance.i+1)%SEANCES.length); };
+$('#debit').oninput=function(){ rythme=parseFloat(this.value); };
+$('#mode').onclick=function(ev){
+  var b=ev.target.closest('button'); if(!b) return;
+  pause=+b.dataset.p;
+  [].forEach.call(this.querySelectorAll('button'), function(x){ x.classList.toggle('on', x===b); });
+};
+
+/* -------------------------------------------------------------- l accueil */
+(function(){
+  var h='';
+  SEANCES.forEach(function(s,i){
+    var n = s.melee ? 18 : s.c.length;
+    var mn = Math.round((n*(8+pause+9))/60);
+    h += '<button class="sn" data-s="'+i+'"><span class="no">'+(i+1)+'</span>'
+       + '<span><b>'+esc(s.t)+'</b><small>'+esc(s.s)+'</small></span>'
+       + '<span class="duree">'+n+' cartes</span></button>';
+  });
+  $('#seances').innerHTML=h;
+  $('#seances').onclick=function(ev){
+    var b=ev.target.closest('.sn'); if(b) lancer(+b.dataset.s);
+  };
+})();
+})();
+</script>
+</body>
+</html>
