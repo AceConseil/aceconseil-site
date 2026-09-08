@@ -1142,6 +1142,25 @@ function buildSitemap(articles, pages) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
 }
 
+// ── Publication différée ──
+
+/**
+ * Un article dont la date est dans le futur n'est pas construit : ni page, ni
+ * sitemap, ni flux, ni index, ni bloc des dernieres analyses. Il devient
+ * visible au premier deploiement fait a partir de sa date.
+ *
+ * Cela permet d'ecrire une semaine a l'avance et de tout pousser d'un coup
+ * sans que quatre articles paraissent le meme jour, ce qui est arrive le
+ * 6 septembre 2026. La contrepartie est qu'il faut un deploiement le jour dit,
+ * puisque l'hebergeur ne reconstruit que sur un envoi.
+ *
+ * La date du jour est prise a Paris et non en temps universel : sinon un
+ * article du 9 resterait invisible jusqu'a 2 heures du matin le 9.
+ */
+function dateDuJour() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Paris' });
+}
+
 // ── Main ──
 
 function main() {
@@ -1165,6 +1184,24 @@ function main() {
   for (const a of articles) {
     if (slugs.has(a.meta.slug)) throw new Error(`Slug en double : ${a.meta.slug}`);
     slugs.add(a.meta.slug);
+  }
+
+  // 1 ter. Mise a l'ecart des articles datés dans le futur. Le controle
+  // d'unicite ci-dessus a volontairement porte sur l'ensemble : un doublon de
+  // slug dans un article a paraitre doit echouer maintenant, pas le jour dit.
+  const aujourdhui = dateDuJour();
+  const enAttente = [];
+  for (let i = articles.length - 1; i >= 0; i--) {
+    const d = String(articles[i].meta.date || '').slice(0, 10);
+    if (d > aujourdhui) enAttente.push(...articles.splice(i, 1));
+  }
+  enAttente.sort((a, b) => (a.meta.date < b.meta.date ? -1 : 1));
+  if (enAttente.length) {
+    console.log(`   ⏳ ${enAttente.length} article(s) en attente de leur date (aujourd'hui : ${aujourdhui})`);
+    for (const a of enAttente) {
+      console.log(`      ${a.meta.date}  ${a.meta.slug}`);
+    }
+    console.log('      Ils paraitront au premier deploiement fait a partir de leur date.');
   }
 
   // 1 bis. Lecture des pages dédiées (piliers SEO)
