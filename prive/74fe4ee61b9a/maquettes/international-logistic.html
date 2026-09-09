@@ -30,18 +30,10 @@ html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
   --nuit:#2E4744; --nuit2:#3D5A56; --bleu:#33488C; --acier:#7E9089;
   --neige:#F5F5F2; --neige2:#E6E7E1; --blanc:#FFFFFF;
   --orange:#5A6851; --orange2:#33488C;
-  --encre:#1C2321; --gris:#525C58; --faible:#8A948F; --filet:#D5D8D2;
+  --encre:#1C2321; --gris:#525C58; --faible:#5E6963; --filet:#D5D8D2;
   --fond:var(--neige); --surface:var(--blanc);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="clair"]){
-    --neige:#101512; --neige2:#171E1A; --blanc:#141A17; --nuit:#0B100E; --nuit2:#1A241F;
-    --bleu:#8BA0E0; --acier:#6E8078; --filet:#232C27;
-    --encre:#E8EDE9; --gris:#98A49D; --faible:#6E7A74;
-    --orange:#8AA07E; --orange2:#8BA0E0;
-    --fond:var(--neige); --surface:var(--blanc);
-  }
-}
+
 :root[data-theme="sombre"]{
   --neige:#101512; --neige2:#171E1A; --blanc:#141A17; --nuit:#0B100E; --nuit2:#1A241F;
   --bleu:#8BA0E0; --acier:#6E8078; --filet:#232C27;
@@ -185,6 +177,24 @@ footer{background:var(--nuit); color:#C0CBC5; padding:clamp(36px,5vw,58px) 0 42p
   *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
     animation-iteration-count:1!important; transition-duration:.001ms!important}
 }
+
+/* ------------------------------------------------------------------
+   LISIBILITE SUR LES BLOCS SOMBRES.
+   Le bleu et les gris de la palette sont pipettes sur le batiment, et
+   ils fonctionnent sur la page claire. Poses sur le vert fonce du
+   hangar, ils tombaient entre 1,16 et 3,2 de contraste, la ou il en
+   faut 4,5. Meme teinte, clarte remontee, uniquement dans ces blocs.
+------------------------------------------------------------------- */
+.mq, nav, .hero, footer{
+  --bleu:#A9BCF2;
+  --orange2:#A9BCF2;
+}
+/* Les petites capitales et les intitules poses directement sur le vert
+   fonce : 3,2 de contraste, il en faut 4,5 a cette taille. */
+.hero small, .hero .d, .hero dt, .hero .lab,
+footer dt, footer .cp, footer .d, footer small, footer .lab,
+nav .d, nav small{color:#B7C2BC !important}
+.appel p{color:#FFFFFF !important}
 </style>
 </head>
 <body>

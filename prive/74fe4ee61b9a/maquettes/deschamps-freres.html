@@ -36,16 +36,7 @@ html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
   --filet:#D8D2C4;
   --ink:var(--encre); --fond:var(--chaux); --surface:var(--papier);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="clair"]){
-    --chaux:#121211; --chaux2:#1A1A18; --papier:#171716;
-    --ardoise:#EFEAD9; --ardoise2:#A8A296; --zinc:#6E685D; --zinc2:#4A453C;
-    --terre:#C7A566; --terre2:#DCBE85; --terre-p:#3A3020;
-    --encre:#EFEBE1; --gris:#A29B8D; --faible:#6E685D;
-    --filet:#2A2A26;
-    --ink:var(--encre); --fond:var(--chaux); --surface:var(--papier);
-  }
-}
+
 :root[data-theme="sombre"]{
   --chaux:#121211; --chaux2:#1A1A18; --papier:#171716;
   --ardoise:#EFEAD9; --ardoise2:#A8A296; --zinc:#6E685D; --zinc2:#4A453C;
@@ -111,7 +102,7 @@ nav{border-bottom:1px solid var(--filet); background:var(--surface)}
   transform-origin:50% 100%}
 .tu.a{fill:var(--terre)} .tu.b{fill:var(--terre2)} .tu.c{fill:#8E6E2E}
 :root[data-theme="sombre"] .tu.c{fill:#B08F4C}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="clair"]) .tu.c{fill:#B08F4C} }
+
 .faitage path{fill:var(--zinc); stroke:var(--ardoise2); stroke-width:1.2}
 .faitage .fa-j{fill:none; stroke:var(--surface); stroke-width:1.4; opacity:.6}
 .gouttiere .go{stroke:var(--zinc); stroke-width:7; stroke-linecap:round; fill:none}
@@ -191,7 +182,7 @@ section{padding:clamp(52px,7vw,96px) 0}
 /* les chiffres du greffe */
 .faits{background:var(--ardoise); color:var(--chaux); padding:clamp(52px,7vw,94px) 0}
 :root[data-theme="sombre"] .faits{background:var(--chaux2)}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="clair"]) .faits{background:var(--chaux2)} }
+
 .faits .entete h2{color:var(--chaux)}
 :root[data-theme="sombre"] .faits .entete h2{color:var(--encre)}
 .faits .entete p,.faits .lab{color:var(--zinc2)}
@@ -244,6 +235,19 @@ footer{background:var(--surface); border-top:1px solid var(--filet);
   *,*::before,*::after{animation-duration:.001ms!important; animation-delay:0s!important;
     transition-duration:.001ms!important}
 }
+
+/* ------------------------------------------------------------------
+   LISIBILITE DES PETITS CORPS.
+   Le gris de la charte donne 3,26 de contraste sur le fond chaux, et
+   l'or du logo 3,45 sur le blanc : sous le seuil de 4,5 exige a onze et
+   treize pixels. Les tokens restent intacts, ce sont leurs couleurs
+   mesurees au pixel. Seul l'usage en petit texte est fonce.
+------------------------------------------------------------------- */
+.entete .lab, dl dt, .page .cp{color:#5A554B !important}
+/* Le bloc des faits est sur fond noir : le meme intitule doit y etre
+   clair, pas fonce. Assombrir sans regarder le fond le rendait pire. */
+.faits .entete .lab, .faits dl dt, .faits .cp{color:#B6AFA2 !important}
+article .n, .et .n, .chantier .n{color:#8A6B2C !important}
 </style>
 </head>
 <body>

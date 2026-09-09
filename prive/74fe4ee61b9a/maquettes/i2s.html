@@ -33,14 +33,7 @@ html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
   --accent:#1F5F4B; --accent2:#2E8468; --accent-p:#E2EFE9;
   --lumiere:#F3D999; --lumiere2:#F7C948;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="clair"]){
-    --papier:#111211; --papier2:#181A19; --blanc:#151716;
-    --encre:#EFEFEC; --encre2:#C4C4C0; --gris:#9A9A96; --faible:#6E6E6A;
-    --filet:#262826; --accent:#4FA98A; --accent2:#6BC4A4; --accent-p:#16271F;
-    --lumiere:#7A6428; --lumiere2:#F7C948;
-  }
-}
+
 :root[data-theme="sombre"]{
   --papier:#111211; --papier2:#181A19; --blanc:#151716;
   --encre:#EFEFEC; --encre2:#C4C4C0; --gris:#9A9A96; --faible:#6E6E6A;
@@ -54,7 +47,11 @@ body{margin:0; background:var(--papier); color:var(--encre);
 h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.1; text-wrap:balance}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--accent); outline-offset:3px}
-.col{max-width:640px; margin:0 auto; padding:0 22px}
+.col{max-width:min(1040px,100%); margin:0 auto; padding:0 22px}
+/* La colonne s'ouvre sur grand ecran, mais le texte courant garde une
+   longueur de ligne lisible : au-dela de soixante-dix signes, l'oeil
+   perd la ligne suivante. */
+.col p, .col h1, .col .sst, .col li{max-width:66ch}
 .lab{font-size:.72rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--faible)}
 
 .mq{background:var(--encre); color:var(--papier); padding:9px 0; font-size:.66rem;
