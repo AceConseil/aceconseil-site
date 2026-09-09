@@ -13,6 +13,8 @@
 
 <script>document.documentElement.classList.add('js');</script>
 <style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 /* Sans JavaScript, aucune legende ne doit rester eteinte. */
 
 /* ------------------------------------------------------------------
@@ -52,7 +54,7 @@ a{color:inherit}
 .mq b{color:var(--ink); font-weight:600}
 
 nav{border-bottom:1px solid var(--rule)}
-.nv{display:flex; align-items:baseline; gap:clamp(16px,4vw,34px); padding:22px 0; font-size:.86rem; color:var(--gris)}
+.nv{display:flex; align-items:baseline; gap:clamp(16px,4vw,34px); padding-block:22px; font-size:.86rem; color:var(--gris)}
 .nv .lg{font-size:1.14rem; letter-spacing:.04em; color:var(--ink); text-transform:uppercase; font-weight:500}
 .nv a{text-decoration:none}
 .nv a:hover{color:var(--minium)}
@@ -157,7 +159,7 @@ h2{font-size:clamp(1.5rem,3.4vw,2.3rem); max-width:20ch; margin-bottom:clamp(24p
 
 /* --- bande atelier --- */
 .atelier{background:var(--papier-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
-.atelier .in{display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,5vw,66px); align-items:center; padding:clamp(44px,7vw,84px) 0}
+.atelier .in{display:grid; grid-template-columns:1fr 1fr; gap:clamp(26px,5vw,66px); align-items:center; padding-block:clamp(44px,7vw,84px)}
 .atelier h2{margin-bottom:16px}
 .atelier p{margin:0; color:var(--gris); max-width:42ch}
 .chiffres{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:8px}

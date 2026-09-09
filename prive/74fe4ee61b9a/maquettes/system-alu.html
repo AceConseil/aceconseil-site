@@ -13,6 +13,8 @@
 
 <script>document.documentElement.classList.add('js');</script>
 <style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 /* ------------------------------------------------------------------
    SYSTEM ALU, maquette de prospection.
    Reference assumee : sites d'agences d'architecture, registre brutaliste.
@@ -50,7 +52,7 @@ a{color:inherit}
 .mq b{color:var(--jaune); font-weight:700}
 
 nav{border-bottom:3px solid var(--ink)}
-.nv{display:flex; align-items:center; gap:clamp(14px,3.4vw,30px); padding:16px 0; font-family:'Archivo Narrow',sans-serif; font-size:.88rem; letter-spacing:.1em; text-transform:uppercase}
+.nv{display:flex; align-items:center; gap:clamp(14px,3.4vw,30px); padding-block:16px; font-family:'Archivo Narrow',sans-serif; font-size:.88rem; letter-spacing:.1em; text-transform:uppercase}
 .nv .lg{font-family:'Archivo',sans-serif; font-weight:800; font-size:1.24rem; letter-spacing:-.04em}
 .nv a{text-decoration:none; color:var(--gris)}
 .nv a:hover{color:var(--ink)}
@@ -99,10 +101,10 @@ nav{border-bottom:3px solid var(--ink)}
 /* Le titre d'un volet ferme se cale au centre et non tout en bas :
    il ne flotte plus au fond d'une colonne vide. */
 .pan label{display:flex; flex-direction:column; justify-content:center; gap:7px;
-  padding:clamp(22px,2.6vw,30px); cursor:pointer; flex:0 0 clamp(160px,17vw,220px);
+  padding:clamp(20px,2.2vw,26px); cursor:pointer; flex:0 0 clamp(170px,19vw,250px);
   border-right:1px solid transparent; transition:border-color .3s linear}
 .pan .n{font-family:'Archivo Narrow',sans-serif; font-size:.78rem; letter-spacing:.2em; color:var(--jaune); font-weight:600}
-.pan .t{font-size:clamp(1.05rem,1.75vw,1.5rem); overflow-wrap:anywhere; font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.98}
+.pan .t{font-size:clamp(1.1rem,2vw,1.7rem); font-weight:800; text-transform:uppercase; letter-spacing:-.035em; line-height:.98}
 .pan .s{font-family:'Archivo Narrow',sans-serif; font-size:.84rem; color:var(--gris); text-transform:uppercase; letter-spacing:.08em}
 .pan .dedans{flex:1 1 auto; min-width:0; display:flex; flex-direction:column; justify-content:center;
   gap:14px; padding:clamp(16px,2vw,28px); opacity:0; transition:opacity .4s linear}

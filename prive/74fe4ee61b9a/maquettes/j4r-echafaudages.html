@@ -13,6 +13,8 @@
 
 <script>document.documentElement.classList.add('js');</script>
 <style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 /* ------------------------------------------------------------------
    J4R ECHAFAUDAGES, maquette de prospection.
    Reference assumee : page produit Apple. Fond noir, typographie geante,
@@ -75,7 +77,7 @@ nav{
 .scene svg{display:block; width:100%; height:auto; max-height:76vh}
 
 /* --- chiffres geants, un par ecran de lecture --- */
-.chiffres{padding:clamp(64px,11vw,140px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.chiffres{padding-block:clamp(64px,11vw,140px); border-top:1px solid rgba(245,245,247,.1)}
 .cg{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(20px,4vw,44px); text-align:center}
 .cg b{display:block; font-size:clamp(2.6rem,7vw,4.6rem); font-weight:700; letter-spacing:-.05em; line-height:1;
       color:var(--cyan)}
@@ -83,7 +85,7 @@ nav{
 @media(max-width:760px){ .cg{grid-template-columns:repeat(2,1fr); gap:36px} }
 
 /* --- section titre geant, facon Apple --- */
-.big{padding:clamp(70px,12vw,150px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.big{padding-block:clamp(70px,12vw,150px); border-top:1px solid rgba(245,245,247,.1)}
 .big h2{font-size:clamp(2rem,6.4vw,4.4rem); max-width:15ch; margin:0 auto; text-align:center}
 .big h2 em{font-style:normal; color:var(--cyan)}
 .big p{max-width:46ch; margin:26px auto 0; text-align:center; color:var(--gris-clair); font-size:clamp(1rem,2vw,1.24rem)}
@@ -114,7 +116,7 @@ nav{
 .spec .nb{margin:22px 0 0; color:#6E6E73; font-size:.86rem; text-align:center}
 
 /* --- references --- */
-.refs{padding:clamp(60px,9vw,120px) 0; border-top:1px solid rgba(245,245,247,.1)}
+.refs{padding-block:clamp(60px,9vw,120px); border-top:1px solid rgba(245,245,247,.1)}
 .refs .l{display:flex; flex-wrap:wrap; justify-content:center; gap:clamp(22px,4vw,56px); margin-top:34px;
          font-size:clamp(1rem,2.4vw,1.5rem); font-weight:600; letter-spacing:-.02em; color:var(--gris-clair)}
 

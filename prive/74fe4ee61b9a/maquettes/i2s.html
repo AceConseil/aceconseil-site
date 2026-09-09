@@ -12,6 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 /* ------------------------------------------------------------------
    I2S, maquette de prospection ACE Conseil.
    Une a deux personnes. Le site doit donc etre l'exact contraire d'un
@@ -62,7 +64,7 @@ a{color:inherit}
 /* la barre d'appel, toujours accessible au pouce */
 .appelbar{position:sticky; top:0; z-index:20; background:var(--blanc);
   border-bottom:1px solid var(--filet)}
-.ab{display:flex; align-items:center; gap:14px; padding:12px 0}
+.ab{display:flex; align-items:center; gap:14px; padding-block:12px}
 .ab .lg{font-family:'Instrument Serif',Georgia,serif; font-size:1.6rem; letter-spacing:-.02em}
 .ab .tel{margin-left:auto; display:inline-flex; align-items:center; gap:8px;
   background:var(--accent); color:#fff; text-decoration:none; padding:11px 18px;
@@ -79,7 +81,7 @@ a{color:inherit}
 .fil{margin:clamp(26px,4vw,40px) 0 0}
 .fil svg{width:100%; height:auto; display:block}
 
-.bloc{padding:clamp(30px,5vw,48px) 0; border-top:1px solid var(--filet)}
+.bloc{padding-block:clamp(30px,5vw,48px); border-top:1px solid var(--filet)}
 .bloc h2{font-size:clamp(1.3rem,3.4vw,1.7rem); margin-bottom:14px}
 .bloc p{margin:0 0 14px; color:var(--gris)}
 .bloc p:last-child{margin-bottom:0}

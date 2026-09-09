@@ -13,6 +13,8 @@
 
 <script>document.documentElement.classList.add('js');</script>
 <style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+
 /* ------------------------------------------------------------------
    LAGNY PAYSAGES, maquette de prospection.
    Reference assumee : Aesop. Fond creme chaud, serif de labeur en grandes
@@ -55,12 +57,12 @@ a{color:inherit}
 .petit{font-size:.72rem; letter-spacing:.19em; text-transform:uppercase; color:var(--gris); font-weight:400}
 
 /* --- bandeau maquette --- */
-.mq{border-bottom:1px solid var(--rule); padding:9px 0; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gris); text-align:center}
+.mq{border-bottom:1px solid var(--rule); padding-block:9px; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gris); text-align:center}
 .mq b{color:var(--ink); font-weight:500}
 
 /* --- navigation minuscule, tres Aesop --- */
 nav{border-bottom:1px solid var(--rule)}
-.nv{display:flex; align-items:center; justify-content:space-between; padding:26px 0; gap:30px}
+.nv{display:flex; align-items:center; justify-content:space-between; padding-block:26px; gap:30px}
 .nom{font-family:'Newsreader',Georgia,serif; font-size:1.2rem; font-weight:300; letter-spacing:.06em; text-transform:uppercase}
 .lk{display:flex; gap:30px}
 .lk a{text-decoration:none; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gris)}
@@ -79,7 +81,7 @@ nav{border-bottom:1px solid var(--rule)}
 
 /* --- bande pleine largeur, dessin vegetal en SVG --- */
 .planche{background:var(--band); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
-.planche .in{display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:clamp(30px,6vw,88px); padding:clamp(48px,7vw,92px) 0}
+.planche .in{display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:clamp(30px,6vw,88px); padding-block:clamp(48px,7vw,92px)}
 .planche svg{width:100%; height:auto; display:block; color:var(--ink)}
 
 /* ==================================================================
@@ -224,7 +226,7 @@ nav::after{content:""; position:absolute; left:0; bottom:-1px; height:1px; width
 @media(max-width:880px){ .planche .in{grid-template-columns:1fr} }
 
 /* --- trois metiers, en colonnes larges sans cartes --- */
-.metiers{padding:clamp(60px,9vw,120px) 0}
+.metiers{padding-block:clamp(60px,9vw,120px)}
 .mgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(26px,5vw,64px); margin-top:clamp(34px,5vw,58px)}
 .m h3{font-size:1.5rem; margin-bottom:12px}
 .m .num{display:block; font-size:.7rem; letter-spacing:.2em; color:var(--olive); margin-bottom:16px}
