@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Cent appels &middot; le site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%; text-size-adjust:100%}
+/* ------------------------------------------------------------------
+   CENT APPELS, ACE Conseil.
+   Interface claire et non sombre : elle se lit une journee entiere, le
+   telephone a l'oreille. Contrastes verifies au rapport de luminance,
+   seuil 4,5 partout, y compris sur les pastilles d'etat.
+------------------------------------------------------------------- */
+:root{
+  --fond:#F7F5F0; --carte:#FFFFFF; --bloc:#F0EDE5;
+  --encre:#181A17; --gris:#4A4F49; --faible:#5E6459;
+  --filet:#DCD8CC; --filet2:#BEB9A8;
+  --or:#7E6110; --or-p:#F3E9CB;
+  --vert:#2F6B47; --vert-p:#DCEBE0;
+  --rouge:#9A3B2E; --rouge-p:#F6E1DC;
+  --bleu:#2B4C8C; --bleu-p:#DEE5F5;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--fond); color:var(--encre);
+  font-family:'Newsreader',Georgia,serif; font-size:17px; line-height:1.55}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-.015em; line-height:1.15; text-wrap:balance}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+a{color:var(--bleu)}
+:focus-visible{outline:2px solid var(--or); outline-offset:2px}
+.sc{font-family:'IBM Plex Sans Condensed',Helvetica,sans-serif}
+.lab{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.74rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--faible)}
+.col{width:100%; max-width:1080px; margin:0 auto; padding:0 clamp(16px,3vw,28px)}
+
+/* ------------------------------------------------------- l ouverture */
+.tete{background:var(--carte); border-bottom:1px solid var(--filet); padding-block:clamp(26px,4vw,44px)}
+.tete h1{font-size:clamp(1.9rem,4.4vw,2.8rem); margin:10px 0 10px}
+.tete .intro{margin:0; color:var(--gris); max-width:64ch}
+.grille{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; margin-top:24px}
+.fiche{background:var(--bloc); border:1px solid var(--filet); padding:16px 18px}
+.fiche h3{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.98rem; margin-bottom:8px}
+.fiche p{margin:0 0 9px; font-size:.95rem; color:var(--gris)}
+.fiche p:last-child{margin-bottom:0}
+.dit{display:block; font-style:italic; color:var(--encre); border-left:3px solid var(--or);
+  padding-left:11px; margin:8px 0}
+.non{color:var(--rouge)}
+
+details.plus{margin-top:16px; border:1px solid var(--filet); background:var(--carte)}
+details.plus summary{cursor:pointer; padding:13px 16px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-weight:600; font-size:.95rem}
+details.plus .corps{padding:0 16px 16px}
+details.plus[open] summary{border-bottom:1px solid var(--filet)}
+details.plus .corps .grille{margin-top:16px}
+.fil-t{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1rem; margin:20px 0 10px;
+  padding-bottom:6px; border-bottom:2px solid var(--or)}
+.fil-t:first-child{margin-top:16px}
+ol.fil{margin:0; padding-left:1.3em}
+ol.fil li{margin-bottom:14px; font-size:.97rem; color:var(--gris)}
+ol.fil li b{color:var(--encre); font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:600}
+ol.fil::marker, ol.fil li::marker{color:var(--faible); font-family:'IBM Plex Sans Condensed',sans-serif}
+.si{display:block; margin-top:7px; font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.88rem; color:var(--faible); background:var(--bloc); border:1px solid var(--filet);
+  padding:8px 11px}
+.si b{color:var(--encre)}
+
+/* ------------------------------------------------------- la barre */
+.barre{position:sticky; top:0; z-index:5; background:var(--carte);
+  border-bottom:1px solid var(--filet); padding-block:11px}
+.barre .col{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.cpt{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.9rem; color:var(--gris);
+  font-variant-numeric:tabular-nums}
+.cpt b{color:var(--encre)}
+.filtres{display:flex; gap:6px; flex-wrap:wrap; margin-left:auto}
+.filtres button{border:1px solid var(--filet2); padding:6px 11px; border-radius:2px;
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.82rem; font-weight:600; color:var(--gris)}
+.filtres button.on{background:var(--encre); border-color:var(--encre); color:var(--fond)}
+.expo{border:1px solid var(--filet2); padding:6px 11px; text-decoration:none; color:var(--encre); font-family:'IBM Plex Sans Condensed',sans-serif;
+  font-size:.82rem; font-weight:600}
+
+/* ------------------------------------------------------- les societes */
+.liste{padding-block:22px 60px}
+.soc{background:var(--carte); border:1px solid var(--filet); margin-bottom:11px}
+.soc.fait{opacity:.55}
+.soc.masque{display:none}
+.hd{display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:start;
+  padding:15px 17px}
+.no{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.86rem; font-weight:700;
+  color:var(--faible); font-variant-numeric:tabular-nums; padding-top:3px; min-width:2.2em}
+.nom{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.14rem; font-weight:700;
+  letter-spacing:-.01em; line-height:1.2}
+.meta{margin-top:3px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.85rem; color:var(--faible)}
+.tel{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:1.16rem; font-weight:700;
+  white-space:nowrap; text-decoration:none; color:var(--bleu)}
+.tel small{display:block; font-size:.74rem; font-weight:600; color:var(--faible);
+  letter-spacing:.1em; text-transform:uppercase; text-align:right}
+.corps{padding:0 17px 15px 17px; display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.corps .bl{min-width:0}
+.corps .lab{display:block; margin-bottom:5px}
+.corps p{margin:0; font-size:.97rem; color:var(--gris)}
+.crit{display:flex; flex-wrap:wrap; gap:6px; margin-top:9px}
+.crit span{font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.79rem; font-weight:600;
+  background:var(--bloc); border:1px solid var(--filet); padding:3px 8px; color:var(--gris)}
+.seg{display:inline-block; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.74rem;
+  font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; margin-bottom:6px}
+.seg.A{background:var(--or-p); color:var(--or)}
+.seg.B{background:var(--bleu-p); color:var(--bleu)}
+.seg.D{background:var(--vert-p); color:var(--vert)}
+.seg.S{background:var(--rouge-p); color:var(--rouge)}
+
+.pied{border-top:1px solid var(--filet); padding:12px 17px; background:var(--bloc)}
+.etats{display:flex; flex-wrap:wrap; gap:6px}
+.etats button{border:1px solid var(--filet2); background:var(--carte); padding:8px 12px;
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.85rem; font-weight:600; color:var(--gris)}
+.etats button.on{border-color:transparent; color:var(--fond); background:var(--gris)}
+.etats button.on[data-e="positif"], .etats button.on[data-e="rdv"]{background:var(--vert)}
+.etats button.on[data-e="oublier"], .etats button.on[data-e="faux"]{background:var(--rouge)}
+.etats button.on[data-e="rappeler"]{background:var(--or)}
+.note{margin-top:9px; width:100%; border:1px solid var(--filet2); background:var(--carte);
+  padding:9px 11px; font-family:'IBM Plex Sans Condensed',sans-serif; font-size:.92rem;
+  color:var(--encre); resize:vertical; min-height:42px}
+.note::placeholder{color:var(--faible)}
+
+@media(max-width:720px){
+  .hd{grid-template-columns:auto 1fr; gap:10px}
+  .tel{grid-column:2; text-align:left}
+  .tel small{text-align:left}
+  .corps{grid-template-columns:1fr; gap:12px}
+}
+</style>
+</head>
+<body>
+
+<div class="tete"><div class="col">
+  <span class="lab">ACE Conseil &middot; prospection téléphonique &middot; Le site internet</span>
+  <h1>Cent appels, le site.</h1>
+  <p class="intro">Cette liste est bâtie sur une règle apprise à Lagny :
+  <b>l'absence de site ne compte que si des gens cherchent déjà l'entreprise</b>. Une
+  société sans site et sans avis n'a pas un problème, elle a fait un choix. Une société
+  avec cinquante avis et sans site perd tous ceux qui vérifient avant d'appeler, et cette
+  perte-là, elle peut la sentir.</p>
+
+  <div class="grille">
+    <div class="fiche">
+      <h3>Ce qui a changé depuis Lagny</h3>
+      <p>Le premier ciblage notait le déficit web : moins une société avait de présence en
+      ligne, plus elle montait. C'était faux, et la tournée l'a montré porte après porte.</p>
+      <p>Ici, chaque société de la liste a <b>au moins trois avis Google</b>, et la plupart
+      en ont plusieurs dizaines. Le nombre est affiché sur chaque ligne. C'est votre
+      preuve que des gens la cherchent, et c'est le seul argument qui tienne.</p>
+    </div>
+
+    <div class="fiche">
+      <h3>L'ouverture, avec leur chiffre</h3>
+      <p>Vous avez leur nombre d'avis sous les yeux. Servez-vous-en dès la deuxième phrase :
+      c'est un fait sur eux, pas une généralité sur le marché.</p>
+      <span class="dit">Vous avez cent sept avis sur Google, c'est beaucoup pour le secteur.
+      Quand quelqu'un vous cherche après avoir vu ça, il tombe sur quoi ?</span>
+      <p>Et vous vous taisez. La réponse est souvent « sur rien », ou « sur ma page
+      Facebook ». C'est lui qui vient de poser le problème.</p>
+    </div>
+
+    <div class="fiche">
+      <h3>« Je n'ai pas besoin de site »</h3>
+      <p>Il a peut-être raison, et le dire vous rend crédible. Ne le contredisez pas,
+      demandez.</p>
+      <span class="dit">Peut-être. Vos clients, vous les avez comment aujourd'hui ?</span>
+      <p>S'il répond le bouche à oreille : <span class="dit">C'est ce qui fait votre
+      solidité, et je n'y touche pas. Le problème n'est pas là. C'est celui à qui on a
+      parlé de vous, et qui vérifie sur son téléphone avant d'appeler. Lui, il ne trouve
+      rien.</span></p>
+    </div>
+
+    <div class="fiche">
+      <h3>L'angle que personne n'utilise : le recrutement</h3>
+      <p>Dans le bâtiment et l'automobile, le manque n'est pas le client, c'est la main
+      d'œuvre. Un site est aussi ce que regarde un couvreur qualifié avant de postuler.</p>
+      <span class="dit">Vous cherchez à recruter en ce moment ? Parce que celui qui hésite
+      entre vous et une autre boîte, il vous cherche aussi sur son téléphone.</span>
+      <p>Cet angle passe là où celui du client se heurte à un carnet plein.</p>
+    </div>
+
+    <div class="fiche">
+      <h3>Montrer, ne pas décrire</h3>
+      <p>C'est la seule offre du catalogue qu'on peut mettre sous les yeux en deux minutes,
+      et le seul prix qui s'annonce debout.</p>
+      <span class="dit">Je vous envoie en deux minutes à quoi ça ressemblerait chez vous,
+      avec vos mots et vos chantiers. Vous regardez, et si ça ne vous parle pas on en reste
+      là. Cinq cents euros, et quatre-vingt-neuf euros par mois pour qu'il reste à jour.</span>
+      <p>Vous avez douze maquettes déjà faites : montrez-en une du même métier.</p>
+    </div>
+
+    <div class="fiche">
+      <h3>Ce qu'on ne dit jamais</h3>
+      <p class="non">« Vous n'avez pas de site. » Formulé comme un reproche, ça ferme
+      immédiatement. Le fait vous sert à comprendre, pas à accuser.</p>
+      <p class="non">« Vous perdez des clients. » Vous n'en savez rien, et il le sait.</p>
+      <p class="non">« Il vous faut absolument une présence en ligne. » C'est la phrase de
+      tous les autres, et il l'a entendue vingt fois cette année.</p>
+      <p class="non">Promettre une position dans Google. On promet un outil qui existe,
+      qui est à jour et qui ne tombe pas. Rien d'autre.</p>
+    </div>
+  </div>
+
+  <details class="plus" open><summary>Le fil conducteur, du bonjour à la maquette</summary>
+  <div class="corps">
+    <ol class="fil">
+      <li><b>Vous vous situez.</b><span class="dit">Bonjour, Mateusz Myja, ACE Conseil, on
+      est à Annet-sur-Marne. Je tombe bien ou je vous rappelle ?</span></li>
+      <li><b>Vous posez leur chiffre.</b><span class="dit">Vous avez quarante-trois avis sur
+      Google, c'est beaucoup pour le secteur. Quand quelqu'un vous cherche après avoir vu
+      ça, il tombe sur quoi ?</span><span class="si">Silence. Laissez-le répondre.</span></li>
+      <li><b>Vous nommez ce qu'il vient de dire.</b><span class="dit">C'est exactement ce
+      que je voulais vérifier. Vous êtes trouvé, mais vous n'êtes pas regardable.</span></li>
+      <li><b>S'il objecte qu'il n'en a pas besoin</b>, vous ne défendez pas le site, vous
+      demandez comment il travaille aujourd'hui. Puis vous ajoutez l'étage qui manque :
+      celui qui vérifie avant d'appeler.</li>
+      <li><b>Vous ouvrez le second angle si le premier bute.</b><span class="dit">Vous
+      cherchez à recruter en ce moment ?</span></li>
+      <li><b>Vous montrez.</b><span class="dit">Je vous envoie en deux minutes à quoi ça
+      ressemblerait chez vous. Si ça ne vous parle pas, on en reste là.</span>
+      <span class="si">C'est une promesse tenable en deux minutes : vous avez déjà douze
+      maquettes.</span></li>
+      <li><b>Le prix, debout, sans détour.</b><span class="dit">Cinq cents euros, et
+      quatre-vingt-neuf euros par mois pour qu'il reste à jour au lieu de devenir une page
+      morte dans deux ans.</span></li>
+      <li><b>Une date.</b><span class="dit">Je vous rappelle jeudi matin pour savoir ce que
+      vous en avez pensé. Vous serez là ?</span></li>
+    </ol>
+  </div></details>
+
+  <details class="plus" open><summary>Huit façons d'entrer qui ne ressemblent pas à du démarchage</summary>
+  <div class="corps">
+    <div class="grille">
+      <div class="fiche">
+        <h3>01 &middot; Rendre un service avant de demander quoi que ce soit</h3>
+        <p>Trois minutes sur leur fiche Google avant d'appeler : des horaires qui se
+        contredisent, une catégorie fausse, un numéro qui ne correspond plus, un site qui
+        ne répond pas. Vous appelez pour le leur dire, pas pour vendre.</p>
+        <span class="dit">Je vous appelle pour un truc bête : votre fiche Google dit que
+        vous fermez à dix-sept heures, votre répondeur dit dix-huit. C'est laquelle ?</span>
+        <p>Personne ne raccroche au nez de quelqu'un qui vient de lui rendre un service.
+        Et vous avez gagné le droit de poser une deuxième question.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>02 &middot; L'appel d'étude, pas l'appel de vente</h3>
+        <span class="dit">Je ne vous appelle pas pour vous vendre quelque chose. Je monte
+        une étude sur la façon dont les entreprises du secteur répondent aux appels
+        d'offres. Dix minutes, et je vous envoie le résultat.</span>
+        <p>À une condition, et elle n'est pas négociable : faites l'étude, et envoyez-la.
+        Vingt réponses font un document que personne d'autre n'a dans le secteur, et qui
+        vous rouvre vingt portes trois semaines plus tard, cette fois avec un prétexte
+        que vous n'avez pas à inventer.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>03 &middot; L'essai borné</h3>
+        <span class="dit">Le prochain DPGF que vous recevez, envoyez-le moi. Je vous le
+        remplis. Si c'est bon on en reparle, si c'est mauvais vous avez perdu un mail.</span>
+        <p>Vous arrêtez de décrire, vous montrez. Le risque est entièrement de votre côté,
+        ce qui est exactement ce qui le désarme. Ça vous coûte quelques heures, une fois,
+        et seulement sur un prospect qui a déjà dit oui à quelque chose.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>04 &middot; L'heure où le patron décroche lui-même</h3>
+        <p>Entre sept heures et huit heures, et après dix-sept heures trente. Le standard
+        n'est pas là, l'assistante non plus, et celui qui décroche est celui qui décide.</p>
+        <p>Dix heures et quatorze heures sont les créneaux de tous les autres appels de
+        démarchage. Vous n'y êtes pas seul, et il le sait avant même de décrocher.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>05 &middot; La marche devient de la collecte</h3>
+        <p>La tournée de Lagny n'était pas inutile, elle était mal employée. Marcher pour
+        vendre ne marche pas. Marcher pour relever, si.</p>
+        <p>Panneaux de chantier, noms sur les camionnettes, annonces de recrutement en
+        vitrine, enseignes refaites. Chacun donne un motif d'appel que personne d'autre
+        n'a.</p>
+        <span class="dit">J'ai vu votre panneau sur le chantier de la rue Saint-Denis.</span>
+        <p>On n'entre plus par une offre, on entre par un fait. Et un fait ne se réfute
+        pas.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>06 &middot; Le refus qui donne un nom</h3>
+        <p>Au moment précis où il dit non, il est détendu : il n'a plus rien à défendre.
+        C'est le meilleur moment de tout l'appel pour demander quelque chose.</p>
+        <span class="dit">Je comprends, je ne vais pas insister. Vous connaissez quelqu'un
+        dans le coin qui répond à des appels d'offres et qui galère avec ça ?</span>
+        <p>Un non sur cinq donne un nom. Et un nom vaut dix numéros pris dans une liste,
+        parce qu'au suivant vous ouvrez avec « c'est untel qui m'a dit de vous appeler ».</p>
+      </div>
+
+      <div class="fiche">
+        <h3>07 &middot; Le bon moment plutôt que la bonne cible</h3>
+        <p>Une entreprise qui vient de remporter un marché public va crouler sous
+        l'administratif dans les quinze jours qui suivent. Les avis d'attribution sont
+        publics et datés.</p>
+        <p>C'est un levier que je peux construire : une veille qui vous sort chaque
+        semaine les entreprises du secteur qui viennent de gagner un lot. Appeler
+        quelqu'un le mardi qui suit son attribution n'a rien à voir avec l'appeler au
+        hasard un mardi. Dites-le moi si vous le voulez.</p>
+      </div>
+
+      <div class="fiche">
+        <h3>08 &middot; Ne jamais rappeler avec le même angle</h3>
+        <p>Si le premier appel a échoué sur l'automatisation, le deuxième ne recommence
+        pas dessus trois semaines plus tard. Il porte sur autre chose.</p>
+        <p>Deux angles valent mieux que deux insistances. Insister apprend à votre
+        interlocuteur à reconnaître votre numéro ; changer d'angle lui apprend que vous
+        avez plusieurs choses à dire.</p>
+      </div>
+    </div>
+  </div></details>
+
+</div></div>
+
+<div class="barre"><div class="col">
+  <span class="cpt" id="cpt"></span>
+  <span class="filtres" id="filtres"></span>
+  <a class="expo" id="autre" href="#">L'autre liste</a>
+  <button class="expo" id="expo">Exporter</button>
+</div></div>
+
+<div class="liste"><div class="col" id="liste"></div></div>
+
+<script>
+(function(){
+'use strict';
+var SOC = [{"i":0,"seg":"D","segn":"Site payé qui ne sert pas","nom":"DOCTB","dir":"","tel":"01 64 66 72 05","com":"Villeparisis","km":"8.37","eff":"10 a 19 salaries","act":"Travaux de couverture par éléments","ca":"3 806 867 euros","res":"87 979 euros","note":"4.9","avis":"503","site":"http://www.doctb.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 503 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"790640783"},{"i":1,"seg":"D","segn":"Site payé qui ne sert pas","nom":"DUBOS MLV","dir":"OLIVIER YVON WILLIAM CALANVILLE","tel":"01 64 30 39 39","com":"Saint-Thibault-des-Vignes","km":"6.6","eff":"6 a 9 salaries","act":"Commerce de voitures et de véhicules automobiles légers","ca":"1 379 675 euros","res":"42 230 euros","note":"4","avis":"206","site":"http://www.dubos.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est à refaire entièrement. 206 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"523582054"},{"i":2,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SECURITE INCENDIE EUROPEENNE (SIE)","dir":"RODOLPHE GIMENEZ","tel":"01 48 86 68 60","com":"Chalifert","km":"5.3","eff":"10 a 19 salaries","act":"Réparation de machines et équipements mécaniques","ca":"","res":"-16 460 euros","note":"5","avis":"178","site":"https://www.s-i-e.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 178 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"389390832"},{"i":3,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CARROSSERIE DU VAL D 'EUROPE","dir":"LOIC MAHOUGNON BIDAKPO HOUNGBEDJI","tel":"01 60 21 30 44","com":"Montévrain","km":"7.09","eff":"20 a 49 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"4 181 651 euros","res":"338 403 euros","note":"4","avis":"244","site":"http://glassautoservice.com/index.php?centre&cen=248&dept=77","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 244 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"752814467"},{"i":4,"seg":"D","segn":"Site payé qui ne sert pas","nom":"LE MONDE DE L'OUVERTURE","dir":"CEDRIC LE CHEVALIER","tel":"01 64 21 58 77","com":"Brou-sur-Chantereine","km":"8.28","eff":"6 a 9 salaries","act":"Travaux de menuiserie métallique et serrurerie","ca":"1 518 378 euros","res":"38 519 euros","note":"4.3","avis":"99","site":"https://www.lemondedelouverture.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 99 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"500160429"},{"i":5,"seg":"D","segn":"Site payé qui ne sert pas","nom":"RANDO PNEUS","dir":"JEAN-YVES MARIE","tel":"01 60 07 50 81","com":"Montévrain","km":"5.15","eff":"20 a 49 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"62 887 euros","note":"4.7","avis":"370","site":"http://www.rando-pneus.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est à refaire entièrement. 370 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"418845376"},{"i":6,"seg":"D","segn":"Site payé qui ne sert pas","nom":"PARADIS AUTOMOBILE","dir":"EDDIE CESAIRE","tel":"01 64 02 40 75","com":"Lagny-sur-Marne","km":"5.65","eff":"6 a 9 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"32 825 euros","note":"4.7","avis":"157","site":"http://www.renault.fr/trouver-un-concessionnaire.html?utm_source=gmb","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 157 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"820113371"},{"i":7,"seg":"S","segn":"Cherché mais introuvable","nom":"CARROSSERIE DE L'AMBRESIS","dir":"VIDURAN KRISHNAR","tel":"01 64 27 86 69","com":"Villeparisis","km":"8.36","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"690 632 euros","res":"25 423 euros","note":"5","avis":"139","site":"","apport":"139 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"879881258"},{"i":8,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SMK 55","dir":"MARIE LOUISE INES NESTORET (BAPTE)","tel":"01 64 68 12 56","com":"Villeparisis","km":"8.16","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.8","avis":"129","site":"http://www.smk55.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site renvoie une erreur. 129 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"877971689"},{"i":9,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ESBLY AUTO","dir":"BACEM ABIDI","tel":"01 60 04 31 23","com":"Esbly","km":"6.45","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.4","avis":"112","site":"http://www.esblyauto.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 112 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"899114508"},{"i":10,"seg":"D","segn":"Site payé qui ne sert pas","nom":"GARAGE MDV","dir":"CEDRIC DISSAUX","tel":"01 64 67 74 72","com":"Claye-Souilly","km":"3.66","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.8","avis":"122","site":"http://www.autoprimo.com/magasin/8402?utm_source=gmb","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 122 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"818861783"},{"i":11,"seg":"D","segn":"Site payé qui ne sert pas","nom":"RYDE","dir":"MOHAMED SABER BOUBAKER","tel":"01 60 36 62 16","com":"Le Pin","km":"8.3","eff":"3 a 5 salaries","act":"Commerce de voitures et de véhicules automobiles légers","ca":"824 859 euros","res":"40 175 euros","note":"5","avis":"74","site":"https://www.autocerfa.com/pro/ryde/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 74 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"884608936"},{"i":12,"seg":"D","segn":"Site payé qui ne sert pas","nom":"TERENOVE","dir":"","tel":"01 83 61 01 75","com":"Saint-Thibault-des-Vignes","km":"7.21","eff":"20 a 49 salaries","act":"Travaux d'installation d'eau et de gaz en tous locaux","ca":"4 697 944 euros","res":"324 565 euros","note":"5","avis":"37","site":"http://www.terenove.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 37 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"841614738"},{"i":13,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CCM AUTOMOBILE","dir":"CARLOS MENDES FERNANDES","tel":"01 60 04 22 11","com":"Montry","km":"8.38","eff":"6 a 9 salaries","act":"Commerce de voitures et de véhicules automobiles légers","ca":"","res":"92 985 euros","note":"4.2","avis":"140","site":"http://renault.fr/trouver-un-concessionnaire.html","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 140 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"441791415"},{"i":14,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ENTREPRISE LEGENDRE FRERES ET COMPAGNIE","dir":"ARNAUD YVES PATRICK LEGENDRE","tel":"01 60 26 16 19","com":"Claye-Souilly","km":"4.49","eff":"10 a 19 salaries","act":"Travaux de maçonnerie générale et gros œuvre de bâtiment","ca":"","res":"192 086 euros","note":"4.3","avis":"52","site":"https://www.facebook.com/profile.php?id=100057419951083&utm_source=gmb","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 52 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"745750083"},{"i":15,"seg":"D","segn":"Site payé qui ne sert pas","nom":"FRANCILIENNE DE MIROITERIE","dir":"","tel":"01 60 36 19 59","com":"Montévrain","km":"7.28","eff":"6 a 9 salaries","act":"Travaux de peinture et vitrerie","ca":"","res":"32 047 euros","note":"4.4","avis":"70","site":"https://www.francilienne-de-miroiterie.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 70 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"347731267"},{"i":16,"seg":"D","segn":"Site payé qui ne sert pas","nom":"QARSON","dir":"DAMIAN CIESIELCZYK","tel":"01 80 98 02 23","com":"Isles-lès-Villenoy","km":"6.46","eff":"50 a 99 salaries","act":"Commerce de voitures et de véhicules automobiles légers","ca":"43 625 186 euros","res":"-234 308 euros","note":"3.9","avis":"984","site":"https://www.qarson.fr/points-de-vente/qarson-center?utm_source=gmb&utm_medium=organic&utm_campaign=ilv","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site renvoie une erreur. 984 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"514610484"},{"i":17,"seg":"D","segn":"Site payé qui ne sert pas","nom":"LAURENT NET","dir":"LAURENT BIGLIONE","tel":"01 60 01 97 08","com":"Charny","km":"6.25","eff":"10 a 19 salaries","act":"Nettoyage courant des bâtiments","ca":"318 232 euros","res":"13 561 euros","note":"4.6","avis":"57","site":"https://www.renault.fr/trouver-un-etablissement.html","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 57 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"432446763"},{"i":18,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CBL MOTORS","dir":"JULIEN LAM","tel":"01 64 02 83 15","com":"Saint-Thibault-des-Vignes","km":"6.36","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"9 030 euros","note":"4.6","avis":"98","site":"http://www.cblmotors.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 98 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"522300706"},{"i":19,"seg":"D","segn":"Site payé qui ne sert pas","nom":"KLINIC AUTO (LES CHASSEURS DE BOSSES)","dir":"ZORAN RADOSAVLJEVIC","tel":"01 60 26 31 66","com":"Thorigny-sur-Marne","km":"2.43","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"68 378 euros","note":"4.7","avis":"207","site":"https://www.leschasseursdebosses.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 207 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"749935565"},{"i":20,"seg":"D","segn":"Site payé qui ne sert pas","nom":"BDM AUTO","dir":"ALAIN ANAINHON BADJI","tel":"01 60 94 05 01","com":"Villevaudé","km":"4.75","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"291 082 euros","res":"7 501 euros","note":"4.8","avis":"57","site":"https://www.garage-bdmauto.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 57 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"828144451"},{"i":21,"seg":"D","segn":"Site payé qui ne sert pas","nom":"3D LAVAGE","dir":"STEPHANE DURAND","tel":"07 67 38 67 60","com":"Esbly","km":"6.57","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"-18 862 euros","note":"4.4","avis":"158","site":"http://www.esbly-lavage.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 158 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"423876747"},{"i":22,"seg":"D","segn":"Site payé qui ne sert pas","nom":"NICOLAS LAURENT","dir":"NICOLAS DIDIER JOSE LAURENT","tel":"01 60 01 97 08","com":"Charny","km":"5.73","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.6","avis":"57","site":"https://www.renault.fr/trouver-un-etablissement.html","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 57 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"352155097"},{"i":23,"seg":"S","segn":"Cherché mais introuvable","nom":"S.Y.G ENERGY","dir":"AVNER GODEFROY","tel":"06 21 53 98 13","com":"Lagny-sur-Marne","km":"4.57","eff":"3 a 5 salaries","act":"Travaux d'installation d'eau et de gaz en tous locaux","ca":"","res":"53 344 euros","note":"4.9","avis":"122","site":"","apport":"122 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"878348028"},{"i":24,"seg":"S","segn":"Cherché mais introuvable","nom":"CHRISPHI (ECOWASH 60)","dir":"CHRISTINE MARLENE CHARLES (CARREIRA-CORREIA)","tel":"06 09 70 97 62","com":"Villeparisis","km":"8.6","eff":"1 a 2 salaries","act":"Entretien et réparation d'autres véhicules automobiles","ca":"1 002 909 euros","res":"304 311 euros","note":"4.3","avis":"231","site":"","apport":"231 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"440481521"},{"i":25,"seg":"S","segn":"Cherché mais introuvable","nom":"ECOWASH77","dir":"CHRISTINE CHARLES (CARREIRA)","tel":"06 09 70 97 62","com":"Villeparisis","km":"8.6","eff":"3 a 5 salaries","act":"Entretien et réparation d'autres véhicules automobiles","ca":"430 408 euros","res":"143 541 euros","note":"4.3","avis":"231","site":"","apport":"231 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"829919463"},{"i":26,"seg":"S","segn":"Cherché mais introuvable","nom":"CVE CARROSSERIE SAINT THIBAULT (CVE CARROSSERIE)","dir":"LOIC HOUNGBEDJI","tel":"01 85 76 41 66","com":"Saint-Thibault-des-Vignes","km":"6.35","eff":"6 a 9 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"296 999 euros","note":"4.4","avis":"69","site":"","apport":"69 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"828447300"},{"i":27,"seg":"D","segn":"Site payé qui ne sert pas","nom":"COLIFRANCE","dir":"CLAUDE RENE MARTOJA","tel":"01 60 21 23 23","com":"Villeparisis","km":"8.35","eff":"20 a 49 salaries","act":"Entreposage et stockage non frigorifique","ca":"4 158 577 euros","res":"71 303 euros","note":"4.6","avis":"17","site":"http://www.colifrance.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 17 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"340362383"},{"i":28,"seg":"S","segn":"Cherché mais introuvable","nom":"AUTO DOUK SERVICES","dir":"RAZIKE DOUKHI","tel":"09 81 93 14 87","com":"Lagny-sur-Marne","km":"6.23","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"1 833 euros","note":"4.8","avis":"69","site":"","apport":"69 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"881900443"},{"i":29,"seg":"S","segn":"Cherché mais introuvable","nom":"MDK AUTOMOBILES","dir":"DJAAFAR MADAOUI","tel":"01 60 07 11 22","com":"Pomponne","km":"4.55","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"11 929 euros","note":"4.4","avis":"147","site":"","apport":"147 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"824061758"},{"i":30,"seg":"S","segn":"Cherché mais introuvable","nom":"3J AUTOMOBILES (SIMPLICICAR JUMBO PNEUS)","dir":"MOUSTAFA BOUKADDOUR","tel":"01 60 31 88 08","com":"Lagny-sur-Marne","km":"4.99","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.8","avis":"189","site":"","apport":"189 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"849936281"},{"i":31,"seg":"S","segn":"Cherché mais introuvable","nom":"GM AUTO","dir":"ANIBEL FERREIRA-MADEIRA","tel":"01 60 07 43 75","com":"Thorigny-sur-Marne","km":"2.95","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"20 043 euros","note":"4.7","avis":"87","site":"","apport":"87 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"804293140"},{"i":32,"seg":"S","segn":"Cherché mais introuvable","nom":"STOP-AUTO (ALEP)","dir":"ROMAIN BENITTAH","tel":"01 64 18 05 45","com":"Chessy","km":"5.68","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"459 176 euros","res":"15 545 euros","note":"4.8","avis":"302","site":"","apport":"302 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"799432265"},{"i":33,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ETABLISSEMENTS VERMEIL GUERINI","dir":"TOM GUERINI","tel":"01 60 20 30 77","com":"Le Pin","km":"6.84","eff":"3 a 5 salaries","act":"Travaux de menuiserie métallique et serrurerie","ca":"","res":"29 515 euros","note":"4.4","avis":"25","site":"http://www.vermeilguerini.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 25 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"434049854"},{"i":34,"seg":"S","segn":"Cherché mais introuvable","nom":"JODY ELEC MULTITEK","dir":"GEORGES MAMADOU DIALLO","tel":"06 49 13 89 03","com":"Lagny-sur-Marne","km":"5.43","eff":"3 a 5 salaries","act":"Travaux d'installation électrique dans tous locaux","ca":"","res":"","note":"5","avis":"68","site":"","apport":"68 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"893697342"},{"i":35,"seg":"D","segn":"Site payé qui ne sert pas","nom":"DESCHAMPS FRERES","dir":"FLORIAN MARC DESCHAMPS","tel":"06 32 36 18 01","com":"Annet-sur-Marne","km":"0.81","eff":"3 a 5 salaries","act":"Travaux de couverture par éléments","ca":"1 080 718 euros","res":"80 825 euros","note":"4.5","avis":"16","site":"https://www.linkedin.com/company/deschamps-freres/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 16 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"909035230"},{"i":36,"seg":"D","segn":"Site payé qui ne sert pas","nom":"GTVR AUTO (ANNET AUTO)","dir":"RAPHAEL VIOTTY","tel":"09 87 37 21 22","com":"Annet-sur-Marne","km":"0.83","eff":"1 a 2 salaries","act":"Commerce de voitures et de véhicules automobiles légers","ca":"","res":"","note":"4.8","avis":"54","site":"https://m.facebook.com/pages/category/Tire-Dealer---Repair-Shop/Annet-auto-111815977005814/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 54 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"879139335"},{"i":37,"seg":"S","segn":"Cherché mais introuvable","nom":"SARL GARAGE LUCAS","dir":"LAURENT DZIADUS","tel":"01 64 02 28 22","com":"Chanteloup-en-Brie","km":"7.33","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.3","avis":"107","site":"","apport":"107 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"422602409"},{"i":38,"seg":"S","segn":"Cherché mais introuvable","nom":"GARAGE BREUILLOIS","dir":"MARC SERGENT","tel":"01 60 20 35 15","com":"Brou-sur-Chantereine","km":"8.31","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"-65 579 euros","note":"4.4","avis":"174","site":"","apport":"174 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"442669214"},{"i":39,"seg":"S","segn":"Cherché mais introuvable","nom":"TRANSPORTS LEMAIRE","dir":"MICHAEL JEAN LEON LEMAIRE","tel":"01 84 60 21 00","com":"Claye-Souilly","km":"5.86","eff":"3 a 5 salaries","act":"Transports routiers de fret de proximité","ca":"206 178 euros","res":"18 840 euros","note":"4.9","avis":"57","site":"","apport":"57 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un chargeur vérifie la licence et la flotte avant de confier un lot. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"818247330"},{"i":40,"seg":"S","segn":"Cherché mais introuvable","nom":"ALL MECA TRUCKS (AMT)","dir":"","tel":"01 60 26 41 23","com":"Villevaudé","km":"5.14","eff":"3 a 5 salaries","act":"Entretien et réparation d'autres véhicules automobiles","ca":"857 311 euros","res":"16 701 euros","note":"4.4","avis":"36","site":"","apport":"36 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"818736670"},{"i":41,"seg":"D","segn":"Site payé qui ne sert pas","nom":"INVESTISSEMENTS CONSEIL FINANCE (ICF) (ICF)","dir":"CELIA ELSA KHETRAPAL (HAMITOUCHE)","tel":"01 60 03 09 32","com":"Bussy-Saint-Georges","km":"8.16","eff":"1 a 2 salaries","act":"Ingénierie, études techniques","ca":"","res":"140 548 euros","note":"4.9","avis":"72","site":"https://credimmofinance.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site ne répond plus. 72 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"434370813"},{"i":42,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CONSEIL ORGANIS GESTION BAT ET IND (COGEBI)","dir":"VIRGINIE INGRID HAMERY","tel":"01 64 02 16 16","com":"Lagny-sur-Marne","km":"5.97","eff":"6 a 9 salaries","act":"Ingénierie, études techniques","ca":"682 200 euros","res":"44 433 euros","note":"4.7","avis":"3","site":"http://www.cogebi.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est à refaire entièrement. 3 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"340306778"},{"i":43,"seg":"D","segn":"Site payé qui ne sert pas","nom":"E.C.D ENTREPRISE DE CONSTRUCTION DUARTE","dir":"NATHALIE BERTOLO DUARTE (KOPFF)","tel":"01 64 77 51 68","com":"Chanteloup-en-Brie","km":"7.26","eff":"20 a 49 salaries","act":"Construction d'autres bâtiments","ca":"","res":"-15 490 euros","note":"4.3","avis":"12","site":"http://www.sas-ecd.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 12 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"497527127"},{"i":44,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SERVIAPLUS","dir":"PHILIPPE ELIE GARZARO","tel":"01 60 37 07 77","com":"Saint-Thibault-des-Vignes","km":"7.21","eff":"20 a 49 salaries","act":"Affrètement et organisation des transports","ca":"972 946 euros","res":"50 551 euros","note":"4.3","avis":"7","site":"http://www.serviaplus.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 7 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"509164935"},{"i":45,"seg":"D","segn":"Site payé qui ne sert pas","nom":"BA- TEM","dir":"VASILE TEMLE","tel":"06 12 64 25 39","com":"Saint-Thibault-des-Vignes","km":"7.21","eff":"20 a 49 salaries","act":"Travaux de plâtrerie","ca":"3 296 147 euros","res":"46 025 euros","note":"5","avis":"5","site":"https://www.batem-77.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 5 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"494593080"},{"i":46,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SDP BAT ELEC","dir":"","tel":"01 79 78 06 99","com":"Thorigny-sur-Marne","km":"2.96","eff":"6 a 9 salaries","act":"Travaux d'installation électrique dans tous locaux","ca":"","res":"7 465 euros","note":"5","avis":"11","site":"https://www.sdpbatelec.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site ne répond plus. 11 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"489680363"},{"i":47,"seg":"D","segn":"Site payé qui ne sert pas","nom":"FROID 2.0","dir":"ENRIQUE MARQUES","tel":"06 50 92 84 74","com":"Chessy","km":"5.67","eff":"6 a 9 salaries","act":"Travaux d'installation d'équipements thermiques et de climatisation","ca":"","res":"","note":"5","avis":"22","site":"http://www.deuxpointzero.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 22 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"822060430"},{"i":48,"seg":"D","segn":"Site payé qui ne sert pas","nom":"TRANSFLEX","dir":"","tel":"01 60 27 26 26","com":"Villeparisis","km":"8.52","eff":"20 a 49 salaries","act":"Transports routiers de fret interurbains","ca":"","res":"334 450 euros","note":"4.2","avis":"37","site":"https://www.groupe-transflex.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 37 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"528414196"},{"i":49,"seg":"D","segn":"Site payé qui ne sert pas","nom":"TECHN ENVIRON SYSTEM TRAITEM INGENIERIE","dir":"CHRISTIAN CLAUDE GILBERT COCHET","tel":"01 60 07 07 07","com":"Thorigny-sur-Marne","km":"3.93","eff":"20 a 49 salaries","act":"Ingénierie, études techniques","ca":"1 193 631 euros","res":"16 034 euros","note":"2.8","avis":"11","site":"https://www.testingenierie.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 11 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"402105043"},{"i":50,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ATEC HYGIENE","dir":"DAVID GEERTS","tel":"01 60 07 03 19","com":"Montévrain","km":"5.21","eff":"6 a 9 salaries","act":"Désinfection, désinsectisation, dératisation","ca":"745 010 euros","res":"22 833 euros","note":"4.3","avis":"6","site":"http://www.atechygiene.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 6 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"809181381"},{"i":51,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ENTREPRISE BERNIER","dir":"MICHEL BERNIER","tel":"01 64 30 03 08","com":"Chanteloup-en-Brie","km":"7.35","eff":"10 a 19 salaries","act":"Travaux de peinture et vitrerie","ca":"6 266 035 euros","res":"119 087 euros","note":"4.1","avis":"13","site":"http://www.bernier-peinture.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 13 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"317682326"},{"i":52,"seg":"S","segn":"Cherché mais introuvable","nom":"BOUTET (LES GARAGES 2 CLAYE)","dir":"DAVID CADET","tel":"01 60 26 49 88","com":"Claye-Souilly","km":"4.68","eff":"6 a 9 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.2","avis":"81","site":"","apport":"81 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"503615189"},{"i":53,"seg":"S","segn":"Cherché mais introuvable","nom":"SOCIETE DE TRANSPORT TERRASSEMENT ET TRAVAUX PUBLICS TRANS VB.","dir":"VIRGINIE MENAGE-BLED (MENAGE)","tel":"01 60 94 95 00","com":"Villevaudé","km":"6.48","eff":"10 a 19 salaries","act":"Transports routiers de fret de proximité","ca":"10 687 224 euros","res":"-254 745 euros","note":"3.8","avis":"34","site":"","apport":"34 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un chargeur vérifie la licence et la flotte avant de confier un lot. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"380872309"},{"i":54,"seg":"S","segn":"Cherché mais introuvable","nom":"FRANCE DISTRI COLLECTE","dir":"AMINATA SOHORE","tel":"07 66 64 68 15","com":"Claye-Souilly","km":"3.34","eff":"20 a 49 salaries","act":"Transports routiers de fret interurbains","ca":"","res":"","note":"4.9","avis":"40","site":"","apport":"40 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un chargeur vérifie la licence et la flotte avant de confier un lot. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"841084015"},{"i":55,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SAUERBREI LOGISTICS FRANCE SLF","dir":"","tel":"01 60 07 26 15","com":"Saint-Thibault-des-Vignes","km":"6.48","eff":"20 a 49 salaries","act":"Entreposage et stockage non frigorifique","ca":"2 821 997 euros","res":"25 626 euros","note":"3.5","avis":"22","site":"http://sauerbrei-logistics.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 22 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"350444956"},{"i":56,"seg":"D","segn":"Site payé qui ne sert pas","nom":"AVEC VOUS","dir":"ZAHRA EL HAKMAOUI","tel":"06 59 40 66 85","com":"Lagny-sur-Marne","km":"6.02","eff":"3 a 5 salaries","act":"Nettoyage courant des bâtiments","ca":"","res":"","note":"5","avis":"21","site":"https://www.avec-vous-services.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site ne répond plus. 21 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"892858176"},{"i":57,"seg":"S","segn":"Cherché mais introuvable","nom":"SFRA","dir":"FAYCAL SALAH","tel":"06 88 86 03 13","com":"Lagny-sur-Marne","km":"5.08","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"89 682 euros","res":"5 534 euros","note":"4.4","avis":"92","site":"","apport":"92 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"788760577"},{"i":58,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CMBI","dir":"","tel":"01 64 30 39 02","com":"Lagny-sur-Marne","km":"5.05","eff":"3 a 5 salaries","act":"Mécanique industrielle","ca":"","res":"","note":"4.4","avis":"13","site":"http://www.cmbi.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 13 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"410696181"},{"i":59,"seg":"S","segn":"Cherché mais introuvable","nom":"MECANIQUE ET PERFORMANCE","dir":"MATHIEU PASCAL MARCEL VAN LANCKER","tel":"01 64 30 69 18","com":"Saint-Thibault-des-Vignes","km":"6.88","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"260 767 euros","res":"7 367 euros","note":"4.8","avis":"66","site":"","apport":"66 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"850583477"},{"i":60,"seg":"D","segn":"Site payé qui ne sert pas","nom":"L'RENOV ( )","dir":"FAYCAL KEDDIDI","tel":"01 83 61 01 75","com":"Saint-Thibault-des-Vignes","km":"6.88","eff":"1 a 2 salaries","act":"Travaux de peinture et vitrerie","ca":"","res":"-5 657 euros","note":"5","avis":"37","site":"http://www.terenove.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 37 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"501840664"},{"i":61,"seg":"S","segn":"Cherché mais introuvable","nom":"GARAGE CENTRAL","dir":"HAKIM MAOUCHE","tel":"01 60 27 15 29","com":"Claye-Souilly","km":"4.29","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.5","avis":"44","site":"","apport":"44 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"421414822"},{"i":62,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SARL CDS PLOMBERIE (CDS PLOMBERIE) (CDS PLOMBERIE)","dir":"SONIA DA SILVA (FREITAS)","tel":"01 60 35 08 63","com":"Claye-Souilly","km":"4.39","eff":"3 a 5 salaries","act":"Travaux d'installation d'eau et de gaz en tous locaux","ca":"399 573 euros","res":"8 713 euros","note":"4.7","avis":"13","site":"https://www.facebook.com/CDS-Plomberie-281379625642043/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 13 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"535126700"},{"i":63,"seg":"D","segn":"Site payé qui ne sert pas","nom":"M PEINTURE","dir":"MIGUEL DOS SANTOS RIBEIRO","tel":"01 60 07 91 14","com":"Lagny-sur-Marne","km":"4.8","eff":"3 a 5 salaries","act":"Travaux de peinture et vitrerie","ca":"318 998 euros","res":"9 316 euros","note":"4.9","avis":"14","site":"http://www.mpeinture.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 14 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"502086424"},{"i":64,"seg":"D","segn":"Site payé qui ne sert pas","nom":"FERNANDES","dir":"SYLVIE CARVALHO FERNANDES (EUZEBIO)","tel":"06 77 83 56 14","com":"Villeparisis","km":"8.52","eff":"1 a 2 salaries","act":"Travaux de maçonnerie générale et gros œuvre de bâtiment","ca":"","res":"","note":"5","avis":"32","site":"http://oosteo.com/osteopathe-Villeparisis-77270-306?gclid=CjwKEAiA9om3BRDpzvihsdGnhTwSJAAkSewLX-6k4XvtFewDk6rF7VAQT4R3pjZRHii2N2apD2dKwhoC-ivw_wcB","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 32 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"752986083"},{"i":65,"seg":"D","segn":"Site payé qui ne sert pas","nom":"DOMINIQUE LE PEINTRE","dir":"SAGLARIO DOMINGUEZ (VEGAS)","tel":"01 64 02 19 09","com":"Montévrain","km":"5.36","eff":"3 a 5 salaries","act":"Travaux de peinture et vitrerie","ca":"503 337 euros","res":"-84 615 euros","note":"4.6","avis":"8","site":"https://www.lepeintre-dominique.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 8 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"429948979"},{"i":66,"seg":"S","segn":"Cherché mais introuvable","nom":"MUST OF CARS","dir":"VENTURO-GIULIO DIFATO","tel":"01 78 71 23 55","com":"Isles-lès-Villenoy","km":"6.4","eff":"3 a 5 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.9","avis":"34","site":"","apport":"34 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"917731168"},{"i":67,"seg":"S","segn":"Cherché mais introuvable","nom":"LAGNY PAYSAGES","dir":"VERONIQUE MICHELE LELIEVRE","tel":"01 60 07 55 59","com":"Lagny-sur-Marne","km":"6.24","eff":"6 a 9 salaries","act":"Services d'aménagement paysager","ca":"1 436 165 euros","res":"288 033 euros","note":"4.5","avis":"8","site":"","apport":"8 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Les contrats d'entretien se gagnent sur la régularité montrée, pas seulement sur le prix. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"413370115"},{"i":68,"seg":"D","segn":"Site payé qui ne sert pas","nom":"IDEM CUISINES","dir":"JEROME LEPLATRE","tel":"01 43 30 88 88","com":"Chanteloup-en-Brie","km":"6.65","eff":"20 a 49 salaries","act":"Réparation de machines et équipements mécaniques","ca":"","res":"398 825 euros","note":"5","avis":"6","site":"http://www.idem-cuisines.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 6 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"412735409"},{"i":69,"seg":"D","segn":"Site payé qui ne sert pas","nom":"S.R.KLIM'","dir":"BORIS KASZUBA","tel":"01 60 31 29 61","com":"Saint-Thibault-des-Vignes","km":"7.18","eff":"6 a 9 salaries","act":"Travaux d'installation d'équipements thermiques et de climatisation","ca":"2 132 917 euros","res":"-15 022 euros","note":"4","avis":"4","site":"http://www.groupekzb.com/-SR-KLim-.html?lang=fr","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site renvoie une erreur. 4 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"493336606"},{"i":70,"seg":"D","segn":"Site payé qui ne sert pas","nom":"PROGREEN","dir":"","tel":"01 60 31 41 72","com":"Thorigny-sur-Marne","km":"2.65","eff":"10 a 19 salaries","act":"Services d'aménagement paysager","ca":"","res":"151 815 euros","note":"5","avis":"5","site":"http://www.progreen.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 5 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"527758668"},{"i":71,"seg":"D","segn":"Site payé qui ne sert pas","nom":"ACR BAT","dir":"EMMANUEL BAUDIN","tel":"01 64 26 34 78","com":"Vaires-sur-Marne","km":"8.42","eff":"6 a 9 salaries","act":"Autres travaux de finition","ca":"","res":"-123 741 euros","note":"5","avis":"3","site":"http://acrbat.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est à refaire entièrement. 3 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"477683692"},{"i":72,"seg":"S","segn":"Cherché mais introuvable","nom":"TRANSPORTS JEAN LAURENT","dir":"FABRICE JEAN-MICHEL RENE LAURENT","tel":"01 60 27 01 09","com":"Gressy","km":"6.19","eff":"10 a 19 salaries","act":"Transports routiers de fret interurbains","ca":"","res":"-127 304 euros","note":"4.4","avis":"10","site":"","apport":"10 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un chargeur vérifie la licence et la flotte avant de confier un lot. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"380320283"},{"i":73,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CARRE & C (CARRECO PROPRETE)","dir":"PASCAL GGUY CARRÉ","tel":"06 64 79 30 46","com":"Condé-Sainte-Libiaire","km":"8.26","eff":"6 a 9 salaries","act":"Nettoyage courant des bâtiments","ca":"","res":"","note":"5","avis":"3","site":"https://car-eco-clean.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 3 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"814908158"},{"i":74,"seg":"D","segn":"Site payé qui ne sert pas","nom":"REBATPRO","dir":"TONY FRANCOIS NUBUL","tel":"06 11 90 48 48","com":"Chessy","km":"7.62","eff":"1 a 2 salaries","act":"Travaux de menuiserie bois et PVC","ca":"","res":"","note":"4.9","avis":"13","site":"https://rebatpro.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 13 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"903457802"},{"i":75,"seg":"S","segn":"Cherché mais introuvable","nom":"SMD AUTOMOBILES","dir":"RACHID MOUNIR","tel":"09 83 37 31 75","com":"Thorigny-sur-Marne","km":"2.98","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"99 531 euros","res":"-51 399 euros","note":"4.4","avis":"33","site":"","apport":"33 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"524522034"},{"i":76,"seg":"S","segn":"Cherché mais introuvable","nom":"LAVAGE FRANCILIEN DE L EST","dir":"MOHAMMED TEBSI","tel":"06 17 67 25 02","com":"Thorigny-sur-Marne","km":"2.43","eff":"1 a 2 salaries","act":"Entretien et réparation d'autres véhicules automobiles","ca":"415 905 euros","res":"37 586 euros","note":"3.1","avis":"70","site":"","apport":"70 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"507646347"},{"i":77,"seg":"D","segn":"Site payé qui ne sert pas","nom":"G.T.E. BATIMENT","dir":"ALEXANDRE GEOFFREY GODIN","tel":"06 58 90 00 22","com":"Guermantes","km":"7.39","eff":"1 a 2 salaries","act":"Travaux d'installation d'eau et de gaz en tous locaux","ca":"136 384 euros","res":"8 620 euros","note":"5","avis":"16","site":"https://www.gte-batiment.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site ne répond plus. 16 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"948551015"},{"i":78,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SEMEDO","dir":"LUZAEL SEMEDO MONTEIRO","tel":"06 60 16 91 16","com":"Thorigny-sur-Marne","km":"3.74","eff":"1 a 2 salaries","act":"Travaux d'installation électrique dans tous locaux","ca":"85 295 euros","res":"4 975 euros","note":"4.3","avis":"15","site":"https://semedoetservices.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le site ne répond plus. 15 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"812562692"},{"i":79,"seg":"D","segn":"Site payé qui ne sert pas","nom":"E.D.I. PLOMBERIE CHAUFFAGE","dir":"JEROME ZEPH","tel":"06 75 64 32 37","com":"Vignely","km":"6.02","eff":"1 a 2 salaries","act":"Travaux d'installation d'eau et de gaz en tous locaux","ca":"170 217 euros","res":"19 294 euros","note":"4.9","avis":"17","site":"http://ediplomberiechauff.wixsite.com/-edi-","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 17 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"804206951"},{"i":80,"seg":"D","segn":"Site payé qui ne sert pas","nom":"AMD BATI","dir":"ARNAUD DUVERNELL","tel":"01 60 04 16 45","com":"Coupvray","km":"4.98","eff":"3 a 5 salaries","act":"Construction de maisons individuelles","ca":"","res":"28 015 euros","note":"4.6","avis":"5","site":"http://www.amd-bati.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 5 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"828433037"},{"i":81,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SAFIER INGENIERIE SA","dir":"STEPHANE ANTOINE ALAIN DEMORY","tel":"06 08 91 04 82","com":"Serris","km":"7.81","eff":"20 a 49 salaries","act":"Ingénierie, études techniques","ca":"","res":"277 800 euros","note":"3.2","avis":"9","site":"http://si-engineer.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus est très pauvre. 9 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"378462287"},{"i":82,"seg":"S","segn":"Cherché mais introuvable","nom":"HELLIN CUISINES INDUSTRIELLES","dir":"VERONIQUE MONIQUE JEANNE PICARD (BEGOT)","tel":"01 60 26 03 27","com":"Claye-Souilly","km":"5.2","eff":"6 a 9 salaries","act":"Réparation de machines et équipements mécaniques","ca":"837 348 euros","res":"-70 099 euros","note":"3","avis":"4","site":"","apport":"4 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un donneur d'ordre vérifie l'entreprise avant de l'inscrire sur sa liste. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"401442579"},{"i":83,"seg":"S","segn":"Cherché mais introuvable","nom":"MACHADO","dir":"CHRISTOPHE CHRISTIAN BEHAEGEL","tel":"01 64 27 87 54","com":"Villeparisis","km":"8.37","eff":"10 a 19 salaries","act":"Travaux de maçonnerie générale et gros œuvre de bâtiment","ca":"","res":"741 681 euros","note":"5","avis":"3","site":"","apport":"3 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"339754152"},{"i":84,"seg":"S","segn":"Cherché mais introuvable","nom":"MACHADO BTP","dir":"PHILIPPE RIBEIRO MACHADO","tel":"01 64 27 87 54","com":"Villeparisis","km":"8.37","eff":"6 a 9 salaries","act":"Construction de maisons individuelles","ca":"","res":"37 595 euros","note":"5","avis":"3","site":"","apport":"3 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Une maison ou une extension se décide après avoir regardé les chantiers déjà faits. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"909632382"},{"i":85,"seg":"S","segn":"Cherché mais introuvable","nom":"TECHNOPOSE ET BEDEL","dir":"VALERIE LAURIAT (COLLIN)","tel":"01 60 36 30 20","com":"Montévrain","km":"7.11","eff":"6 a 9 salaries","act":"Travaux de revêtement des sols et des murs","ca":"2 496 199 euros","res":"328 299 euros","note":"4","avis":"7","site":"","apport":"7 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"414627448"},{"i":86,"seg":"D","segn":"Site payé qui ne sert pas","nom":"MULTI - PRO - SERVICES","dir":"ENRIQUE VERNEL","tel":"01 61 10 11 11","com":"Montévrain","km":"7.28","eff":"10 a 19 salaries","act":"Réparation d'équipements électriques","ca":"","res":"14 902 euros","note":"3","avis":"6","site":"http://www.multiproservices.com/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 6 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"535408686"},{"i":87,"seg":"S","segn":"Cherché mais introuvable","nom":"D.M PARISIEN","dir":"DIREN OLCAY","tel":"09 67 00 22 85","com":"Brou-sur-Chantereine","km":"8.41","eff":"6 a 9 salaries","act":"Travaux de maçonnerie générale et gros œuvre de bâtiment","ca":"","res":"","note":"5","avis":"3","site":"","apport":"3 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"804279289"},{"i":88,"seg":"D","segn":"Site payé qui ne sert pas","nom":"EURL SEAT","dir":"JULIEN JEAN-MARIE GABRIEL DELBECQ","tel":"01 60 26 20 05","com":"Villevaudé","km":"4.48","eff":"6 a 9 salaries","act":"Services d'aménagement paysager","ca":"416 843 euros","res":"-2 424 euros","note":"3.9","avis":"7","site":"https://seat-elagage.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 7 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"529277618"},{"i":89,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CLIM'TECH","dir":"FLOR BELA LACROIX (SILVESTRE NUNES)","tel":"01 64 12 22 22","com":"Chanteloup-en-Brie","km":"7.35","eff":"6 a 9 salaries","act":"Travaux d'installation d'équipements thermiques et de climatisation","ca":"","res":"256 231 euros","note":"3.8","avis":"8","site":"http://www.climtech.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 8 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"442916193"},{"i":90,"seg":"S","segn":"Cherché mais introuvable","nom":"ETABL GUILLET","dir":"FREDERIC GUILLET","tel":"01 60 43 40 64","com":"Jablines","km":"2.6","eff":"6 a 9 salaries","act":"Travaux de peinture et vitrerie","ca":"","res":"94 776 euros","note":"5","avis":"3","site":"","apport":"3 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"308656644"},{"i":91,"seg":"S","segn":"Cherché mais introuvable","nom":"CREAPAYSAGE","dir":"JEREMY LEMOINE","tel":"01 64 17 84 07","com":"Jablines","km":"2.88","eff":"10 a 19 salaries","act":"Services d'aménagement paysager","ca":"","res":"96 507 euros","note":"3.9","avis":"16","site":"","apport":"16 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Les contrats d'entretien se gagnent sur la régularité montrée, pas seulement sur le prix. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"519948764"},{"i":92,"seg":"S","segn":"Cherché mais introuvable","nom":"OPTIC TP (OPTICBTP)","dir":"ROLAND CALCAS","tel":"01 64 67 76 18","com":"Saint-Thibault-des-Vignes","km":"8.4","eff":"20 a 49 salaries","act":"Travaux de maçonnerie générale et gros œuvre de bâtiment","ca":"","res":"119 640 euros","note":"3.7","avis":"10","site":"","apport":"10 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"750339541"},{"i":93,"seg":"D","segn":"Site payé qui ne sert pas","nom":"SARL SMC RAVALEMENT (SOCIETE MONOCOUCHE DE CARRELAGES ET RAVALEMENT)","dir":"","tel":"01 60 35 29 29","com":"Villevaudé","km":"5.24","eff":"20 a 49 salaries","act":"Travaux de peinture et vitrerie","ca":"","res":"178 745 euros","note":"4","avis":"3","site":"http://www.smc-ravalement.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et ce qu'il y a dessus ne fait pas le travail. 3 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"334613379"},{"i":94,"seg":"S","segn":"Cherché mais introuvable","nom":"T.S.E. TRAVAUX SERVICES ENVIRONNEMENT","dir":"FREDERICK JACQUES MOULINOT","tel":"01 60 43 48 21","com":"Jablines","km":"2.16","eff":"6 a 9 salaries","act":"Services d'aménagement paysager","ca":"504 976 euros","res":"-36 230 euros","note":"3.3","avis":"4","site":"","apport":"4 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Les contrats d'entretien se gagnent sur la régularité montrée, pas seulement sur le prix. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"417637998"},{"i":95,"seg":"S","segn":"Cherché mais introuvable","nom":"CYTECK","dir":"CYRILLE BALTA","tel":"06 15 69 44 42","com":"Montévrain","km":"7.76","eff":"1 a 2 salaries","act":"Travaux d'installation électrique dans tous locaux","ca":"","res":"19 853 euros","note":"5","avis":"17","site":"","apport":"17 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un particulier qui fait faire des travaux regarde l'entreprise avant de la faire venir chez lui. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"524923869"},{"i":96,"seg":"D","segn":"Site payé qui ne sert pas","nom":"MEGATEK IDF","dir":"RACHID BENREJDAL","tel":"07 81 84 62 19","com":"Villeparisis","km":"8.39","eff":"1 a 2 salaries","act":"Construction de maisons individuelles","ca":"","res":"","note":"5","avis":"3","site":"https://megatek77idf.wixsite.com/megatekidf","apport":"Le nom de domaine et l'hébergement sont déjà payés, et il n'y a qu'une page de réseau social au bout. 3 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"884201369"},{"i":97,"seg":"S","segn":"Cherché mais introuvable","nom":"MECANIQUE HYDRAULIQUE PNEUMATIQUE 77","dir":"FLORYAN BARANGER","tel":"06 84 83 58 52","com":"Montévrain","km":"5.1","eff":"3 a 5 salaries","act":"Mécanique industrielle","ca":"","res":"19 754 euros","note":"4.5","avis":"4","site":"","apport":"4 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Un donneur d'ordre vérifie l'atelier et ses moyens avant de consulter. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"315410084"},{"i":98,"seg":"S","segn":"Cherché mais introuvable","nom":"SDS AUTO 77","dir":"ARMEL MALONGA","tel":"06 58 68 01 17","com":"Saint-Mesmes","km":"7.61","eff":"1 a 2 salaries","act":"Entretien et réparation de véhicules automobiles légers","ca":"","res":"","note":"4.6","avis":"10","site":"","apport":"10 personnes ont pris le temps de laisser un avis : on les cherche. Et celui qui vérifie avant d'appeler ne trouve rien. Vos clients comparent les garages avant d'appeler, et regardent qui vous êtes. Cinq cents euros, quatre-vingt-neuf euros par mois.","siren":"912885365"},{"i":99,"seg":"D","segn":"Site payé qui ne sert pas","nom":"CVERT","dir":"OLIVIER ALAIN CHASSET","tel":"06 24 03 32 84","com":"Villevaudé","km":"5.28","eff":"1 a 2 salaries","act":"Services d'aménagement paysager","ca":"","res":"","note":"5","avis":"9","site":"http://www.cvert.fr/","apport":"Le nom de domaine et l'hébergement sont déjà payés, et le navigateur affiche un avertissement de sécurité avant de l'ouvrir. 9 personnes ont laissé un avis, donc on les cherche, et ce qu'elles trouvent ne donne pas envie. Cinq cents euros pour le refaire, quatre-vingt-neuf euros par mois pour qu'il reste à jour.","siren":"848900262"}];
+var ETATS = [["attente", "À appeler"], ["sonne", "Pas décroché"], ["barrage", "Barrage"], ["rappeler", "À rappeler"], ["positif", "Contact positif"], ["rdv", "Rendez-vous"], ["oublier", "À oublier"], ["faux", "Mauvais numéro"]];
+var CLE = 'ace-appels-site-2026-09';
+
+var etat = {};
+try { etat = JSON.parse(localStorage.getItem(CLE) || '{}'); } catch(e){ etat = {}; }
+function garder(){ try{ localStorage.setItem(CLE, JSON.stringify(etat)); }catch(e){} }
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+var filtre = 'tous';
+
+function crit(s){
+  var t = [];
+  if (s.eff) t.push(esc(s.eff));
+  if (s.ca) t.push('CA ' + esc(s.ca));
+  if (s.res) t.push('résultat ' + esc(s.res));
+  if (s.note && s.avis) t.push(esc(s.note) + '/5 sur ' + esc(s.avis) + ' avis');
+  if (s.km) t.push(esc(s.km) + ' km');
+  if (s.site) t.push('a un site');
+  return t.map(function(x){ return '<span>' + x + '</span>'; }).join('');
+}
+
+function dessiner(){
+  var h = '';
+  SOC.forEach(function(s){
+    var e = etat[s.i] || {};
+    var fait = e.st && e.st !== 'attente';
+    h += '<div class="soc' + (fait ? ' fait' : '') + '" data-i="' + s.i + '" data-st="' + (e.st||'attente') + '">'
+      +   '<div class="hd">'
+      +     '<span class="no">' + (s.i + 1) + '</span>'
+      +     '<div><span class="seg ' + s.seg + '">' + esc(s.segn) + '</span>'
+      +       '<div class="nom">' + esc(s.nom) + '</div>'
+      +       '<div class="meta">' + (s.dir ? esc(s.dir) + ' &middot; ' : '') + esc(s.com) + '</div>'
+      +     '</div>'
+      +     '<a class="tel" href="tel:' + esc(s.tel.replace(/\s/g,'')) + '">' + esc(s.tel)
+      +       '<small>appeler</small></a>'
+      +   '</div>'
+      +   '<div class="corps">'
+      +     '<div class="bl"><span class="lab">Ce qu\'ils font</span>'
+      +       '<p>' + esc(s.act) + '</p>' + '<div class="crit">' + crit(s) + '</div></div>'
+      +     '<div class="bl"><span class="lab">Ce qu\'on peut leur apporter</span>'
+      +       '<p>' + esc(s.apport) + '</p></div>'
+      +   '</div>'
+      +   '<div class="pied"><div class="etats">'
+      +     ETATS.map(function(x){
+             return '<button data-e="' + x[0] + '"' + (e.st === x[0] ? ' class="on"' : '') + '>'
+                  + esc(x[1]) + '</button>'; }).join('')
+      +   '</div>'
+      +   '<textarea class="note" placeholder="Qui a répondu, ce qu\'il a dit, quand rappeler">'
+      +     esc(e.n || '') + '</textarea></div>'
+      + '</div>';
+  });
+  document.getElementById('liste').innerHTML = h;
+  compter();
+  appliquer();
+}
+
+function compter(){
+  var n = {}, faits = 0;
+  SOC.forEach(function(s){
+    var st = (etat[s.i] || {}).st || 'attente';
+    n[st] = (n[st] || 0) + 1;
+    if (st !== 'attente') faits++;
+  });
+  document.getElementById('cpt').innerHTML =
+      '<b>' + faits + '</b> sur ' + SOC.length + ' appelées &middot; '
+    + '<b>' + ((n.positif||0) + (n.rdv||0)) + '</b> contacts positifs &middot; '
+    + '<b>' + (n.rappeler||0) + '</b> à rappeler';
+  var f = '';
+  f += '<button data-f="tous"' + (filtre==='tous'?' class="on"':'') + '>Toutes</button>';
+  f += '<button data-f="attente"' + (filtre==='attente'?' class="on"':'') + '>Pas encore appelées</button>';
+  ['rappeler','sonne','positif'].forEach(function(k){
+    var l = ETATS.filter(function(x){return x[0]===k;})[0][1];
+    f += '<button data-f="' + k + '"' + (filtre===k?' class="on"':'') + '>' + l + '</button>';
+  });
+  ['A','B','D'].forEach(function(k){
+    f += '<button data-f="seg' + k + '"' + (filtre==='seg'+k?' class="on"':'') + '>Segment ' + k + '</button>';
+  });
+  document.getElementById('filtres').innerHTML = f;
+}
+
+function appliquer(){
+  [].forEach.call(document.querySelectorAll('.soc'), function(el){
+    var i = +el.dataset.i, s = SOC[i], st = el.dataset.st;
+    var vu = filtre === 'tous'
+          || (filtre.indexOf('seg') === 0 ? s.seg === filtre.slice(3) : st === filtre);
+    el.classList.toggle('masque', !vu);
+  });
+}
+
+document.getElementById('liste').addEventListener('click', function(ev){
+  var b = ev.target.closest('.etats button'); if (!b) return;
+  var soc = b.closest('.soc'), i = +soc.dataset.i;
+  var e = etat[i] || (etat[i] = {});
+  e.st = (e.st === b.dataset.e) ? 'attente' : b.dataset.e;
+  soc.dataset.st = e.st;
+  soc.classList.toggle('fait', e.st !== 'attente');
+  [].forEach.call(soc.querySelectorAll('.etats button'), function(x){
+    x.classList.toggle('on', x.dataset.e === e.st);
+  });
+  garder(); compter(); appliquer();
+});
+
+document.getElementById('liste').addEventListener('input', function(ev){
+  if (!ev.target.classList.contains('note')) return;
+  var i = +ev.target.closest('.soc').dataset.i;
+  (etat[i] || (etat[i] = {})).n = ev.target.value;
+  garder();
+});
+
+document.getElementById('filtres').addEventListener('click', function(ev){
+  var b = ev.target.closest('button'); if (!b) return;
+  filtre = b.dataset.f; compter(); appliquer();
+});
+
+/* L'export : un fichier a rouvrir dans un tableur, ou a me redonner pour
+   remonter les resultats dans la base. */
+document.getElementById('expo').onclick = function(){
+  var l = [['no','segment','societe','dirigeant','telephone','commune','etat','note']];
+  SOC.forEach(function(s){
+    var e = etat[s.i] || {};
+    var lib = (ETATS.filter(function(x){return x[0]===(e.st||'attente');})[0]||['',''])[1];
+    l.push([s.i+1, s.segn, s.nom, s.dir, s.tel, s.com, lib, (e.n||'').replace(/\r?\n/g,' ')]);
+  });
+  var csv = '\ufeff' + l.map(function(r){
+    return r.map(function(c){ return '"' + String(c).replace(/"/g,'""') + '"'; }).join(';');
+  }).join('\n');
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8'}));
+  a.download = 'appels-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+};
+
+document.getElementById('autre').href =
+  location.pathname.indexOf('appels-site') >= 0 ? 'appels' : 'appels-site';
+dessiner();
+})();
+</script>
+</body>
+</html>
