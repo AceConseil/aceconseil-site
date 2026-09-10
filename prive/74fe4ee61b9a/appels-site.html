@@ -70,6 +70,16 @@ ol.fil::marker, ol.fil li::marker{color:var(--faible); font-family:'IBM Plex San
   padding:8px 11px}
 .si b{color:var(--encre)}
 
+/* --------------------------------------------------- la bascule */
+.bascule{background:var(--bloc); border-bottom:1px solid var(--filet); padding-block:16px}
+.bascule .col{display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+.bascule .txt{color:var(--gris); font-size:.98rem; max-width:60ch}
+.bascule .all{margin-left:auto; background:var(--encre); color:var(--fond); text-decoration:none;
+  font-family:'IBM Plex Sans Condensed',sans-serif; font-weight:700; font-size:.95rem;
+  padding:12px 18px; white-space:nowrap}
+.bascule .all:hover{background:var(--bleu)}
+@media(max-width:640px){ .bascule .all{margin-left:0; width:100%; text-align:center} }
+
 /* ------------------------------------------------------- la barre */
 .barre{position:sticky; top:0; z-index:5; background:var(--carte);
   border-bottom:1px solid var(--filet); padding-block:11px}
@@ -323,10 +333,15 @@ ol.fil::marker, ol.fil li::marker{color:var(--faible); font-family:'IBM Plex San
 
 </div></div>
 
+<div class="bascule"><div class="col">
+  <span class="txt">Cette liste travaille le site internet. La première réunit cent sociétés à qui parler d'automatisation et d'appels d'offres, dont quarante-sept à qui raconter le dossier Brites Decor.</span>
+  <a class="all" href="appels">Cent appels, automatisation &rarr;</a>
+</div></div>
+
 <div class="barre"><div class="col">
   <span class="cpt" id="cpt"></span>
   <span class="filtres" id="filtres"></span>
-  <a class="expo" id="autre" href="#">L'autre liste</a>
+  <a class="expo" id="autre" href="appels">Liste automatisation</a>
   <button class="expo" id="expo">Exporter</button>
 </div></div>
 
@@ -470,8 +485,6 @@ document.getElementById('expo').onclick = function(){
   a.click();
 };
 
-document.getElementById('autre').href =
-  location.pathname.indexOf('appels-site') >= 0 ? 'appels' : 'appels-site';
 dessiner();
 })();
 </script>
