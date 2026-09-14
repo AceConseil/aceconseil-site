@@ -16,6 +16,8 @@ Il est 22 h 41, un prospect remplit le formulaire de votre site. Sans agent, ce 
 
 Le même principe s'applique aux relances : un devis envoyé sans réponse est suivi, poliment et à votre rythme, sans que vous ayez à y penser.
 
+Vous dirigez une entreprise du bâtiment qui répond à des appels d’offres ? Nous avons conçu pour vous [une solution d’agents dédiée](/appels-offres), de la veille jusqu’au contrôle avant le dépôt.
+
 ## Sur quels canaux il travaille
 
 L'agent s'installe sur les canaux où vos clients vous écrivent déjà :

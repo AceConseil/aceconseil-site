@@ -29,6 +29,8 @@ const STATIC_FILES = ['index.html', 'mentions-legales.html', 'merci.html', 'robo
 
 const PAGES_DIR = path.join(ROOT, 'content', 'pages');
 const PAGE_TEMPLATE_FILE = path.join(ROOT, 'templates', 'page.html');
+// Widgets propres à une page : content/widgets/<nom>.html, appelés par ::widget nom::
+const WIDGETS_DIR = path.join(ROOT, 'content', 'widgets');
 // Slugs interdits pour les pages dédiées : fichiers réservés et sources de
 // redirections 301 de vercel.json (la redirection gagnerait sur la page).
 // Slugs interdits pour une page : ils sont deja pris par un fichier statique ou
@@ -693,8 +695,11 @@ function mdToHtml(md) {
 
   // Widgets : la ligne ::widget nom:: devient un bloc HTML protégé
   src = src.replace(/^::widget ([a-z0-9-]+)::$/gm, (_, name) => {
-    if (!ARTICLE_WIDGETS[name]) throw new Error(`Widget inconnu : ${name} (disponibles : ${Object.keys(ARTICLE_WIDGETS).join(', ')})`);
-    fences.push(ARTICLE_WIDGETS[name]);
+    // D'abord le registre ci-dessus, sinon le fichier content/widgets/<nom>.html
+    const fichierWidget = path.join(WIDGETS_DIR, `${name}.html`);
+    const bloc = ARTICLE_WIDGETS[name] || (fs.existsSync(fichierWidget) ? fs.readFileSync(fichierWidget, 'utf8').trim() : '');
+    if (!bloc) throw new Error(`Widget inconnu : ${name} (ni dans le registre, ni dans content/widgets/)`);
+    fences.push(bloc);
     return `\u0000FENCE${fences.length - 1}\u0000`;
   });
 
@@ -922,7 +927,51 @@ const PAGE_FX = {
     <div class="fx-tl-step t5">Réserves levées</div>
   </div>
 </div>`,
+  'appels-offres': `<div class="fx" aria-hidden="true">
+  <p class="fx-title"><span class="fx-live"></span>Contrôle avant dépôt</p>
+  <div class="fx-ao">
+    <span class="fx-ao-scan"></span>
+    <div class="fx-ao-row vu"><span class="fx-ao-doc">Cadre imposé du mémoire technique</span><span class="fx-ao-st">Conforme</span></div>
+    <div class="fx-ao-row vu"><span class="fx-ao-doc">Bordereau de prix non modifié</span><span class="fx-ao-st">Conforme</span></div>
+    <div class="fx-ao-row vu"><span class="fx-ao-doc">Attestation d’assurance exigée</span><span class="fx-ao-st">Conforme</span></div>
+    <div class="fx-ao-row vu alerte"><span class="fx-ao-doc">Tableau des finitions cité au CCTP</span><span class="fx-ao-st">Absent</span><span class="fx-ao-q">Signalé, avec la question à poser à l’acheteur</span></div>
+  </div>
+  <p class="fx-note">Aucun dépôt sans votre validation.</p>
+</div>`,
 };
+
+// Bandeau final des pages. Par défaut, le texte commun et l'appel. Une page
+// peut donner cta_titre, cta_texte, cta_bouton et cta_lien dans son
+// front-matter : son bouton passe en premier, le téléphone en second.
+const CTA_ACTIONS_DEFAUT = `      <a class="btn btn-gold" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span class="tel-label">Nous appeler</span>
+      </a>
+      <a class="btn btn-ghost" href="/#contact">Passer par le formulaire
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>`;
+
+function ctaDePage(meta, filename) {
+  const cles = ['cta_titre', 'cta_texte', 'cta_bouton', 'cta_lien'];
+  const presentes = cles.filter((k) => meta[k]);
+  if (presentes.length === 0) {
+    return { titre: 'Parlons de votre situation.', texte: 'Vingt minutes avec Jennifer, cofondatrice, pour comprendre votre activité et ce qui bloque. Sans engagement, sans script commercial.', actions: CTA_ACTIONS_DEFAUT };
+  }
+  if (presentes.length < cles.length) {
+    throw new Error(`${filename} : bandeau final incomplet, il faut ${cles.join(', ')}`);
+  }
+  return {
+    titre: escAttr(meta.cta_titre),
+    texte: escAttr(meta.cta_texte),
+    actions: `      <a class="btn btn-gold" href="${escAttr(meta.cta_lien)}">${escAttr(meta.cta_bouton)}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        <span class="tel-label">Nous appeler</span>
+      </a>`,
+  };
+}
 
 function buildPage(page, template) {
   const { meta, html } = page;
@@ -942,7 +991,20 @@ function buildPage(page, template) {
   ])];
 
   const fx = PAGE_FX[meta.slug] || '';
+  const cta = ctaDePage(meta, page.file);
+  // CSS et JS propres à la page, intégrés en ligne : content/pages/<slug>.css et .js
+  const propre = (ext) => {
+    const f = path.join(PAGES_DIR, `${meta.slug}.${ext}`);
+    return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : '';
+  };
+  const pageCss = propre('css');
+  const pageJs = propre('js');
   return render(template, {
+    PAGE_CSS: pageCss ? `${pageCss}\n` : '',
+    PAGE_JS: pageJs ? `<script>\n${pageJs}</script>\n` : '',
+    CTA_TITRE: cta.titre,
+    CTA_TEXTE: cta.texte,
+    CTA_ACTIONS: cta.actions,
     TITLE: escAttr(meta.title),
     TITLE_SEO: escAttr(titreRecherche(meta)),
     DESCRIPTION: escAttr(meta.description),
@@ -1290,6 +1352,7 @@ function main() {
       for (const s of slugSet) out = out.split(`href="/${s}"`).join(`href="${s}.html"`);
       out = out.split('href="/mentions-legales"').join('href="mentions-legales.html"');
       out = out.split('href="/#').join('href="index.html#');
+      out = out.split('href="/?').join('href="index.html?');
       out = out.split('href="/"').join('href="index.html"');
       out = out.split('src="/assets/').join('src="assets/');
       return out;

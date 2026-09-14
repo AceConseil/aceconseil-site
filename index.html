@@ -550,7 +550,7 @@ em.gold{font-style:italic;color:var(--gold)}
 <section class="section expertises" id="expertises">
   <div class="wrap">
     <p class="eyebrow reveal">Ce que nous faisons</p>
-    <h2 class="section-title reveal" data-d="1">Sept expertises. Un seul objectif&nbsp;: <em class="gold">votre résultat.</em></h2>
+    <h2 class="section-title reveal" data-d="1">Huit expertises. Un seul objectif&nbsp;: <em class="gold">votre résultat.</em></h2>
     <p class="section-lede reveal" data-d="2">Pas de packs, pas de formules toutes faites. Chaque mission est construite sur votre situation. Voici le terrain que nous couvrons.</p>
 
     <div class="exp-group reveal">
@@ -573,6 +573,27 @@ em.gold{font-style:italic;color:var(--gold)}
             <li>Réponses email et WhatsApp automatisées</li>
             <li>Préparation de devis et de documents</li>
             <li>Passage de relais à l'humain au bon moment</li>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <div class="exp-item" id="appels-offres">
+        <button class="exp-head" aria-expanded="false">
+          <span class="exp-title">Agents IA pour les appels d’offres</span>
+          <span class="exp-hint">Choisir ses appels d’offres. Y répondre sans faute.</span>
+          <span class="exp-plus" aria-hidden="true"></span>
+        </button>
+        <div class="exp-panel"><div class="exp-panel-inner"><div class="exp-body">
+          <div>
+            <p class="exp-desc">Pour les entreprises du bâtiment qui répondent à des appels d’offres publics et privés. Les agents repèrent les consultations de votre métier, préparent métré, chiffrage et mémoire technique, puis contrôlent la conformité avant le dépôt. Vous décidez, les agents préparent, vous validez.</p>
+            <a class="exp-cta" href="#contact" data-sujet="Appels d’offres">Parler de ce sujet <span>→</span></a>
+            <a class="exp-cta exp-more" href="/appels-offres"><span class="lbl">Les appels d’offres en détail</span> <span class="arr">→</span></a>
+          </div>
+          <ul class="exp-list">
+            <li>Veille des appels d’offres de votre métier</li>
+            <li>Métré local par local, chiffrage sur vos prix</li>
+            <li>Mémoire technique sur la grille de notation</li>
+            <li>Contrôle de conformité avant chaque dépôt</li>
           </ul>
         </div></div></div>
       </div>
@@ -970,6 +991,7 @@ em.gold{font-style:italic;color:var(--gold)}
           <div class="field full"><label for="f-sujet">Votre besoin</label>
             <select id="f-sujet" name="sujet">
               <option>Agents IA</option>
+              <option data-cle="appels-offres">Appels d’offres</option>
               <option>Automatisation</option>
               <option>Site web</option>
               <option>Visibilité / prospection</option>
@@ -1214,14 +1236,36 @@ em.gold{font-style:italic;color:var(--gold)}
 
   /* CTA panneau -> préremplit le select du formulaire */
   var sujet = document.getElementById("f-sujet");
+  var champMessage = document.getElementById("f-msg");
+  /* certains besoins appellent des précisions : elles sont suggérées dans le champ message */
+  var aidesMessage = { "appels-offres": "Votre métier, le nombre d’appels d’offres préparés par mois, votre zone d’intervention." };
+  var ajusterAide = function(){
+    if(!sujet || !champMessage){ return; }
+    var o = sujet.options[sujet.selectedIndex];
+    var cle = o ? o.getAttribute("data-cle") : "";
+    champMessage.placeholder = (cle && aidesMessage[cle]) || "";
+  };
   document.querySelectorAll("[data-sujet]").forEach(function(a){
     a.addEventListener("click", function(){
       var v = a.getAttribute("data-sujet");
       if(sujet && v){
         Array.prototype.forEach.call(sujet.options, function(o){ if(o.text.indexOf(v) === 0){ sujet.value = o.value || o.text; } });
+        ajusterAide();
       }
     });
   });
+  /* depuis une page pilier : /?sujet=appels-offres#contact présélectionne le besoin */
+  if(sujet){
+    try {
+      var cleSujet = new URLSearchParams(window.location.search).get("sujet");
+      if(cleSujet && /^[a-z-]+$/.test(cleSujet)){
+        var optionVisee = sujet.querySelector('option[data-cle="' + cleSujet + '"]');
+        if(optionVisee){ sujet.value = optionVisee.value; }
+      }
+    } catch (e) {}
+    sujet.addEventListener("change", ajusterAide);
+    ajusterAide();
+  }
 
   /* FAQ */
   document.querySelectorAll(".faq-item").forEach(function(item){

@@ -155,6 +155,20 @@ img{max-width:100%}
 @keyframes fxStep{0%,3%{color:var(--muted-light)}8%,84%{color:var(--cream)}94%,100%{color:var(--muted-light)}}
 @keyframes fxStepDot{0%,3%{background:var(--navy-deep);border-color:rgba(201,162,77,.4)}8%,84%{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(201,162,77,.7)}94%,100%{background:var(--navy-deep)}}
 
+/* appels-offres : le contrôle avant dépôt passe les pièces en revue */
+.fx-ao{position:relative}
+.fx-ao-scan{position:absolute;left:-8px;right:-8px;top:0;height:2px;margin-top:-1px;background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold-light) 50%,var(--gold) 80%,transparent);box-shadow:0 0 12px rgba(201,162,77,.75);opacity:0;pointer-events:none;transition:transform .6s var(--ease),opacity .3s}
+.fx-ao-scan.on{opacity:1}
+.fx-ao-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 14px;padding:12px 0;border-bottom:1px solid rgba(254,253,251,.07);font-size:.88rem;line-height:1.4;color:var(--muted-light);transition:color .4s}
+.fx-ao-row:last-child{border-bottom:0}
+.fx-ao-row.vu{color:var(--cream)}
+.fx-ao-st{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-radius:100px;padding:4px 11px;color:var(--cream);border:1px solid rgba(254,253,251,.22);opacity:0;transform:scale(.8);transition:opacity .35s,transform .45s var(--ease)}
+.fx-ao-row.vu .fx-ao-st{opacity:1;transform:none}
+.fx-ao-row.alerte .fx-ao-st{color:var(--navy-deep);background:var(--gold);border-color:var(--gold)}
+.fx-ao-row.alerte.vu .fx-ao-doc{color:var(--gold-light)}
+.fx-ao-q{grid-column:1 / -1;font-size:.76rem;color:var(--muted-light);opacity:0;transform:translateY(-4px);transition:opacity .45s .35s,transform .45s .35s var(--ease)}
+.fx-ao-row.vu .fx-ao-q{opacity:1;transform:none}
+
 /* révélation au défilement (ajoutée par JS : sans JS, tout est visible) */
 .fx-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.8,.24,1),transform .7s cubic-bezier(.22,.8,.24,1)}
 .fx-reveal.in{opacity:1;transform:none}
@@ -168,6 +182,7 @@ img{max-width:100%}
   .fx-tl-bar i{height:100%}
   .fx-tl-step{color:var(--cream)}
   .fx-caret{display:none}
+  .fx-ao-scan{display:none}
   .fx-reveal{opacity:1;transform:none;transition:none}
 }
 .page-main{padding:clamp(60px,8vw,100px) 0 clamp(70px,9vw,110px)}
@@ -201,7 +216,7 @@ img{max-width:100%}
 .footer-links a{text-decoration:none;color:var(--muted-light);transition:color .3s}
 .footer-links a:hover{color:var(--gold-light)}
 @media(max-width:640px){.nav-back{display:none}}
-</style>
+{{PAGE_CSS}}</style>
 </head>
 <body>
 
@@ -246,16 +261,10 @@ img{max-width:100%}
 
 <section class="cta">
   <div class="wrap">
-    <h2>Parlons de votre situation.</h2>
-    <p>Vingt minutes avec Jennifer, cofondatrice, pour comprendre votre activité et ce qui bloque. Sans engagement, sans script commercial.</p>
+    <h2>{{CTA_TITRE}}</h2>
+    <p>{{CTA_TEXTE}}</p>
     <div class="cta-actions">
-      <a class="btn btn-gold" href="tel:+33665704793" data-tel-reveal aria-label="Afficher le numéro puis appeler">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.25a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
-        <span class="tel-label">Nous appeler</span>
-      </a>
-      <a class="btn btn-ghost" href="/#contact">Passer par le formulaire
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+{{CTA_ACTIONS}}
     </div>
   </div>
 </section>
@@ -361,6 +370,52 @@ img{max-width:100%}
     boucle();
   }
 
+  /* signature appels-offres : le contrôle passe les pièces en revue (sans JS, résultat complet) */
+  var aoLignes = document.querySelectorAll(".fx-ao-row");
+  var aoScan = document.querySelector(".fx-ao-scan");
+  if(aoLignes.length && !reduced){
+    var aoBoucle = function(){
+      aoLignes.forEach(function(l){ l.classList.remove("vu"); });
+      var i = 0;
+      var aoSuivant = function(){
+        if(i < aoLignes.length){
+          var l = aoLignes[i];
+          if(aoScan){
+            aoScan.style.transform = "translateY(" + (l.offsetTop + l.offsetHeight / 2) + "px)";
+            aoScan.classList.add("on");
+          }
+          setTimeout(function(){ l.classList.add("vu"); }, 450);
+          i++;
+          setTimeout(aoSuivant, 1150);
+        } else {
+          if(aoScan){
+            aoScan.classList.remove("on");
+            setTimeout(function(){ aoScan.style.transform = "translateY(0)"; }, 400);
+          }
+          setTimeout(aoBoucle, 3800);
+        }
+      };
+      setTimeout(aoSuivant, 800);
+    };
+    aoBoucle();
+  }
+
+  /* provenance : un visiteur arrivé avec des paramètres de campagne les garde
+     en passant au formulaire de l'accueil, qui les lit au moment de l'envoi.
+     Sans cela, la navigation vers /#contact effaçait la chaîne de requête. */
+  try {
+    var ici = new URLSearchParams(window.location.search);
+    var aTransmettre = ["gclid","gbraid","wbraid","msclkid","utm_source","utm_medium","utm_campaign","utm_term","utm_content"]
+      .filter(function(k){ return ici.get(k); });
+    if(aTransmettre.length){
+      document.querySelectorAll('a[href^="/#contact"], a[href^="/?"]').forEach(function(a){
+        var cible = new URL(a.getAttribute("href"), window.location.origin);
+        aTransmettre.forEach(function(k){ cible.searchParams.set(k, ici.get(k).slice(0, 200)); });
+        a.setAttribute("href", cible.pathname + cible.search + cible.hash);
+      });
+    }
+  } catch (e) {}
+
   /* révélation au défilement du corps de page (ajoutée par JS : sans JS, tout est visible) */
   if(!reduced && "IntersectionObserver" in window){
     var blocs = document.querySelectorAll(".page-body > h2, .page-body > h3, .page-body > p, .page-body > ul, .page-body > ol, .page-body > blockquote");
@@ -403,7 +458,7 @@ img{max-width:100%}
 
 })();
 </script>
-<!-- Mesure d'audience Vercel : aucun cookie, script servi depuis notre propre domaine -->
+{{PAGE_JS}}<!-- Mesure d'audience Vercel : aucun cookie, script servi depuis notre propre domaine -->
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

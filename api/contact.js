@@ -34,7 +34,7 @@ const PROVENANCE_ATTENDUE = [
 ];
 
 const SUJETS_ATTENDUS = new Set([
-  'Agents IA', 'Automatisation', 'Site web', 'Visibilité',
+  'Agents IA', 'Appels d’offres', 'Automatisation', 'Site web', 'Visibilité',
   'Stratégie commerciale', 'Formation IA', 'AMO Immobilier', 'Autre',
 ]);
 

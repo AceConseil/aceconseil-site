@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aceconseil.co/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/mentions-legales</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/a-propos</loc>
@@ -19,6 +19,10 @@
   <url>
     <loc>https://aceconseil.co/amo-immobilier</loc>
     <lastmod>2026-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://aceconseil.co/appels-offres</loc>
+    <lastmod>2026-09-14</lastmod>
   </url>
   <url>
     <loc>https://aceconseil.co/automatisation</loc>
