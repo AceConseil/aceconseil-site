@@ -270,6 +270,10 @@
 .ao-frise li{position:relative;z-index:1;display:grid;grid-template-columns:46px minmax(0,1fr) auto;column-gap:18px;padding-bottom:26px}
 .ao-frise li:last-child{padding-bottom:0}
 .ao-noeud{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--cream);border:1px solid var(--ao-trait);font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:600;line-height:1;color:var(--navy)}
+/* Playfair dessine des chiffres à l'ancienne, qui descendent sous la ligne : on force les chiffres alignés,
+   puis on rogne la boîte du texte à la hauteur des capitales pour que le chiffre tombe au centre du cercle */
+.ao-noeud span{display:block;line-height:1;font-variant-numeric:lining-nums;text-box:trim-both cap alphabetic}
+@supports not (text-box:trim-both cap alphabetic){.ao-noeud span{transform:translateY(-.06em)}}
 .ao-vous .ao-noeud{background:var(--navy-deep);border-color:var(--navy-deep);color:var(--gold)}
 .ao-secretariat .ao-noeud{border:1.5px solid var(--gold);color:var(--ao-or-fonce)}
 .ao-corps{padding-top:10px}
