@@ -2,7 +2,7 @@
 title: "Où tourne votre agent IA, et qui lit ce que vous lui donnez"
 titleSeo: "Où tourne votre agent IA, et qui lit vos données"
 description: Un agent, ce sont deux machines. Le programme qui tourne quelque part, et le modèle qui réfléchit ailleurs. La phrase « nos serveurs sont en France » ne parle que de la première. Comment poser la vraie question.
-date: 2026-09-06
+date: 2026-09-09
 slug: ou-tourne-votre-agent-ia
 keywords: agent IA hébergement, agent IA données France, où sont mes données IA, agent IA RGPD, modèle IA souveraineté, agent IA TPE
 ---

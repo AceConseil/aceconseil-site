@@ -2,7 +2,7 @@
 title: "Les tâches que personne n'a dans sa fiche de poste"
 titleSeo: "Les tâches que personne n'a dans sa fiche de poste"
 description: Dans une entreprise de trois à vingt personnes, une dizaine de tâches courtes n'appartiennent à personne. Un test d'une question pour les repérer, et les trois seules choses qu'on peut en faire.
-date: 2026-09-06
+date: 2026-09-07
 slug: taches-sans-proprietaire
 keywords: tâche sans propriétaire TPE, organisation petite entreprise, qui fait quoi, relance devis oubliée, agent IA tâches répétitives
 ---
