@@ -1,0 +1,80 @@
+<div class="cst" aria-label="Calculateur du coût réel d'un site internet sur trois ans">
+<style>
+.article-body .cst{background:var(--navy-deep,#111D33);color:var(--cream,#FEFDFB);border:1px solid rgba(201,162,77,.35);padding:24px 26px;margin:32px 0;font-size:.95rem;line-height:1.55}
+.article-body .cst p{margin:0;opacity:1;color:inherit}
+.article-body .cst-k{font-size:.66rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#C9A24D)}
+.article-body .cst-t{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:600;line-height:1.25;margin-top:6px}
+.cst-champs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin-top:18px}
+.cst-champ{display:flex;flex-direction:column;gap:6px;font-size:.8rem;color:var(--muted-light,#A8B0C0)}
+.cst-saisie{display:flex;align-items:center;background:rgba(254,253,251,.06);border:1px solid rgba(254,253,251,.16);transition:border-color .3s}
+.cst-saisie:focus-within{border-color:var(--gold,#C9A24D)}
+.cst-saisie input{flex:1;min-width:0;background:none;border:0;color:var(--cream,#FEFDFB);font:500 1rem 'DM Sans',sans-serif;padding:9px 10px;font-variant-numeric:tabular-nums}
+.cst-saisie input:focus{outline:none}
+.cst-saisie em{font-style:normal;font-size:.74rem;color:var(--muted-light,#A8B0C0);padding-right:10px;white-space:nowrap}
+.cst-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.cst-btn{font:500 .82rem 'DM Sans',sans-serif;border-radius:100px;padding:8px 16px;cursor:pointer;border:1px solid rgba(201,162,77,.45);background:none;color:var(--gold-light,#E2C47A);transition:background .3s,color .3s}
+.cst-btn:hover,.cst-btn:focus-visible{background:var(--gold,#C9A24D);color:var(--navy-deep,#111D33)}
+.cst-res{margin-top:22px;display:grid;gap:14px}
+.cst-ligne{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:12px}
+.cst-annee{font-size:.8rem;color:var(--muted-light,#A8B0C0)}
+.cst-barre{display:flex;height:16px;background:rgba(254,253,251,.06);overflow:hidden}
+.cst-barre i{display:block;height:100%;width:0;transition:width .9s cubic-bezier(.22,.8,.24,1)}
+.cst-total{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:1.05rem;color:var(--gold-light,#E2C47A);min-width:8.5em;text-align:right;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.cst .p1{background:var(--gold,#C9A24D)}
+.cst .p2{background:#6F84B3}
+.cst .p3{background:var(--gold-light,#E2C47A)}
+.cst .p4{background:repeating-linear-gradient(135deg,#A8B0C0 0 5px,rgba(168,176,192,.45) 5px 10px)}
+.cst-legende{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:.76rem;color:var(--muted-light,#A8B0C0)}
+.cst-legende span{display:inline-flex;align-items:center;gap:7px}
+.cst-legende i{width:12px;height:12px;display:inline-block}
+.article-body .cst-note{margin-top:14px;font-size:.78rem;color:var(--muted-light,#A8B0C0);opacity:.8}
+@media(max-width:560px){.article-body .cst{padding:18px 16px}.cst-ligne{grid-template-columns:44px minmax(0,1fr)}.cst-total{grid-column:2;text-align:left;min-width:0}}
+@media(prefers-reduced-motion:reduce){.cst-barre i{transition:none}}
+</style>
+  <p class="cst-k">Calculateur</p>
+  <p class="cst-t">Le coût réel de votre site, sur trois ans</p>
+  <div class="cst-champs">
+    <label class="cst-champ">Création, payée une fois<span class="cst-saisie"><input type="number" inputmode="decimal" min="0" step="50" value="0" data-cle="creation"><em>euros</em></span></label>
+    <label class="cst-champ">Chaque mois : abonnement, hébergement, support<span class="cst-saisie"><input type="number" inputmode="decimal" min="0" step="1" value="0" data-cle="mois"><em>euros par mois</em></span></label>
+    <label class="cst-champ">Nom de domaine, chaque année<span class="cst-saisie"><input type="number" inputmode="decimal" min="0" step="1" value="0" data-cle="domaine"><em>euros par an</em></span></label>
+    <label class="cst-champ">Votre temps passé sur le site<span class="cst-saisie"><input type="number" inputmode="decimal" min="0" step="0.5" value="0" data-cle="heures"><em>heures par mois</em></span></label>
+    <label class="cst-champ">Ce que vaut une heure de votre temps<span class="cst-saisie"><input type="number" inputmode="decimal" min="0" step="5" value="0" data-cle="heure"><em>euros</em></span></label>
+  </div>
+  <div class="cst-actions"><button type="button" class="cst-btn" data-offre>Notre offre : 0 euro de création, 89 euros hors taxes par mois</button><button type="button" class="cst-btn" data-zero>Remettre à zéro</button></div>
+  <div class="cst-res" aria-live="polite">
+    <div class="cst-ligne" data-mois="12"><span class="cst-annee">1 an</span><span class="cst-barre"><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></span><span class="cst-total">0 euro</span></div>
+    <div class="cst-ligne" data-mois="24"><span class="cst-annee">2 ans</span><span class="cst-barre"><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></span><span class="cst-total">0 euro</span></div>
+    <div class="cst-ligne" data-mois="36"><span class="cst-annee">3 ans</span><span class="cst-barre"><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i></span><span class="cst-total">0 euro</span></div>
+  </div>
+  <div class="cst-legende" aria-hidden="true"><span><i class="p1"></i>Création</span><span><i class="p2"></i>Frais mensuels</span><span><i class="p3"></i>Nom de domaine</span><span><i class="p4"></i>Votre temps</span></div>
+  <p class="cst-note">Total sur trois ans = création + 36 mois de frais mensuels + 3 années de nom de domaine + 36 mois de votre temps. Restez cohérent : tous les montants hors taxes, ou tous en TTC.</p>
+<script>
+(function(){
+  "use strict";
+  var racine = document.currentScript && document.currentScript.closest(".cst");
+  if(!racine){ return; }
+  var champs = {};
+  racine.querySelectorAll("input[data-cle]").forEach(function(i){ champs[i.getAttribute("data-cle")] = i; });
+  var valeur = function(cle){ var v = parseFloat(String(champs[cle].value).replace(",", ".")); return isFinite(v) && v > 0 ? v : 0; };
+  var format = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 });
+  var lignes = racine.querySelectorAll(".cst-ligne");
+  var calculer = function(){
+    var creation = valeur("creation"), mois = valeur("mois"), domaine = valeur("domaine"), temps = valeur("heures") * valeur("heure");
+    var postes = Array.prototype.map.call(lignes, function(l){
+      var m = +l.getAttribute("data-mois");
+      return [creation, mois * m, domaine * m / 12, temps * m];
+    });
+    var plusGrand = Math.max.apply(null, postes.map(function(p){ return p[0] + p[1] + p[2] + p[3]; })) || 1;
+    Array.prototype.forEach.call(lignes, function(l, k){
+      var p = postes[k], total = p[0] + p[1] + p[2] + p[3];
+      Array.prototype.forEach.call(l.querySelectorAll(".cst-barre i"), function(segment, j){ segment.style.width = (p[j] / plusGrand * 100) + "%"; });
+      l.querySelector(".cst-total").textContent = format.format(total) + (Math.round(total) >= 2 ? " euros" : " euro");
+    });
+  };
+  racine.addEventListener("input", calculer);
+  racine.querySelector("[data-offre]").addEventListener("click", function(){ champs.creation.value = 0; champs.mois.value = 89; calculer(); });
+  racine.querySelector("[data-zero]").addEventListener("click", function(){ Object.keys(champs).forEach(function(k){ champs[k].value = 0; }); calculer(); });
+  calculer();
+})();
+</script>
+</div>
